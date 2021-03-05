@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="8. Parameter Estimation and Evaluation 8.1 Population and Distribution Model A random sample $\mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is from a population distribution $f_{X}(x)$.
+A realization $\mathrm{x}^{n}$ of the random sample $\mathrm{X}^{n}$ constitutes a data set with sample size $n$.
+【Sampling Inference】The primary purpose of statistical inference is to make inference of the population distribution $f_{X}(x)$ using an observed data $\mathbf{x}^{n}$.
+【Parametric Approach】Consider a class of parametric candidate distributions $$ \mathbb{F}={f(\cdot, \theta): \theta \in \Theta} $$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="8. Parameter Estimation and Evaluation 8.1 Population and Distribution Model A random sample $\mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is from a population distribution $f_{X}(x)$.
+A realization $\mathrm{x}^{n}$ of the random sample $\mathrm{X}^{n}$ constitutes a data set with sample size $n$.
+【Sampling Inference】The primary purpose of statistical inference is to make inference of the population distribution $f_{X}(x)$ using an observed data $\mathbf{x}^{n}$.
+【Parametric Approach】Consider a class of parametric candidate distributions $$ \mathbb{F}={f(\cdot, \theta): \theta \in \Theta} $$"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" /><link rel="prev" href="https://henrywu97.github.io/9.-hypothesis-testing/" /><link rel="next" href="https://henrywu97.github.io/7.-convergences-and-limit-theorems/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/8.-parameter-estimation-and-evaluation\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  14238 ,
+        "url": "https:\/\/henrywu97.github.io\/8.-parameter-estimation-and-evaluation\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/8.-parameter-estimation-and-evaluation/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/8.-parameter-estimation-and-evaluation/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;14238 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;67 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#81-population-and-distribution-model">8.1 Population and Distribution Model</a></li>
+    <li><a href="#82-maximum-likelihood-estimation">8.2 Maximum Likelihood Estimation</a>
+      <ul>
+        <li><a href="#821-maximum-likelihood-estimator">8.2.1 Maximum Likelihood Estimator</a></li>
+        <li><a href="#822-mle-procedure">8.2.2 MLE procedure</a></li>
+        <li><a href="#823-properties-of-mle">8.2.3 Properties of MLE</a></li>
+      </ul>
+    </li>
+    <li><a href="#83-asymptotic-properties-of-mle">8.3 Asymptotic Properties of MLE</a>
+      <ul>
+        <li><a href="#831-regularity-conditions--assumption">8.3.1 Regularity Conditions / Assumption</a></li>
+        <li><a href="#832-consistency-of-mle">8.3.2 Consistency of MLE</a></li>
+        <li><a href="#833-asymptotic-normality">8.3.3 Asymptotic Normality</a></li>
+      </ul>
+    </li>
+    <li><a href="#84-method-of-moments-and-generalized-method-of-moments">8.4 Method of Moments and Generalized Method of Moments</a>
+      <ul>
+        <li><a href="#841-method-of-moments-estimation">8.4.1 Method of Moments Estimation</a></li>
+        <li><a href="#842-generalized-method-of-moments-estimation">8.4.2 Generalized Method of Moments Estimation</a>
+          <ul>
+            <li><a href="#basic-idea">Basic Idea</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#85-asymptotic-properties-of-gmm">8.5 Asymptotic Properties of GMM</a>
+      <ul>
+        <li><a href="#851-regularity-conditions-assumption">8.5.1 Regularity Conditions/ Assumption</a></li>
+        <li><a href="#852-consistency-of-gmm">8.5.2 Consistency of GMM</a></li>
+        <li><a href="#853-asymptotic-normality">8.5.3 Asymptotic Normality</a></li>
+        <li><a href="#854-asymptotic-efficiency-of--gmm">8.5.4 Asymptotic Efficiency of  GMM</a></li>
+      </ul>
+    </li>
+    <li><a href="#86-criterion-for-estimators">8.6 Criterion for Estimators</a>
+      <ul>
+        <li><a href="#861-mean-squared-error-criterion">8.6.1 Mean Squared Error Criterion</a></li>
+        <li><a href="#后期再精细化整理">后期再精细化整理</a></li>
+        <li><a href="#862-best-unbiased-estimators">8.6.2 Best Unbiased Estimators</a></li>
+      </ul>
+    </li>
+    <li><a href="#87-cramer-rao-lower-bound">8.7 Cramer-Rao Lower Bound</a></li>
+    <li><a href="#88-conclusion">8.8 Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="8-parameter-estimation-and-evaluation">8. Parameter Estimation and Evaluation</h1>
+<h2 id="81-population-and-distribution-model">8.1 Population and Distribution Model</h2>
+<p>A random sample $\mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is from a population distribution $f_{X}(x)$.</p>
+<p>A realization $\mathrm{x}^{n}$ of the random sample $\mathrm{X}^{n}$ constitutes a data set with sample size $n$.</p>
+<p>【Sampling Inference】The primary purpose of statistical inference is to make inference of the population distribution $f_{X}(x)$ using an observed data $\mathbf{x}^{n}$.</p>
+<p>【Parametric Approach】Consider a class of <strong>parametric candidate distributions</strong>
+$$
+\mathbb{F}={f(\cdot, \theta): \theta \in \Theta}
+$$</p>
+<p>where $f: \Omega \times \Theta \rightarrow \mathbb{R}^{+}$ is a known PMF/PDF function, $\Omega$ is the support of $X_{i}, \Theta$ is a parameter space that contains all plausible values for a $p \times 1$ parameter vector $\theta,$ with $p$ a fixed integer. Each value of $\theta \in \Theta$ gives a distribution model for $f_{X}(x)$.</p>
+<p>【Correct Model Specification】Assume that the class of functions $\mathbb{F}$ contains the population distribution $f_{X}(x)$ that generates the observed data. That is, there exists some unknown parameter value $\theta_{0} \in \Theta$ such that</p>
+<p>$$
+f_{X}(x)=f\left(x, \theta_{0}\right) \text { for all } x \in \Omega
+$$</p>
+<ul>
+<li>
+<p>If $\mathbb{F}$ contains $f_{X}(\cdot),$ we call that the class of models $\mathbb{F}$ is correctly specified for the population distribution $f_{X}(\cdot),$ and $\theta_{0}$ is called the true value of $\theta$.</p>
+</li>
+<li>
+<p>In contrast, $\mathbb{F}$ is said to be <strong>misspecified</strong> for $f_{X}(\cdot)$ if there exists no value for $\theta \in \Theta$ such that $f_{X}(x)=f(x, \theta)$ for all $x \in \Omega .$ This can occur when, e.g., we specify a class of normal distribution models but the true population is a Gamma distribution.</p>
+</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200523091516.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200523091516.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200523091516.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200523091516.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200523091516.png"
+        title="20200523091516.png" /></div></p>
+<p>【Example 8.1】<strong>Discrete Choice Probit and Logit Models</strong>: The Probit and Logit models are popularly used when a dependent variable has binary outcomes, i.e., there are two possible outcomes 0 and 1. Examples include whether or not an individual is employed, whether or not a consumer makes a purchase, and whether or not a financial crisis (e.g., default risk) occurs.</p>
+<p>A probit model assumes</p>
+<p>$$
+P\left(Y_{i}=1 | X_{i}\right)=\Phi\left(\theta_{1}+\theta_{2} X_{i}\right), \quad i=1, \cdots, n
+$$</p>
+<p>where $\Phi(\cdot)$ is the $N(0,1)$ CDF, and $X_{i}$ is an explanatory variable.</p>
+<p>A logit model assumes</p>
+<p>$$
+P\left(Y_{i}=1 | X_{i}\right)=\frac{1}{1+e^{-\left(\theta_{1}+\theta_{2} X_{i}\right)}}
+$$</p>
+<p>【Example 8.2】<strong>Survival/Duration Analysis</strong>: Suppose we are interested in the time length it takes for an unemployed person to find a job, the time length that elapses between two trades or two price changes, the length of a strike, the length before a cancer patient dies, and the length before a financial crisis (e.g., credit default risk) comes out. Such analysis is called duration analysis or survival analysis.</p>
+<p>In practice, the main interest often lies in the question of how long a duration will continue, given that it has not finished yet. The <strong>hazard rate</strong> measures the chance that the duration will end now, given that it has not ended before. This hazard rate can be interpreted as the chance to find a job, to trade, to end a strike, etc.</p>
+<p>Suppose $T_{i}$ is the duration from a population with $\operatorname{PDF} f(t)$ and $\operatorname{CDF} F(t)$. Then the survival function is</p>
+<p>$$
+S(t)=P\left(T_{i}&gt;t\right)=1-F(t)
+$$</p>
+<p>and the hazard rate</p>
+<p>$$
+\begin{aligned}
+\lambda(t) &amp;=\lim <em>{\delta \rightarrow 0^{+}} \frac{P\left(t&lt;T</em>{i} \leq t+\delta | T_{i}&gt;t\right)}{\delta} \<br>
+&amp;=\frac{f(t)}{S(t)}
+\end{aligned}
+$$</p>
+<p>Intuitively, the hazard rate $\lambda(t)$ is the <strong>instantaneous probability</strong> that an event of interest will end at time t given that it has lasted for period t. Note that the specification of $\lambda(t)$ is equivalent to a specification of PDF $f(t),$ but $\lambda(t)$ is more interpretable from an economic point of view.</p>
+<p>The hazard rate may not be the same for all individuals. To control heterogeneity across individuals, we assume that the individual-specific hazard rate depends on some individual characteristics $X_{i}$ (e.g., age, gender, race, education, work experience) via the form
+$$
+\lambda_{i}(t)=e^{X_{i}^{\prime} \theta} \lambda_{0}(t)
+$$</p>
+<p>where $\lambda_{0}(t)$ is called a baseline hazard function, and exponential form of $X_i$ is to keep non-negative (according to definition). This model, proposed by cox (1972), is called a proportional hazard model. When the model is correctly specified, the true parameter value</p>
+<p>$$
+\begin{aligned}
+\theta_{0} &amp;=\frac{\partial \ln \lambda_{i}(t)}{\partial X_{i}} \<br>
+&amp;=\frac{1}{\lambda_{i}(t)} \frac{\partial \lambda_{i}(t)}{\partial X_{i}}
+\end{aligned}
+$$</p>
+<p>can be interpreted as the relative marginal effects of $X_{i}$ on the hazard rate of individual i. Inference of $\theta_{0}$ will allow one to examine how individual characteristics affect the duration of interest.</p>
+<p>For example, suppose $T_{i}$ is the unemployment duration for individual $i,$ then the inference of $\theta_{0}$ will allow us to examine how individual characteristics, such as age, education, gender, job training, etc, can affect the unemployment duration. This will provide important policy implications on labor markets. Because one can obtain the conditional PDF of $Y_{i}$ given $X_{i}$ as follows:
+$$
+f_{i}(t)=\lambda_{i}(t) S_{i}(t)
+$$</p>
+<p>where the survival function</p>
+<p>$$
+S_{i}(t)=e^{-\int_{0}^{t} \lambda_{i}(s) d s}
+$$</p>
+<p>can estimate $\theta_{0}$ by the so-called maximum likelihood estimation (MLE) method.</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>Usually, the true parameter value $\theta_{0}$ is unknown, and one is interested in making inference of $\theta_{0}$ using an observed data $\mathbf{x}^{n}$</li>
+<li>Traditionally, problems of statistical inference are divided into problems of estimation and hypothesis testing. In this chapter, we are interested in estimating $\theta_{0}$</li>
+<li>We shall introduce two most commonly used estimation methods, namely the maximum likelihood estimation (MLE) and the generalized method of moments estimation (GMM)</li>
+</ul>
+<h2 id="82-maximum-likelihood-estimation">8.2 Maximum Likelihood Estimation</h2>
+<h3 id="821-maximum-likelihood-estimator">8.2.1 Maximum Likelihood Estimator</h3>
+<p>Question: How to estimate $\theta_{0}$ based on a data set $\mathbf{x}^{n}$ under Correct Model Specification?</p>
+<p>R. Fisher proposed a general method of estimation called MLE. He demonstrated the advantage of this method by showing that it yields a sufficient estimator for parameter $\theta$ whenever it exists and the MLE is asymptotically most efficient in terms of some sensible criterion.</p>
+<p>【Definition (8.1)】<strong>Likelihood Function</strong>: Given $\mathrm{X}^{n}=\mathrm{x}^{n}$, the joint $P M F / P D F$ of the random sample $\mathrm{X}^{n}$ as a function of $\theta$</p>
+<p>$$
+\hat{L}\left(\theta | \mathbf{x}^{n}\right)=f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)
+$$</p>
+<p>is called the likelihood function of the random sample $\mathrm{X}^{n}$ when $\mathrm{x}^{n}$ is observed. Also, $\ln \hat{L}\left(\theta | \mathrm{x}^{n}\right)$ is called the <strong>log-likelihood function</strong> of the random sample $\mathrm{X}^{n}$ when $\mathrm{x}^{n}$ is observed.</p>
+<p><strong>Likelihood Function &amp; PDF/PMF</strong></p>
+<ul>
+<li>
+<p>The likelihood function $L\left(\theta | \mathbf{x}^{n}\right)$ is algebraically equal to the joint PDF or PMF of the random sample $\mathbf{X}^{n}$ when $\mathbf{X}^{n}=\mathbf{x}^{n}$</p>
+</li>
+<li>
+<p>The conceptual difference between them is that the likelihood $L\left(\theta | \mathbf{x}^{n}\right)$ is a function of $\theta,$ with $\mathbf{x}^{n}$ held fixed. Given $\theta,$ the likelihood $L\left(\theta | \mathbf{x}^{n}\right)$ is a measure of the probability or probability density with which the observed sample $\mathbf{x}^{n}$ will occur.</p>
+</li>
+<li>
+<p>The joint PDF/PMF of the random sample $\mathbf{X}^{n}, f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right),$ is different from the population distribution $f(x, \theta) .$ The latter is the PDF/PMF of each random variable $X_{i}$</p>
+</li>
+</ul>
+<p>【Definition 8.2】<strong>Maximum Likelihood Estimator (MLE)</strong>:  Suppose the statistic $\hat{\theta}=\hat{\theta}_{n}\left(\mathbf{X}^{n}\right)$ maximizes $\hat{L}\left(\theta | \mathbf{X}^{n}\right)$ over $\theta \in \Theta,$ conditional on $\mathbf{X}^{n},$ where $\Theta$ is a finite-dimensional parameter space. That is</p>
+<p>$$
+\hat{\theta} \equiv \hat{\theta}_{n}\left(\mathbf{X}^{n}\right)=\arg \max _{\theta \in \Theta} \hat{L}\left(\theta | \mathbf{X}^{n}\right)
+$$</p>
+<p>Then, when exists, $\hat{\theta} \equiv \hat{\theta}_{n}\left(\mathbf{X}^{n}\right)$ is called the MLE (<strong>estimator</strong>) for parameter $\theta$. Given a sample point (or a a data set) $ \mathbf{x}^{n}$ for the random sample $\mathbf{X}^{n}, \theta\left(\mathbf{x}^{n}\right)$ is called a maximum likelihood <strong>estimate</strong> for $\theta$.</p>
+<ul>
+<li>
+<p>Estimator——估计量</p>
+</li>
+<li>
+<p>Estimate——估计量的实现值，即估计值</p>
+</li>
+</ul>
+<p>MLE is the parameter estimate which makes the observed data $x^{n}$ most likely to occur. In other words, by choosing a parameter estimate $\hat{\theta}_{n}\left(\mathbf{x}^{n}\right),$ MLE maximizes the probability that $\mathrm{X}^{n}=\mathrm{x}^{n}$, that is, the probability that $\mathrm{X}^{n}$ takes the value of the observed data $\mathbf{x}^{n}$.</p>
+<h3 id="822-mle-procedure">8.2.2 MLE procedure</h3>
+<p>【Theorem 8.1】<strong>Existence of MLE</strong>: Suppose, <strong>with probability one, $\hat{L}\left(\theta | X^{n}\right)$ is a continuous function of $\theta \in \Theta$,</strong> and $\Theta$ is a compact set (close and bounded, e.g., $a \leq x \leq b$). Then there exists a global maximizer $\hat{\theta}$ that solves the problem</p>
+<p>$$
+\hat{\theta} \equiv \hat{\theta}_{n}\left(\mathbf{X}^{n}\right)=\arg \max _{\theta \in \Theta} \hat{L}\left(\theta | \mathbf{X}^{n}\right)
+$$</p>
+<p><strong>Remarks:</strong></p>
+<p>It is often convenient to solve $\max _{\theta \in \Theta} \ln \hat{L}\left(\theta | \mathrm{X}^{n}\right)$, where $\ln \hat{L}\left(\theta | \mathrm{X}^{n}\right)$ is called the log-likelihood function, which is a strictly monotonic increasing function of $\hat{L}\left(\theta | \mathbf{X}^{n}\right)$.</p>
+<p>MLE may not be unique. Given an observed data set $\mathbf{x}^{n}$, MLE may be obtained at more than one point in $\Theta$. Thus, multiple solutions for MLE are possible.</p>
+<p>The maximum is obtained over parameter space $\Theta$, where $\Theta$ may be subject to restriction. For example, when estimating a Generalized AutoRegressive Conditional Heteroskedasticity (GARCH) model (Bollerslev 1986), $\theta$ may be subject to strictions to ensure that the conditional variance is always nonnegative.</p>
+<p>When $\ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)$ is twice continuously differentiable with respect to $\theta \in \Theta,$ MLE solution will be easy to find. A necessary condition for MLE is that $\theta$ must satisfy the first order conditions (FOC)
+$$
+\left.\frac{\partial \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta}\right|_{\theta=\hat{\theta}}=0
+$$
+which consists of $p$ equations if $\theta$ is a $p \times 1$ parameter vector. From this set of first order conditions, we can solve for $\hat{\theta}$. Graphically, MLE $\hat{\theta}$ responds to a zero slope for the likelihood function.</p>
+<p>To find a global maximum, we need to check the second order condition (SOC): If the $p \times p$ sample Hessian matrix</p>
+<p>$$
+\hat{H}(\theta)=\frac{\partial^{2} \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta \partial \theta^{\prime}}
+$$</p>
+<p>is negative definite for all $\theta \in \Theta,$ then $\hat{\theta}$ is the <strong>global maximum</strong>.</p>
+<ul>
+<li>In many cases, it may be difficult to verify that $\hat{H}(\theta)$ is negative definite for all $\theta \in \Theta$</li>
+<li>It is relatively straightforward to verify that $\hat{H}(\hat{\theta})$ is negative definite, which will imply that $\hat{\theta}$ is a <strong>local maximizer</strong>.</li>
+</ul>
+<p>It may be emphasized that the zeros of the first derivatives only locate extreme points in the interior of the domain of a function. If the extrema occur on the boundary, the first derivative may not be zero. Thus, the boundary must be checked separately for extrema. This can be done by using the Kuhn-Tucker theorem.</p>
+<p><strong>The MLE procedure:</strong></p>
+<ol>
+<li>Find the log-likelihood function, $\ln \hat{L}\left(\theta | \mathbf{X}^{n}\right) .$ For an IID random sample with population PDF/PMF $f(x, \theta),$ we have $\ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)=\sum_{i=1}^{n} \ln f\left(X_{i}, \theta\right)$.</li>
+<li>Solve for the FOC and find $\hat{\theta}$.</li>
+<li>Check the second order conditions (SOC) to ensure $\hat{\theta}$ is a global maximizer or at least a local maximizer.</li>
+</ol>
+<p>【Example (8.3)】Let $\mathbf{X}^{n}$ be an IID $N(\mu, 1)$ random sample. Find the MLE for $\mu$.</p>
+<p><strong>Solution:</strong></p>
+<p>Put $ \theta=\mu .$ Because $\mathbf{X}^{n}$ is an IID $N(\mu, 1)$ random sample, the likelihood function of the sample $\mathbf{X}^{n}$
+$$
+\begin{aligned}
+\hat{L}\left(\mu | \mathbf{X}^{n}\right) &amp;=\prod_{i=1}^{n} f\left(X_{i}, \theta\right) \<br>
+&amp;=\prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2}\left(X_{i}-\mu\right)^{2}} \<br>
+&amp;=(2 \pi)^{-n / 2} e^{-\frac{1}{2} \Sigma_{i=1}^{n}\left(X_{i}-\mu\right)^{2}}
+\end{aligned}
+$$</p>
+<p>It follows that the log-likelihood function</p>
+<p>$$
+\ln \hat{L}\left(\mu | \mathbf{X}^{n}\right)=-\frac{n}{2} \ln (2 \pi)-\frac{1}{2} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}
+$$</p>
+<p>The FOC is given by</p>
+<p>$$
+\begin{aligned}
+\frac{d \ln \hat{L}\left(\hat{\mu} | \mathbf{X}^{n}\right)}{d \mu} &amp;\left.\equiv \frac{d \ln \hat{L}\left(\mu | \mathbf{X}^{n}\right)}{d \mu}\right|<em>{\mu=\hat{\mu}} \<br>
+&amp;=\sum</em>{i=1}^{n}\left(X_{i}-\hat{\mu}\right)=0
+\end{aligned}
+$$</p>
+<p>This gives the sample mean estimator</p>
+<p>$$
+\hat{\mu}=\bar{X}_{n}
+$$</p>
+<p>For the SOC, we have
+$$
+\frac{d^{2} \ln \hat{L}\left(\mu, \mathbf{X}^{n}\right)}{d \mu^{2}}=-n&lt;0 \text { for all } \mu
+$$</p>
+<p>It follows that $\hat{\mu}=\bar{X}_{n}$ is the global maximizer.</p>
+<p>【Example 8.4】Suppose $\mathbf{X}^{n}$ is an IID $N\left(\mu, \sigma^{2}\right)$ random sample. Find the MLE for $\left(\mu, \sigma^{2}\right)$.</p>
+<p><strong>Solution</strong>:</p>
+<p>Put $\theta=\left(\mu, \sigma^{2}\right) .$ Then the log-likelihood function of $\mathbf{X}^{n}$
+$$
+\ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)=-\frac{n}{2} \ln (2 \pi)-\frac{n}{2} \ln \sigma^{2}-\frac{1}{2 \sigma^{2}} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}
+$$</p>
+<p>The FOC:</p>
+<p>$$
+\begin{aligned}
+\frac{\partial \ln \hat{L}\left(\hat{\theta} | \mathbf{X}^{n}\right)}{\partial \mu}&amp;=\frac{1}{2\hat{\sigma}^{2}} \sum_{i=1}^{n}\left(X_{i}-\hat{\mu}\right)=0 \<br>
+\frac{\partial \ln \hat{L}\left(\hat{\theta} | \mathbf{X}^{n}\right)}{\partial \sigma^{2}}&amp;=-\frac{n}{2 \hat{\sigma}^{2}}+\frac{1}{2 \hat{\sigma}^{4}} \sum_{i=1}^{n}\left(X_{i}-\hat{\mu}\right)^{2}=0
+\end{aligned}
+$$</p>
+<p>where $\hat{\theta}=\left(\hat{\mu}, \hat{\sigma}^{2}\right) .$ Note that here, we treat $\sigma^{2}$ instead of $\sigma$ as a parameter.</p>
+<p>It follows that
+$$
+\begin{aligned}
+\hat{\mu} &amp;=\bar{X}<em>{n} \<br>
+\hat{\sigma}^{2} &amp;=n^{-1} \sum</em>{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}
+\end{aligned}
+$$</p>
+<p>Note that the MLE $\hat{\sigma}^{2}$ for $\sigma^{2}$ differs slightly from the sample variance $S_{n}^{2}=(n-1)^{-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}$.</p>
+<p>To check the SOC, we compute the sample Hessian matrix
+$$
+\hat{H}(\theta)=\left[\begin{array}{cc}
+-\frac{n}{\sigma^{2}} &amp; -\frac{1}{\sigma^{4}} \sum_{i=1}^{n}\left(X_{i}-\mu\right) \<br>
+-\frac{1}{\sigma^{4}} \sum_{i=1}^{n}\left(X_{i}-\mu\right) &amp; \frac{n}{2 \sigma^{4}}-\frac{1}{\sigma^{6}} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}
+\end{array}\right]
+$$</p>
+<p>When $\theta=\hat{\theta},$ we have</p>
+<p>$$
+\hat{H}(\hat{\theta})=\left[\begin{array}{cc}
+-\frac{n}{\sigma^{2}} &amp; 0 \<br>
+0 &amp; -\frac{n}{2 \tilde{\sigma}^{4}}
+\end{array}\right]
+$$</p>
+<p>which is negative definite. Hence, $\hat{\theta}$ is a local maximizer. Note that the $\operatorname{MLE} \hat{\theta}=$ $\left(\hat{\mu}, \hat{\sigma}^{2}\right)$ is a sufficient statistic for $\theta=\left(\mu, \sigma^{2}\right)$</p>
+<p><strong>Remarks:</strong></p>
+<p>Unlike example above,it is possible that the FOC can&rsquo;t deliver a closed form solution for $\hat{\theta}$. In this case numerical solutions for $\hat{\theta}$ will be needed.</p>
+<h3 id="823-properties-of-mle">8.2.3 Properties of MLE</h3>
+<p><strong>Question</strong>: Suppose we treat $\sigma$ instead of $\sigma^{2}$ as a parameter. Can we obtain the same MLE solution in the above example?
+The answer is yes. We will obtain
+$$
+\hat{\sigma}=\sqrt{\hat{\sigma}^{2}}
+$$</p>
+<p>This follows from the invariance property of MLE.</p>
+<p>【Theorem 8.2】<strong>Invariance Property of MLE</strong>: Suppose $\hat{\theta}$ is the MLE of $\theta \in \Theta,$ and $g(\cdot)$ is a one-to-one function over parameter space $\Theta .$ Then $g(\hat{\theta})$ is a MLE of $g(\theta)$.</p>
+<p><strong>Proof:</strong></p>
+<p>Because $g(\theta)$ is a one-to-one function over $\Theta$, there exists a unique inverse function $h(\cdot)$ such that $h[g(\theta)]=\theta$ for all $\theta \in \Theta$.</p>
+<p>Define a new parameter $\tau=g(\theta)$ and we are interested in MLE for $\tau .$ Then $\theta=h(\tau)$.</p>
+<p>It follows that the likelihood function of the random sample $\mathbf{X}^{n}$
+$$
+\begin{aligned}
+\hat{L}\left(\theta | \mathbf{X}^{n}\right) &amp;=\hat{L}\left[h(\tau) | \mathbf{X}^{n}\right] \<br>
+&amp;=\tilde{L}\left(\tau | \mathbf{X}^{n}\right)
+\end{aligned}
+$$</p>
+<p>where $\tilde{L}\left(\tau | \mathbf{X}^{n}\right)$ is the likelihood function of $\mathbf{X}^{n}$ with respect to the transformed parameter $\tau$.</p>
+<p>Now suppose $\hat{\theta}$ is a global $\mathrm{MLE}$ of $\theta \in \Theta$. Then we have
+$$
+\hat{L}\left(\hat{\theta} | \mathbf{X}^{n}\right) \geq \hat{L}\left(\theta | \mathbf{X}^{n}\right) \text { for all } \theta \in \Theta
+$$
+Put $\hat{\tau}=g(\hat{\theta}) .$ Then $\hat{\theta}=h(\hat{\tau}),$ and for any $\theta \in \Theta$</p>
+<p>$$
+\begin{aligned}</p>
+<p>\tilde{L}\left(\hat{\tau} | \mathbf{X}^{n}\right) 
+&amp;=\hat{L}\left[h(\hat{\tau}) | \mathbf{X}^{n}\right] \<br>
+&amp;= \hat{L}\left(\hat{\theta} | \mathbf{X}^{n}\right) \<br>
+&amp; \geq \hat{L}\left(\theta | \mathbf{X}^{n}\right)=\hat{L}\left[h(\tau) | \mathbf{X}^{n}\right]
+\end{aligned}
+$$</p>
+<p>where $\tau=g(\theta) .$ It follows that</p>
+<p>$$
+\tilde{L}\left(\hat{\tau} | \mathbf{X}^{n}\right) \geq \tilde{L}\left(\tau | \mathbf{X}^{n}\right) \text { for all } \tau \in \Gamma
+$$</p>
+<p>where $\Gamma={\tau: \tau=g(\theta) \text { for all } \theta \in \Theta}$ is the parameter space for the transformed parameter $\tau .$ Therefore, $\hat{\tau}$ is an MLE for $\tau$.</p>
+<p>【Theorem 8.3】<strong>Sufficiency of MLE</strong>: Suppose $\mathbf{X}^{n}$ is a random sample with the likelihood function $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right),$ and $T\left(\mathbf{X}^{n}\right)$ is a sufficient statistic for parameter $\theta \in \Theta .$ Then the MLE $\hat{\theta}$ that maximizes the likelihood function $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)$ of the random sample $\mathbf{X}^{n}$ is also the MLE that maximizes the likelihood function $f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta\right]$ of the sufficient statistic $T\left(\mathbf{X}^{n}\right)$.</p>
+<p><strong>Proof:</strong></p>
+<p>By definition, we have $\hat{\theta}=\arg \max <em>{\theta \in \Theta} \ln f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)$</p>
+<p>Because $T\left(\mathbf{X}^{n}\right)$ is a sufficient statistic for $\theta,$ we have
+$$
+\begin{aligned}
+f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) &amp;=f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta\right] f_{\mathbf{X}^{n} | T\left(\mathbf{X}^{n}\right)}\left[\mathbf{x}^{n} | T\left(\mathbf{x}^{n}\right)\right] \<br>
+&amp;=f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta\right] h\left(\mathbf{x}^{n}\right)
+\end{aligned}
+$$</p>
+<p>where the conditional distribution $f_{\mathbf{X}^{n} | T\left(\mathbf{X}^{n}\right)}\left[\mathbf{x}^{n} | T\left(\mathbf{x}^{n}\right)\right]$ of $\mathbf{X}^{n}=\mathbf{x}^{n}$ given $T\left(\mathbf{X}^{n}\right)=T\left(\mathbf{x}^{n}\right)$ does not depend on $\theta$ and is denoted as function $h\left(\mathbf{x}^{n}\right)$.</p>
+<p>It follows that
+$$
+\ln f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)=\ln f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta\right]+\ln h\left(\mathbf{x}^{n}\right)
+$$</p>
+<p>and maximizing $\ln f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)$ by choosing $\theta \in \Theta$ is equivalent to maximizing $\ln f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta\right]$ by choosing $\theta \in \Theta$. That is,
+$$
+\begin{aligned}
+\hat{\theta} &amp;=\arg \max _{\theta \in \Theta} \ln f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) \<br>
+&amp;=\arg \max _{\theta \in \Theta} \ln f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta\right]
+\end{aligned}
+$$</p>
+<h2 id="83-asymptotic-properties-of-mle">8.3 Asymptotic Properties of MLE</h2>
+<p>Because MLE $\hat{\theta}<em>{n}$ is generally a highly nonlinear function of the random sample $\mathbf{X}^{n},$ it is a prohibitive task to compute the mean, variance and sampling distribution of MLE $\hat{\theta}</em>{n}$ for any given sample size $n,$ when the random sample $X^{n}$ is not generated from a normal population. Below, we use the asymptotic theory developed in Chapter 7 to investigate the asymptotic properties (i.e., when $n \rightarrow \infty$ ) of MLE $\hat{\theta}<em>{n}$. In particular, we will show that MLE $\hat{\theta}</em>{n}$ is consistent for the true parameter value $\theta_{0} \in \Theta$ and will converge to a normal distribution, after proper standardization.</p>
+<h3 id="831-regularity-conditions--assumption">8.3.1 Regularity Conditions / Assumption</h3>
+<p>【Assumption M.1】<strong>IID</strong>:$\mathrm{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is an IID random sample from some unknown population distribution $f_{X}(x)$.</p>
+<p>【Assumption M.2】<strong>Correct Model Specification</strong></p>
+<ol>
+<li>For each $\theta \in \Theta, f(x, \theta)$ is a probability PMF/PDF model with $f(x, \theta)&gt;0$ for all $x,$ where $\Theta$ is a finite-dimensional parameter space</li>
+<li>there exists a parameter value $\theta_{0} \in \Theta$ such that $f\left(x, \theta_{0}\right)$ coincides with the population distribution $f_{X}(x)$</li>
+<li>the function $\ln f(x, \theta)$ is continuous in $(x, \theta)$ and its absolute value is bounded by a nonnegative function $b(x)$ with $E\left[b\left(X_{i}\right)\right]&lt;\infty,$ where the expectation $E(\cdot)$ is taken under the population distribution $f_{X}(x)$</li>
+</ol>
+<p>【Assumption M.3】<strong>Compact Parameter Space</strong>: $\Theta$ is closed and bounded, or equivalently $\Theta$ is compact.</p>
+<p>Assumption M.3 helps ensure the existence of MLE.</p>
+<p>【Assumption M.4】<strong>Unique Identification</strong>: The parameter value $\theta_{0}$ is the unique maximizer of $E\left[\ln f\left(X_{i}, \theta\right)\right]$.</p>
+<p>Assumption M.4 ensures that the true parameter value $\theta_{0}$ is the well-defined probability limit of MLE $\hat{\theta}$. It is important to note that
+$$
+\begin{aligned}E\left[\ln f\left(X_{i}, \theta\right)\right] &amp;=\int_{-\infty}^{\infty} \ln f(x, \theta) f_{X}(x) d x \&amp; \neq \int_{-\infty}^{\infty} \ln f(x, \theta) f(x, \theta) d x\end{aligned}
+$$
+unless $\theta=\theta_{0}$.</p>
+<p><strong>Proof:</strong></p>
+<p>Jensen&rsquo;s inequality: If $g(\cdot)$ is concave, then $g[E(X)] \geqslant E[g(X)]$</p>
+<p>Because $\ln x$ is a concave function, we have for any $\theta \in \Theta$</p>
+<p>$$
+\begin{aligned}
+E\left[\ln f\left(X_{i}, \theta\right)\right]-E\left[\ln f\left(X_{i}, \theta_{0}\right)\right] &amp;=\int_{\Omega_{X}}\left[\ln \frac{f(x, \theta)}{f\left(x, \theta_{0}\right)}\right] f\left(x, \theta_{0}\right) d x \<br>
+&amp; \leqslant \ln \left[\int_{\Omega_{X}} \frac{f(x, \theta)}{f\left(x, \theta_{0}\right)} f\left(x, \theta_{0}\right) d x\right] \<br>
+&amp;=\ln \int_{\Omega_{X}} f(x, \theta) d x \<br>
+&amp;=\ln 1=0
+\end{aligned}
+$$</p>
+<p>Hence, $E\left[\ln f\left(X_{i}, \theta_{0}\right)\right] \geqslant E\left[\ln f\left(X_{i}, \theta\right)\right]$ for all $\theta \in \Theta$.</p>
+<p>【Assumption M.5】<strong>Interior Solution</strong>: $\theta_{0}$ is in the interior of parameter space $\Theta$.</p>
+<p>【Assumption M.6】<strong>Smoothness and Moment Conditions</strong>: For each interior point $\theta \in \Theta, f(x, \theta)$ is twice continuously differentiable with respect to $\theta$ such that</p>
+<ol>
+<li>the functions $\frac{\partial}{\partial \theta} \ln f(x, \theta), \frac{\partial^{2}}{\partial \theta^{2}} \ln f(x, \theta)$ are continuous in $(x, \theta),$ and their absolute values are bounded by a nonnegative function $b(x)$ with $E\left[b\left(X_{i}\right)\right]&lt;\infty$ and $E\left[b^{2}\left(X_{i}\right)\right]&lt;$ $\infty$</li>
+<li>the absolute value of the function $H(\theta)=E\left[\frac{\partial^{2}}{\partial \theta^{2}} \ln f\left(X_{i}, \theta\right)\right]$ is bounded by some constant and is nonzero.</li>
+</ol>
+<p>Assumptions M.5 and M.6 facilitate the application of the Taylor series expansion in order to derive the asymptotic distribution of MLE $\hat{\theta}$.</p>
+<ul>
+<li>The function $\frac{\partial}{\partial \theta} \ln f(x, \theta)$ is called the score function;</li>
+<li>The function $H(\theta)$ is called the Hessian matrix (it is a square matrix when $\theta$ is a parameter vector).</li>
+</ul>
+<p><strong>Remarks:</strong></p>
+<p>The <strong>scalar parameter assumption</strong> is made for simplicity. The results obtained below can be extended to the case of a parameter vector in a straightforward manner, but it does not offer much additional insight into the asymptotic properties of MLE.</p>
+<h3 id="832-consistency-of-mle">8.3.2 Consistency of MLE</h3>
+<p>【Lemma 8.4】<strong>Extreme Estimator Lemma</strong>; White (1994, Theorem 3.4): Suppose</p>
+<ol>
+<li>$Q(\theta)$ is a nonstochastic function continuous in $\theta \in \Theta,$ and $\theta_{0} \in \Theta$ is the unique maximizer of $Q(\theta)$ over $\Theta,$ where $\Theta$ is a compact set,</li>
+<li>with probability one, $\hat{Q}_{n}(\theta)$ is a sequence of random functions continuous in $\theta \in \Theta$</li>
+<li>$ \lim _{n \rightarrow \infty} \sup <em>{\theta \in \Theta}\left|\hat{Q}</em>{n}(\theta)-Q(\theta)\right|=0$ almost surely.</li>
+</ol>
+<p>Then $\hat{\theta}=\arg \max <em>{\theta \in \Theta} \hat{Q}</em>{n}(\theta)$ exists and $\hat{\theta} \rightarrow \theta_{0}$ a.s. $n \rightarrow \infty$.</p>
+<p>Proof: See White (1994, Proof of Theorem 3.4).</p>
+<p><strong>Remarks:</strong></p>
+<p>It implies that the largest difference between $\hat{Q}_{n}(\theta)$ and $Q(\theta)$ over the parameter space $\Theta$ vanishes to zero as $n \rightarrow \infty$ almost surely.</p>
+<p>【Theorem 8.5】<strong>Consistency of MLE</strong>: Suppose Assumptions <strong>M.1-M.4</strong> hold, and $\hat{\theta}=$ $\arg \max <em>{\theta \in \Theta} \sum</em>{i=1}^n \ln f\left(X_{i}, \theta\right) .$ Then as $n \rightarrow \infty$</p>
+<p>$$
+\hat{\theta} \rightarrow \theta_{0} \text { a.s.}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>We apply the extreme estimator lemma.</p>
+<p>Given Assumption M.2, we have $Q(\theta)=E\left[\ln f\left(X_{i}, \theta\right)\right]$ is a continuous function of $\theta \in \Theta,$ and $\theta_{0}$ is the unique maximizer of $Q(\theta)$ over the compact set $\Theta$ by Assumptions M.3 and M.4.​</p>
+<p>Now, put
+$$
+\begin{aligned}
+\hat{Q}<em>{n}(\theta)&amp;= \frac{1}{n} \ln \hat{L}(\theta | \mathbf{X}^n) \<br>
+&amp;=n^{-1} \ln \prod^n</em>{i=1} f(X_i, \theta) \<br>
+&amp;=n^{-1} \sum_{i=1}^{n} \ln f\left(X_{i}, \theta\right)
+\end{aligned}
+$$
+Then, given Assumptions M.1-M.3 and USLLN in Lemma 7.10, Chapter 7, we have $\sup_{\theta \in \Theta}\left|\hat{Q}_{n}(\theta)-Q(\theta)\right| \rightarrow 0$ as $n \rightarrow \infty$ almost surely.</p>
+<p>It follows from the extreme estimator lemma that MLE $\hat{\theta} \rightarrow \theta_{0}$ almost surely $n \rightarrow \infty$.</p>
+<p><strong>Remarks:</strong></p>
+<p>We do not require $\theta_{0}$ to be an interior point of parameter space $\Theta$ in establishing the consistency of MLE $\hat{\theta}$. The consistency theorem allows that $\theta_{0}$ is a corner solution (i.e., $\theta_{0}$ can be on the boundary of $\Theta$).</p>
+<p>There is no need to assume differentiability of the log-likelihood function $\ln f(x, \theta)$ with respect to $\theta$. In fact, the FOC may fail when there exists a corner solution even if $\ln f(x, \theta)$ is differentiable with respect to $\theta$.</p>
+<h3 id="833-asymptotic-normality">8.3.3 Asymptotic Normality</h3>
+<p>【Lemma 8.6】<strong>Zero Expectation for Score Function</strong>: Suppose $f(x, \theta)$ is a PDF model and $f(x, \theta)$ is continuously differentiable with respect to $\theta \in \Theta,$ where $\theta$ is an interior point in parameter space$\Theta .$ Then for all $\theta$ in the interior of $\Theta$</p>
+<p>$$
+E_{\theta}[S(x, \theta)]=\int_{-\infty}^{\infty} \frac{\partial \ln f(x, \theta)}{\partial \theta} f(x, \theta) d x=0
+$$</p>
+<p>where Score function
+$$
+S(X_i,\theta) = \frac{\partial \ln f(X_i, \theta)}{\partial \theta}
+$$
+A similar result holds for a PMF model.</p>
+<p><strong>Proof:</strong></p>
+<p>Given $f(x, \theta)$ is a PDF model, $f(x, \theta)$ is a PDF for any $\theta \in \Theta .$ It follows that for any $\theta$ in the interior of $\Theta$
+$$
+\int_{-\infty}^{\infty} f(x, \theta) d x=1
+$$
+Differentiating this equation and exchanging the order of integration and differentiation, we have</p>
+<p>$$
+\begin{aligned}
+&amp; \frac{d}{d \theta} \int_{-\infty}^{\infty} f(x, \theta) d x =\frac{d}{d \theta}(1)=0 \<br>
+\implies &amp; \int_{-\infty}^{\infty} \frac{\partial f(x, \theta)}{\partial \theta} d x =0 \<br>
+\implies &amp; \int_{-\infty}^{\infty}\left[\frac{\partial \ln f(x, \theta)}{\partial \theta}\right] f(x, \theta) d x =0
+\end{aligned}
+$$</p>
+<p><strong>Remarks:</strong></p>
+<p>It should be noted that</p>
+<p>$$
+\begin{aligned}
+&amp; E_{\theta}\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; \int_{-\infty}^{\infty}\left[\frac{\partial \ln f(x, \theta)}{\partial \theta}\right] f(x, \theta) d x \<br>
+\neq &amp; E\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right]
+\end{aligned}
+$$</p>
+<p>unless $\theta=\theta_{0},$ where $E_{\theta}(\cdot)$ is the expectation with respect to the model distribution $f(x, \theta),$ while $E(\cdot)$ is the expectation with respect to the population distribution $f_{X}(x)$.</p>
+<p>【Lemma 8.7】<strong>Information Matrix Equality</strong>: Suppose a PDF model $f(x, \theta)$ is twice continuously differentiable with respect to $\theta \in \Theta,$ where $\theta$ is an interior point in parameter space
+$\Theta .$ Define
+$$
+\begin{aligned}
+I(\theta) &amp; \equiv E_{\theta}\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right]^2 =\int_{-\infty}^{\infty}\left[\frac{\partial \ln f(x, \theta)}{\partial \theta}\right]^{2} f(x, \theta) d x \<br>
+H(\theta) &amp; \equiv E_{\theta}\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right] =\int_{-\infty}^{\infty}\left[\frac{\partial^{2} \ln f(x, \theta)}{\partial \theta^{2}}\right] f(x, \theta) d x
+\end{aligned}
+$$</p>
+<p>Then for all $\theta$ in the interior of $\Theta$
+$$
+I(\theta)+H(\theta)=0
+$$
+A similar result holds for a PMF model.</p>
+<p><strong>Proof:</strong></p>
+<p>By differentiating the identity $\int_{-\infty}^{\infty} f(x, \theta) d x=1$ with respect to $\theta,$ we then obtain</p>
+<p>$$
+\int_{-\infty}^{\infty} \frac{\partial}{\partial \theta} f(x, \theta) d x=0
+$$</p>
+<p>This can be rewritten as</p>
+<p>$$
+\int_{-\infty}^{\infty} \frac{\partial \ln f(x, \theta)}{\partial \theta} f(x, \theta) d x=0
+$$</p>
+<p>If we further differentiate this equation with respect to $\theta,$ we obtain</p>
+<p>$$
+\int_{-\infty}^{\infty}\left{\left[\frac{\partial^{2} \ln f(x, \theta)}{\partial \theta^{2}}\right] f(x, \theta)+\left[\frac{\partial \ln f(x, \theta)}{\partial \theta}\right] \frac{\partial f(x, \theta)}{\partial \theta}\right} d x=0
+$$</p>
+<p>or equivalently</p>
+<p>$$
+\int_{-\infty}^{\infty}\left[\frac{\partial^{2} \ln f(x, \theta)}{\partial \theta^{2}}\right] f(x, \theta) d x+\int_{-\infty}^{\infty}\left[\frac{\partial \ln f(x, \theta)}{\partial \theta}\right]^{2} f(x, \theta) d x=0
+$$</p>
+<p><strong>Remarks:</strong></p>
+<p>$ I(\theta) $ is called Fisher&rsquo;s Information Matrix, indicates average of squared slopes of likelihood function. By intuition, we can find MLE more easily when $ I(\theta) $ is larger(i.e., the likelihood function is steeper).</p>
+<p>$ H(\theta) $ is called the Hessian matrix of the PMF/PDF model $f(x, \theta)$. This function is negative definite and its absolute value magnitude measures the average degree of the <strong>curvature</strong> of the likelihood function at $\theta$.</p>
+<p>At MLE $ \hat{\theta} $, $H({\hat{\theta}})$ should be negative definite, by Information Matrix Equality, $I(\hat{\theta})$ is positive definite.</p>
+<p>In econometrics, a well-known information matrix test (White 1982 ) checks correct specification of a parametric likelihood model $f(x, \theta)$ by testing whether the following equality holds:
+$$
+E\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right]^{2}+E\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right]=0
+$$</p>
+<p>where the expectation $E(\cdot)$ is taken over the population distribution $f_{X}(x)$ This equality is not the same as the information matrix equality in Lemma 8.7 (why?). It holds when the model $f(x, \theta)$ is correctly specified for the population distribution $f_{X}(x)$ but it generally does not hold when $f(x, \theta)$ is misspecified for $f_{X}(x) .$ (Please verify!)</p>
+<p>【Theorem 8.8】<strong>Asymptotic Normality of MLE</strong>: Suppose Assumptions M.1-M.6 hold. Then as $n \rightarrow \infty$</p>
+<p>$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left[0,-H\left(\theta_{0}\right)^{-1}\right]
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>Because $\hat{\theta} \rightarrow \theta_{0}$ as $n \rightarrow \infty$ almost surely, and $\theta_{0}$ is an interior point of $\Theta, \hat{\theta}$ will be also an interior point of $\Theta$ for $n$ sufficiently large with probability one.</p>
+<p>Thus, we have the FOC:</p>
+<p>$$
+\left.\frac{d \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{d \theta}\right|_{\theta=\hat{\theta}}=0
+$$</p>
+<p>or equivalently,</p>
+<p>$$
+\frac{d}{d \theta} \sum_{i=1}^{n} \ln f\left(X_{i}, \hat{\theta}\right)=0
+$$</p>
+<p>By exchanging the differentiation and summation, we obtain</p>
+<p>$$
+g(\hat{\theta})=\frac{1}{n} \sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \hat{\theta}\right)}{\partial \theta}=0
+$$</p>
+<p>By the <strong>mean value theorem / Taylor expansion</strong>, 
+$$
+g(\hat{\theta})=g(\theta_0)+g'(\bar{\theta}) \cdot(\hat{\theta}- \theta_0)
+$$
+we have,
+$$
+\frac{1}{n} \sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta_{0}\right)}{\partial \theta}+\left[\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2} \ln f\left(X_{i}, \bar{\theta}\right)}{\partial \theta^{2}}\right]\left(\hat{\theta}-\theta_{0}\right)=0 \quad \text{(8.1)}
+$$</p>
+<p>where $\bar{\theta}$ lies on the segment between $\hat{\theta}$ and $\theta_{0},$ that is, $\bar{\theta}=\lambda \hat{\theta}+(1-\lambda) \theta_{0}$ for some $\lambda \in(0,1) .$ Note that $\left|\bar{\theta}-\theta_{0}\right|=\left|\lambda\left(\hat{\theta}-\theta_{0}\right)\right| \leq\left|\hat{\theta}-\theta_{0}\right| \rightarrow 0$ as $n \rightarrow \infty$ almost surely.</p>
+<p>Now, define the sample Hessian matrix
+$$
+\hat{H}(\theta)=\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}
+$$</p>
+<p>By matrix operation from equality 8.1, we have
+$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right)=[-\hat{H}(\bar{\theta})]^{-1} \frac{1}{\sqrt{n}} \sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta_{0}\right)}{\partial \theta}
+$$</p>
+<p><strong>Step 1</strong>: show that the second term
+$$
+\frac{1}{\sqrt{n}} \sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta_{0}\right)}{\partial \theta} \stackrel{d}{\rightarrow} N\left(0, I\left(\theta_{0}\right)\right) \text { as } n \rightarrow \infty
+$$</p>
+<p>Define the score function</p>
+<p>$$
+S_{i}(\theta)=\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}, \quad i=1, \cdots, n
+$$</p>
+<p>Then $\left{S_{i}\left(\theta_{0}\right)\right}_{i=1}^{n}$ is an IID sequence given the IID assumption of the random sample $\mathbf{X}^{n} $. Under correct model specification in Assumption M.2 (so $ f_{X}(x)=f(x, \theta_{0}) $ ), we have</p>
+<p>$$
+\begin{aligned}
+E\left[S_{i}\left(\theta_{0}\right)\right] &amp;=\int_{-\infty}^{\infty} \frac{\partial \ln f\left(x, \theta_{0}\right)}{\partial \theta} f_{X}(x) d x \<br>
+&amp;=\int_{-\infty}^{\infty} \frac{\partial \ln f\left(x, \theta_{0}\right)}{\partial \theta} f\left(x, \theta_{0}\right) d x \<br>
+&amp;=0
+\end{aligned}
+$$</p>
+<p>where the last equality follows by Lemma $8.6 .$ This is actually the FOC of max $<em>{\theta \in \Theta} E\left[\ln f\left(X</em>{i}, \theta\right)\right]$ when $\theta_{0}$ is an interior point of $\Theta$.</p>
+<p>Furthermore, given $E\left[S_{i}\left(\theta_{0}\right)\right]=0,$ the variance
+$$
+\begin{aligned}
+\operatorname{var}\left[S_{i}\left(\theta_{0}\right)\right] &amp;=E\left[S_{i}\left(\theta_{0}\right)^{2}\right] \<br>
+&amp;=E\left[\frac{\partial \ln f\left(X_{i}, \theta_{0}\right)}{\partial \theta}\right]^{2} \<br>
+&amp;=\int_{-\infty}^{\infty}\left[\frac{\partial \ln f\left(x, \theta_{0}\right)}{\partial \theta}\right]^{2} f\left(x, \theta_{0}\right) d x \<br>
+&amp;=I\left(\theta_{0}\right)&lt;\infty
+\end{aligned}
+$$
+by Assumption M.6, where the third equality follows from correct model specification.</p>
+<p>It follows from CLT for an IID sequence that as $n \rightarrow \infty$
+$$
+\begin{aligned}
+\frac{1}{\sqrt{n}} \sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta_{0}\right)}{\partial \theta}=&amp; \frac{1}{\sqrt{n}} \sum_{i=1}^{n} S\left(X_{i}, \theta_{0}\right) \<br>
+&amp; \stackrel{d}{\rightarrow} N\left(0, I\left(\theta_{0}\right)\right)
+\end{aligned}
+$$
+Next we show $\hat{H}(\bar{\theta}) \rightarrow H\left(\theta_{0}\right)$ as $n \rightarrow \infty$ almost surely, where $H(\theta)$ is defined in Lemma 8.7</p>
+<p><strong>Step 2:</strong></p>
+<p>Put
+$$
+\begin{aligned}
+\bar{H}(\theta) &amp;=E\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right] \<br>
+&amp;=\int_{-\infty}^{\infty} \frac{\partial^{2} \ln f(x, \theta)}{\partial \theta^{2}} f_{X}(x) d x
+\end{aligned}
+$$</p>
+<p>Note that $\bar{H}(\theta) \neq H(\theta)$ unless $\theta=\theta_{0},$ where $H(\theta)$ is defined as in Lemma 8.7. We write</p>
+<p>$$
+\hat{H}(\bar{\theta})-H\left(\theta_{0}\right)=[\hat{H}(\bar{\theta})-\bar{H}(\bar{\theta})]+\left[\bar{H}(\bar{\theta})-H\left(\theta_{0}\right)\right]
+$$</p>
+<p>For the second term, we have</p>
+<p>$$
+\begin{aligned}
+\bar{H}(\bar{\theta})-H\left(\theta_{0}\right) &amp;=\bar{H}(\bar{\theta})-\bar{H}\left(\theta_{0}\right) \<br>
+&amp; \rightarrow 0 \text { a.s. }
+\end{aligned}
+$$</p>
+<p>by Lemma 7.8, the continuity of the function $\bar{H}(\theta)=E\left[\frac{\partial^{2}}{\partial \theta^{2}} \ln f\left(X_{i}, \theta\right)\right]$ given Assumption M.6, and $\bar{\theta}-\theta_{0} \rightarrow 0$ as $n \rightarrow \infty$ almost surely.</p>
+<p>For the first term, we have</p>
+<p>$$
+\begin{array}{l}
+\quad|\hat{H}(\bar{\theta})-\bar{H}(\bar{\theta})| \<br>
+=\left|\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2} \ln f\left(X_{i}, \bar{\theta}\right)}{\partial \theta^{2}}-\left{E\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right]\right}_{\theta=\bar{\theta}}\right| \<br>
+\leq \sup _{\theta \in \Theta}\left|\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}-E\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right]\right| \<br>
+=\sup _{\theta \in \Theta}|\hat{H}(\theta)-\bar{H}(\theta)| \<br>
+\rightarrow 0 \text { a.s. }
+\end{array}
+$$</p>
+<p>as $n \rightarrow \infty$ by USLLN in Lemma 7.10 . It follows that as $n \rightarrow \infty,$ we have $\hat{H}(\bar{\theta})-$ $H\left(\theta_{0}\right) \rightarrow 0$ as $n \rightarrow \infty$ almost surely, and so</p>
+<p>$$
+\hat{H}(\bar{\theta})^{-1} \rightarrow H\left(\theta_{0}\right)^{-1} \text {a.s. }
+$$</p>
+<p>given that $H\left(\theta_{0}\right)$ is not zero.</p>
+<p>It follows from Slutsky&rsquo;s theorem that as $n \rightarrow \infty$
+$$
+\begin{aligned}
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right)=&amp;[-\hat{H}(\bar{\theta})]^{-1} \frac{1}{\sqrt{n}} \sum_{i=1}^{n} S\left(X_{i}, \theta_{0}\right) \<br>
+&amp; \stackrel{d}{\rightarrow} N\left(0, H\left(\theta_{0}\right)^{-1} I\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1}\right)
+\end{aligned}
+$$
+since $I\left(\theta_{0}\right)=-H\left(\theta_{0}\right)$ by Lemma 8.7 (the IM equality), we have</p>
+<p>$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0,-H\left(\theta_{0}\right)^{-1}\right)
+$$</p>
+<p><strong>Remarks:</strong></p>
+<p>The function
+$$
+H(\theta) \equiv E_{\theta}\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right]=\int_{-\infty}^{\infty} \frac{\partial^{2} \ln f(x, \theta)}{\partial \theta^{2}} f(x, \theta) d x
+$$</p>
+<p>is called the Hessian matrix of the PMF/PDF model $f(x, \theta)$, where the expectation $E_{\theta}(\cdot)$ is taken under the PDF model $f(x, \theta)$. This function is negative definite and its absolute value magnitude measures the degree of the curvature(曲率) of the likelihood function at $\theta .$</p>
+<p>Thus, the efficiency of the MLE estimator $\hat{\theta}<em>{n}$ depends on the curvature of the likelihood function at the true parameter value $\theta</em>{0} .$</p>
+<ul>
+<li>If the degree of the curvature of the log-likelihood function is large so that the likelihood function has a sharp peak, it will be easy to estimate $\theta_{0}$ precisely.</li>
+<li>On the other hand, if the degree of the curvature is small so that the likelihood function is flat, it will be difficult to estimate $\theta_{0}$ precisely.</li>
+</ul>
+<p>Figure 8.3 below plots the population likelihood function $E\left[\ln f\left(X_{i}, \theta\right)\right]$ for the cases where there is a sharp peak and there is a flat peak for $E\left[\ln f\left(X_{i}, \theta\right)\right]$ at the true parameter value $\theta_{0}$ respectively:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200524211347.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200524211347.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200524211347.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200524211347.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200524211347.png"
+        title="20200524211347.png" /></div></p>
+<p>The asymptotic normality $\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0,-H\left(\theta_{0}\right)^{-1}\right)$ implies that the asymptotic mean of $\sqrt{n}\left(\hat{\theta}-\theta_{0}\right)$ is zero, and the asymptotic variance of $\sqrt{n}\left(\hat{\theta}-\theta_{0}\right)$ is equal to $-H\left(\theta_{0}\right)^{-1}$.</p>
+<p>$-\hat{H}\left(\hat{\theta}\right)^{-1}$ can be used as asymptotic variance estimator.</p>
+<p><strong>Question:</strong> Why is the asymptotic normality result for MLE useful in practice?</p>
+<p>It can be used to construct confidence interval estimators and hypothesis test statistics, among other things.</p>
+<p>For example, an asymptotic $100(1-\alpha) %$ confidence interval estimator for $\theta_{0}$ is given by a random interval $\left[\theta_{L}, \theta_{U}\right],$ where $\theta_{L}=\theta_{L}\left(\mathbf{X}^{n}\right)$ and $\theta_{U}=\theta_{U}\left(\mathbf{X}^{n}\right),$ such that</p>
+<p>$$
+\lim <em>{n \rightarrow \infty} P\left(\theta</em>{L} \leq \theta_{0} \leq \theta_{U}\right)=1-\alpha
+$$</p>
+<p>Given $\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0,-H\left(\theta_{0}\right)^{-1}\right)$ and $\hat{H}(\hat{\theta}) \rightarrow H\left(\theta_{0}\right)$ as $n \rightarrow \infty$ almost surely, we
+have
+$$
+\sqrt{-n \hat{H}(\hat{\theta})}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N(0,1)
+$$</p>
+<p>by Slutsky&rsquo;s theorem. Therefore, as $n \rightarrow \infty$</p>
+<p>$$
+P\left[-z_{\alpha / 2} \leq \sqrt{-n \hat{H}(\hat{\theta})}\left(\hat{\theta}-\theta_{0}\right) \leq z_{\alpha / 2}\right] \rightarrow 1-\alpha
+$$</p>
+<p>where $z_{\alpha / 2}$ is the upper-tailed $\mathrm{N}(0,1)$ critical value at level $\alpha / 2,$ namely</p>
+<p>$$
+P\left(Z \geq z_{\alpha / 2}\right)=\frac{\alpha}{2}
+$$</p>
+<p>where $Z \sim N(0,1)$.</p>
+<p>This can be equivalently written as
+$$
+P\left[\hat{\theta}-\frac{z_{\alpha / 2}}{\sqrt{n}} \sqrt{\frac{1}{-\hat{H}(\hat{\theta})}} \leq \theta_{0} \leq \hat{\theta}+\frac{z_{\alpha / 2}}{\sqrt{n}} \sqrt{\frac{1}{-\hat{H}(\hat{\theta})}}\right] \rightarrow 1-\alpha
+$$</p>
+<p>as $n \rightarrow \infty$.</p>
+<p>We then obtain the asymptotic $(1-\alpha) 100 %$ confidence interval as follows:
+$$
+\theta-\sqrt{-\frac{1}{n H(\theta)}} z_{\frac{a}{2}} \leq \theta_{0} \leq \theta+\sqrt{-\frac{1}{n H(\theta)}} z_{\frac{a}{2}}
+$$</p>
+<p>where $z_{\alpha / 2}$ is the upper-tailed critical value of $N(0,1)$ at level $\frac{\alpha}{2}$.</p>
+<h2 id="84-method-of-moments-and-generalized-method-of-moments">8.4 Method of Moments and Generalized Method of Moments</h2>
+<h3 id="841-method-of-moments-estimation">8.4.1 Method of Moments Estimation</h3>
+<p>Suppose $f(x, \theta),$ where $\theta \in \Theta,$ is a parametric PMF/ PDF model for the unknown population distribution $f_{X}(x)$ and $f_{X}(x)=f\left(x, \theta_{0}\right)$ for some parameter value $\theta_{0} \in \Theta$. This implies that the parametric probability model $f(x, \theta)$ is correctly specified for the population distribution $f_{X}(x)$.</p>
+<p>Suppose $\mathrm{X}^{n}$ is an IID random sample from the population distribution $f_{X}(x)$.</p>
+<p>【sample moment】We first define a $q \times 1$ statistic vector
+$$
+\hat{m}=\frac{1}{n} \sum_{i=1}^{n} m\left(\mathbf{X}^{n}\right)
+$$</p>
+<p>which will converge in probability to $E\left[m\left(\mathbf{X}^{n}\right)\right]$ where $E(\cdot)$ is under the unknown true joint distribution of $\mathrm{X}^{n}$.</p>
+<p>【Population moment】Next, we compute its mathematical expectation under the <strong>model distribution</strong>:</p>
+<p>$$
+\begin{aligned}
+M(\theta) &amp;=E_{\theta}\left[m\left(\mathbf{X}^{n}\right)\right] \<br>
+&amp;=\int_{\mathbb{R}^{n}} m\left(\mathbf{x}^{n}\right) f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n}
+\end{aligned}
+$$</p>
+<p>where the mathematical expectation $E_{\theta}(\cdot)$ is taken under the joint distribution $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)$ of $\mathbf{X}^{n},$ where $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)=\Pi_{i=1}^{n} f\left(x_{i}, \theta\right)$ when $\mathbf{X}^{n}$ is an IID random sample</p>
+<p>【Moment matching】Then we solve the system of $q$ equations
+$$
+\hat{m}=M(\hat{\theta})
+$$</p>
+<p>That is, we choose a parameter value $\hat{\theta}=\hat{\theta}_{n}\left(\mathrm{X}^{n}\right)$ to match the sample moment $\hat{m}$ with the population moment $M(\theta)$.</p>
+<p>The solution $\hat{\theta}$ is called the <strong>method of moments estimator (MME)</strong> for the true parameter value $\theta_{0}$.</p>
+<p>Alternatively, we can define a vector-valued sample moment function</p>
+<p>$$
+\hat{m}(\theta)=m\left(\mathbf{X}^{n}\right)-M(\theta), \quad \theta \in \Theta
+$$</p>
+<p>The method of moments estimator $\hat{\theta}$ is the solution of the equations</p>
+<p>$$
+\hat{m}(\theta)=0
+$$
+【MME Procedure】Often, when $\mathbf{X}^{n}$ is an IID random sample from population $f_{X}(x)=$ $f\left(x, \theta_{0}\right)$ for some parameter value $\theta_{0},$ we have the following procedures:</p>
+<ol>
+<li>Compute population moments $E_{\theta}\left(X_{i}^{k}\right), k=1,2, \cdots,$ under the PMF/PDF model $f(x, \theta)$
+$$
+\begin{aligned}
+M_{k}(\theta) &amp;=E_{\theta}\left(X_{i}^{k}\right) \<br>
+&amp;=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}} x^{k} f(x, \theta) &amp; \text { if } X \text { is a DRV } \<br>
+\int_{-\infty}^{\infty} x^{k} f(x, \theta) d x &amp; \text { if } X \text { is a CRV }
+\end{array}\right.
+\end{aligned}
+$$</li>
+</ol>
+<p>Note that the population moment $M_{k}(\theta)$ depends on parameter $\theta$.</p>
+<ol start="2">
+<li>
+<p>Compute the sample moments from random sample $\mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$
+$$
+\hat{m}_{k}=n^{-1} \sum_{i=1}^{n} X_{i}^{k}, \quad k=1,2, \cdots
+$$</p>
+</li>
+<li>
+<p>For each $n,$ match the sample moments and the population moments by choosing some parameter value $\hat{\theta}$. In general, if $\theta$ is a $p \times 1$ parameter vector, we need $p$ equations:
+$$
+\left{\begin{array}{l}
+\hat{m}<em>{1}=M</em>{1}(\hat{\theta}) \<br>
+\hat{m}<em>{2}=M</em>{2}(\hat{\theta}) \<br>
+\qquad \dots \<br>
+\hat{m}<em>{p}=M</em>{p}(\hat{\theta})
+\end{array}\right.
+$$</p>
+</li>
+</ol>
+<p>Solving for these $p$ equations will yield MME $\hat{\theta}=\hat{\theta}_{n}\left(\mathbf{X}^{n}\right)$</p>
+<p>【Consistency of MME】MME $\hat{\theta}$ <strong>consistently</strong> estimate the true parameter value $\theta_{0} $.</p>
+<p><strong>Proof:</strong></p>
+<p>By WLLN, the sample moment</p>
+<p>$$
+\begin{aligned}
+\hat{m}<em>{k} = \frac{1}{n} \sum^n</em>{i=1} X_i^k\stackrel{p}{\rightarrow} E\left(X_{i}^{k}\right) &amp;=\int_{-\infty}^{\infty} x^{k} f_{X}(x) d x \<br>
+&amp;=\int_{-\infty}^{\infty} x^{k} f\left(x, \theta_{0}\right) d x \<br>
+&amp;=M_{k}\left(\theta_{0}\right)
+\end{aligned}
+$$</p>
+<p>where the second equality follows by correct model specification.</p>
+<p>If we set</p>
+<p>$$
+\hat{m}<em>{k}=M</em>{k}(\hat{\theta}) \text { for any } n
+$$</p>
+<p>we will have</p>
+<p>$$
+\hat{m}<em>{k} =M</em>{k}(\hat{\theta}) \stackrel{p}{\rightarrow} M_{k}\left(\theta_{0}\right) \text { as } n \rightarrow \infty
+$$</p>
+<p>By continuous mapping theorem, we expect that $\hat{\theta}$ will converge in probability to $\theta_{0}$ as $n \rightarrow \infty$.</p>
+<p><strong>Remarks:</strong></p>
+<p>Although the population moment function $ M_{k}(\theta) $ is calculated using the population distribution model $ f(x, \theta)$,  MME only uses a finite number of sample moments, which may not capture all information about $ \theta $ that is contained in the random sample $ \mathbf{X}^{n} $ (this occurs when the sample moments used are not sufficient statistics for $ \theta $ ). As a result, it may not be a most efficient estimator of $ \theta $.</p>
+<p>In contrast, MLE captures all information about $ \theta $ that is contained in $ \mathbf{X}^{n} $ because it uses the entire joint  PMF/ PDF of the random sample $ \mathrm{X}^{n} $.</p>
+<p>Therefore, MME may not be as efficient as MLE, unless the sample moments used are sufficient statistics for the parameters of interest.</p>
+<p>But sometimes, population distribution is unknown, or distribution is known but PMF/ PDF is unknown (some distribution&rsquo;s PMF/ PDF can&rsquo;t be expressed). In these situation, MLE is unavailable, MME can be used to do estimation.</p>
+<p>【Example 8.5】Suppose $\mathbf{X}^{n}$ is an IID $E X P(\theta)$ random sample. Find an estimator for $\theta$ using MME​ and MLE, respectively.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>MME: Because the exponential PDF
+$$
+f(x, \theta)=\left{\begin{array}{cl}
+\frac{1}{\theta} e^{-x / \theta}, &amp; \text { if } x&gt;0 \<br>
+0, &amp; \text { if } x \leq 0
+\end{array}\right.
+$$</li>
+</ol>
+<p>it can be shown that</p>
+<p>$$
+\begin{aligned}
+M_{1}(\theta) &amp;=E_{\theta}\left(X_{i}\right) \<br>
+&amp;=\int_{-\infty}^{\infty} x f(x, \theta) d x \<br>
+&amp;=\int_{0}^{\infty} x \frac{1}{\theta} e^{-x / \theta} d x \<br>
+&amp;=\theta
+\end{aligned}
+$$</p>
+<p>On the other hand, the first sample moment is the sample mean:</p>
+<p>$$
+\hat{m}<em>{1}=\bar{X}</em>{n}
+$$</p>
+<p>Moment matching yields</p>
+<p>$$
+\hat{m}<em>{1}=M</em>{1}(\hat{\theta})=\hat{\theta}
+$$</p>
+<p>We then obtain MME</p>
+<p>$$
+\hat{\theta}=\hat{m}<em>{1}=\bar{X}</em>{n}
+$$</p>
+<ol start="2">
+<li>MLE: Given the IID $\operatorname{EXP}(\theta)$ assumption, the likelihood function of $\mathbf{X}^{n}$
+$$
+\begin{aligned}
+\hat{L}\left(\theta | \mathbf{X}^{n}\right) &amp;=\prod_{i=1}^{n} f\left(X_{i}, \theta\right) \<br>
+&amp;=\left(\frac{1}{\theta}\right)^{n} e^{-\frac{1}{\theta} \Sigma_{i=1}^{n} X_{i}}
+\end{aligned}
+$$</li>
+</ol>
+<p>Therefore, the log-likelihood function is</p>
+<p>$$
+\ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)=-n \ln \theta-\frac{1}{\theta} \sum_{i=1}^{n} X_{i}
+$$</p>
+<p>The FOC:</p>
+<p>$$
+\frac{\partial \ln \hat{L}\left(\hat{\theta} | \mathbf{X}^{n}\right)}{\partial \theta}=-\frac{n}{\hat{\theta}}+\frac{1}{\hat{\theta}} \sum_{i=1}^{n} X_{i}=0
+$$</p>
+<p>It follows that MLE</p>
+<p>$$
+\hat{\theta}=\bar{X}_{n}
+$$</p>
+<p>Both MME and MLE give the same estimator in this example. Therefore, they are equally efficient in estimating $\theta_{0} .$ The reason that MME is as efficient as MLE is that the sample mean or the first sample moment $\bar{X}_{n}$ is a sufficient statistic for $\theta$</p>
+<p>【Example 8.6】Suppose $\mathbf{X}^{n}$ is an IID $N\left(\mu, \sigma^{2}\right)$ random sample. Find MME for $\theta=\left(\mu, \sigma^{2}\right)$.</p>
+<p><strong>Solution:</strong></p>
+<p>The first two population and sample moments are given respectively:</p>
+<p>$$
+\begin{aligned}
+M_{1}(\theta) &amp;=E_{\theta}\left(X_{i}\right)=\mu \<br>
+M_{2}(\theta) &amp;=E_{\theta}\left(X_{i}^{2}\right)=\sigma^{2}+\mu^{2} \<br>
+\hat{m}_{1} &amp;=\bar{X}_{n} \<br>
+\hat{m}_{2} &amp;=n^{-1} \sum_{i=1}^{n} X_{i}^{2}
+\end{aligned}
+$$</p>
+<p>We match the first two sample moments with their population counterparts respectively:</p>
+<p>$$
+\begin{aligned}
+\bar{X}<em>{n} &amp;=\hat{\mu} \<br>
+n^{-1} \sum</em>{i=1}^{n} X_{i}^{2} &amp;=\hat{\sigma}^{2}+\hat{\mu}^{2}
+\end{aligned}
+$$</p>
+<p>It follows that</p>
+<p>$$
+\begin{aligned} 
+\hat { \mu } &amp; = \bar { X } _ { n } 
+\ \hat { \sigma } ^ { 2 } = &amp; n ^ { - 1 } \sum _ { i = 1 } ^ { n } \left( X _ { i } - \bar { X } _ { n } \right) ^ { 2 } 
+\end{aligned}
+$$</p>
+<p>These MME are the same as MLE. Again, this is due to the fact that $ \left( \bar { X } _ { n } , S _ { n } ^ { 2 } \right) $ is a sufficient statistic for $ \theta = \left( \mu , \sigma ^ { 2 } \right) $ for the normal random sample $ \mathbf { X } ^ { n } $.</p>
+<h3 id="842-generalized-method-of-moments-estimation">8.4.2 Generalized Method of Moments Estimation</h3>
+<p>Often in econometrics, the population moment function $ M ( \theta ) = E _ { \theta } \left[ m \left( X ^ { n } \right) \right] $ is not attainable, due to the fact that the population distribution of an economic process is usually not specified.</p>
+<p>However, economic and financial theory often implies that certain moment conditions must hold when evaluated at the true parameter value $ \theta _ { 0 } . $ In other words, economic theories or hypotheses are often characterized by a set of moment conditions.</p>
+<p>Specifically, suppose $ \theta $ is a $ p \times 1 $ parameter vector, and there exists a $ p \times 1 $ moment function $ m ( X , \theta ) $ such that
+$$
+E \left[ m \left( X , \theta _ { 0 } \right) \right] = 0 \text { for some } \theta _ { 0 } \in \Theta 
+$$
+where the expectation is taken over the unknown true distribution of $X$: This may follow from economic theory (e.g., the equilibrium condition in a rational expectations model).</p>
+<p>【Example 8.7】An investor who maximizes an intertemporal utility function</p>
+<p>$$
+\max <em>{\left{C</em>{t}\right}} U\left(C_{t}, C_{t+1}\right)=u\left(C_{t}\right)+\beta E\left[u\left(C_{t+1}\right) | I_{t}\right]
+$$</p>
+<p>subject to an inter-temporal budget constraint will choose a sequence of consumptions $ \left{C_{t}\right} $ that satisfies the first order condition</p>
+<p>$$
+P_{t}=\beta E\left[\frac{u^{\prime}\left(C_{t+1}\right)}{u^{\prime}\left(C_{t}\right)} Y_{t+1} | I_{t}\right]
+$$</p>
+<p>where $ \beta $ is a time discount factor parameter, $ Y_{t+1} $ is the random payoff of an asset at time $ t+1 $ and $ P_{t} $ is the price of the asset at time $ t $, and $ E_{t}(\cdot)=E\left(\cdot | I_{t}\right) $ is the conditional expectation given the information set $ I_{t} $ available at time $t$. The FOC is also called the Euler equation.</p>
+<p>It states that in the equilibrium, the current asset price should be equal to the expected future payoff of the asset after risk compensation. Here, the factor $ \beta \frac{u^{\prime}\left(C_{t+1}\right)}{u^{\prime}\left(C_{t}\right)} $ is called the stochastic discount factor;</p>
+<p>it charcterizes the risk attitude of the representative economic agent. Define the stochastic pricing error</p>
+<p>$$
+\varepsilon_{t+1}(\theta)=\beta \frac{u^{\prime}\left(C_{t+1}\right)}{u^{\prime}\left(C_{t}\right)} Y_{t+1}-P_{t}
+$$</p>
+<p>where parameter $ \theta $ contains time discount factor $ \beta $ and any other structral parameters. The Euler equation can be equivalently characterized by the following conditional moment condition:</p>
+<p>$$
+E\left[\varepsilon_{t+1}\left(\theta_{0}\right) | I_{t}\right]=0
+$$</p>
+<p>This implies that a rational economic agent does not make any systematic pricing error in each time period.</p>
+<p>Now define a moment function
+$$
+m\left(X_{t+1}, \theta\right)=\left[\beta \frac{u^{\prime}\left(C_{t+1}\right)}{u^{\prime}\left(C_{t}\right)} Y_{t+1}-P_{t}\right] Z_{t}
+$$
+where $ X_{t+1}=\left(C_{t}, C_{t+1}, P_{t}, Y_{t+1}, Z_{t}^{\prime}\right)^{\prime} $ and $ Z_{t} \in I_{t} $ is the vector of so-called instrumental variables available to the economic agent at time $t$. Then by the law of iterated expectations, we have
+$$
+\begin{aligned}
+E\left[m\left(X_{t+1}, \theta_{0}\right)\right] &amp;=E\left{E\left[m\left(X_{t+1}, \theta_{0}\right) | I_{t}\right]\right} \<br>
+&amp;=0
+\end{aligned}
+$$
+where $ E(\cdot) $ is the unconditional expectation under the unknown population distribution.</p>
+<p>Question: In this example, where does parameter $ \theta $ come from?</p>
+<p>Besides the time discount parameter $ \beta, $ some parameter(s) may arise from the utility function to characterize risk aversion of the economic agent.</p>
+<p>For example, when the economic agent has a constant relative risk aversion utility function
+$$
+u\left(C_{t}\right)=\frac{C_{t}^{\gamma}-1}{\gamma}
+$$
+the parameter
+$$
+\gamma=-C_{t} \frac{u^{\prime \prime}\left(C_{t}\right)}{u^{\prime}\left(C_{t}\right)}
+$$
+measures the degree of risk aversion of the economic agent. In this case, $ \theta=(\beta, \gamma)^{\prime} $.</p>
+<p>【Example 8.8】<strong>Capital Asset Pricing Model CAPM</strong>: Define $ Y_{t} $ as an $ l \times 1 $ vector of excess returns for $ l $ assets (or portfolios of assets) in period $t$. For these $l$ assets, the excess returns can be described using the excess-return market model:
+$$
+\begin{aligned}
+Y_{t} &amp;=\alpha_{0}+\beta_{1} R_{m t}+\varepsilon_{t} \<br>
+&amp;=\theta_{0}^{\prime} W_{t}^{\prime}+\varepsilon_{t}
+\end{aligned}
+$$
+where $ W_{t}=\left(1, R_{m t}\right)^{\prime} $ is a bivariate vector, $ R_{m t} $ is the excess market portfolio return, $ \theta_{0} $ is a $ 2 \times l $ parameter matrix, and $ \varepsilon_{t} $ is an $ l \times 1 $ disturbance representing the idiosyncratic risk, with
+$ E\left(\varepsilon_{t} | W_{t}\right)=0 $.</p>
+<p>Put $ X_{t}=\left(Y_{t}, W_{t}^{\prime}\right)^{\prime} . $ Define the $ q \times 1 $ moment function
+$$
+m\left(X_{t}, \theta\right)=W_{t} \otimes\left(Y_{t}-\theta^{\prime} W_{t}\right)
+$$
+where $ q=2 l $ and $ \otimes $ denotes the Kronecker product. When CAPM holds, we have
+$$
+E\left[m\left(X_{t}, \theta_{0}\right)\right]=0
+$$
+These $ q \times 1 $ moment conditions form a basis to estimate and test CAPM.</p>
+<h4 id="basic-idea">Basic Idea</h4>
+<p>Suppose we are given $ q $ population moment conditions:
+$$
+E\left[m\left(X_{i}, \theta_{0}\right)\right]=0
+$$
+where $ m\left(X_{i}, \theta\right) $ is a $ q \times 1 $ random vector, $ \theta_{0} $ is a $ p \times 1 $ true parameter vector, $ E(\cdot) $ is taken over the unknown population distribution of $ X_{i}, $ and 0 is a $ q \times 1 $ zero vector.</p>
+<p>We could estimate $ \theta_{0} $ by finding an estimator $ \hat{\theta} $ which matches the sample moment to the population moment $ E\left[m\left(X_{i}, \theta_{0}\right)\right]=0 $
+$$
+\hat{m}(\hat{\theta})=n^{-1} \sum_{i=1}^{n} m\left(X_{i}, \hat{\theta}\right)=0
+$$
+In practice, we can use $ q $ moment conditions, where $ q \geq p, $ namely the number of moment conditions is larger than or at least equal to the number of unknown parameters.</p>
+<p>In this case, it is generally impossible to find a solution that satisfies the equation $ \hat{m}(\theta)=0 $ exactly. We can choose an estimator $ \hat{\theta} $ to make $ \hat{m}(\theta) $ as close to a zero vector as possible. More specifically, we observe the estimator that solves the following minimization problem
+$$
+\hat{\theta}=\arg \min _{\theta \in \Theta} \hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta)
+$$</p>
+<p>where $ \hat{W} $ is a $ q \times q $ random nonsingular symmetric matrix such that $ \hat{W} \stackrel{p}{\rightarrow} W $ as $ n \rightarrow \infty, $ and $ W $ is a $ q \times q $ nonstochastic, nonsingular and symmetric matrix.</p>
+<p>One can choose $ \hat{W}=I, $ a $ q \times q $ identity matrix, which yields a convenient procedure. In this case, the objective function
+$$
+\hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta)=\sum_{k=1}^{q} \hat{m}_{k}^{2}(\theta)
+$$
+where each component is equally weighted. **The classical MME is a special case of the GMM estimation with $ q=p $ and $ \hat{W}=I $**.</p>
+<p>There may exist some optimal choice of the weighting matrix $ \hat{W} $ which can give an asymptotically most efficient estimator within a class of estimators, at least asymptotically. Intuitively, the $ q $ components in the sample moment vector $ \hat{m}(\theta) $ may have different sampling variabilities and may be correlated with each other as well. If the <strong>weighting matrix $ \hat{W} $ can downweight the components with larger variances</strong> and eliminate their correlations, the resulting estimator will be efficient.</p>
+<p>The resulting estimator $ \hat{\theta} $ is called the <strong>generalized method of moments (GMM)</strong> estimator. It is also called the minimum chi-square estimator in the statistical literature, because the minimized objective function $ n \hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta) $ follows an asymptotic $ \chi^{2} $ distribution with a suitable choice of $ \hat{W} $.</p>
+<p>Most often, GMM estimation is used in connection with instrumental variables $ Z_{t} $ which define the vector-valued moment function $ m\left(X_{i}, \theta\right) $.</p>
+<p>【Theorem 8.9】<strong>Existence of a GMM Estimator</strong>: Suppose that with probability one, the quadratic form $ \hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta) $ is continuous in $ \theta \in \Theta, $ and that $ \Theta $ is a compact set. Then there exists a global minimizer $ \hat{\theta} $ that solves the minimization problem
+$$
+\hat{\theta}=\arg \min _{\theta \in \Theta} \hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta)
+$$
+<strong>Remarks:</strong></p>
+<p>Most economic theories can be characterized by a set of moment conditions or conditional moment conditions. Thus, GMM has been rather popularly used in econometrics.</p>
+<p>For the reason analogous to that for MME, GMM may be less efficient than MLE if MLE assumes the correct functional form of the population distribution $ f(x, \theta) $.</p>
+<h2 id="85-asymptotic-properties-of-gmm">8.5 Asymptotic Properties of GMM</h2>
+<h3 id="851-regularity-conditions-assumption">8.5.1 Regularity Conditions/ Assumption</h3>
+<p>【Assumption G.1】<strong>IID</strong>: $ \mathrm{X}^{n}=\left(X_{1}, \cdots, X_{n}\right) $ is an IID random sample from some unknown population distribution $ f_{X}(x) $.</p>
+<p>【Assumption G.2】<strong>Moment Function</strong>: The $ q \times 1 $ moment function $ m(x, \theta) $ is continuous in $ (x, \theta) $ and the absolute values of its components are bounded by a nonnegative function $ b(x) $ with $ E\left[b\left(X_{i}\right)\right]&lt;\infty, $ where the expectation $ E(\cdot) $ is taken under the unknown population distribution $ f_{X}(x) $
+$$
+\sup_{\theta \in \Theta}|m_k(X_i, \theta)| \leq b(X_i)
+$$
+which will be used as condition for USLLN.</p>
+<p>【Assumption G.3】<strong>Unique Identification</strong>: There exists one and only one $ p \times 1 $ parameter value $ \theta_{0} $ in $ \Theta $ such that $ E\left[m\left(X_{i}, \theta_{0}\right)\right]=0 $.</p>
+<p>Assumption G. 3 is an identification condition for $ \theta_{0}, $ which is called the true parameter value of the model characterized by the population moment condition $ E\left[m\left(X_{i}, \theta_{0}\right)\right]= 0$.</p>
+<p>The identification condition ensures that $ \theta_{0} $ is the unique probability limit of the GMM estimator $ \hat{\theta} $.</p>
+<p>【Assumption G.4】<strong>Compact Parameter Space</strong>: The $ p $-dimensional parameter space $ \Theta $ is closed and bounded.</p>
+<p>【Assumption G.5】<strong>Weighting</strong>: The $ q \times q $ stochastic weighting matrix $ \hat{W} \rightarrow W $ as $ n \rightarrow \infty $ almost surely, where $ W $ is symmetric, bounded and nonsingular.</p>
+<p>【Assumption G.6】<strong>Interior Solution</strong>: The parameter value $ \theta_{0} $ is an interior point of the parameter space $ \Theta $.</p>
+<p>The interior solution assumption for $ \theta_{0} $ is not needed for the consistency of the GMM estimator $ \hat{\theta}, $ but is needed when we derive the asymptotic normality of the GMM estimator $ \hat{\theta}, $ where we will use a Taylor series expansion of the FOC of the GMM estimation.</p>
+<p>【Assumption G.7】<strong>Smoothness and Moment Conditions</strong>:</p>
+<ol>
+<li>The functions/ matrix $ \frac{\partial}{\partial \theta} m(x, \theta) $ and $ \frac{\partial^{2}}{\partial \theta \partial \theta^{\prime}} m(x, \theta) $ are continuous in $ (x, \theta) $ and the absolute values of their component functions are bounded by a nonnegative function $ b(x) $ with $ E\left[b\left(X_{i}\right)\right]&lt;\infty $.</li>
+<li>The $ q \times q $ symmetric matrix $ V=E\left[m\left(X_{i}, \theta_{0}\right) m\left(X_{i}, \theta_{0}\right)^{\prime}\right] $ is bounded and nonsingular;</li>
+<li>The $ q \times p $ gradient matrix $ G\left(\theta_{0}\right)=E\left[\frac{\partial}{\partial \theta} m\left(X_{i}, \theta_{0}\right)\right] $ is of full rank (equal to $ p $ given $ p \leq q) $</li>
+</ol>
+<p>With assumption G.3 $ E\left[m\left(X_{i}, \theta_{0}\right)\right]= 0$,we have
+$$
+\begin{aligned}
+V&amp;=E\left[m\left(X_{i}, \theta_{0}\right) m\left(X_{i}, \theta_{0}\right)^{\prime}\right]\<br>
+&amp;=Var [m(X_i, \theta_0)] \<br>
+\end{aligned}
+$$
+i.e., $V$ is variance-covariance matrix of $m(X_i, \theta)$.</p>
+<h3 id="852-consistency-of-gmm">8.5.2 Consistency of GMM</h3>
+<p>【Theorem 8.10】<strong>Consistency of GMM</strong>: Suppose Assumptions G.1-G.5 hold. Then as $ n \rightarrow \infty $
+$$
+\hat{\theta} \rightarrow \theta_{0} \text { a.s.}
+$$
+**Proof:**</p>
+<p>The proof is similar to the consistency proof of the MLE.</p>
+<p>We apply the Lemma 8.4 (Extreme Estimator Lemma).</p>
+<p>Suppose 
+$$
+\begin{aligned}
+Q(\theta) &amp;= -[Em(X_i,\theta)]&lsquo;W^{-1}[Em(X_i,\theta)] \<br>
+\hat{Q}(\theta) &amp;= - \hat{m}(\theta)'\hat{W}^{-1} \hat{m}(\theta)
+\end{aligned}
+$$
+where $\hat{m}(\theta) = n^{-1} \sum^n_{i=1} m(X_i,\theta)$.</p>
+<p>With Assumption G.3 (unique identification), $\theta_0$ is the unique maximizer of $Q(\theta)$. While in GMM
+$$
+\begin{aligned}
+\hat{\theta}&amp;=\arg \min <em>{\theta \in \Theta} \hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta)\<br>
+&amp;=\arg \max <em>{\theta \in \Theta}- \hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta)
+\end{aligned}
+$$
+Under assumption G.1, G.2 and G.4, by USLLN, we have
+$$
+\sup</em>{\theta \in  \Theta} |\hat{m}(\theta)-Em(X_i,\theta)| \stackrel{a.s.}{\rightarrow} 0
+$$
+By continuity, 
+$$
+\sup</em>{\theta \in  \Theta} |\hat{Q}(\theta)-Q(\theta)| \stackrel{a.s.}{\rightarrow} 0
+$$
+With, lemma 8.4
+$$
+\hat{\theta}\stackrel{a.s.}{\rightarrow} \theta 
+$$
+Note that $ \theta_{0} $ could be a corner solution so that the FOC may not hold.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200601115151.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200601115151.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200601115151.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200601115151.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200601115151.png"
+        title="20200601115151.png" /></div></p>
+<h3 id="853-asymptotic-normality">8.5.3 Asymptotic Normality</h3>
+<p>【Theorem 8.11】<strong>Asymptotic Normality</strong>: Suppose Assumptions G.1-G.7 hold. Then</p>
+<ol>
+<li><strong>Asymptotic Normality</strong>: as $ n \rightarrow \infty $,
+$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N(0, \Omega)
+$$
+where
+$$
+\begin{array}{c}
+\Omega=\Psi V \Psi^{\prime} 
+\end{array}
+$$</li>
+</ol>
+<p>$V=E\left[m\left(X_{1}, \theta_{0}\right) m\left(X_{1}, \theta_{0}\right)^{\prime}\right]$, and $ \Psi=\left[G\left(\theta_{0}\right) W^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} G\left(\theta_{0}\right) W^{-1}$, and $ G\left(\theta_{0}\right)=E\left[\frac{\partial}{\partial \theta} m\left(X_{i}, \theta_{0}\right)\right] $</p>
+<ol start="2">
+<li>
+<p><strong>Optimal Weighting Matrix</strong>: Moreover, if $ W=V $, then as $ n \rightarrow \infty $,
+$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0,\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}\right)
+$$
+**Proof:**</p>
+</li>
+<li>
+<p>Define the objective function
+$$
+\hat{Q}<em>{n}(\theta)=\hat{m}(\theta)^{\prime} \hat{W}^{-1} \hat{m}(\theta)
+$$
+Noting that the prespecified weighting matrix $ \hat{W} $ is not a function of $ \theta $. With assumption G.6 (Interior Solution) and $ \hat{\theta}\stackrel{a.s.}{\rightarrow} \theta $, we can obtain the FOC as follows:
+$$
+\frac{d \hat{Q}</em>{n}(\hat{\theta})}{d \theta}=2 \hat{G}(\hat{\theta}) \hat{W}^{-1} \hat{m}(\hat{\theta})=0
+$$
+where the $ p \times q $ sample matrix
+$$
+\begin{aligned}
+\hat{G}(\theta) &amp;=\frac{d \hat{m}(\theta)}{d \theta^{\prime}} \<br>
+&amp;=\frac{1}{n} \sum_{i=1}^{n} \frac{\partial m\left(X_{i}, \theta\right)}{\partial \theta^{\prime}}
+\end{aligned}
+$$</p>
+</li>
+</ol>
+<p>By the mean value theorem/ 中值定理, we have
+$$
+\hat{m}(\hat{\theta})=\hat{m}\left(\theta_{0}\right)+\hat{G}(\bar{\theta})^{\prime}\left(\hat{\theta}-\theta_{0}\right)
+$$
+where $ \bar{\theta} $ lies on the segment between $ \hat{\theta} $ and $ \theta_{0}, $ i.e., $ \bar{\theta}=\lambda \hat{\theta}+(1-\lambda) \theta_{0} $ for some $ \lambda \in[0,1] $.</p>
+<p>Substituting this expression into the FOC, we obtain
+$$
+\hat{G}(\hat{\theta}) \hat{W}^{-1} \hat{m}\left(\theta_{0}\right)+\hat{G}(\hat{\theta}) \hat{W}^{-1} \hat{G}(\bar{\theta})^{\prime}\left(\hat{\theta}-\theta_{0}\right)=0
+$$
+Following the reasoning similar to that for the sample Hessian matrix $ \hat{H}(\bar{\theta}) $ in the proof for the asymptotic normality of the MLE, we can show that as $ n \rightarrow \infty $
+$$
+\begin{array}{l}
+\hat{G}(\hat{\theta}) \rightarrow G\left(\theta_{0}\right) \text { a.s. } \<br>
+\hat{G}(\bar{\theta}) \rightarrow G\left(\theta_{0}\right) \text { a.s. }
+\end{array}
+$$
+First, We write</p>
+<p>$$
+\hat{G}(\hat{\theta})-G\left(\theta_{0}\right)=[\hat{G}(\hat{\theta})-G(\hat{\theta})]+\left[G(\hat{\theta})-G\left(\theta_{0}\right)\right]
+$$</p>
+<p>For the second term, we have</p>
+<p>$$
+G(\hat{\theta})-G\left(\theta_{0}\right) \rightarrow 0 \text { a.s. }
+$$</p>
+<p>by Lemma 7.8, the continuity of the function $ G\left(\theta\right)=E\left[\frac{\partial}{\partial \theta} m\left(X_{i}, \theta\right)\right] $ given Assumption G.7, and $\bar{\theta}-\theta_{0} \rightarrow 0$ as $n \rightarrow \infty$ almost surely.</p>
+<p>For the first term, we have
+$$
+\begin{array}{l}
+\quad|\hat{G}(\hat{\theta})-G(\hat{\theta})| \<br>
+=\left|\frac{1}{n} \sum_{i=1}^{n} \frac{\partial m\left(X_{i}, \hat{\theta}\right)}{\partial \theta}-\left{E\left[\frac{\partial m\left(X_{i}, \theta\right)}{\partial \theta}\right]\right}_{\theta=\hat{\theta}}\right| \<br>
+\leq \sup _{\theta \in \Theta}\left|\frac{1}{n} \sum_{i=1}^{n} \frac{\partial m \left(X_{i}, \theta\right)}{\partial \theta}-E\left[\frac{\partial m \left(X_{i}, \theta\right)}{\partial \theta}\right]\right| \<br>
+\rightarrow 0 \text { a.s. }
+\end{array}
+$$</p>
+<p>as $n \rightarrow \infty$ by USLLN in Lemma 7.10 . It follows that as $n \rightarrow \infty,$ we have $ \hat{G}(\hat{\theta}) \rightarrow G\left(\theta_{0}\right) $ as $n \rightarrow \infty$ almost surely, and so</p>
+<p>$$
+\hat{G}(\bar{\theta})-G\left(\theta_{0}\right)=[\hat{G}(\bar{\theta})-\hat{G}(\hat{\theta})]+\left[\hat{G}(\hat{\theta})-G\left(\theta_{0}\right)\right]\rightarrow 0 \text { a.s. }
+$$
+where $ \hat{G}(\bar{\theta})-\hat{G}(\hat{\theta}) \rightarrow 0 \text { a.s. }$by continuity of $ \hat{G}(\cdot) $.</p>
+<p>using USLLN, continuity of the gradient function $ G(\theta)=E\left[\frac{\partial}{\partial \theta} m\left(X_{i}, \theta\right)\right], $ and $ | \bar{\theta}- $ $ \theta_{0}|\leq| \hat{\theta}-\theta_{0} | \rightarrow 0 $ as $ n \rightarrow \infty $ almost surely. Also, we have $ \hat{W} \rightarrow W $ as $ n \rightarrow \infty $
+almost surely by Assumption G.5. It follows that as $ n \rightarrow \infty $
+$$
+\hat{G}(\hat{\theta}) \hat{W}^{-1} G(\bar{\theta})^{\prime} \rightarrow G\left(\theta_{0}\right) W^{-1} G\left(\theta_{0}\right)^{\prime} \text { a.s. }
+$$
+where $ G\left(\theta_{0}\right) W^{-1} G\left(\theta_{0}\right)^{\prime} $ is a $ p \times p $ nonsingular matrix given Assumptions $ \mathrm{G} .5 $ and $ \mathrm{G} .7(3) . $ Therefore, the stochastic inverse matrix $ \left[\hat{G}(\hat{\theta}) \hat{W}^{-1} G(\bar{\theta})^{\prime}\right]^{-1} $ exists for $ n $ sufficiently large because
+$$
+\left[\hat{G}(\hat{\theta}) \hat{W}^{-1} G(\bar{\theta})^{\prime}\right]^{-1} \rightarrow\left[G\left(\theta_{0}\right) W^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} \text {a.s. }
+$$</p>
+<p>as $ n \rightarrow \infty $.</p>
+<p>It follows from the FOC that
+$$
+\begin{aligned}
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) &amp;=-\left[\hat{G}(\hat{\theta}) \hat{W}^{-1} \hat{G}(\bar{\theta})^{\prime}\right]^{-1} \hat{G}(\hat{\theta}) \hat{W}^{-1} \sqrt{n} \hat{m}\left(\theta_{0}\right) \<br>
+&amp;=-\hat{\Psi} \sqrt{n} \hat{m}\left(\theta_{0}\right), \text { say. }
+\end{aligned}
+$$
+By CLT for an IID random sample and the Cramer-Wold device, we have
+$$
+\begin{aligned}
+\sqrt{n} \hat{m}\left(\theta_{0}\right)=&amp; \frac{1}{\sqrt{n}} \sum_{i=1}^{n} m\left(X_{i}, \theta_{0}\right) \<br>
+&amp; \stackrel{d}{\rightarrow} N(0, V)
+\end{aligned}
+$$
+where $ V=E\left[m\left(X_{i}, \theta_{0}\right) m\left(X_{i}, \theta_{0}\right)^{\prime}\right] . $ Furthermore
+$$
+\left[\hat{G}(\hat{\theta}) \hat{W}^{-1} \hat{G}(\bar{\theta})^{\prime}\right]^{-1} \hat{G}(\hat{\theta}) \hat{W}^{-1} \stackrel{a . s .}{\rightarrow}\left[G\left(\theta_{0}\right) W^{-1} G\left(\theta_{0}\right)\right]^{-1} G\left(\theta_{0}\right) W^{-1} \equiv \Psi
+$$</p>
+<p>as $ n \rightarrow \infty $. It follows from Slutsky&rsquo;s theorem (Theorem 7.18 ) that as $ n \rightarrow \infty $
+$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0, \Psi V \Psi^{\prime}\right)
+$$
+(2) Suppose $ W=V $. Then we have
+$$
+\begin{aligned}
+\Psi V \Psi^{\prime} &amp;=\left{\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} G\left(\theta_{0}\right) V^{-1}\right} V\left{\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} G\left(\theta_{0}\right) V^{-1}\right}^{\prime} \<br>
+&amp;=\left{\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} G\left(\theta_{0}\right) V^{-1}\right} V\left{V^{-1} G\left(\theta_{0}\right)^{\prime}\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}\right} \<br>
+&amp;=\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}
+\end{aligned}
+$$
+It follows that when $ W=V $, we have as $ n \rightarrow \infty $
+$$
+\sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0,\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}\right)
+$$</p>
+<h3 id="854-asymptotic-efficiency-of--gmm">8.5.4 Asymptotic Efficiency of  GMM</h3>
+<p>【Theorem 8.12】<strong>Asymptotic Efficiency of  GMM</strong>: Put $ \Omega_{0}=\left[G\left(\theta_{0}\right) V^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} $ i.e., let $ W=V $. Then $ \Omega-\Omega_{0} $ is positive semi-definite (PSD) for all finite and nonsingular matrix $ W $, where $ \Omega $ is given in Theorem 8.11.</p>
+<p><strong>Proof:</strong></p>
+<p>Observe that $ \Omega-\Omega_{0} $ is PSD if and only if $ \Omega_{0}^{-1}-\Omega^{-1} $ is PSD.</p>
+<p>For notational simplicity, put $ G_{0}=G\left(\theta_{0}\right) $ and decompose $ V=V^{1 / 2} V^{1 / 2} , V^{-1}= V^{-1/2}V^{-1/2}$, where $ V $ is a $ q \times q $ symmetric and nonsingular matrix.</p>
+<p>Noting $ (A B C)^{-1}=C^{-1} B^{-1} A^{-1} $ for nonsingular matrices $ A, B, $ and $ C $, we therefore consider
+$$
+\begin{aligned}
+\Omega_{0}^{-1}-\Omega^{-1} &amp;=G_{0}^{\prime} V^{-1} G_{0}-G_{0}^{\prime} W^{-1} G_{0}\left[G_{0}^{\prime} W^{-1} V W^{-1} G_{0}\right]^{-1} G_{0}^{\prime} W^{-1} G_{0} \<br>
+&amp;=G_{0}^{\prime} V^{-\frac{1}{2}}\left[I-V^{\frac{1}{2}} W^{-1} G_{0}\left[G_{0}^{\prime} W^{-1} V W^{-1} G_{0}\right]^{-1} G_{0}^{\prime} W^{-1} V^{\frac{1}{2}}\right] V^{-\frac{1}{2}} G_{0} \<br>
+&amp;=G_{0}^{\prime} V^{-\frac{1}{2}} \Pi V^{-\frac{1}{2}} G_{0}
+\end{aligned}
+$$
+where $G_0 = G(\theta_0)$ and the $ q \times q $ matrix
+$$
+\Pi \equiv I-V^{\frac{1}{2}} W^{-1} G_{0}\left[G_{0}^{\prime} W^{-1} V W^{-1} G_{0}\right]^{-1} G_{0}^{\prime} W^{-1} V^{\frac{1}{2}}
+$$
+is a symmetric and idempotent matrix (i.e., $ \Pi=\Pi^{\prime}, \Pi^{2}=\Pi $).</p>
+<p>It follows that we have
+$$
+\begin{aligned}
+\Omega_{0}^{-1}-\Omega^{-1} &amp;=\left(G_{0}^{\prime} V^{-\frac{1}{2}} \Pi\right)\left(\Pi V^{-\frac{1}{2}} G_{0}\right) \<br>
+&amp;=\left(\Pi V^{-\frac{1}{2}} G_{0}\right)^{\prime}\left(\Pi V^{-\frac{1}{2}} G_{0}\right)
+\end{aligned}
+$$
+which is always PSD (why?).</p>
+<p>For any $\lambda$, we always have
+$$
+\begin{aligned}
+\lambda&rsquo;(D&rsquo;D)\lambda&amp;=(\lambda D)'(\lambda D)'
+\ &amp; \geq 0
+\end{aligned}
+$$
+Thus matrix like $D&rsquo;D$ is always PSD. This completes the proof.</p>
+<p>In practice, we make $\hat{W} \stackrel{a.s.}{\rightarrow} V $, then the GMM is asymptotic efficient.</p>
+<h2 id="86-criterion-for-estimators">8.6 Criterion for Estimators</h2>
+<p>Question: Which is the best estimator for $ \theta $ ?</p>
+<p>For example, we have obtained two different estimators for population variance $ \sigma^{2} $ one is the sample variance
+$$
+S_{n}^{2}=(n-1)^{-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}
+$$
+and the other is the MLE estimator
+$$
+\hat{\sigma}^{2}=n^{-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}
+$$
+Which estimator is better?</p>
+<h3 id="861-mean-squared-error-criterion">8.6.1 Mean Squared Error Criterion</h3>
+<p>【Definition 8.3】<strong>Mean Squared Error (MSE)</strong>: Let $\theta$ be a population parameter. The MSE of an estimator $ \hat{\theta}=\hat{\theta}<em>{n}\left(\mathrm{X}^{n}\right) $ of parameter $ \theta $ is defined as
+$$
+M S E</em>{\theta}(\hat{\theta})=E_{\theta}(\hat{\theta}-\theta)^{2}
+$$</p>
+<p>where $ E_{\theta}(\cdot) $ denotes the expectation which is taken under the joint distribution $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ of the random sample $X_n$; or equivalently under the sampling distribution of $X_n$.</p>
+<p>If $MSE_{\theta}(\hat{\theta}) \rightarrow 0$, then $\hat{\theta} \stackrel{q.m.}{\rightarrow} \theta $ as $n \to \infty $.</p>
+<h3 id="后期再精细化整理">后期再精细化整理</h3>
+<p><strong>Remarks:</strong></p>
+<p>$ \operatorname{MSE}<em>{\theta}(\hat{\theta}) $ measures the average of variations or deviations of the estimator $ \hat{\theta} $ from the parameter $ \theta $ The difference $ \hat{\theta}-\theta $ is usually called the estimation error, so $ \mathrm{MSE}</em>{\theta}(\hat{\theta}) $ is a measure of the magnitude of the estimation error.</p>
+<p>MSE is not the only criterion, but it is intuitive and analytically simple, and therefore is most commonly used in practice.</p>
+<p>【Definition 8.4】<strong>Bias</strong>: The bias of a point estimator $ \hat{\theta} $ of parameter $ \theta $ is defined as
+$$
+\operatorname{Bias}<em>{\theta}(\hat{\theta})=E</em>{\theta}(\hat{\theta})-\theta
+$$
+An estimator $ \hat{\theta} $ for $ \theta $ is called an unbiased estimator for $ \theta $ if $ \operatorname{Bias}_{\theta}(\hat{\theta})=0 $</p>
+<p><strong>Remarks:</strong></p>
+<p>The bias $ \operatorname{Bias}_{\theta}(\hat{\theta}) $ measures the accuracy of estimator $ \hat{\theta} $. More specifically, the bias measures the closeness of all possible estimates on average to the true parameter value. It characterizes the degree of a systematic estimation error.</p>
+<p>An unbiased estimator gives the right answer on average in a large number of repeated estimates. That is, there is no systematic upward or downward estimation for the parameter $ \theta $</p>
+<p>【Example 8.9】Suppose $ \mathbf{X}^{n} $ is an IID random sample from some population with mean $ \mu $ and variance $ \sigma^{2} . $ Find an unbiased estimator for $ \operatorname{var}<em>{\theta}\left(\bar{X}</em>{n}\right) $</p>
+<p><strong>Solution:</strong> $ \operatorname{Put} \theta=\left(\mu, \sigma^{2}\right) $ and $ \tau=\frac{\sigma^{2}}{n} $
+$ - $ Because $ \operatorname{var}<em>{\theta}\left(\bar{X}</em>{n}\right)=\frac{\sigma^{2}}{n}, $ an unbiased estimator of $ \tau $ can be given as follows:
+$$
+\hat{\tau}=\frac{S_{n}^{2}}{n}
+$$
+because $ E_{\theta}(\hat{\tau})=n^{-1} E_{\theta}\left(S_{n}^{2}\right)=\operatorname{var}_{\theta}\left(\bar{X}_{n}\right)=\tau $
+$ - $ It follows that $ \operatorname{Bias}_{\theta}(\hat{\tau})=E_{\theta}(\hat{\tau})-\tau=0 $</p>
+<p>【Example 8.10】Suppose $ \mathbf{X}^{n} $ is an IID random sample from some population with mean $ \mu $ and variance $ \sigma^{2} $. Find an unbiased estimator for $ \mu^{2} $</p>
+<p>Solution: $ \operatorname{Put} \theta=\left(\mu, \sigma^{2}\right) $</p>
+<p>$ - $ For parameter $ \tau=\mu^{2}, $ an unbiased estimator is
+$$
+\hat{\tau}=\bar{X}<em>{n}^{2}-\frac{S</em>{n}^{2}}{n}
+$$</p>
+<p>This follows because
+$$
+\begin{aligned}
+E(\hat{\tau}) &amp;=E_{\theta}\left(\bar{X}_{n}^{2}\right)-\frac{E_{\theta}\left(S_{n}^{2}\right)}{n} \<br>
+&amp;=\operatorname{var}_{\theta}\left(\bar{X}_{n}\right)+\left[E_{\theta}\left(\bar{X}_{n}\right)\right]^{2}-\frac{E_{\theta}\left(S_{n}^{2}\right)}{n} \<br>
+&amp;=\frac{\sigma^{2}}{n}+\mu^{2}-\frac{\sigma^{2}}{n} \<br>
+&amp;=\mu^{2}=\tau
+\end{aligned}
+$$
+Intuitively, since the sample mean $ \bar{X}_{n} $ is a good estimator for $ \mu, $ so we expect that $ \bar{X}_{n}^{2} $ is a good estimator for $ \mu^{2} $. However, $ \bar{X}_{n}^{2} $ is a nonlinear function of $ \bar{X}_{n} $ which introduces a bias $ \frac{\sigma^{2}}{n} . $ This bias can be corrected by subtracting the unbiased estimator $ \frac{S_{n}^{2}}{n} $ for $ \frac{\sigma^{2}}{n} $.</p>
+<p>【Theorem 8.13】<strong>MSE Decomposition</strong>:
+$$
+E_{\theta}(\hat{\theta}-\theta)^{2}=\operatorname{var}_{\theta}(\hat{\theta})+\left[\operatorname{Bias}_{\theta}(\hat{\theta})\right]^{2}
+$$</p>
+<p><strong>Proof:</strong>
+$$
+\begin{aligned}
+E_{\theta}(\hat{\theta}-\theta)^{2} &amp;=E_{\theta}\left[\hat{\theta}-E_{\theta}(\hat{\theta})+E_{\theta}(\hat{\theta})-\theta\right]^{2} \<br>
+&amp;=E_{\theta}\left[\hat{\theta}-E_{\theta}(\hat{\theta})\right]^{2}+\left[E_{\theta}(\hat{\theta})-\theta\right]^{2}+2 E_{\theta}\left{\left[\hat{\theta}-E_{\theta}(\hat{\theta})\right]\left[E_{\theta}(\hat{\theta})-\theta\right]\right} \<br>
+&amp;=E_{\theta}\left[\hat{\theta}-E_{\theta}(\hat{\theta})\right]^{2}+\left[E_{\theta}(\hat{\theta})-\theta\right]^{2}
+\end{aligned}
+$$
+where the cross-product term
+$$
+\begin{aligned}
+E_{\theta}\left{\left[\hat{\theta}-E_{\theta}(\hat{\theta})\right]\left[E_{\theta}(\hat{\theta})-\theta\right]\right} &amp;=E_{\theta}\left{\left[\hat{\theta}-E_{\theta}(\hat{\theta})\right]\right}\left[E_{\theta}(\hat{\theta})-\theta\right] \<br>
+&amp;=0 \cdot\left[E_{\theta}(\hat{\theta})-\theta\right] \<br>
+&amp;=0
+\end{aligned}
+$$
+**Remarks:**</p>
+<p>$ \operatorname{MSE}<em>{\theta}(\hat{\theta}) $ can be decomposed into $ \operatorname{var}</em>{\theta}(\hat{\theta}) $ and $ \operatorname{Bias}_{\theta}(\hat{\theta})^{2} $</p>
+<ul>
+<li>$ \operatorname{var}_{\theta}(\hat{\theta}) $ measures the variability (or <strong>precision</strong>) of the estimator $ \hat{\theta} $ due to the sampling variation. Precision is a description of random errors, a measure of statistical variability.</li>
+<li>$  \operatorname{Bias}_{\theta}(\hat{\theta}) $ measures the <strong>accuracy</strong> of the estimator due to the procedure. Accuracy is a description of systematic errors, a measure of statistical bias.</li>
+</ul>
+<p>For any unbiased estimator $ \hat{\theta}, $ we have $ \operatorname{MSE}<em>{\theta}(\hat{\theta})=E</em>{\theta}(\hat{\theta}-\theta)^{2}=\operatorname{var}_{\theta}(\hat{\theta}) . $ Thus, <strong>a best unbiased estimator is the one with the smallest variance</strong>.</p>
+<p>A best unbiased estimator may be dominated by a biased estimator if the latter has a substantially smaller variance that can compensate the bias. This is indeed the case for many machine learning predicting algorithms (e.g., the LASSO estimator).</p>
+<p>MSE can be understood intuitively by the example of shooting a target.</p>
+<ul>
+<li>
+<p>A high cumulative score will be obtained if most shots are close to the target. This corresponds to a small MSE, with a high accuracy and a high precision.</p>
+</li>
+<li>
+<p>In contrast, a low score will result if</p>
+<ul>
+<li>The shots center the target (so high accuracy) but they spread over widely around the target (so low precision)</li>
+<li>the shots center at a point which is far away from the target (so low accuracy) although they do not spread widely (high precision)</li>
+</ul>
+</li>
+</ul>
+<p>【Definition 8.5】<strong>Relative Efficiency</strong>: An estimator $ \hat{\theta} $ for parameter $ \theta $ is said to be more efficient than another estimator $ \theta $ for the same parameter $ \tilde{\theta} $ in terms of MSE if
+$$
+M S E_{\theta}(\hat{\theta}) \leq M S E_{\theta}(\tilde{\theta})
+$$</p>
+<p>It may be emphasized that there exists different criteria to evaluate relative efficiency of estimators, and a different criterion will generally lead to a different ranking between or among different estimators. In this book, we use MSE criterion, which is most commonly used in practice.</p>
+<p>【Example 8.11】Suppose $ \left{X_{i}\right}_{i=1}^{2 n} $ is an IID random sample from a population with mean $ \mu $ and variance $ \sigma^{2} $. Define $ \hat{\mu}_{1}=n^{-1} \sum_{i=1}^{n} X_{i} $ and $ \hat{\mu}_{2}=(2 n)^{-1} \sum_{i=1}^{2 n} X_{i} . $ Which estimator is better in terms of MSE?</p>
+<p><strong>Solution:</strong></p>
+<p>Using the results in Chapter 6, we have $ E_{\theta}\left(\hat{\mu}_{1}\right)=\mu $, $ \operatorname{var}_{\theta}\left(\hat{\mu}_{1}\right)=\frac{\sigma^{2}}{n} $, $ E_{\theta}\left(\hat{\mu}_{2}\right)=\mu $ and
+$$
+\operatorname{var}_{\theta}\left(\hat{\mu}_{2}\right)=\frac{\sigma^{2}}{2 n}
+$$
+It follows that $ \operatorname{MSE}_{\theta}\left(\hat{\mu}_{1}\right)=2 \mathrm{MSE}_{\theta}\left(\hat{\mu}_{2}\right) . $ Therefore, $ \hat{\mu}_{2} $ is more efficient.</p>
+<p><strong>Remarks:</strong></p>
+<p><strong>It is always better to use more sample information in estimation</strong>. Sample splitting or sample truncation is generally not a good idea from a statistical point of view because it does not fully utilize the whole sample information contained in $ \left{X_{i}\right}_{i=1}^{2 n} $</p>
+<p>【Example 8.12】Let $ \left(X_{1}, X_{2}\right) $ be an IID random sample from a population with mean $ \mu $ and variance $ \sigma^{2} . $ Two estimators for $ \mu $ are
+$$
+\begin{array}{l}
+\hat{\mu}_{1}=\bar{X}_{n}=\frac{1}{2}\left(X_{1}+X_{2}\right) \<br>
+\hat{\mu}_{2}=\frac{1}{3}\left(X_{1}+2 X_{2}\right)
+\end{array}
+$$</p>
+<p>Which estimator is better?</p>
+<p><strong>Solution:</strong></p>
+<p>Put $ \theta=\left(\mu, \sigma^{2}\right) . $ We can check that both estimators are unbiased for $ \mu . $ Also,
+$$
+\begin{aligned}
+\operatorname{var}<em>{\theta}\left(\hat{\mu}</em>{1}\right) &amp;=\frac{1}{2} \sigma^{2} \<br>
+\operatorname{var}<em>{\theta}\left(\hat{\mu}</em>{2}\right) &amp;=\frac{1}{9} \sigma^{2}+\frac{4}{9} \sigma^{2} \<br>
+&amp;=\frac{5}{9} \sigma^{2} \<br>
+&amp;&gt;\frac{1}{2} \sigma^{2}
+\end{aligned}
+$$
+Therefore, $ \hat{\mu}<em>{1} $ is more efficient than $ \hat{\mu}</em>{2} $ in terms of MSE.</p>
+<p><strong>Remarks:</strong></p>
+<p>Since two random variables $ X_{1} $ and $ X_{2} $ are identical distributed, there is no reason to discriminate $ X_{1} $ and $ X_{2} $ (i.e. putting different weights on observations which have identical distributions). Equal weighting for each observation will be most efficient for estimation of $ \mu $.</p>
+<h3 id="862-best-unbiased-estimators">8.6.2 Best Unbiased Estimators</h3>
+<p>Question: What is the best estimator if a class of estimators of parameter $ \theta $ is available?</p>
+<p>We could define the best estimator as the one that has the smallest MSE. Unfortunately, such a best estimator is very difficult to obtain, because the class of estimators we have to compare is very huge.</p>
+<p>For simplicity, we focus on a class of unbiased estimators and find the best estimator within this class.</p>
+<p>【Definition 8.6】<strong>Generalized Unbiased Estimator</strong>: $ \hat{\tau}=\hat{\tau}<em>{n}\left(\mathrm{X}^{n}\right) $ is an unbiased estimator for the parameter $ \tau(\theta) $ if
+$$
+E</em>{\theta}(\hat{\tau})=\tau(\theta) \text { for all } \theta \in \Theta
+$$
+When $ \tau(\theta)=\theta, $ we return to Definition 8.4 of the unbiased estimator for parameter $ \theta $.</p>
+<p>Example $ 13(8.13) . $ Suppose $ \mathbf{X}^{n} $ is an IID $ \left(\mu, \sigma^{2}\right) $ random sample. Put $ \theta=\left(\mu, \sigma^{2}\right) $ and $ \tau(\theta)= $ $ (\mu-2)^{2} . $ Find an unbiased estimator for $ \tau(\theta) $
+solution:
+$ - $ We first try an estimator $ \tilde{\tau}=\left(\bar{X}<em>{n}-2\right)^{2} $. Then
+$$
+\begin{aligned}
+E</em>{\theta}(\tilde{\tau}) &amp;=E_{\theta}\left(\bar{X}_{n}-2\right)^{2} \<br>
+&amp;=E_{\theta}\left[\left(\bar{X}_{n}-\mu+\mu-2\right)^{2}\right] \<br>
+&amp;=E_{\theta}\left(\bar{X}_{n}-\mu\right)^{2}+(\mu-2)^{2} \<br>
+&amp;=\frac{\sigma^{2}}{n}+\tau(\theta)
+\end{aligned}
+$$</p>
+<p>It follows that
+$$
+E_{\theta}(\tilde{\tau})-\tau(\theta)=\frac{\sigma^{2}}{n} \neq 0
+$$
+We then make a necessary bias correction:
+$$
+\hat{\tau}=\left(\bar{X}_{n}-2\right)^{2}-\frac{1}{n} S_{n}^{2}
+$$
+This bias-corrected estimator $ \hat{\tau} $ is unbiased for the transformed parameter $ \tau(\theta)= $
+$$
+(\mu-2)^{2}
+$$</p>
+<p>【Definition 8.7】<strong>Uniform Best Unbiased Estimator</strong>: Let $ \Gamma $ be a class of unbiased estimators of parameter $ \tau(\theta), $ where $ \theta \in \Theta $ and $ \Theta $ is a known parameter space. An estimator $ \hat{\tau}^{*} $ $ \in \Gamma $ is a uniformly best unbiased estimator for $ \tau(\theta) $ over parameter space $ \Theta $ within the class $ \Gamma $ of estimators if</p>
+<ol>
+<li>$ E_{\theta}\left(\hat{\tau}^{*}\right)=\tau(\theta) $ for all $ \theta \in \Theta $</li>
+<li>$ \operatorname{var}<em>{\theta}\left(\hat{\tau}^{*}\right) \leq \operatorname{var}</em>{\theta}(\hat{\tau}) $ for any estimator $ \hat{\tau} $ of $ \tau(\theta) $ in $ \Gamma $ and for all $ \theta \in \Theta $</li>
+</ol>
+<p><strong>Remarks:</strong></p>
+<p>The estimator $ \hat{\tau}^{*} $ is a uniform minimum variance unbiased estimator (UMVUE) of $ \tau(\theta) $ over parameter space $ \Theta $ within the class $ \Gamma $ of estimators for $ \tau(\theta) $</p>
+<p>Here, uniformity means that $ \hat{\tau}^{*} $ is always the best unbiased estimator for $ \tau(\theta) $ no matter what value the parameter $ \theta $ will take in $ \Theta $ (not just for a particular value of $ \theta) $</p>
+<p>【Example 8.14】Let $ \mathrm{X}^{n} $ be an $ \mathrm{IID}\left(\mu, \sigma^{2}\right) $ random sample. Define a class of linear unbiased estimators of $ \mu $ as follows:
+$$
+\Gamma=\left{\hat{\mu}: \mathbb{R}^{n} \rightarrow \mathbb{R} | \hat{\mu}=\sum_{i=1}^{n} c_{i} X_{i} \text { for }\left(c_{1}, \cdots, c_{n}\right)^{\prime} \in \mathbb{R}^{n}\right}
+$$</p>
+<ol>
+<li>
+<p>Show that $ \hat{\mu} $ is an unbiased estimator of $ \mu $ for all $ n \geq 1 $ if and only if $ \sum_{i=1}^{n} c_{i}=1 $</p>
+</li>
+<li>
+<p>Find the uniformly most efficient unbiased estimator of $ \mu $ within the class $ \Gamma $ of estimators for $ \mu $</p>
+</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<p>Note that we have $ \hat{\tau}=\hat{\mu}, $ and $ \tau(\theta)=\mu $ in this application.</p>
+<ol>
+<li>Given $ \hat{\mu}=\sum_{i=1}^{n} c_{i} X_{i} $ and $ \theta=\left(\mu, \sigma^{2}\right), $ we have $ E_{\theta}(\hat{\mu})=\mu \sum_{i=1}^{n} c_{i} . $ Therefore, if $ \hat{\mu} $ is an unbiased estimator for $ \mu, $ i.e. if
+$$
+E_{\theta}(\hat{\mu})=\mu \text { for all } \mu \in \mathbb{R}
+$$
+we must have
+$$
+\sum_{i=1}^{n} c_{i}=1
+$$</li>
+</ol>
+<p>On the other hand, if $ \sum_{i=1}^{n} c_{i}=1, $ then from the fact that $ E_{\theta}(\hat{\mu})=\mu \sum_{i=1}^{n} c_{i}, $ we have
+$$
+E_{\theta}(\hat{\mu})=\mu \cdot 1=\mu \text { for all } \mu
+$$
+That is, $ \hat{\mu} $ is unbiased for $ \mu . $ Therefore, $ \hat{\mu} $ is unbiased for $ \mu $ for all possible values of $ \mu $ if and only if $ \sum_{i=1}^{n} c_{i}=1 $</p>
+<ol start="2">
+<li>To find the uniformly most efficient unbiased estimator for $ \mu $, we only need to find the one with the smallest variance within $ \Gamma $ subject to the constraint that $ \sum_{i=1}^{n} c_{i}=1 $ The variance of $ \hat{\mu} \in \Gamma $ is
+$$
+\begin{aligned}
+\operatorname{var}_{\theta}(\hat{\mu}) &amp;=\operatorname{var}_{\theta}\left(\sum_{i=1}^{n} c_{i} X_{i}\right) \<br>
+&amp;=\sum_{i=1}^{n} c_{i}^{2} \operatorname{var}_{\theta}\left(X_{i}\right) \<br>
+&amp;=\sigma^{2} \sum_{i=1}^{n} c_{i}^{2}
+\end{aligned}
+$$</li>
+</ol>
+<p>Because $ \hat{\mu} $ is unbiased, we have $ \sum_{i=1}^{n} c_{i}=1 . $ Therefore, we can solve for the variance minimization problem</p>
+<p>$$
+\min <em>{\left{c</em>{i}\right}<em>{i=1}^{n}} \sigma^{2} \sum</em>{i=1}^{n} c_{i}^{2}
+$$</p>
+<p>subject to the constraint that</p>
+<p>$$
+\sum_{i=1}^{n} c_{i}=1
+$$</p>
+<p>Define the Lagrangian function</p>
+<p>$$
+L(c, \lambda)=\sigma^{2} \sum_{i=1}^{n} c_{i}^{2}+\lambda\left(1-\sum_{i=1}^{n} c_{i}\right)
+$$</p>
+<p>where $ c=\left(c_{1}, \cdots, c_{n}\right)^{\prime} $ and $ \lambda $ is the Lagrangian multiplier.
+The $ n+1 $ first order conditions are given below:</p>
+<p>$$
+\begin{array}{l}
+\frac{\partial L(c, \lambda)}{\partial c_{i}}=2 \sigma^{2} c_{i}-\lambda=0 \text { for } i=1, \cdots, n \<br>
+\frac{\partial L(c, \lambda)}{\partial \lambda}=1-\sum_{i=1}^{n} c_{i}=0
+\end{array}
+$$</p>
+<p>Solving for these equations, we obtain</p>
+<p>$$
+c_{i}^{*}=\frac{1}{n} \text { for } i=1, \cdots, n
+$$</p>
+<p>Thus, the uniformly most efficient unbiased estimator
+$$
+\hat{\mu}^{*}=\sum_{i=1}^{n} \frac{1}{n} X_{i}=\bar{X}_{n}
+$$
+For completeness, we need to verify the second order conditions to ensure that $ \hat{\mu}^{*} $ is a global minimizer. This is indeed the case because it can be shown that the Hessian matrix of $ L(c, \lambda) $ is positive definite for all $ \mu $ (please verify it!).</p>
+<p><strong>Remarks:</strong></p>
+<p>Because the random variables $ \mathbf{X}^{n}=\left{X_{i}\right}_{i=1}^{n} $ are identically distributed, there is no ground to discriminate one against another. The optimal weighting is of course equal weighting for all observation.</p>
+<p>This is exactly the same idea for the Gauss-Markov theorem in the classical linear regression model, which says that the Ordinary Least Squares (OLS) estimator for the coefficients in a classical linear regression model with IID disturbances
+$$
+Y_{i}=X_{i}^{\prime} \theta_{0}+\varepsilon_{i}, \quad i=1, \cdots, n
+$$</p>
+<p>is the best linear unbiased estimator (BLUE), under the assumption that $ \left{\varepsilon_{i}\right}_{i=1}^{n} $ is IID $ \left(0, \sigma_{\varepsilon}^{2}\right) . $ The OLS estimator $ \theta $ is defined as
+$$
+\theta=\arg \min _{\theta} \sum_{i=1}^{n}\left(Y_{i}-X_{i}^{\prime} \theta\right)^{2}
+$$
+因为IID，目标函数等权重是最佳的</p>
+<p>【Example 8.15】Suppose $ \mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right) $ is an independent but not identically distributed random sample, with $ E\left(X_{i}\right)=\mu $ and $ \operatorname{var}\left(X_{i}\right)=\sigma_{i}^{2}&lt;\infty, i=1, \cdots, n $. Find a uniformly best
+linear unbiased estimator of $ \mu $ within the class of estimators
+$$
+\Gamma=\left{\hat{\mu}: \mathbb{R}^{n} \rightarrow \mathbb{R} | \hat{\mu}=\sum_{i=1}^{n} c_{i} X_{i},\left(c_{1}, \cdots, c_{n}\right)^{\prime} \in \mathbf{R}^{n}\right}
+$$
+where $ \sum_{i=1}^{n} c_{i}=1 $.</p>
+<p><strong>Solution:</strong></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135404356.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135404356.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135404356.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135404356.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531135404356"
+        title="image-20200531135404356.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135514582.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135514582.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135514582.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135514582.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531135514582"
+        title="image-20200531135514582.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135559338.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135559338.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135559338.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531135559338.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531135559338"
+        title="image-20200531135559338.png" /></div></p>
+<p>Again, $ \hat{\mu} $ is an unbiased estimator for $ \mu $ if and only if $ \sum_{i=1}^{n} c_{i}=1 $
+Now, using the Lagrange multiplier method, we can find that the optimal estimator within the class $ \Gamma $ is
+$$
+\begin{aligned}
+\hat{\mu}^{*} &amp;=\sum_{i=1}^{n} c_{i}^{*} X_{i} \<br>
+&amp;=\frac{1}{\sum_{i=1}^{n} \frac{1}{\sigma_{i}^{2}}} \sum_{i=1}^{n} \frac{1}{\sigma_{i}^{2}} X_{i}
+\end{aligned}
+$$
+where
+$$
+c_{i}^{*}=\frac{\frac{1}{\sigma_{i}^{2}}}{\sum_{i=1}^{n} \frac{1}{\sigma_{i}^{2}}} \propto \frac{1}{\sigma_{i}^{2}}, \quad i=1, \cdots, n
+$$
+**Remarks:**</p>
+<p>To obtain the most efficient estimator for $ \mu $ in an independent but not identically distributed random sample, one should discount noisy observations.</p>
+<p>The optimal weight $ c_{i}^{*} $ is proportional to $ \sigma_{i}^{-2}, $ the inverse of the variance of the random variable $ X_{i} $.</p>
+<p>This is similar to the idea behind the Generalized Least Squares (GLS) estimator in econometrics. Consider a linear regression model
+$$
+Y_{i}=X_{i}^{\prime} \theta+\varepsilon_{i}, \quad i=1, \cdots, n
+$$
+where $ \left{\varepsilon_{i}\right}_{i=1}^{n} $ is an independent but not identically distributed sequence with $ E\left(\varepsilon_{i}\right)= $ 0 and $ \operatorname{var}\left(\varepsilon_{i}^{2}\right)=\sigma_{i}^{2} . $ Here, there may exist unconditional heteroskedasticity because $ \sigma_{i}^{2} $ may be different across $ i . $ We consider the transformed regression model</p>
+<p>$$
+\frac{Y_{i}}{\sigma_{i}}=\left(\frac{X_{i}}{\sigma_{i}}\right)^{\prime} \theta+\frac{\varepsilon_{i}}{\sigma_{i}}
+$$
+or equivalently
+$$
+Y_{i}^{*}=X_{i}^{* \prime} \theta+\varepsilon_{i}^{*}
+$$
+where $ \left{\varepsilon_{i}^{*}\right}_{i=1}^{n} $ is an IID sequence with zero mean and unit variance. Then the OLS estimator of the transformed linear regression model
+$$
+\hat{\theta}^{*}=\arg \min _{\theta} \sum_{i=1}^{n}\left(Y_{i}^{*}-X_{i}^{* \prime} \theta\right)^{2}
+$$
+is called the GLS estimator. In other words, GLS is the OLS estimator after correcting heteroskedasticity. This estimator $ \hat{\theta}^{*} $ discounts noisy observations by dividing them by their standard deviations.</p>
+<p>Question: Is an unbiased estimator always better than a biased estimator?</p>
+<p>【Example 8.16】Let $ \mathbf{X}^{n} $ be an IID random sample from a $ N\left(\mu, \sigma^{2}\right) $ distribution. The sample variance $ S_{n}^{2}=(n-1)^{-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2} $ and the MLE estimator $ \hat{\sigma}^{2}=n^{-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2} $ are two estimators for $ \sigma^{2} $. Which is more efficient in terms of MSE?</p>
+<p><strong>Solution:</strong>
+Because $ \frac{(n-1) S_{n}^{2}}{\sigma^{2}} \sim \chi_{n-1}^{2}, $ we have $ E_{\theta}\left(S_{n}^{2}\right)=\sigma^{2} $ and $ \operatorname{var}_{\theta}\left(S_{n}^{2}\right)=\frac{2 \sigma^{4}}{n-1} . $ It follows that
+$$
+\begin{aligned}
+\operatorname{MSE}_{\theta}\left(S_{n}^{2}\right) &amp;=E_{\theta}\left(S_{n}^{2}-\sigma^{2}\right)^{2} \<br>
+&amp;=\operatorname{var}_{\theta}\left(S_{n}^{2}\right)+\left[\operatorname{Bias}_{\theta}\left(S_{n}^{2}\right)\right]^{2} \<br>
+&amp;=\frac{2 \sigma^{4}}{n-1}
+\end{aligned}
+$$
+Next, observing
+$$
+\hat{\sigma}^{2}=\frac{n-1}{n} S_{n}^{2}
+$$</p>
+<p>we have
+$$
+\begin{aligned}
+\operatorname{Bias}<em>{\theta}\left(\hat{\sigma}^{2}\right) &amp;=E</em>{\theta}\left(\hat{\sigma}^{2}\right)-\sigma^{2} \<br>
+&amp;=\frac{n-1}{n} \sigma^{2}-\sigma^{2} \<br>
+&amp;=-\frac{\sigma^{2}}{n} \<br>
+\operatorname{var}<em>{\theta}\left(\hat{\sigma}^{2}\right) &amp;=\left(\frac{n-1}{n}\right)^{2} \operatorname{var}</em>{\theta}\left(S_{n}^{2}\right) \<br>
+&amp;=\left(\frac{n-1}{n}\right)^{2} \frac{2 \sigma^{4}}{n-1}
+\end{aligned}
+$$
+It follows that
+$$
+\begin{aligned}
+\operatorname{MSE}_{\theta}\left(\hat{\sigma}^{2}\right) &amp;=\left(1-\frac{1}{n}\right)^{2} \frac{2 \sigma^{4}}{n-1}+\frac{\sigma^{4}}{n^{2}} \<br>
+&amp;=\left[\left(1-\frac{1}{n}\right)^{2}+\frac{n-1}{2 n^{2}}\right] \frac{2 \sigma^{4}}{n-1} \<br>
+&amp;=\frac{n-1}{n} \frac{2 n-1}{2 n} \frac{2 \sigma^{4}}{n-1} \<br>
+&amp;&lt;\frac{2 \sigma^{4}}{n-1}=\operatorname{MSE}_{\theta}\left(S_{n}^{2}\right)
+\end{aligned}
+$$
+for all $ n&gt;1 . $ Therefore, the biased estimator $ \hat{\sigma}^{2} $ is better than the unbiased estimator $ S_{n}^{2} $.</p>
+<p><strong>Remarks:</strong></p>
+<p>It is sometimes the case, as in the above example, that <strong>a trade-off occurs between variance and bias</strong> in such a way that a small increase in bias can be traded for a larger decrease in variance, resulting an improvement in MSE.</p>
+<p>Statistics and econometrics have perhaps focused too much on biased estimation.</p>
+<p>However, the conclusion that $ S_{n}^{2} $ is less efficient than $ \hat{\sigma}_{n}^{2} $ does not mean that $ S_{n}^{2} $ should be abandoned as an estimator for $ \sigma^{2} $. For example, the use of $ S_{n}^{2} $ yield some well-known distribution for some statistic.</p>
+<p>变量过多导致多重共线时 Ridge回归</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141844030.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141844030.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141844030.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141844030.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531141844030"
+        title="image-20200531141844030.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141829606.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141829606.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141829606.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141829606.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531141829606"
+        title="image-20200531141829606.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141600014.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141600014.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141600014.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141600014.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531141600014"
+        title="image-20200531141600014.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141621287.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141621287.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141621287.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531141621287.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531141621287"
+        title="image-20200531141621287.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142013238.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142013238.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142013238.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142013238.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531142013238"
+        title="image-20200531142013238.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142040499.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142040499.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142040499.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142040499.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531142040499"
+        title="image-20200531142040499.png" /></div></p>
+<p>LASSO回归</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142138716.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142138716.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142138716.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142138716.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531142138716"
+        title="image-20200531142138716.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142252874.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142252874.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142252874.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142252874.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531142252874"
+        title="image-20200531142252874.png" /></div></p>
+<p>排除了等于零的参数项</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142334582.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142334582.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142334582.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531142334582.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531142334582"
+        title="image-20200531142334582.png" /></div></p>
+<p>BUE本质是拉格朗日方法，在无偏的约束下最小化方差。</p>
+<h2 id="87-cramer-rao-lower-bound">8.7 Cramer-Rao Lower Bound</h2>
+<p>Remarks:</p>
+<p>There is an alternative method of evaluating parameter estimators when the population distribution model $ f(x, \theta) $ is available.</p>
+<p>For simplicity, we assume that parameter $ \theta $ is a scalar here</p>
+<p>【Theorem 8.14】<strong>Cramer-Rao Lower Bound</strong>: Let $ \mathrm{X}^{n} $ be a random sample with joint  PMF/ PDF $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right), $ and let $ \hat{\tau}=\hat{\tau}_{n}\left(\mathbf{X}^{n}\right) $ be any estimator of parameter $ \tau(\theta) $ where $ E_{\theta}(\hat{\tau}) $ is a differentiable function of $ \theta . $ Suppose the joint PMF/ PDF $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ of the random sample $ \mathbf{X}^{n} $ satisfies the condition that
+$$
+\frac{d}{d \theta} \int_{\mathbb{R}^{n}} h\left(\mathbf{x}^{n}\right) f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n}=\int_{\mathbb{R}^{n}} h\left(\mathbf{x}^{n}\right) \frac{\partial f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta} d \mathbf{x}^{n}
+$$
+for any measurable function $ h: \mathbb{R}^{n} \rightarrow \mathbb{R} $ with $ E_{\theta}\left|h\left(\mathbf{X}^{n}\right)\right|&lt;\infty $, where $ E_{\theta}(\cdot) $ is taken over the joint PMF/ PDF $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ of $ \mathbf{X}^{n} . $ Then for all $ n&gt;0 $ and all $ \theta \in \Theta $
+$$
+\operatorname{var}_{\theta}(\hat{\tau}) \geq B_{n}(\theta) \equiv \frac{\left[\frac{d E_{\theta}(\hat{\tau})}{d \theta}\right]^{2}}{E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}} n\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]^{2}}
+$$
+where $ B_{n}(\theta) $ is called the Cramer-Rao lower bound. In particular, when $ \hat{\tau} $ is unbiased for parameter $ \tau(\theta), $ we have
+$$
+B_{n}(\theta)=\frac{\left[\tau^{\prime}(\theta)\right]^{2}}{E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]^{2}}
+$$
+Unbiased estimator with  $\operatorname{var}_{\theta}(\hat{\tau}) = B_{n}(\theta)$ must be a best unbiased estimator.</p>
+<p><strong>Proof:</strong></p>
+<p>We consider the case of continuous distributions; the proof for the case of discrete distributions is similar. Suppose we have:</p>
+<p>(1) 
+$$
+\qquad E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]^{2}=\operatorname{var}_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]
+$$</p>
+<p>(2)
+$$
+\frac{d E_{\theta}(\hat{\tau})}{d \theta}=\operatorname{cov}_{\theta}\left[\hat{\tau}_{n}\left(\mathbf{X}^{n}\right), \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]
+$$
+Then by the Cauchy-Schwarz inequality, we have</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531163404618.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531163404618.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531163404618.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531163404618.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531163404618"
+        title="image-20200531163404618.png" /></div>
+$$
+\left{\operatorname{cov}<em>{\theta}\left[\hat{\tau}</em>{n}\left(\mathbf{X}^{n}\right), \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]\right}^{2} \leq \operatorname{var}_{\theta}(\hat{\tau}) \cdot \operatorname{var}_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]
+$$</p>
+<p>This implies that</p>
+<p>$$
+\begin{aligned}
+\operatorname{var}<em>{\theta}(\hat{\tau}) &amp; \geq \frac{\left{\operatorname{cov}</em>{\theta}\left[\hat{\tau}, \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]\right}^{2}}{\operatorname{var}_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]} \<br>
+&amp;=\frac{\left[\frac{d E_{\theta}(\hat{\tau})}{d \theta}\right]^{2}}{E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}\left(\mathbf{X}^{n}, \theta\right)}}{\partial \theta}\right]^{2}} \<br>
+&amp;=B_{n}(\theta)
+\end{aligned}
+$$</p>
+<p>given results (1) and (2) above. Therefore, it suffices to show results (1) and (2).</p>
+<p>We first prove result (1). We shall show that the mean of the score function $ \frac{\partial \ln f_{\mathbf{x}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta} $ of the random sample $ \mathbf{X}^{n} $ under the joint distribution $ f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right) $ is zero.</p>
+<p>This follows because
+$$
+\begin{aligned}
+&amp; E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; \int_{\mathbb{R}^{n}}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta}\right] f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n} \<br>
+=&amp; \int_{\mathbb{R}^{n}} \frac{\partial f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta} d \mathbf{x}^{n} \<br>
+=&amp; \frac{d}{d \theta} \int_{\mathbb{R}^{n}} f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n} \<br>
+=&amp; \frac{d(1)}{d \theta} \<br>
+=&amp; 0
+\end{aligned}
+$$
+where the third equality follows by exchanging the orders of integration and differentiation.
+Therefore, we obtain the variance of the score function
+$$
+\begin{aligned}
+\operatorname{var}_{\theta}\left[\frac{\partial f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right] &amp;=E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]^{2}-\left{E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]\right}^{2} \<br>
+&amp;=E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]^{2}
+\end{aligned}
+$$</p>
+<p>This has proved result (1).</p>
+<p>Next, we prove result (2). Given $ E_{\theta}\left[\frac{\partial f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]=0 $ and $ \hat{\tau}=\hat{\tau}\left(\mathbf{X}^{n}\right), $ and using the formula $ cov(Y, Z)=E(Y Z)-\mu_{Y} \mu_{Z} $, we have
+$$
+\begin{aligned}
+&amp; \operatorname{cov}_{\theta}\left[\hat{\tau}, \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; E_{\theta}\left[\hat{\tau} \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]-E_{\theta}\left(\hat{\tau}_{n}\right) E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; E_{\theta}\left[\hat{\tau} \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; \int_{\mathbb{R}^{n}} \hat{\tau}_{n}\left(\mathbf{x}^{n}\right)\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta}\right] f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n} \<br>
+=&amp; \int_{\mathbb{R}^{n}} \hat{\tau}_{n}\left(\mathbf{x}^{n}\right) \frac{\partial f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta} d \mathbf{x}^{n} \<br>
+=&amp; \frac{d}{d \theta} \int_{\mathbb{R}^{n}} \hat{\tau}_{n}\left(\mathbf{x}^{n}\right) f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n} \<br>
+=&amp; \frac{d E_{\theta}(\hat{\tau})}{d \theta}
+\end{aligned}
+$$
+where the last to second equality follows from the exchange condition between the integration and differentiation. We have proved result (2).</p>
+<p>The Cramer-Rao lower bound applies to discrete distributions as well. The only change is to replace the integrals involved by summations, with $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ being a joint PMF rather than a joint PDF of the random sample $ \mathbf{X}^{n} $.</p>
+<p><strong>Remarks:</strong></p>
+<p>It is important to emphasize that a key assumption in the Cramer-Rao theorem is the ability to differentiate under the integral sign, which, of course, is somewhat restrictive.
+The condition on the exchange between differentiation and integration is crucial. It can be written as follows:
+$$
+\frac{d}{d \theta} \int_{\mathbb{R}^{n}} h\left(\mathbf{x}^{n}\right) f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n}=\int_{\mathbb{R}^{n}} h\left(\mathbf{x}^{n}\right) \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)}{\partial \theta} f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) d \mathbf{x}^{n}
+$$
+or equivalently,
+$$
+\frac{d E_{\theta}\left[h\left(\mathbf{X}^{n}\right)\right]}{d \theta}=E_{\theta}\left[h\left(\mathbf{X}^{n}\right) \frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]
+$$
+Densities in the exponential class will satisfy the assumption but in general, such an assumption needs to be checked; otherwise contradictions may arise. Newey and McFadden (1994, Lemma 3.6) provide sufficient conditions for such an assumption to hold.</p>
+<p>Theorem 8.14 implies that $ \operatorname{var}_{\theta}(\hat{\tau}) $ is greater than or at least equal to the Cramer-Rao lower bound</p>
+<p>$$
+B_{n}(\theta) \equiv \frac{\left[\frac{d E_{\theta}(\tau)}{d \theta}\right]^{2}}{E_{\theta}\left[\frac{\partial \ln f_{\mathrm{x} n}\left(\mathrm{x}^{n}, \theta\right)}{\partial \theta}\right]^{2}}
+$$
+Suppose the variance of an unbiased estimator $ \hat{\tau} $ of $ \tau(\theta) $ achieves the Cramer-Rao lower bound, that is,
+$$
+\operatorname{var}_{\theta}(\hat{\tau})=\frac{\left[\tau^{\prime}(\theta)\right]^{2}}{E_{\theta}\left[\frac{\partial \ln f_{\mathrm{x} n}\left(\mathrm{X}^{n}, \theta\right)}{\partial \theta}\right]^{2}}
+$$
+Then the unbiased estimator $ \hat{\tau} $ must be a most efficient estimator for $ \tau(\theta) $</p>
+<p>Question: How to express and show the Cramer-Rao lower bound when $ \theta $ is a parameter vector rather than a scalar parameter?</p>
+<p>【Corollary 8.15】<strong>Cramer-Rao Lower Bound Under an IID Random Sample</strong>: Let $ \mathrm{X}^{n} $ be an IID random sample from population PMF/ PDF $ f(x, \theta) $ and let $ \hat{\tau}=\hat{\tau}<em>{n}\left(\mathrm{X}^{n}\right) $ be any estimator of $ \tau(\theta), $ where $ E</em>{\theta}\left[\hat{\tau}<em>{n}\left(\mathbf{X}^{n}\right)\right] $ is a differentiable function of $ \theta \in \Theta . $ Suppose
+$$
+\frac{d}{d \theta} \int</em>{-\infty}^{\infty} h(x) f(x, \theta) d x=\int_{-\infty}^{\infty} h(x) \frac{\partial f(x, \theta)}{\partial \theta} d x
+$$
+for all $ h(x) $ such that $ E_{\theta}\left|h\left(X_{i}\right)\right|&lt;\infty . $ Then for all $ n $
+$$
+\operatorname{var}_{\theta}(\hat{\tau}) \geq B_{n}(\theta) \equiv \frac{\left[\frac{d E_{\theta}(\hat{\tau})}{d \theta}\right]^{2}}{n I(\theta)}
+$$</p>
+<p>where
+$$
+\begin{aligned}
+I(\theta) &amp;=E_{\theta}\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right]^{2} \<br>
+&amp;=\int_{-\infty}^{\infty}\left[\frac{\partial \ln f(x, \theta)}{\partial \theta}\right]^{2} f(x, \theta) d x
+\end{aligned}
+$$
+is Fisher&rsquo;s information matrix of the population PMF/ PDF $ f(x, \theta) $ When $ \hat{\tau} $ is unbiased for $ \tau(\theta), $ then
+$$
+\operatorname{var}_{\theta}(\hat{\tau}) \geq B_{n}(\theta) \equiv \frac{\left[\tau^{\prime}(\theta)\right]^{2}}{n I(\theta)}
+$$
+**Proof:**</p>
+<p>Given the Cramer-Rao lower bound formula, it suffices to show that under the IID assumption for $ \mathbf{X}^{n}, $ the denominator in the Cramer-Rao lower bound becomes $ n I(\theta) $</p>
+<p>Because $ \mathbf{X}^{n} $ is an IID sample from population $ f(x, \theta), $ we have $ f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)=\prod_{i=1}^{n} f\left(X_{i}, \theta\right) $. It follows that
+$$
+\ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)=\sum_{i=1}^{n} \ln f\left(X_{i}, \theta\right)
+$$
+Hence, the score function of the random sample $ \mathbf{X}^{n} $
+$$
+\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}=\sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}
+$$
+By Lemma 8.6, the expectation of the score function $ \frac{\partial}{\partial \theta} \ln f\left(X_{i}, \theta\right) $ under the population distribution $ f(x, \theta) $ is zero:
+$$
+\begin{aligned}
+&amp; E_{\theta}\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; \int_{-\infty}^{\infty} \frac{\partial \ln f(x, \theta)}{\partial \theta} f(x, \theta) d x \<br>
+=&amp; 0
+\end{aligned}
+$$
+It follows from the IID assumption that</p>
+<p>$$
+\begin{aligned}
+&amp; E_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right]^{2} \<br>
+=&amp; \operatorname{var}_{\theta}\left[\frac{\partial \ln f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; \operatorname{var}_{\theta}\left[\sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; \sum_{i=1}^{n} \operatorname{var}_{\theta}\left[\frac{\partial \ln f\left(X_{i}, \theta\right)}{\partial \theta}\right] \<br>
+=&amp; n \cdot \operatorname{var}_{\theta}\left[\frac{\partial \ln f(X, \theta)}{\partial \theta}\right] \<br>
+=&amp; n \cdot E_{\theta}\left[\frac{\partial \ln f(X, \theta)}{\partial \theta}\right]^{2} \<br>
+=&amp; n I(\theta)
+\end{aligned}
+$$
+where the third and fourth equalities follows from the IID assumption, the fifth equality follows from the fact that $ E_{\theta}\left[\frac{\partial}{\partial \theta} \ln f\left(X_{i}, \theta\right)\right]=0 $.</p>
+<p><strong>Remarks:</strong></p>
+<p>In this corollary, $ f(x, \theta) $ is the PMF $ / $ PDF of each random variable $ X_{i}, $ while $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ in the previous theorem is the joint $ \mathrm{PMF} / \mathrm{PDF} $ of the random sample $ \mathrm{X}^{n} $.</p>
+<p>Under the IID assumption, it is clear that the Cramer-Rao lower bound $ B_{n}(\theta) $ vanishes to zero at a rate $ n $</p>
+<p>The Cramer-Rao lower bound is proportional to the inverse of Fisher&rsquo;s information matrix $ I(\theta) . $ The larger $ I(\theta), $ the more information about $ \theta $ is contained in the random variable $ X_{i} . $ As a result, we have a smaller $ B_{n}(\theta) $ The calculation of $ I(\theta) $ sometimes is tedious. By using the information matrix equality $ I(\theta)+H(\theta)=0, $ where
+$$
+\begin{aligned}
+H(\theta) &amp; \equiv E_{\theta}\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right] \<br>
+&amp;=\int_{-\infty}^{\infty} \frac{\partial^{2} \ln f(x, \theta)}{\partial \theta^{2}} f(x, \theta) d x
+\end{aligned}
+$$
+is called the Hessian matrix, we can write the Cramer-Rao lower bound
+$$
+B_{n}(\theta)=\frac{\left[\tau^{\prime}(\theta)\right]^{2}}{-n H(\theta)}
+$$
+The Cramer-Rao lower bound $ B_{n}(\theta) $ depends on the inverse of the curvature of the $ \log $ likelihood function $ \ln f(x, \theta) . $ The larger the curvature in absolute value, the smaller the Cramer-Rao lower bound $ B_{n}(\theta) $.(用hessian matrix 计算会比较简单)</p>
+<p>We have shown that the MLE
+$$
+\sqrt{n}(\hat{\theta}-\theta) \stackrel{d}{\rightarrow} N\left(0,-H(\theta)^{-1}\right) \text {as } n \rightarrow \infty
+$$</p>
+<p>where $ \theta $ denotes the true parameter value in $ \Theta $. This implies that $\hat{\theta}-\theta $ approximately follows a $ N\left(0,[-n H(\theta)]^{-1}\right) $ distribution for $ n $ sufficiently large. Thus, the variance of the MLE $ \theta $ approximately achieves the Cramer-Rao lower bound when $ n $ is large.</p>
+<p>【Example 8.17】Let $ \mathrm{X}^{n} $ be an IID Poison($ \lambda $) random sample. Use the Cramer-Rao lower bound method to show that the sample mean $ \bar{X}_{n} $ is a best unbiased estimator of $ \lambda $.</p>
+<p><strong>Solution:</strong></p>
+<p>In this application we have $ \tau(\theta)=\theta=\lambda, $ and $ \hat{\tau}=\bar{X}<em>{n} $, $ E</em>{\lambda}(\hat{\tau})=\lambda $. Therefore, $ \hat{\tau} $ is an unbiased estimator for $ \lambda $.</p>
+<p>Because
+$$
+\operatorname{var}<em>{\lambda}\left(\bar{X}</em>{n}\right)=\frac{\sigma^{2}}{n}=\frac{\lambda}{n}
+$$
+given $ \sigma^{2}=\lambda $ for the Poisson $ (\lambda) $ distribution, it suffices to show that the Cramer-Rao lower bound $ B_{n}(\lambda)=\frac{\lambda}{n} $.</p>
+<p>The log-likelihood function
+$$
+\begin{aligned}
+\ln f\left(X_{i}, \lambda\right) &amp;=\ln \left(\frac{e^{-\lambda} \lambda^{X_{i}}}{X_{i} !}\right) \<br>
+&amp;=-\lambda+X_{i} \ln \lambda-\ln X_{i} !
+\end{aligned}
+$$</p>
+<p>Therefore, we have
+$$
+\begin{aligned}
+\frac{\partial^{2} \ln f\left(X_{i}, \lambda\right)}{\partial \lambda^{2}} &amp;=\frac{\partial^{2}\left(-\lambda+X_{i} \ln \lambda-\ln X_{i} !\right)}{\partial \lambda^{2}} \<br>
+&amp;=-\frac{X_{i}}{\lambda^{2}}
+\end{aligned}
+$$
+It follows that
+$$
+\begin{aligned}
+H_{\lambda}(\lambda) &amp;=E_{\lambda}\left[\frac{\partial^{2} \ln f\left(X_{i}, \lambda\right)}{\partial \lambda^{2}}\right] \<br>
+&amp;=E_{\lambda}\left(-\frac{X_{i}}{\lambda^{2}}\right) \<br>
+&amp;=-\frac{E_{\lambda}\left(X_{i}\right)}{\lambda^{2}} \<br>
+&amp;=-\frac{1}{\lambda}
+\end{aligned}
+$$
+Also, because $ \hat{\tau}=\bar{X}_{n}, $ we have $ E_{\lambda}\left(\bar{X}_{n}\right)=\lambda, $ so
+$$
+\frac{d E_{\lambda}(\hat{\tau})}{d \lambda}=\frac{d \lambda}{d \lambda}=1
+$$</p>
+<p>$ - $ It follows that
+$$
+\begin{aligned}
+B_{n}(\lambda) &amp;=\frac{\left[\frac{d}{d \lambda} E_{\lambda}(\hat{\tau})\right]^{2}}{-n H_{\lambda}(\lambda)} \<br>
+&amp;=\frac{1^{2}}{-n\left(-\frac{1}{\lambda}\right)} \<br>
+&amp;=\frac{\lambda}{n}
+\end{aligned}
+$$
+Because var $ _{\lambda}\left(\bar{X}_{n}\right)=B_{n}(\lambda), $ i.e., the sample mean estimator $ \bar{X}_{n} $ achieves the Crame-rRao lower bound, it is the best unbiased estimator of $ \lambda $.</p>
+<p><strong>Remarks:</strong></p>
+<p>The Cramer-Rao lower bound approach may not reach a decisive conclusion when $ \operatorname{var}<em>{\theta}(\hat{\tau}) $ does not attain the Cramer-rao lower bound $ B</em>{n}(\theta) $.</p>
+<p>【Example 8.18】Let $ \mathbf{X}^{n} $ be an IID $ N\left(\mu, \sigma^{2}\right) $ random sample, where $ \mu $ and $ \sigma^{2} $ are unknown. Show that $ S_{n}^{2} $ does not attain the Cramer-Rao lower bound.</p>
+<p><strong>Solution:</strong></p>
+<p>In this application, we have $ \theta=\left(\mu, \sigma^{2}\right), \hat{\tau}=S_{n}^{2} $ and $ \tau(\theta)=\sigma^{2} $</p>
+<p>The log-likelihood function of a $ N\left(\mu, \sigma^{2}\right) $ distribution is
+$$
+\ln f\left(X_{i}, \theta\right)=-\ln \sqrt{2 \pi}-\frac{1}{2} \ln \sigma^{2}-\frac{\left(X_{i}-\mu\right)^{2}}{2 \sigma^{2}}
+$$
+Hence, we have
+$$
+\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial\left(\sigma^{2}\right)^{2}}=\frac{1}{2 \sigma^{4}}-\frac{\left(X_{i}-\mu\right)^{2}}{\sigma^{6}}
+$$
+It follows that the Hessian matrix
+$$
+\begin{aligned}
+E_{\theta}\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial\left(\sigma^{2}\right)^{2}}\right] &amp;=\frac{1}{2 \sigma^{4}}-\frac{E_{\theta}\left(X_{i}-\mu\right)^{2}}{\sigma^{6}} \<br>
+&amp;=\frac{1}{2 \sigma^{4}}-\frac{1}{\sigma^{4}} \<br>
+&amp;=-\frac{1}{2 \sigma^{4}}
+\end{aligned}
+$$
+In this example, it is easy to understand why the information matrix $ I(\theta) $ or the Hessian matrix $ H(\theta) $ is a measure of the information contained in the random variable $ X_{i} . $ The smaller the variance $ \sigma^{2}, $ the less noisy the random variable $ X_{i}, $ and so the more precise the estimation of the parameter $ \sigma^{2} $.</p>
+<p>For any unbiased estimator $ \hat{\tau}=\hat{\tau}<em>{n}\left(\mathbf{X}^{n}\right) $ of $ \sigma^{2}, $ we have $ E</em>{\theta}\left[\hat{\tau}<em>{n}\left(\mathbf{X}^{n}\right)\right]=\sigma^{2} $,
+$$
+\frac{d E</em>{\theta}\left[\hat{\tau}_{n}\left(\mathbf{X}^{n}\right)\right]}{d \sigma^{2}}=1
+$$</p>
+<p>It follows that the Cramer-Rao lower bound
+$$
+\begin{aligned}
+B_{n}(\theta) &amp;=\frac{1}{n} \frac{1^{2}}{\frac{1}{2 \sigma^{4}}} \<br>
+&amp;=\frac{2 \sigma^{4}}{n} \<br>
+&amp;&lt;\frac{2 \sigma^{4}}{n-1}=\operatorname{var}_{\theta}\left(S_{n}^{2}\right)
+\end{aligned}
+$$
+Hence, $ S_{n}^{2} $ does not attain the Cramer-Rao Lower Bound $ 2 \sigma^{4} / n $</p>
+<p>We cannot say that $ S_{n}^{2} $ is not the best unbiased estimator, because there exist two possibilities:</p>
+<ol>
+<li>there may be some unbiased estimator that attains $ B_{n}(\theta) ; $ or</li>
+<li>$ B_{n}(\theta) $ is unattainable by any unbiased estimator for $ \sigma^{2} $</li>
+</ol>
+<p>【Theorem 8.16】Suppose $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ is the joint  PMF/ PDF of the random sample $ \mathbf{X}^{n} $ and $ \hat{\tau}=\hat{\tau}_{n}\left(\mathbf{X}^{n}\right) $ is an unbiased estimator for parameter $ \tau(\theta), $ where $ f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) $ and $ \hat{\tau} $ satisfy the conditions in the Cramer-Rao lower bound theorem. Then the estimator $ \hat{\tau} $ attains the Cramer-Rao lower bound if and only if
+$$
+\hat{\tau}-\tau(\theta)=a(\theta) \frac{\partial \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta}
+$$
+for some function $ a: \Theta \rightarrow \mathbb{R} $.</p>
+<p><strong>Proof:</strong></p>
+<p>By the Cauchy-Schwarz inequality, we have
+$$
+\left{\operatorname{cov}<em>{\theta}\left[\hat{\tau}, \frac{\partial \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta}\right]\right}^{2} \leq \operatorname{var}</em>{\theta}(\hat{\tau}) \operatorname{var}<em>{\theta}\left[\frac{\partial \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta}\right]
+$$
+The equality holds if and only if $\left{\operatorname{corr}</em>{\theta}\left[\hat{\tau}, \frac{\partial \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta}\right]\right}^{2}=1$. Then, the centered parameter estimator $ \hat{\tau}-\tau(\theta) $ is proportional to the score function $ \frac{\partial}{\partial \theta} \ln \hat{L}\left(\theta | X^{n}\right) $ of the random sample $ \mathbf{X}^{n} $.</p>
+<p>Example 8.19 \text { [Continuation of Example } 8.18]: The likelihood function of an $ 11 D $ $ N\left(\mu, \sigma^{2}\right) $ random sample $ \mathbf{X}^{n} $ is
+$$
+\hat{L}\left(\theta | \mathbf{X}^{n}\right)=\frac{1}{\left(2 \pi \sigma^{2}\right)^{n / 2}} e^{-\frac{1}{2 \sigma^{2}} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}}
+$$
+where $ \theta=\left(\mu, \sigma^{2}\right) . $ Hence, the score function
+$$
+\frac{\partial \ln \hat{L}\left(\mu, \sigma^{2} | \mathbf{X}^{n}\right)}{\partial \sigma^{2}}=\frac{n}{2 \sigma^{4}}\left[n^{-1} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}-\sigma^{2}\right]
+$$</p>
+<p>Thus, taking a $ (\theta)=n /\left(2 \sigma^{4}\right) $ shows that the best unbiased estimator of $ \sigma^{2} $ is $ n^{-1} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2} $ if $ \mu $ is known. If $ \mu $ is unknown, the Cramer-Rao lower bound is not attainable.</p>
+<h2 id="88-conclusion">8.8 Conclusion</h2>
+<p>In this chapter, we first introduce two important estimation methods: MLE and MME, the latter having been extended by econometricians to GMM.</p>
+<p>MLE is based on a correctly specified parametric PMF/PDF model for the population distribution, while MME and GMM are based on a set of moment conditions on the population.</p>
+<p>Because it utilizes the information on the joint distribution of the random sample, MLE is expected to be more efficient than MME and GMM, unless for the latter, the sample moments used are sufficient statistics for the parameters of interest.</p>
+<p>GMM does not require the knowledge of the population distribution of the DGP.</p>
+<p>To gain insight into the properties of the MLE and MME / GMM, we develop the asymptotic theory for the proposed two estimators.</p>
+<p>In order to evaluate different estimators for the same population parameter, we introduce MSE to measure the closeness between an estimator and the population parameter.</p>
+<p>We then develop two important methods to evaluate unbiased parameter estimators.</p>
+<ul>
+<li><strong>One is the Lagrange multiplier approach, which does not require the knowledge of the population $ \mathrm{PMF} / \mathrm{PDF} $</strong></li>
+<li><strong>the other is the Cramer-Rao lower bound approach which requires the knowledgement of the joint likelihood function of the random sample.</strong></li>
+<li>We have focused on the methods to find the best unbiased estimator(s). It should be emphasized that <strong>the best unbiased estimator may not the most efficient estimator</strong>.</li>
+<li>A biased estimator may outperform an unbiased estimator by substantially reducing the variance with a bit increase in the bias. This is the case with many machine learning algorithms.</li>
+</ul>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/9.-hypothesis-testing/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/7.-convergences-and-limit-theorems/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

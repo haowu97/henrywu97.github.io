@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="8. Mechanism Design There are many situations in which some central authority wishes to implement a decision that depends on the private information of a set of players.
+ Government may wish to choose the design of a public-work project based on preferences of its citizens who have private information about their preferences. Monopolistic firms may wish to determine a set of consumers&#39; willingness to pay for different products it can produce with the goal of making as high a profit as possible." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/8.-mechanism-design/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="8. Mechanism Design There are many situations in which some central authority wishes to implement a decision that depends on the private information of a set of players.
+ Government may wish to choose the design of a public-work project based on preferences of its citizens who have private information about their preferences. Monopolistic firms may wish to determine a set of consumers&#39; willingness to pay for different products it can produce with the goal of making as high a profit as possible."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/8.-mechanism-design/" /><link rel="prev" href="https://henrywu97.github.io/a1-optimization/" /><link rel="next" href="https://henrywu97.github.io/7.-auction-theory/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/8.-mechanism-design\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  5172 ,
+        "url": "https:\/\/henrywu97.github.io\/8.-mechanism-design\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/8.-mechanism-design/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/8.-mechanism-design/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5172 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;25 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#81-set-up">8.1 Set up</a>
+      <ul>
+        <li><a href="#811-mechanism-as-bayesian-games">8.1.1 Mechanism as Bayesian Games</a></li>
+        <li><a href="#812-players">8.1.2 Players</a></li>
+        <li><a href="#813-mechanism-designer">8.1.3 Mechanism Designer</a></li>
+      </ul>
+    </li>
+    <li><a href="#82-the-mechanism-game">8.2 The Mechanism Game</a></li>
+    <li><a href="#83-bayesian-implementation">8.3 Bayesian Implementation</a>
+      <ul>
+        <li><a href="#831-example-fpa-as-an-allocation-mechanism">8.3.1 Example: FPA as an Allocation Mechanism</a></li>
+        <li><a href="#832-definition">8.3.2 Definition</a></li>
+        <li><a href="#833-the-revelation-principle">8.3.3 The Revelation Principle</a></li>
+        <li><a href="#834-bic-and-revenue-equivalence-theorem">8.3.4 BIC and Revenue Equivalence Theorem</a></li>
+      </ul>
+    </li>
+    <li><a href="#84-dominant-strategy-implementation">8.4 Dominant Strategy Implementation</a>
+      <ul>
+        <li><a href="#841-example-spa-as-an-allocation-mechanism">8.4.1 Example: SPA as an Allocation Mechanism</a></li>
+        <li><a href="#842-definition">8.4.2 Definition</a></li>
+        <li><a href="#843-vickery-clarke-groves-mechanism">8.4.3 VicKery-Clarke-Groves Mechanism</a></li>
+        <li><a href="#844-pivotal-mechanism">8.4.4 Pivotal mechanism</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="8-mechanism-design">8. Mechanism Design</h1>
+<p>There are many situations in which some c<strong>entral authority wishes to implement a decision</strong> that depends on the private information of a set of players.</p>
+<ul>
+<li>Government may wish to choose the design of a <strong>public-work project</strong> based on preferences of its citizens who have private information about their preferences.</li>
+<li><strong>Monopolistic firms</strong> may wish to determine a set of consumers' willingness to pay for different products it can produce with the goal of making as high a profit as possible.</li>
+<li>A seller of an object wants to <strong>design an auction</strong> to maximize her revenue when each bidder&rsquo;s valuation is private information.</li>
+</ul>
+<p><strong>Mechanism design</strong> is a study of what kinds of mechanism that the central authority can devise in order <strong>to reveal the private information of players</strong>. Central authority is the mechanism designer.</p>
+<h2 id="81-set-up">8.1 Set up</h2>
+<h3 id="811-mechanism-as-bayesian-games">8.1.1 Mechanism as Bayesian Games</h3>
+<p>A set of players $ N={1,2, \ldots, n} $.</p>
+<p>A set of <strong>public alternatives</strong> $ X $ that could represent many kinds of alternatives.</p>
+<ul>
+<li>e.g., an alternative $ x \in X $ could represent the attributes of a public good or service, <em>like investment in education or in preserving the environment</em>.</li>
+</ul>
+<p>The reason that $ X $ is called as public alternatives is the chosen alternative affects all the players in $ N $,</p>
+<ul>
+<li>e.g., in an auction, if one player gets a private good then the consequence is that everyone else does not</li>
+</ul>
+<p>Each player $ i $ privately observes his type $ \theta_{i} \in \Theta_{i} $ which determines his preferences.</p>
+<p>Let $ \theta=\left(\theta_{1}, \theta_{2}, \ldots, \theta_{n}\right) $ be the **state of the world**.</p>
+<p>State $ \theta $ is drawn randomly from the state space
+$$
+\Theta \equiv \Theta_{1} \times \Theta_{2} \times \cdots \times \Theta_{n}
+$$</p>
+<p>The draw of $ \theta $ is according to some prior distribution $ \phi(\cdot) $ over $ \Theta $.</p>
+<p>$ \theta_{i} $ is player $ i^{\prime} $ s private information; $ \phi(\cdot) $ is common knowledge
+knowledge.</p>
+<h3 id="812-players">8.1.2 Players</h3>
+<p>Each player $ i $ has <strong>quasi-linear preference</strong> 
+$$
+v_{i}\left(x, m, \theta_{i}\right)=u_{i}\left(x, \theta_{i}\right)+m_{i} 
+$$
+Alternatives have a &ldquo;money-equivalent&rdquo; value, and preferences are additive in money.</p>
+<p>$ m_{i} $ is the amount of money that is given to individual $ i . m_{i} $ can be negative, representing that money is taken away from individual $ i $.</p>
+<p>$ u_{i}\left(x, \theta_{i}\right) $ is money-equivalent **value of alternative** $ x \in X $ when $ i $ &rsquo;s type is $ \theta_{i} $.</p>
+<p>An <strong>outcome (alternative+money)</strong> is represented as $ y=\left(x, m_{1}, \ldots, m_{n}\right) $.</p>
+<h3 id="813-mechanism-designer">8.1.3 Mechanism Designer</h3>
+<p>The mechanism designer has the objective of achieving an outcome that depends on the types of players.</p>
+<p>Assume that mechanism designer does not have a source of funds to pay the players (Government rather than firm); i.e. <strong>monetary payments have to be self-financed</strong>, which is $ \sum_{i=1}^{n} m_{i} \leq 0 $.</p>
+<p>When $ \sum_{i=1}^{n} m_{i}&lt;0, $ it means that mechanism designer keeps some of the money that he raises from players.</p>
+<p>The <strong>set of outcomes</strong> is defined as:
+$$
+Y=\left{\left(x, m_{1}, \ldots, m_{n}\right): x \in X, m_{i} \in \mathbb{R}, \forall i \in N, \sum_{i=1}^{n} m_{i} \leq 0\right}
+$$</p>
+<p>The mechanism designer&rsquo;s objective is given by a <strong>choice rule/ strategy</strong>:
+$$
+f(\theta)=\left(x(\theta), m_{1}(\theta), \ldots, m_{n}(\theta)\right)
+$$</p>
+<p>where $ x(\theta) \in X $ and $ \sum_{i=1}^{n} m_{i} \leq 0 $.</p>
+<p>$ x(\theta) $ is the <strong>decision rule</strong> (function); $ \left(m_{1}(\theta), \ldots, m_{n}(\theta)\right) $ is the **transfer rule**.</p>
+<p><strong>Example 1:</strong></p>
+<p>Let $ X=[0, \bar{x}] $ be the size of a water treatment plant.</p>
+<p>The plant will benefit some citizens and may displease others.</p>
+<p>The citizens are the group of players, $ N $</p>
+<p>Player i&rsquo;s <strong>willingness to pay/ utility</strong> from $ x \in X $ of the plant is
+$$
+u_{i}\left(x, \theta_{i}\right)
+$$
+The utilitarian mechanism designer **maximizes the sum of the players' valuations** by choosing the value of $ x $. So his decision rule $ x(\theta) $ would maximize $ \sum_{i=1}^{n} u_{i}\left(x, \theta_{i}\right) $</p>
+<p><strong>Example 2:</strong></p>
+<p>A good: a license to use a certain portion of the electromagnetic spectrum for cell coverage.</p>
+<p>The license can be allocated to one of a group of cellular carriers $ i \in N $.</p>
+<p>$ x_{i} \in{0,1} $ indicates whether player $ i $ receives the license
+$$
+\left(x_{i}=1\right) \text { or not }\left(x_{i}=0\right)
+$$
+The possible set of alternatives is
+$$
+X=\left{\left(x_{1}, \ldots, x_{n}\right)\right}
+$$
+such that $ x_{i} \in{0,1} $ and $ \sum_{i=1}^{n} x_{i}=1 $.</p>
+<p>Player $ i $ &rsquo;s willingness to pay for the license is $ u_{i}\left(x, \theta_{i}\right)=\theta_{i} x_{i} $.</p>
+<p>The mechanism designer maximizes the sum of the players' valuations by choosing $ x $. So his decision rule $ x(\theta) $ would maximize $ \sum_{i=1}^{n} u_{i}\left(x, \theta_{i}\right) $.</p>
+<h2 id="82-the-mechanism-game">8.2 The Mechanism Game</h2>
+<p>The mechanism designer desires to implement a choice rule
+$$
+f: \Theta \rightarrow Y
+$$
+The problem is that the mechanism designer&rsquo;s choice rule depends on the unobserved state $ \Theta $.</p>
+<p><strong>Two ways</strong> that the mechanism designer have to solve the problem.</p>
+<p><strong>The first method is to ask each player directly</strong>. But are they willing to share their true preference?</p>
+<p><strong>Example 3 (MWG 23.B.1):</strong></p>
+<p>Consider an abstract case, where we are given a set of alternatives $ X={x, y, z} $ and two players Suppose that agent 1 has one possible type, so that $ \Theta_{1}=\left{\bar{\theta}_{1}\right} $ and that agent 2 has two possible types, so that$ \Theta_{2}=\left{\theta_{2}^{\prime}, \theta_{2}^{\prime \prime}\right} $.</p>
+<p>The agents' possible preference orderings are given as
+$$
+\begin{array}{c|ccc} 
+&amp; \bar{\theta}<em>{1} &amp; \theta</em>{2}^{\prime} &amp; \theta_{2}^{\prime \prime} \<br>
+\hline \text { Best } &amp; x &amp; z &amp; y \<br>
+\text { Middle } &amp; y &amp; y &amp; x \<br>
+\text { Worst } &amp; z &amp; x &amp; z
+\end{array}
+$$</p>
+<p>Suppose that the agents wish to implement the ex post efficient social choice function $ f(\cdot) $ with
+$$
+f\left(\bar{\theta}<em>{1}, \theta</em>{2}^{\prime}\right)=y \quad \text { and } \quad f\left(\bar{\theta}<em>{1}, \theta</em>{2}^{\prime \prime}\right)=x
+$$
+If so, then agent 2 must be relied upon to truthfully reveal his preferences.</p>
+<p>It is apparent, however, that he will not find it in his interest to do so. When $ \theta_{2}=\theta_{2}^{\prime \prime}, $ **agent 2 will wish to lie** and claim that his type is $ \theta_{2}^{\prime} $.</p>
+<p>In the words of a famous American TV Doctor, &ldquo;Everyone lies.&rdquo;</p>
+<p>Let&rsquo;s look at the alternative way.</p>
+<p><strong>In the second way</strong>, the mechanism designer <em>designs some clever game that ends up revealing the players' private information</em>.(like Screening)</p>
+<p>The rules of the game endows each player $ i $ with an action set $ A_{i} $.</p>
+<p>Following the choice $ a_{i} \in A_{i} $ by each player, there is some **outcome function** $ g\left(a_{1}, \ldots, a_{n}\right) $.</p>
+<p>That makes a choice of an outcome $ y \in Y $.</p>
+<p>The payoffs of player $ i $ over outcomes is $ v_{i}\left(g(s), \theta_{i}\right) $.</p>
+<p>【Definition】A <strong>mechanism</strong>, $ \Gamma=\left{A_{1}, A_{2}, \ldots, A_{n}, g(\cdot)\right} $ is a collection of $ n $ action sets $ A_{1}, A_{2}, \ldots, A_{n} $ and an outcome function $ g: A_{1} \times A_{2} \times \cdots \times A_{n} \rightarrow Y $. A pure strategy for player $ i $ in the mechanism $ \Gamma $ is a function that maps types into actions, $ s_{i}: \Theta_{i} \rightarrow A_{i} $. The payoffs of the players are given by $ v_{i}\left(g(s), \theta_{i}\right) $.</p>
+<h2 id="83-bayesian-implementation">8.3 Bayesian Implementation</h2>
+<h3 id="831-example-fpa-as-an-allocation-mechanism">8.3.1 Example: FPA as an Allocation Mechanism</h3>
+<p>MWG Example 23.B.5. Consider an FPA with one seller (player 0) and two bidders (player 1 and 2).</p>
+<p>Each bidder with valuation $ \theta_{i} \sim U[0,1] . $ BNE of the auction is $ b_{i}\left(\theta_{i}\right)=\theta_{i} / 2, \forall i $.</p>
+<p>The corresponding choice rule $ f(\theta)=\left(x_{0}(\theta), x_{1}(\theta), x_{2}(\theta), m_{0}(\theta), m_{1}(\theta), m_{2}(\theta)\right) $ is
+$$
+\begin{array}{l}
+x_{1}(\theta)=1 \text { if } \theta_{1} \geq \theta_{2} ;=0 \text { if } \theta_{1}&lt;\theta_{2} \<br>
+x_{2}(\theta)=1 \text { if } \theta_{1}&lt;\theta_{2} ;=0 \text { if } \theta_{1} \geq \theta_{2} \<br>
+m_{1}(\theta)=-0.5 \theta_{1} \cdot x_{1}(\theta) \<br>
+m_{2}(\theta)=-0.5 \theta_{2} \cdot x_{2}(\theta) \<br>
+x_{0}(\theta)=0, \forall \theta, m_{0}(\theta)=-\left(m_{1}(\theta)+m_{2}(\theta)\right)
+\end{array}
+$$</p>
+<h3 id="832-definition">8.3.2 Definition</h3>
+<p>【Definition】The strategy profile $ s^{*}(\cdot)=\left(s_{1}^{*}(\cdot), \ldots, s_{n}^{*}(\cdot)\right) $ is a **Bayesian Nash equilibrium** of the mechanism $ \Gamma=\left{A_{1}, \ldots, A_{n}, g(\cdot)\right} $ if for every $ i \in N $ and for every $ \theta_{i} \in \Theta_{i} $
+$$
+\begin{aligned}
+&amp; E_{\theta_{-i}}\left[v_{i}\left(g\left(s_{i}^{*}\left(\theta_{i}\right), s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \<br>
+\geq &amp; E_{\theta_{-i}}\left[v_{i}\left(g\left(a_{i}^{\prime}, s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \quad \text { for all } a_{i}^{\prime} \in A_{i}
+\end{aligned}
+$$
+That is, if player $ i $ believes that other players are playing according to $ s_{-i}^{*}(\theta) $ then he maximizes his expected payoff by following the behavior prescribed by $ s_{i}^{*}\left(\theta_{i}\right) $ regardless of which type player $ i $ is.</p>
+<p>The mechanism designer designs a mechanism in which $ s_{i}^{*} \rightarrow A_{i} $ such that the outcome is exactly what the mechanism designer desires given each $ \theta_{i} $.
+$$
+\text { for all } \theta \in \Theta, g\left(s_{1}^{*}\left(\theta_{1}\right), s_{2}^{*}\left(\theta_{2}\right), \ldots, s_{n}^{*}\left(\theta_{n}\right)\right)=f(\theta)
+$$
+【Definition】A mechanism $ \Gamma $ **implements** the choice rule $ f(\cdot) $ if there exists a Bayesian Nash equilibrium of the mechanism $ \Gamma $
+$$
+\begin{array}{l}
+\left(s_{1}^{*}\left(\theta_{1}\right), s_{2}^{*}\left(\theta_{2}\right), \ldots, s_{n}^{*}\left(\theta_{n}\right)\right), \text { such that } \<br>
+g\left(s_{1}^{*}\left(\theta_{1}\right), s_{2}^{*}\left(\theta_{2}\right), \ldots, s_{n}^{*}\left(\theta_{n}\right)\right)=f(\theta) \text { for all } \theta \in \Theta
+\end{array}
+$$</p>
+<p>That is, it instead implements $ f(\cdot) $ after knowing the true $ \theta $ the mechanism does what the mechanism designer wants to $ \mathrm{do}: g(a(\theta))=f(\theta) $.</p>
+<p>It is a <strong>partial implementation</strong> because it requires that the desired outcome be an equilibrium, but allows for other, undersirable equilibrium outcomes as well.</p>
+<p>The implementation without &ldquo;bad equilibria&rdquo; is called <strong>full implementation</strong>.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200606173531.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200606173531.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200606173531.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200606173531.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200606173531.jpg"
+        title="20200606173531.jpg" /></div></p>
+<h3 id="833-the-revelation-principle">8.3.3 The Revelation Principle</h3>
+<p>The mechanism game is a Bayesian game.</p>
+<p>It is useful when the mechanism designer cannot get players to reveal their types.</p>
+<p>There is a particular mechanism which is also a Bayesian game in which the mechanism designer <strong>asks players directly to reveal their types in order to implement $ f(\cdot) $.</strong></p>
+<p>The mechanism designer implements $ f(\hat{\theta}), $ with $ \hat{\theta} $ is announced by the players.</p>
+<p>【Definition】$ \Gamma=\left{\Theta_{1}, \ldots, \Theta_{n}, f(\cdot)\right} $ is a **direct revelation mechanism** for choice rule $ f(\cdot) $ if $ A_{i}=\Theta_{i} $ for all $ i \in N $ and $ g(\theta)=f(\theta) $ for all $ \theta \in \Theta $.</p>
+<p>The straightforward direct revelation mechanism will actually have an equilibrium that implements the mechanism designer&rsquo;s intended outcome.???</p>
+<p>【Definition】The choice rule $ f(\cdot) $ is <strong>truthfully implementable in Bayesian Nash equilibrium</strong> if for all $ \theta $ the direct revelation mechanism $ \Gamma=\left{\Theta_{1}, \ldots, \Theta_{l}, f(\cdot)\right} $ has a Bayesian Nash equilibrium $ s_{i}^{*}\left(\theta_{i}\right)=\theta_{i} $ for all $ i . $ Equivalently, for all $ i $
+$$
+\begin{aligned}
+E_{\theta_{-i}}\left[v_{i}\left(f\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right] &amp; \geq E_{\theta_{-i}}\left[v_{i}\left(f\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right] \<br>
+\text { for all } \hat{\theta}_{i} &amp; \in \Theta_{i}
+\end{aligned}
+$$</p>
+<p>That is, $ f(\cdot) $ is truthfully implementable in Bayesian Nash equilibrium if <strong>truthtelling is a Bayesian Nash equilibrium strategy</strong> in the direct revelation mechanism.</p>
+<ul>
+<li>If every player $ i $ believes that all other players are reporting their types truthfully, then player $ i $ is also willing to report truthfully.</li>
+</ul>
+<p>【Example 4】$ (\mathrm{MWG} 23 . \mathrm{B} .7): $ Consider a <strong>first-price sealed-bid auction</strong> where two potential buyers have valuations $ \theta_{i} $ that are drawn from a uniform distribution on [0,1].</p>
+<p>Recall that the equilibrium bidding function for each player $ i $ is $ b_{i}\left(\theta_{i}\right)=\frac{1}{2} \theta_{i} $.</p>
+<p>When facing the direct revelation mechanism $ \Gamma=\left{\Theta_{1}, \ldots, \Theta_{l}, f(\cdot)\right} $ (所有人同时报真实底价然后密封，价高者得，且按照报价的一半支付), buyer 1 &rsquo;s optimal announcement $ \hat{\theta}_{1} $, when he has type $ \theta_{1} $ solves
+$$
+\begin{array}{l}
+\max _{\hat{\theta}_{1}}\left(\theta_{1}-\frac{1}{2} \hat{\theta}_{1}\right) \operatorname{Pr}\left(\theta_{2} \leq \hat{\theta}_{1}\right) \<br>
+\quad=\max _{\hat{\theta}_{1}}\left(\theta_{1}-\frac{1}{2} \hat{\theta}_{1}\right) \hat{\theta}_{1}
+\end{array}
+$$</p>
+<p>The first-order condition is
+$$
+\theta_{1}-\hat{\theta}_{1}=0 \Longrightarrow \hat{\theta}_{1}=\theta_{1}
+$$
+Hence, truth telling is buyer 1 &rsquo;s **optimal strategy given that buyer 2 always tells the truth**. A similar conclusion follows for buyer 2.</p>
+<p>Thus, the social choice function implemented by the first-price sealed-bid auction (in a Bayesian Nash equilibrium) can also be truthfully implemented (in a Bayesian Nash equilibrium) through a direct revelation mechanism!</p>
+<p>【Proposition】The <strong>Revelation Principle</strong> for Bayesian Nash Implementation: A choice rule $ f(\cdot) $ is implementable in Bayesian Nash equilibrium if and only if it is truthfully implementable in Bayesian Nash equilibrium.</p>
+<p><strong>Proof:</strong></p>
+<p><strong>IF part</strong>: By definition, if $ f(\cdot) $ is truthfully implementable in Bayesian Nash equilibrium then it is implementable in Bayesian Nash equilibrium using the direct revelation mechanism.</p>
+<p><strong>ONLY IF part</strong>: Suppose that there exists some mechanism $ \Gamma=\left(A_{1}, \ldots, A_{n}, g(\cdot)\right) $ that implements $ f(\cdot) $ using the equilibrium strategy profile $ s^{*}(\cdot)=\left(s_{1}^{*}(\cdot), \ldots, s_{n}^{*}(\cdot)\right) $ and $ g\left(s^{*}(\cdot)\right)=f(\cdot), $ so that for every $ i \in N $ and $ \theta_{i} \in \Theta_{i} $
+$$
+\begin{aligned}
+&amp; E_{\theta_{-i}}\left[v_{i}\left(g\left(s_{i}^{*}\left(\theta_{i}\right), s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \<br>
+\geq &amp; E_{\theta_{-i}}\left[v_{i}\left(g\left(a_{i}^{\prime}, s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \quad \text { for all } a_{i}^{\prime} \in A_{i}
+\end{aligned}
+$$
+which means that no player $ i $ wishes to deviate from $ s_{i}^{*}(\cdot) $.</p>
+<p>However, when player $ i $ is asked his type, if he pretends that his type is $ \hat{\theta}<em>{i} $ rather than $ \theta</em>{i}, $ then $ a_{i}^{\prime}=s_{i}^{*}\left(\hat{\theta}_{i}\right) $.</p>
+<p>Thus
+$$
+\begin{aligned}
+&amp; E_{\theta_{-i}}\left[v_{i}\left(g\left(s_{i}^{*}\left(\theta_{i}\right), s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \<br>
+\geq &amp; E_{\theta_{-i}}\left[v_{i}\left(g\left(s_{i}^{*}\left(\hat{\theta}_{i}\right), s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \quad \text { for every } \hat{\theta}_{i} \in \Theta_{i}
+\end{aligned}
+$$
+Because $ g\left(s^{*}(\theta)\right)=f(\theta) $ for all $ \theta \in \Theta $
+$$
+\begin{aligned}
+E_{\theta_{-i}}\left[v_{i}\left(f\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right] &amp; \geq E_{\theta_{-i}}\left[v_{i}\left(f\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right] \<br>
+\text { for every } \hat{\theta}_{i} &amp; \in \Theta_{i}
+\end{aligned}
+$$
+This is just the condition for $ f(\cdot) $ to be truthfully implementable in Bayesian Nash equilibrium.</p>
+<p><strong>If the mechanism designer cannot implement $ f(\cdot) $ directly then there is no mechanism in the world that can.</strong></p>
+<p>The designed mechanism and direct revelation mechanism are equivalent.</p>
+<ul>
+<li>In equilibrium the players know that the mechanism implements $ f(\cdot), $ and they choose to stick to it.</li>
+<li>So they announce their types truthfully and have the mechanism designer implement $ f(\cdot) $ directly.</li>
+</ul>
+<h3 id="834-bic-and-revenue-equivalence-theorem">8.3.4 BIC and Revenue Equivalence Theorem</h3>
+<p><strong>The concept, truthfully implementable in Bayesian Nash Equilibrium is also known as Bayesian Incentive Compatible (BIC).</strong></p>
+<p>Consider a generalized auction mechanism as follows:</p>
+<ul>
+<li>
+<p>Agent 0 is the seller of an indivisible object from which he derives no values; and agents $ 1, \ldots, n $ are potential buyers.</p>
+</li>
+<li>
+<p>Each agent&rsquo;s type (valuation) is generated $ \theta_{i} \in \Theta_{i}=\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right] $ following $ \operatorname{CDF} \Phi_{i}\left(\theta_{i}\right) $, $ \text { with density } \phi_{i}\left(\theta_{i}\right)&gt;0, \forall \theta_{i} \in \Theta_{i} $.</p>
+</li>
+<li>
+<p>Let $ x_{i}(\theta) $ denote buyer $ i $ &rsquo;s probability of getting the item when the reported types of all bidders are $ \theta=\left(\theta_{1}, \ldots, \theta_{n}\right) $</p>
+</li>
+<li>
+<p>Let $ m_{i}(\theta) $ denote bidder $ i $ &rsquo;s payment in the auction given the reported type profile $ \theta $</p>
+</li>
+<li>
+<p>Bidder $ i $ &rsquo;s utility $ v_{i}\left(x, m_{i}, \theta_{i}\right)=\theta_{i} \cdot x_{i}(\theta)+m_{i}(\theta) $</p>
+</li>
+</ul>
+<p>A type $ \theta_{i} $ buyer $ i $ &rsquo;s expected transfer if he reports his type to be $ \hat{\theta}_{i} $ and all other buyers truthfully reports their types $ \theta_{-i} $
+$$
+\bar{m}_{i}\left(\hat{\theta}_{i}\right) \doteq E_{\theta_{-i}}\left[m_{i}\left(\hat{\theta}_{i}, \theta_{-i}\right)\right]
+$$
+A type $ \theta_{i} $ buyer $ i $ &rsquo;s probability of receiving the object if he reports his type to be $ \hat{\theta}_{i} $ and all other buyers truthfully reports their types $ \theta_{-i} $
+$$
+\bar{x}_{i}\left(\hat{\theta}_{i}\right) \doteq E_{\theta_{-i}}\left[x_{i}\left(\hat{\theta}_{i}, \theta_{-i}\right)\right]
+$$
+A type $ \theta_{i} $ buyer $ i $ &rsquo;s expected utility if he reports his type to be $ \hat{\theta}_{i} $ and all other buyers truthfully reports their types $ \theta_{-i} $
+$$
+\begin{aligned}
+&amp; E_{\theta_{-i}}\left[v_{i}\left(x(\cdot), m_{i}(\cdot), \hat{\theta}_{i}\right) | \theta_{i}\right] \<br>
+=&amp; E_{\theta_{-i}}\left[\theta_{i} \cdot x_{i}\left(\hat{\theta}_{i}, \theta_{-i}\right)+m_{i}\left(\hat{\theta}_{i}, \theta_{-i}\right)\right] \<br>
+=&amp; \theta_{i} \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)+\bar{m}_{i}\left(\hat{\theta}_{i}\right)
+\end{aligned}
+$$
+A type $ \theta_{i} $ buyer $ i $ &rsquo;s expected utility if he truthfully reports his type $ \theta_{i} $
+$$
+V_{i}\left(\theta_{i}\right)=\theta_{i} \cdot \bar{x}_{i}\left(\theta_{i}\right)+\bar{m}_{i}\left(\theta_{i}\right)
+$$</p>
+<p>【Proposition】23.D.2 <strong>Necessary and Sufficient Conditions for Bayesian Incentive Compatibility</strong>: The choice rule $ f(\cdot)=\left(x(\cdot), m_{1}(\cdot), \ldots, m_{n}(\cdot)\right) $ is Bayesian Incentive Compatible if and only if, for all $ i=1, \ldots, n, $ the following conditions hold:</p>
+<ol>
+<li>$ \bar{x}_{i}(\cdot) $ is non-decreasing.</li>
+<li>For all $ \theta_{i} $ of buyer $ i $</li>
+</ol>
+<p>$$
+V_{i}\left(\theta_{i}\right)=V_{i}\left(\underline{\theta}_{i}\right)+\int_{\underline{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}(s) d s
+$$
+**Proof for Necessity** $ &quot; \Rightarrow &quot; $</p>
+<p>WLOG, consider $ \hat{\theta}<em>{i}&gt;\theta</em>{i} $. Bayesian incentive compatibility (BIC) implies (此时是对同一个买者，$  \theta $是随机变量，可能取到不同的值):
+$$
+\begin{aligned}
+\operatorname{type} \theta_{i} \operatorname{BIC}: V_{i}\left(\theta_{i}\right) &amp; \geq \theta_{i} \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)+\bar{m}_{i}\left(\hat{\theta}_{i}\right) \<br>
+&amp;=\theta_{i} \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)+\bar{m}_{i}\left(\hat{\theta}_{i}\right)+\hat{\theta}_{i} \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)-\hat{\theta}_{i} \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right) \<br>
+&amp;=V_{i}\left(\hat{\theta}_{i}\right)+\left(\theta_{i}-\hat{\theta}_{i}\right) \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right) \<br>
+\operatorname{type} \hat{\theta}_{i} \operatorname{BIC}: V_{i}\left(\hat{\theta}_{i}\right) &amp; \geq V_{i}\left(\theta_{i}\right)+\left(\hat{\theta}_{i}-\theta_{i}\right) \cdot \bar{x}_{i}\left(\theta_{i}\right)
+\end{aligned}
+$$
+Combining the two: 
+$$
+\bar{x}_{i}\left(\hat{\theta}_{i}\right) \geq\left(V_{i}\left(\hat{\theta}_{i}\right)-V_{i}\left(\theta_{i}\right)\right) /\left(\hat{\theta}_{i}-\theta_{i}\right) \geq \bar{x}_{i}\left(\theta_{i}\right) 
+$$
+which implies that $ \bar{x}_{i}(\cdot) $ must be non-decreasing. And when $ \hat{\theta}_{i} \rightarrow \theta_{i}, $ we have $ V_{i}^{\prime}\left(\theta_{i}\right)=\bar{x}_{i}\left(\theta_{i}\right) $ (夹逼定理). Therefore, (对两边积分)
+$$
+V_{i}\left(\theta_{i}\right)=V_{i}\left(\underline{\theta}_{i}\right)+\int_{\underline{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}(s) d s, \forall \theta_{i}
+$$</p>
+<p><strong>Proof for Sufficiency</strong> &ldquo;$  \Leftarrow  $&rdquo;</p>
+<p>WLOG consider two types $ \theta_{i}&gt;\hat{\theta}_{i} $ of buyer $ i $. If condition (1) and (2) hold,
+$$
+\begin{array}{c}
+V_{i}\left(\theta_{i}\right)-V_{i}\left(\hat{\theta}_{i}\right)=\int_{\hat{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}(s) d s \<br>
+\geq \int_{\hat{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}\left(\hat{\theta}_{i}\right) d s=\left(\theta_{i}-\hat{\theta}_{i}\right) \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)
+\end{array}
+$$
+which implies $ V_{i}\left(\theta_{i}\right) \geq V_{i}\left(\hat{\theta}_{i}\right)+\left(\theta_{i}-\hat{\theta}_{i}\right) \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)=\theta_{i} \cdot \bar{x}_{i}\left(\hat{\theta}_{i}\right)+\bar{m}_{i}\left(\hat{\theta}_{i}\right), $ the BIC for type $ \theta_{i} $.</p>
+<p>Similarly, starting from $ \frac{\partial}{l_{l}}&lt;\hat{\vartheta}_{i}, $ we will have $ V_{i}\left(\hat{\theta}_{i}\right) \geq V_{i}\left(\theta_{i}\right)+\left(\hat{\theta}_{i}-\theta_{i}\right) \cdot \bar{x}_{i}\left(\theta_{i}\right)=\hat{\theta}_{i} \cdot \bar{x}_{i}\left(\theta_{i}\right)+\bar{m}_{i}\left(\theta_{i}\right), $ the BIC for type $ \hat{\theta}_{i} $.</p>
+<p>Therefore, the choice rule $ f(\cdot) $ is Bayesian incentive compatible.</p>
+<p>【Proposition】23.10.3 <strong>The Revenue Equivalence Theorem:</strong> Consider an auction setting with n risk-neutral buyers, in which buyer i&rsquo;s valuation is drawn from an interval $ \left[\underline{\theta}<em>{i}, \bar{\theta}</em>{i}\right] $ with $ \underline{\theta}<em>{i} \neq \bar{\theta}</em>{i} $ and a strictly positive density $ \phi(\cdot)&gt;0 $ and in which buyers' types are independently distributed.</p>
+<p>Suppose that a given pair of Bayesian Nash Equilibriua of two different auction procedures are such that $ \forall i $</p>
+<ol>
+<li>For each possible realization of $ \left(\theta_{1}, \ldots, \theta_{n}\right) $, buyer i has an identical probability of getting the item in the two auctions; i.e. same assignment rule (e.g. FPA &amp; SPA)</li>
+</ol>
+<p>$$
+\left(x_{1}(\theta), x_{2}(\theta), \ldots, x_{n}(\theta)\right)
+$$
+2. Buyer i has the same expected utility level in the two auctions when his type is the lowest $ \underline{\theta}_{i} ; $ i.e. same value of $ V_{1}\left(\underline{\theta}_{1}\right), V_{2}\left(\underline{\theta}_{2}\right), \ldots, V_{n}\left(\underline{\theta}_{n}\right) $.</p>
+<p>Then <strong>these BNEa of the two auctions generate the same expected revenue for the seller (e.g. indifferent with FPA &amp; SPA)</strong>.</p>
+<p><strong>Proof for Proposition 23.0.3</strong></p>
+<p>By the revelation principle, the choice rule that is implemented by the BNE of an auction must be Bayesian incentive compatible. So we can use the two conditions of Proposition 23.D.2.</p>
+<p>NTS: if two BIC choice rule of the two auction procedures have the same probability functions $ \left(x_{1}(\theta), \ldots, x_{n}(\theta)\right) $ and the same expected utility of the lowest type $ \left(V_{1}\left(\underline{\theta}_{1}\right), \ldots, V_{n}\left(\underline{\theta}_{n}\right)\right), $ then these two auction procedures generate the same expected revenue for the seller.</p>
+<p>Notice that the seller&rsquo;s expected revenue from an arbitrary BIC mechanism is
+$$
+\sum_{i=1}^{n} E_{\theta}\left[-m_{i}\left(\theta_{i}\right)\right]
+$$</p>
+<p>We first calculate $ E\left[-m_{i}\left(\theta_{i}\right)\right] $
+$$
+E\left[-\bar{m}_{i}\left(\theta_{i}\right)\right]=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}-\bar{m}_{i}\left(\theta_{i}\right) \phi_{i}\left(\theta_{i}\right) d \theta_{i}
+$$
+Since $ V_{i}\left(\theta_{i}\right)=\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}+\bar{m}_{i}\left(\theta_{i}\right), $ then solving for the expected transfer $ \bar{m}_{i}\left(\theta_{i}\right) $, yields $ \bar{m}_{i}\left(\theta_{i}\right)=V_{i}\left(\theta_{i}\right)-\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}, $ and multiplying by -1 on both sides $ -\bar{m}_{i}\left(\theta_{i}\right)=\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}-V_{i}\left(\theta_{i}\right) $, implying that
+$$
+E\left[-\bar{m}_{i}\left(\theta_{i}\right)\right]=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}} \underbrace{\left[\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}-V_{i}\left(\theta_{i}\right)\right]}_{-\bar{m}_{i}\left(\theta_{i}\right)} \phi_{i}\left(\theta_{i}\right) d \theta_{i}
+$$</p>
+<p>Since $ V_{i}\left(\theta_{i}\right)=V_{i}\left(\underline{\theta}_{i}\right)+\int_{\underline{\theta}_{j}}^{\theta_{i}} \bar{x}_{i}(s) d s, $ then $ E\left[-\bar{m}_{i}\left(\theta_{i}\right)\right] $ becomes
+$$
+E\left[-\bar{m}_{i}\left(\theta_{i}\right)\right]=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}
+[\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}-\underbrace{V_{i}\left(\underline{\theta}_{i}\right)-\int_{\underline{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}(s) d s}_{V_{i}\left(\theta_{i}\right)} ]\phi_{i}\left(\theta_{i}\right) d \theta_{i}
+$$
+Taking $ V_{i}\left(\underline{\theta}_{i}\right) $ out of the integral operator, yields
+$$
+E\left[-\bar{m}_{i}\left(\theta_{i}\right)\right]=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}\left[\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}-\int_{\underline{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}(s) d s\right] \phi_{i}\left(\theta_{i}\right) d \theta_{i}-V_{i}\left(\underline{\theta}_{i}\right)
+$$
+Applying integration by parts we obtain:
+$$
+\begin{aligned}
+\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}} \int_{\underline{\theta}_{i}}^{\theta_{i}} \bar{x}_{i}(s) d s \underbrace{\phi_{i}\left(\theta_{i}\right) d \theta_{i}}_{d \Phi_{i}\left(\theta_{i}\right)} &amp;=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}} \bar{x}_{i}\left(\theta_{i}\right) d \theta_{i}-\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}} \bar{x}_{i}\left(\theta_{i}\right) \Phi_{i}\left(\theta_{i}\right) d \theta_{i} \<br>
+&amp;=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}} \bar{x}_{i}\left(\theta_{i}\right)\left(1-\Phi_{i}\left(\theta_{i}\right)\right) d \theta_{i}
+\end{aligned}
+$$</p>
+<p>Substituting this result inside the previous expression yields:
+$$
+\begin{aligned}
+E\left[-\bar{m}<em>{i}\left(\theta</em>{i}\right)\right] &amp;=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}}\left[\bar{x}_{i}\left(\theta_{i}\right) \theta_{i}-\bar{x}_{i}\left(\theta_{i}\right) \frac{1-\Phi_{i}\left(\theta_{i}\right)}{\phi_{i}\left(\theta_{i}\right)}\right] \phi_{i}\left(\theta_{i}\right) d \theta_{i}-V_{i}\left(\underline{\theta}_{i}\right) \<br>
+&amp;=\int_{\underline{\theta}_{i}}^{\bar{\theta}_{i}} \bar{x}_{i}\left(\theta_{i}\right)\left[\theta_{i}-\frac{1-\Phi_{i}\left(\theta_{i}\right)}{\phi_{i}\left(\theta_{i}\right)}\right] \phi_{i}\left(\theta_{i}\right) d \theta_{i}-V_{i}\left(\underline{\theta}_{i}\right)
+\end{aligned}
+$$
+So, the seller&rsquo;s revenue equals to???
+$$
+\begin{aligned}
+\sum_{i=1}^{n} E\left[-\bar{m}_{i}\left(\theta_{i}\right)\right] &amp;=\int_{\underline{\theta}_{1}}^{\bar{\theta}_{1}} \ldots \int_{\underline{\theta}_{n}}^{\bar{\theta}_{n}} \sum_{i=1}^{n} x_{i}\left(\theta_{1}, \ldots, \theta_{n}\right)\left[\theta_{i}-\frac{1-\Phi_{i}\left(\theta_{i}\right)}{\phi_{i}\left(\theta_{i}\right)}\right] \<br>
+&amp; \prod_{i=1}^{n} \phi_{i}\left(\theta_{i}\right) d \theta_{1} \ldots d \theta_{n}-\sum_{i=1}^{n} V_{i}\left(\underline{\theta}_{i}\right)
+\end{aligned}
+$$
+Therefore, if the BNE of two different auction formats have</p>
+<ul>
+<li>
+<p>the same probabilities $ \left(x_{1}(\theta), x_{2}(\theta), \ldots, x_{n}(\theta)\right) $</p>
+</li>
+<li>
+<p>the same values for $ V_{1}\left(\underline{\theta}_{1}\right), V_{2}\left(\underline{\theta}_{2}\right), \ldots, V_{n}\left(\underline{\theta}_{n}\right) $</p>
+</li>
+</ul>
+<p>then we can easily see by the above expression that they will generate the same expected revenue for the seller.</p>
+<p>Remark: The FPA and SPA satisfy the conditions in this theorem since:</p>
+<ul>
+<li>
+<p>The allocation rule in both auctions coincides, i.e., the bidder submitting the highest bid receives the object; and</p>
+</li>
+<li>
+<p>The expected utility of the bidder with the lowest valuation, $ V_{i}\left(\underline{\theta}_{i}\right), $ when truthfully reporting his type $ \underline{\theta}_{i}, $ is zero in both auctions.</p>
+</li>
+</ul>
+<p>Hence, the FPA and the SPA generate the same revenue for the seller.</p>
+<p>Recall that we showed the Revenue Equivalence Theorem in our study of Auction Theory, but for the specific case of $ \theta_{i} \sim U[0,1] $ for all $ i \in N $.</p>
+<p>Now we showed it under more general conditions, as we allowed for $ \theta_{i} \sim\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right] $ where $ \underline{\theta}_{i}&lt;\bar{\theta}_{i} $ and $ \phi_{i}(\cdot)&gt;0 $ for all $ \theta_{i}, $ where types are generated i.i.d. according to $ \phi_{i}(\cdot) $</p>
+<h2 id="84-dominant-strategy-implementation">8.4 Dominant Strategy Implementation</h2>
+<h3 id="841-example-spa-as-an-allocation-mechanism">8.4.1 Example: SPA as an Allocation Mechanism</h3>
+<p>【Example MWG 23.B.6.】Consider an SPA with one seller (player 0 ) and two bidders (player 1 and 2).</p>
+<p>Each bidder with valuation $ \theta_{i} \sim U[0,1] $. Dominant-strategy equilibrium of the auction is $ b_{i}\left(\theta_{i}\right)=\theta_{i}, \forall i$.</p>
+<p>The corresponding choice rule $ f(\theta)=\left(x_{0}(\theta), x_{1}(\theta), x_{2}(\theta), m_{0}(\theta), m_{1}(\theta), m_{2}(\theta)\right) $
+is
+$$
+\begin{array}{l}
+x_{1}(\theta)=1 \text { if } \theta_{1} \geq \theta_{2} ;=0 \text { if } \theta_{1}&lt;\theta_{2} \<br>
+x_{2}(\theta)=1 \text { if } \theta_{1}&lt;\theta_{2} ;=0 \text { if } \theta_{1} \geq \theta_{2} \<br>
+m_{1}(\theta)=-\theta_{2} \cdot x_{1}(\theta) \<br>
+m_{2}(\theta)=-\theta_{1} \cdot x_{2}(\theta) \<br>
+x_{0}(\theta)=0, \forall \theta, m_{0}(\theta)=-\left(m_{1}(\theta)+m_{2}(\theta)\right)
+\end{array}
+$$</p>
+<h3 id="842-definition">8.4.2 Definition</h3>
+<p>【Definition】The strategy profile $ s^{*}(\cdot)=\left(s_{1}^{*}(\cdot), \ldots, s_{n}^{*}(\cdot)\right) $ is a **dominant strategy equilibrium** of the mechanism $ \Gamma=\left{A_{1}, A_{2}, \ldots, A_{n}, g(\cdot)\right} $ if for every $ i \in N $ and for every $ \theta_{i} \in \Theta_{i} $
+$$
+v_{i}\left(g\left(s_{i}^{*}(\theta), a_{-i}\right), \theta\right) \geq v_{i}\left(g\left(a_{i}^{\prime}, a_{-i}\right), \theta\right)
+$$
+for all $ a_{i}^{\prime} \in A_{i} $ and for all $ a_{-i} \in A_{-i} $</p>
+<p>Is there a mechanism $ \Gamma $ that implements $ f(\cdot) $ in dominant strategies?</p>
+<p>Since a <strong>dominant strategy equilibrium is a special case of a Bayesian equilibrium, the revelation principle applies</strong>.</p>
+<p>So we only check that $ f(\cdot) $ is implementable in dominant strategies directly to see if $ f(\cdot) $ is implementable in dominant strategies. That is
+$$
+v_{i}\left(f\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right) \geq v_{i}\left(f\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{i}\right)
+$$
+for all $ \hat{\theta}_{i} \in \Theta_{i}, $ and for all $ \theta_{-i} \in \Theta_{-i} $.</p>
+<p>Dominant strategy implementation is also known as <strong>dominant strategy incentive compatibility</strong> (DSIC).</p>
+<p>Then, DSIC is a more demanding property than BIC, in particular, DSIC requires that players find truthtelling optimal regardless of the specific types of their opponents and their specific strategies in equilibrium.</p>
+<p>In contrast, BIC from the previous section only requires truthtelling to be utility maximizing in expectation and given that all other players are truthfully report their types.</p>
+<h3 id="843-vickery-clarke-groves-mechanism">8.4.3 VicKery-Clarke-Groves Mechanism</h3>
+<p>Recall that our quasi-linear preferences are additive in money
+$$
+v_{i}\left(x, m_{i}, \theta_{i}\right)=u_{i}\left(x, \theta_{i}\right)+m_{i}
+$$
+There is a nice feature of this quasi-linear environment: monetary transfer can benefit the whole group.</p>
+<p>Imagine player $ i $ with type $ \theta_{i} $ and player $ j $ with type $ \theta_{j} $ such that
+$$
+u_{i}\left(x^{\prime}, \theta_{i}\right)&gt;u_{i}\left(x, \theta_{i}\right), u_{j}\left(x, \theta_{j}\right)&gt;u_{j}\left(x^{\prime}, \theta_{j}\right)
+$$
+Intuitively, player $ i $ would prefer alternative $ x^{\prime} $ and player $ j $ would prefer alternative $ x $.</p>
+<p>Furthermore, let
+$$
+u_{i}\left(x^{\prime}, \theta_{i}\right)-u_{i}\left(x, \theta_{i}\right)&gt;u_{j}\left(x, \theta_{j}\right)-u_{j}\left(x^{\prime}, \theta_{j}\right)
+$$
+it implies that the gains received by player $ i $ when implementing alternative $ x^{\prime} $ are greater than the gains received by player $ j $ when implementing alternative $ x $.</p>
+<p>Then there must be an amount of money $ k&gt;0 $ satisfying
+$$
+u_{i}\left(x^{\prime}, \theta_{i}\right)-u_{i}\left(x, \theta_{i}\right)&gt;k&gt;u_{j}\left(x, \theta_{j}\right)-u_{j}\left(x^{\prime}, \theta_{j}\right)
+$$
+This $ k $ is the transfer amount from player $ i $ to $ j $ when implementing $ x^{\prime} . $ (**Coase&rsquo;s Spirit** is back!)</p>
+<p>【Proposition】In the quasilinear environment, given a state of the world $ \theta \in \Theta, $ an alternative $ x^{*} \in X $ is Pareto optimal if and only if it is a solution to
+$$
+\max <em>{x \in X} \sum</em>{i=1}^{I} u_{i}\left(x, \theta_{i}\right)
+$$
+**Proof:** If an alternative a did not maximize this sum, then there was another $ x^{\prime} $ that did. Then money transfers among players that would ensure the gains of some players more than compensate for the losses of others.</p>
+<p>【Definition】We call a decision rule $ x^{<em>}(\cdot) $ the <strong>first-best decision rule</strong> if for all $ \theta \in \Theta, x^{</em>}(\theta) $ is Pareto optimal.
+$$
+x^{*}(\theta) \in \arg \max <em>{x \in X} \sum</em>{i=1}^{I} u_{i}\left(x, \theta_{i}\right) \forall \theta \in \Theta
+$$
+When faced with the Pareto optimal choice rule $ \left(x^{*}(\cdot), m_{1}(\cdot), \ldots, m_{n}(\cdot)\right), $ will truth-telling be a dominant strategy for each player in the direct revelation mechanism?</p>
+<p>No, when $ m_{i}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right) \equiv 0\left(\hat{\theta}_{i} \text { is announced by player } i\right) . $ The reason is that each player $ i $ only maximizes his own payoff, not the total surplus.</p>
+<p>This problem could be solved by having a clever transfer rule $ m_{i}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right) $ to **let player internalize the externality**.</p>
+<p>【Definition】Given announcements $ \hat{\theta}, $ the choice rule $ f(\hat{\theta})=\left(x^{*}(\hat{\theta}), m_{1}(\hat{\theta}), \ldots, m_{n}(\hat{\theta})\right) $ is a **Vickrey-Clarke-Groves**
+**(VCG) mechanism** if $ x^{*}(\cdot) $ is the **first-best decision rule** and if for all $ i \in N $
+$$
+m_{i}(\hat{\theta})=\sum_{j \neq i} u_{j}\left(x^{*}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right), \hat{\theta}_{j}\right)+h_{i}\left(\hat{\theta}_{-i}\right)
+$$
+where $ h_{i}\left(\theta_{-i}\right) $ is an arbitrary function of $ \hat{\theta}_{-i} $.</p>
+<p>【Proposition】Any <strong>VCG mechanism is truthfully implementable in dominant strategies</strong>.</p>
+<p><strong>Proof:</strong></p>
+<p>In the VCG mechanism every player i solves
+$$
+\begin{aligned}
+&amp;\max <em>{\theta</em>{i} \in \Theta_{i}} u_{i}\left(x^{*}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right), \theta_{i}\right)+m_{i}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right) \<br>
+=&amp;\max _{\theta_{i} \in \Theta_{i}} \underbrace{u_{i}\left(x^{*}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right), \theta_{i}\right)+\sum_{j \neq i} u_{j}\left(x^{*}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right), \hat{\theta}_{j}\right)}_{\text { total surplus }}+h_{i}\left(\hat{\theta}_{-i}\right) 
+\end{aligned}
+$$
+$ h_{i}\left(\hat{\theta}_{-i}\right) $ does not affect $ i^{\prime} s $ choice.</p>
+<p>Player $ i $ indeed maximizes total surplus according to his type and others' announced types.</p>
+<p>So player $ i $ would tell the truth $ \hat{\theta}<em>{i}=\theta</em>{i} $. (by first-best decision rule)</p>
+<p><strong>Alternative way:</strong></p>
+<p>Or we can prove by contradiction. Suppose truth-telling is not a dominant strategy for some player $ i . $ Then there exist a type $ \theta_{i} $ of this player $ i $ and some others' types $ \theta_{-i} $ such that, when player $ i $ announces his type to be $ \hat{\theta}_{i} $
+$$
+u_{i}\left(x^{*}\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{i}\right)+m_{i}\left(\hat{\theta}_{i}, \theta_{-i}\right)&gt;u_{i}\left(x^{*}\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right)+m_{i}\left(\theta_{i}, \theta_{-i}\right)
+$$
+Using the expression of $ m_{i}(\cdot) $ to substitute $ m_{i}\left(\hat{\theta}_{i}, \theta_{-i}\right) $ and $ m_{i}\left(\theta_{i}, \theta_{-i}\right) $
+$$
+\begin{array}{l}
+&amp; u_{i}\left(x^{*}\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{i}\right)+\left[\sum_{j \neq i} u_{j}\left(x^{*}\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{j}\right)+h_{i}\left(\theta_{-i}\right)\right]&gt; \ &amp;
+u_{i}\left(x^{*}\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right)+\left[\sum_{j \neq i} u_{j}\left(x^{*}\left(\theta_{i}, \theta_{-i}\right), \theta_{j}\right)+h_{i}\left(\theta_{-i}\right)\right] \<br>
+\Rightarrow &amp;\sum_{j=1}^{n} u_{j}\left(x^{*}\left(\hat{\theta}_{i}, \theta_{-i}\right), \theta_{j}\right)&gt;\sum_{j=1}^{n} u_{j}\left(x^{*}(\theta), \theta_{j}\right)
+\end{array}
+$$
+which contradict $ x^{*}(\cdot) $ being the first-best decision rule. So the VCG mechanism is truthrully implementable in dominant strategies.</p>
+<h3 id="844-pivotal-mechanism">8.4.4 Pivotal mechanism</h3>
+<p><strong>Pivotal mechanism suggested by Clarke (1971) is a particular VCG mechanism.</strong></p>
+<p>It is obtained by setting
+$$
+h_{i}\left(\hat{\theta}_{-i}\right)=-\sum_{j \neq i} u_{j}\left(x_{-i}^{*}\left(\hat{\theta}_{-i}\right), \hat{\theta}_{j}\right)
+$$
+where
+$$
+x_{-i}^{*}\left(\hat{\theta}_{-i}\right) \in \arg \max _{x \in X} \sum_{j \neq i} u_{j}\left(x, \hat{\theta}_{j}\right)
+$$
+is **the optimal choice of $ x $ for a society from which player $ i $ was absent**. Thus
+$$
+m_{i}(\hat{\theta})=\sum_{j \neq i} u_{j}\left(x^{*}\left(\hat{\theta}_{i}, \hat{\theta}_{-i}\right), \hat{\theta}_{j}\right)-\sum_{j \neq i} u_{j}\left(x_{-i}^{*}\left(\hat{\theta}_{-i}\right), \hat{\theta}_{j}\right)
+$$
+Pivotal mechanism lets player $ i $ make his announcement that affects the outcome had he not been part of society.</p>
+<p>There are relevant cases:</p>
+<p>Case $ 1: x^{*}\left(\hat{\theta}<em>{i}, \hat{\theta}</em>{-i}\right)=x_{-i}^{*}\left(\hat{\theta}_{-i}\right) $ where player i&rsquo;s announcement does not change what would have happened if he were not part of society. Then the mechanism specifies a transfer of zero to $ i $.</p>
+<p>Case $ 2: x^{*}\left(\hat{\theta}<em>{i}, \hat{\theta}</em>{-i}\right) \neq x_{-i}^{*}\left(\hat{\theta}_{-i}\right) $ where player $ i $ is pivotal that
+his announcement changes what would have happened without him. **His transfer ends up taxing him for the externality that his announcement imposes on the other players**.</p>
+<p><strong>Returning to Example 2</strong> , where the mechanism designer is trying to determine who to give a license to use a certain portion of the electromagnetic spectrum for cell coverage.</p>
+<p>An object can be allocated to one of $ N $ players.</p>
+<p>The value of owning the private good for player $ i $ is given by
+$ u_{i}\left(x, \theta_{i}\right)=\theta_{i} x_{i} $.</p>
+<p>The first-best allocation solves
+$$
+\max <em>{\left(x</em>{1}, \ldots x_{n}\right) \in{0,1}^{n}} \sum_{i=1} \theta_{i} x_{i} \text { subject to } \sum_{i} x_{i}=1
+$$
+Which results in allocating the good to the player $ i^{*} $ with the highest valuation: $ i^{*} \in \arg \max x_i \theta_{i}, $ and
+$$
+x_{i}^{*}(\theta)=\left{\begin{array}{cc}
+1 &amp; \text { if } i=i^{*} \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$
+The pivotal mechanism then has transfers
+$$
+\begin{aligned}
+m_{i}(\hat{\theta}) &amp;=\sum_{j \neq i} u_{j}\left(x^{*}(\hat{\theta}), \hat{\theta}_{-i}\right)-\sum_{j \neq i} u_{j}\left(x_{-i}^{*}\left(\hat{\theta}_{-i}\right), \hat{\theta}\right) \<br>
+&amp;=\left{\begin{array}{cc}
+-\left{\max _{j \neq i^{*}} \hat{\theta}_{j}\right} 1 &amp; \text { if } i=i^{*} \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+\end{aligned}
+$$</p>
+<p>That is, every player $ i \neq i^{*} $ is not pivotal and his presence does not affect the allocation. Therefore $ m_{i}(\hat{\theta})=0 $.</p>
+<p>Player $ i^{<em>} $ is pivotal: without him, the object would go to the player with the second-highest valuation. The total surplus would be $ \max _{j \neq i^{</em>}} \theta_{j} $. This is the externality player $ i $ ' imposes on the others by being present, and how much he has to pay in the pivotal mechanism.</p>
+<p><strong>Notice that this mechanism is identical to the second-price sealed-bid auction.</strong></p>
+<p>【Example】Consider a seller auctioning one item to 5 bidders with valuations
+$$
+\theta_{1}=20, \theta_{2}=15, \theta_{3}=12, \theta_{4}=10, \theta_{5}=6
+$$
+A VCG mechanism allocates the item to bidder 1 and bidder 1&rsquo;s transfer is
+$$
+\begin{aligned}
+m_{1}(\theta) &amp;=\underbrace{\sum_{j \neq 1} u_{j}\left(x\left(\theta_{1}, \theta_{-1}\right), \theta_{j}\right)}_{\text {Value of all others when bidder } 1 \text { is here }}-\underbrace{\sum_{j \neq 1} u_{j}\left(x_{-1}\left(\theta_{-1}\right), \theta_{j}\right)}_{\text { Value of all others when bidder 1 not here } } \<br>
+&amp;=\sum_{j=2}^{5} 0-\left(15+\sum_{j=3}^{5} 0\right) \<br>
+&amp;=-15
+\end{aligned}
+$$
+Differences between the two terms is $ -15, $ which is the transfer to (i.e. payment from) bidder 1. Bidder 1 pays 15, which **equals to the second highest valuation (second-price auction)**.</p>
+<p>Consider the same 5 bidders with the same valuations as before. Now the seller has three identical items to auction out.</p>
+<p>A VCG mechanism allocates the item to bidder $ 1,2,3 . $ The transfer to bidder 1 becomes
+$$
+\begin{aligned}
+m_{1}(\theta) &amp;=\underbrace{\sum_{j \neq 1} u_{j}\left(x\left(\theta_{1}, \theta_{-1}\right), \theta_{j}\right)}_{\text { Value of all others when bidder 1 is here}} - \underbrace{\sum_{j \neq 1} u_{j}\left(x_{-1}\left(\theta_{-1}\right), \theta_{j}\right)}_{\text { Value of all others when bidder 1 not here } } \<br>
+&amp;=(15+12+0+0)-(15+12+10+0) \<br>
+&amp;=-10
+\end{aligned}
+$$
+Differences between the two terms is -10 , which is the transfer to (i.e. payment from) bidder 1. **Bidder 1 pays 10, which equals to the fourth highest valuation (fourth-price auction)**.</p>
+<p><strong>Exercise</strong>: what about $ m_i(\theta), i=2,3,4,5$?</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/8.-mechanism-design/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/8.-mechanism-design/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/8.-mechanism-design/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/8.-mechanism-design/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/a1-optimization/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/7.-auction-theory/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

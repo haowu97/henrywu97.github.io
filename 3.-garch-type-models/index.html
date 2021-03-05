@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="3. GARCH Type Models 3.1 ARCH effect - volatility clustering ARCH: autoregressive conditional heteroskedasticity.
+
+ARCH effect - ACFs of r
+
+ARCH effect - ACFs of $ r^2 $
+
+ARCH effect - ACFs of $ | r | $
+
+ARCH models Let $ P_{t} $ denote the price and $ r_{t}=\log \left(P_{t} / P_{t-1}\right) $ be the log-return at time $ t $." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/3.-garch-type-models/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="3. GARCH Type Models 3.1 ARCH effect - volatility clustering ARCH: autoregressive conditional heteroskedasticity.
+
+ARCH effect - ACFs of r
+
+ARCH effect - ACFs of $ r^2 $
+
+ARCH effect - ACFs of $ | r | $
+
+ARCH models Let $ P_{t} $ denote the price and $ r_{t}=\log \left(P_{t} / P_{t-1}\right) $ be the log-return at time $ t $."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/3.-garch-type-models/" /><link rel="prev" href="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/" /><link rel="next" href="https://henrywu97.github.io/2.-linear-time-series-models/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/3.-garch-type-models\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  1301 ,
+        "url": "https:\/\/henrywu97.github.io\/3.-garch-type-models\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/3.-garch-type-models/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/3.-garch-type-models/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1301 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;7 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#31-arch-effect---volatility-clustering">3.1 ARCH effect - volatility clustering</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="3-garch-type-models">3. GARCH Type Models</h1>
+<h2 id="31-arch-effect---volatility-clustering">3.1 ARCH effect - volatility clustering</h2>
+<p>ARCH: autoregressive conditional heteroskedasticity.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210257.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210257.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210257.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210257.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210257.png"
+        title="20201120210257.png" /></div></p>
+<p>ARCH effect - ACFs of r</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210348.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210348.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210348.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210348.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210348.png"
+        title="20201120210348.png" /></div></p>
+<p>ARCH effect - ACFs of $ r^2 $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201120210421333.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201120210421333.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201120210421333.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201120210421333.png 1.6x"
+        data-sizes="auto"
+        alt="image-20201120210421333"
+        title="image-20201120210421333.png" /></div></p>
+<p>ARCH effect - ACFs of $ | r | $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210450.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210450.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210450.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210450.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210450.png"
+        title="20201120210450.png" /></div></p>
+<p>ARCH models
+Let $ P_{t} $ denote the price and $ r_{t}=\log \left(P_{t} / P_{t-1}\right) $ be the log-return at time $ t $.</p>
+<p>Then</p>
+<p>$$
+r_{t}=\mu_{t}+e_{t}
+$$</p>
+<p>where $ \mu_{t}=E\left[r_{t} \mid F_{t-1}\right] $ denotes the conditional mean of the return, $ e_{t} $ is a diffusion term which may be modeled as</p>
+<p>$$
+e_{t}=\sigma_{t} \epsilon_{t}, \quad \epsilon_{t} \sim i . i . d .(0,1)
+$$</p>
+<p>where $ \sigma_{t}=\operatorname{Var}\left[r_{t} \mid F_{t-1}\right]&gt;0 $ is determined by the information available
+before time $ t, $ and $ \epsilon_{t} $ is assumed to be independent of $ \sigma_{t} $.
+20
+ARCH models
+A simple specification for the volatility function $ \sigma_{t} $ is the autoregressive
+conditional heteroskedastic (ARCH) model</p>
+<p>$$
+\sigma_{t}^{2}=a_{0}+a_{1} e_{t-1}^{2}+a_{2} e_{t-2}^{2}+\ldots+a_{p} e_{t-p}^{2}
+$$</p>
+<p>where $ a_{0}&gt;0, a_{j} \geq 0(1 \leq j \leq p) $ are constants, and $ p $ is a positive integer.
+This model allows for capturing the effect of volatility clustering.</p>
+<p>ARCH(1) model
+We consider the ARCH(1) model as a special example.</p>
+<p>$$
+\begin{aligned}
+e_{t} &amp;=\sigma_{t} \epsilon_{t} \<br>
+\sigma_{t}^{2} &amp;=a_{0}+a_{1} e_{t-1}^{2}
+\end{aligned}
+$$</p>
+<p>where $ a_{0}&gt;0, a_{1} \geq 0 . $ In particular, by the law of iterated expectation
+(LIE), we have</p>
+<p>$$
+\begin{aligned}
+E\left[e_{t}\right] &amp;=0 \<br>
+\operatorname{Var}\left[e_{t}\right] &amp;=\frac{a_{0}}{1-a_{1}}
+\end{aligned}
+$$</p>
+<p>where $ 0 \leq a_{1}&lt;1 $
+Suppose that $ \epsilon_{t} \sim i . i . d . N(0,1), $ then</p>
+<p>$$
+E\left(e_{t}^{4} \mid F_{t-1}\right)=3\left[E\left(e_{t}^{2} \mid F_{t-1}\right)\right]^{2}=3\left(a_{0}+a_{1} e_{t-1}^{2}\right)^{2}
+$$</p>
+<p>Therefore,</p>
+<p>$$
+E\left(e_{t}^{4}\right)=E\left[E\left(e_{t}^{4} \mid F_{t-1}\right)\right]=3 E\left(a_{0}+a_{1} e_{t-1}^{2}\right)^{2}=3 E\left(a_{0}^{2}+2 a_{0} a_{1} e_{t-1}^{2}+a_{1}^{2} e_{t-1}^{4}\right)
+$$</p>
+<p>Assume that $ m_{4}=E\left(e_{t}^{4}\right) $ is stationary, then</p>
+<p>$$
+m_{4}=\frac{3 a_{0}^{2}\left(1+a_{1}\right)}{\left(1-a_{1}\right)\left(1-3 a_{1}^{2}\right)}
+$$</p>
+<p>ARCH (1) model
+To ensure that $ m_{4}&gt;0, $ we have $ 0 \leq a_{1}^{2}&lt;\frac{1}{3} . $ Then, the Kurtosis of $ e_{t} $ is</p>
+<p>$$
+\frac{E\left(e_{t}^{4}\right)}{\left[\operatorname{Var}\left(e_{t}\right)^{2}\right]^{2}}=3 \frac{a_{0}^{2}\left(1+a_{1}\right)}{\left(1-a_{1}\right)\left(1-3 a_{1}^{2}\right)} \times \frac{\left(1-a_{1}\right)^{2}}{a_{0}^{2}}=3 \frac{1-a_{1}^{2}}{1-3 a_{1}^{2}}&gt;3
+$$</p>
+<p>This result implies that $ e_{t} $ has positive excess kurtosis, and it is more likely
+to see outliers for $ e_{t} $.
+ARCH (1) model
+How to forecast volatility based on an estimated ARCH(1) model?
+Suppose that we had estimated an ARCH(1) model</p>
+<p>$$
+\begin{aligned}
+e_{t} &amp;=\sigma_{t} \epsilon_{t} \<br>
+\sigma_{t}^{2} &amp;=a_{0}+a_{1} e_{t-1}^{2}
+\end{aligned}
+$$</p>
+<p>using $ F_{T}, $ what are the one-step ahead forecast $ E\left[\sigma_{T+1}^{2} \mid F_{T}\right] $ and two-step
+ahead forecast $ E\left[\sigma_{T+2}^{2} \mid F_{T}\right] $ given the information set $ F_{T} ? $</p>
+<p>GARCH models
+Bollerslev (1986) developed the $ \mathrm{GARCH}(\mathrm{p}, \mathrm{q}) $ model as</p>
+<p>$$
+\begin{aligned}
+r_{t} &amp;=\mu+e_{t} \<br>
+e_{t} &amp;=\sigma_{t} \epsilon_{t}, \quad \epsilon_{t} \sim i . i . d .(0,1) \<br>
+\sigma_{t}^{2} &amp;=a_{0}+\underbrace{a_{1} e_{t-1}^{2}+\ldots+a_{p} e_{t-p}^{2}}_{\text {ARCH components }}+\underbrace{b_{1} \sigma_{t-1}^{2}+\ldots+b_{q} \sigma_{t-q}^{2}}_{\text {GARCH components }}
+\end{aligned}
+$$</p>
+<p>where $ a_{0}&gt;0, a_{i} \geq 0, b_{j} \geq 0, $ for $ 1 \leq i \leq p, 1 \leq j \leq q, $ and</p>
+<p>$$
+\sum_{i=1}^{p} a_{i}+\sum_{j=1}^{q} b_{j}&lt;1
+$$</p>
+<p>GARCH models
+It is easy to show that</p>
+<p>$$
+\begin{aligned}
+E\left[e_{t}\right] &amp;=0 \<br>
+\operatorname{Var}\left[e_{t}\right] &amp;=\frac{a_{0}}{1-a_{1}-\ldots-a_{p}-b_{1}-\ldots-b_{q}} \<br>
+&amp;=\frac{a_{0}}{1-\sum_{i=1}^{p} a_{i}-\sum_{j=1}^{q} b_{j}}
+\end{aligned}
+$$</p>
+<p>which denote the long-run variance.</p>
+<p>Residual diagnostics
+How to verify that a particular GARCH(p,q) model has captured all the
+ARCH effects?
+We define $ \widehat{\epsilon}<em>{t}=\frac{\widehat{e}</em>{t}}{\hat{\sigma}<em>{t}} $ as the standardized residuals. If there is no ARCH effects in the standardized residuals, then GARCH(p,q) has captured all
+the ARCH effects. Otherwise, we still have ARCH effects remained in $ \widehat{\epsilon}</em>{t} $
+and we need to improve our current model.
+GARCH-in-Mean
+To account for risk premium, we propose a GARCH-in-Mean model</p>
+<p>$$
+\begin{aligned}
+r_{t} &amp;=\mu+g\left(\sigma_{t}\right)+e_{t} \<br>
+e_{t} &amp;=\sigma_{t} \epsilon_{t}, \quad \epsilon_{t} \sim i . i . d .(0,1) \<br>
+\sigma_{t}^{2} &amp;=a_{0}+\sum_{i=1}^{p} a_{i} e_{t-i}^{2}+\sum_{j=1}^{q} b_{j} \sigma_{t-j}^{2}
+\end{aligned}
+$$</p>
+<p>where $ g(x) $ represents the form of compensational return for risks. In
+particular, $ g(x)=\theta_{0}+\theta_{1} x $ (see Engle, Lilien, and Robins 1987 ) or
+$ g(x)=\alpha_{0}+\alpha_{1} \sqrt{x} $</p>
+<p>TGARCH model
+Leverage effect: negative shocks are more likely to cause higher volatility
+than positive shocks.
+To account for the leverage effect, we propose a Threshold GARCH
+(TGARCH) model</p>
+<p>$$
+\begin{array}{l}
+r_{t}=\mu+e_{t} \<br>
+e_{t}=\sigma_{t} \epsilon_{t}, \quad \epsilon_{t} \sim i . i . d .(0,1) \<br>
+\sigma_{t}^{2}=a_{0}+\sum_{i=1}^{p} a_{i} e_{t-i}^{2}+\sum_{i=1}^{p} \gamma_{i} e_{t-i}^{2} 1\left(e_{t-i}&lt;0\right)+\sum_{j=1}^{q} b_{j} \sigma_{t-j}^{2}
+\end{array}
+$$</p>
+<p>where $ 1(.) $ is an indicator function, which can also be replaced by a
+dummy variable.
+3
+Dummy variable in Financial Econometrics
+Suppose we want to see whether there exists Monday effect in the stock
+market. We define a dummy variable</p>
+<p>$$
+D_{t}=\left{\begin{array}{ll}
+1 &amp; \text { Mondays; } \<br>
+0 &amp; \text { Other days. }
+\end{array}\right.
+$$</p>
+<p>Then we run the regression</p>
+<p>$$
+r_{t}=\mu+\theta D_{t}+e_{t}
+$$</p>
+<p>and test</p>
+<p>$$
+\mathbb{H}_{0}: \theta=0
+$$</p>
+<p>vs $ \mathbb{H}_{1}: \theta \neq 0 $</p>
+<p>IGARCH model
+An Integrated GARCH model (IGARCH(p,q)) can be written as</p>
+<p>$$
+\begin{array}{l}
+r_{t}=\mu+e_{t} \<br>
+e_{t}=\sigma_{t} \epsilon_{t}, \quad \epsilon_{t} \sim i . i . d .(0,1) \<br>
+\sigma_{t}^{2}=a_{0}+\sum_{i=1}^{p} a_{i} e_{t-i}^{2}+\sum_{j=1}^{q} b_{j} \sigma_{t-j}^{2}
+\end{array}
+$$</p>
+<p>where $ \sum_{i=1}^{p} a_{i}+\sum_{j=1}^{q} b_{j}=1 $
+Value at Risk (VaR)
+Value at risk (VaR) is a measure of the risk of loss for investments. It
+estimates how much a set of investments might lose (with a given
+probability), given normal market conditions, in a set time period such as a
+day.</p>
+<p>$$
+V a R=\mu-\sigma_{t} \Phi^{-1}(\alpha)
+$$</p>
+<p>For example, we invest $ $ 10000 $ in an asset with monthly return $ \mu=0.01 $
+and $ \sigma_{t}=0.05 . $ What is the $ 5 % $ VaR for this investment?</p>
+<p>Application - Shanghai Stock Exchange Composite Index</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120214135.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120214135.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120214135.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120214135.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120214135.png"
+        title="20201120214135.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210556.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210556.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210556.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210556.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210556.png"
+        title="20201120210556.png" /></div></p>
+<p>ACFs and PACFs of $ r_t $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210731.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210731.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210731.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210731.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210731.png"
+        title="20201120210731.png" /></div></p>
+<p>Fitted model: $ r_{t}=0.000172+0.0594 r_{t-4}-0.0485 r_{t-6}+0.0536 r_{t-13} \mid+\widehat{e}_{t} $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210757.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210757.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210757.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210757.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210757.png"
+        title="20201120210757.png" /></div></p>
+<p>ACFs and PACFs of $ \hat{e}<em>{t} $ : the above model fully describes the serial
+correlation in $ r</em>{t} $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210833.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210833.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210833.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210833.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210833.png"
+        title="20201120210833.png" /></div></p>
+<p>ARCH effect test forbe
+t :</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210856.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210856.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210856.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210856.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210856.png"
+        title="20201120210856.png" /></div></p>
+<p>ACFs and PACFs ofbe
+2
+t .</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210945.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210945.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210945.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210945.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120210945.png"
+        title="20201120210945.png" /></div></p>
+<p>An estimated AR(13)-ARCH(1) model.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211042.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211042.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211042.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211042.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211042.png"
+        title="20201120211042.png" /></div></p>
+<p>Fitted $ A R(13)-A R C H(1) $ model:
+$$
+\begin{aligned}
+r_{t} &amp;=0.00000572+0.0435 r_{t-4}-0.0406 r_{t-6}+0.0655 r_{t-13}+\widehat{e}_{t} \<br>
+\widehat{e}_{t} &amp;=\widehat{\sigma}_{t} \widehat{z}_{t} \<br>
+\widehat{\sigma}_{t}^{2} &amp;=0.000192+0.25 \hat{e}_{t-1}^{2}
+\end{aligned}
+$$</p>
+<p>Time series plot of the standardized residuals $ \widehat{z}<em>{t}=\frac{\widehat{e}</em>{t}}{\sigma_{t}} . $ Are there any
+ARCH effects left in $ z_{t} ? $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211110.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211110.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211110.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211110.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211110.png"
+        title="20201120211110.png" /></div></p>
+<p>ACFs and PACFs of bz
+2
+t .</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211144.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211144.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211144.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211144.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211144.png"
+        title="20201120211144.png" /></div></p>
+<p>LM test for ARCH effects in bz
+t .</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211202.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211202.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211202.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211202.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211202.png"
+        title="20201120211202.png" /></div></p>
+<p>Improve the ARCH(1) model to GARCH(1,1).</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211220.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211220.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211220.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211220.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211220.png"
+        title="20201120211220.png" /></div></p>
+<p>The fitted GARCH (1,1) model is
+$ \begin{aligned} r_{t} &amp;=r_{t}=0.000248+0.0233 r_{t-4}-0.0481 r_{t-6}+0.0224 r_{t-13}+\widehat{e}_{t}, \ \widehat{e}_{t} &amp;=\widehat{\sigma}_{t} \widehat{z}_{t} \ \widehat{\sigma}_{t}^{2} &amp;=0.000000130+0.0719 \widehat{e}_{t-1}^{2}+0.9257 \widehat{\sigma}_{t-1}^{2} \end{aligned} $</p>
+<p>Standardized residuals of $ \widehat{z}<em>{t}=\frac{\widehat{e}</em>{t}}{\sigma_{t}} $ for the GARCH (1,1) model.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211239.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211239.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211239.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211239.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211239.png"
+        title="20201120211239.png" /></div></p>
+<p>$ \mathrm{ACFs} $ and $ \mathrm{PACF}<em>{\mathrm{S}} $ for $ \hat{z}</em>{t}^{2} $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211505.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211505.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211505.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211505.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211505.png"
+        title="20201120211505.png" /></div></p>
+<p>LM test for ARCH effects in $ \widehat{z}_{t} $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211530.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211530.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211530.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211530.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211530.png"
+        title="20201120211530.png" /></div></p>
+<p>Estimated sequence of $ \widehat{\sigma}_{t}^{2} $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211639.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211639.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211639.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211639.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211639.png"
+        title="20201120211639.png" /></div></p>
+<p>Upper and lower bounds of $ \left[-\widehat{\sigma}<em>{t}, \widehat{\sigma}</em>{t}\right] . $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211704.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211704.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211704.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211704.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211704.png"
+        title="20201120211704.png" /></div></p>
+<p>Descriptive statistics of $ \hat{z}_{t} $. Does it follow a normal distribution?</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211754.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211754.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211754.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211754.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211754.png"
+        title="20201120211754.png" /></div></p>
+<p>Quantile-Quantile (QQ) plot of $ \widehat{z}_{t} $ versus normal distribution.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211821.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211821.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211821.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211821.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211821.png"
+        title="20201120211821.png" /></div></p>
+<p>Quantile-Quantile (QQ) plot of $ \widehat{z}_{t} $ versus t-distribution.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211849.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211849.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211849.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211849.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211849.png"
+        title="20201120211849.png" /></div></p>
+<p>An estimated Threshold GARCH model to reveal the leverage eects.
+Haiqiang</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211926.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211926.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211926.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211926.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120211926.png"
+        title="20201120211926.png" /></div></p>
+<p>The fitted TGARCH model is</p>
+<p>$$
+\begin{aligned}
+r_{t} &amp;=0.00000160+0.0252 r_{t-4}-0.0472 r_{t-6}+0.0240 r_{t-13}+\widehat{e}_{t} \<br>
+\widehat{e}_{t} &amp;=\widehat{\sigma}_{t} \widehat{z}_{t} \<br>
+\widehat{\sigma}_{t}^{2} &amp;=0.00000137+0.0578 \widehat{e}_{t-1}^{2}+0.0238 \widehat{e}_{t-1}^{2} 1\left(\widehat{e}_{t-1}&lt;0\right)+0.925 \widehat{\sigma}_{t-1}^{2}
+\end{aligned}
+$$</p>
+<p>Application - Shanghai Stock Exchange Composite Index
+An estimated GARCH-in-Mean model to detect risk premium.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120212028.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120212028.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120212028.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120212028.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201120212028.png"
+        title="20201120212028.png" /></div></p>
+<p>The fitted GARCH-M model is</p>
+<p>$$
+\begin{array}{l}
+r_{t}=0.00000934+0.0237 r_{t-4}-0.0478 r_{t-6}+0.0227 r_{t-13}+1.11 \widehat{\sigma}_{t}^{2}+\widehat{e}_{t} \<br>
+\qquad \begin{array}{l}
+(43) \<br>
+(44)
+\end{array}
+\end{array}
+$$</p>
+<p>$ \widehat{\sigma}<em>{t}^{2}=0.000000130+0.0721 \widehat{e}</em>{t-1}^{2}+0.9258 \widehat{\sigma}_{t-1}^{2} $
+Assignment 2: Literature Review
+O Find a published paper in time series or financial econometrics or
+quantitative investment (judge by yourself), read it and draft a two
+pages (1500-2000 words) summary.
+O Style: Words or Rmarkdown; Both English or Chinese are fine. Try to
+summary instead of copy directly.
+Due date: $ 7: 10 \mathrm{PM}, $ before class, Thursday of Week 6 (Oct.31th). Assignments will not be accepted after the due date.
+O Grade: $ 15 % $ of your final grade of this course.</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/3.-garch-type-models/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/3.-garch-type-models/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/3.-garch-type-models/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/3.-garch-type-models/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/4.-nonlinear-autoregressive-models/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/2.-linear-time-series-models/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

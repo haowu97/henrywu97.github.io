@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="2. Foundation of Probability Theory [toc]
+2.1 Random Experiments Definition (Random Experiment): A random experiment is a process that generates at least two possible outcomes. One and only one outcome will occur, but there is uncertainty associated with which one will occur.
+Two essential elements of a random experiment:
+ The set of all possible outcomes——sample space; The likelihood with which each outcome will occur——probability function.  Fundamental axioms of modern econometrics:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/2.-foundation-of-probability-theory/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="2. Foundation of Probability Theory [toc]
+2.1 Random Experiments Definition (Random Experiment): A random experiment is a process that generates at least two possible outcomes. One and only one outcome will occur, but there is uncertainty associated with which one will occur.
+Two essential elements of a random experiment:
+ The set of all possible outcomes——sample space; The likelihood with which each outcome will occur——probability function.  Fundamental axioms of modern econometrics:"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/2.-foundation-of-probability-theory/" /><link rel="prev" href="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/" /><link rel="next" href="https://henrywu97.github.io/part1-4/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/2.-foundation-of-probability-theory\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  4357 ,
+        "url": "https:\/\/henrywu97.github.io\/2.-foundation-of-probability-theory\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2.-foundation-of-probability-theory/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2.-foundation-of-probability-theory/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4357 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;21 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-random-experiments">2.1 Random Experiments</a></li>
+    <li><a href="#22-basic-concepts-of-probability">2.2 Basic Concepts of Probability</a></li>
+    <li><a href="#23-review-of-set-theory">2.3 Review of Set Theory</a></li>
+    <li><a href="#24-fundamental-probability-laws--sigma--algebra">2.4 Fundamental Probability Laws: $ \sigma $-Algebra</a></li>
+    <li><a href="#25-methods-of-counting">2.5 Methods of Counting</a>
+      <ul>
+        <li><a href="#251-permutation">2.5.1 Permutation</a></li>
+        <li><a href="#252-combination">2.5.2 Combination</a></li>
+      </ul>
+    </li>
+    <li><a href="#26-conditional-probability">2.6 Conditional Probability</a></li>
+    <li><a href="#27-bayes-formula">2.7 Bayes' Formula</a></li>
+    <li><a href="#28-independence">2.8 Independence</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="2-foundation-of-probability-theory">2. Foundation of Probability Theory</h1>
+<p>[toc]</p>
+<h2 id="21-random-experiments">2.1 Random Experiments</h2>
+<p><strong>Definition (Random Experiment)</strong>: A random experiment is a process that generates at least two possible outcomes. One and only one outcome will occur, but there is uncertainty associated with which one will occur.</p>
+<p>Two essential elements of a random experiment:</p>
+<ul>
+<li>The set of all possible outcomes——<strong>sample space</strong>;</li>
+<li>The likelihood with which each outcome will occur——<strong>probability function</strong>.</li>
+</ul>
+<p>Fundamental axioms of modern econometrics:</p>
+<ul>
+<li>An economic system can be viewed as a random experiment governed by some probability distribution or probability law.</li>
+<li>Any economic phenomena (often in form of data) can be viewed as an outcome of this random experiment.</li>
+</ul>
+<h2 id="22-basic-concepts-of-probability">2.2 Basic Concepts of Probability</h2>
+<p><strong>Definition (Sample Space)</strong>: The possible outcomes of the random experiment are called <strong>basic outcomes</strong>, and the set of all basic outcomes is called the sample space, denoted by $ S $.</p>
+<p>When an experiment is performed, the realization of the experiment is one outcome in the sample space.</p>
+<p><strong>Example: Finite sample space</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tossing a coin</th>
+<th>$ S={\text { Head, Tail }} $</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rolling a die</td>
+<td>$S={1,2,3,4,5,6}$</td>
+</tr>
+<tr>
+<td>Playing a football game</td>
+<td>$ S={\text { Win, Lose, Tie}} $</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example: Infinite discrete sample space</strong></p>
+<p>Consider the number of accidents that occur at a given intersection within a month. The sample space is the set of all nonnegative integers, $ S={0,1,2, \ldots} $</p>
+<p><strong>Example: Continuous sample space</strong></p>
+<p>When recording the lifetime of a light bulb, the outcome is the time until the bulb burns out. Therefore the sample space is the set of all nonnegative real number, $ S=\mathbb{R}_{+}={t: t \in \mathbb{R}, t \geqslant 0} $.</p>
+<p><strong>Definition (Event)</strong>: An event $ A $ is a subset of basic outcomes from the sample space $ S $. The event $ A $ is said to occur if the random experiment gives rise to one of the constituent basic outcomes in $ A $. That is, an event occurs if any of its basic outcomes has occurred.</p>
+<p><strong>Example</strong></p>
+<p>A die is rolled. The sample space $ S={1,2,3,4,5,6} . $ Event $ A $ is defined as &ldquo;number resulting is even&rdquo;, then $ A={2,4,6} . $ Event $ B $ is defined as &ldquo;number resulting is 4&rdquo;, then $ B={4} $.</p>
+<p>Remarks:</p>
+<ul>
+<li>The words &ldquo;set&rdquo; and &ldquo;event&rdquo; are interchangeable.</li>
+<li>Basic outcome $ \in $ sample space; event $ \subseteq $ sample space.</li>
+</ul>
+<h2 id="23-review-of-set-theory">2.3 Review of Set Theory</h2>
+<p><strong>Definition (Containment)</strong>: The event $ A $ is contained in the event $ B $, or $ B $ contains $ A, $ if every sample point of $ A $ is also a sample point of $ B $. If so, we write $ A \subseteq B, $ or equivalently, $ B \supseteq A $.</p>
+<p><strong>Definition (Equality)</strong>: Two events $ A $ and $ B $ are said to be equal, $ A=B, $ if $ A \subseteq B $ and $ B \subseteq A $.</p>
+<p><strong>Definition (Empty Set)</strong>: The set containing no elements is called the empty set and is denoted by $ \varnothing . $ The event corresponding to $ \varnothing $ is called a null (or impossible) event.</p>
+<p><strong>Definition (Complement)</strong>: The complement of $ A, $ denoted by $ A^{c}, $ is the set of basic outcomes of a random experiment belonging to $ S $ but not to $ A $.</p>
+<p><strong>Definition (Union)</strong>: The union of $ A $ and $ B $, denoted by $ A \cup B, $ is the set of all basic outcomes in $ S $ that belong to either $ A $ or $ B $. The union of $ A $ and $ B $ occurs if and only if either $ A $ or $ B $ (or both) occurs.</p>
+<p><strong>Definition (Intersection)</strong>: The intersection of $ A $ and $ B, $ denoted by $ A \cap B, $ is the set of basic outcomes in $ S $ that belong to both $ A $ and $ B $. The intersection occurs if and only if both events $ A $ and $ B $ occur.</p>
+<p><strong>Definition (Difference)</strong>: The difference of $ A $ and $ B $, denoted by $ A \backslash B $ or $ A-B, $ is the set of basic outcomes in $ S $ that belong to $ A $ but not to $ B $, i.e. $ A \backslash B=A \cap B^{c} $.</p>
+<p><strong>Definition (Exclusiveness)</strong>: If $ A $ and $ B $ have no common basic outcomes, they are called mutually exclusive (or disjoint). Their intersection is empty set, i.e. $ A \cap B=\varnothing $.</p>
+<p><strong>Definition (Collectively Exhaustiveness)</strong>: Suppose $ A_{1}, A_{2}, \ldots, A_{n} $ are $ n $ events in the sample space $ S, $ where $ n $ is any positive integer. If $ \bigcup_{i=1}^{n} A_{i}=S, $ then these $ n $ events are said to be collectively exhaustive.</p>
+<p><strong>Definition (Partition)</strong>: A class of events $ \mathcal{H}=\left{A_{1}, A_{2}, \ldots, A_{n}\right} $ forms a partition of the sample space $ S $ if these events satisfy</p>
+<ol>
+<li>$ A_{i} \cap A_{j}=\varnothing $ for all $ i \neq j $ (mutually exclusive), and</li>
+<li>$ A_{1} \cup A_{2} \cup \cdots \cup A_{n}=S $ (collectively exhaustive).</li>
+</ol>
+<p>Complementation
+$$
+\left(A^{c}\right)^{c}=A, \quad \varnothing^{c}=S, \quad S^{c}=\varnothing
+$$</p>
+<p>Commutativity</p>
+<p>$$
+A \cup B=B \cup A, \quad A \cap B=B \cap A
+$$</p>
+<p>Associativity</p>
+<p>$$
+A \cup(B \cup C)=(A \cup B) \cup C, \quad A \cap(B \cap C)=(A \cap B) \cap C
+$$</p>
+<p>Distributivity</p>
+<p>$$
+A \cap(B \cup C)=(A \cap B) \cup(A \cap C), \quad A \cup(B \cap C)=(A \cup B) \cap(A \cup C)
+$$</p>
+<p>More generally, for $ n \geqslant 1 $,</p>
+<p>$$
+B \cap\left(\bigcup_{i=1}^{n} A_{i}\right)=\bigcup_{i=1}^{n}\left(B \cap A_{i}\right), \quad B \cup\left(\bigcap_{i=1}^{n} A_{i}\right)=\bigcap_{i=1}^{n}\left(B \cup A_{i}\right)
+$$</p>
+<p>De Morgan&rsquo;s Laws</p>
+<p>$$
+(A \cup B)^{c}=A^{c} \cap B^{c}, \quad(A \cap B)^{c}=A^{c} \cup B^{c}
+$$</p>
+<p>More generally, for $ n \geqslant 1 $,</p>
+<p>$$
+\left(\bigcup_{i=1}^{n} A_{i}\right)^{c}=\bigcap_{i=1}^{n}\left(A_{i}\right)^{c}, \quad\left(\bigcap_{i=1}^{n} A_{i}\right)^{c}=\bigcup_{i=1}^{n}\left(A_{i}\right)^{c}
+$$</p>
+<p><strong>Definition (Countable Set)</strong>: A set $ S $ is called countable if the set has one-to-one correspondence with a subset of the natural numbers $ \mathbb{N} $.</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>
+<p>A countable set is either a finite set or a countably infinite set.</p>
+</li>
+<li>
+<p>We can use a finite or infinite sequence to index all elements in a countable set.</p>
+</li>
+<li>
+<p>The set of natural numbers $ \mathbb{N} $, the set of integers $ \mathbb{Z} $, and the
+set of rational numbers $ \mathbb{Q} $ are countable sets.</p>
+</li>
+<li>
+<p>The set of real numbers $ \mathbb{R} $ is uncountable. The set of all real
+numbers in interval $ (a, b) $ is uncountable.</p>
+</li>
+</ul>
+<p>Unions and intersections of infinitely countable collection of
+events:</p>
+<p>$$
+\begin{array}{l}
+\bigcup_{i=1}^{\infty} A_{i}=\left{x \in S: x \in A_{i} \text { for some } i\right} \<br>
+\bigcap_{i=1}^{\infty} A_{i}=\left{x \in S: x \in A_{i} \text { for all } i\right}
+\end{array}
+$$</p>
+<p>Unions and intersections of (infinitely) uncountable collection of events: Let $ \Gamma $ be an uncountable index set, then</p>
+<p>$$
+\begin{array}{l}
+\bigcup_{a \in \Gamma} A_{a}=\left{x \in S: x \in A_{a} \text { for some } a\right} \<br>
+\bigcap_{a \in \Gamma} A_{a}=\left{x \in S: x \in A_{a} \text { for all } a\right}
+\end{array}
+$$</p>
+<h2 id="24-fundamental-probability-laws--sigma--algebra">2.4 Fundamental Probability Laws: $ \sigma $-Algebra</h2>
+<p><strong>Definition $\sigma$-algebra</strong>: A $ \sigma $ -algebra (or $ \sigma $ -field), denoted by $ \mathcal{B}, $ is a collection of subsets of $ S $ that satisfies</p>
+<ol>
+<li>$ \varnothing \in \mathcal{B} $ (the empty set is contained in $ \mathcal{B} $ );</li>
+<li>If $ A \in \mathcal{B}, $ then $ A^{c} \in \mathcal{B}(\mathcal{B} $ is closed under complement); and</li>
+<li>If $ A_{1}, A_{2}, \ldots \in \mathcal{B}, $ then $ \bigcup_{i=1}^{\infty} A_{i} \in \mathcal{B}(\mathcal{B} $ is closed under
+countable unions).</li>
+</ol>
+<p>Remarks:</p>
+<ul>
+<li>A $ \sigma $ -algebra is a set of sets.</li>
+<li>(1) and (2) imply that $ S \in \mathcal{B} $.</li>
+<li>(2) and (3) imply that $ \bigcap_{i=1}^{\infty} A_{i} \in \mathcal{B} $</li>
+<li>For a given $ S, $ we can construct many different $ \sigma $ -algebras.</li>
+<li>$ {\varnothing, S} $ is a $ \sigma $ -algebra, usually called the trivial $ \sigma $ -algebra.</li>
+<li>The collection of all possible subsets of $ S $ is a $ \sigma $ -algebra.</li>
+<li>For any event $ A,\left{\varnothing, A, A^{c}, S\right} $ is a $ \sigma $ -algebra.</li>
+<li>Intersection of $ \sigma $ -algebras is also a $ \sigma $ -algebras.</li>
+</ul>
+<p><strong>Theorem</strong>: For any non-empty collection $ \mathcal{K} $ of subsets of sample space $ S, $ there exists a unique smallest $ \sigma $ -algebra $ \mathcal{B} $ containing $ \mathcal{K} $. It is called the $ \sigma $ -algebra generated by $ \mathcal{K} $.</p>
+<ul>
+<li>Smallest: If $ \mathcal{B}^{\prime} $ is a $ \sigma $ -algebra containing $ \mathcal{K}, $ then $ \mathcal{B} \subseteq \mathcal{B}^{\prime} $</li>
+<li>Unique: If $ \mathcal{B}^{\prime} $ is another smallest $ \sigma $ -algebra containing $ \mathcal{K}, $ then $ \mathcal{B}^{\prime}=\mathcal{B} $</li>
+</ul>
+<p><strong>Example</strong>: Suppose $ S={1,2,3} . $ Let $ \mathcal{K}<em>{1}={{1}} $ and $ \mathcal{K}</em>{2}={{1},{1,2}} $.</p>
+<ul>
+<li>$ {\varnothing,{1},{2,3}, S} $ is a $ \sigma $ -algebra containing $ \mathcal{K}_{1} $. (Smallest?)</li>
+<li>$ {\varnothing,{1},{2},{3},{1,2},{2,3},{1,3}, S} $ is the smallest $ \sigma $-algebra containing $ \mathcal{K}_{2} $</li>
+</ul>
+<p><strong>Example (Borel algebra)</strong>: Let $ S=\mathbb{R}=(-\infty,+\infty), $ the real line. Let $ \mathcal{B} $ be the collection of all sets that can be formed by taking complements, countable unions, and countable intersections of $ [a, b],[a, b),(a, b],(a, b) $ for any real numbers a and $ b $. Then $ \mathcal{B} $ is the smallest $ \sigma $ -algebra containing all the intervals. This $ \sigma $ -algebra is called Borel algebra, and any set in $ \mathcal{B} $ is called Borel set.</p>
+<p><strong>Definition (Probability Function)</strong>: Suppose a random experiment has a sample space $ S $ and an associated $ \sigma $ -algebra $ \mathcal{B} $. The probability function $ P: \mathcal{B} \rightarrow[0,1] $ is a mapping that satisfies</p>
+<ol>
+<li>$ 0 \leqslant P(A) \leqslant 1 $ for any event $ A \in \mathcal{B} $</li>
+<li>$ P(S)=1 $</li>
+<li>If countable number of events $ A_{1}, A_{2}, \ldots \in \mathcal{B} $ are mutually exclusive (pairwise disjoint), then $ P\left(\bigcup_{i=1}^{\infty} A_{i}\right)=\sum_{i=1}^{\infty} P\left(A_{i}\right) $ (countable additivity)</li>
+</ol>
+<p><strong>Remark:</strong> For a given measurable space $ (S, \mathcal{B}), $ many different probability functions can be defined.</p>
+<p><strong>Definition (Probability Space)</strong>: A probability space is a triple $ (S, \mathcal{B}, P), $ where</p>
+<ol>
+<li>$ S $ is the sample space corresponding to outcomes of the underlying random experiment;</li>
+<li>$ \mathcal{B} $ is an associated $ \sigma $ -algebra of $ S $, and elements of $ \mathcal{B} $ are called events;</li>
+<li>$ P $ is a probability measure (or probability function).</li>
+</ol>
+<p>Properties of probability function:</p>
+<ul>
+<li>$ P(\varnothing)=0 $</li>
+<li>$ P\left(A^{c}\right)=1-P(A) $</li>
+<li>If $ A \subseteq B, $ then $ P(A) \leqslant P(B) $</li>
+<li>If $ A_{1}, A_{2}, \ldots \in \mathcal{B} $ form a partition of $ S $ (i.e. mutually exclusive and collectively exhaustive), and $ A $ is an event in $ S, $ then</li>
+</ul>
+<p>$$
+P(A)=\sum_{i=1}^{\infty} P\left(A \cap A_{i}\right)
+$$</p>
+<ul>
+<li>Sub-additivity: For any sequence of events $ A_{1}, A_{2}, \ldots \in \mathcal{B} $</li>
+</ul>
+<p>$$
+P\left(\bigcup_{i=1}^{\infty} A_{i}\right) \leqslant \sum_{i=1}^{\infty} P\left(A_{i}\right)
+$$</p>
+<p><strong>Theorem</strong>: For any $ n $ events $ A_{1}, A_{2}, \ldots, A_{n} $
+$$
+\begin{aligned}
+P\left(\bigcup_{i=1}^{n} A_{i}\right)=&amp;\sum_{1 \leqslant i \leqslant n} P\left(A_{i}\right)-\sum_{1 \leqslant i_{1}&lt;i_{2} \leqslant n} P\left(A_{i_{1}} \cap A_{i_{2}}\right) &amp; \<br>
+&amp;+\sum_{1 \leqslant i_{1}&lt;i_{2}&lt;i_{3} \leqslant n} P\left(A_{i_{1}} \cap A_{i_{2}} \cap A_{i_{3}}\right) \<br>
+&amp;-\cdots+(-1)^{n+1} P\left(A_{1} \cap A_{2} \cap \cdots \cap A_{n}\right)
+\end{aligned}
+$$</p>
+<p><strong>Remark</strong>: For $ n=2, P\left(A_{1} \cup A_{2}\right)=P\left(A_{1}\right)+P\left(A_{2}\right)-P\left(A_{1} \cap A_{2}\right) $</p>
+<p>For the so-called <strong>classical interpretation of probability</strong>, we assume:</p>
+<ul>
+<li>
+<p>Sample space $ S $ contains a finite number $ n $ of outcomes, say $ S=\left{a_{1}, \ldots, a_{n}\right} $.</p>
+</li>
+<li>
+<p>All of the outcomes are equally probable.</p>
+</li>
+<li>
+<p>The associated $ \sigma $ -algebra is the collection of all possible subsets of $ S $</p>
+</li>
+</ul>
+<p>The probability of any single outcomes is $ 1 / n . $ For every event $ A $</p>
+<p>$$
+P(A)=\sum_{a_{i} \in A} P\left(\left{a_{i}\right}\right)=\frac{\text { number of outcomes in } A}{n}
+$$</p>
+<p>How to determine the number of total outcomes in the sample
+space and in various events in $ S $?</p>
+<h2 id="25-methods-of-counting">2.5 Methods of Counting</h2>
+<p><strong>Theorem (Fundamental Theorem of Counting)</strong>: If a random experiment consists of $ k $ separated tasks, the $ i $-th of which can be done in $ n_{i} $ ways, $ i=1,2, \ldots, k, $ then the entire job can be done in $ n_{1} \times n_{2} \times \cdots \times n_{k}=\prod_{i=1}^{k} n_{i} $ ways.</p>
+<p>We consider two important counting methods: permutation and combination.</p>
+<h3 id="251-permutation">2.5.1 Permutation</h3>
+<p><strong>Example</strong>: Suppose we will choose choose two letters out of $ {\mathrm{A}, \mathrm{B}, \mathrm{C}, \mathrm{D}} $ in different orders, with each letter being used at most once each time. How many possible orders could we obtain?</p>
+<p>12 ways: $ \mathrm{AB}, \mathrm{AC}, \mathrm{AD}, \mathrm{BA}, \mathrm{BC}, \mathrm{BD}, \mathrm{CA}, \mathrm{CB}, \mathrm{CD}, \mathrm{DA}, \mathrm{DB}, \mathrm{DC} $</p>
+<p>Suppose there are $ k $ boxes in a row and there are $ n $ objects, where $ n \geqslant k . $ If we choose $ k $ from the $ n $ objects to fill in the $ k $ boxes, how many possible different ordered sequences could we obtain?</p>
+<ol>
+<li>
+<p>One object is selected to fill in box $ 1, $ so there are $ n $ ways;</p>
+</li>
+<li>
+<p>A second object is selected from the remaining $ n-1 $ objects to fill in box $ 2, $ so there are $ n-1 $ ways;</p>
+</li>
+</ol>
+<p>&hellip; k. To fill the last box (box $ k $ ), there are $ n-(k-1) $ ways since $ n-(k-1) $ objects remain.</p>
+<p>The total number of different ways to fill boxes $ 1, \ldots, k $ is
+$$
+n \times(n-1) \times \cdots \times[n-(k-1)]
+$$</p>
+<p>The experiment is equivalent to selecting $ k $ objects out of the $ n $ objects first, then arrange the selected $ k $ objects in a sequence.</p>
+<p>Each different arrangement of the sequence is called a <strong>permutation</strong>.</p>
+<p>The number of permutations of choosing $ k $ out of $ n, $ denoted by $ P_{n}^{k}, $ is
+$$
+P_{n}^{k}=\frac{n !}{(n-k) !}=n \times(n-1) \times \cdots \times[n-(k-1)]
+$$</p>
+<p>where $ n !=n \times(n-1) \times \cdots \times 2 \times 1 $.</p>
+<p>Convention: $ 0 !=1 $</p>
+<p><strong>Example (Birthday Problem)</strong>: What is the probability that at least two persons in a group of $ k $ people $ (2 \leqslant k \leqslant 365) $ have the same birthday (i.e. the same day of the same month)? Assume no one is born on Feb 29 and each of the 365 days is equally likely to be the birthday of anyone.</p>
+<p>Define event $ A $ as &ldquo;at least two persons have the same birthday&rdquo;.</p>
+<ul>
+<li>How many possible ways in which the $ k $ people could be born? $ 365^{k}(\text { total numbers of outcomes in sample space } S) $</li>
+<li>Event $ A^{c} $ is &quot; $ k $ people have different birthdays&quot;. How many ways that all can have different birthdays? $ P_{365}^{k} $</li>
+<li>So</li>
+</ul>
+<p>$$
+P(A)=1-P\left(A^{c}\right)=1-\frac{P_{365}^{k}}{365^{k}}
+$$</p>
+<h3 id="252-combination">2.5.2 Combination</h3>
+<p><strong>Example</strong>: Suppose we will choose two letters out of $ {\mathrm{A}, \mathrm{B}, \mathrm{C}, \mathrm{D}} $ without ordering. If each letter is used at most once each time, how many possible pairs could we obtain?</p>
+<p>6 pairs: $ (\mathrm{A}, \mathrm{B}),(\mathrm{A}, \mathrm{C}),(\mathrm{A}, \mathrm{D}),(\mathrm{B}, \mathrm{C}),(\mathrm{B}, \mathrm{D}),(\mathrm{C}, \mathrm{D}) $</p>
+<p>Choose a subset of $ k $ elements without replacement from a set of $ n $ distinct elements.</p>
+<ul>
+<li>The order of the elements is irrelevant. For example, the subsets $ {a, b} $ and $ {b, a} $ are identical.</li>
+<li>Each subset is called a <strong>combination</strong>.</li>
+<li>The number of combinations of choosing $ k $ out of $ n $ is denoted by $ C_{n}^{k} . $ We have</li>
+</ul>
+<p>$$
+\begin{aligned}
+C_{n}^{k} &amp;=\frac{\text { number of choosing } k \text { out of } n \text { with ordering }}{\text { number of ordering } k \text { elements }} \<br>
+&amp;=\frac{P_{n}^{k}}{k !}=\frac{n !}{k !(n-k) !}
+\end{aligned}
+$$</p>
+<p>$ C_{n}^{k} $ is also denoted by $ \left(\begin{array}{l}n \ k\end{array}\right) . $ This is also called a binomial coefficient because of its appearance in the binomial theorem</p>
+<p>$$
+(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}
+n \<br>
+k
+\end{array}\right) x^{k} y^{n-k}
+$$</p>
+<p>Properties of the binomial coefficients
+$$
+\begin{array}{c}
+\sum_{k=0}^{n} C_{n}^{k}=2^{n}, \quad \sum_{k=0}^{n}(-1)^{k} C_{n}^{k}=0 \<br>
+\sum_{k=0}^{m} C_{n}^{k} C_{n}^{m-k}=C_{2 n}^{m} \<br>
+C_{n}^{k}+C_{n}^{k-1}=C_{n+1}^{k}
+\end{array}
+$$</p>
+<p><strong>Example</strong>: Select 10 students randomly from a class containing 15 boys and 20 girls. What is the probability that exactly 3 boys are selected?</p>
+<ul>
+<li>The number of combinations of 10 students out of 35 students is $ C_{35}^{10} $</li>
+<li>The number of combinations of 3 boys out of 15 boys is $ C_{15}^{3} $</li>
+<li>The number of combinations of 7 girls out of 20 girls is $ C_{20}^{7} $</li>
+</ul>
+<p>Thus the probability is $ \left(C_{15}^{3} \times C_{20}^{7}\right) / C_{35}^{10} $.</p>
+<p><strong>Matching Problem</strong>: There are $ n $ letters and $ n $ envelopes with the corresponding addresses. If we place the $ n $ letters in the $ n $ envelopes in a random manner, what is the probability that at least one letter will be placed in the correct envelope?</p>
+<p>Let $ A $ be the event &ldquo;at least one letter is in the correct envelope&rdquo;.</p>
+<ul>
+<li>Let $ A_{i}, i=1, \ldots, n, $ be the event &ldquo;letter $ i $ is placed in the correct envelope&rdquo;. We shall determine $ P\left(\bigcup_{i=1}^{n} A_{i}\right) $</li>
+<li>Use formula</li>
+</ul>
+<p>$$
+\begin{aligned}
+P\left(\bigcup_{i=1}^{n} A_{i}\right)=&amp;\sum_{i} P\left(A_{i}\right)-\sum_{i_{1}&lt;i_{2}} P\left(A_{i_{1}} \cap A_{i_{2}}\right)\<br>
+&amp;+\sum_{i_{1}&lt;i_{2}&lt;i_{3}} P\left(A_{i_{1}} \cap A_{i_{2}} \cap A_{i_{3}}\right) \<br>
+&amp;-\cdots+(-1)^{n+1} P\left(A_{1} \cap A_{2} \cap \cdots \cap A_{n}\right)
+\end{aligned}
+$$</p>
+<ul>
+<li>For a given $ 1 \leqslant k \leqslant n, $ for any $ 1 \leqslant i_{1}&lt;\cdots&lt;i_{k} \leqslant n $</li>
+</ul>
+<p>$$
+P\left(A_{i_{1}} \cap \cdots \cap A_{i_{k}}\right)=(n-k) ! / n !
+$$</p>
+<ul>
+<li>$ \sum_{i_{1}&lt;\cdots&lt;i_{k}} P\left(A_{i_{1}} \cap \cdots \cap A_{i_{k}}\right)=C_{n}^{k} \times(n-k) ! / n !=1 / k ! $. Thus,</li>
+</ul>
+<p>$$
+P\left(\bigcup_{i=1}^{n} A_{i}\right)=1-\frac{1}{2 !}+\frac{1}{3 !}-\cdots+(-1)^{n+1} \frac{1}{n !}=\sum_{k=1}^{n}(-1)^{k+1} \frac{1}{k !}
+$$</p>
+<p><strong>Example</strong>: Three types of fruit: apple, banana, and orange. How many ways to load a pack of 5 pieces?</p>
+<p>Combination with replacement Number of ways to select subsets of size $ k $ from a set of $ n $ distinguishable elements:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Ordered</th>
+<th>Unordered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Without replacement</td>
+<td>$ P_{n}^{k} $</td>
+<td>$ C_{n}^{k} $</td>
+</tr>
+<tr>
+<td>With replacement</td>
+<td>$ n^{k} $</td>
+<td>$ C_{n+k-1}^{k} $</td>
+</tr>
+</tbody>
+</table>
+<h2 id="26-conditional-probability">2.6 Conditional Probability</h2>
+<p>Different economic events are generally related to each other. Because of the connection, the occurrence of event $ B $ may
+affect or contain the information about the probability that
+event $ A $ will occur.</p>
+<p><strong>Example (Financial Contagion)</strong>: A large drop of the price in one market can cause a large drop of the price in another market, given the speculations and reactions of market participants.</p>
+<p>When an event has occurred, some uncertainty is eliminated as new information arrives. We want to update probability calculations based on new information.</p>
+<p><strong>Definition (Conditional Probability)</strong>: Let $ A $ and $ B $ be two events in probability space $ (S, \mathcal{B}, P) . $ The conditional probability of event $ A $ given event $ B $, denoted as $ P(A \mid B), $ is defined as
+$$
+P(A \mid B)=\frac{P(A \cap B)}{P(B)}
+$$</p>
+<p>provided that $ P(B)&gt;0 $.</p>
+<p>Properties of conditional probability:</p>
+<ul>
+<li>$ P(A)=P(A \mid S) $</li>
+<li>$ P(A \mid B)=1-P\left(A^{c} \mid B\right) $</li>
+<li>Multiplication rule</li>
+</ul>
+<p>$$
+P(A \cap B)=P(A) P(B \mid A)=P(B) P(A \mid B)
+$$</p>
+<p><strong>Example</strong>: Suppose two balls are randomly selected, without replacement, from a box containing $ a $ red balls and $ b $ blue balls. What is the probability that the first is red and the second is blue?</p>
+<p>Let $ A={\text { the first is red }} $ and $ B={\text { the second is blue }} . $ Then
+$$
+P(A \cap B)=P(A) P(B \mid A)=\frac{a}{a+b} \times \frac{b}{a+b-1}
+$$</p>
+<p><strong>Theorem (Chain Rule of Joint Probability)</strong>: For any events $ A_{1}, A_{2}, \ldots, A_{n} $ in $ \mathcal{B}, $ the joint probability of $ n $ events
+$$
+\begin{aligned} 
+P\left(A_{1} \cap A_{2} \cap \cdots \cap A_{n}\right)=&amp;P\left(A_{1}\right) \times P\left(A_{2} \mid A_{1}\right) \times P\left(A_{3} \mid A_{1} \cap A_{2}\right) \ 
+&amp;\times \cdots \times P\left(A_{n} \mid A_{1} \cap \cdots \cap A_{n-1}\right) 
+\end{aligned}
+$$
+is provided that $ P\left(A_{1} \cap \cdots \cap A_{n-1}\right)&gt;0 $</p>
+<p><strong>Remark:</strong> $ P\left(A_{1} \cap \cdots \cap A_{n-1}\right)&gt;0 $ implies $ P\left(A_{1}\right)&gt;0, P\left(A_{1} \cap A_{2}\right)&gt;0 $, $ \ldots, P\left(A_{1} \cap \cdots \cap A_{n-2}\right)&gt;0 $</p>
+<p><strong>Theorem (Rule of Total Probability)</strong>: Let $ \left{A_{i}, i=1,2, \ldots\right} $ be a **partition** (i.e. mutually exclusive and collectively exhaustive) of sample space $ S, $ with $ P\left(A_{i}\right)&gt;0 $ for all $ i \geqslant 1 . $ Then for any event $ B $ in $ \mathcal{B} $
+$$
+P(B)=\sum_{i=1}^{\infty} P\left(B \mid A_{i}\right) P\left(A_{i}\right)
+$$</p>
+<p><strong>Example</strong>: Suppose events $ B_{1}, B_{2} $ and $ B_{3} $ are mutually exclusive. If $ P\left(B_{i}\right)=\frac{1}{3} $ and $ P\left(A \mid B_{i}\right)=\frac{i}{6} $ for $ i=1,2,3 . $ What is $ P(A) ? $ (Hint: $ B_{1}, B_{2} $ and $ B_{3} $ are also collectively exhaustive.)</p>
+<h2 id="27-bayes-formula">2.7 Bayes' Formula</h2>
+<p><strong>Theorem (Bayes' Theorem)</strong>: Suppose $ P(A)&gt;0 $ and $ P(B)&gt;0 . $ Then
+$$
+P(A \mid B)=\frac{P(B \mid A) P(A)}{P(B \mid A) P(A)+P\left(B \mid A^{c}\right) P\left(A^{c}\right)}
+$$</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>We consider $ P(A) $ as the prior probability about event $ A $.</li>
+<li>$ P(A \mid B) $ is the posterior probability given that $ B $ has occurred.
+ayes' Formula</li>
+</ul>
+<p><strong>Theorem (Alternative Statement of Bayes' Theorem)</strong>: Suppose $ A_{1}, \ldots, A_{n} $ are $ n $ mutually exclusive and collectively exhaustive events in the sample space $ S, $ and $ B $ is an event with $ P(B)&gt;0 . $ Then the conditional probability of $ A_{i} $ given $ B $ is
+$$
+P\left(A_{i} \mid B\right)=\frac{P\left(B \mid A_{i}\right) P\left(A_{i}\right)}{P(B)}=\frac{P\left(B \mid A_{i}\right) P\left(A_{i}\right)}{\sum_{j=1}^{n} P\left(B \mid A_{j}\right) P\left(A_{j}\right)}
+$$</p>
+<p><strong>Example (Medical Test)</strong>: Suppose there is a certain disease randomly found in 0.5% of the general population. Some blood test will yield a positive result in 99% of the case where the disease is present; but it also yields false-positive results in 5% of the case where a person is not infected. What is the probability that a person gets the disease if his test result is positive?</p>
+<p>Let $ A $ and $ B $ denote the events &ldquo;disease is present&rdquo; and &ldquo;positive
+test result&rdquo;, respectively. Then</p>
+<p>$$
+\begin{aligned}
+P(A \mid B) &amp;=\frac{P(B \mid A) P(A)}{P(B \mid A) P(A)+P\left(B \mid A^{c}\right) P\left(A^{c}\right)} \<br>
+&amp;=\frac{0.99 \times 0.005}{0.99 \times 0.005+0.05 \times(1-0.005)} \approx 0.0905
+\end{aligned}
+$$</p>
+<p><strong>Example (Monty Hall Problem)</strong>: In a TV game there are three doors $ A, B, $ and $ C, $ of which two hide nothing while behind the third there is a prize. The prize is won if it is guessed correctly that which door hides it.</p>
+<ul>
+<li>You choose one of the door first, say A.</li>
+<li>Before door $ A $ is opened to reveal what is behind it, the game
+host open one of the other two doors, say $ \mathrm{B}, $ and shows that
+there is nothing behind it.</li>
+<li>He then offers you the option to change your decision (from door $ A $ to door $ C $ ).</li>
+</ul>
+<p>Should you stick to your original choice or change to $ \mathrm{C} ? $</p>
+<p>Let $ A, B, $ and $ C $ be the events &ldquo;prize is behind door A&rdquo; (respectively, B and C). Assume $ P(A)=P(B)=P(C)=\frac{1}{3} . $ Let $ B^{*} $ be the event &ldquo;host shows that nothing is behind door $ \mathrm{B} $&rdquo;. Then,</p>
+<p>$$
+P\left(A \mid B^{<em>}\right)=\frac{P\left(B^{</em>} \mid A\right) P(A)}{P\left(B^{<em>} \mid A\right) P(A)+P\left(B^{</em>} \mid B\right) P(B)+P\left(B^{*} \mid C\right) P(C)}
+$$</p>
+<p>If the prize is behind door A, the hosts randomly open door B or door $ \mathrm{C}, $ so $ P\left(B^{*} \mid A\right)=\frac{1}{2} $</p>
+<ul>
+<li>If the prize is behind door B, then $ P\left(B^{*} \mid B\right)=0 $.</li>
+<li>If the prize is behind door $ C $, then $ P\left(B^{*} \mid C\right)=1 $</li>
+</ul>
+<p>Therefore, $ P\left(A \mid B^{<em>}\right)=\frac{1}{3}, $ and similarly, $ P\left(C \mid B^{</em>}\right)=\frac{2}{3} $.</p>
+<h2 id="28-independence">2.8 Independence</h2>
+<p><strong>Definition (Independence)</strong>: Events $ A $ and $ B $ are said to be statistically independent if $ P(A \cap B)=P(A) P(B) $.</p>
+<p><strong>Remarks:</strong></p>
+<p>By definition,
+$$
+P(A \mid B)=\frac{P(A \cap B)}{P(B)}=\frac{P(A) P(B)}{P(B)}=P(A)
+$$</p>
+<p>Similarly, $ P(B \mid A)=P(B) $. Therefore, the occurrence of either one does not affect the probability of the occurrence of the other; that is, the knowledge of $ B $ does not help in predicting $ A $.</p>
+<p>Mutual exclusiveness does not necessarily imply independence.</p>
+<p>If $ P(A)=0, $ then any event $ B $ is independent of $ A $.</p>
+<p><strong>Theorem</strong>: Let $ A $ and $ B $ be two independent events. Then (1) $ A $ and $ B^{c},(2) $ $ A^{c} $ and $ B, $ (3) $ A^{c} $ and $ B^{c} $ are all independent.</p>
+<p><strong>Definition (Independence among Several Events)</strong>: Events $ A_{1}, A_{2}, \ldots, A_{n} $ are (jointly) independent if, for every possible subset $ \left{A_{i_{1}}, \ldots, A_{i_{k}}\right} $ where $ i_k=2, \ldots, n $
+$$
+P\left(A_{i_{1}} \cap \cdots \cap A_{i_{k}}\right)=P\left(A_{i_{1}}\right) \times \cdots \times P\left(A_{i_{k}}\right)
+$$</p>
+<p><strong>Remark:</strong></p>
+<p>There are $ \left(2^{n}-n-1\right) $ conditions to be verified. For example, three events $ A, B $ and $ C $ are independent if
+$$
+\begin{aligned}
+P(A \cap B) &amp;=P(A) P(B) \<br>
+P(A \cap C) &amp;=P(A) P(C) \<br>
+P(B \cap C) &amp;=P(B) P(C) \<br>
+P(A \cap B \cap C) &amp;=P(A) P(B) P(C)
+\end{aligned}
+$$</p>
+<p>It is possible to find that three events are pairwise independent but not jointly independent.</p>
+<p><strong>Example</strong>: Suppose $ S={a, b, c, d} $ and each basic outcome is equally likely to occur. Let $ A_{1}={a, b}, A_{2}={b, c} $ and $ A_{3}={a, c} . $ Then,
+$$
+\begin{array}{c}
+P\left(A_{1}\right)=P\left(A_{2}\right)=P\left(A_{3}\right)=\frac{1}{2} \<br>
+P\left(A_{1} \cap A_{2}\right)=P\left(A_{1} \cap A_{3}\right)=P\left(A_{2} \cap A_{3}\right)=\frac{1}{4}
+\end{array}
+$$</p>
+<p>but</p>
+<p>$$
+P\left(A_{1} \cap A_{2} \cap A_{3}\right)=0 \neq \frac{1}{8}
+$$</p>
+<p>It is also possible to find three events $ A, B $, $ C $ that satisfy $ P(A \cap B \cap C)=P(A) P(B) P(C) $ but not independent.</p>
+<p><strong>Example</strong>: Suppose $ S={a, b, c, d, e, f, g, h} $ and each basic outcome is equally likely to occur. Let $ A_{1}=A_{2}={a, b, c, d} $ and $ A_{3}={a, e, f, g} . $ Then,
+$$
+P\left(A_{1}\right)=P\left(A_{2}\right)=P\left(A_{3}\right)=\frac{1}{2}, \quad P\left(A_{1} \cap A_{2} \cap A_{3}\right)=\frac{1}{8}
+$$</p>
+<p>but</p>
+<p>$$
+P\left(A_{1} \cap A_{2}\right)=\frac{1}{2} \neq P\left(A_{1}\right) P\left(A_{2}\right)
+$$</p>
+<p><strong>Theorem</strong>: If events $ A_{1}, A_{2}, \ldots, A_{n} $ are independent, then
+$$
+P\left(A_{1} \cup \cdots \cup A_{n}\right)=1-\left{\left[1-P\left(A_{1}\right)\right] \times \cdots \times\left[1-P\left(A_{n}\right)\right]\right}
+$$</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/2.-foundation-of-probability-theory/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/2.-foundation-of-probability-theory/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/2.-foundation-of-probability-theory/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/2.-foundation-of-probability-theory/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/3.-random-variable-and-univariate-distributions/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/part1-4/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

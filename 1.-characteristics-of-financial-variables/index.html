@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="1. Characteristics of financial variables 1.1 Prices and asset returns Suppose that we observe financial time series data, e.g., daily stock close prices $ P_t $, for $ t=1,2,&hellip;,T $.
+We define daily simple return as
+$$ R_t=\frac{P_t-P_{t-1}}{P_{t-1}}, $$
+or
+$$ R_t=\frac{\Delta P_t}{P_{t-1}}, $$
+where $\Delta P_t=P_t-P_{t-1}$ is the increment of price from $t-1$ to $t$.
+Meanwhile, we define Log return as
+$$ r_t=\log(P_t)-\log(P_{t-1})=\log\left(\frac{P_t}{P_{t-1}}\right). $$
+$r_t$ is also called continuously compounded return because" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1. Characteristics of financial variables 1.1 Prices and asset returns Suppose that we observe financial time series data, e.g., daily stock close prices $ P_t $, for $ t=1,2,&hellip;,T $.
+We define daily simple return as
+$$ R_t=\frac{P_t-P_{t-1}}{P_{t-1}}, $$
+or
+$$ R_t=\frac{\Delta P_t}{P_{t-1}}, $$
+where $\Delta P_t=P_t-P_{t-1}$ is the increment of price from $t-1$ to $t$.
+Meanwhile, we define Log return as
+$$ r_t=\log(P_t)-\log(P_{t-1})=\log\left(\frac{P_t}{P_{t-1}}\right). $$
+$r_t$ is also called continuously compounded return because"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" /><link rel="prev" href="https://henrywu97.github.io/2.-linear-time-series-models/" /><link rel="next" href="https://henrywu97.github.io/1.-functions/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/1.-characteristics-of-financial-variables\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  1609 ,
+        "url": "https:\/\/henrywu97.github.io\/1.-characteristics-of-financial-variables\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/1.-characteristics-of-financial-variables/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/1.-characteristics-of-financial-variables/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1609 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-prices-and-asset-returns">1.1 Prices and asset returns</a>
+      <ul>
+        <li><a href="#multiperiod-returns">Multiperiod returns</a></li>
+        <li><a href="#adjustment-for-dividends">Adjustment for Dividends</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-random-walk-model">1.2 Random Walk Model</a>
+      <ul>
+        <li><a href="#121-brownian-motion">1.2.1 Brownian motion</a></li>
+        <li><a href="#122-geometric-random-walks">1.2.2 Geometric Random Walks</a></li>
+        <li><a href="#123-descriptive-statistics">1.2.3 Descriptive statistics</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-testing-for-normality">1.3 Testing for Normality</a>
+      <ul>
+        <li><a href="#131-jarque-bera-test">1.3.1 Jarque-Bera test</a></li>
+        <li><a href="#a-real-example-shanghai-composite-index">A real example: Shanghai Composite Index}</a></li>
+        <li><a href="#quantile-quantile-qq-plot">Quantile-Quantile (QQ) plot</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-efficient-markets-hypothesis">1.4 Efficient Markets Hypothesis</a>
+      <ul>
+        <li><a href="#testing-of-emh-under-rw1">Testing of EMH under RW1</a>
+          <ul>
+            <li><a href="#检验单个acf">检验单个ACF</a></li>
+            <li><a href="#检验联合acf--ljung-box白噪声检验">检验联合ACF / Ljung-Box白噪声检验</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="1-characteristics-of-financial-variables">1. Characteristics of financial variables</h1>
+<h2 id="11-prices-and-asset-returns">1.1 Prices and asset returns</h2>
+<p>Suppose that we observe financial time series data, e.g., daily stock close prices $ P_t $, for $ t=1,2,&hellip;,T $.</p>
+<p>We define daily simple return as</p>
+<p>$$
+R_t=\frac{P_t-P_{t-1}}{P_{t-1}},
+$$</p>
+<p>or</p>
+<p>$$
+R_t=\frac{\Delta P_t}{P_{t-1}},
+$$</p>
+<p>where $\Delta P_t=P_t-P_{t-1}$ is the increment of price from $t-1$ to $t$.</p>
+<p>Meanwhile, we define Log return as</p>
+<p>$$
+r_t=\log(P_t)-\log(P_{t-1})=\log\left(\frac{P_t}{P_{t-1}}\right).
+$$</p>
+<p>$r_t$ is also called continuously compounded return because</p>
+<p>$$
+\underset{m\rightarrow\infty}{\lim}\left(1+\frac{r}{m}\right)^m=e^r.
+$$</p>
+<p>Note that we could establish the relationship between $R_t$ and $r_t$ as</p>
+<p>$$
+r_t=\log\left(1+\frac{P_t-P_{t-1}}{P_{t-1}}\right)=\log(1+R_t)
+$$</p>
+<p>Question: What is the difference between $R_t$ and $r_t$? Are their values very close? Which one is always larger? (Hint: Taylor expansion of $\log(1+x)$ with $x$ close to 0.)</p>
+<p>In reality, simple return is more realistic, while log return is more like a academic item.</p>
+<h3 id="multiperiod-returns">Multiperiod returns</h3>
+<p>We consider the stock price from period $t-k$ to $t$.\</p>
+<p>The simple return from $t-k$ to $t$ is</p>
+<p>$$
+\begin{aligned}
+1+R_t(k)=&amp;\frac{P_{t}}{P_{t-k}}=\frac{P_{t}}{P_{t-1}}\frac{P_{t-1}}{P_{t-2}}\cdots\frac{P_{t-k+1}}{P_{t-k}}\<br>
+=&amp;(1+R_{t})(1+R_{t-1})\cdots(1+R_{t-k+1})
+\end{aligned}
+$$</p>
+<p>While the log return is</p>
+<p>$$
+\begin{aligned}
+r_t(k)=&amp;\log\left(\frac{P_{t}}{P_{t-k}}\right)=\log\left(\frac{P_{t}}{P_{t-1}}\frac{P_{t-1}}{P_{t-2}}\cdots\frac{P_{t-k+1}}{P_{t-k}}\right)\<br>
+=&amp;r_{t}+r_{t-1}+\cdots+r_{t-k+1}
+\end{aligned}
+$$</p>
+<h3 id="adjustment-for-dividends">Adjustment for Dividends</h3>
+<p>If a dividend $D_t$ is paid prior to time $t$, we define daily simple return as</p>
+<p>$$
+R_t=\frac{P_t+D_t-P_{t-1}}{P_{t-1}},
+$$</p>
+<p>and the log return is</p>
+<p>$$
+r_t=log(1+R_t)=log(P_t+D_t)-log(P_{t-1}),
+$$</p>
+<p>Similarly, one can define multiple-period returns with dividend adjustments.</p>
+<h2 id="12-random-walk-model">1.2 Random Walk Model</h2>
+<h3 id="121-brownian-motion">1.2.1 Brownian motion</h3>
+<p>布朗运动(Brownian motion), 一种正态分布的独立增量连续随机过程($ B(t+2)-B(t+1) \perp B(t+1)-B(t) $)，可以证明布朗运动是马尔可夫过程、鞅过程和伊藤过程。布朗运动是在1827年英国植物学罗伯特·布朗(Robert Brown)利用一般的显微镜观察悬浮于水中由花粉所迸裂出之微粒时，发现微粒会呈现不规则状的运动，因而称它布朗运动。</p>
+<p>Random walk: $ \varepsilon_t = log(P_t) - log(P_{t-1})$ is i.i.d, then logarithm of stock price is a random walk, which is a strong condition for financial analysis.</p>
+<p>The $ \textcolor{blue}{\text{Random walk hypothesis}} $ states that the single-period log returns, $r_t$ are independent, then
+$$
+\begin{aligned}
+1+R_t(k)=&amp;\frac{P_{t}}{P_{t-k}}=\frac{P_{t}}{P_{t-1}}\frac{P_{t-1}}{P_{t-2}}\cdots\frac{P_{t-k+1}}{P_{t-k}}\<br>
+=&amp;(1+R_{t})(1+R_{t-1})\cdots(1+R_{t-k+1})\<br>
+=&amp;exp(r_t+r_{t-1}+\cdots+r_{t-k+1})
+\end{aligned}
+$$</p>
+<p>and we have</p>
+<p>$$
+log(1+R_t(k))=r_t+r_{t-1}+\cdots+r_{t-k+1}.
+$$</p>
+<p>It is sometimes assumed further that the log returns $r_t$ are i.i.d., $N(\mu,\sigma^2)$.</p>
+<h3 id="122-geometric-random-walks">1.2.2 Geometric Random Walks</h3>
+<p>It is easy to show</p>
+<p>$$
+\frac{P_{t}}{P_{t-k}}=1+R_t(k)=exp(r_t+r_{t-1}+\cdots+r_{t-k+1})
+$$</p>
+<p>Taking $ k=t $, we have</p>
+<p>$$
+P_t=P_0exp(r_t+r_{t-1}+\cdots+r_{1})
+$$</p>
+<p>We call such a process <strong>whose logarithm is a random walk</strong> (in this case $ P_t$ ) a $ \textcolor{blue}{\text{geometric random walk}} $ or an $ \textcolor{red}{\text{exponential random walk}} $. If add the assumption that $r_t$ are i.i.d., normal distribution, the process is a $ \textcolor{blue}{\text{lognormal geometric random walk}} $.</p>
+<p>Simulating a stock price process</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201103203309.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201103203309.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201103203309.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201103203309.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201103203309.jpg"
+        title="20201103203309.jpg" /></div></p>
+<h3 id="123-descriptive-statistics">1.2.3 Descriptive statistics</h3>
+<p>For stationary time series $X_t$, we define its descriptive statistics as</p>
+<ul>
+<li>Mean $\mu=E<i class="far fa-check-square fa-fw"></i> $;</li>
+<li>Variance $\sigma^2=E[(X-E<i class="far fa-check-square fa-fw"></i> )^2]$;</li>
+<li>Skewness $sk=\frac{E[(X-E<i class="far fa-check-square fa-fw"></i> )^3]}{\sigma^3}$;</li>
+<li>Kurtosis $K=\frac{E[(X-E<i class="far fa-check-square fa-fw"></i> )^4]}{\sigma^4}$.</li>
+</ul>
+<p>For normal distributions, $sk=0$ and $K=3$.</p>
+<p>Taking Normal distribution as a benchmark, we define $K-3$ as the excess kurtosis.</p>
+<p>With $ T $ realizations of $ X_t $, $ t=1,2,&hellip;,T $, we could compute</p>
+<ul>
+<li>Sample mean $\widehat\mu=T^{-1}\sum_{t=1}^TX_t$;</li>
+<li>Sample variance $\widehat\sigma^2=(T-1)^{-1}\sum_{t=1}^T(X_t-\widehat\mu)^2$;</li>
+<li>Sample skewness $\widehat{sk}=T^{-1}\sum_{t=1}^T(X_t-\widehat\mu)^3/\widehat\sigma^3$;</li>
+<li>Sample kurtosis $\widehat K=T^{-1}\sum_{t=1}^T(X_t-\widehat\mu)^4/\widehat\sigma^4$.</li>
+</ul>
+<p>If $X$ follows normal distribution, then $\widehat{sk}\approx0$ and $\widehat K\approx 3$.</p>
+<p><strong>Why do we care about these moments?</strong></p>
+<ul>
+<li>Sample mean: telling us the <strong>return performance,</strong> cared most by investors, studied most in the literature as well</li>
+<li>Sample variance: the typical <strong>measurement for volatility</strong> (standard error); see Sharpe ratio; and covariance matrix could be applied for portfolio construction.</li>
+<li>Sample skewness: the measurement for <strong>crash risk</strong></li>
+<li>Sample kurtosis: the measurement for <strong>heavy tail</strong>, needed for Central Limit Theorem</li>
+</ul>
+<h2 id="13-testing-for-normality">1.3 Testing for Normality</h2>
+<h3 id="131-jarque-bera-test">1.3.1 Jarque-Bera test</h3>
+<p>As $T\rightarrow\infty$, we have</p>
+<p>$$
+\sqrt T\widehat{sk}\overset{D}{\longrightarrow} N(0, 6),
+$$</p>
+<p>and</p>
+<p>$$
+\sqrt T(\widehat K-3)\overset{D}{\longrightarrow} N(0, 24).
+$$</p>
+<p>Jarque-Bera test statistic</p>
+<p>$$
+\qquad J=T\left(\frac{\widehat{sk^2}}{6}+\frac{(\widehat K-3)^2}{24}\right).
+$$</p>
+<p>In the Jaque-Bera test, we specify</p>
+<p>$$
+\begin{aligned}
+\mathbb H_0:&amp;, X \mbox{ follows normal distribution}\<br>
+\mathbb H_1:&amp;, X \mbox{ does NOT follow normal distribution.}
+\end{aligned}
+$$</p>
+<p>Under the null hypothesis, $\widehat{sk}$ converge to a normal random variable with mean zero, and the same for $\widehat K-3$. Therefore, $ J\sim \chi^2_{(2)}. $</p>
+<p>Under the alternative hypothesis, we would get a large value of $J$.</p>
+<p>Decision rule: we reject the null hypothesis when $J$ is larger than the critical value, for example, $ \chi^2_{(2)}(0.95) $ under $5%$ significance level.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201103205122.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201103205122.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201103205122.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201103205122.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201103205122.png"
+        title="20201103205122.png" /></div></p>
+<h3 id="a-real-example-shanghai-composite-index">A real example: Shanghai Composite Index}</h3>
+<p>We consider the daily close prices of the Shanghai Stock Exchange (SSE) Composite Index from 1 Jan 2000 to 31 Dec 2016.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185618.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185618.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185618.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185618.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185618.png"
+        title="20201105185618.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185749.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185749.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185749.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185749.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185749.png"
+        title="20201105185749.png" /></div></p>
+<p>Phenomena: the probability of large shock is higher than normal distribution</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185950.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185950.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185950.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185950.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105185950.png"
+        title="20201105185950.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201105190033160.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201105190033160.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201105190033160.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201105190033160.png 1.6x"
+        data-sizes="auto"
+        alt="image-20201105190033160"
+        title="image-20201105190033160.png" /></div></p>
+<p>Simple return and Log return are very close when they are small.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105190243.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105190243.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105190243.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105190243.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105190243.png"
+        title="20201105190243.png" /></div></p>
+<p>Table: Descriptive statistics of Daily Simple and Log returns</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Simple Return</th>
+<th>Log Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean</td>
+<td>0.000326</td>
+<td>0.000192</td>
+</tr>
+<tr>
+<td>Standard Deviation</td>
+<td>0.016328</td>
+<td>0.016362</td>
+</tr>
+<tr>
+<td>Skewness</td>
+<td>-0.184995</td>
+<td>-0.341840</td>
+</tr>
+<tr>
+<td>Kurtosis</td>
+<td>7.467776</td>
+<td>7.488846</td>
+</tr>
+<tr>
+<td>Jarque-Bera Statistic</td>
+<td>3445.118</td>
+<td>3534.125</td>
+</tr>
+<tr>
+<td>P-value of the JB test</td>
+<td>0.0000</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Negative skewness, higher crash risk for log return</li>
+<li>Huge kurtosis, heavy tail</li>
+<li>Refuse JB test&rsquo;s null hypothesis, not normal distributed</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105192907.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105192907.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105192907.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105192907.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105192907.png"
+        title="20201105192907.png" /></div></p>
+<ul>
+<li>Positive or negative correlation may depends on some pattern like trade volunm.</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105190920.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105190920.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105190920.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105190920.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201105190920.png"
+        title="20201105190920.png" /></div></p>
+<h3 id="quantile-quantile-qq-plot">Quantile-Quantile (QQ) plot</h3>
+<p>A simpler way to examine Normality:</p>
+<ul>
+<li>We compare the quantiles of the log return data with the normal distribution that has the same mean and variance.</li>
+<li>If log return follows normal distribution, then they should have the same quantiles (on the 45 degree line).</li>
+</ul>
+<p>Compare the distribution of LR with Normal distribution. Heavier tail.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191655.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191655.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191655.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191655.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191655.png"
+        title="20201105191655.png" /></div></p>
+<p>How about $ t $-distribution? Thinner tail.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191719.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191719.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191719.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191719.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed@master/Figs/20201105191719.png"
+        title="20201105191719.png" /></div></p>
+<p>Measuring serial autocorrelation</p>
+<p>We define $k$-th order <strong>autocovariance</strong> as</p>
+<p>$$
+\gamma(k)=Cov(r_t, r_{t+k})=E[r_tr_{t+k}]-E[r_t]E[r_{t+k}],
+$$</p>
+<p>and $k$-th order serial <strong>autocorrelation</strong> as</p>
+<p>$$
+\rho(k)=\frac{\gamma(k)}{\gamma(0)}.
+$$</p>
+<p>We estimate $\gamma(k)$ by</p>
+<p>$$
+\widehat\gamma(k)=T^{-1}\sum_{t=1}^{T-k}(r_t-\bar r)(r_{t+k}-\bar r),
+$$</p>
+<p>where $\bar r=T^{-1}\sum_{t=1}^nr_t$. Therefore, $\widehat\rho(k)=\widehat\gamma(k)/\widehat\gamma(0)$.</p>
+<p>Suppose that</p>
+<p>$$
+X_t=\mu +X_{t-1}+\epsilon_t, 
+$$
+where $X_t=P_t$ or $X_t=p_t$. Historically, $\mu$(drift) was often assumed to be zero</p>
+<ul>
+<li>RW1: $\epsilon_t \sim IID;, E \epsilon_t=0 $</li>
+<li>RW2: $\epsilon_t $ is independent over time; $ E \epsilon_t=0 $</li>
+<li>RW3: For all $k$, $cov(\epsilon_t, \epsilon_{t-k} )=0$</li>
+</ul>
+<p>Then, provided $E\epsilon_t^2 \leq C &lt; \infty, RW1\Rightarrow RW2 \Rightarrow RW3 $</p>
+<p>【Martingale】A <strong>martingale</strong> is a time-series process $X_t$ obeying</p>
+<p>$$
+E[X_{t+1} | X_t, X_{t-1}, \dots ]=X_t
+$$</p>
+<p>or equivalently, call $\epsilon_{t+1}=X_{t+1}-X_t$ a martingale difference sequence</p>
+<p>$$
+E[\epsilon_t | X_{t-1}, X_{t-2}, \dots ]=0
+$$</p>
+<p>This corresponds with the notion of a fair game: If you toss a coin against opponent and bet successively at fair odds with initial capital $X_0$, current capital $X_t$ is martingale. This is the case that $\mu=0$; More generally, by <strong>transforming conditional mean to unconditional</strong>, we might assume that</p>
+<p>【RW2.5 (Fama)】: $ \epsilon_{t+1}=X_{t+1}-X_t-\mu $, is a martingale difference (MDS).</p>
+<p>Martingale property implies that</p>
+<p>$$
+cov(\epsilon_t, g(X_{t-1}, X_{t-2}, \dots) )=0
+$$</p>
+<p>for any (measurable) function $g.$</p>
+<p>In particular</p>
+<p>$$
+g(X_{t-1}, X_{t-2}, \dots)=X_{t-k}-X_{t-k-1}-\mu =\epsilon_{t-k}
+$$
+so stronger condition than RW3.</p>
+<h2 id="14-efficient-markets-hypothesis">1.4 Efficient Markets Hypothesis</h2>
+<p>Fama (1970, JoF): A market in which prices always &lsquo;fully reflect&rsquo; available information is called &lsquo;efficient&rsquo; $\Rightarrow$ EMH</p>
+<ul>
+<li>
+<p>If prices are predictable $\Rightarrow$ opportunities for superior returns (free lunch) $\Rightarrow$ will be competed away immediately by a lot of hungry traders $\Rightarrow$ unpredictable random walk</p>
+<ul>
+<li>If a security believed to be underpriced, buying pressure $\Rightarrow$ jump up to a level where no longer thought a bargain</li>
+<li>If a security believed to be overpriced, (short-)selling pressure $\Rightarrow$ jump down to a level where no longer thought too expensive</li>
+</ul>
+</li>
+<li>
+<p>As a result, market forces respond to news quickly and make prices the best available estimates of fundamental values, i.e. values justified by likely future cash flows and preferences of investors/consumers</p>
+</li>
+</ul>
+<p>We <strong>distinguish among three forms of market efficiency depending on the information set</strong> with respect to which efficiency is defined</p>
+<ul>
+<li><strong>Weak form</strong> - <strong>historical prices</strong> fully reflected in current price: Can&rsquo;t profit from strategies based on past prices</li>
+<li><strong>Semi strong form</strong> - <strong>all public information</strong> (past prices, annual reports, quality of management, earnings forecasts, macroeconomic news, etc.) fully reflected in current prices: Can&rsquo;t outsmart others since they read newspapers too</li>
+<li><strong>Strong form</strong> - <strong>all private and public information</strong> fully reflected in current prices: Can&rsquo;t profit from knowledge of tomorrow&rsquo;s news (bonds downgraded by rating agencies, new drug failed to be approved, book-cooking by Enron, last-quarter earnings, M&amp;A deals, etc.)</li>
+</ul>
+<p>Econometric Issue</p>
+<ul>
+<li><strong>Joint Hypothesis Problem.</strong> Any test of weak form EMH must assume an equilibrium asset pricing model that defines &lsquo;normal&rsquo; security returns against which investor returns are measured. If we reject the hypothesis that investors can&rsquo;t achieve superior risk-adjusted returns, we don&rsquo;t know if markets are inefficient or if the underlying model is misspecified.</li>
+<li>we should allow</li>
+</ul>
+<p>$$
+r_t=\mu_t+\epsilon_t,
+$$</p>
+<p>mostly assuming $\mu_t=\mu$ is constant or small, where $\epsilon_t$ is a martingale difference sequence with respect to some information set $\mathcal{F}<em>{t-1},$ i.e., $E(\epsilon | \mathcal{F}</em>{t-1} )=0$ and $\mu_t$ is the risk premium that is given from some asset pricing model.</p>
+<h3 id="testing-of-emh-under-rw1">Testing of EMH under RW1</h3>
+<p>The population autocovariance and autocorrelation functions of a stationary series $Y_t$</p>
+<p>$$
+\gamma_s=cov(Y_t, Y_{t-s})=E[(Y_t-EY_t)(Y_{t-s}-EY_{t-s})] \</p>
+<p>\rho_s=\frac{\gamma_s}{\gamma_0}
+$$
+for $s=0, \pm 1, \pm 2, \dots$ Take $Y_t=r_t$ or $R_t$ can estimate these  by the sample equivalents</p>
+<p>$$
+\hat{\gamma_s}=\frac{1}{T} \mathop{\sum}\limits_{t=s+1}^T (Y_t-\bar{Y})(Y_{t-s}-\bar{Y}) \</p>
+<p>\hat{\rho_s}=\frac{\hat{\gamma_s}}{\hat{\gamma_0}}. 
+$$
+The efficient markets hypothesis says that $\gamma_s, \rho_s=0$ for all $s \neq 0$</p>
+<h4 id="检验单个acf">检验单个ACF</h4>
+<p>Assume further that $Y_t \text{is i.i.d.}$ It can be shown that for any $k,$
+$$
+\sqrt{T} \hat{\rho_k} \Rightarrow N(0,1) 
+$$</p>
+<p>under the null hypothesis of no correlation.</p>
+<p>Therefore, you can <strong>test the null hypothesis by comparing $\hat{\rho_k}$ with the so-called &lsquo;Bartlett intervals&rsquo;</strong>
+$$
+[-z_{\alpha/2}/\sqrt{T}, z_{\alpha/2}/\sqrt{T}],
+$$</p>
+<p>where $z_\alpha$ are normal critical values. Values of $\hat{\rho_k}$ lying outside this interval are inconsistent with the null hypothesis. Literally, **this is testing the hypothesis that $\rho_k=0$ versus $\rho_k \neq 0$ for a given $ k $.**</p>
+<p>Under the alternative hypothesis</p>
+<p>$$
+\sqrt{T} \hat{\rho_k} \mathop{\rightarrow}\limits^{P} \infty 
+$$
+for at least one $k.$</p>
+<h4 id="检验联合acf--ljung-box白噪声检验">检验联合ACF / Ljung-Box白噪声检验</h4>
+<p>In fact, under this assumption we have</p>
+<p>$$
+\sqrt{T} (\hat{\rho_1}, \dots, \hat{\rho_P})^T \Rightarrow N(0,I_P). 
+$$
+The <strong>Box-Pierce</strong> $Q$ statistic
+$$
+Q=T\mathop{\sum}\limits_{j=1}^P \hat{\rho}_j^2
+$$
+can be used to **test the joint hypothesis** that $\rho_1=0, \dots, \rho_P=0$ versus the general alternative. We have</p>
+<p>$$
+Q\Rightarrow \chi_P^2 
+$$
+Under the null hypothesis, so reject when $Q&gt;\chi_P^2(\alpha)$ for an $\alpha$-level test.</p>
+<p><strong>Box-Ljung</strong> version is known to have better finite sample performance, which can be used test white noise,<br>
+$$
+Q=T(T+2)\mathop{\sum}^{p}_{j=1} \frac{\hat{\rho}_j^2}{T-j}
+$$
+实际上，由于p的选择会影响Q的表现，所以经常选用多个p值模拟。研究表明$ p \approx \ln(T) $会有较好的功效。在分析季节性时间序列时，由于时间隔为周期的倍数的自相关系数更加重要，所以这个一般性的规则需要加以修正。</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/1.-characteristics-of-financial-variables/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/2.-linear-time-series-models/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/1.-functions/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

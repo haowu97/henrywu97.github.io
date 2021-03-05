@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="1. Valuation of Risky Cash Flow 1.1 Inter-temporal Optimization Static optimization is to optimally allocate spending across different goods at a point of time (e.g. maximize utility from consuming apples and bananas today subject to current budget constraint).
+Intertemporal optimization is to optimally allocate spending over time (e.g. maximize utility from consuming apples today and next year subject to intertemporal budget constraint).
+1.1.1 Time Dimension Intertemporal utility function For simplicity, economists typically assume separable, discounting and concave utility function in 2 periods $$ u\left(C_{0}\right)&#43;\beta u\left(C_{1}\right) $$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/part1-4/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1. Valuation of Risky Cash Flow 1.1 Inter-temporal Optimization Static optimization is to optimally allocate spending across different goods at a point of time (e.g. maximize utility from consuming apples and bananas today subject to current budget constraint).
+Intertemporal optimization is to optimally allocate spending over time (e.g. maximize utility from consuming apples today and next year subject to intertemporal budget constraint).
+1.1.1 Time Dimension Intertemporal utility function For simplicity, economists typically assume separable, discounting and concave utility function in 2 periods $$ u\left(C_{0}\right)&#43;\beta u\left(C_{1}\right) $$"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/part1-4/" /><link rel="prev" href="https://henrywu97.github.io/2.-foundation-of-probability-theory/" /><link rel="next" href="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/part1-4\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  3473 ,
+        "url": "https:\/\/henrywu97.github.io\/part1-4\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/part1-4/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/part1-4/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3473 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;17 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-inter-temporal-optimization">1.1 Inter-temporal Optimization</a>
+      <ul>
+        <li><a href="#111-time-dimension">1.1.1 Time Dimension</a>
+          <ul>
+            <li><a href="#intertemporal-utility-function">Intertemporal utility function</a></li>
+            <li><a href="#intertemporal-budget-constraint">Intertemporal budget constraint</a></li>
+            <li><a href="#optimal-allocation">Optimal Allocation</a></li>
+          </ul>
+        </li>
+        <li><a href="#112-risk-dimension">1.1.2 Risk Dimension</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#criteria-for-choice-over-risky-prospects">Criteria for Choice Over Risky Prospects</a>
+          <ul>
+            <li><a href="#summary">Summary</a></li>
+          </ul>
+        </li>
+        <li><a href="#preferences-and-utility-functions">Preferences and Utility Functions</a></li>
+        <li><a href="#不确定性下的效用函数伯努利效用函数vnm效用函数">不确定性下的效用函数：伯努利效用函数，VNM效用函数</a></li>
+        <li><a href="#彩票">彩票</a></li>
+        <li><a href="#期望效用定理">期望效用定理</a></li>
+        <li><a href="#独立性假设的悖论allais-parodox">独立性假设的悖论：Allais parodox</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#31-measuring-risk-aversion">3.1 Measuring Risk Aversion</a>
+          <ul>
+            <li><a href="#coeffcient-of--risk-aversion--probability-premium">coeffcient of  risk aversion &amp; Probability premium</a></li>
+            <li><a href="#风险溢价risk-premium与确定性等价">风险溢价(Risk premium)与确定性等价</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-stochastic-dominance">3.2 Stochastic Dominance</a>
+          <ul>
+            <li><a href="#first-order-stochastic-dominance">First-order stochastic dominance</a></li>
+            <li><a href="#second-order-stochastic-dominance">Second-order stochastic dominance</a></li>
+          </ul>
+        </li>
+        <li><a href="#33-mean-preserving-spreads">3.3 Mean Preserving Spreads</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#41-投资组合配置">4.1 投资组合配置</a></li>
+        <li><a href="#42-风险厌恶与投资组合配置">4.2 风险厌恶与投资组合配置</a>
+          <ul>
+            <li><a href="#投资者之间比较">投资者之间比较</a></li>
+            <li><a href="#投资者风险投资随收入变化">投资者风险投资随收入变化</a></li>
+          </ul>
+        </li>
+        <li><a href="#43-风险厌恶与储蓄行为">4.3 风险厌恶与储蓄行为</a>
+          <ul>
+            <li><a href="#purdence的更多说明">Purdence的更多说明</a></li>
+          </ul>
+        </li>
+        <li><a href="#44-风险厌恶与prudence-补充">4.4 风险厌恶与prudence (补充)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="1-valuation-of-risky-cash-flow">1. Valuation of Risky Cash Flow</h1>
+<h2 id="11-inter-temporal-optimization">1.1 Inter-temporal Optimization</h2>
+<p>Static optimization is to optimally allocate spending across different goods at a point of time (e.g. maximize utility from consuming apples and bananas today subject to current budget constraint).</p>
+<p><strong>Intertemporal optimization</strong> is to optimally allocate spending over time (e.g. maximize utility from consuming apples today and next year subject to intertemporal budget constraint).</p>
+<h3 id="111-time-dimension">1.1.1 Time Dimension</h3>
+<h4 id="intertemporal-utility-function">Intertemporal utility function</h4>
+<p>For simplicity, economists typically assume <strong>separable, discounting and concave utility function</strong> in 2 periods
+$$
+u\left(C_{0}\right)+\beta u\left(C_{1}\right)
+$$</p>
+<p>where $C_{0}$ and $C_{1}$ are consumptions today and next year</p>
+<ul>
+<li>A concave utility implies convex indifference curves with slope called intertemporal marginal rate of substitution (how much to give up today for next year)</li>
+<li>$u$ is concave utility function which implies consumption smoothing preference.</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520125132.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520125132.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520125132.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520125132.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520125132.png"
+        title="20200520125132.png" /></div></p>
+<ul>
+<li>$\beta&lt;1$ is the discount factor, a measure of patience</li>
+</ul>
+<h4 id="intertemporal-budget-constraint">Intertemporal budget constraint</h4>
+<p>Suppose
+$$
+\begin{aligned}
+Y_{0}&amp;=\text { income today } \<br>
+Y_{1}&amp;=\text { income next year }\<br>
+S&amp;= \text{amount saved(or borrowed if negative) today}\<br>
+r&amp;= \text{interest rate}
+\end{aligned}
+$$</p>
+<p>Today $Y_{0} \geq C_{0}+S$.</p>
+<p>Next year, $Y_{1}+(1+r) S \geq C_{1}$.</p>
+<p>Thus the life-time budget constraint is
+$$
+Y_{0}+\frac{Y_{1}}{1+r} \geq C_{0}+\frac{C_{1}}{1+r}
+$$</p>
+<p>The present value of income must be sufficient to cover the presen value of consumption over the two periods!</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520130204.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520130204.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520130204.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520130204.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200520130204.png"
+        title="20200520130204.png" /></div></p>
+<p>The price of consumption today relative to the price of consumption next year is given by</p>
+<p>$$
+\frac{p_{0}}{p_{1}}=1+r
+$$</p>
+<p>The slope of the intertemporal budget constraint is $-(1+r)$.</p>
+<h4 id="optimal-allocation">Optimal Allocation</h4>
+<p>At the optimum, the intertemporal marginal rate of substitution equals the slope of the budget constraint
+$$
+\frac{u'(C_0)}{\beta u'(C_1)}=1+r
+$$</p>
+<h3 id="112-risk-dimension">1.1.2 Risk Dimension</h3>
+<p>To add/model the element of risk, let&rsquo;s follow Arrow-Debreu by imagining that there are two possible outcomes:</p>
+<p>$$
+\begin{aligned}
+Y_{0} &amp;=\text { income today } \<br>
+Y_{1}^{G} &amp;=\text { income next year under good state }
+\end{aligned}
+$$</p>
+<p>$Y_{1}^{B}=$ income next year under bad state
+where assumption $Y_{1}^{G}&gt;Y_{1}^{B}$ makes good state good and $\pi=$ probability of the good state $1-\pi=$ probability of the bad state</p>
+<p>How to represent preferences over risky alternatives?</p>
+<p>Under uncertainty, the consumer maximizes expected utility $u\left(C_{0}\right)+\beta u\left(C_{1}\right)$ which equivalent to</p>
+<p>$$
+u\left(C_{0}\right)+\beta\left[\pi u\left(C_{1}^{G}\right)+(1-\pi) u\left(C_{1}^{B}\right)\right]
+$$</p>
+<p>We can see that concavity of the function u, which in the standard micro case represents a preference for diversity, represents a preference for smoothness in consumption over time and across states in the future–the consumer is risk averse in the sense that he does not want consumption in the bad state to be too much different from consumption in the good state.
+$$
+Y_0 + \underbrace{q_G Y^G_1 + q_B Y^B_1}<em>{\text{PV of future income}} ≥ C_0 + \underbrace{q_G C^G_1 + q_B C^B_1}</em>{\text{PV of future consumption}}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191457.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191457.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191457.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191457.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191457.png"
+        title="20200522191457.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191531.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191531.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191531.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191531.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191531.png"
+        title="20200522191531.png" /></div></p>
+<p>Value a bond that pays its $100 coupon at the end of each year for 3-years, and its par value of $1,000 in 3-years You have discovered three pure discount bonds (each with a $1,000 par value) that mature in 1, 2, and 3 years, and that are trading at $960, $890, and $810 respectively</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191656.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191656.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191656.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191656.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522191656.png"
+        title="20200522191656.png" /></div></p>
+<h1 id="2-making-choices-in-risky-situations">2. Making Choices in Risky Situations</h1>
+<p>1 Criteria for Choice Over Risky Prospects</p>
+<p>State-by-state Dominance</p>
+<p>Mean-variance Dominance</p>
+<p>Sharpe Ratio</p>
+<p>2 Preferences and Utility Functions Preferences Preferences and Utility Functions 3 Expected Utility Functions 4 The Expected Utility Theorem Lottery Assumptions The Expected Utility Theorem 5 The Allais Paradox</p>
+<h3 id="criteria-for-choice-over-risky-prospects">Criteria for Choice Over Risky Prospects</h3>
+<p>“<strong>risk</strong>” refers to uncertainty about the future cash flows provided by a financial asset.</p>
+<p><strong>state-by-state dominance</strong> over investments 1 and 2, because it <strong>pays as much in all states and strictly more in at least one state</strong>. Any investor who prefers more to less (nonsatiated in consumption) would always choose investment 3 above the others.</p>
+<p><strong>mean-variance dominance</strong> over investment 2, since it offers a higher expected return with lower variance.</p>
+<p><strong>Mean-variance dominance neither implies nor is implied by state-by-state dominance.</strong></p>
+<p>In probability theory, if a random variable X can take on n possible values, X1; X2; &hellip; ; Xn, with probabilities p1; p2; &hellip;; pn, then the expected value of X is E(X) = p1X1 + p2X2 + &hellip; + pnXn the variance of X is σ 2 (X) = p1[X1 − E(X)]2 + p2[X2 − E(X)]2 + &hellip; + pn[Xn − E(X)]2 and the standard deviation of X is σ(X) = <a href="1/2" rel="">σ 2 (X)</a> .</p>
+<p>In a mean-variance (M-V) framework, an investor&rsquo;s wants to maximize a function $u\left(\mu_{r}, \sigma_{P}\right)$
+She likes expected return $\left(\mu_{r}\right)$ and dislikes standard deviation $\left(\sigma_{P}\right)$ Recall that portfolio $A$ is said to exhibit mean-variance dominance over portfolio B if either
+$$
+\frac{\mu_{A}&gt;\mu_{B}}{\mu_{A} \geq \mu_{B}} \text { and } \sigma_{A} \leq \sigma_{B}
+$$
+Mean-variance dominance neither implies nor is implied by state-by-state dominance.</p>
+<p>Mean-variance Dominance can be expressed in the form of a criterion for selecting investments of equal magnitude For investments of the same Er, choose the one with lower σ For investments of the same σ, choose the one with greatest Er</p>
+<p>William Sharpe (US, b.1934, Nobel Prize 1990) suggested that in these circumstances, it can help to compare the two assets’ <strong>Sharpe ratios</strong>, defined as E(r)/σ(r).</p>
+<p>But <strong>using the Sharpe ratio to choose between assets means assuming that investors “weight” the mean and standard deviation equally, in the sense that a doubling of σ(r) is adequately compensated by a doubling of E(r). Investors who are more or less averse to risk will disagree.</strong></p>
+<h4 id="summary">Summary</h4>
+<p>State-by-state dominance is the most robust criterion, but often cannot be applied.</p>
+<p>Mean-variance dominance is more widely-applicable, but can sometimes be misleading and cannot always be applied.</p>
+<p>The Sharpe ratio can always be applied, but requires a very specific assumption about consumer attitudes towards risk.</p>
+<p>We need a more careful and comprehensive approach to comparing random cash flows.</p>
+<h3 id="preferences-and-utility-functions">Preferences and Utility Functions</h3>
+<p>rational: A1完备性、A2传递性</p>
+<p>A.3. The preference relation is assumed to be <strong>continuous</strong>: if an and bn are two sequences of bundles such that an → a, bn → b and an  bn for all n, then a  b.Very small changes in consumption bundles cannot lead to large changes in preferences over those bundles.</p>
+<p>理性是效用函数存在的必要非充分条件</p>
+<p>理性+连续是连续效用函数存在的充分条件</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192102.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192102.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192102.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192102.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192102.png"
+        title="20200522192102.png" /></div></p>
+<p>An <strong>ordinal utility function</strong> describing a consumer’s preferences over two goods can be written as u(x, y), the same preferences could be expressed as another utility function that is an increasing transformation of u: g(x, y) = f (u(x, y)). Utility functions g and u give rise to identical indifference curve mappings.</p>
+<p>A <strong>cardinal utility function</strong> that preserves preference orderings <strong>uniquely up to positive affine transformations</strong>. Two utility indices are related by an affine transformation, i.e. u and v satisfies a relationship of the form v(x) = au(x) + b, where a and b are constants.</p>
+<h3 id="不确定性下的效用函数伯努利效用函数vnm效用函数">不确定性下的效用函数：伯努利效用函数，VNM效用函数</h3>
+<p>期望效用函数</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192135.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192135.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192135.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192135.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192135.png"
+        title="20200522192135.png" /></div></p>
+<h3 id="彩票">彩票</h3>
+<p>多结果彩票可以被看成复合彩票</p>
+<p>因此彩票不失一般性</p>
+<h3 id="期望效用定理">期望效用定理</h3>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192605.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192605.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192605.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192605.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192605.png"
+        title="20200522192605.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192806.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192806.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192806.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192806.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192806.png"
+        title="20200522192806.png" /></div></p>
+<p>By Theorem 3.1, we already know that (C:2) and (C:3) are sucient to guarantee the existence of a utility function U over lotteries and, by (C:1a), dened both on lotteries and specic payos received with certainty as well.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192916.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192916.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192916.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192916.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192916.png"
+        title="20200522192916.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192941.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192941.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192941.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192941.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522192941.png"
+        title="20200522192941.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193103.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193103.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193103.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193103.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193103.png"
+        title="20200522193103.png" /></div></p>
+<p>假设</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193134.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193134.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193134.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193134.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193134.png"
+        title="20200522193134.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193309.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193309.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193309.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193309.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193309.png"
+        title="20200522193309.png" /></div></p>
+<p>首先证明U(X)存在，然后证明关于概率线性</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193339.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193339.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193339.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193339.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193339.png"
+        title="20200522193339.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193435.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193435.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193435.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193435.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193435.png"
+        title="20200522193435.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193519.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193519.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193519.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193519.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193519.png"
+        title="20200522193519.png" /></div></p>
+<p>The concept of a Bernoulli utility function is ordinal  （单调变换保序）</p>
+<p>the concept of vN-M utility function is cardinal!In this sense, the vN-M utility function that represents any given preference relation is not unique.（线性变换保序）</p>
+<h3 id="独立性假设的悖论allais-parodox">独立性假设的悖论：Allais parodox</h3>
+<p>The Allais paradox suggests that <strong>feelings about probabilities may not always be “linear</strong>,” but linearity in the probabilities is precisely what defines vN-M utility functions.</p>
+<p>行为金融批判：独立性（效用函数对概率不一定线性），风	险厌恶（某些初始财富，有可能变得风险偏好）</p>
+<h1 id="3-measuring-risk-and-risk-aversion">3. Measuring Risk and Risk Aversion</h1>
+<h3 id="31-measuring-risk-aversion">3.1 Measuring Risk Aversion</h3>
+<p>If U[E(W )] &lt; E[U(W )] or the utility function is strictly convex, then the individual is a risk lover;</p>
+<p>If U[E(W )] = E[U(W )] or the utility function is linear, then the individual is risk neutral;</p>
+<p>If U[E(W )] &gt; E[U(W )] or the utility function is strictly concave, then the individual is risk averse;</p>
+<h4 id="coeffcient-of--risk-aversion--probability-premium">coeffcient of  risk aversion &amp; Probability premium</h4>
+<p>coeffcient of absolute risk aversion 
+$$
+R_{A}(Y)=-\frac{u^{\prime \prime}(Y)}{u^{\prime}(Y)}
+$$
+coeffcient of relative risk aversion
+$$
+R_{R}(Y)=-\frac{Y u^{\prime \prime}(Y)}{u^{\prime}(Y)}
+$$
+To interpret the two measures of risk aversion, it is helpful to recall from calculus the theorem stated by Brook Taylor (England, $1685-1731$ ), regarding the approximation of a function $f$ using its derivatives: the &ldquo;first-order&rdquo; approximation
+$$
+f(x+a)=f(x)+f^{\prime}(x) a+o(a)
+$$
+and the &ldquo;second-order&rdquo; approximation
+$$
+f(x+a)=f(x)+f^{\prime}(x) a+\frac{1}{2} f^{\prime \prime}(x) a^{2}+o\left(a^{2}\right)
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193553.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193553.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193553.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193553.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193553.png"
+        title="20200522193553.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193629.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193629.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193629.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193629.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193629.png"
+        title="20200522193629.png" /></div></p>
+<p>注意上述等式与<strong>概率溢价</strong>的联系</p>
+<p>Probability premium $\pi(w, \epsilon, u)$
+$$
+L=(0.5+\pi \circ w+\epsilon, 0.5-\pi \circ w-\epsilon)
+$$
+Find the $\pi$ to make $C E(L)=w,$ that is
+$$
+\begin{aligned}
+&amp; U(L)=u(w)=(0.5+\pi) u(w+\epsilon)+(0.5-\pi) u(w-\epsilon) \<br>
+\Rightarrow \quad &amp; \pi(w, \epsilon ; u)
+\end{aligned}
+$$</p>
+<h4 id="风险溢价risk-premium与确定性等价">风险溢价(Risk premium)与确定性等价</h4>
+<p><strong>Jensen&rsquo;s Inequality</strong> Let $g$ be a concave function and $\tilde{x}$ be a random variable. Then
+$$
+g[E(\tilde{x})] \geq E[g(\tilde{x})]
+$$
+Furthermore, if $g$ is strictly concave and the probability that $\tilde{x} \neq E(\tilde{x})$ is greater than zero, the inequality is strict.</p>
+<p>An implication of Jensen&rsquo;s inequality is that the maximum riskless payoff that a risk-averse investor is willing to exchange for the asset with random payoff $\tilde{Z}$, called the certainty equivalent for that asset, will always be less than $E(\tilde{Z})$</p>
+<p>The difference between the higher expected value $E(\tilde{Z})$ and the</p>
+<ul>
+<li>smaller certainty equivalent $C E(\tilde{Z})$ can then be used to define the positive risk premium $\Pi(\tilde{Z})$ for the asset:</li>
+</ul>
+<p>$$
+\Pi(\tilde{Z})=E(\tilde{Z})-C E(\tilde{Z})
+$$</p>
+<p>Mathematically, the <strong>certainty equivalent</strong> $C E(\tilde{Z})$ and <strong>risk premium</strong> $\Pi(\tilde{Z})$ for an asset with random payoff $\tilde{Z}$ with expected value $E(\tilde{Z})$ are defined by
+$$
+E(u(Y+\tilde{Z}))=u[Y+C E(\tilde{Z})]
+$$
+&ldquo;the expected utility from buying the asset equals the utility from getting the certainty equivalent for sure,&rdquo; and
+$$
+E(u(Y+\tilde{Z}))=u[Y+E(\tilde{Z})-\Pi(\tilde{Z})]
+$$
+<img src="https://upload-images.jianshu.io/upload_images/20447423-bcf46f32a2fe1c9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:50%;" /></p>
+<p>assume for simplicity that $E(\tilde{Z})=0$ and consider a second-order Taylor approximation to $E(u(Y+\tilde{Z}))$
+$$
+\begin{aligned}
+E(u(Y+\tilde{Z})) &amp; \approx E[u(Y)]+E\left[u^{\prime}(Y) \tilde{Z}\right]+E\left[\frac{1}{2} u^{\prime \prime}(Y) \tilde{Z}^{2}\right] \<br>
+&amp;=u(Y)+u^{\prime}(Y) E(\tilde{Z})+\frac{1}{2} u^{\prime \prime}(Y) E\left[\tilde{Z}^{2}\right] \<br>
+&amp;=u(Y)+\frac{1}{2} \sigma_{\tilde{Z}}^{2} u^{\prime \prime}(Y)
+\end{aligned}
+$$
+since $Y$ is not random.</p>
+<p>Consider a first-order Taylor approximation to $u[Y+E(\tilde{Z})-\Pi(\tilde{Z})]$
+$$
+\begin{aligned}
+u[Y+E(\tilde{Z})-\Pi(\tilde{Z})] &amp;=u[Y-\Pi(\tilde{Z})] \<br>
+&amp; \approx u(Y)-u^{\prime}(Y) \Pi(\tilde{Z})
+\end{aligned}
+$$
+Hence, with $E(\tilde{Z})=0,$ the equation defining the risk premium $E(u(Y+\tilde{z}))=u[Y+E(\tilde{Z})-\Pi(\tilde{Z})]$
+$$
+\begin{aligned}
+E(u(Y+\tilde{Z})) &amp; \approx u(Y)+\frac{1}{2} \sigma_{\bar{Z}}^{2} u^{\prime \prime}(Y) \<br>
+u[Y+E(\tilde{Z})-\Pi(\tilde{Z})] &amp; \approx u(Y)-u^{\prime}(Y) \Pi(\tilde{Z})
+\end{aligned}
+$$
+imply
+$$
+\Pi(\tilde{Z}) \approx \frac{1}{2} \sigma_{\bar{Z}}^{2} R_{A}(Y)
+$$
+(上述证明过程经常考到)</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-89b86e2a349b6249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-89b86e2a349b6249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-89b86e2a349b6249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-89b86e2a349b6249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-89b86e2a349b6249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>under the simplifying assumption that $E(\tilde{Z})=0,$ it also applies when $E(\tilde{Z}) \neq 0,$ except that the level of income must be adjusted from $Y$ to $Y+E(\tilde{Z})$ to take into account the nonzero expected return:
+$$
+\Pi(\tilde{Z}) \approx \frac{1}{2} \sigma_{\tilde{Z}}^{2} R_{A}(Y+E(\tilde{Z}))
+$$
+当保险仅仅补偿不确定性至$E(\tilde{Z})$时，
+$$
+u(Y+E\tilde{Z}-Fee) \longleftrightarrow u\left(Y+E\tilde{Z}- \Pi(\tilde{Z})\right)
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-7e2f9df73e99c041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-7e2f9df73e99c041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-7e2f9df73e99c041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-7e2f9df73e99c041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-7e2f9df73e99c041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-c0a7b86931ad4777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-c0a7b86931ad4777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-c0a7b86931ad4777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-c0a7b86931ad4777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-c0a7b86931ad4777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<h3 id="32-stochastic-dominance">3.2 Stochastic Dominance</h3>
+<p>SBSD implies FSD implies SSD</p>
+<h4 id="first-order-stochastic-dominance">First-order stochastic dominance</h4>
+<p>First-order stochastic dominance(FSD) Let $F_{A}(\tilde{x})$ and $F_{B}(\tilde{x})$ be two cumulative probability distributions for random payoffs in $[a, b] .$ We say that $F_{A}(\tilde{x}) F S D F_{B}(\tilde{x})$ if and only if:
+$$
+F_{A}(x) \leq F_{B}(x), \forall x
+$$
+<img src="https://upload-images.jianshu.io/upload_images/20447423-5dd3a8f69d03a175.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:50%;" /></p>
+<p>that is, $F_{2}(x) \text{ FSD } F_{1}(x),$ if and only if
+$$
+E\left[u\left(Z_{2}\right)\right] \geq E\left[u\left(Z_{1}\right)\right]
+$$
+**for any nondecreasing Bernoulli utility function** $u$</p>
+<p>state-by-state dominance implies first-order stochastic dominance but first-order stochastic dominance does not necessarily imply state-by-state dominance.</p>
+<p>But <strong>first-order stochastic dominance remains quite a strong condition</strong>. Since an asset that displays first-order stochastic dominance over all others will be preferred by any investor with vN-M utility who prefers higher payoffs to lower payoffs, the price of <strong>such an asset is likely to be bid up until the dominance goes away</strong>.</p>
+<h4 id="second-order-stochastic-dominance">Second-order stochastic dominance</h4>
+<p>second-order stochastic dominance(SSD) Let $F_{A}(\tilde{x})$ and $F_{B}(\tilde{x})$ be two cumulative probability distributions for random payoffs in $[a, b] .$ We say that $F_{A}(\tilde{x}) \text{ SSD } F_{B}(\tilde{x})$ if and only if for any $x:$
+$$
+\int_{-\infty}^{x}\left[F_{B}(t)-F_{A}(t)\right] d t \geq 0
+$$
+(with strict inequality for some meaningful interval of values of $t$ ).</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-bb96c9eab17df45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-bb96c9eab17df45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-bb96c9eab17df45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-bb96c9eab17df45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-bb96c9eab17df45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>that is, asset 4 displays second-order stochastic dominance over asset $3,$ if and only if
+$$
+E\left[u\left(Z_{4}\right)\right] \geq E\left[u\left(Z_{3}\right)\right]
+$$
+for any nondecreasing and concave Bernoulli utility function $u$</p>
+<p>Second-order stochastic dominance is a weaker condition than first-order stochastic dominance, in that first-order stochastic dominance implies second-order stochastic dominance but second-order stochastic dominance does not necessarily imply first-order stochastic dominance.</p>
+<p>But second-order stochastic dominance remains a strong condition. Since an asset that displays <strong>second-order stochastic dominance over all others will be preferred by any risk-averse investor with vN-M utility, the price of such an asset is likely to be bid up until the dominance goes away.</strong></p>
+<h3 id="33-mean-preserving-spreads">3.3 Mean Preserving Spreads</h3>
+<p>It is also useful, therefore, to consider an alternative criterion that focuses entirely on the standard deviation of a random payoff, as a measure of the riskiness of the corresponding asset, holding the mean or expected value fixed.</p>
+<p>Graphically, a mean preserving spread takes probability from the center of a distribution and shifts it to the tails.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-77796ce234acbc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-77796ce234acbc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-77796ce234acbc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-77796ce234acbc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-77796ce234acbc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>Mathematically, one way of producing a mean preserving spread is to take one random variable $X_{1}$ and defining a second, $X_{2}$, by adding &ldquo;noise&rdquo; in the form of a third, zero-mean random variable $Z$ :
+$$
+X_{2}=X_{1}+Z
+$$
+with $E(Z)=0$</p>
+<p>Let $X_{1}$ and $X_{2}$, with $E\left(X_{1}\right)=E\left(X_{2}\right),$ be random payoffs on two assets. Then the following two statements are equivalent:
+(i) $X_{2}=X_{1}+Z$ for some random variable $Z$ with $E(Z)=0$
+(ii) asset 1 displays second-order stochastic dominance (SSD) over asset 2</p>
+<h1 id="4-风险厌恶与投资决策">4. 风险厌恶与投资决策</h1>
+<h3 id="41-投资组合配置">4.1 投资组合配置</h3>
+<p>风险厌恶投资者决策：风险资产与无风险资产</p>
+<p>$$
+\begin{aligned}
+Y_{0}&amp;= \text{initial wealth} \<br>
+a&amp;= \text{amount allocated to stocks} \<br>
+\tilde{r}&amp;= \text{random return on stocks}\<br>
+r_{f} &amp;=\text {risk - free return} \<br>
+\tilde{Y}_{1} &amp;=\text { final wealth} \<br>
+\tilde{Y}_{1} &amp;=\left(1+r_{f}\right)\left(Y_{0}-a\right)+a(1+\tilde{r}) \<br>
+&amp;=Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)
+\end{aligned}
+$$
+Objective Function
+The investor chooses a to maximize expected utility:
+$$
+\max _{a} E\left[u\left(\tilde{Y}_{1}\right)\right]=\max _{a} E u\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]
+$$</p>
+<p>The first-order condition(F.O.C.) is
+$$
+E\left[u^{\prime}\left[Y_{0}\left(1+r_{f}\right)+a^{*}\left(\tilde{r}-r_{f}\right)\right]\left(\tilde{r}-r_{f}\right)\right]=0
+$$
+Note: we are allowing the investor to sell stocks short $\left(a^{*}&lt;0\right)$ or to buy stocks on margin $\left(a^{*}&gt;Y_{0}\right)$ if he or she desires.
+**Theorem 5.1** If the Bernoulli utility function $u$ is increasing and concave, then
+$\bullet a^{*}&gt;0$ if and only if $E(\tilde{r})&gt;r_{f}$
+$\circ a^{*}=0$ if and only if $E(\tilde{r})=r_{f}$
+$\circ a^{*}&lt;0$ if and only if $E(\tilde{r})&lt;r_{f}$
+Thus, a risk-averse investor will always allocate at least some funds to the stock market if the expected return on stocks exceeds the risk-free rate.</p>
+<p>定理证明</p>
+<p>To prove the theorem, let
+$$
+W(a)=E\left[u^{\prime}\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]\left(\tilde{r}-r_{f}\right)\right]
+$$
+so that the investor&rsquo;s first-order condition can be written more compactly as
+$$
+W\left(a^{*}\right)=0
+$$
+it follows that
+$$
+W^{\prime}(a)=E\left[u^{\prime \prime}\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]\left(\tilde{r}-r_{f}\right)^{2}\right]&lt;0
+$$
+since $u$ is concave. This means that $W$ is a decreasing function of
+Finally, with
+$$
+\begin{aligned}
+W(a) &amp;=E\left[u^{\prime}\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]\left(\tilde{r}-r_{f}\right)\right] \<br>
+W(0) &amp;=E\left[u^{\prime}\left[Y_{0}\left(1+r_{f}\right)\right]\left(\tilde{r}-r_{f}\right)\right] \<br>
+&amp;=u^{\prime}\left[Y_{0}\left(1+r_{f}\right)\right] E\left(\tilde{r}-r_{f}\right) \<br>
+&amp;=u^{\prime}\left[Y_{0}\left(1+r_{f}\right)\right]\left[E(\tilde{r})-r_{f}\right]
+\end{aligned}
+$$
+since $u$ is increasing, this means that $W(0)$ has the same sign as
+$$
+E(\tilde{r})-r_{f}
+$$
+We now know that:</p>
+<p>$\bullet W(a)$ is a decreasing function
+$\bullet W(0)$ has the same sign as $E(\tilde{r})-r_{f}$
+$\bullet W\left(a^{*}\right)=0$
+roof
+$=(\tilde{r})-r_{f}&gt;0$ implies $W(0)&gt;0,$ and since $W$ is decreasing, $\mathcal{W}\left(a^{*}\right)=0$ implies $a^{*}&gt;0 .$ since $W(0)$ has the same sign as
+$E(\tilde{r})-r_{f}, E(\tilde{r})-r_{f}&gt;0$</p>
+<p>风险中性情况</p>
+<p>Before moving on, return to the general problem
+$$
+\max <em>{a} E u\left[Y</em>{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]
+$$
+but assume now that the investor is risk-neutral, with
+$$
+u(Y)=\alpha Y+\beta
+$$
+and $\alpha&gt;0,$ so that more wealth is preferred to less. The risk-neutral investor solves
+$$
+\begin{aligned}
+&amp; \max _{a} \in \alpha\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]+\beta \<br>
+=&amp; \max _{a} \alpha Y_{0}\left(1+r_{f}\right)+a\left[E(\tilde{r})-r_{f}\right]+\beta
+\end{aligned}
+$$
+So long as $E(\tilde{r})-r_{f}&gt;0,$ the risk-neutral investor will choose $a^{*}$ to be as large as possible, borrowing as much as he or she is allowed to in order to buy more stocks on margin.</p>
+<h3 id="42-风险厌恶与投资组合配置">4.2 风险厌恶与投资组合配置</h3>
+<p>The following result was proven by Kenneth Arrow in &ldquo;The Theory of Risk Aversion,&rdquo; published in the 1971 volume Essays in the Theory of Risk-Bearing and reprinted in 1983 in volume 3 of the Collected Papers of Kenneth $J$. Arrow (Harvard University Press).</p>
+<h4 id="投资者之间比较">投资者之间比较</h4>
+<p><strong>Theorem 5.2</strong>* Consider two investors, $i=1$ and $i=2,$ and suppose that for all wealth levels $Y$, $$ \begin{array}{l}R_{A}^{1}(Y)&gt;R_{A}^{2}(Y) \ \text { where } R_{A}^{i}(Y) \text { is investor i&rsquo;s coefficient of absolute risk aversion. Then } \ a_{1}^{*}(Y)&lt;a_{2}^{*}(Y)\end{array} $$ where $a_{i}^{*}(Y)$ is amount allocated by investor i to stocks when he or she has initial wealth $Y$.</p>
+<p>其中绝对风险偏好也可以替换为相对风险偏好</p>
+<p>注意到：DARA+CRRA是比较合理的风险偏好结构</p>
+<h4 id="投资者风险投资随收入变化">投资者风险投资随收入变化</h4>
+<p>ARA与投资额</p>
+<p><strong>Theorem 5.4</strong> Let $a^{*}\left(Y_{0}\right)$ be the solution to
+$$
+\max _{a} E u\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]
+$$
+If $u(Y)$ is such that
+(a) $R_{A}^{\prime}(Y)&lt;0$ then $\frac{d a^{*}\left(Y_{0}\right)}{d Y_{0}}&gt;0$
+(b) $R_{A}^{\prime}(Y)=0$ then $\frac{d a^{*}\left(Y_{0}\right)}{d Y_{0}}=0$
+(c) $R_{A}^{\prime}(Y)&gt;0$ then $\frac{d a^{*}\left(Y_{0}\right)}{d Y_{0}}&lt;0$</p>
+<p>RRA与投资弹性</p>
+<p>Define the elasticity of the function $a^{*}\left(Y_{0}\right)$ as
+$$
+\eta=\frac{d\left(\ln a^{*}\left(Y_{0}\right)\right)}{d\left(\ln Y_{0}\right)}=\frac{Y_{0}}{a^{*}\left(Y_{0}\right)} \frac{d\left(a^{*}\left(Y_{0}\right)\right)}{d Y_{0}}
+$$
+The elasticity measures the percentage change in $a^{*}\left(Y_{0}\right)$ brought about by a percentage-point change in $Y_{0}$</p>
+<p><strong>Theorem 5.5</strong> Let $a^{*}\left(Y_{0}\right)$ be the solution to
+$$
+\max _{a} E u\left[Y_{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]
+$$
+If $u(Y)$ is such that
+$$
+\begin{array}{l}
+\text { (a) } R_{R}^{\prime}(Y)&lt;0 \text { then } \eta&gt;1 \<br>
+\text { (b) } R_{R}^{\prime}(Y)=0 \text { then } \eta=1 \<br>
+\text { (c) } R_{R}^{\prime}(Y)&gt;0 \text { then } \eta&lt;1
+\end{array}
+$$
+Note that with constant relative risk aversion, $a^∗$ rises proportionally with wealth. Two additional</p>
+<p>The theorem confirms what we know about CRRA utility: it implies that $a^{*}$ rises proportionally with $Y_{0}$. But the theorem extends the results to the cases of decreasing and increasing relative risk aversion.
+Portfolios, Risk Aversion, and Wealth
+With CRRA
+$$
+\frac{a^{*}}{Y_{0}}=K
+$$
+where
+$$
+K=\frac{\left(1+r_{f}\right)\left(\left[\pi\left(r_{G}-r_{f}\right)\right]^{1 / \gamma}-\left[(1-\pi)\left(r_{f}-r_{B}\right)\right]^{1 / \gamma}\right)}{\left(r_{G}-r_{f}\right)\left[(1-\pi)\left(r_{f}-r_{B}\right)\right]^{1 / \gamma}-\left(r_{B}-r_{f}\right)\left[\pi\left(r_{G}-r_{f}\right)\right]^{1 / \gamma}}
+$$
+Hence
+$$
+\begin{aligned}
+\ln \left(a^{*}\left(Y_{0}\right)\right) &amp;=\ln (K)+\ln \left(Y_{0}\right) \<br>
+\eta &amp;=\frac{d\left(\ln a^{*}\left(Y_{0}\right)\right)}{d\left(\ln Y_{0}\right)}=1
+\end{aligned}
+$$</p>
+<h3 id="43-风险厌恶与储蓄行为">4.3 风险厌恶与储蓄行为</h3>
+<p>Suppose there are two periods, $t=0$ and $t=1,$ and let
+$Y_{0}=$ initial wealth</p>
+<p>$s=$ amount saved in period $\mathrm{t}=0$</p>
+<p>$c_{0}=Y_{0}-s=$ amount consumed in period $t=0$ $\tilde{R}=1+\tilde{r}=$ random, gross return on savings $\bar{c}_{1}=s \tilde{R}=$ amount consumed in period $\mathrm{t}=1$
+Suppose also that the investor has vN-M expected utility over consumption during periods $t=0$ and $t=1$ given by
+$$
+u\left(c_{0}\right)+\beta E\left[u\left(\tilde{c}_{1}\right)\right]=u\left(Y_{0}-s\right)+\beta E[u(s \tilde{R})]
+$$
+where the discount factor $\beta$ is a measure of patience
+Risk Aversion and Saving Behavior
+The solution to the investor&rsquo;s saving problem
+$$
+\max _{s} u\left(Y_{0}-s\right)+\beta E[u(s \tilde{R})]
+$$
+FOC
+$$
+\underbrace{u^{\prime}\left(Y_{0}-s^{*}\right)}_{MU_1}=\underbrace{\beta E\left[u^{\prime}\left(s^{*} \tilde{R}\right) \tilde{R}\right]}_{MU_2}
+$$
+必考</p>
+<p>当储蓄收入$\tilde{R}$的不确定性上升时：</p>
+<p>in the form of a mean preserving spread in the distribution of R˜ . Intuitively, one might expect there to be two offsetting effects:</p>
+<p>替代效应 the riskier return will make saving less attractive and thereby reduce s ∗ ;</p>
+<p>预防性储蓄 The riskier return might lead to “precautionary saving” in order to cushion period t = 1 consumption against the possibility of a bad output and thereby increase s ∗ .</p>
+<p>let
+$$
+g(\tilde{R}) = u^{\prime}\left(s^{*} \tilde{R}\right) \tilde{R}
+$$
+Jensen’s inequality will imply that after a mean preserving spread the distribution of $\tilde{R}$ in this expectation will fall if g is concave and rise if g is convex.</p>
+<p>The product and chain rules for differentiation imply
+$$
+\begin{aligned}
+g^{\prime}(\tilde{R}) &amp;=u^{\prime \prime}\left(s^{<em>} \tilde{R}\right) s^{</em>} \tilde{R}+u^{\prime}\left(s^{<em>} \tilde{R}\right) \<br>
+g^{\prime \prime}(\tilde{R}) &amp;=u^{\prime \prime \prime}\left(s^{</em>} \tilde{R}\right)\left(s^{<em>}\right)^{2} \tilde{R}+u^{\prime \prime}\left(s^{</em>} \tilde{R}\right) s^{<em>}+u^{\prime \prime}\left(s^{</em>} \tilde{R}\right) s^{<em>} \<br>
+&amp;=u^{\prime \prime \prime}\left(s^{</em>} \tilde{R}\right)\left(s^{<em>}\right)^{2} \tilde{R}+2 u^{\prime \prime}\left(s^{</em>} \tilde{R}\right) s^{<em>}
+\end{aligned}
+$$
+implies that $g^{\prime \prime}(\tilde{R})$ has the same sign as
+$$
+u^{\prime \prime \prime}\left(s^{</em>} \tilde{R}\right) s^{<em>} \tilde{R}+2 u^{\prime \prime}\left(s^{</em>} \tilde{R}\right)
+$$
+To understand precautionary saving behavior, the concept of prudence is defined by Miles Kimball, “Precautionary Saving in the Small and in the Large,” Econometrica Vol.58 (January 1990): pp.53-73.</p>
+<p>Kimball defines the coefficient of absolute prudence as
+$$
+P_{A}(Y)=-\frac{u^{\prime \prime \prime}(Y)}{u^{\prime \prime}(Y)}
+$$
+and the coefficient of relative prudence as
+$$
+P_{R}(Y)=-\frac{Y u^{\prime \prime \prime}(Y)}{u^{\prime \prime}(Y)}
+$$
+thereby extending the analogous measures of absolute and relative risk aversion.
+Risk Aversion and Saving Behavior
+$g^{\prime \prime}(\tilde{R})$ has the same sign as
+$$
+\begin{array}{l}
+\qquad u^{\prime \prime \prime}\left(s^{*} \tilde{R}\right) s^{*} \tilde{R}+2 u^{\prime \prime}\left(s^{*} \tilde{R}\right) \<br>
+r^{\prime \prime \prime}(Y) Y+2 u^{\prime \prime}(Y)=u^{\prime \prime}(Y)\left[\frac{Y u^{\prime \prime \prime}(Y)}{u^{\prime \prime}(Y)}+2\right]=u^{\prime \prime}(Y)\left[2-P_{R}(Y)\right]
+\end{array}
+$$
+$g^{\prime \prime}(\tilde{R})$ is positive if $2&lt;P_{R}(Y)$
+$g^{\prime \prime}(\tilde{R})$ is negative if $2&gt;P_{R}(Y)$</p>
+<p>Kimball defines the coefficient of absolute prudence as
+$$
+P_{A}(Y)=-\frac{u^{\prime \prime \prime}(Y)}{u^{\prime \prime}(Y)}
+$$
+and the coefficient of relative prudence as
+$$
+P_{R}(Y)=-\frac{Y u^{\prime \prime \prime}(Y)}{u^{\prime \prime}(Y)}
+$$
+thereby extending the analogous measures of absolute and relative risk aversion.
+Risk Aversion and Saving Behavior
+$g^{\prime \prime}(\tilde{R})$ has the same sign as
+$$
+\begin{array}{l}
+\qquad u^{\prime \prime \prime}\left(s^{*} \tilde{R}\right) s^{*} \tilde{R}+2 u^{\prime \prime}\left(s^{*} \tilde{R}\right) \<br>
+u^{\prime \prime \prime}(Y) Y+2 u^{\prime \prime}(Y)=u^{\prime \prime}(Y)\left[\frac{Y u^{\prime \prime \prime}(Y)}{u^{\prime \prime}(Y)}+2\right]=u^{\prime \prime}(Y)\left[2-P_{R}(Y)\right]
+\end{array}
+$$
+$g^{\prime \prime}(\tilde{R})$ is positive if $2&lt;P_{R}(Y)$
+$g^{\prime \prime}(\tilde{R})$ is negative if $2&gt;P_{R}(Y)$</p>
+<p>Hence, if $2&lt;P_{R}(Y),$ then $g^{\prime \prime}(\tilde{R})&gt;0 .$ since $g$ is convex, a mean preserving spread in the distribution of $\tilde{R}$ increases the right hand side of the optimality condition
+$$
+u^{\prime}\left(Y_{0}-s^{*}\right)=\beta E\left[u^{\prime}\left(s^{*} \tilde{R}\right) \tilde{R}\right]
+$$
+and $s^{*}$ must increase to maintain the equality. The precautionary saving effect dominates if the coefficient of relative prudence exceeds 2.</p>
+<p><strong>Kimball proves that more prudence induces more precautionary savings.</strong></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-6ee203ecff5907c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-6ee203ecff5907c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-6ee203ecff5907c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-6ee203ecff5907c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-6ee203ecff5907c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<h4 id="purdence的更多说明">Purdence的更多说明</h4>
+<p>While the paper is famous for its link with the behavior of precautionary savings, it can be equivalently interpreted in a different way. since marginal utility (and not total utility) is the relevant concept for the analysis of decisions, it might be interesting to characterize the cost of risk through its impact on marginal (and not total) utility. Instead of computing a risk premium that keeps total utility constant, Kimball suggests the prudence premium ( $\psi$ ) that keeps marginal utility constant. Formally one has:
+$$
+u^{\prime}\left(x+E(\tilde{\varepsilon})-\psi^{\prime \prime}(x, \tilde{\varepsilon})\right)=E\left[u^{\prime}(x+\tilde{\varepsilon})\right]
+$$
+It is then easy to show that:
+$$
+\psi^{\prime \prime}(x, \tilde{\varepsilon}) \cong \frac{\sigma_{\bar{\ell}}^{2}}{2}\left(-\frac{u^{m}(x)}{u^{\prime \prime}(x)}\right)
+$$
+where $-\frac{u^{m}(x)}{u^{\prime \prime}(x)}$ is the index of absolute prudence.</p>
+<h3 id="44-风险厌恶与prudence-补充">4.4 风险厌恶与prudence (补充)</h3>
+<p>下面三者等价   
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-bbbf98d49683897a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-bbbf98d49683897a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-bbbf98d49683897a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-bbbf98d49683897a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-bbbf98d49683897a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>证明</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-73b6fc3424ae8c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-73b6fc3424ae8c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-73b6fc3424ae8c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-73b6fc3424ae8c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-73b6fc3424ae8c57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193817.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193817.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193817.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193817.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193817.png"
+        title="20200522193817.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193843.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193843.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193843.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193843.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200522193843.png"
+        title="20200522193843.png" /></div></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/part1-4/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/part1-4/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/part1-4/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/part1-4/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/2.-foundation-of-probability-theory/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/9.-arrow-debreu-pricing-no-arbitrage/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

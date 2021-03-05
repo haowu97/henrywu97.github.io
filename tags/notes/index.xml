@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Notes - Tag - Henry Wu</title>
+        <link>https://henrywu97.github.io/tags/notes/</link>
+        <description>Notes - Tag - Henry Wu</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Mar 2021 21:17:53 &#43;0800</lastBuildDate><atom:link href="https://henrywu97.github.io/tags/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>2. Money-in-the-Utility Function</title>
+    <link>https://henrywu97.github.io/2.moneyinutility/</link>
+    <pubDate>Wed, 03 Mar 2021 21:17:53 &#43;0800</pubDate>
+    <author>天天.zh-cn</author>
+    <guid>https://henrywu97.github.io/2.moneyinutility/</guid>
+    <description><![CDATA[2.1 Introduction The neoclassical growth model due to Ramsey (1928) and Solow (1956) provides the basic framework for much of modern macroeconomics.
+When the assumption of a fixed savings rate is replaced by a model of forward looking households choosing savings and labor supply to maximize lifetime utility, the Solow model becomes the foundation for dynamic stochastic general equilibrium(DSGE) models of the business cycle.
+The neoclassical growth model is a model of a nonmonetary economy, and although goods are exchanged and transactions must be taking place, there is no medium of exchange—that is, no ‘‘money’’—that is used to facilitate these transactions.]]></description>
+</item><item>
+    <title>1.MonetaryFinanceIntroduction</title>
+    <link>https://henrywu97.github.io/1.monetaryfinanceintroduction/</link>
+    <pubDate>Wed, 03 Mar 2021 17:38:51 &#43;0800</pubDate>
+    <author>天天.zh-cn</author>
+    <guid>https://henrywu97.github.io/1.monetaryfinanceintroduction/</guid>
+    <description><![CDATA[The course mainly teaches and discusses monetary and financial related theories, including monetary demand and monetary supply theory, the empirical evidence on money, price, output and interest rate; monetary and public finance, financial development and economic growth, developing countries' financial repression and financial deepening, the credit creation of the shadow bank, asset substitution and financial crisis, new monetary policy tool and monetary policy operation mode, financial risk and financial supervision, asset price bubble, financial crisis and macro-prudential policy, analysis of the cause of Chinese stock market bubble, and other more related theories and research.]]></description>
+</item></channel>
+</rss>

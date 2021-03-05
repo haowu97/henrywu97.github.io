@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="6. Instrumental Variable Regression 6.1 Motivation So far, we&rsquo;ve discussed what happens to OLS without the normality assumption.
+ Asymptotic Theory with IID. Asymptotic Theory with Ergodic Stationary MDS Asymptotic Theory with Ergodic Stationary non-MDS.  Next, we will discuss what happens to OLS if $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0 $.
+ When $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, $ OLS estimator is inconsistent!  There are many cases with $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0 $" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/6.-instrumental-variables-regression/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="6. Instrumental Variable Regression 6.1 Motivation So far, we&rsquo;ve discussed what happens to OLS without the normality assumption.
+ Asymptotic Theory with IID. Asymptotic Theory with Ergodic Stationary MDS Asymptotic Theory with Ergodic Stationary non-MDS.  Next, we will discuss what happens to OLS if $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0 $.
+ When $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, $ OLS estimator is inconsistent!  There are many cases with $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0 $"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/6.-instrumental-variables-regression/" /><link rel="prev" href="https://henrywu97.github.io/chapter12/" /><link rel="next" href="https://henrywu97.github.io/3.-iid%E9%9A%8F%E6%9C%BA%E6%A0%B7%E6%9C%AC/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/6.-instrumental-variables-regression\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  7083 ,
+        "url": "https:\/\/henrywu97.github.io\/6.-instrumental-variables-regression\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/6.-instrumental-variables-regression/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/6.-instrumental-variables-regression/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;7083 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;34 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#61-motivation">6.1 Motivation</a></li>
+    <li><a href="#62-framework-and-assumptions">6.2 Framework and Assumptions</a>
+      <ul>
+        <li><a href="#621-assumptions">6.2.1 Assumptions</a></li>
+        <li><a href="#622-instrumental-variable">6.2.2 Instrumental Variable</a></li>
+      </ul>
+    </li>
+    <li><a href="#63-two-stage-least-squares-2sls-estimation">6.3 Two-Stage Least Squares (2SLS) Estimation</a>
+      <ul>
+        <li><a href="#631-stage-1">6.3.1 Stage 1</a></li>
+        <li><a href="#632-stage-2">6.3.2 Stage 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#64-consistency-of-2sls">6.4 Consistency of 2SLS</a></li>
+    <li><a href="#65-asymptotic-normality-of-2sls">6.5 Asymptotic Normality of 2SLS</a>
+      <ul>
+        <li><a href="#651-asymptotic-distribution-of-2sls">6.5.1 Asymptotic distribution of 2SLS</a></li>
+        <li><a href="#652-form-of-asymptotic-variance">6.5.2 Form of Asymptotic Variance</a></li>
+      </ul>
+    </li>
+    <li><a href="#66-interpretation-and-estimation-of-asymptotic-variance-of-2sls">6.6 Interpretation and Estimation of Asymptotic Variance of 2SLS</a></li>
+    <li><a href="#67-hypothesis-testing">6.7 Hypothesis Testing</a></li>
+    <li><a href="#68-hausmans-test">6.8 Hausman&rsquo;s Test</a>
+      <ul>
+        <li><a href="#more-feasible-way-to-do-hausmans-test">More feasible way to do Hausman&rsquo;s Test</a></li>
+      </ul>
+    </li>
+    <li><a href="#69-examples">6.9 Examples</a>
+      <ul>
+        <li><a href="#691-hockey-tickets">6.9.1 Hockey Tickets</a></li>
+        <li><a href="#692-demand-for-cigarettes">6.9.2 Demand for Cigarettes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="6-instrumental-variable-regression">6. Instrumental Variable Regression</h1>
+<h2 id="61-motivation">6.1 Motivation</h2>
+<p>So far, we&rsquo;ve discussed what happens to OLS without the normality assumption.</p>
+<ul>
+<li>Asymptotic Theory with IID.</li>
+<li>Asymptotic Theory with Ergodic Stationary MDS</li>
+<li>Asymptotic Theory with Ergodic Stationary non-MDS.</li>
+</ul>
+<p>Next, we will discuss what happens to OLS if $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0 $.</p>
+<ul>
+<li>When $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, $ OLS estimator is inconsistent!</li>
+</ul>
+<p>There are many cases with $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0 $</p>
+<ul>
+<li>
+<p>Measurement Errors in variables.</p>
+</li>
+<li>
+<p>omitted Important Variables.</p>
+</li>
+<li>
+<p>Simultaneous Cases.</p>
+</li>
+</ul>
+<p>If $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, $ what can we do?</p>
+<ul>
+<li>Give up OLS, and use alternative estimator; <strong>two-stage least squares (2SLS) estimator</strong>.</li>
+</ul>
+<p>2SLS requires an instrumental variable (IV) satisfying certain conditions.</p>
+<ul>
+<li>Instrument relevance: $ \operatorname{corr}\left(Z_{t}, X_{t}\right) \neq 0 $</li>
+<li>Instrument exogeneity: $ \operatorname{corr}\left(Z_{t}, \varepsilon_{t}\right)=0 $.</li>
+</ul>
+<p>We will investigate its statistical properties and construct hypothesis test statistics.</p>
+<ul>
+<li>When $ \varepsilon_{t} $ is an MDS with conditional homoskedasticity</li>
+<li>When $ \varepsilon_{t} $ is an MDS with conditional heteroskedasticity,</li>
+<li>When $ \varepsilon_{t} $ is a non-MDS process.</li>
+</ul>
+<p>Note that the $ t $-test and $ F $-test obtained from the second stage regression estimation cannot be used even for large samples.</p>
+<p><strong>Questions:</strong> When may the condition $ E\left(\varepsilon_{t} | X_{t}\right)=0 $ fail? When $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, X_{t} $ is called &lsquo;endogenous&rsquo;, or $ X_{t} $ has the endogeneity problem.</p>
+<p>【Example 6.2】<strong>Errors of Measurements in Dependent Variable</strong>: Now we consider a data generating process (DGP) given by
+$$
+Y_{t}^{*}=\beta_{0}^{\circ}+\beta_{1}^{\circ} X_{t}+\varepsilon_{t}
+$$
+where $ X_{t} $ is the income, $ Y_{t}^{*} $ is the consumption, and $ \left{\varepsilon_{t}\right} $ is i.i.d. $ \left(0, \sigma_{u}^{2}\right) $ and is independent of $ \left{X_{t}\right} $.</p>
+<p>We don&rsquo;t observe $ Y_{t}^{*}, $ but $ Y_{t}=Y_{t}^{*}+w_{t}, $ where $ \left{w_{t}\right} $ is i.i.d. $ \left(0, \sigma_{w}^{2}\right) $ measurement errors independent of $ \left{X_{t}\right} $ and $ \left{Y_{t}^{*}\right} . $</p>
+<p>Assume that $ \left{w_{t}\right} $ and $ \left{\varepsilon_{t}\right} $ are mutually independent.</p>
+<p>Because we only observe $ \left(X_{t}, Y_{t}\right), $ we are forced to estimate the following model
+$$
+Y_{t}=Y_{t}^{*}+w_{t}=\beta_{0}^{o}+\beta_{1}^{o} X_{t}+u_{t}
+$$
+where $ u_{t}=w_{t}+\varepsilon_{t} . $ since $ E\left(X_{t} u_{t}\right)=0, $ **OLS is consistent**!</p>
+<p>The measurement error in $ Y_{t} $ can be regarded as part of the true regression disturbance.</p>
+<p>It increases the asymptotic variance of $ \sqrt{n}\left(\hat{\beta}-\beta^{\circ}\right), $ so <strong>renders the estimation of $ \beta^{\circ} $ less precise</strong>.</p>
+<p>【Example 6.3】<strong>Errors in Expectations/ Regressors</strong>: Consider a linear regression model
+$$
+Y_{t}=\beta_{0}+\beta_{1} X_{t}^{*}+\varepsilon_{t}
+$$</p>
+<p>where $ X_{t}^{*} $ is the economic agent&rsquo;s conditional expectation of $ X_{t} $ at time $ t-1, $ and $ \left{\varepsilon_{t}\right} $ is an $ I I D\left(0, \sigma^{2}\right) $ sequence with $ E\left(\varepsilon_{t} | X_{t}^{*}\right)=0 . $ The conditional expectation $ X_{t}^{*} $ is a latent variable. **One such example is the Phillips curve&rsquo;s based inflation rate model in macroeconomics**.</p>
+<p>When the economic agent follows rational expectations, then $ X_{t}^{*}=E\left(X_{t} | I_{t-1}\right) $ and we have</p>
+<p>$$
+X_{t}=X_{t}^{*}+v_{t}
+$$</p>
+<p>where</p>
+<p>$$
+E\left(v_{t} | I_{t-1}\right)=0
+$$</p>
+<p>where $ I_{t-1} $ is the information available to the economic agent at time $ t-1 . $ Assume that two error series $ \left{\varepsilon_{t}\right} $ and $ \left{v_{t}\right} $ are independent of each other.</p>
+<p>Because we only observe $ \left(X_{t}, Y_{t}\right), $ we are forced to estimate the following model
+$$
+Y_{t}=\beta_{0}^{o}+\beta_{1}^{o}\left(X_{t}-v_{t}\right)+\varepsilon_{t}=\beta_{0}^{o}+\beta_{1}^{o} X_{t}+u_{t}
+$$
+where $ u_{t}=\varepsilon_{t}-\beta_{1}^{\circ} v_{t} $
+since
+$$
+E\left(X_{t} u_{t}\right)=E\left[\left(X_{t}^{*}+v_{t}\right)\left(\varepsilon_{t}-\beta_{1}^{o} v_{t}\right)\right]=-\beta_{1}^{o} \sigma_{v}^{2} \neq 0
+$$
+provided $ \beta_{1}^{\circ} \neq 0, $ the $ \mathrm{OLS} $ estimator is not consistent for $ \beta_{1}^{\circ} $.</p>
+<p>It may be noted that forecast variables obtained from survey data have been used for $ X_{t}^{*} $ in empirical studies.</p>
+<p>【Example 6.4】<strong>Endogeneity due to Omitted variables</strong>: Consider an earning data generating process
+$$
+Y_{t}=X_{t}^{\prime} \beta^{\circ}+\gamma A_{t}+u_{t}
+$$</p>
+<p>where $ Y_{t} $ is the earning, $ X_{t} $ is working experience and schooling, and $ A_{t} $ is ability which is unobservable. Suppose the disturbance $ u_{t} $ satisfies the condition that $ E\left(u_{t} | X_{t}, A_{t}\right)=0 $.</p>
+<p>Because $ A_{t} $ is not observed, one is forced to consider
+$$
+Y_{t}=X_{t}^{\prime} \beta^{\circ}+\varepsilon_{t}
+$$</p>
+<p>and is interested in knowing $ \beta^{\circ} $.</p>
+<p>However, we have $ E\left(X_{t} \varepsilon_{t}\right) \neq 0 $ because $ \varepsilon_{t}=\gamma A_{t}+u_{t} $ and $ A_{t} $ is usually correlated with $ X_{t} $.</p>
+<p>【Example 6.7】<strong>Simultaneous Equation Bias</strong>: We consider the following simple model of <strong>national income determination</strong>:
+$$
+\begin{aligned}
+C_{t} &amp;=\beta_{0}^{o}+\beta_{1}^{o} I_{t}+\varepsilon_{t} \qquad &amp;(6.1)\<br>
+I_{t} &amp;=C_{t}+D_{t} \qquad &amp;(6.2)
+\end{aligned}
+$$</p>
+<p>where $ I_{t} $ is the income, $ C_{t} $ is the consumption expenditure, and $ D_{t} $ is the non-consumption expenditure. These models are called simultaneous equations, as they affect each other.</p>
+<p>The variables $ I_t $ and $ C_t $ are called <strong>endogenous variables</strong>, as they are determined by the two-equation model. The variable $ D_{t} $ is called an **exogenous variable**, because it is determined outside the model (or the system considered).</p>
+<p>We assume that $ \left{D_{t}\right} $ and $ \left{\varepsilon_{t}\right} $ are mutually independent, and $ \left{\varepsilon_{t}\right} $ is i.i.d. $ \left(0, \sigma^{2}\right) $</p>
+<p>Solving for above equation simultaneously, we can obtain the &ldquo;reduced forms&rdquo;:
+$$
+\begin{aligned}
+C_{t} &amp;=\beta_{0}^{o}+\beta_{1}^{o}\left(C_{t}+D_{t}\right)+\varepsilon_{t} \<br>
+&amp;=\frac{\beta_{0}^{\circ}}{1-\beta_{1}^{\circ}}+\frac{\beta_{1}^{\circ}}{1-\beta_{1}^{\circ}} D_{t}+\frac{1}{1-\beta_{1}^{\circ}} \varepsilon_{t} 
+\end{aligned}
+$$
+and
+$$
+\begin{aligned}
+I_{t} &amp;=\beta_{0}^{\circ}+\beta_{1}^{\circ} I_{t}+\varepsilon_{t}+D_{t} \<br>
+&amp;=\frac{\beta_{0}^{\circ}}{1-\beta_{1}^{\circ}}+\frac{1}{1-\beta_{1}^{\circ}} D_{t}+\frac{1}{1-\beta_{1}^{\circ}} \varepsilon_{t}
+\end{aligned}
+$$</p>
+<p>If $ \varepsilon_{t} $ increases, then $ C_{t} $ and $ I_{t} $ both simultaneously increase!</p>
+<p>Obviously, $ I_{t} $ is positively correlated with $ \varepsilon_{t}$ (i.e., $ E\left(I_{t} \varepsilon_{t}\right) \neq 0 $). Thus, the OLS estimator for the regression of $ C_t $ on $ I_t $ in Eq. (6.1) will not be consistent for $ \beta_{1}^{\circ} $, the parameter for marginal propensity to consume .Generally speaking, the OLS estimator for the reduced form is consistent for new parameters, which are functions of original parameters.</p>
+<h2 id="62-framework-and-assumptions">6.2 Framework and Assumptions</h2>
+<h3 id="621-assumptions">6.2.1 Assumptions</h3>
+<p>【Assumption 7.1】<strong>Ergodic Stationarity</strong>: $ \left{Y_{t}, X_{t}^{\prime}, Z_{t}^{\prime}\right}_{t=1}^{\prime n} $ is an ergodic stationary stochastic process, where $ X_{t} $ is a $ K \times 1 $ vector, $ Z_{t} $ is a $ l \times 1 $ vector, and $ l \geq K $.</p>
+<p>Assumption 7.1 allows for IID observations and stationary time series observations.</p>
+<p>【Assumption 7.2】<strong>Linearity</strong>:
+$$
+Y_{t}=X_{t}^{\prime} \beta^{\circ}+\varepsilon_{t}, \quad t=1, \ldots, n
+$$
+for some unknown parameter $ \beta^{\circ} $ and some unobservable disturbance $ \varepsilon_{t} $.</p>
+<p>【Assumption 7.3】<strong>Nonsingularity</strong>: The $ K \times K $ matrix
+$$
+Q_{x x}=E\left(X_{t} X_{t}^{\prime}\right)
+$$
+is nonsingular and finite.</p>
+<p>These three assumptions are similar to those in previous chapters.</p>
+<p>【Assumption 7.4】<strong>IV Conditions</strong>:</p>
+<ol>
+<li>$ E\left(\varepsilon_{t} | X_t\right) \neq 0 $</li>
+<li>$ E\left(\varepsilon_{t} | Z_{t}\right)=0 $</li>
+<li>The $ l \times l $ matrix</li>
+</ol>
+<p>$$
+Q_{z z}=E\left(Z_{t} Z_{t}^{\prime}\right)
+$$
+is finite and nonsingular, and the $ l \times K $ matrix
+$$
+Q_{z x}=E\left(Z_{t} X_{t}^{\prime}\right)
+$$
+is finite and of full rank (**with A. 7.1 rank=K**).</p>
+<p>【Assumption 7.5】<strong>CLT</strong>: 
+$$
+n^{-1 / 2} \sum_{t=1}^{n} Z_{t} \varepsilon_{t} \stackrel{d}{\rightarrow} N(0, V) 
+$$
+for some $ K \times K $ symmetric matrix $ V \equiv \operatorname{avar}\left(n^{-1 / 2} \sum_{t=1}^{n} Z_{t} \varepsilon_{t}\right) $ finite and nonsingular.</p>
+<p>Assumption 7.5 directly assumes that the CLT holds. This is often called a &ldquo;high level assumption.&rdquo; It covers three cases: IID, MDS and non-MDS for $ \left{X_{t} \varepsilon_{t}\right} $.</p>
+<ul>
+<li>For an IID or MDS sequence $ \left{Z_{t} \varepsilon_{t}\right}, $ we have $ V=\operatorname{var}\left(Z_{t} \varepsilon_{t}\right)=E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) $</li>
+<li>For a non-MDS process $ \left{Z_{t} \varepsilon_{t}\right} $, $ V=\Sigma_{j=-\infty}^{\infty} \operatorname{cov}\left(Z_{t} \varepsilon_{t} , Z_{t-j} \varepsilon_{t-j}\right) $ is a long-run variance-covariance matrix.</li>
+</ul>
+<h3 id="622-instrumental-variable">6.2.2 Instrumental Variable</h3>
+<p>The random vector $ Z_{t} $ that satisfies assumption 7.4 is called instruments. The condition that $ l \geq K $ in  assumption 7.1 implies that **the number of instruments $ Z_{t} $ is larger than or at least equal to the number of regressors $ X_{t} $.**</p>
+<p>When $ E \left(\varepsilon_{t} | X_{t}\right) \neq 0, $ we usually (but not always) have $ E\left(X_{t} \varepsilon_{t}\right) \neq 0 . $ As a result, the OLS estimator is not consistent for $ \beta^{\circ} . $ Now suppose we have an instrument vector $ Z_{t} $ with $ E\left(\varepsilon_{t} | Z_{t}\right)= 0 $, which implies $ E\left(Z_{t} \varepsilon_{t}\right)=0 . $ Then we can first project $ X_{t} $ onto $ Z_{t} $ and then run a regression of $ Y_{t} $ on the projection. This will deliver consistent estimation of $ \beta^{\circ} $.</p>
+<p>Intuitively, IV is used when $ X_{t} $ is correlated to the error term. A valid IV induces changes in $ X_{t}, $ but has no direct effect on $ Y_{t} $.</p>
+<p><strong>Question</strong>: How to choose instruments $ Z_{t} $ in practice?</p>
+<p><strong>All exogenous variables in $ X_t $:</strong> First of all, one should analyze which explanatory variables in $ X_t $ are endogenous or exogenous. If an explanatory variable is exogenous, then this variable should be included in $ Z_t $, the set of instruments. For example, the constant term should always be included, because a constant is uncorrelated with any random variables. If $ k_{0} $ of $ K $ regressors are endogenous, at least $ k_{0} $ additional instruments should be included in $ Z_{t} $.</p>
+<p>Most importantly, **we should choose an IV which is closely related to $ X_{t} $.** As we will see below, the strength of the correlation between $ Z_{t} $ and $ X_{t} $ affects the magnitude of the asymptotic variance of the 2SLS estimator for $ \beta_{0}, $ although it does not affect the consistency provided the correlation between $ Z_t $ and $ X_t $ is a non-zero constant.</p>
+<h2 id="63-two-stage-least-squares-2sls-estimation">6.3 Two-Stage Least Squares (2SLS) Estimation</h2>
+<p><strong>Question</strong>: Because $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, $ the OLS estimator $ \hat{\beta} $ is not consistent for $ \beta^{\circ} . $ How to obtain consistent estimators for $ \beta^{\circ} ? $</p>
+<p>It should be pointed out that when $ E\left(\varepsilon_{t} | X_{t}\right) \neq 0, $ endogeneity arises due to various reasons including model misspecification. However, **it still makes sense to find out the expected marginal effect of explanatory variables $ X_{t} $ on the dependent variable $ Y_{t} $, even if the linear regression model is misspecified**. This requires consistent estimation of $ \beta^{o} $. See For example, although Example 7.4 suffers from an omitted variable problem, one may be still interested in knowing the expected marginal effect of education on income.</p>
+<h3 id="631-stage-1">6.3.1 Stage 1</h3>
+<p><strong>Stage 1</strong>: Regress $ X_{t} $ on $ Z_{t} $ via $ \mathrm{OLS} $ and save the predicted value $ \hat{X}_{t} $.</p>
+<p>Here, the artificial linear regression model is
+$$
+X_{t}=\gamma^{\prime} Z_{t}+v_{t}, \quad t=1, \ldots, n
+$$
+where $ \gamma $ is a $ I \times K $ parameter matrix, and $ v_{t} $ is a $ K \times 1 $ regression error.</p>
+<p>From the result in chapter 1, we have $ E\left(Z_{t} v_{t}\right)=0 $ if and only if
+$$
+\gamma=\left[E\left(Z_{t} Z_{t}^{\prime}\right)\right]^{-1} E\left(Z_{t} X_{t}^{\prime}\right)
+$$
+The OLS estimator for $ \gamma $ is $ \hat{\gamma}=\left(Z^{\prime} Z\right)^{-1} Z^{\prime} X, $ and the predicted value of $ X_{t} $ on $ Z_{t} $ is $ \hat{X}_{t}=\hat{\gamma}^{\prime} Z_{t} . $ In matrix form
+$$
+\mathbf{\hat{X}}=\mathbf{Z} \hat{\gamma}=\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X} \equiv P_Z \mathbf{X}
+$$</p>
+<p>where $ P_Z $ is symmetric and idempotent.</p>
+<h3 id="632-stage-2">6.3.2 Stage 2</h3>
+<p><strong>Stage 2</strong>: Use the predicted value $ \hat{X}<em>{t} $ as regressors for $ Y</em>{t} . $ Regress $ Y_{t} $ on $ \hat{X}_{t} $ and the resulting OLS estimator is called the 2SLS estimator, denoted as $ \hat{\beta}_{2 s l s} $.</p>
+<p><strong>Question:</strong> Why use the fitted value $ \hat{X}<em>{t}=\hat{\gamma}^{\prime} Z</em>{t} $ as regressors?</p>
+<p>Because $ E\left(Z_{t} \varepsilon_{t}\right)=0, $ the population projection $ \gamma^{\prime} Z_{t} $ is orthogonal to $ \varepsilon $.</p>
+<p>In general, $ v_{t}=X_{t}-\gamma^{\prime} Z_{t}, $ which is orthogonal to $ Z_{t}, $ is correlated with $ \varepsilon_{t} $ The stage 1 decomposes $ X_{t} $ into two components: $ \gamma^{\prime} Z_{t} $ and $ v_{t}, $ where $ \gamma^{\prime} Z_{t} $ is orthogonal to $ \varepsilon_{t}, $ and $ v_{t} $ is correlated with $ \varepsilon_{t} $.</p>
+<p>The regression model in the second stage can be written as
+$$
+Y_{t}=\hat{X}_{t}^{\prime} \beta^{\circ}+\tilde{\varepsilon}_{t}
+$$
+or in matrix form
+$$
+Y=\hat{X} \beta^{\circ}+\tilde{\varepsilon}
+$$
+Note that the disturbance $ \tilde{\varepsilon}_{t} $ is not $ \varepsilon_{t} $ because $ \hat{X}_{t} $ is not $ X_{t} $.</p>
+<p>Using $ \hat{X}=Z \hat{\gamma}=Z\left(Z^{\prime} Z\right)^{-1} Z^{\prime} X, $ we can write the $ 2 S L S $ estimator as follows:
+$$
+\begin{aligned}
+\hat{\beta}_{2 s l s} &amp;=\left(\hat{\mathbf{X}}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} Y=\left[(\mathbf{Z} \hat{\gamma})^{\prime}(\mathbf{Z} \hat{\gamma})\right]^{-1}(\mathbf{Z} \hat{\gamma})^{\prime} Y \<br>
+&amp;=\left{\left[\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{\prime}\left[\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]\right}^{-1}\left[\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{\prime} Y \<br>
+&amp;=\left[\mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{-1} \mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} Y \<br>
+&amp;=\left[\mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{-1} \mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} Y \<br>
+&amp;=\left[\frac{\mathbf{X}^{\prime} \mathbf{Z}}{n}\left(\frac{\mathbf{Z}^{\prime} \mathbf{Z}}{n}\right)^{-1} \frac{\mathbf{Z}^{\prime} \mathbf{X}}{n}\right]^{-1} \frac{\mathbf{X}^{\prime} \mathbf{Z}}{n}\left(\frac{\mathbf{Z}^{\prime} \mathbf{Z}}{n}\right)^{-1} \frac{\mathbf{Z}^{\prime} Y}{n}
+\end{aligned}
+$$</p>
+<p>or use <strong>the simple form</strong></p>
+<p>$$
+\begin{aligned}
+\hat{\beta}<em>{2sls}&amp;=\left(\hat{X}^{\prime} \hat{X}\right)^{-1} \hat{X}^{\prime} Y \<br>
+&amp;=\left(X^{\prime} \mathbb{P}</em>{z} X\right)^{-1} X^{\prime} \mathbb{P}_{z} Y \<br>
+&amp;=\left[X^{\prime} Z\left(Z^{\prime} Z\right)^{-1} Z^{\prime} X \right]^{-1} X^{\prime} Z\left(Z^{\prime} Z\right)^{-1} Z^{\prime} Y
+\end{aligned}
+$$</p>
+<p>Using the expression $ Y=\mathrm{X} \beta^{\circ}+\varepsilon $ from assumption 7.2 we have
+$$
+\begin{aligned}
+\hat{\beta}<em>{2 s l s}-\beta^{\circ} &amp;=\left[\frac{\mathbf{X}^{\prime} \mathbf{Z}}{n}\left(\frac{\mathbf{Z}^{\prime} \mathbf{Z}}{n}\right)^{-1} \frac{\mathbf{Z}^{\prime} \mathbf{X}}{n}\right]^{-1} \frac{\mathbf{X}^{\prime} \mathbf{Z}}{n}\left(\frac{\mathbf{Z}^{\prime} \mathbf{Z}}{n}\right)^{-1} \frac{\mathbf{Z}^{\prime} \varepsilon}{n} \<br>
+&amp;=\left[\begin{array}{c}
+\hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \hat{Q}</em>{z x}
+\end{array}\right]^{-1} \hat{Q}<em>{x z} \hat{Q}</em>{z z}^{-1} \frac{Z^{\prime} \varepsilon}{n}
+\end{aligned}
+$$
+where
+$$
+\begin{aligned}
+\hat{Q}<em>{z z} &amp;=\frac{\mathbf{Z}^{\prime} \mathbf{Z}}{n}=n^{-1} \sum</em>{t=1}^{n} Z_{t} Z_{t}^{\prime} \<br>
+\hat{Q}_{x z} &amp;=\frac{\mathbf{X}^{\prime} \mathbf{Z}}{n}=n^{-1} \sum_{t=1}^{n} X_{t} Z_{t}^{\prime} \<br>
+Q_{z x} &amp;=\frac{\mathbf{Z}^{\prime} \mathbf{X}}{n}=n^{-1} \sum_{t=1}^{n} Z_{t} X_{t}^{\prime}=\hat{Q}_{x z}^{\prime}
+\end{aligned}
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613145124.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613145124.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613145124.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613145124.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613145124.png"
+        title="20200613145124.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613151631.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613151631.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613151631.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613151631.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200613151631.png"
+        title="20200613151631.png" /></div></p>
+<h2 id="64-consistency-of-2sls">6.4 Consistency of 2SLS</h2>
+<p><strong>Question</strong>: What are the statistical properties of $ \hat{\beta}_{2 s l s} $?</p>
+<p>【Theorem 7.1】<strong>Consistency of 2SLS</strong>: Under Assumptions 7.1-7.4,  as $ n \rightarrow \infty $
+$$
+\hat{\beta}_{2 s l s} \stackrel{P}{\rightarrow} \beta^{\circ}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>By the WLLN for e.s.p (ergodic stationary process), we have
+$$
+\begin{array}{c}
+\hat{Q}<em>{z z} \stackrel{p}{\rightarrow} Q</em>{z z}, \quad l \times l \<br>
+\hat{Q}<em>{x z} \stackrel{p}{\rightarrow} Q</em>{x z}, \quad K \times l \<br>
+\frac{Z^{\prime} \varepsilon}{n} \stackrel{p}{\rightarrow} E\left(Z_{t} \varepsilon_{t}\right)=0, \quad l \times 1
+\end{array}
+$$
+Also, $ Q_{x z} Q_{z z}^{-1} Q_{z x} $ is a $ K \times K $ symmetric and nonsingular matrix because $ Q_{x z} $ is of full rank, $ Q_{z z} $ is nonsingular, and $ l \geq K $. It follows from continuity that
+$$
+\left[\hat{Q}_{x z} \hat{Q}_{z z}^{-1} \hat{Q}_{z x}\right]^{-1} \stackrel{p}{\rightarrow}\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1}
+$$
+Consequently, we have
+$$
+\hat{\beta}_{2 s l s}-\beta^{\circ} \stackrel{P}{\rightarrow}\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1} Q_{x z} Q_{z z}^{-1} \cdot 0=0
+$$</p>
+<h2 id="65-asymptotic-normality-of-2sls">6.5 Asymptotic Normality of 2SLS</h2>
+<h3 id="651-asymptotic-distribution-of-2sls">6.5.1 Asymptotic distribution of 2SLS</h3>
+<p>We now derive the asymptotic distribution of $ \hat{\beta}<em>{2 \text {sls}} . $ Write
+$$
+\sqrt{n}\left(\hat{\beta}</em>{2 s l s}-\beta^{o}\right)=\left[\hat{Q}<em>{x z} \hat{Q}</em>{z z}^{-1} \hat{Q}<em>{z x}\right]^{-1} \hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \frac{z^{\prime} \varepsilon}{\sqrt{n}}=\hat{A} \cdot \frac{Z^{\prime} \varepsilon}{\sqrt{n}}
+$$
+where the $ K \times l $ matrix
+$$
+\hat{A}=\left[\hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \hat{Q}</em>{z x}\right]^{-1} \hat{Q}<em>{x z} \hat{Q}</em>{z z}^{-1}
+$$
+By the CLT assumption (A.7.5), we have
+$$
+\frac{Z^{\prime} \varepsilon}{\sqrt{n}}=n^{-\frac{1}{2}} \sum_{t=1}^{n} Z_{t} \varepsilon_{t} \stackrel{d}{\rightarrow} N(0, V)
+$$
+where $ V $ is a finite and nonsingular $ I \times I $ matrix.</p>
+<p>Then by the Slutsky theorem, we have
+$$
+\qquad \sqrt{n}\left(\hat{\beta}<em>{2 s / s}-\beta^{o}\right) \stackrel{d}{\rightarrow}\left(Q</em>{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} \cdot N(0, V) \sim N\left(0, A V A^{\prime}\right) 
+$$
+where $ A=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} $.</p>
+<p>The asymptotic variance of $ \sqrt{n}\left(\hat{\beta}<em>{2 s l s}-\beta^{\circ}\right) $
+$$
+\begin{aligned}
+&amp; \operatorname{avar}\left(\sqrt{n} \hat{\beta}</em>{2 s l s}\right) \equiv \Omega=A V A^{\prime} \<br>
+=&amp;\left{\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1} Q_{x z} Q_{z z}^{-1}\right} V\left{\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1} Q_{x z} Q_{z z}^{-1}\right}^{\prime} \<br>
+=&amp;\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1} Q_{x z} Q_{z z}^{-1} V Q_{z z}^{-1} Q_{z x}\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1}
+\end{aligned}
+$$
+【Theorem 7.2】**Asymptotic Normality of 2SLS**: Under Assumptions 7.1-7.5, as $ n \rightarrow \infty $,
+$$
+\qquad \sqrt{n}\left(\hat{\beta}_{2 s l s}-\beta^{\circ}\right) \stackrel{d}{\rightarrow} N(0, \Omega)
+$$</p>
+<p>The estimation of $ V $ depends on whether $ \left{Z_{t} \varepsilon_{t}\right} $ is an MDS. We first consider the case where $ \left{Z_{t} \varepsilon_{t}\right} $ is an MDS process. In this case, $ V=E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) $ and so we need not estimate the long-run variance-covariance matrix.</p>
+<h3 id="652-form-of-asymptotic-variance">6.5.2 Form of Asymptotic Variance</h3>
+<p>Now we discuss the form of $ \Omega $.</p>
+<p>Note that IID case is the same as stationary ergodic MDS case, here we only discuss the latter case</p>
+<p><strong>Case 1</strong>: $ \left{Z_{t} \varepsilon_{t}\right} $ is a Stationary Ergodic MDS</p>
+<p>【Assumption 7.6】<strong>MDS</strong>:</p>
+<ol>
+<li>
+<p>$ \left{Z_{t} \varepsilon_{t}\right} $ is an MDS;</p>
+</li>
+<li>
+<p>$ \operatorname{var}\left(Z_{t} \varepsilon_{t}\right)=E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) $ is finite and nonsingular.</p>
+</li>
+</ol>
+<p>【Corollary 7.3】Under Assumptions 7.1-7.4 and 7.6, we have as $ n \rightarrow \infty $
+$$
+\sqrt{n}\left(\hat{\beta}<em>{2 s l s}-\beta^{o}\right) \stackrel{d}{\rightarrow} N(0, \Omega)
+$$
+where $ \Omega $ is defined as above with $ V=E\left(Z</em>{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) $</p>
+<p><strong>Special Case</strong>: Conditional Homoskedasticity</p>
+<p>When $ \left{Z_{t} \varepsilon_{t}\right} $ is an MDS with conditional homoskedasticity, the asymptotic variance $ \Omega $ can be greatly simplified.</p>
+<p>【Assumption 7.7】<strong>Conditional Homoskedasticity</strong>: $ E\left(\varepsilon_{t}^{2} | Z_{t}\right)=\sigma^{2} $.</p>
+<p>Under this assumption, by the law of iterated expectations, we obtain
+$$
+V=E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right)=E\left[Z_{t} Z_{t}^{\prime} E\left(\varepsilon_{t}^{2} | Z_{t}\right)\right]=\sigma^{2} E\left(Z_{t} Z_{t}^{\prime}\right)=\sigma^{2} Q_{z z}
+$$
+It follows that
+$$
+\begin{aligned}
+\Omega &amp;=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} \sigma^{2} Q_{z z} Q_{z z}^{-1} Q_{z x}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} \<br>
+&amp;=\sigma^{2}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}
+\end{aligned}
+$$
+【Corollary 7.4】**Asymptotic Normality of 2 SLS under MDS with Conditional Homoskedasticity**: Under Assumptions 7.1-7.4, 7.6 and 7.7, we have as $ n \rightarrow \infty $
+$$
+\sqrt{n}\left(\hat{\beta}_{2 s l s}-\beta^{o}\right) \stackrel{d}{\rightarrow} N(0, \Omega)
+$$
+where
+$$
+\Omega=\sigma^{2}\left[Q_{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1}
+$$</p>
+<p><strong>Case 2</strong>: $ \left{Z_{t} \varepsilon_{t}\right} $ is a Stationary Ergodic non-MDS</p>
+<p>In this general case, we have
+$$
+V \equiv \operatorname{avar}\left(n^{-1 / 2} \sum_{t=1}^{n} Z_{t} \varepsilon_{t}\right)=\sum_{j=-
+\infty}^{\infty} \Gamma(j)
+$$
+where $ \Gamma(j)=\operatorname{cov}\left(Z_{t} \varepsilon_{t}, Z_{t-j} \varepsilon_{t-j}\right) $.</p>
+<p>We need to use a long-run variance-covariance matrix estimator for $ V $. When $ {Z_t \varepsilon_t }$ is not a MDS, there is no need (and in fact there is no way) to consider conditional homoskedasticity and conditional heteroskedasticity separately.</p>
+<h2 id="66-interpretation-and-estimation-of-asymptotic-variance-of-2sls">6.6 Interpretation and Estimation of Asymptotic Variance of 2SLS</h2>
+<p>Let us revisit the stage 2 regression model
+$$
+Y_{t}=\hat{X}_{t}^{\prime} \beta^{\circ}+\tilde{\varepsilon}_{t}
+$$
+where the regressor
+$$
+\hat{X}_{t}=\hat{\gamma}^{\prime} Z_{t}
+$$
+and the disturbance $ \tilde{\varepsilon}_{t}=Y_{t}-\hat{X}_{t}^{\prime} \beta^{\circ} $. Note that $ \tilde{\varepsilon}_{t} \neq \varepsilon_{t} $ because $ \hat{X}_{t} \neq X_{t} $.</p>
+<p>From A. 7.2, we have
+$$
+\tilde{\varepsilon}<em>{t}=Y</em>{t}-\hat{X}<em>{t}^{\prime} \beta^{\circ}=\varepsilon</em>{t}+\left(X_{t}-\hat{X}_{t}\right)^{\prime} \beta^{\circ}=\varepsilon_{t}+\hat{v}_{t}^{\prime} \beta^{\circ}
+$$
+where $ \hat{v}_{t} \equiv X_{t}-\hat{X}_{t}=X_{t}-\hat{\gamma}^{\prime} Z_{t} $.</p>
+<p>Since $ \hat{v}<em>{t} $ is the estimated residual from the stage 1 OLS regression $ \mathrm{X}=\mathrm{Z} \gamma+v $ we have the following FOC holds:
+$$
+\mathbf{Z}^{\prime}(\mathbf{X}-\hat{\mathbf{X}})=\mathbf{Z}^{\prime} \hat{v}=0
+$$
+It follows that the 2SLS estimator
+$$
+\begin{array}{l}
+\hat{\beta}</em>{2 s l s}&amp;=\left(\hat{\mathbf{X}}^{\prime} \hat{\mathbf{X}}\right)^{-1} \hat{\mathbf{X}}^{\prime} Y \<br>
+&amp;=\left(\hat{\mathbf{X}}^{\prime} \hat{\mathbf{X}}\right)^{-1} \hat{\mathbf{X}}^{\prime}\left(\hat{\mathbf{X}} \beta^{\circ}+\tilde{\varepsilon}\right) \<br>
+&amp;=\beta^{\circ}+\left(\hat{\mathbf{X}}^{\prime} \hat{\mathbf{X}}\right)^{-1} \hat{\mathbf{X}}^{\prime}\left[\varepsilon+\hat{v} \beta^{\circ}\right] \<br>
+&amp;=\beta^{\circ}+\left(\hat{\mathbf{X}}^{\prime} \hat{\mathbf{X}}\right)^{-1} \hat{\mathbf{X}}^{\prime} \varepsilon
+\end{array}
+$$
+because $ \hat{\mathrm{X}}^{\prime} \hat{v}=0 $. Therefore, the asymptotic properties of $ \hat{\beta}<em>{2SLS} $ are determined by
+$$
+\hat{\beta}</em>{2 s l s}-\beta^{\circ}=\left(\hat{\mathbf{X}}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \varepsilon=\left(\frac{\hat{\mathbf{X}}^{\prime} \mathbf{X}}{n}\right)^{-1} \frac{\hat{\mathbf{X}}^{\prime} \varepsilon}{n}
+$$
+The estimated residual $ \hat{v}=\mathbf{X}-\hat{\mathbf{X}} $ from the first stage has no impact on the statistical properties of $ \hat{\beta}_{2 s l s} $. <strong>We can proceed as if we were estimating $ Y=\hat{\mathbf{X}} \beta^{\circ}+\varepsilon $ by OLS.</strong></p>
+<p>Note that we have by the WLLN
+$$
+\hat{\gamma}=\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X} \stackrel{P}{\rightarrow} Q_{z z}^{-1} Q_{z x}=\gamma
+$$</p>
+<p>We will consider the following artificial regression model
+$$
+Y_{t}=\tilde{X}_{t}^{\prime} \beta^{\circ}+\varepsilon_{t}
+$$
+where
+$$
+\tilde{\beta}=\left(\tilde{X}^{\prime} \tilde{X}\right)^{-1} \tilde{X}^{\prime} Y
+$$
+The asymptotic properties of $ \hat{\beta}_{2 s l s} $ are the same as those of the infeasible OLS estimator $ \tilde{\beta} $. This helps a lot in understanding the variance-covariance structure of $ \hat{\beta}_{2 s l s} $. It is just a convenient way to understand the nature of $ \hat{\beta}_{2 s l s} $.</p>
+<p><strong>We now show that the asymptotic properties of $ \hat{\beta}_{2 s l s} $ are the same as the asymptotic properties of $ \tilde{\beta} $.</strong> For the asymptotic normality, observe that
+$$
+\sqrt{n}\left(\tilde{\beta}-\beta^{o}\right)=\hat{Q}<em>{\tilde{x} \tilde{x}}^{-1} \frac{\tilde{X}^{\prime} \varepsilon}{\sqrt{n}} \stackrel{d}{\rightarrow} Q</em>{\tilde{x} \tilde{x}}^{-1} \cdot N(0, \tilde{V}) \sim N\left(0, Q_{\tilde{x} \tilde{x}}^{-1} \tilde{V} Q_{\tilde{x} \tilde{x}}^{-1}\right)
+$$
+where
+$$
+Q_{\tilde{x} \tilde{x}} \equiv E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime}\right), \text { and } \tilde{V} \equiv \operatorname{avar}\left(n^{-1 / 2} \sum_{t=1}^{n} \tilde{X}_{t} \varepsilon_{t}\right)
+$$
+**Case I**: MDS with Conditional Homoskedasticity</p>
+<p>Suppose $ \left{\tilde{X}<em>{t} \varepsilon</em>{t}\right} $ is MDS, and $ E\left(\varepsilon_{t}^{2} | \tilde{X}_{t}\right)=\sigma^{2} $. Then we have
+$$
+\tilde{V}=E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime} \varepsilon_{t}^{2}\right)=\sigma^{2} Q_{\tilde{x}\tilde{x}}
+$$
+by the law of iterated expectations (LIE). It follows that</p>
+<p>$$
+\sqrt{n}\left(\tilde{\beta}-\beta^{o}\right) \stackrel{d}{\rightarrow} N\left(0, \sigma^{2} Q_{\tilde{X} \tilde{X}}^{-1}\right)
+$$
+Because $ \tilde{X}_{t}=\gamma^{\prime} Z_{t}, \gamma=Q_{z z}^{-1} Q_{z x}, $ we have
+$$
+\begin{aligned}
+Q_{\tilde{x} \tilde{x}} &amp;=E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime}\right)=\gamma^{\prime} E\left(Z_{t} Z_{t}^{\prime}\right) \gamma=\gamma^{\prime} Q_{z z} \gamma \<br>
+&amp;=Q_{x z} Q_{z z}^{-1} Q_{z z} Q_{z z}^{-1} Q_{z x}=Q_{x z} Q_{z z}^{-1} Q_{z x}
+\end{aligned}
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\sigma^{2} Q_{\tilde{x} \tilde{x}}^{-1}=\sigma^{2}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} =\Omega\equiv \operatorname{avar}\left(\sqrt{n} \hat{\beta}_{2 s l s}\right)
+$$</p>
+<p>This implies that the asymptotic distribution of $ \tilde{\beta} $  is indeed the same as the asymptotic distribution of $ \hat{\beta}_{2 s l s} $ under the MDS with conditional homoskedasticity.</p>
+<p>The asymptotic variance formula</p>
+<p>$$
+\operatorname{avar}\left(\sqrt{n} \hat{\beta}<em>{2 S L S}\right)=\sigma^{2} Q</em>{\bar{X} \bar{X}}^{-1}=\sigma^{2}\left(\gamma^{\prime} Q_{Z Z} \gamma\right)^{-1}
+$$</p>
+<p>indicates that the asymptotic variance of $ \sqrt{n} \hat{\beta}<em>{2 S L S} $ will be large if the correlation between $ Z</em>{t} $ and $ X_{t}, $ as measured by $ \gamma, $ is weak. **Thus, more precise estimation of $ \beta^{o} $ will be obtained if one chooses the instrument vector $ Z_{t} $ such that $ Z_{t} $ is highly correlated with $ X_{t} $.**</p>
+<p><strong>Question:</strong> How to estimate $ \Omega $ under the MDS disturbances with conditional homoskedasticity?</p>
+<p>Consider the asymptotic variance estimator
+$$
+\hat{\Omega}=\hat{s}^{2} \hat{Q}<em>{\hat{x} \hat{x}}^{-1}=\hat{s}^{2}\left(\hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \hat{Q}</em>{z x}\right)^{-1}
+$$
+where
+$$
+\hat{s}^{2}=\hat{e}^{\prime} \hat{e} /(n-K), \hat{e}=Y-X \hat{\beta}<em>{2 s l s}, \text { and } \hat{Q}</em>{\hat{x} \hat{x}}=n^{-1} \sum_{t=1}^{n} \hat{X}_{t} \hat{X}_{t}^{\prime}
+$$
+It should be emphasized that $ \hat{e} $ is not the residual from the second stage.</p>
+<p>This implies that even under conditional homoskedasticity, the conventional $ t $ -statistic in the second stage does not converge to $ N(0,1) $ in distribution, and $ J \cdot \hat{F} $ does not converge to $ \chi_{J}^{2} $ where $ \hat{F} $ is the $ F $ -statistic.</p>
+<p>To show $ \hat{\Omega} \stackrel{p}{\rightarrow} \Omega, $ we shall show: $ (\mathrm{a}) \hat{Q}<em>{\dot{X} \hat{X}}^{-1} \stackrel{p}{\rightarrow} Q</em>{\bar{X} \tilde{X}}^{-1}, $ and $ (\mathrm{b}) \hat{s}^{2} \stackrel{p}{\rightarrow} \sigma^{2} $ as $ n \rightarrow \infty $.</p>
+<p>We first show (a). There are two methods for proving this.</p>
+<p><strong>Method 1</strong>: We shall show $ \hat{Q}<em>{\hat{X} \hat{X}}^{-1} \stackrel{p}{\rightarrow} Q</em>{\tilde{X} \tilde{X}}^{-1} $ as $ n \rightarrow \infty . $ Because $ \hat{X}<em>{t}=\hat{\gamma}^{\prime} Z</em>{t} $ and $ \hat{\gamma} \stackrel{p}{\rightarrow} \gamma, $ we have
+$$
+\begin{aligned}
+\hat{Q}<em>{\hat{X} \hat{X}} &amp;=n^{-1} \sum</em>{t=1}^{n} \hat{X}<em>{t} \hat{X}</em>{t}^{\prime} \<br>
+&amp;=\hat{\gamma}^{\prime}\left(n^{-1} \sum_{t=1}^{n} Z_{t} Z_{t}^{\prime}\right) \hat{\gamma} \<br>
+&amp;=\hat{\gamma}^{\prime} \hat{Q}_{Z Z} \hat{\gamma} \<br>
+&amp; \stackrel{p}{\rightarrow} \gamma^{\prime} Q_{Z Z} \gamma \<br>
+&amp;=E\left[\left(\gamma^{\prime} Z_{t}\right)\left(Z_{t}^{\prime} \gamma\right)\right] \<br>
+&amp;=E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime}\right) \<br>
+&amp;=Q_{\tilde{X} \tilde{X}}
+\end{aligned}
+$$
+**Method 2**: We shall show $ \left(\hat{Q}_{X Z} \hat{Q}_{Z Z}^{-1} \hat{Q}_{Z X}\right)^{-1} \stackrel{p}{\rightarrow}\left(Q_{X Z} Q_{Z Z}^{-1} Q_{Z X}\right)^{-1} $ as $ n \rightarrow \infty, $ which follows immediately from $ \hat{Q}_{X Z} \stackrel{p}{\rightarrow} Q_{X Z} $ and $ \hat{Q}_{Z Z} \stackrel{p}{\rightarrow} Q_{Z Z} $ by the WLLN. This method is more straightforward but is less intuitive than the first method.</p>
+<p>Next, we shall show (b) $ \hat{s}^{2} \stackrel{p}{\rightarrow} \sigma^{2} $ as $ n \rightarrow \infty . $ We decompose
+$$
+\begin{aligned}
+\hat{s}^{2} &amp;=\frac{\hat{e}^{\prime} \hat{e}}{n-K} \<br>
+&amp;=\frac{1}{n-K} \sum_{t=1}^{n}\left(Y_{t}-X_{t}^{\prime} \hat{\beta}_{2 S L S}\right)^{2} \<br>
+&amp;=\frac{1}{n-K} \sum_{t=1}^{n}\left[\varepsilon_{t}-X_{t}^{\prime}\left(\hat{\beta}_{2 S L S}-\beta^{o}\right)\right]^{2} \<br>
+&amp;=\frac{1}{n-K} \sum_{t=1}^{n} \varepsilon_{t}^{2} \<br>
+&amp;+\left(\hat{\beta}_{2 S L S}-\beta^{o}\right)^{\prime} \frac{1}{n-K} \sum_{t=1}^{n} X_{t} X_{t}^{\prime}\left(\hat{\beta}_{2 S L S}-\beta^{o}\right) \<br>
+&amp;-2\left(\hat{\beta}_{2 S L S}-\beta^{o}\right)^{\prime} \frac{1}{n-K} \sum_{t=1}^{n} X_{t} \varepsilon_{t} \<br>
+&amp; \stackrel{p}{\rightarrow} \sigma^{2}+0 \cdot Q_{x x} \cdot 0-2 \cdot 0 \cdot E\left(X_{t} \varepsilon_{t}\right) \<br>
+&amp;=\sigma^{2}
+\end{aligned}
+$$
+Note that although $ E\left(X_{t} \varepsilon_{t}\right) \neq 0, $ the last term still vanishes to zero in probability, because $ \hat{\beta}_{2 S L S}-\beta^{o} \stackrel{p}{\rightarrow} 0 $</p>
+<p>We have proved the following theorem.</p>
+<p>【Theorem 7.5】<strong>Consistency of $ \hat{\Omega} $ under MDS with Conditional Homoskedasticity</strong>: Under Assumptions 7.1-7.4, 7.6  and 7.7, we have as $ n \rightarrow \infty $,
+$$
+\Omega=\hat{s}^{2} \hat{Q}<em>{\hat{x} \hat{x}}^{-1} \stackrel{p}{\rightarrow} \Omega=\sigma^{2} Q</em>{\tilde{x} \tilde{x}}^{-1}=\sigma^{2}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}
+$$
+**Case II**: $ \left{Z_{t} \varepsilon_{t}\right} $ is an MDS with Conditional Heteroskedasticity</p>
+<p>The following asymptotic distribution holds, for $ \tilde{V}=E\left(\tilde{X}<em>{t} \tilde{X}</em>{t}^{\prime} \varepsilon_{t}^{2}\right) $
+$$
+\sqrt{n}\left(\tilde{\beta}-\beta^{o}\right) \stackrel{d}{\rightarrow} N\left(0, Q_{\tilde{x} \tilde{x}}^{-1} \tilde{V} Q_{\tilde{x} \tilde{x}}^{-1}\right)
+$$
+Given $ \tilde{X}_{t}=\gamma^{\prime} Z_{t}, \gamma=Q_{Z Z}^{-1} Q_{Z X}, Q_{\tilde{X} \bar{X}}=\gamma^{\prime} Q_{Z Z} \gamma, $ and $ \tilde{V}=\gamma^{\prime} E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) \gamma=\gamma^{\prime} V \gamma, $ where $ V=E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) $, under the MDS assumption with conditional heteroskedasticity, we have
+$$
+\begin{aligned}
+\operatorname{avar}(\sqrt{n} \tilde{\beta}) &amp;=Q_{\tilde{x} \tilde{x}}^{-1} \tilde{V} Q_{\tilde{x} \tilde{x}}^{-1}\<br>
+&amp;=\left[E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime}\right)\right]^{-1} E\left[\tilde{X}_{t} \tilde{X}_{t}^{\prime} \varepsilon_{t}^{2}\right]\left[E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime}\right)\right]^{-1} \<br>
+&amp;=\left[\gamma^{\prime} E\left(Z_{t} Z_{t}^{\prime}\right) \gamma\right]^{-1} \gamma^{\prime} E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) \gamma\left[\gamma^{\prime} E\left(Z_{t} Z_{t}^{\prime}\right) \gamma\right]^{-1} \<br>
+&amp;=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} V Q_{z z}^{-1} Q_{z x}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} \<br>
+&amp;=\Omega \equiv \operatorname{avar}\left(\sqrt{n} \hat{\beta}_{2 s l s}\right)
+\end{aligned}
+$$</p>
+<p>This implies that the asymptotic distribution of the infeasible OLS estimator $ \tilde{\beta} $  is the same as the asymptotic distribution of $ \hat{\beta}<em>{2sls} $ under MDS with conditional heteroskedasticity. Therefore, the estimator for $ \Omega $ is
+$$
+\hat{\Omega}=\hat{Q}</em>{\hat{x} \hat{x}}^{-1} \hat{V}<em>{\hat{x} \hat{x}} \hat{Q}</em>{\hat{x} \hat{x}}^{-1}
+$$
+where
+$$
+\hat{V}<em>{\hat{x} \hat{x}}=n^{-1} \sum</em>{t=1}^{n} \hat{X}<em>{t} \hat{X}</em>{t}^{\prime} \hat{e}<em>{t}^{2}=\hat{\gamma}^{\prime}\left(n^{-1} \sum</em>{t=1}^{n} Z_{t} Z_{t}^{\prime} \hat{e}_{t}^{2}\right) \hat{\gamma}
+$$
+where $ \hat{\gamma}=\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}=\hat{Q}_{z z}^{-1} \hat{Q}_{z \times} $ and $ \hat{e}_{t}=Y_{t}-X_{t}^{\prime} \hat{\beta}_{2 s / s} $.This is a White&rsquo;s (1980) heteroskedasticity consistent variance-covariance matrix estimator for $ \hat{\beta}_{2SLS} $.</p>
+<p>【Assumption 7.8】a) $E\left(Z_{j t}^{4}\right) \leq C $ for some constant $ C&lt;\infty $ and for all $ 0 \leq j \leq l ; $ b) $ E\left(\varepsilon_{t}^{4}\right)&lt;\infty $.</p>
+<p>Again, there are two methods to show $ \hat{\Omega} \stackrel{p}{\rightarrow} \Omega $ here.</p>
+<p>Given that
+$$
+\hat{\Omega}=\left(\hat{Q}<em>{x z} \hat{Q}</em>{z z}^{-1} \hat{Q}<em>{z x}\right)^{-1} \hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \hat{V} \hat{Q}</em>{z z}^{-1} \hat{Q}<em>{z x}\left(\hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \hat{Q}</em>{z x}\right)^{-1}
+$$
+it suffices to show $ \hat{Q}<em>{x z} \stackrel{p}{\longrightarrow} Q</em>{x z}, \hat{Q}<em>{z z} \stackrel{p}{\rightarrow} Q</em>{z z} $ and $ \hat{V} \stackrel{p}{\rightarrow} V . $ The first two results immediately follow by the WLLN. The last result follows by using a similar reasoning of the consistency proof for $ n^{-1} \sum_{t=1}^{n} X_{t} X_{t}^{\prime} e_{t}^{2} $ in Chapter 4 or 5.</p>
+<p>【Theorem 7.6】<strong>Consistency of $ \hat{\Omega} $ under MDS with Conditional Heteroskedasticity</strong>: Under Assumptions 7.1-7.4, 7.6 and 7.8, we have as $ n \rightarrow \infty $,
+$$
+\begin{aligned}
+\hat{\Omega} &amp;=\hat{Q}<em>{\hat{\chi} \hat{x}}^{-1} \hat{V}</em>{\hat{x} \hat{x}} \hat{Q}<em>{\hat{x} \hat{x}}^{-1} \stackrel{p}{\rightarrow} \Omega=Q</em>{\tilde{x} \tilde{x}}^{-1} \tilde{V} Q_{\tilde{x} \tilde{x}}^{-1} \<br>
+&amp;=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} V Q_{z z}^{-1} Q_{z x}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}
+\end{aligned}
+$$
+where $ \tilde{V}= E\left(\tilde{X}_{t} \tilde{X}_{t}^{\prime} \varepsilon_{t}^{2}\right) \text { and } V=E\left(Z_{t} Z_{t}^{\prime} \varepsilon_{t}^{2}\right) $.</p>
+<p>Case Ⅲ: $ \left{Z_{t} \varepsilon_{t}\right} $ is a Stationary Ergodic non-MDS In this case, we have $ \sqrt{n}\left(\hat{\beta}_{2 s l s}-\beta^{o}\right) \stackrel{d}{\rightarrow} N(0, \Omega) $ as $ n \rightarrow \infty, $ where
+$$
+\Omega=Q_{\tilde{x} \tilde{x}}^{-1} \tilde{V} Q_{\tilde{x} \tilde{x}}^{-1}=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} V Q_{z z}^{-1} Q_{z x}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}
+$$
+with
+$$
+\begin{aligned}
+\tilde{V} &amp;=\sum_{j=-\infty}^{\infty} \tilde{\Gamma}(j), \quad \tilde{\Gamma}(j)=\operatorname{cov}\left(\tilde{X}_{t} \varepsilon_{t}, \tilde{X}_{t-j} \varepsilon_{t-j}\right) \<br>
+V &amp;=\sum_{j=-\infty}^{\infty} \Gamma(j), \quad \Gamma(j)=\operatorname{cov}\left(Z_{t} \varepsilon_{t}, Z_{t-j} \varepsilon_{t-j}\right)
+\end{aligned}
+$$</p>
+<p>On the other hand, we have
+$$
+\begin{aligned}
+\operatorname{avar}(\sqrt{n} \tilde{\beta}) &amp;=Q_{\tilde{x} \tilde{x}}^{-1} V_{\tilde{x} \tilde{x}} Q_{\tilde{x} \tilde{x}}^{-1}=\left(\gamma^{\prime} Q_{x x} \gamma\right)^{-1} \gamma^{\prime} V \gamma\left(\gamma^{\prime} Q_{x x} \gamma\right)^{-1} \<br>
+&amp;=\Omega \equiv \operatorname{avar}\left(\sqrt{n} \hat{\beta}_{2 s l s}\right)
+\end{aligned}
+$$
+Thus, the asymptotic variance of $ \sqrt{n} \hat{\beta}_{2 s l s} $ is the same as the asymptotic variance of $ \tilde{\beta} $ under this general case.</p>
+<p><strong>Question:</strong> How to estimate $ \Omega ? $</p>
+<p>We directly assume that we have a consistent estimator $ \hat{V} $ for $ V $</p>
+<p>【Assumption 7.9】$ \hat{V} \stackrel{P}{\rightarrow} V \equiv \Sigma_{j=-\infty}^{\infty} \Gamma(j) $, $ \text { where } \Gamma(j)=\operatorname{cov}\left(Z_{t} \varepsilon_{t}, Z_{t-j} \varepsilon_{t-j}\right) $.</p>
+<p>【Theorem 7.7】<strong>Consistency of $ \hat{\Omega} $ under Non-MDS</strong>: Under Assumptions 7.1-7.4,  and 7.9, we have as $ n \rightarrow \infty $
+$$
+\begin{aligned}
+\hat{\Omega} &amp;=\hat{Q}<em>{\hat{x} \hat{x}}^{-1} \hat{V}</em>{\hat{x} \hat{x}} \hat{Q}<em>{\hat{x} \hat{x}}^{-1} \<br>
+&amp;=\left(\hat{Q}</em>{x z} \hat{Q}<em>{z z}^{-1} \hat{Q}</em>{z x}\right)^{-1} \hat{Q}<em>{x z} \hat{Q}</em>{z z}^{-1} \hat{V} \hat{Q}<em>{z z}^{-1} \hat{Q}</em>{z x}\left(\hat{Q}<em>{x z} \hat{Q}</em>{z z}^{-1} \hat{Q}<em>{z x}\right)^{-1} \<br>
+\stackrel{P}{\rightarrow} \Omega &amp;=Q</em>{\tilde{x} \tilde{x}}^{-1} \tilde{V} Q_{\tilde{x} \tilde{x}}^{-1}
+\end{aligned}
+$$
+where $ \hat{V}_{\hat{x} \hat{x}}=\hat{\gamma} \hat{V} \hat{\gamma}^{\prime} $ and
+$$
+\Omega=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} V Q_{z z}^{-1} Q_{z x}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}
+$$</p>
+<h2 id="67-hypothesis-testing">6.7 Hypothesis Testing</h2>
+<p><strong>Case I</strong>: $ \left{Z_{t} \varepsilon_{t}\right} $ is an MDS with Conditional Homoskedasticity</p>
+<p>We have
+$$
+\sqrt{n}\left(\hat{\beta}<em>{2 s l s}-\beta^{o}\right) \stackrel{d}{\rightarrow} N(0, \sigma^{2}\left[Q</em>{x z} Q_{z z}^{-1} Q_{z x}\right]^{-1})
+$$
+【Theorem 7.8】**Hypothesis Testing**: Put $ \hat{e} \equiv Y-\mathbf{X} \hat{\beta}_{2 s l s} . $ Then under Assumptions 7.1-7.4, 7.6 and 7.7, the Wald test statistic
+$$
+\hat{W}=\frac{n\left(R \hat{\beta}_{2 s l s}-r\right)^{\prime}\left[R\left(\hat{\mathbf{X}}^{\prime} \hat{\mathbf{X}}\right)^{-1} R^{\prime}\right]^{-1}\left(R \hat{\beta}_{2 s l s}-r\right)}{\hat{e}^{\prime} \hat{e} /(n-K)} \stackrel{d}{\rightarrow} \chi_{J}^{2}
+$$
+as $ n \rightarrow \infty, $ under $ \mathrm{H}_{0} $.</p>
+<p><strong>Question</strong>: Is $ \hat{W} / J $ the $ F $ -statistic from the second stage regression?</p>
+<p>No, because $ \hat{e} $ is not the estimated residual from the second stage.</p>
+<p><strong>Case II</strong>: $ \left{Z_{t} \varepsilon_{t}\right} $ is a Stationary Ergodic MDS with Conditional Heteroskedasticity</p>
+<p>【Theorem 7.9】<strong>Hypothesis Testing</strong>: Under Assumptions 7.1-7.4, 7.6 and 7.8, the Wald test statistic
+$$
+\hat{W} \equiv n\left(R \hat{\beta}<em>{2 s l s}-r\right)^{\prime}\left[R \hat{Q}</em>{\hat{x} \hat{x}}^{-1} \hat{V}<em>{\hat{x} \hat{x}} \hat{Q}</em>{\hat{x} \hat{x}}^{-1} R^{\prime}\right]^{-1}\left(R \hat{\beta}<em>{2 s l s}-r\right) \stackrel{d}{\rightarrow} \chi</em>{J}^{2}
+$$
+under $ \mathrm{H}<em>{0}, $ where $ \hat{V}</em>{\hat{x} \hat{x}}=n^{-1} \Sigma_{t=1}^{n} \hat{X}_{t} \hat{X}_{t}^{\prime} \hat{e}_{t}^{2} $ and $ \hat{e}_{t}=Y_{t}-X_{t}^{\prime} \hat{\beta}_{2 s l s} $</p>
+<p><strong>Case III</strong>: $ \left{Z_{t} \varepsilon_{t}\right} $ is a Stationary ergodic non-MDS</p>
+<p>【Theorem 7.10】<strong>Hypothesis Testing</strong>: Under Assumptions 7.1-7.5 and 7.9, the Wald test statistic
+$$
+\hat{W}=n\left(R \hat{\beta}<em>{2 s l s}-r\right)^{\prime}\left[R \hat{Q}</em>{\hat{x} \hat{x}}^{-1} \hat{V}<em>{\hat{x} \hat{x}} \hat{Q}</em>{\hat{x} \hat{x}}^{-1} R^{\prime}\right]^{-1}\left(R \hat{\beta}<em>{2 s l s}-r\right) \stackrel{d}{\rightarrow} \chi</em>{J}^{2}
+$$
+under $ \mathrm{H}<em>{0}, $ where $ \hat{V}</em>{\hat{x} \hat{x}}=\hat{\gamma}^{\prime} \hat{V} \hat{\gamma}, \hat{\gamma}=\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X} $ and $ \hat{V} $ is a long-run variance-covariance estimator for $ V=\Sigma_{j=-\infty}^{\infty} \Gamma(j) $ with $ \Gamma(j)= \operatorname{cov}\left(Z_{t} \varepsilon_{t}, Z_{t-j} \varepsilon_{t-j}\right) $.</p>
+<h2 id="68-hausmans-test">6.8 Hausman&rsquo;s Test</h2>
+<p>When there exists endogeneity so that $ E\left(X_{t} \varepsilon_{t}\right) \neq 0, $ the OLS estimator $ \hat{\beta} $ is inconsistent for $ \beta^{\circ} . $ Instead, $ \hat{\beta}_{2 s l s} $ should be used.</p>
+<p>In practice, one is not sure whether there exists endogeneity.
+The null hypothesis of interest is:
+$$
+\mathrm{H}<em>{0}: E\left(\varepsilon</em>{t} | X_{t}\right)=0
+$$
+If this null hypothesis is rejected, one has to use the 2SLS estimator $ \hat{\beta}_{2 s l s} $ provided that one can find $ Z_{t} $ that satisfies A . 7.4.</p>
+<p>For simplicity, we impose the following conditions.</p>
+<p>【Assumption 7.10】a) $ \left{\left(X_{t}^{\prime}, Z_{t}^{\prime}\right)^{\prime} \varepsilon_{t}\right} $ is an MDS process; and b) $ E\left(\varepsilon_{t}^{2} | X_{t}, Z_{t}\right)=\sigma^{2} $.</p>
+<p>The basic idea of Hausman&rsquo;s test is under $ \mathrm{H}<em>{0}: E\left(\varepsilon</em>{t} | X_{t}\right)=0, $ both $ \hat{\beta}=\left(X^{\prime} X\right)^{-1} X^{\prime} Y $ and $ \hat{\beta}_{2 s l s} $ are consistent for $ \beta^{\circ} $.</p>
+<ul>
+<li>
+<p>They converge to the same limit $ \beta^{\circ} $ but it can be shown that $ \hat{\beta} $ is an asymptotically efficient estimator while $ \hat{\beta}_{2 s l s} $ is not.</p>
+</li>
+<li>
+<p>Under the alternatives to $ H_{0}, \hat{\beta}_{2 s l s} $ remains to be consistent for $ \beta^{\circ} $ but $ \hat{\beta} $ is not.</p>
+</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200614094709.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200614094709.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200614094709.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200614094709.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200614094709.png"
+        title="20200614094709.png" /></div></p>
+<p>Hausman (1978) considers a test for $ H_{0} $ based on the difference between the two estimators:
+$$
+\hat{\beta}_{2 s l s}-\hat{\beta}
+$$
+which converges to zero under $ H_{0} $ but generally to a nonzero constant under $ H_{1} $.</p>
+<p>To construct Hausman&rsquo;s (1978) test statistic, we need to derive the asymptotic distribution of $ \hat{\beta}_{2 s l s}-\hat{\beta} $. For this purpose, we first state a lemma.</p>
+<p>【Lemma 7.11】Suppose $ \hat{A} \stackrel{p}{\rightarrow} A $ and $ \hat{B}=O_{P}(1) $. Then $ (\hat{A}-A) \hat{B} \stackrel{p}{\rightarrow} 0 $.</p>
+<p>We first consider the OLS $ \hat{\beta} $. Note that
+$$
+\sqrt{n}\left(\hat{\beta}-\beta^{\circ}\right)=\hat{Q}<em>{x x}^{-1} n^{-1 / 2} \sum</em>{t=1}^{n} X_{t} \varepsilon_{t}
+$$
+where $ \hat{Q}_{x x}^{-1} \stackrel{P}{\rightarrow} Q_{x x}^{-1} $ and
+$$
+n^{-1 / 2} \sum_{t=1}^{n} X_{t} \varepsilon_{t} \stackrel{d}{\rightarrow} N\left(0, \sigma^{2} Q_{x x}\right)
+$$
+as $ n \rightarrow \infty $. It follows that $ n^{-1 / 2} \sum_{t=1}^{n} X_{t} \varepsilon_{t}=O_{P}(1) $. And by Lemma 7.11, we have
+$$
+\sqrt{n}\left(\hat{\beta}-\beta^{o}\right)=Q_{x x}^{-1} n^{-1 / 2} \sum_{t=1}^{n} X_{t} \varepsilon_{t}+o_{P}(1)
+$$
+Similarly, we can obtain
+$$
+\sqrt{n}\left(\hat{\beta}_{2 s l s}-\beta^{o}\right)=\hat{A} n^{-1 / 2} \sum_{t=1}^{n} Z_{t} \varepsilon_{t}=A n^{-1 / 2} \sum_{t=1}^{n} Z_{t} \varepsilon_{t}+o_{P}(1)
+$$
+where<br>
+$$
+\hat{A}=\left(\hat{Q}_{x z} \hat{Q}_{z z}^{-1} \hat{Q}_{z x}\right)^{-1} \hat{Q}_{x z} \hat{Q}_{z z} \stackrel{p}{\rightarrow} A=\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} 
+$$
+and
+$$
+n^{-1 / 2} \sum_{t=1}^{n} Z_{t} \varepsilon_{t} \stackrel{d}{\rightarrow} N\left(0, \sigma^{2} Q_{z z}\right)
+$$</p>
+<p>It follows that
+$$
+\begin{aligned}
+\sqrt{n}\left(\hat{\beta}<em>{2 s l s}-\hat{\beta}\right)=&amp; n^{-1 / 2} \sum</em>{t=1}^{n}\left[\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1} Q_{x z} Q_{z z}^{-1} Z_{t}-Q_{x x}^{-1} X_{t}\right] \varepsilon_{t}+o_{P}(1) \<br>
+&amp; \stackrel{d}{\rightarrow} N\left(0, \sigma^{2}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}-\sigma^{2} Q_{x x}^{-1}\right)
+\end{aligned}
+$$
+by the CLT for the stationary ergodic MDS process and Assumption 7.10 Therefore, under the null hypothesis $ \mathrm{H}_{0}, $ the quadratic form
+$$
+H=\frac{n\left(\hat{\beta}_{2 s l s}-\hat{\beta}\right)^{\prime}\left[\left(\hat{Q}_{x z} \hat{Q}_{z z}^{-1} \hat{Q}_{z x}\right)^{-1}-\hat{Q}_{x x}^{-1}\right]^{-1}\left(\hat{\beta}_{2 s l s}-\hat{\beta}\right)}{s^{2}} \stackrel{d}{\rightarrow} \chi_{k}^{2}
+$$
+as $ n \rightarrow \infty $ by the Slutsky theorem, where $ s^{2}=e^{\prime} e / n $ is the residual variance estimator based on the OLS residual $ e=Y-X \hat{\beta} $. This is called Hausman&rsquo;s test statistic.</p>
+<p>【Theorem 7.12】<strong>Hausman&rsquo;s Test for Endogeneity</strong>: Suppose Assumptions 7.1-7.4, 7.10 and $ \mathrm{H}<em>{0} $ hold, and $ Q</em>{x x}-Q_{x z} Q_{z z}^{-1} Q_{z x} $ is strictly positive definite. Then as $ n \rightarrow \infty $
+$$
+H \stackrel{d}{\rightarrow} \chi_{K}^{2}
+$$
+We note that in the above Theorem,
+$$
+\begin{aligned}
+\operatorname{avar}\left[\sqrt{n}\left(\hat{\beta}_{2 s l s}-\hat{\beta}\right)\right] &amp;=\sigma^{2}\left(Q_{x z} Q_{z z}^{-1} Q_{z x}\right)^{-1}-\sigma^{2} Q_{x x}^{-1} \<br>
+&amp;=\operatorname{avar}\left(\sqrt{n} \hat{\beta}_{2 s l s}\right)-\operatorname{avar}(\sqrt{n} \hat{\beta})
+\end{aligned}
+$$
+This simple asymptotic variance-covariance structure is made possible under A. 7.10.</p>
+<p>If the conditional heteroskedasticity exists, then we no longer have the above simple variance-covariance structure for $ \operatorname{avar}\left[\sqrt{n}\left(\hat{\beta}_{2 s l s}-\hat{\beta}\right)\right] $.</p>
+<h3 id="more-feasible-way-to-do-hausmans-test">More feasible way to do Hausman&rsquo;s Test</h3>
+<p>What if rank $ J&lt;K ? $
+To see modified test, consider
+$$
+\begin{aligned}
+\hat{\beta}<em>{2 s l s} &amp;=\left(\hat{\mathbf{X}}^{\prime} \mathbf{X}\right)^{-1} \hat{\mathbf{X}}^{\prime} Y=\left[(\mathbf{Z} \hat{\gamma})^{\prime}(\mathbf{Z} \hat{\gamma})\right]^{-1}(\mathbf{Z} \hat{\gamma})^{\prime} Y \<br>
+&amp;=\left{\left[\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{\prime}\left[\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]\right}^{-1}\left[\mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{\prime} Y \<br>
+&amp;=\left[\mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{-1} \mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} Y \<br>
+&amp;=\left[\mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} \mathbf{X}\right]^{-1} \mathbf{X}^{\prime} \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime} Y \<br>
+&amp;=\left[\mathbf{X}^{\prime} \mathbf{P}</em>{z} \mathbf{X}\right]^{-1} \mathbf{X}^{\prime} \mathbf{P}<em>{z} Y \quad \text { where } P</em>{z} \equiv \mathbf{Z}\left(\mathbf{Z}^{\prime} \mathbf{Z}\right)^{-1} \mathbf{Z}^{\prime}
+\end{aligned}
+$$
+Then the Hausman&rsquo;s Test statistic becomes
+$$
+H=\frac{n\left(\hat{\beta}<em>{2 s l s}-\hat{\beta}\right)^{\prime}\left[\left(\mathbf{X}^{\prime} \mathbf{P}</em>{z} \mathbf{X}\right)^{-1}-\mathbf{X}^{\prime} \mathbf{X}\right]^{-1}\left(\hat{\beta}<em>{2 s l s}-\hat{\beta}\right)}{s^{2}} \stackrel{d}{\rightarrow} \chi</em>{K}^{2}
+$$
+Consider
+$$
+\begin{aligned}
+\hat{\beta}<em>{2 s l s}-\beta^{o} &amp;=\left(\mathbf{X}^{\prime} \mathbf{P}</em>{z} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{P}<em>{z} \mathbf{Y}-\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{Y} \<br>
+&amp;=\left(\mathbf{X}^{\prime} \mathbf{P}</em>{z} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{P}<em>{z} \mathbf{Y}-\left(\mathbf{X}^{\prime} \mathbf{P}</em>{z} \mathbf{X}\right)^{-1}\left(\mathbf{X}^{\prime} \mathbf{P}<em>{z} \mathbf{X}\right)\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{Y} \<br>
+&amp;=\left(\mathbf{X}^{\prime} \mathbf{P}</em>{z} \mathbf{X}\right)^{-1}\left{\mathbf{X}^{\prime} \mathbf{P}<em>{\mathbf{z}}-\left(\mathbf{X}^{\prime} \mathbf{P}</em>{\mathbf{z}} \mathbf{X}\right)\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime}\right} \mathbf{Y} \<br>
+&amp;=\left(\mathbf{X}^{\prime} \mathbf{P}<em>{z} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{P}</em>{\mathbf{z}}\left{\mathbf{I}-\mathbf{X}\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime}\right} \mathbf{Y} \<br>
+&amp;=\left(\mathbf{X}^{\prime} \mathbf{P}<em>{z} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{P}</em>{\mathbf{z}} \mathbf{M}<em>{X} \mathbf{Y}
+\end{aligned}
+$$
+since the term $ \left(X^{\prime} P</em>{z} X\right)^{-1} $ never goes to 0 , we can just test if
+$$
+A \equiv \mathrm{X}^{\prime} \mathrm{P}<em>{\mathrm{z}} \mathrm{M}</em>{X} \mathrm{Y} \text { goes to } 0
+$$
+Let $ \mathbf{X}^{\prime} \equiv\left(X_{1}^{\prime}, W^{\prime}\right) $ and $ \mathbf{Z}^{\prime} \equiv\left(Z_{1}^{\prime}, W^{\prime}\right), $ where $ X_{1} $ are endogenous, $ Z_{1} $ are IV and $ W $ are exogenous. Then
+$$
+\mathbf{X}^{\prime} \mathbf{P}_{\mathbf{z}} \mathbf{M}_{X} \mathbf{Y}=\left[\begin{array}{ll}
+\mathbf{X}_{1}^{\prime} \mathbf{P}_{\mathbf{z}} \mathbf{M}_{X} \mathbf{Y} &amp; W^{\prime} \mathbf{P}_{\mathbf{z}} \mathbf{M}_{X} \mathbf{Y}
+\end{array}\right]
+$$
+where $ W^{\prime} \mathrm{P}_{z} \mathrm{M}_{X} \mathrm{Y} $ goes to zero.</p>
+<p>Thus, we need to check $ \mathrm{X}<em>{1}^{\prime} \mathrm{P}</em>{\mathrm{z}} \mathrm{M}_{X} \mathrm{Y}=0 . $ How?</p>
+<p>Consider
+$$
+Y=X \beta+P_{z} X_{1} \delta+\varepsilon
+$$
+Apply OLS to this to have
+$$
+\hat{\delta}=\left(\mathbf{X}_{1}^{\prime} \mathbf{P}_{\mathbf{Z}} \mathbf{M}_{X} \mathbf{P}_{\mathbf{Z}} \mathbf{X}_{\mathbf{1}}\right)^{-1} \mathbf{X}_{1}^{\prime} \mathbf{P}_{\mathbf{z}} \mathbf{M}_{X} \mathbf{Y}
+$$
+Since $ \left(\mathrm{X}_{1}^{\prime} \mathrm{P}_{\mathrm{z}} \mathrm{M}_{X} \mathrm{P}_{\mathrm{z}} \mathrm{X}_{1}\right) $ does not go to zero, if $ \widehat{\delta} $ is significant, it implies
+$$
+\hat{\beta}_{2 s l s}-\beta^{o} \neq 0
+$$</p>
+<h2 id="69-examples">6.9 Examples</h2>
+<h3 id="691-hockey-tickets">6.9.1 Hockey Tickets</h3>
+<p>Suppose that we are interested in the impact of a hockey teams regular season wins on ticket sales in millions. For a sample of 28 teams in 1995, we estimates the following linear model:
+$$
+Y_{i}=a+b X_{i}+u_{i}
+$$
+where $ Y_{i} $ is the log of ticket sales in millions, and $ X_{i} $ is the number of regular season wins in 1995</p>
+<p>Q1) Do you think we can get an unbiased estimate of b?</p>
+<p>omitted variable bias? or simultaneity? or measurement error in explanatory variables?</p>
+<p>If there is a ignored variable that might be correlated with both wins and ticket sales (You could make a hypothesis and then discuss the motivation), then OLS is unbiased due to the omitted variable bias.</p>
+<p>It&rsquo;s also possible that not only might wins impact ticket sales, but ticket sales could impact wins.</p>
+<ul>
+<li>For example, if the owner relies on ticket sales to finance the acquisition of star players, and the presence of star players contributes to wins, higher ticket sales can lead to increased wins. $ \Longrightarrow $ <strong>Simultaneity</strong>!</li>
+</ul>
+<p>Q2) One might think naively whether one can construct a simple test for whether $ X $ and $ u $ are correlated by doing the following: using OLS estimates of $ a $ and $ b $, estimate the
+error term:
+$$
+\widehat{u}<em>{i}=Y</em>{i}-\widehat{a}-\widehat{b} X_{i}
+$$
+and then run $ \widehat{u}_{i}=c+d X_{i}+v_{i} $ to see $ d=0 . $ Is this a good test procedure?</p>
+<p>No! If $ X $ and $ u $ are correlated, then $ O L S $ is inconsistent and $ \widehat{u}_{i} $ is so for $ u $. And $ X \widehat{u}=0 $ no matter the assumption is actually true in reality.</p>
+<h3 id="692-demand-for-cigarettes">6.9.2 Demand for Cigarettes</h3>
+<p>One might think that high tax on cigarette consumption would discourage smoking so that improves people&rsquo;s health condition (and save government health insurance spending).</p>
+<p>To investigate this hypothesis, consider the following model to estimate the elasticity of demand for cigarettes using annual data for the 48 contiguous U.S. states for 1985 through 1995
+$$
+Q_{i}=\beta_{0}+\beta_{1} P_{i}+\epsilon_{i}
+$$
+where $ P_{i} $ is the price, $ Q_{i} $ is the quantity of cigarettes, and $ \epsilon_{i} $ is the error term.</p>
+<p>One may concern <strong>endogeneity due to simultaneity</strong> that is, as $ Q_{i} $ is causing $ P_{i} $ in the model (1), $ P_{i} $ is driving $ Q_{i} $ due to price-quantity equilibrium.
+$$
+\begin{aligned}
+P_{i} &amp;=\gamma_{0}+\gamma_{1} Q_{i}+u_{i} \<br>
+P_{i} &amp;=\gamma_{0}+\gamma_{1}\left(\beta_{0}+\beta_{1} P_{i}+\epsilon_{i}\right)+u_{i} \<br>
+&amp;=\frac{\gamma_{0}+\gamma_{1} \beta_{0}}{1-\gamma_{1} \beta_{1}}+\frac{\gamma_{1} \epsilon_{i}}{1-\gamma_{1} \beta_{1}}+\frac{u_{i}}{1-\gamma_{1} \beta_{1}}
+\end{aligned}
+$$
+Clearly $ P_ i $ must be correlated with $ \epsilon_{i} $ unless $ \gamma_{1}=0 $</p>
+<p>We found one instrumental variable, Sales Tax; which is the portion of the tax on cigarettes arising from the general sales tax, measured in dollars per pack (in real dollars, deflated by the Consumer Price Index). We apply 2 SLS and obtain the following estimated equations
+$$
+\begin{array}{l}
+\hat{P}<em>{i}&amp;= &amp;4.62+&amp;0.031 \text { Sales Tax}<em>i \<br>
+&amp; &amp;(0.03) &amp;(0.005)\<br>
+\hat{Q}</em>{i}&amp;= &amp;9.43- &amp;1.14 \hat{P}</em>{i}\<br>
+&amp; &amp;(1.26) &amp;(0.37)\<br>
+\end{array}
+$$
+Q1) (i) what are $ \widehat{P}<em>{i} $ and $ \widehat{Q}</em>{i} $ ?</p>
+<p>(i) in the first stage of 2 SLS, we regression $ P_{i} $ on the sole instrument and obtain the prediction $ \widehat{P}_{i} $. Then, we use $ \hat{P}_{i} $ as the independent variable in the 2nd stage of 2SLS. We regress $ Q_{i} $ on $ \widehat{P}_{i} . \widehat{Q}_{i} $ is the prediction of $ Q_{i} $ from the stage 2 regression.</p>
+<p>(ii) what is the IV estimate of b?</p>
+<p>The IV estimate of bl is the coefficient from the 2nd stage of 2SLS, which implies $ \widehat{\beta}_{1}=1.14 $.</p>
+<p>(iii) is $\text{Sales Tax}_{i} $ a valid instrument?</p>
+<p>We need to <strong>check instrument relevance and instrument exogeneity</strong>. <strong>Given the result of the 1st stage, we note that Sales Taxi is quite significant as its associated t-stat is more than $ 6 $.</strong> This assures instrument relevance.</p>
+<p>On the other hand, we cannot statistically test instrument exogeneity in this case.</p>
+<p>For the sales tax to be exogenous, it must be uncorrelated with the error in the demand equation; that is, the sales tax must affect the demand for cigarettes only indirectly through the price.</p>
+<p><strong>This seems plausible</strong>: General sales tax rates vary from state to state, because different states choose different mixes of sales, income, property, and other taxes to finance public undertakings. Those choices about public finance are driven by political considerations, not by factors related to the demand for cigarettes.</p>
+<p>Q2) Suppose that states levy special taxes that apply only to cigarettes and other tobacco products. These cigarette-specific taxes ($ \text { Cig } \text {Tax}_{i} $) constitute a possible second instrumental variable. Describe how the 2SLS process would change.</p>
+<p>The 1st stage of 2SLS will change. We now run
+$$
+P_{i}=\gamma_{0}+\gamma_{1} \text {Sales } \operatorname{Tax}_{i}+\gamma_{2} \text { Cig} \operatorname{Tax}_{i}+u_{i}
+$$
+Then obtain the prediction $ \widehat{P}_{i} $ from the above equation and use it as the new independent variable in the 2nd stage of 2SLS. The rest are the same.</p>
+<p>Q3) Using the instruments, we rerun the IV estimation and obtain the following results
+$$
+\widehat{Q}<em>{i}=\underset{(0.96)}{9.89}-\underset{(0.25)}{1.28 P</em>{i}}
+$$
+Comparing with the IV results using one IV, comment on the change of standard error of the estimated price elasticity.</p>
+<p>The SE clearly gets smaller once an additional instrument is added. Because this estimate uses more information than the former equation. <strong>Using two instruments explains more of the variation in cigarette prices, and this is reflected in smaller standard errors</strong>.</p>
+<p>Q4) Some may argue that $ \text { Cig } \text {Tax}_{i} $; is not a valid instrument. What do you think? If $ \operatorname{Cig} $ Tax $ _{i} $ is indeed problematic, how would you solve this issue?</p>
+<p>If tobacco farming and cigarette production are important industries in a state, then these industries could exert influence to keep cigarette-specific taxes low. This suggests that an omitted factor in cigarette demand - whether the state grows tobacco and produces cigarettes - could be correlated with cigarette-specific taxes.</p>
+<p>One solution to this would be to include information on the size of the tobacco and cigarette industry in the state. In this case, the error term would exclude information about tobacco and cigarette industry, therefore, become uncorrelated with $ \text { Cig } \text {Tax}_{i} $.</p>
+<p>Q5) Some may argue that one&rsquo;s income is an important factor that determines one&rsquo;s cigarettes demand. We follow this argument and modify model by incorporating Income as a control variable:
+$$
+Q_{i}=\beta_{0}+\beta_{1} P_{i}+\beta_{2} \text { Income}_{i}+\epsilon_{i}
+$$
+Discuss how would such alternation change the 2SLS process? Despite the validity of the instruments, we apply 2SLS with two instruments described above.</p>
+<p>Step 1. Run
+$$
+P_{i}=\gamma_{0}+\gamma_{1} \text {Sales Tax}_{i}+\gamma_{2} \text { CigTax}_{i}+\gamma_{2} \text { Income}_{i}+u_{i}
+$$
+and obtain the prediction $ \widehat{P}_{i}, $ and use it as regressor in the next step.</p>
+<p>Step 2 . We consider the following 2nd stage artificial regression:
+$$
+Q_{i}=\beta_{0}+\beta_{1} \widehat{P}_{i}+\beta_{2} \text { Income}_{i}+\epsilon_{i}
+$$
+We estimate the above coefficients using OLS. These estimates are consistent (converge to the their true values in probability).</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/6.-instrumental-variables-regression/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/6.-instrumental-variables-regression/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/6.-instrumental-variables-regression/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/6.-instrumental-variables-regression/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/chapter12/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/3.-iid%E9%9A%8F%E6%9C%BA%E6%A0%B7%E6%9C%AC/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

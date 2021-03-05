@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="6. Capital Asset Pricing Model 6.1 MPT and the CAPM The Capital Asset Pricing Model builds directly on Modern Portfolio Theory. It was developed in the mid-1960s by William Sharpe (US, b.1934, Nobel Prize 1990), John Lintner (US, 1916-1983), and Jan Mossin (Norway, 1936-1987).
+  William Sharpe, &ldquo;Capital Asset Prices: A Theory of Market Equilibrium Under Conditions of Risk,&rdquo; Journal of Finance Vol.19 (September 1964): pp.425-442.
+  John Lintner, &ldquo;The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets,&rdquo; Review of Economics and Statistics Vol." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/6.-capm/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="6. Capital Asset Pricing Model 6.1 MPT and the CAPM The Capital Asset Pricing Model builds directly on Modern Portfolio Theory. It was developed in the mid-1960s by William Sharpe (US, b.1934, Nobel Prize 1990), John Lintner (US, 1916-1983), and Jan Mossin (Norway, 1936-1987).
+  William Sharpe, &ldquo;Capital Asset Prices: A Theory of Market Equilibrium Under Conditions of Risk,&rdquo; Journal of Finance Vol.19 (September 1964): pp.425-442.
+  John Lintner, &ldquo;The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets,&rdquo; Review of Economics and Statistics Vol."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/6.-capm/" /><link rel="prev" href="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" /><link rel="next" href="https://henrywu97.github.io/5.-modern-portfolio-theory/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/6.-capm\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  3670 ,
+        "url": "https:\/\/henrywu97.github.io\/6.-capm\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/6.-capm/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/6.-capm/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3670 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;18 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#61-mpt-and-the-capm">6.1 MPT and the CAPM</a></li>
+    <li><a href="#62-capm">6.2 CAPM</a>
+      <ul>
+        <li><a href="#621-cml">6.2.1 CML</a></li>
+        <li><a href="#622-covariance">6.2.2 Covariance</a></li>
+        <li><a href="#623-deriving-the-capm">6.2.3 Deriving the CAPM</a></li>
+        <li><a href="#624-cml-vs-sml">6.2.4 CML V.S. SML</a></li>
+        <li><a href="#625-interpretation">6.2.5 Interpretation</a>
+          <ul>
+            <li><a href="#aggregate-risk--idiosyncratic-risk">Aggregate risk &amp; idiosyncratic risk</a></li>
+            <li><a href="#statistical-interpretation">Statistical interpretation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#63-application-of-capm">6.3 Application of CAPM</a>
+      <ul>
+        <li><a href="#631-valuing-risky-cash-flows">6.3.1 Valuing Risky Cash Flows</a>
+          <ul>
+            <li><a href="#risk-premium-psi">risk premium $\psi$</a></li>
+            <li><a href="#risk-premium-psi-1">risk premium $\Psi$</a></li>
+            <li><a href="#valuation-of-firms">Valuation of firms</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#64-pros-and-cons-of-capm">6.4 Pros and Cons of CAPM</a>
+      <ul>
+        <li><a href="#641-empirical-shortcomings">6.4.1 empirical shortcomings</a></li>
+        <li><a href="#642-pros">6.4.2 Pros</a></li>
+        <li><a href="#643-apt--adt">6.4.3 APT &amp; ADT</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="6-capital-asset-pricing-model">6. Capital Asset Pricing Model</h1>
+<h2 id="61-mpt-and-the-capm">6.1 MPT and the CAPM</h2>
+<p>The Capital Asset Pricing Model builds directly on Modern Portfolio Theory. It was developed in the mid-1960s by William Sharpe (US,
+b.1934, Nobel Prize 1990), John Lintner (US, 1916-1983), and Jan Mossin (Norway, 1936-1987).</p>
+<ul>
+<li>
+<p>William Sharpe, &ldquo;Capital Asset Prices: A Theory of Market Equilibrium Under Conditions of Risk,&rdquo; Journal of Finance Vol.19 (September 1964): pp.425-442.</p>
+</li>
+<li>
+<p>John Lintner, &ldquo;The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets,&rdquo; Review of Economics and Statistics Vol.47 (February 1965 ): pp. 13-37.</p>
+</li>
+<li>
+<p>Jan Mossin, &ldquo;Equilibrium in a Capital Asset Market,&rdquo; Econometrica Vol.34 (October 1966): pp.768-783.</p>
+</li>
+</ul>
+<p>Assumptions of the Capital Asset Pricing Model</p>
+<ul>
+<li>Investors are risk-averse individuals who maximize the expected utility of their end-of-period wealth</li>
+<li>Investors are price-takers and have <strong>homogeneous expectations</strong> about asset returns that have a joint normal distribution</li>
+<li>There exists a risk-free asset such that investors may borrow or lend unlimited amounts at the risk-free rate.</li>
+<li>The quantities of assets are fixed. All assets are marketable and perfectly divisible.</li>
+<li>Asset markets are frictionless and information is costless and simultaneously available to all investors.</li>
+<li>There are no market imperfections such as taxes, regulations, or restrictions on short selling.</li>
+</ul>
+<p>But whereas Modern Portfolio Theory is a theory describing the
+demand for financial assets, the Capital Asset Pricing Model is a
+theory describing equilibrium in financial markets.</p>
+<p>By making an additional assumption, that supply equals demand in financial markets, the CAPM yields additional
+implications about the pricing of financial assets and risky cash 
+flows.</p>
+<p>Like MPT, the CAPM assumes that investors have mean-variance utility and hence that either investors have quadratic Bernoulli utility functions or that the random returns on risky assets are normally distributed.</p>
+<p>Thus, some of the same caveats that apply to MPT also apply to the CAPM. For example, one might hesitate before applying the CAPM to price options.</p>
+<p>The traditional CAPM also assumes that there is a risk free asset as well as a potentially large collection of risky assets. Under these circumstances, as we&rsquo;ve seen, all investors will hold some combination of the riskless asset and the tangency portfolio: the efficient portfolio of risky assets with the highest Sharpe ratio.</p>
+<p>But the CAPM goes further than the MPT by imposing an
+equilibrium condition. Because there is no demand for risky financial assets except to the extent that they comprise the tangency portfolio, and because, in equilibrium, the supply of financial assets must equal demand, <strong>the market portfolio consisting of all existing financial assets must coincide with the tangency portfolio.</strong></p>
+<p>In equilibrium, that is, &ldquo;everyone&rdquo; must &ldquo;own the market.&rdquo;</p>
+<h2 id="62-capm">6.2 CAPM</h2>
+<h3 id="621-cml">6.2.1 CML</h3>
+<p>In the CAPM, equilibrium in financial markets requires the demand for risky assets |the tangency portfolio| to coincide with the supply of financial assets|the market portfolio.
+The CAPM&rsquo;s first implication is immediate: the market portfolio is efficient.</p>
+<p>The line originating at $\left(0, r_{f}\right)$ and running through $\left(\sigma_{M}, E\left(r_{M}\right)\right)$ is called the capital market line (CML).</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427120637.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427120637.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427120637.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427120637.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427120637.png"
+        title="20200427120637.png" /></div></p>
+<p>Endowed with point $A,$ we always have two choices available when there is a capital market: moving along the MVF or moving along CML by borrowing and lending. First move to B where MRS=MRT of the MVF, and $U_1$ increases to $U_2$; Then we can better off by moving to $M$ and borrowing to reach $C$, utility increases to $U_{3}$.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427121450.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427121450.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427121450.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427121450.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427121450.png"
+        title="20200427121450.png" /></div></p>
+<p>In equilibrium, the MRS is the same for all individuals, regardless of their subjective attitude to risk.</p>
+<p>Hence, it also follows that all individually optimal portfolios are
+located along the CML and are formed as combinations of the risk free asset and the market portfolio.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427132749.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427132749.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427132749.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427132749.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427132749.png"
+        title="20200427132749.png" /></div></p>
+<p>Recall that the trade-off between the standard deviation and expected return of any portfolio combining the riskless asset and the tangency portfolio is described by the linear relationship
+$$
+E\left(\tilde{r}<em>{\mathrm{P}}\right)=r</em>{f}+\left[\frac{E\left(\tilde{r}<em>{T}\right)-r</em>{f}}{\sigma_{T}}\right] \sigma_{P}
+$$
+since the CAPM implies that the tangency and market portfolios coincide, the formula for the Capital Market Line is likewise
+$$
+E\left(\tilde{r}_{P}\right)=r_{f}+\left[\frac{E\left(\tilde{r}_{M}\right)-r_{f}}{\sigma_{M}}\right] \sigma_{P}
+$$
+And since all individually optimal portfolios are located along the CML, it implies that the market portfolio&rsquo;s Sharpe ratio
+$$
+\frac{E{(\tilde{r_M})}-r_f}{\sigma_M}
+$$
+measures the equilibrium price of risk: the expected return that each investor gives up when he or she adjusts his or her total portfolio to reduce risk.</p>
+<h3 id="622-covariance">6.2.2 Covariance</h3>
+<p>Consider making an equally weighted portfolio of $n$ assets, i.e., with all $w_{j}=1 / n .$ Assume that among the rates of return, one has the maximum variance, $\sigma_{\max }^{2} .$</p>
+<ol>
+<li>$\lim <em>{n \rightarrow \infty} \sigma</em>{p}^{2}=\bar{\sigma}_{i j}$</li>
+</ol>
+<p>Observe that
+$$
+\sigma_{p}^{2}=\sum_{i=1}^{n} \sum_{j=1}^{n} W_{i} W_{j} \sigma_{i j}
+$$
+An equally weighted portfolio has
+$$
+\sigma_{p}^{2}=\frac{1}{n^{2}} \Sigma_{i=1}^{n} \Sigma_{j=1}^{n} \sigma_{i j}=\frac{1}{n^{2}} \Sigma_{i=1}^{n} \sigma_{i}^{2}+\frac{1}{n^{2}} \Sigma_{i=1}^{n} \Sigma_{j \neq i} \sigma_{i j}
+$$
+Observe that the first term satisfies
+$$
+\frac{1}{n^{2}} \Sigma_{i=1}^{n} \sigma_{i}^{2}&lt;\frac{1}{n^{2}} * n * \sigma_{\max }^{2} \rightarrow 0 \Leftarrow n \rightarrow \infty
+$$
+The second term satisfies
+$$
+\frac{1}{n^{2}} \Sigma_{i=1}^{n} \Sigma_{j \neq i} \sigma_{i j}=\frac{n^{2}-n}{n^{2}} \bar{\sigma}_{i j} \rightarrow \bar{\sigma}_{i j} \Leftarrow n \rightarrow \infty
+$$
+the average covariance between rates of return.</p>
+<p>Thus
+$$
+\lim <em>{n \rightarrow \infty} \sigma</em>{p}^{2}=\bar{\sigma}<em>{i j}
+$$
+2. $\lim <em>{n \rightarrow \infty} \frac{\partial \sigma</em>{p}^{2}}{\partial w</em>{i}}=2 \bar{\sigma}_{i j}$</p>
+<p>With
+$$
+\sigma_{p}^{2}=\sum_{i=1}^{N} \sum_{j=1}^{N} w_{i} w_{j} \sigma_{i j}=\sum_{i=1}^{N} w_{i}^{2} \sigma_{i}^{2}+\sum_{i \neq j} w_{i} w_{j} \sigma_{i j}
+$$
+Take derivative,
+$$
+\frac{\partial \sigma_{p}^{2}}{\partial w_{i}}=2 w_{i} \sigma_{i}^{2}+2 \Sigma_{j&gt;i} w_{j} \sigma_{i j}
+$$
+Evaluated where all $w_{i}=1 / n,$ this becomes
+$$
+2 \frac{\sigma_{i}^{2}}{n}+2 \frac{n-1}{n} \bar{\sigma}_{i j} \rightarrow 2 \bar{\sigma}_{i j} \Leftarrow n \rightarrow \infty
+$$
+the average covariance between rates of return, and
+$$
+\lim _{n \rightarrow \infty} \frac{\partial \sigma_{p}^{2}}{\partial w_{i}}=2 \bar{\sigma}_{i j}
+$$</p>
+<h3 id="623-deriving-the-capm">6.2.3 Deriving the CAPM</h3>
+<p>Consider an equilibrium, everyone holds combination of risk free asset and market portfolio. Next, let&rsquo;s consider an arbitrary asset - &ldquo;asset $j^{\prime \prime}-$ with random return $\tilde{r}<em>{j},$ expected return $E\left(\tilde{r}</em>{j}\right),$ and standard deviation $\sigma_{j} .$ (Possible, even though $M$ already contains $j$.))</p>
+<p>MPT would take $E\left(\tilde{r}<em>{j}\right)$ and $\sigma</em>{j}$ as &ldquo;data&rdquo; - that is, as given.</p>
+<p>The CAPM again goes further and asks: if asset $j$ is to be demanded by investors with mean-variance utility, what restrictions must $E\left(\tilde{r}<em>{j}\right)$ and $\sigma</em>{j}$ satisfy?</p>
+<p>To answer this question, consider an investor who takes the portion of his or her initial wealth that he or she allocates to risky assets and divides it further: using the fraction $w$ to purchase asset $j$ and the remaining fraction $1-w$ to buy the market portfolio.</p>
+<p>Note that since the market portfolio already includes some of asset $j$ choosing $w&gt;0$ really means that the investor &ldquo;overweights&rdquo; asset $j$ in his or her own portfolio. Conversely, choosing $w&lt;0$ means that the investor &ldquo;underweights&rdquo; asset $j$ in his or her own portfolio.</p>
+<p>Based on our previous analysis, we know that this investor&rsquo;s portfol of risky assets now has random return
+$$
+\tilde{r}<em>{P}=w \tilde{r}</em>{j}+(1-w) \tilde{r}<em>{M}
+$$
+expected return
+$$
+E\left(\tilde{r}</em>{P}\right)=w E\left(\tilde{r}<em>{j}\right)+(1-w) E\left(\tilde{r}</em>{M}\right)
+$$
+and variance
+$$
+\sigma_{P}^{2}=w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}
+$$
+where $\sigma_{j M}$ is the covariance between $\tilde{r}_{j}$ and $\tilde{r}_{M} .$ We can use these formulas to trace out how $\sigma_{P}$ and $E\left(\tilde{r}_{P}\right)$ vary as $w$ changes.</p>
+<p>The red curve traces out how $\sigma_{P}$ and $E\left(\tilde{r}_{P}\right)$ vary as $w$ changes, that is, as asset $j$ gets underweighted or overweighted relative to the market portfolio.</p>
+<p>The red curve passes through $M,$ since when $w=0$ the new portfolio coincides with the market portfolio. For all other values of $w$, however, the red curve must lie below the CML.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427184910.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427184910.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427184910.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427184910.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427184910.png"
+        title="20200427184910.png" /></div></p>
+<p>Otherwise, a portfolio along the CML would be dominated in mean-variance by the new portfolio. Financial markets would no longer be in equilibrium, since some investors would no longer be willing to hold the market portfolio.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427185055.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427185055.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427185055.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427185055.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427185055.png"
+        title="20200427185055.png" /></div></p>
+<p>Together, these observations imply that the red curve must be
+tangent to the CML at point M.</p>
+<p>Key point: Tangent means equal in slope.</p>
+<p>We already know that the slope of the Capital Market Line is
+$$
+\frac{E\left(\tilde{r}<em>{M}\right)-r</em>{f}}{\sigma_{M}}
+$$
+But what is the slope of the red curve?</p>
+<p>Let $f\left(\sigma_{P}\right)$ be the function defined by $E\left(\tilde{r}_{P}\right)=f\left(\sigma_{P}\right)$ and therefore describing the red curve.</p>
+<p>Next, define the functions $g(w)$ and $h(w)$ by
+$$
+\begin{aligned}
+g(w) &amp;=E\left(\tilde{r}<em>{P}\right)=w E\left(\tilde{r}</em>{j}\right)+(1-w) E\left(r_{M}\right) \<br>
+h(w) &amp;=\sigma_{P}=\left[w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}\right]^{1 / 2}
+\end{aligned}
+$$
+Substitute into
+$$
+E\left(\tilde{r}_{P}\right)=f\left(\sigma_{P}\right)
+$$
+then
+$$
+g(w)=f(h(w))
+$$
+and use the chain rule to compute
+$$
+g^{\prime}(w)=f^{\prime}(h(w)) h^{\prime}(w)=f^{\prime}\left(\sigma_{P}\right) h^{\prime}(w)
+$$
+and get
+$$
+f^{\prime}\left(\sigma_{P}\right)=\frac{g^{\prime}(w)}{h^{\prime}(w)}
+$$
+and compute $g^{\prime}(w)$ and $h^{\prime}(w)$ from the formulas we know
+$$
+g(w)=w E\left(\tilde{r}_{j}\right)+(1-w) E\left(r_{M}^{\prime}\right)
+$$
+implies
+$$
+g^{\prime}(w)=E\left(\tilde{r}_{j}\right)-E\left(\tilde{r}_{M}\right)
+$$
+$$
+h(w)=\left[w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}\right]^{1 / 2}
+$$</p>
+<p>implies 
+$$
+\begin{aligned}
+h^{\prime}(w)&amp;=\frac{1}{2}\left(\frac{2 w \sigma_{j}^{2}-2(1-w) \sigma_{M}^{2}+2(1-2 w) \sigma_{j M}}{\left[w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}\right]^{1 / 2}}\right)\<br>
+&amp;=\frac{w \sigma_{j}^{2}-(1-w) \sigma_{M}^{2}+(1-2 w) \sigma_{j M}}{\left[w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}\right]^{1 / 2}}</p>
+<p>\end{aligned}
+$$
+Thus
+$$
+\begin{aligned}
+f^{\prime}\left(\sigma_{P}\right) &amp;=\frac{g^{\prime}(w)}{h^{\prime}(w)} \<br>
+&amp;=\left[E\left(\tilde{r}_{j}\right)-E\left(\tilde{r}_{M}\right)\right]\<br>
+&amp;* \frac{\left[w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}\right]^{1 / 2}}{w \sigma_{j}^{2}-(1-w) \sigma_{M}^{2}+(1-2 w) \sigma_{j M}}
+\end{aligned}
+$$
+The red curve is tangent to the CML at M. Hence $f^{\prime}\left(\sigma_{P}\right)$ equals the slope of the CML when $w=0$</p>
+<p>When $w=0$ 
+$$
+\begin{aligned}
+f^{\prime}\left(\sigma_{P}\right)&amp;=\left[E\left(\tilde{r}_{j}\right)-E\left(r_{M}^{2}\right)\right] * \frac{\left[w^{2} \sigma_{j}^{2}+(1-w)^{2} \sigma_{M}^{2}+2 w(1-w) \sigma_{j M}\right]^{1 / 2}}{w \sigma_{j}^{2}-(1-w) \sigma_{M}^{2}+(1-2 w) \sigma_{j M}} \<br>
+&amp;=\frac{\left[E\left(\tilde{r}_{j}\right)-E\left(r_{M}\right)\right] \sigma_{M}}{\sigma_{j M}-\sigma_{M}^{2}}
+\end{aligned}
+$$
+Meanwhile, we know that the slope of the CML is
+$$
+\frac{E(r \tilde{m})-r_{f}}{\sigma_{M}}
+$$
+The tangency of the red curve with the CML at M therefore requires
+$$
+\frac{\left[E\left(\tilde{r}_{j}\right)-E\left(\tilde{r}_{M}\right)\right] \sigma_{M}}{\sigma_{j M}-\sigma_{M}^{2}}=\frac{E(r \tilde{m})-r_{f}}{\sigma_{M}}
+$$
+Finally, we have
+$$
+E\left(\tilde{r}_{j}\right)=r_{f}+\frac{\sigma_{j M}}{\sigma_{M}^{2}}\left[E\left(r_{M}^{\prime}\right)-r_{f}\right]
+$$
+Let
+$$
+\beta_{j}=\frac{\sigma_{j M}}{\sigma_{M}^{2}}
+$$
+so that this key equation of the CAPM can be written as
+$$
+E\left(\tilde{r}_{j}\right)=r_{f}+\beta_{j}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+where $\beta_{j},$ the &ldquo;beta&rdquo; for asset $j,$ depends on the covariance between the returns on asset $j$ and the market portfolio.</p>
+<p>This equation summarizes a very strong restriction. It implies that if we rank individual stocks or portfolios of stocks according to their betas, their expected returns should all lie along a single security market line with slope $E\left(r_{M}\right)-r_{f}$</p>
+<p>According to the CAPM, all assets and portfolios of assets lie along a single <strong>security market line</strong>. Those with higher betas have higher expected returns.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427190857.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427190857.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427190857.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427190857.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427190857.png"
+        title="20200427190857.png" /></div></p>
+<p>Any portfolio of m securities locate on the SML. Show for $m=2$: 
+$$
+\begin{aligned}
+\mu_{p} &amp;=w \mu_{i}+(1-w) \mu_{j} \<br>
+&amp;\left.=w\left[r_{f}+\beta_{i}\left(\mu_{M}-r_{f}\right)\right]+(1-w)\left[r_{f}+\beta_{j}\left(\mu_{M}-r_{f}\right)\right]\right) \<br>
+&amp;=r_{f}+\left[w \beta_{i}+(1-w) \beta_{j}\right]\left(\mu_{M}-r_{f}\right) \<br>
+&amp;=r_{f}+\left[w \frac{\operatorname{cov}\left(\tilde{r}_{i}, r_{M}^{2}\right)}{\sigma_{M}^{2}}+(1-w) \frac{\operatorname{cov}\left(\tilde{r}_{j}, r_{M}^{2}\right)}{\sigma_{M}^{2}}\right]\left(\mu_{M}-r_{f}\right) \<br>
+&amp;=r_{f}+\frac{\operatorname{cov}\left(w \tilde{r}_{i}+(1-w) \tilde{r}_{j}, r_{M}^{2}\right)}{\sigma_{M}^{2}}\left(\mu_{M}-r_{f}\right) \<br>
+&amp;=r_{f}+\frac{\operatorname{cov}\left(\tilde{r}_{p}, r_{M}^{2}\right)}{\sigma_{M}^{2}}\left(\mu_{M}-r_{f}\right) \<br>
+&amp;=r_{f}+\beta_{p}\left(\mu_{M}-r_{f}\right)
+\end{aligned}
+$$
+$\beta_{p}$ is a value-weighted average of $\beta_{i}$ and $\beta_{j}$, which means that $\beta$ is additive.</p>
+<h3 id="624-cml-vs-sml">6.2.4 CML V.S. SML</h3>
+<p>Capital Market Line</p>
+<ul>
+<li>Efficient set given 1 risk free and $n$ risky assets.</li>
+<li>Relevant for choice between alternative portfolios.</li>
+<li>Drawn in $\left(\sigma_{p}, \mu_{p}\right)$ diagram.</li>
+<li>ray starting at $\left(0, r_{f}\right)$ in that diagram.</li>
+</ul>
+<p>Security market line</p>
+<ul>
+<li>Location of all traded assets in equilibrium.</li>
+<li>Also location of any portfolio of these assets.</li>
+<li>Not relevant for choice between assets which are already traded, so that equilibrium prices are observable.</li>
+<li>But relevant if equilibrium price at $t=0$ is unknown.</li>
+<li>Drawn in $\left(\beta_{j}, \mu_{j}\right)$ diagram.</li>
+<li>A line through $\left(0, r_{f}\right)$ in that diagram</li>
+</ul>
+<p>With
+$$
+\begin{aligned}
+&amp;\sigma_{i M}=\rho_{iM} \cdot \sigma_{i} \sigma_{M}\<br>
+&amp;\beta_{i}=\frac{\sigma_{i M}}{\sigma_{M}^{2}}=\frac{\rho_{iM} \cdot \sigma_{i} \sigma_{x}}{\sigma_{m}^{2}}=\frac{\rho_{iM} \cdot \sigma_{i}}{\sigma_{M}}
+\end{aligned}
+$$</p>
+<p>Rewrite CML &amp; SML
+$$
+\begin{aligned}
+&amp;S M L: \quad E\left(\tilde{r}<em>{i}\right)=r</em>{f}+\frac{E\left(\tilde{r}<em>{M}\right)-r</em>{f}}{\sigma_{M}} \rho_{i M} \cdot \sigma_{i}\<br>
+&amp;C M L: \quad E\left(\tilde{r}_{i}\right)=r_{f}+\frac{E\left(\tilde{r_M}\right)-r_{f}}{\sigma_{M}}\sigma_i
+\end{aligned}
+$$</p>
+<p>Thus an asset lies on both CML &amp; SML i.f.f. $\rho_{iM}=1$. While any asset lies a SML. Therefore, a asset lies on CML i.f.f. it&rsquo;s market portfolio or the combination of market portfolio &amp; risk-free asset.</p>
+<h3 id="625-interpretation">6.2.5 Interpretation</h3>
+<p>$$
+E\left(\tilde{r}<em>{j}\right)=r</em>{f}+\frac{\sigma_{j M}}{\sigma_{M}^{2}}\left[E\left(r_{M}^{\prime}\right)-r_{f}\right]
+$$</p>
+<p>The expected rate of return on any asset depends on only one characteristic of that asset, namely its rate of return&rsquo;s covariance with the rate of return on the market portfolio.</p>
+<p>The expected rate of return is equal to the risk free interest rate plus a term which depends on a measure of risk. (Higher risk means higher expected rate of return.) The relevant measure of risk is the asset&rsquo;s beta. This is multiplied with the expected excess rate of return on the market portfolio.</p>
+<p>Risk measure depends on covariance because the covariance
+determines how much that asset will contribute to the risk of the agent&rsquo;s portfolio. This is true for any agent, since all hold the same risky portfolio.</p>
+<p>There are two complementary ways of interpreting this result.
+Both bring us back to the theme of diversification emphasized by MPT. Both take us a step further, by emphasizing as well the idea of aggregate risk, which cannot be &ldquo;diversified away,&rdquo; and idiosyncratic
+risk, which can be diversified away.</p>
+<h4 id="aggregate-risk--idiosyncratic-risk">Aggregate risk &amp; idiosyncratic risk</h4>
+<p>The first approach uses the CAPM equation in its original form
+$$
+E\left(\tilde{r}<em>{j}\right)=r</em>{f}+\frac{\sigma_{j M}}{\sigma_{M}^{2}}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+together with the definition of correlation, which implies
+$$
+\rho_{j M}=\frac{\sigma_{j M}}{\sigma_{j} \sigma_{M}}
+$$
+Then the CAPM relationship
+$$
+E\left(\tilde{r}_{j}\right)=r_{f}+\left[\frac{E\left(\tilde{r}_{M}\right)-r_{f}}{\sigma_{M}}\right] \rho_{j M} \sigma_{j}
+$$
+The term inside brackets is the equilibrium price of risk. And since the correlation lies between -1 and 1 , the term $\rho_{j M} \sigma_{j}$ satisfying
+$$
+\rho_{j M} \sigma_{j} \leq \sigma_{j}
+$$
+represents the &ldquo;portion&rdquo; of the total risk $\sigma_{j}$ in asset $j$ that is correlated with the market return.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-7cad6eb2d4dbb08a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-7cad6eb2d4dbb08a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-7cad6eb2d4dbb08a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-7cad6eb2d4dbb08a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-7cad6eb2d4dbb08a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>The <strong>idiosyncratic risk</strong> in asset j , that is, the portion that is uncorrelated with the market return, can be diversified away by holding the market portfolio.</p>
+<p>Since this risk can be freely shed through diversification, it is not &ldquo;priced.&rdquo;</p>
+<p>Hence, according to the CAPM, risk in asset j is priced only to the extent that it takes the form of aggregate risk that, because it is correlated with the market portfolio, cannot be diversified away.</p>
+<p>Thus, according to the CAPM:</p>
+<ul>
+<li>
+<p>Only assets with random returns that are positively correlated with the market return earn expected returns above the risk free rate. They must, in order to induce investors to take on more aggregate risk.</p>
+</li>
+<li>
+<p>Assets with returns that are uncorrelated with the market return have expected returns equal to the risk free rate, since their risk can be completely diversified away.</p>
+</li>
+<li>
+<p>Assets with negative betas——that is, with random returns that are negatively correlated with the market return—— have expected returns below the risk free rate! For these assets, $E(\tilde{r_j}) -  r_f &lt; 0$ is like an &ldquo;insurance premium&rdquo; that investors will pay in order to insulate themselves from aggregate risk.</p>
+</li>
+</ul>
+<h4 id="statistical-interpretation">Statistical interpretation</h4>
+<p>The second approach to interpreting the CAPM uses
+$$
+E\left(\tilde{r}<em>{j}\right)=r</em>{f}+\beta_{j}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+together with the definition of
+$$
+\beta_{j}=\frac{\sigma_{j M}}{\sigma_{M}^{2}}
+$$
+Consider a statistical regression of the random return $\tilde{r}_{j}$ on asset $j$ on a constant and the market return $\tilde{r}_{M}$
+$$
+\tilde{r}_{j}=\alpha+\beta_{j} \tilde{r_n}+\varepsilon_{j}
+$$
+This regression breaks the variance of $\tilde{r}_{j}$ down into two &ldquo;orthogonal&rdquo; (uncorrelated) components:</p>
+<ul>
+<li>
+<p>The component $\beta_{j} r_{M}$ that is systematically related to variation in the market return.</p>
+</li>
+<li>
+<p>The component $\varepsilon_{j}$ that is not.</p>
+</li>
+</ul>
+<p>The slope coefficient in a linear regression is
+$$
+\beta_{j}=\frac{\sigma_{j M}}{\sigma_{M}^{2}}
+$$
+the same &ldquo;beta&rdquo; as in the CAPM!</p>
+<p>But this is not an accident: to the contrary, it restates the conclusion that, according to the CAPM, risk in an individual asset is only to the extent that it is correlated with the market return.
+$$
+\begin{aligned}
+\tilde{r}<em>{j} &amp;=\alpha+\beta</em>{j} \tilde{r}<em>{M}+\varepsilon</em>{j} \<br>
+E\left(\tilde{r}<em>{j}\right) &amp;=r</em>{f}+\beta_{j}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+\end{aligned}
+$$
+the CAPM equation implies $E\left(\varepsilon_{j}\right)=0$ and
+$$
+\begin{aligned}
+\operatorname{cov}\left(\varepsilon_{j}, \tilde{r_{M}}\right) &amp;=\operatorname{cov}\left(\tilde{r}_{j}-\alpha-\beta_{j} r \tilde{M}, r_{M}^{2}\right) \<br>
+&amp;=\operatorname{cov}\left(\tilde{r}_{j}, r_{M}\right)-\beta_{j} \operatorname{var}\left(\tilde{r}_{M}\right) \<br>
+&amp;=\sigma_{j M}-\beta_{j} \sigma_{M}^{2}=0
+\end{aligned}
+$$
+This allows us to split $\sigma_{j}^{2}$ in two parts:
+$$
+\operatorname{var}\left(\tilde{r}_{j}\right) \equiv \sigma_{j}^{2}=\beta_{j}^{2} \sigma_{M}^{2}+\sigma_{\varepsilon_{j}}^{2}=\beta_{j} \sigma_{j M}+\sigma_{\varepsilon_{j}}^{2}
+$$
+First term is the aggregate risk. This is reflected in the market valuation. Second term is the unsystematic risk or idiosyncratic risk. As we have seen, it is not reflected in market valuation. The sum of the two called total risk or variance risk. This is relevant for portfolios(MPT), evaluated for being the total wealth of someone, but not for individual securities, to be combined with other securities in portfolios.</p>
+<h5 id="asset-evaluation">Asset evaluation</h5>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200429113612.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200429113612.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200429113612.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200429113612.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200429113612.png"
+        title="20200429113612.png" /></div></p>
+<p>The Security Market Line indicates the required rate of return in equilibrium</p>
+<ul>
+<li>if the actual return lies above SML: underpriced, so buy it</li>
+<li>if the actual return lies below SML: overpriced, so sell it</li>
+<li>excess return(alpha)=actual return-required return</li>
+</ul>
+<h2 id="63-application-of-capm">6.3 Application of CAPM</h2>
+<h3 id="631-valuing-risky-cash-flows">6.3.1 Valuing Risky Cash Flows</h3>
+<p>Let $\tilde{C}<em>{t+1}$ denote a random payoff to be received at time $t+1$ (&ldquo;one period from now&rdquo; and let $P</em>{t}^{C}$ denote its price at time $t$ (&ldquo;today.&quot;)</p>
+<p>If $\tilde{C}<em>{t+1}$ was known in advance, that is, if the payoff were riskless, we could find its value by discounting it at the risk free rate:
+$$
+P</em>{t}^{C}=\frac{\tilde{C}<em>{t+1}}{1+r</em>{f}}
+$$
+But when $\tilde{C}<em>{t+1}$ is truly random, we need to find its expected value $E\left(\tilde{C}</em>{t+1}\right)$ and then &ldquo;penalize&rdquo; it for its riskiness either by discounting at a higher rate
+$$
+P_{t}^{C}=\frac{E\left(\tilde{C}_{t+1}\right)}{1+r_{f}+\psi}
+$$
+or by reducing its value more directly
+$$
+P_{t}^{C}=\frac{E\left(\tilde{C}_{t+1}\right)-\Psi}{1+r_{f}}
+$$
+The CAPM can help us identify the appropriate risk premium $\psi$ or $\Psi$.</p>
+<h4 id="risk-premium-psi">risk premium $\psi$</h4>
+<p>Our previous analysis suggests that, broadly speaking, the risk premium implied by the CAPM will somehow depend on the extent to which the random payoff $\tilde{C}_{t+1}$ is correlated with the return on the market portfolio.</p>
+<p>To apply the CAPM to this valuation problem, we can start by observing that with price $P_{t}^{C}$ today and random payoff $\tilde{C}_{t+1}$ one period from now, the return on this asset or investment project is defined by
+$$
+1+\tilde{r}_{C}=\frac{\tilde{C}_{t+1}}{P_{t}^{C}}
+$$
+or
+$$
+\tilde{r}_{C}=\frac{\tilde{C}_{t+1}-P_{t}^{C}}{P_{t}^{C}}
+$$
+where the notation $\tilde{r}_{C}$ emphasizes that this return, like the future cash flow itself, is risky.</p>
+<p>Now the CAPM implies that the expected return $E\left(\tilde{r}<em>{C}\right)$ must satisfy
+$$
+E\left(\tilde{r}</em>{\mathrm{C}}\right)=r_{f}+\beta_{C}\left[E\left(r_{M}^{\prime}\right)-r_{f}\right]
+$$
+where the project&rsquo;s beta depends on the covariance of its return with the market return:
+$$
+\beta_{C}=\frac{\sigma_{C M}}{\sigma_{M}^{2}}
+$$
+This is what takes skill: with an existing asset, one can use data on the past correlation between its return and the market return to estimate beta. With a totally new project that is just being planned, a combination of experience, creativity, and hard work is often needed to choose the right value for $\beta_{C}$.</p>
+<p>But once a value for $\beta_{C}$ is determined, we can use
+$$
+E\left(\tilde{r}_{C}\right)=r_{f}+\beta_{C}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+together with the definition of the return itself
+$$
+\tilde{r}_{C}=\frac{\tilde{C}_{t+1}}{P_{t}^{C}}-1
+$$
+to write
+$$
+E\left(\frac{\tilde{C}_{t+1}}{P_{t}^{C}}-1\right)=r_{f}+\beta_{C}\left[E\left(r_{M}\right)-r_{f}\right]
+$$
+which implies
+$$
+\begin{aligned}
+\left(\frac{1}{P_{t}^{C}}\right) E\left(\tilde{C}_{t+1}\right) &amp;=1+r_{f}+\beta_{C}\left[E\left(r_{M}\right)-r_{f}\right] \<br>
+P_{t}^{C} &amp;=\frac{E\left(\tilde{C}_{t+1}\right)}{1+r_{f}+\beta_{C}\left[E\left(r_{M}\right)-r_{f}\right]}
+\end{aligned}
+$$
+Right-hand side is &ldquo;expected present value&rdquo;, with Risk-adjusted discount rate(RADR). Risk-adjustment again depends on $\left(E\left(\tilde{r}_{M}\right)-r_{f}\right) / \sigma_{M}^{2}$ and covariance.
+$$
+E\left(\tilde{r}_{C}\right)=r_{f}+\beta_{C}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+the CAPM implies a risk premium of
+$$
+\psi=\beta_{C}\left[E\left(\tilde{r_{M}}\right)-r_{f}\right]
+$$
+depends critically on the covariance between the return on the risky project and the return on the market portfolio.</p>
+<h4 id="risk-premium-psi-1">risk premium $\Psi$</h4>
+<p>Alternatively,
+$$
+\left(\frac{1}{P_{t}^{C}}\right) E\left(\tilde{C}_{t+1}\right)=1+r_{f}+\beta_{C}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+can be rewritten as
+$$
+P_{t}^{C}=\frac{E\left(\tilde{C}_{t+1}\right)-P_{t}^{C} \beta_{C}\left[E\left(\tilde{r_{M}}\right)-r_{f}\right]}{1+r_{f}}
+$$
+indicating that the CAPM also implies
+$$
+\Psi=P_{t}^{C} \beta_{C}\left[E\left(\tilde{r_{M}}\right)-r_{f}\right]
+$$
+which, again as expected, depends critically on the covariance between the return on the risky project and the return on the market portfolio.
+$$
+P_{t}^{C}=\frac{E\left(\tilde{C}_{t+1}\right)-P_{t}^{C} \beta_{C}\left[E\left(\tilde{r_{M}}\right)-r_{f}\right]}{1+r_{f}}
+$$
+Note that
+$$
+E\left(\tilde{C}_{t+1}\right)-P_{t}^{C} \beta_{C}\left[E\left(\tilde{r_{M}}\right)-r_{f}\right]
+$$
+is called the certainty equivalent (in the CAPM sense) of $\tilde{C}_{t+1}$. Price today is present value of expression, just as if that would be received with certainty one period into the future. Not what is called certainty equivalent in expected utility theory.
+$$
+\begin{aligned}
+\left(\frac{1}{P_{t}^{C}}\right) E\left(\tilde{C}_{t+1}\right) &amp;=1+r_{f}+\beta_{C}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right] \<br>
+&amp;=1+r_{f}+\frac{\operatorname{Cov}\left(\frac{\tilde{C}_{t+1}}{P_{t}}-1, \tilde{r}_{M}\right)}{\sigma_{M}^{2}}\left[E\left(r_{M}^{2}\right)-r_{f}\right] \<br>
+&amp;=1+r_{f}+\frac{E\left(r_{M}\right)-r_{f}}{\sigma_{M}^{2}}\left[\operatorname{Cov}\left(\frac{\tilde{C}_{t+1}}{P_{t}^{C}}, r_{M}^{-}\right)-\operatorname{Cov}\left(1, r_{M}\right)\right] \<br>
+&amp;=1+r_{f}+\lambda \operatorname{Cov}\left(\frac{\tilde{C}_{t+1}}{P_{t}^{C}}, r_{M}^{-}\right) \<br>
+&amp;=1+r_{f}+\lambda \frac{\operatorname{Cov}\left(\tilde{C}_{t+1}, \tilde{r}_{M}\right)}{P_{t}^{C}}
+\end{aligned}
+$$
+where $\lambda=\left(\mu_{M}-r_{f}\right) / \sigma_{M}^{2}$</p>
+<p>Multiply $P_{t}^{C}$ on both sides
+$$
+E\left(\tilde{C}_{t+1}\right)=P_{t}^{C}\left(1+r_{f}\right)+\lambda \operatorname{Cov}\left(\tilde{C}_{t+1}, \tilde{r}_{M}\right)
+$$
+and thus
+$$
+P_{t}^{C}=\frac{E\left(\tilde{C}_{t+1}\right)-\lambda \operatorname{Cov}\left(\tilde{C}_{t+1}, \tilde{r}_{M}\right)}{1+r_{f}}
+$$</p>
+<h4 id="valuation-of-firms">Valuation of firms</h4>
+<p>$$
+P_{0}^{c}=\frac{E\left(\tilde{C}_{1}\right)-\lambda \operatorname{Cov}\left(\tilde{C}_{1}, \tilde{r}_{M}\right)}{1+r_{f}} \equiv V\left(\tilde{C}_{1}\right)
+$$
+defines valuation function $V\left(\text { ), given some } r_{f}, r_{M}\right.$</p>
+<ul>
+<li>$\tilde{C}_{1}$ is value of share at $t=1,$ including dividends.</li>
+<li>Consider firm is financed $100 %$ by equity (no debt). Firm&rsquo;s net cash flow at $t=1$ goes to shareholders, thus plug in the net cash flow instead of $\tilde{C}_{1}$, Then formula gives value of all shares in firm.</li>
+</ul>
+<p>What if $\tilde{C}<em>{1}=a \tilde{C}</em>{i 1}+b \tilde{C}_{j 1}$? $(a&gt;0, b&gt;0)$</p>
+<p>Linearity of $E()$ and $\operatorname{cov}()$ implies $P_{0}^{C}=a P_{0}^{i}+b P_{0}^{i}$
+$$
+\begin{aligned}
+P_{0}^{C} &amp;=\frac{E\left(\tilde{C}_{1}\right)-\lambda \operatorname{Cov}\left(\tilde{C}_{1}, r_{M}\right)}{1+r_{f}} \<br>
+&amp;=\frac{E\left(a \tilde{C}_{i 1}+b \tilde{C}_{j 1}\right)-\lambda \operatorname{cov}\left(\tilde{C}_{1}, r_{M}\right)}{1+r_{f}} \<br>
+&amp;=\frac{E\left(a \tilde{C}_{i 1}+b \tilde{C}_{j 1}\right)-\lambda \operatorname{cov}\left(a \tilde{C}_{i 1}+b \tilde{C}_{j 1}, r_{M}\right)}{1+r_{f}} \<br>
+&amp;=\frac{\partial E\left(\tilde{C}_{i 1}\right)+b E\left(\tilde{C}_{j 1}\right)-\lambda\left[\operatorname{acov}\left(\tilde{C}_{i 1}, r_{M}\right)+b \operatorname{cov}\left(\tilde{C}_{j 1}, \tilde{r}_{M}\right)\right]}{1+r_{f}} \<br>
+&amp;=a P_{0}^{i}+b P_{0}^{j}
+\end{aligned}
+$$
+where $\lambda=\left(\mu_{M}-r_{f}\right) / \sigma_{M}^{2}$ Diversification is no justification for mergers; Diversification can be done by shareholders.</p>
+<h2 id="64-pros-and-cons-of-capm">6.4 Pros and Cons of CAPM</h2>
+<h3 id="641-empirical-shortcomings">6.4.1 empirical shortcomings</h3>
+<p>An enormous literature is devoted to empirically testing the CAPM&rsquo;s implications.</p>
+<p>Although results are mixed, studies have shown that when individual portfolios are ranked according to their betas, expected returns tend to line up as suggested by the theory.</p>
+<p>A famous article that presents results along these lines is by Eugene Fama (Nobel Prize 2013) and James MacBeth, &ldquo;Risk, Return, and Equilibrium,&rdquo; Journal of Political Economy Vol.81 (May-June 1973),pp.607-636.</p>
+<p>Early work on the MPT, the CAPM, and econometric tests of the efficient markets hypothesis and the CAPM is discussed extensively in Eugene Fama&rsquo;s 1976 textbook, Foundations of Finance.</p>
+<p>More recent evidence against the CAPM&rsquo;s implications is presented by Eugene Fama and Kenneth French, &ldquo;Common Risk Factors in the Returns on Stocks and Bonds,&rdquo; Journal of Financial Economics Vol.33 (February 1993): pp.3-56.</p>
+<p>This paper shows that equity shares in small firms and in firms with high book (accounting) to market value have expected returns that differ strongly from what is predicted by the CAPM alone.</p>
+<p>Quite a bit of recent research has been directed towards understanding the source of these &ldquo;anomalies&rdquo;.</p>
+<h3 id="642-pros">6.4.2 Pros</h3>
+<p>Despite some <strong>empirical shortcomings</strong>, however, the CAPM quite usefully deepens our understanding of the gains from diversification.</p>
+<p>Related, the CAPM alerts us to the important distinction between idiosyncratic risk, which can be diversified away, and aggregate risk, which cannot.</p>
+<p>Like MPT, the CAPM must rely on one of the <strong>two strong assumptions</strong>��either quadratic utility or normally-distributed returns|that justify mean-variance utility.</p>
+<p>And while the CAPM is an equilibrium theory of asset pricing, it stops short of linking asset returns to underlying economic fundamentals.</p>
+<h3 id="643-apt--adt">6.4.3 APT &amp; ADT</h3>
+<p>These last two points motivate our interest in other asset pricing theories, which are less restrictive in their assumptions and/or draw closer connections between asset prices and the economy as a whole.</p>
+<p>Arbitrage Pricing Theory, to which we will turn our attention next, yields many of the same implications as the CAPM, but
+requires less restrictive assumptions about preferences and the distribution of asset returns.</p>
+<p>The equilibrium version of Arrow-Debreu theory draws links between asset prices and the economy that are only implicit in the CAPM.</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/6.-capm/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/6.-capm/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/6.-capm/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/6.-capm/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/7.-arbitrage-pricing-theory/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/5.-modern-portfolio-theory/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

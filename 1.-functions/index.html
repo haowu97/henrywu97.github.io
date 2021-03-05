@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="1. Functions Math review o References o Appendix of MWG o https://www.coursera.org/learn/mathematics-for-economists/
+https://mjo.osborne.economics.utoronto.ca/index.php/tutorial/index/1/toc/c o How? read, read, read o Homework o submit to: https://workspace.jianguoyun.com/inbox/collect/283420eeee554c158a4cf4bbe8cf97a6/submit
+A language without ambiguity
+Do NOT be afraid!
+Matrix Notation for Derivatives $ \mathbf{x} \in \mathbb{R}^{\mathrm{N}}: $ column vector $ \bullet x \cdot y=x^{T} y, x \cdot A_{N \times M}=x^{T} A\left(\because x \cdot &quot; \text { can always be read as } &quot; x^{T \prime \prime}\right) $ o Given a vector valued differentiable function $ \mathrm{f}: \mathbb{R}^{\mathrm{N}} \rightarrow \mathbb{R}^{\mathrm{M}} $ o denote by Df $ (x) $ the $ M \times N $ matrix whose mnth entry is $ \partial f_{m}(x) / \partial x_{n} $ If $ M=1, $ then $ f(x) \in \mathbb{R} $ (real-valued function), and" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/1.-functions/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1. Functions Math review o References o Appendix of MWG o https://www.coursera.org/learn/mathematics-for-economists/
+https://mjo.osborne.economics.utoronto.ca/index.php/tutorial/index/1/toc/c o How? read, read, read o Homework o submit to: https://workspace.jianguoyun.com/inbox/collect/283420eeee554c158a4cf4bbe8cf97a6/submit
+A language without ambiguity
+Do NOT be afraid!
+Matrix Notation for Derivatives $ \mathbf{x} \in \mathbb{R}^{\mathrm{N}}: $ column vector $ \bullet x \cdot y=x^{T} y, x \cdot A_{N \times M}=x^{T} A\left(\because x \cdot &quot; \text { can always be read as } &quot; x^{T \prime \prime}\right) $ o Given a vector valued differentiable function $ \mathrm{f}: \mathbb{R}^{\mathrm{N}} \rightarrow \mathbb{R}^{\mathrm{M}} $ o denote by Df $ (x) $ the $ M \times N $ matrix whose mnth entry is $ \partial f_{m}(x) / \partial x_{n} $ If $ M=1, $ then $ f(x) \in \mathbb{R} $ (real-valued function), and"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/1.-functions/" /><link rel="prev" href="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" /><link rel="next" href="https://henrywu97.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/1.-functions\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  2371 ,
+        "url": "https:\/\/henrywu97.github.io\/1.-functions\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/1.-functions/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/1.-functions/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2371 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;12 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#quasi-concave-functions">Quasi-concave Functions</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="1-functions">1. Functions</h1>
+<p>Math review
+o References
+o Appendix of MWG
+o <a href="https://www.coursera.org/learn/mathematics-for-economists/">https://www.coursera.org/learn/mathematics-for-economists/</a></p>
+<p><a href="https://mjo.osborne.economics.utoronto.ca/index.php/tutorial/index/1/toc/c">https://mjo.osborne.economics.utoronto.ca/index.php/tutorial/index/1/toc/c</a>
+o How?
+read, read, read
+o Homework
+o submit to: <a href="https://workspace.jianguoyun.com/inbox/collect/283420eeee554c158a4cf4bbe8cf97a6/submit">https://workspace.jianguoyun.com/inbox/collect/283420eeee554c158a4cf4bbe8cf97a6/submit</a></p>
+<p>A language without ambiguity</p>
+<p>Do NOT be afraid!</p>
+<p>Matrix Notation for Derivatives
+$ \mathbf{x} \in \mathbb{R}^{\mathrm{N}}: $ column vector
+$ \bullet x \cdot y=x^{T} y, x \cdot A_{N \times M}=x^{T} A\left(\because x \cdot &quot; \text { can always be read as } &quot; x^{T \prime \prime}\right) $
+o Given a vector valued differentiable function $ \mathrm{f}: \mathbb{R}^{\mathrm{N}} \rightarrow \mathbb{R}^{\mathrm{M}} $
+o denote by Df $ (x) $ the $ M \times N $ matrix whose mnth entry is $ \partial f_{m}(x) / \partial x_{n} $
+If $ M=1, $ then $ f(x) \in \mathbb{R} $ (real-valued function), and</p>
+<p>$$
+\operatorname{Df}(\mathrm{x})=\left(\partial \mathrm{f}(\mathrm{x}) / \partial \mathrm{x}<em>{1}, \partial \mathrm{f}(\mathrm{x}) / \partial \mathrm{x}</em>{2}, \cdots, \partial \mathrm{f}(\mathrm{x}) / \partial \mathrm{x}_{\mathrm{n}}\right)=[\nabla \mathrm{f}(\mathrm{x})]^{\mathrm{T}}
+$$</p>
+<p>o and the Hessian matrix $ \mathrm{D}^{2} \mathrm{f}(\mathrm{x})=\mathrm{D}[\nabla \mathrm{f}(\mathrm{x})] $</p>
+<p>Matrix Notation for Derivatives
+a An exchange economy with $ \mathrm{N} $ goods, and $ \mathrm{M} $ consumers; for each agent i, the utility function $ u_{i}: \mathbb{R}^{N} \rightarrow \mathbb{R} $.
+o Demand function $ x: \mathbb{R}^{N+1} \rightarrow \mathbb{R}^{M}, $ where for each $ i \in M $
+$ \mathrm{x}_{\mathrm{i}}\left(\mathrm{p}_{1}, \mathrm{p}_{2}, \cdots, \mathrm{p}_{\mathrm{n}}, \mathrm{w}\right), $ is the demand of consumer i.
+$ \bullet D_{p} x(p, w)=\left[\begin{array}{cccc}\partial x_{1} / \partial p_{1} &amp; \partial x_{1} / \partial p_{2} &amp; \cdots &amp; \partial x_{1} / \partial p_{n} \ \partial x_{2} / \partial p_{1} &amp; \partial x_{2} / \partial p_{2} &amp; \cdots &amp; \partial x_{2} / \partial p_{n} \ \vdots &amp; \vdots &amp; \vdots &amp; \vdots \ \partial x_{n} / \partial p_{1} &amp; \partial x_{n} / \partial p_{2} &amp; \cdots &amp; \partial x_{n} / \partial p_{n}\end{array}\right] $
+$ \bullet \mathrm{M} \times \mathrm{N} $ matrix $ (\text { &ldquo;Law of demand&rdquo; }) $</p>
+<p>$$
+\equiv, \quad \equiv
+$$</p>
+<p>Matrix Notation for Derivatives
+o Concavity of $ u(\cdot): $</p>
+<p>$$
+\begin{aligned}
+\mathrm{D}^{2} \mathrm{u}<em>{\mathrm{i}}(\mathrm{x})=&amp; \mathrm{D}\left[\nabla \mathrm{u}</em>{\mathrm{i}}(\mathrm{x})\right]=\mathrm{D}\left[\left(\partial \mathrm{u}<em>{\mathrm{i}} / \partial \mathrm{x}</em>{1}, \partial \mathrm{u}<em>{\mathrm{i}} / \partial \mathrm{x}</em>{2}, \cdots, \partial \mathrm{u}<em>{\mathrm{i}} / \partial \mathrm{x}</em>{\mathrm{n}}\right)^{\mathrm{T}}\right] \<br>
+=&amp;\left[\begin{array}{cccc}
+\partial^{2} \mathrm{u}<em>{\mathrm{i}} / \partial^{2} \mathrm{x}</em>{1} &amp; \partial^{2} \mathrm{u}<em>{\mathrm{i}} / \partial \mathrm{x}</em>{1} \partial \mathrm{x}<em>{2} &amp; \cdots &amp; \partial^{2} \mathrm{u}</em>{\mathrm{i}} / \partial \mathrm{x}<em>{1} \partial \mathrm{x}</em>{\mathrm{n}} \<br>
+\partial^{2} \mathrm{u}<em>{\mathrm{i}} / \partial \mathrm{x}</em>{2} \partial \mathrm{x}<em>{1} &amp; \partial^{2} \mathrm{u}</em>{\mathrm{i}} / \partial^{2} \mathrm{x}<em>{2} &amp; \cdots &amp; \partial^{2} \mathrm{u}</em>{\mathrm{i}} / \partial \mathrm{x}<em>{2} \partial \mathrm{x}</em>{\mathrm{n}} \<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>
+\partial^{2} \mathrm{u}<em>{\mathrm{i}} / \partial \mathrm{x}</em>{\mathrm{n}} \partial \mathrm{x}<em>{1} &amp; \partial^{2} \mathrm{u}</em>{\mathrm{i}} / \partial \mathrm{x}<em>{\mathrm{n}} \partial \mathrm{x}</em>{2} &amp; \cdots &amp; \partial^{2} \mathrm{u}<em>{\mathrm{i}} / \partial^{2} \mathrm{x}</em>{\mathrm{n}}
+\end{array}\right]
+\end{aligned}
+$$</p>
+<p>Read by yourself
+o The chain rule</p>
+<ul>
+<li>The production rule
+Homogeneous Functions</li>
+</ul>
+<p>Let $ \mathrm{f}: \mathbb{R}<em>{+}^{\mathrm{N}} \rightarrow \mathbb{R} $
+Definition. A function $ f\left(x</em>{1}, x_{2}, \cdots, x_{N}\right) $ is homogenous of degree $ r $ (for $ \mathrm{r}=\cdots,-1,0,1, \cdots) $ if for every $ \mathrm{t}&gt;0 $ we have</p>
+<p>$$
+\mathrm{f}\left(\mathrm{tx}<em>{1}, \mathrm{tx}</em>{2}, \cdots, \mathrm{tx}<em>{\mathrm{N}}\right)=\mathrm{t}^{\mathrm{r}} \mathrm{f}\left(\mathrm{x}</em>{1}, \mathrm{x}<em>{2}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right)
+$$</p>
+<p>example: $ f\left(x_{1}, x_{2}\right)=x_{1} / x_{2}, f\left(x_{1} x_{2}\right)=\left(x_{1} x_{2}\right)^{1 / 2} $</p>
+<p>Example: the demand function of object $ j: x_{j}\left(p_{1}, p_{2}, \cdots, p_{n}\right) $ (homogeneous of degree zero)</p>
+<p>$$
+\mathrm{x}<em>{\mathrm{i}}\left(\mathrm{p}</em>{1}, \mathrm{p}<em>{2}, \cdots, \mathrm{p}</em>{\mathrm{n}}\right)=\mathrm{x}<em>{\mathrm{j}}\left(1, \mathrm{p}</em>{2} / \mathrm{p}<em>{1}, \cdots, \mathrm{p}</em>{\mathrm{n}} / \mathrm{p}_{1}\right)
+$$</p>
+<p>Homogeneous Functions
+Theorem. If $ \left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right) $ is homogenous of degree $ \mathrm{r}, $ then for any $ \mathrm{n}=1, \cdots, \mathrm{N} $ the partial derivative function $ \partial \mathrm{f}\left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right) / \partial \mathrm{x}_{\mathrm{n}} $ is
+homogeneous of degree $ \mathrm{r}-1 . $
+Proof. By the definition of homogeneity,</p>
+<p>$$
+\mathrm{f}\left(\mathrm{tx}<em>{1}, \cdots, \mathrm{tx}</em>{\mathrm{N}}\right)-\mathrm{t}^{\mathrm{T}} \mathrm{f}\left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right)=0
+$$</p>
+<p>Differentiating this expression with respect to $ \mathrm{x}_{\mathrm{n}} $
+Therefore,</p>
+<p>$$
+\frac{\partial f\left(t x_{1}, \cdots, t x_{N}\right)}{\partial x_{n}}=t^{r-1} \frac{\partial f\left(x_{1}, \cdots, x_{N}\right)}{\partial x_{n}}
+$$</p>
+<p>Homogeneous Functions</p>
+<p>P Figure M.B.1</p>
+<p>$ -\frac{\partial f(t \bar{x}) / \partial x_{1}}{\partial f(t \bar{x}) / \partial x_{2}}=-\frac{t^{r-1} \partial f(\bar{x}) / \partial x_{1}}{t^{r-1} \partial f(\bar{x}) / \partial x_{2}}=-\frac{\partial f(\bar{x}) / \partial x_{1}}{\partial f(\bar{x}) / \partial x_{2}} $
+e representative indifferent curve ( &ldquo;homothetic&rdquo; preference $ \mathrm{u}(\mathrm{x})=\mathrm{g}(\mathrm{f}(\mathrm{x}))) $</p>
+<p>Euler&rsquo;s Formula</p>
+<p>o Theorem. (Euler&rsquo;s Formula) Suppose that $ \mathrm{f}\left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right) $ is homogenous of degree r and differentiable. Then at any $ \left(\overline{\mathrm{x}}<em>{1}, \cdots, \overline{\mathrm{x}}</em>{\mathrm{N}}\right) $ we have</p>
+<p>$$
+\sum_{n=1}^{N} \frac{\partial f\left(\bar{x}_{1}, \cdots, \bar{x}_{N}\right)}{\partial x_{n}} \bar{x}_{n}=r f\left(\bar{x}_{1}, \cdots, \bar{x}_{N}\right)
+$$</p>
+<p>or, in matrix notation, $ \nabla \mathrm{f}(\overline{\mathrm{x}}) \cdot \overline{\mathrm{x}}=\mathrm{r} \mathrm{f}(\overline{\mathrm{x}}) $
+Proof.</p>
+<p>$$
+\mathrm{f}\left(\mathrm{t} \overline{\mathrm{x}}<em>{1}, \cdots, \mathrm{t} \overline{\mathrm{x}}</em>{\mathrm{N}}\right)-\mathrm{t}^{\mathrm{r}} \mathrm{f}\left(\overline{\mathrm{x}}<em>{1}, \cdots, \overline{\mathrm{x}}</em>{\mathrm{N}}\right)=0
+$$</p>
+<p>Differentiating this expression with respect to t,</p>
+<p>$$
+\sum_{n=1}^{N} \frac{\partial f\left(t \bar{x}_{1}, \cdots, \bar{t} \bar{x}_{N}\right)}{\partial x_{n}} \bar{x}_{n}-r t^{r-1} f\left(\bar{x}_{1}, \cdots, \bar{x}_{N}\right)=0
+$$</p>
+<p>Evaluating at $ \mathrm{t}=1, $ we obtain Euler&rsquo;s formula.</p>
+<p>$$
+\equiv
+$$</p>
+<p>1:
+Euler&rsquo;s Formula
+o Suppose a production function $ \mathrm{f} $ is homogencous of degree one. Euler&rsquo;s formula says that</p>
+<p>$$
+\sum_{n-1}^{N} \frac{\partial f\left(\bar{x}_{1}, \cdots, \bar{x}_{N}\right)}{\partial x_{n}} \bar{x}_{n}=f\left(\bar{x}_{1}, \cdots, \bar{x}_{N}\right)
+$$</p>
+<p>real return: $ w_{n}=\frac{\partial f\left(x_{1}, \cdots, x_{N}\right)}{\partial x_{n}}(\text { marginal product }) $</p>
+<p>$$
+\sum_{n=1}^{N} w_{n} \bar{x}_{n}=f\left(\bar{x}_{1}, \cdots, \bar{x}_{N}\right)
+$$</p>
+<p>Concave (and Convex) Functions</p>
+<p><strong>Definition [concave]</strong> The function $ f: A \rightarrow \mathbb{R} $, defined on the convex set $ A \subset \mathbb{R}^{N} $, is concave if
+$$
+\mathrm{f}\left(\alpha \mathrm{x}^{\prime}+(1-\alpha) \mathrm{x}\right) \geq \alpha \mathrm{f}\left(\mathrm{x}^{\prime}\right)+(1-\alpha) \mathrm{f}(\mathrm{x})
+$$</p>
+<p>for all x and $ \mathrm{x}^{\prime} \in \mathrm{A} $ and all $ \alpha \in[0,1] . $ If the inequality is strict for all $ \mathrm{x}^{\prime} \neq \mathrm{x} $ and all $ \alpha \in(0,1), $ then we say that the function is <strong>strictly concave</strong>.</p>
+<p>Graph: the straight line connecting any two points in the graph of $ f(\cdot) $ lies entirely below the graph.</p>
+<p>Concave Functions</p>
+<p><strong>Theorem [A second characterization of concave functions]</strong>: The (continuously differentiable) function $ \mathrm{f}: \mathrm{A} \rightarrow \mathbb{R} $ is concave if and only if
+$$
+f(x+z) \leq f(x)+\nabla f(x) \cdot z
+$$</p>
+<p>for all $ \mathrm{x} \in \mathrm{A} $ and $ \mathrm{z} \in \mathbb{R}^{\mathrm{N}}(\text { with } \mathrm{x}+\mathrm{z} \in \mathrm{A}) . $ The function $ \mathrm{f}(\cdot) $ is strictly concave if this inequality holds strictly for all $ \mathrm{x} \in \mathrm{A} $ and all $ \mathrm{z} \neq 0 . $</p>
+<p>Graph: any tangent to the graph must lie (weakly) above the graph</p>
+<p><strong>Definition [negative semidefinite]</strong>. The $ \mathrm{N} \times \mathrm{N} $ matrix $ \mathrm{M} $ is negative semidefinite if
+$$
+z \cdot M z \leq 0
+$$</p>
+<p>for all $ z \in \mathbb{R}^{N} . $ If the inequality is strict for all $ z \neq 0, $ then the matrix $ M $ is negative definite.</p>
+<p><strong>Theorem</strong>: The (twice continuously differentiable) function $ \mathrm{f}: \mathrm{A} \rightarrow \mathbb{R} $ is concave if and only if $ \mathrm{D}^{2} \mathrm{f}(\mathrm{x}) $ is negative semidefinite for every $ \mathrm{x} \in \mathrm{A} . $ If $ \mathrm{D}^{2} \mathrm{f}(\mathrm{x}) $ is negative definite for every $ \mathrm{x} \in \mathrm{A}, $ then the function is strictly concave.</p>
+<p>Concave Functions</p>
+<p>Let $ f: \mathbb{R} \rightarrow \mathbb{R} $ be a twice continuously differentiable function. Then $ f $ is concave if</p>
+<ol>
+<li>$ f\left(\alpha x^{\prime}+(1-\alpha) x\right) \geq \alpha f\left(x^{\prime}\right)+(1-\alpha) f(x), $ or</li>
+<li>$ \mathrm{f}(\mathrm{x}+\mathrm{z}) \leq \mathrm{f}(\mathrm{x})+\mathrm{f}^{\prime}(\mathrm{x}) \mathrm{z}, $ or</li>
+<li>$ \mathrm{f}^{\prime \prime}(\mathrm{x}) \leq 0\left(\Leftarrow \mathrm{z}^{2} \mathrm{f}^{\prime \prime}(\mathrm{x}) \leq 0 \text { for all } \mathrm{z} \in \mathbb{R}^{\mathrm{N}}\right) $</li>
+</ol>
+<p>Matrices: Negative (Semi) Definiteness</p>
+<p>Theorem. Suppose that $ \mathrm{M} $ is an $ \mathrm{N} \times \mathrm{N} $ matrix.</p>
+<ol>
+<li>The matrix M is negative definite if and only if the symmetric matrix $ \mathrm{M}+\mathrm{M}^{\mathrm{T}} $ is negative definite.</li>
+<li>If $ \mathrm{M} $ is symmetric, then $ \mathrm{M} $ is negative definite if and only if all of the characteristic values of M are negative.</li>
+<li>If $ \mathrm{M} $ is symmetric, then $ \mathrm{M} $ is negative definite if and only if $ \left.(-1)^{\mathrm{r}}\right|<em>{\mathrm{r}} \mathrm{M}</em>{\mathrm{r}} \mid&gt;0 $ for every $ \mathrm{r}=1, \cdots, \mathrm{N} $</li>
+<li>If $ \mathrm{M} $ is symmetric, then $ \mathrm{M} $ is negative semidefinite if and only if $ \left.(-1)^{\mathrm{r}}\right|<em>{\mathrm{r}} \mathrm{M}</em>{\mathrm{r}}^{\pi} \mid \geq 0 $ for every $ \mathrm{r}=1, \cdots, \mathrm{N} $ and for every permutation $ \pi $ of the indices $ {1, \cdots, N} . $ (Note that $ M^{\pi} $ is the matrix in which rows and columns are correspondingly permuted.)</li>
+</ol>
+<p>Matrices: Negative (Semi) Definiteness</p>
+<p>Example: a real valued function of two variables, $ f\left(x_{1}, x_{2}\right) $
+$$
+\mathrm{D}^{2} \mathrm{f}\left(\mathrm{x}_{1}, \mathrm{x}_{2}\right)=\mathrm{D}\left(\left(\mathrm{f}_{1}\left(\mathrm{x}_{1}, \mathrm{x}_{2}\right), \mathrm{f}_{2}\left(\mathrm{x}_{1}, \mathrm{x}_{2}\right)^{\mathrm{T}}\right)=\left[\begin{array}{ll}
+\mathrm{f}_{11} &amp; \mathrm{f}_{12} \<br>
+\mathrm{f}_{21} &amp; \mathrm{f}_{22}
+\end{array}\right]\right.
+$$</p>
+<p>$ \mathrm{f}(\cdot) $ is strictly concave if $ \mathrm{D}^{2} \mathrm{f}\left(\mathrm{x}<em>{1}, \mathrm{x}</em>{2}\right) $ is negative definite for all $ \left(\mathrm{x}<em>{1}, \mathrm{x}</em>{2}\right) $. This is true if and only if
+$$
+\left|f_{11}\right|&lt;0 \quad \text { and }\left|\begin{array}{cc}
+f_{11} &amp; f_{12} \<br>
+f_{21} &amp; f_{22}
+\end{array}\right|&gt;0
+$$</p>
+<p>or equivalently, if and only if</p>
+<p>$$
+\mathrm{f}<em>{11}&lt;0 \text { and } \mathrm{f}</em>{11} \mathrm{f}<em>{22}-\mathrm{f}</em>{12}^{2}&gt;0
+$$</p>
+<p>$ \mathrm{f}(\cdot) $ is concave if $ \mathrm{D}^{2} \mathrm{f}\left(\mathrm{x}<em>{1}, \mathrm{x}</em>{2}\right) $ is negative semidefinite for all $ \left(\mathrm{x}<em>{1}, \mathrm{x}</em>{2}\right) $. This is true if and only if
+$$
+\left|f_{11}\right| \leq 0 \quad \text { and } \quad\left|\begin{array}{cc}
+f_{11} &amp; f_{12} \<br>
+f_{21} &amp; f_{22}
+\end{array}\right| \geq 0
+$$</p>
+<p>and, permuting the rows and columns of $ \mathrm{D}^{2} \mathrm{f}\left(\mathrm{x}<em>{1}, \mathrm{x}</em>{2}\right) $,</p>
+<p>$$
+\left|f_{22}\right| \leq 0 \quad \text { and } \quad\left|\begin{array}{cc}
+f_{22} &amp; f_{21} \<br>
+f_{12} &amp; f_{11}
+\end{array}\right| \geq 0
+$$</p>
+<p>Thus, $ f(\cdot) $ is concave if and only if</p>
+<p>$$
+\mathrm{f}<em>{11} \leq 0, \quad \mathrm{f}</em>{22} \leq 0, \quad \text { and } \quad \mathrm{f}<em>{11} \mathrm{f}</em>{22}-\mathrm{f}_{12}^{2} \geq 0
+$$</p>
+<h2 id="quasi-concave-functions">Quasi-concave Functions</h2>
+<p>Convex preferences: &ldquo;averages are better than extremes.&rdquo;</p>
+<p>Formally, a preference relation $ \succeq $ on the consumption set $ X $ is called (strictly) convex if for any $ \mathrm{x}, \mathrm{y}, \mathrm{z} \in \mathrm{X} $ where $ \mathrm{y} \succeq \mathrm{x} $ and $ \mathrm{z} \succeq \mathrm{x}(\text { and } \mathrm{y} \neq \mathrm{z}) $ and for every $ \left.\theta \in[0,1],(\theta \in(0,1)) \theta_{\mathrm{y}}+(1-\theta) z \succeq \mathrm{x} \text { (hold with } \succ\right) $</p>
+<p>A concave utility function represents a convex preference:</p>
+<p>$$
+\mathrm{u}(\theta \mathrm{y}+(1-\theta) \mathrm{z}) \geq \theta \mathrm{u}(\mathrm{y})+(1-\theta) \mathrm{u}(\mathrm{z}) \geq[\theta+(1-\theta)] \mathrm{u}(\mathrm{x})=\mathrm{u}(\mathrm{x})
+$$</p>
+<p>However, concavity is a <strong>&ldquo;cardinal&rdquo;</strong> property in that it will not generally be preserved under an increasing transformation of $ \mathrm{f}(\cdot) $.</p>
+<p>E.g. $ \mathbf{u}(\mathbf{x})=\mathbf{x}^{1 / 2}, \mathbf{f}(\mathbf{y})=\mathbf{y}^{4} $, then $ \mathbf{f}(\mathbf{u}(\mathbf{x}))=\mathbf{x}^{2} $</p>
+<p>That is, <strong>there are utility functions that are not concave but represent convex preferences</strong>, such as quasi-concave functions.</p>
+<p>Definition The function $ \mathrm{f}: \mathrm{A} \rightarrow \mathbb{R} $, defined on the convex set $ \mathrm{A} \subset \mathbb{R}^{\mathrm{N}} $, is quasi-concave if its upper contour sets $ {\mathrm{s} \in \mathrm{A}: \mathrm{f}(\mathrm{s}) \geq \mathrm{t}} $ are convex sets; that is, if</p>
+<p>$ \mathrm{f}(\mathrm{x}) \geq \mathrm{t} $ and $ \mathrm{f}\left(\mathrm{x}^{\prime}\right) \geq \mathrm{t} $ implies that $ \mathrm{f}\left(\alpha \mathrm{x}+(1-\alpha) \mathrm{x}^{\prime}\right) \geq \mathrm{t} $</p>
+<p>for any $ \mathrm{t} \in \mathbb{R}, \mathrm{x}, \mathrm{x}^{\prime} \in \mathrm{A}, $ and $ \alpha \in[0,1] . $ If the inequality is strict
+whenever $ \mathrm{x} \neq \mathrm{x}^{\prime} $ and $ \alpha \in(0,1), $ then we say that $ \mathrm{f}(\cdot) $ is strictly quasi-concave.</p>
+<p>Theorem. The (continuously differentiable) function $ f: A \rightarrow \mathbb{R} $ is quasi-concave if and only if
+$$
+\nabla f(x) \cdot\left(x^{\prime}-x\right) \geq 0 \quad \text { whenever } \quad f\left(x^{\prime}\right) \geq f(x)
+$$</p>
+<p>for all $ \mathrm{x}, \mathrm{x}^{\prime} \in \mathrm{A} . $ If $ \nabla \mathrm{f}(\mathrm{x}) \cdot\left(\mathrm{x}^{\prime}-\mathrm{x}\right)&gt;0 $ whenever $ \mathrm{f}\left(\mathrm{x}^{\prime}\right) \geq \mathrm{f}(\mathrm{x}) $ and
+$ \mathrm{x}^{\prime} \neq \mathrm{x}, $ then $ \mathrm{f}(\cdot) $ is strictly quasi-concave.
+Graph. The gradient vector $ \nabla f(x) $ and the vector $ \left(x^{\prime}-x\right) $ must form an acute angle(锐角).</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200806162133262.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200806162133262.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200806162133262.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200806162133262.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200806162133262"
+        title="image-20200806162133262.png" /></div></p>
+<p>$ \mathbf{o} \mathrm{f}\left(\mathrm{x}<em>{1}, \mathrm{x}</em>{2}\right)=\mathrm{t} \Rightarrow \mathrm{f}<em>{1} \cdot \mathrm{dx}</em>{1}+\mathrm{f}<em>{2} \cdot \mathrm{dx}</em>{2}=0 $ (direction of gradient vector.)</p>
+<p>Comparative Statics and the Implicit Function Theorem
+We have a system of N equations depending on $ \mathrm{N} $ endogenous variables $ \mathrm{x}=\left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right) $ and $ \mathrm{M} $ parameters $ \mathrm{q}=\left(\mathrm{q}<em>{1}, \cdots, \mathrm{q}</em>{\mathrm{M}}\right) $
+$$
+\begin{array}{l}
+\mathrm{f}<em>{1}\left(\mathrm{x}</em>{1}, \cdots, \mathrm{x}<em>{\mathrm{N}} ; \mathrm{q}</em>{1}, \cdots, \mathrm{q}<em>{\mathrm{M}}\right)=0 \<br>
+\vdots \<br>
+\mathrm{f}</em>{\mathrm{N}}\left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}} ; \mathrm{q}<em>{1}, \cdots, \mathrm{q}</em>{\mathrm{M}}\right)=0
+\end{array}
+$$</p>
+<p>The domain of the endogenous variables is $ \mathrm{A} \subset \mathbb{R}^{\mathrm{N}} $ and the domain of the parameters is $ \mathrm{B} \subset \mathbb{R}^{\mathrm{M}} $</p>
+<h1 id="heading">$$</h1>
+<p>$$</p>
+<p>Comparative Statics and the Implicit Function Theorem
+Suppose that $ \overline{\mathrm{x}}=\left(\overline{\mathrm{x}}<em>{1}, \cdots, \overline{\mathrm{x}}</em>{\mathrm{N}}\right) \in \mathrm{A} $ and $ \overline{\mathrm{q}}=\left(\overline{\mathrm{q}}<em>{1}, \cdots, \overline{\mathrm{q}}</em>{\mathrm{M}}\right) \in \mathrm{B} $ satisfy
+the above system of equations.
+We are interested in the possibility of solving for $ \mathrm{x}=\left(\mathrm{x}<em>{1}, \cdots, \mathrm{x}</em>{\mathrm{N}}\right) $ as a function of $ \mathrm{q}=\left(\mathrm{q}<em>{1}, \cdots, \mathrm{q}</em>{\mathrm{N}}\right) $ locally around $ \overline{\mathrm{q}} $ and $ \overline{\mathrm{x}} . $ That is,
+$ \mathrm{f}<em>{\mathrm{n}}\left(\eta</em>{1}(\mathrm{q}), \cdots, \eta_{\mathrm{N}}(\mathrm{q}) ; \mathrm{q}\right)=0 \quad $ for every $ \mathrm{q} \in \mathrm{B}^{\prime} \subset \mathrm{B} $ and every $ \mathrm{n} $
+and
+$$
+\eta_{\mathrm{n}}(\overline{\mathrm{q}})=\overline{\mathrm{x}}_{\mathrm{n}} \quad \text { for every } \mathrm{n}
+$$</p>
+<p>So that we can carry out &ldquo;comparative statics&rdquo; analysis -test the effects of parameters.</p>
+<p>Comparative Statics and the Implicit Function Theorem
+o Figure M.E.1</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200806163110.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200806163110.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200806163110.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200806163110.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200806163110.png"
+        title="20200806163110.png" /></div></p>
+<p>Theorem. (Implicit Function Theorem) Suppose that every equation $ \mathrm{f}<em>{\mathrm{n}}(\cdot) $ is continuously differentiable with respect to its $ \mathrm{N}+\mathrm{M} $ variables and that we consider a solution $ \bar{x} $ at parameter values $ \bar{q}, $ that is, $ \mathrm{f}</em>{\mathrm{n}}(\overline{\mathrm{x}} ; \overline{\mathrm{q}})=0 $ for every n. If
+$$
+\left|\mathrm{D}<em>{\mathrm{x}} \mathrm{f}(\overline{\mathrm{x}} ; \overline{\mathrm{q}})\right|=\left|\begin{array}{ccc}
+\frac{\partial \mathrm{f}</em>{1}(\overline{\mathrm{x}}, \overline{\mathrm{q}})}{\partial \mathrm{x}<em>{1}} &amp; \cdots &amp; \frac{\partial \mathrm{f}</em>{1}(\overline{\mathrm{x}}, \overline{\mathrm{q}})}{\partial \mathrm{x}<em>{\mathrm{N}}} \<br>
+\frac{\partial \mathrm{f}(\overline{\mathrm{x}}, \overline{\mathrm{q}})}{\partial \mathrm{x}</em>{1}} &amp; \ddots &amp; \<br>
+&amp; \cdots &amp; \frac{\partial \mathrm{f}<em>{1}(\overline{\mathrm{x}}, \overline{\mathrm{q}})}{\partial \mathrm{x}</em>{\mathrm{N}}}
+\end{array}\right| \neq 0
+$$</p>
+<p>then the system can be locally solved at $ (\overline{\mathrm{x}}, \overline{\mathrm{q}}) $ by implicitly defined functions $ \eta_{\mathrm{n}}: \mathrm{B}^{\prime} \rightarrow \mathrm{A}^{\prime} $ that are continuously differentiable. Moreover, the first-order effects of $ \mathrm{q} $ on $ \mathrm{x} $ at $ (\overline{\mathrm{x}}, \overline{\mathrm{q}}) $ are given by</p>
+<p>$$
+\mathrm{D}<em>{\mathrm{q}} \eta(\overline{\mathrm{q}})=-\left[\mathrm{D}</em>{\mathrm{x}} \mathrm{f}(\overline{\mathrm{x}} ; \overline{\mathrm{q}})\right]^{-1} \mathrm{D}_{\mathrm{q}} \mathrm{f}(\overline{\mathrm{x}} ; \overline{\mathrm{q}})
+$$</p>
+<p>Example Consider the competitive firm that uses a single input to produce a single output with the differentiable production function $ f $ facing the price $ w $ for the input and the price $ p $ for output. Profit maximization: $ \mathrm{pf}(\mathrm{z})-\mathrm{wz} $ First order condition: $ \mathrm{pf}^{\prime}(\mathrm{z}(\mathrm{w}, \mathrm{p}))-\mathrm{w}=0 $ for all $ (\mathrm{w}, \mathrm{p}) $</p>
+<p>How does z depend on w and p?</p>
+<p>Differentiating with respect to w the equation that z $ (w, p) $ satisfies we get
+$$
+\mathrm{pf}^{\prime \prime}(\mathrm{z}(\mathrm{w}, \mathrm{p})) \mathrm{z}_{\mathrm{w}}^{\prime}(\mathrm{w}, \mathrm{p})-1=0
+$$</p>
+<p>If $ \mathrm{f}^{\prime \prime}(\mathrm{z}(\mathrm{w}, \mathrm{p})) \neq 0, $ then</p>
+<p>$$
+z_{w}^{\prime}(w, p)=\frac{1}{p f^{\prime \prime}(z(w, p)}
+$$</p>
+<p>since $ z(w, p) $ is a maximizer, $ f^{\prime \prime}(z(w, p)) \leq 0 . $ Hence if $ f^{\prime \prime}(z(w, p)) \neq 0 $ then $ z_{w}^{\prime}(w, p)&lt;0 $
+Similar argument for the effect of p.
+omparative Statics and the Implicit Function Theorem</p>
+<p>Figure M.E.2: what might happen if the condition fails?
+(
+o Note that $ f_{x}^{\prime}(\bar{x} ; \bar{q})=0 $</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/1.-functions/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/1.-functions/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/1.-functions/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/1.-functions/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/1.-characteristics-of-financial-variables/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

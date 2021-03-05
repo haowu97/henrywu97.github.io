@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="6. Modern Portfolio Theory 6.1 Framework We can elaborate on our previous portfolio problem $$ \max {a} E u\left[Y{0}\left(1&#43;r_{f}\right)&#43;a\left(\tilde{r}-r_{f}\right)\right] $$ by considering $N&gt;1$ risky assets with returns $\left(\tilde{r}_{1}, \tilde{r}_{2}, \ldots, \tilde{r}_{N}\right)$ $$ \begin{align*} &amp; \max _{a_{1}, a_2, \ldots, a_{N}} E u\left[Y_{0}\left(1&#43;r_{f}\right)&#43;\sum_{i=1}^{N} a_{i}\left(\tilde{r}_{i}-r_{f}\right)\right] \
+=&amp; \max _{m_{1}, m_{2}, \ldots, w_{N}} E u\left[Y_{0}\left(1&#43;r_{f}\right)&#43;\sum_{i=1}^{N} w_{i} Y_{0}\left(\tilde{r}_{i}-r_{f}\right)\right] \
+=&amp; \max _{m_{1}, w_{2}, \ldots, w_{N}} E u\left[Y_{0}\left(1&#43;\tilde{r}_{P}\right)\right]=E u\left(\left(Y_{1}\right)\right) \end{align*} $$ where $w_{i}=a_{i} / Y_{0}$ is the share of initial wealth allocated to each asset." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/5.-modern-portfolio-theory/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="6. Modern Portfolio Theory 6.1 Framework We can elaborate on our previous portfolio problem $$ \max {a} E u\left[Y{0}\left(1&#43;r_{f}\right)&#43;a\left(\tilde{r}-r_{f}\right)\right] $$ by considering $N&gt;1$ risky assets with returns $\left(\tilde{r}_{1}, \tilde{r}_{2}, \ldots, \tilde{r}_{N}\right)$ $$ \begin{align*} &amp; \max _{a_{1}, a_2, \ldots, a_{N}} E u\left[Y_{0}\left(1&#43;r_{f}\right)&#43;\sum_{i=1}^{N} a_{i}\left(\tilde{r}_{i}-r_{f}\right)\right] \
+=&amp; \max _{m_{1}, m_{2}, \ldots, w_{N}} E u\left[Y_{0}\left(1&#43;r_{f}\right)&#43;\sum_{i=1}^{N} w_{i} Y_{0}\left(\tilde{r}_{i}-r_{f}\right)\right] \
+=&amp; \max _{m_{1}, w_{2}, \ldots, w_{N}} E u\left[Y_{0}\left(1&#43;\tilde{r}_{P}\right)\right]=E u\left(\left(Y_{1}\right)\right) \end{align*} $$ where $w_{i}=a_{i} / Y_{0}$ is the share of initial wealth allocated to each asset."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/5.-modern-portfolio-theory/" /><link rel="prev" href="https://henrywu97.github.io/6.-capm/" /><link rel="next" href="https://henrywu97.github.io/chapter12/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/5.-modern-portfolio-theory\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  3714 ,
+        "url": "https:\/\/henrywu97.github.io\/5.-modern-portfolio-theory\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/5.-modern-portfolio-theory/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/5.-modern-portfolio-theory/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3714 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;18 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#61-framework">6.1 Framework</a>
+      <ul>
+        <li><a href="#611-three-steps">6.1.1 Three steps</a></li>
+        <li><a href="#612-backward-induction">6.1.2 backward induction</a></li>
+      </ul>
+    </li>
+    <li><a href="#62-justifying-mean-variance-utility">6.2 Justifying Mean-Variance Utility</a>
+      <ul>
+        <li><a href="#621-approximate-case">6.2.1 approximate case</a></li>
+        <li><a href="#622-exact-case">6.2.2 Exact case</a>
+          <ul>
+            <li><a href="#case-1-quadratic-utility-function">Case 1: Quadratic Utility Function</a></li>
+            <li><a href="#case-2-normality-assumption">Case 2: Normality Assumption</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#63-max-e-hatutilder_p">6.3 $\max E \hat{u}(\tilde{r}_{P})$</a>
+      <ul>
+        <li><a href="#631-two-risky-assets">6.3.1 Two Risky Assets</a>
+          <ul>
+            <li><a href="#case-1-rho_121">Case 1: $\rho_{12}=1$</a></li>
+            <li><a href="#case-2-rho_12-1">Case 2: $\rho_{12}=-1$</a></li>
+            <li><a href="#case-3-1--rho_12--1">Case 3: $−1 &lt; \rho_{12} &lt; 1$</a></li>
+          </ul>
+        </li>
+        <li><a href="#632-three-risky-assets">6.3.2 Three Risky Assets</a></li>
+        <li><a href="#633-n-risky-assets">6.3.3 N Risky Assets</a></li>
+        <li><a href="#634-n-risky-asset-and-1-risk-free-asset">6.3.4 N risky asset and 1 risk-free asset</a></li>
+        <li><a href="#635-optimal-portfolio-choice">6.3.5 Optimal Portfolio Choice</a>
+          <ul>
+            <li><a href="#indifference-curve-in-mv-space">Indifference Curve in MV Space</a></li>
+            <li><a href="#criterion">Criterion</a></li>
+            <li><a href="#without-risk-free-asset">Without Risk-free Asset</a></li>
+            <li><a href="#with-risk-free-asset">With Risk-free Asset</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#64-pros-and-cons-of-mpt">6.4 Pros and Cons of MPT</a>
+      <ul>
+        <li><a href="#641-cons">6.4.1 Cons</a></li>
+        <li><a href="#642-pros">6.4.2 Pros</a></li>
+      </ul>
+    </li>
+    <li><a href="#65-practice">6.5 Practice</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="6-modern-portfolio-theory">6. Modern Portfolio Theory</h1>
+<h2 id="61-framework">6.1 Framework</h2>
+<p>We can elaborate on our previous portfolio problem
+$$
+\max <em>{a} E u\left[Y</em>{0}\left(1+r_{f}\right)+a\left(\tilde{r}-r_{f}\right)\right]
+$$
+by considering $N&gt;1$ risky assets with returns $\left(\tilde{r}_{1}, \tilde{r}_{2}, \ldots, \tilde{r}_{N}\right)$
+$$
+\begin{align*}
+&amp; \max _{a_{1}, a_2, \ldots, a_{N}} E u\left[Y_{0}\left(1+r_{f}\right)+\sum_{i=1}^{N} a_{i}\left(\tilde{r}_{i}-r_{f}\right)\right] \<br>
+=&amp; \max _{m_{1}, m_{2}, \ldots, w_{N}} E u\left[Y_{0}\left(1+r_{f}\right)+\sum_{i=1}^{N} w_{i} Y_{0}\left(\tilde{r}_{i}-r_{f}\right)\right] \<br>
+=&amp; \max _{m_{1}, w_{2}, \ldots, w_{N}} E u\left[Y_{0}\left(1+\tilde{r}_{P}\right)\right]=E u\left(\left(Y_{1}\right)\right)
+\end{align*}
+$$
+where $w_{i}=a_{i} / Y_{0}$ is the share of initial wealth allocated to each asset. $\tilde{r}_{P}$ is the portfolio rate of return.</p>
+<p><strong>Modern Portfolio Theory</strong> examines the solution to this problem assuming that investors have <strong>mean-variance utility</strong>, that is, assuming that investors' preferences can be represented by a trade-off between the mean (expected value) and variance of the $N$ asset returns.</p>
+<p>MPT was developed by <strong>Harry Markowitz</strong> (US, b.1927, Nobel Prize 1990 ) in the early 1950 s, the classic paper being his article &ldquo;Portfolio Selection,&rdquo; <em>Journal of Finance</em> Vol.7 (March 1952 ): pp. $77-91$.</p>
+<p>Assume that utility is provided by bundles of consumption goods, $u\left(c_{1}, c_{2}, \dots, c_{n}\right)$ where the indexing is cross dates and states</p>
+<ul>
+<li>States of nature are mutually exclusive</li>
+<li>For each date and state of nature $(\theta)$ there is a traditional budget constraint:</li>
+</ul>
+<p>$$
+p_{1 \theta} c_{1 \theta}+p_{2 \theta} c_{2 \theta}+\ldots+p_{m \theta} c_{m \theta} \leq Y_{\theta}
+$$</p>
+<ul>
+<li>where the indexing runs across goods for a given state $\theta ;$ $(i=1,2, \ldots, m)$ correspond to the $m$ goods available in state of nature $\theta$; the $m$ quantities $c_{i \theta} ;$ and the $m$ prices $p_{i \theta} $</li>
+<li>$Y_{\theta}$ is the &ldquo;end of period&rdquo; wealth level available in that same state</li>
+</ul>
+<h3 id="611-three-steps">6.1.1 Three steps</h3>
+<p>MPT summarizes an individual&rsquo;s decision problem as being undertaken sequentially, in three steps:</p>
+<ol>
+<li><strong>The Consumption-Savings Decision</strong>: how to split period zero income/wealth $Y_{0}$ between current consumption now $C_{0}$ and saving $S_{0}$ for consumption in the future where $C_{0}+S_{0}=Y_{0}$</li>
+<li><strong>The Portfolio Problem</strong>: choose assets in which to invest one&rsquo;s savings so as to obtain a desired pattern of end-of-period wealth across the various states of nature; this means allocating $\left(Y_{0}-C_{0}\right)$ between a risk-free and $N$ risky assets</li>
+<li><strong>The Consumption Choice</strong>: Given the realized state of nature and the wealth level obtained, the choice of consumption bundles to maximize the utility function</li>
+</ol>
+<p>$$
+Y_{\theta}=\left(Y_{0}-C_{0}\right)\left[\left(1+r_{f}\right)+\Sigma_{i=1}^{N} w_{i}\left(r_{i \theta}-r_{f}\right)\right]
+$$</p>
+<h3 id="612-backward-induction">6.1.2 backward induction</h3>
+<p>Starting from step 3:</p>
+<p>Step 3 is a standard microeconomic problem and its solution can be summarized by a Bernoulli utility function $u\left(Y_{\theta}\right)$ representing the (maximum) level of utility that results from optimizing in step 3 given that the wealth available in state $\theta$ is $Y_{\theta}:$
+$$
+\begin{align*}
+u\left(Y_{\theta}\right) \equiv \operatorname{def} \max _{\left(c_{1} \theta, \ldots, c_{m \theta}\right)} &amp;u\left(c_{1 \theta}, \ldots, c_{m \theta}\right)\<br>
+s.t.\quad &amp;p_{1 \theta} c_{1 \theta}+p_{2 \theta} c_{2 \theta}+\ldots+p_{m \theta} c_{m \theta} \leq Y_{\theta}
+\end{align*}
+$$
+Step 2: Maximizing $E u\left(Y_{\theta}\right)$ across all states of nature becomes the objective of step
+$$
+\max _{\left(w_{1}, w_{2}, \ldots, w_{N}\right)} E u(\tilde{Y})=\Sigma_{\theta} \pi_{\theta} u\left(Y_{\theta}\right)
+$$
+The end-of-period wealth can be written as
+$$
+\begin{aligned}
+\tilde{Y} &amp;=\left(Y_{0}-C_{0}\right)\left(1+\tilde{r}_{P}\right) \<br>
+\tilde{r}_{P} &amp;=r_{f}+\Sigma_{i=1}^{N} w_{i}\left(\tilde{r}_{i}-r_{f}\right)
+\end{aligned}
+$$
+Clearly an appropriate redefinition of the utility function leads to
+$$
+\max E u(\tilde{Y})=\max E u\left[\left(Y_{0}-C_{0}\right)\left(1+\tilde{r}_{P}\right)\right]=\operatorname{def} \max E \hat{u}(\tilde{r_{P}})
+$$
+The level of investable wealth, $\left(Y_{0}-C_{0}\right)$, becomes a parameter of the &ldquo;U-hat&rdquo; representation.</p>
+<p>Finally, given the characteristics (e.g., expected return, standard deviation) of the optimally chosen portfolio, the optimal consumption and savings levels can be selected in step 1.</p>
+<p>From now on we work with utility functions defined on $\tilde{r}<em>{P}$. **This utility index can be further constrained to be a function of the mean and variance of the probability distribution of $r</em>{P}$**</p>
+<p>This simplification can be accepted either as a working approximation or it may result from two further (alternative) hypotheses made within the expected utility framework.</p>
+<h2 id="62-justifying-mean-variance-utility">6.2 Justifying Mean-Variance Utility</h2>
+<p>The mean-variance utility hypothesis seemed natural at the time the MPT first appeared, and it retains some intuitive appeal today. But viewed in the context of more recent developments in financial economics, particularly the development of vN-M expected utility theory, it now looks a bit peculiar.</p>
+<p>The main justication for using a mean-variance approximation is its tractability</p>
+<ul>
+<li>Probability distributions are cumbersome to manipulate and difficult to estimate empirically</li>
+<li>Summarizing them by their first two moments is appealing</li>
+</ul>
+<p>A first question for us, therefore, is: Under what conditions will investors have preferences over the means and variances of asset returns?</p>
+<h3 id="621-approximate-case">6.2.1 approximate case</h3>
+<p>In the approximate case, using a <strong>simple Taylor series approximation</strong>, one can also see that the mean and variance of an agent&rsquo;s wealth distribution are critical to the determination of his expected utility for any distribution.</p>
+<p>If we start, as we did previously, by assuming an investor has preferences over terminal wealth $\tilde{Y}$, potentially random because of randomness in the asset returns, described by a vN-M expected utility function $E[u(\tilde{Y})]$ we can write
+$$
+\tilde{Y}=E(\tilde{Y})+[\tilde{Y}-E(\tilde{Y})]
+$$
+and interpret the portfolio problem as a trade-off between the expected payoff
+$$
+E(\tilde{Y})
+$$
+and the size of the &ldquo;bet&rdquo;
+$$
+[\tilde{Y}-E(\tilde{Y})]
+$$</p>
+<p>With this interpretation in mind, consider a second-order Taylor approximation of the Bernoulli utility function $u$ once the outcome $[\tilde{Y}-E(\tilde{Y})]$ of the bet is known:
+$$
+u(\tilde{Y}) \approx u[E(\tilde{Y})]+u^{\prime}[E(\tilde{Y})][\tilde{Y}-E(\tilde{Y})]+\frac{1}{2} u^{\prime \prime}[E(\tilde{Y})][\tilde{Y}-E(\tilde{Y})]^{2}
+$$</p>
+<p>Now go back to the beginning of the period, before the outcome of the bet is known, and take expectations to obtain
+$$
+E[u(\tilde{Y})] \approx u[E(\tilde{Y})]+\frac{1}{2} u^{\prime \prime}[E(\tilde{Y})] \sigma^{2}(\tilde{Y})
+$$</p>
+<p>The right-hand side of this expression is in the desired form: if u is increasing, it rewards higher mean returns and if u is concave, it penalizes higher variance in returns.</p>
+<p>So one possible justification for mean-variance utility is to assume that the size of the portfolio bet $\tilde{Y}− E(\tilde{Y})$ is small enough to make this Taylor approximation a good one.</p>
+<p>But it isn&rsquo;t safe to assume that portfolio bets are small.</p>
+<h3 id="622-exact-case">6.2.2 Exact case</h3>
+<h4 id="case-1-quadratic-utility-function">Case 1: Quadratic Utility Function</h4>
+<p>A second possibility is to assume that <strong>the Bernoulli utility function is quadratic</strong>, with
+$$
+u(Y)=a+b Y+c Y^{2}
+$$
+with $b&gt;0$ and $c&lt;0,$ Then
+$$
+\begin{aligned}
+u^{\prime}(Y) &amp;=b+2 c Y \<br>
+u^{\prime \prime}(Y) &amp;=2 c
+\end{aligned}
+$$
+so that $u^{\prime \prime \prime}(Y)=0$ and all higher-order derivatives are zero as well. <strong>In this case, the second-order Taylor approximation holds exactly.</strong></p>
+<p>Note, however, that for a quadratic utility function
+$$
+R_{A}(Y)=-\frac{u^{\prime \prime}(Y)}{u^{\prime}(Y)}=-\frac{2 c}{b+2 c Y}
+$$
+which is increasing in $Y$.
+Hence, quadratic utility has the undesirable implication that the amount of wealth allocated to risky investments declines when wealth increases.</p>
+<h4 id="case-2-normality-assumption">Case 2: Normality Assumption</h4>
+<p>【Theorem】If $\tilde{Y}$ is normally distributed, there exists a function $v$ such that
+$$
+E u(\tilde{Y})=v\left(\mu_{Y}, \sigma_{Y}\right)
+$$
+Moreover, if $\tilde{Y}$ is normally distributed and</p>
+<ul>
+<li>$u$ is increasing, then $v$ is increasing in $\mu_{Y}$</li>
+<li>$u$ is concave, then $v$ is decreasing in $\sigma_{Y}$</li>
+<li>$u$ is concave, then indifference curves defined over $\mu_{Y}$ and $\sigma_{Y}$ are convex</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200417115416.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200417115416.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200417115416.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200417115416.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200417115416.png"
+        title="20200417115416.png" /></div></p>
+<p>Problems with the normality assumption:</p>
+<ul>
+<li>
+<p>limited liability instruments such as stocks can pay at worst a negative return of $-100 %$ (complete loss of the investment)</p>
+</li>
+<li>
+<p>Returns on assets like options are highly non-normal.</p>
+</li>
+<li>
+<p>While the normal is perfectly symmetric about its mean, <strong>high-frequency</strong> returns are frequently skewed to the right and index returns appear skewed to the left
+$$
+S(\tilde{r_{i t}})=E\left[\frac{\left(r_{i t}-\mu_{i}\right)^{3}}{\sigma_{i}^{3}}\right]
+$$</p>
+</li>
+<li>
+<p>Sample high-frequency return distributions for many assets exhibit excess kurtosis or &ldquo;fat tails&rdquo;
+$$
+K(\tilde{r_{i}})=E\left[\frac{\left(r_{i t}-\mu_{i}\right)^{4}}{\sigma_{i}^{4}}\right]
+$$</p>
+</li>
+</ul>
+<h2 id="63-max-e-hatutilder_p">6.3 $\max E \hat{u}(\tilde{r}_{P})$</h2>
+<p>In a mean-variance (M-V) framework, an investor&rsquo;s wants to maximize a function $u\left(\mu_{r}, \sigma_{P}\right)$. He likes expected return $\left(\mu_{r}\right)$ and dislikes standard deviation $\left(\sigma_{P}\right)$</p>
+<p>Recall that portfolio $A$ is said to exhibit mean-variance dominance over portfolio B if either
+$$
+\begin{align*}
+\mu_{A}&gt;\mu_{B} \text { and } \sigma_{A} \leq \sigma_{B}\<br>
+{\mu_{A} \geq \mu_{B}} \text { and } \sigma_{A} &lt; \sigma_{B}
+\end{align*}
+$$
+We can then define the **efficient frontier** as the set of all portfolios that are not mean-variance dominated by any other portfolio. By denition, no (&ldquo;rational&rdquo;) mean-variance investor would choose to hold a portfolio not located on the efficient frontier.</p>
+<p>The shape of the efficient frontier is of primary interest; let us examine the efficient frontier in the two-asset case for a variety of possible asset return correlations.</p>
+<h3 id="631-two-risky-assets">6.3.1 Two Risky Assets</h3>
+<p>Consider forming a portfolio from two risky assets:
+$$
+\begin{align*}
+\tilde{r}_{1}, \tilde{r}_{2}&amp;=\text{random returns}\<br>
+\mu_{1}, \mu_{2}&amp;=\text{expected returns}\<br>
+\sigma_{1}, \sigma_{2}&amp;=\text{standard deviations}
+\end{align*}
+$$
+Assume $\mu_{1}&lt;\mu_{2}$ and $\sigma_{1}&lt;\sigma_{2}$ to create a trade-off between expected return and risk.</p>
+<p>If $w$ is the fraction of initial wealth allocated to asset 1 and $1-w$ is the fraction of initial wealth allocated to asset $2,$ the random return $\tilde{r}<em>{P}$ on the portfolio is
+$$
+\tilde{r}</em>{P}=w \tilde{r}<em>{1}+(1-w) \tilde{r}</em>{2}
+$$
+and the expected return $\mu_{p}$ on the portfolio is
+$$
+\begin{aligned}
+\mu_{P} &amp;=E\left[w \tilde{r}_{1}+(1-w) \tilde{r}_{2}\right] \<br>
+&amp;=w E\left(\tilde{r}_{1}\right)+(1-w) E\left(\tilde{r}_{2}\right) \<br>
+&amp;=w \mu_{1}+(1-w) \mu_{2}
+\end{aligned}
+$$
+The variance of the random portfolio return
+$$
+\begin{aligned}
+\sigma_{P}^{2} &amp;=E\left[\left(\tilde{r_{P}}-\mu_{P}\right)^{2}\right] \<br>
+&amp;=E\left(\left[w \tilde{r}_{1}+(1-w) \tilde{r}_{2}-w \mu_{1}-(1-w) \mu_{2}\right]^{2}\right) \<br>
+&amp;=E\left(\left[w\left(\tilde{r}_{1}-\mu_{1}\right)+(1-w)\left(\tilde{r}_{2}-\mu_{2}\right)\right]^{2}\right) \<br>
+&amp;=E[w^{2}\left(\tilde{r}_{1}-\mu_{1}\right)^{2}+(1-w)^{2}\left(\tilde{r}_{2}-\mu_{2}\right)^{2}\<br>
+&amp;\quad+2 w(1-w)\left(\tilde{r}_{1}-\mu_{1}\right)\left(\tilde{r}_{2}-\mu_{2}\right)] \<br>
+&amp;=w^{2} E\left[\left(\tilde{r}_{1}-\mu_{1}\right)^{2}\right]+(1-w)^{2} E\left[\left(\tilde{r}_{2}-\mu_{2}\right)^{2}\right] \<br>
+&amp;\quad+2 w(1-w) E\left[\left(\tilde{r}_{1}-\mu_{1}\right)\left(\tilde{r}_{2}-\mu_{2}\right)\right] \<br>
+&amp;=w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}+2 w(1-w) \sigma_{12}\<br>
+&amp;=w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}+2 w(1-w) \sigma_{1} \sigma_{2} \rho_{12}
+\end{aligned}
+$$
+where
+$$
+\begin{aligned}
+\sigma_{12}= \text{the covariance between } \tilde{r}_{1} \text{ and } \tilde{r}_{2} \<br>
+\rho_{12}= \text{the correlation between } \tilde{r}_{1} \text{ and } \tilde{r}_{2}
+\end{aligned}
+$$</p>
+<p><strong>The source of the gains from diversification</strong>: the expected portfolio return is a weighted average of the expected returns on the individual asset returns, but the standard deviation of the portfolio return is not a weighted average of the standard deviations of the returns on the individual assets and can be reduced by choosing a mix of assets.</p>
+<p><strong>Minimum Variance Portfolio(MVP)</strong>
+$$
+\sigma_{P}^{2}=w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}+2 w(1-w) \sigma_{1} \sigma_{2} \rho_{12}
+$$
+We can minimize the portfolio variance by setting the first derivative equal to zero:
+$$
+\frac{d \sigma_{P}^{2}}{d w}=2 w \sigma_{1}^{2}-2 \sigma_{2}^{2}+2 w \sigma_{2}^{2}+2 \sigma_{12}-4 w \sigma_{12}=0
+$$
+and solve for $w^{*}$
+$$
+w^{*}=\frac{\sigma_{2}^{2}-\sigma_{12}}{\sigma_{1}^{2}+\sigma_{2}^{2}-2 \sigma_{12}}
+$$</p>
+<h4 id="case-1-rho_121">Case 1: $\rho_{12}=1$</h4>
+<p>To see more specifically how this works, start with the case where $\rho_{12}=1$ so that the individual asset returns are perfectly correlated. This is the one case in which there are **no gains from diversification**. With $\rho_{12}=1$
+$$
+\begin{aligned}
+\mu_{P} &amp;=w \mu_{1}+(1-w) \mu_{2} \<br>
+\sigma_{P} &amp;=\left[w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}+2 w(1-w) \sigma_{1} \sigma_{2} \rho_{12}\right]^{1 / 2} \<br>
+&amp;=\left[w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}+2 w(1-w) \sigma_{1} \sigma_{2}\right]^{1 / 2} \<br>
+&amp;=\left(\left[w \sigma_{1}+(1-w) \sigma_{2}\right]^{2}\right)^{1 / 2} \<br>
+&amp;=w \sigma_{1}+(1-w) \sigma_{2}
+\end{aligned}
+$$
+In this special case, the standard deviation of the return on the portfolio is a weighted average of the standard deviations of the returns on the individual assets.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-df4b8d20b1369389.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-df4b8d20b1369389.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-df4b8d20b1369389.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-df4b8d20b1369389.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-df4b8d20b1369389.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>To show that $P_{1} P_{2}$ is a straight line: no matter what percentage of wealth $w$ we choose to invest in $X$ the trade-off between expected value and standard deviation is constant.
+$$
+\begin{aligned}
+\text { Slope } &amp;=\frac{d \mu_{P}}{d \sigma_{P}} \<br>
+&amp;=\frac{d \mu_{P} / d w}{d \sigma_{P} / d w} \<br>
+&amp;=\frac{\mu_{2}-\mu_{1}}{\sigma_{2}-\sigma_{1}}
+\end{aligned}
+$$</p>
+<h4 id="case-2-rho_12-1">Case 2: $\rho_{12}=-1$</h4>
+<p>Next, let&rsquo;s consider the opposite extreme, in which $\rho_{12}=-1$ so that the individual asset returns are perfectly, but negatively, correlated:
+$$
+\begin{aligned}
+\sigma_{P} &amp;=\left[w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}+2 w(1-w) \sigma_{1} \sigma_{2} \rho_{12}\right]^{1 / 2} \<br>
+&amp;=\left[w^{2} \sigma_{1}^{2}+(1-w)^{2} \sigma_{2}^{2}-2 w(1-w) \sigma_{1} \sigma_{2}\right]^{1 / 2} \<br>
+&amp;=\left(\left[w \sigma_{1}-(1-w) \sigma_{2}\right]^{2}\right)^{1 / 2} \<br>
+&amp;=\pm\left[w \sigma_{1}-(1-w) \sigma_{2}\right]
+\end{aligned}
+$$
+In this special case, the setting
+$$
+\begin{align*}
+w^{*}&amp;=\frac{\sigma_{2}^{2}-\sigma_{12}}{\sigma_{1}^{2}+\sigma_{2}^{2}-2 \sigma_{12}}\<br>
+&amp;=\frac{\sigma_{2}}{\sigma_{1}+\sigma_{2}}
+\end{align*}
+$$
+creates a &ldquo;synthetic&rdquo; risk free portfolio(at $w^{*}, \sigma_{P}=0$ )!
+When $\rho_{12}=-1,$ so that individual asset returns are perfectly, but negatively correlated, risk can be eliminated via diversification.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-2b5e448c75ad1276.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-2b5e448c75ad1276.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-2b5e448c75ad1276.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-2b5e448c75ad1276.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-2b5e448c75ad1276.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>To show that $P_{2} P_{m v p}$ and $P_{m v p} P_{1}$ are linear: the slope is invariant to changes in percentage of an investor&rsquo;s portfolio invested in $X$
+$$
+\begin{aligned}
+\text {Slope } P_{m v p} P_{1} &amp;=\frac{d \mu_{P}}{d \sigma_{P}}=\frac{d \mu_{P} / d w}{d \sigma_{P} / d w} \<br>
+&amp;=\frac{\mu_{1}-\mu_{2}}{\sigma_{1}+\sigma_{2}}&lt;0 \<br>
+\text { Slope } P_{2} P_{m v p} &amp;=\frac{d \mu_{P}}{d \sigma_{P}}=\frac{d \mu_{P} / d w}{d \sigma_{P} / d w} \<br>
+&amp;=\frac{\mu_{1}-\mu_{2}}{-\left(\sigma_{1}+\sigma_{2}\right)}&gt;0
+\end{aligned}
+$$</p>
+<h4 id="case-3-1--rho_12--1">Case 3: $−1 &lt; \rho_{12} &lt; 1$</h4>
+<p>In all intermediate cases, there will still be gains from diversification. These gains will become stronger as $\rho_{12}$ declines from 1 to -1.</p>
+<p>In general, the MVF is convex, because it is bounded by the triangle ABC.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-68c858308865c7cd.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-68c858308865c7cd.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-68c858308865c7cd.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-68c858308865c7cd.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-68c858308865c7cd.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>As $\rho_{12}$ decreases from $\color{#F05}{0.5}  \color{#000}{\text{ to }0}, \color{#50A}{-0.5}, \color{#085}{-0.75}$, the gains from diversification strengthen.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-779612f41a3e8e19.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-779612f41a3e8e19.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-779612f41a3e8e19.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-779612f41a3e8e19.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-779612f41a3e8e19.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+        title="1240" /></div></p>
+<h3 id="632-three-risky-assets">6.3.2 Three Risky Assets</h3>
+<p>With three assets, for example, an investor can choose
+$$
+\begin{align*}
+w_{1}&amp;= \text{share of initial wealth allocated to asset 1}\<br>
+w_{2}&amp;= \text{share of initial wealth allocated to asset 2}\<br>
+1-w_{1}-w_{2}&amp;= \text{share of initial wealth allocated to asset 3}
+\end{align*}
+$$</p>
+<p>Given the choices of $w_{1}$ and $w_{2}$
+$$
+\begin{aligned}
+\tilde{r}_{P} &amp;=w_{1} \tilde{r}_{1}+w_{2} \tilde{r}_{2}+\left(1-w_{1}-w_{2}\right) \tilde{r}_{3} \<br>
+\mu p &amp;=w_{1} \mu_{1}+w_{2} \mu_{2}+\left(1-w_{1}-w_{2}\right) \mu_{3} \<br>
+\sigma_{p}^{2} &amp;=w_{1}^{2} \sigma_{1}^{2}+w_{2}^{2} \sigma_{2}^{2}+\left(1-w_{1}-w_{2}\right)^{2} \sigma_{3}^{2} \<br>
+&amp;\quad +2 w_{1} w_{2} \sigma_{1} \sigma_{2} \rho_{12}+2 w_{1}\left(1-w_{1}-w_{2}\right) \sigma_{1} \sigma_{3} \rho_{13} \<br>
+&amp;\quad +2 w_{2}\left(1-w_{1}-w_{2}\right) \sigma_{2} \sigma_{3} \rho_{23}
+\end{aligned}
+$$</p>
+<p>First , Find MVF</p>
+<p>注意到，2 资产的情况下不存在这一问题，其收益风险一一对应</p>
+<p>In the case with two risky assets, the choice of w simultaneously determines $\mu_p$and $\sigma_p$.</p>
+<p>Our problem is to solve</p>
+<p>$$
+\begin{align*}
+\min _{w_{1}, w_{2}}\quad &amp;\sigma_{P}^{2}\<br>
+s.t.\quad  &amp;\mu_{P}=\bar{\mu}
+\end{align*}
+$$
+for a given value of $\bar{\mu}$.
+But since we are more used to solving constrained maximization problems, consider the reformulated, but equivalent, problem:
+$$
+\begin{align*}
+\max _{w_{1}, w_{2}}\quad &amp;-\sigma_{P}^{2}\<br>
+s.t.\quad  &amp;\mu_{P}=\bar{\mu}
+\end{align*}
+$$
+Set up the Lagrangian, using the expressions for $\mu_{P}$ and $\sigma_{P}$ derived previously:
+$$
+\begin{aligned}
+L &amp;=-{\Large[}w_{1}^{2} \sigma_{1}^{2}+w_{2}^{2} \sigma_{2}^{2}+\left(1-w_{1}-w_{2}\right)^{2} \sigma_{3}^{2}\<br>
+&amp;\quad+2 w_{1} w_{2} \sigma_{1} \sigma_{2} \rho_{12}+2 w_{1}\left(1-w_{1}-w_{2}\right) \sigma_{1} \sigma_{3} \rho_{13} \<br>
+&amp;\quad+2 w_{2}\left(1-w_{1}-w_{2}\right) \sigma_{2} \sigma_{3} \rho_{23}{\Large]} \<br>
+&amp;\quad+\lambda\left[w_{1} \mu_{1}+w_{2} \mu_{2}+\left(1-w_{1}-w_{2}\right) \mu_{3}-\bar{\mu}\right]
+\end{aligned}
+$$</p>
+<p>F.O.C. for $w_{1}$
+$$
+\begin{aligned}
+0 &amp;=-2 w_{1}^{*} \sigma_{1}^{2}+2\left(1-w_{1}^{*}-w_{2}^{*}\right) \sigma_{3}^{2} \<br>
+&amp;-2 w_{2}^{*} \sigma_{1} \sigma_{2} \rho_{12}-2\left(1-w_{1}^{*}-w_{2}^{*}\right) \sigma_{1} \sigma_{3} \rho_{13} \<br>
+&amp;+2 w_{1}^{*} \sigma_{1} \sigma_{3} \rho_{13}+2 w_{2}^{*} \sigma_{2} \sigma_{3} \rho_{23} \<br>
+&amp;+\lambda^{*} \mu_{1}-\lambda^{*} \mu_{3}
+\end{aligned}
+$$
+F.O.C. for $w_{2}$
+$$
+0=-2 w_{2}^{*} \sigma_{2}^{2}+2\left(1-w_{1}^{*}-w_{2}^{*}\right) \sigma_{3}^{2}
+$$
+$$
+\begin{array}{l}
+-\quad 2 w_{1}^{*} \sigma_{1} \sigma_{2} \rho_{12}+2 w_{1}^{*} \sigma_{1} \sigma_{3} \rho_{13} \<br>
+-\quad 2\left(1-w_{1}^{*}-w_{2}^{*}\right) \sigma_{2} \sigma_{3} \rho_{23}+2 w_{2}^{*} \sigma_{2} \sigma_{3} \rho_{23} \<br>
++\quad \lambda^{*} \mu_{2}-\lambda^{*} \mu_{3}
+\end{array}
+$$
+B.C.
+$$
+w_{1}^{*} \mu_{1}+w_{2}^{*} \mu_{2}+\left(1-w_{1}^{*}-w_{2}^{*}\right) \mu_{3}=\bar{\mu}
+$$
+The two first-order conditions and the constraint form a system of three equations in the three unknowns: $w_{1}^{*}, w_{2}^{*}$ and $\lambda^{*}$.</p>
+<p>Moreover, the equations are linear in the unknowns $w_{1}^{*}, w_{2}^{*}$ and $\lambda^{*}$ Given specific values for $\mu_{1}, \mu_{2}, \mu_{3}, \sigma_{1}, \sigma_{2}, \sigma_{3}, \rho_{12}, \rho_{13}, \rho_{23},$ and $\bar{\mu}$ they can be solved quite easily.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080732.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080732.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080732.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080732.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080732.png"
+        title="20200427080732.png" /></div></p>
+<h3 id="633-n-risky-assets">6.3.3 N Risky Assets</h3>
+<p>Organize the portfolio shares and expected returns into a vectors:
+$$
+w=\left[\begin{array}{c}
+w_{1} \<br>
+w_{2} \<br>
+\vdots \<br>
+w_{N}
+\end{array}\right] \quad \text { and } \quad \mu=\left[\begin{array}{c}
+\mu_{1} \<br>
+\mu_{2} \<br>
+\vdots \<br>
+\mu_{N}
+\end{array}\right]
+$$
+where
+$$
+w_{1}+w_{2}+\ldots+w_{N}=1
+$$
+Meanwhile, the variances and covariances can be organized into a matrix - a collection of rows and columns:
+$$
+\Sigma=\left[\begin{array}{lccc}
+\sigma_{1}^{2} &amp; \sigma_{1} \sigma_{2} \rho_{12} &amp; \dots &amp; \sigma_{1} \sigma_{N} \rho_{1 N} \<br>
+\sigma_{1} \sigma_{2} \rho_{12} &amp; \sigma_{2}^{2} &amp; \dots &amp; \sigma_{2} \sigma_{N} \rho_{2 N} \<br>
+&amp; \cdot &amp; \dots &amp; \cdot \<br>
+\sigma_{1} \sigma_{N} \rho_{1 N} &amp; \sigma_{2} \sigma_{N} \rho_{2 N} &amp; \dots &amp; \sigma_{N}^{2}
+\end{array}\right]
+$$
+Using the rules from linear algebra for multiplying vectors and matrices, the expected return on any portfolio with shares in the vector $w$ is
+$$
+\mu^{\prime} w
+$$</p>
+<p>and the variance of the random return on the portfolio is
+$$
+w^{\prime} \Sigma w
+$$</p>
+<p>Hence, the problem of minimizing the variance for a given mean can be written compactly as
+$$
+\max _{w}-w^{\prime} \Sigma w \quad \text { s.t. } \quad \mu^{\prime} w=\bar{\mu} \quad \text { and } \quad I^{\prime} w=1
+$$
+where $I$ is a vector of $N$ ones.</p>
+<p>Problems of this form are called quadratic programming problems and can be solved very quickly on a computer even when the number of assets $N$ is large. We can also add more constraints, such as $w_{i} \geq 0,$ ruling out short sales.</p>
+<p>The minimum variance frontier traces out the minimized variance or standard deviation for each required mean return.</p>
+<p>Adding assets shifts the minimum variance frontier to the left, as opportunities for diversication are enhanced(大多数情况下并非包络线而是变得更好).</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080633.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080633.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080633.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080633.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080633.png"
+        title="20200427080633.png" /></div></p>
+<p>But portfolio A exhibits mean-variance dominance over portfolio B, since it offers a higher expected return with the same standard deviation.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080549.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080549.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080549.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080549.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080549.jpg"
+        title="20200427080549.jpg" /></div></p>
+<p>Define the <strong>efficient frontier</strong> as the set of all portfolios that are not mean-variance dominated by any other portfolio. The efficient frontier extends only along the top arm of the minimum variance frontier.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080508.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080508.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080508.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080508.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080508.jpg"
+        title="20200427080508.jpg" /></div></p>
+<h3 id="634-n-risky-asset-and-1-risk-free-asset">6.3.4 N risky asset and 1 risk-free asset</h3>
+<p>So far, however, our analysis has assumed that there are only risky assets. An additional, quite striking, result emerges when we add a risk free asset to the mix.</p>
+<p>This implication was first noted by <strong>James Tobin</strong> (US, 1918-2002, Nobel Prize 1981) in his paper “Liquidity Preference as Behavior Towards Risk,&quot; Review of Economic Studies Vol.25 (February 1958): pp.65-86.</p>
+<p>Risk free asset: money market mutual fund (MMMF), T-bill,  deposit rate. It is usually assumed that the rate of return on the risk-free asset is equal to the borrowing and lending rate in the economy.</p>
+<p>Consider, therefore, the larger portfolio formed when an investor allocates the fraction $w$ of his or her initial wealth to a  to a portfolio of risky assets and the remaining fraction $1-w$ to a risk free asset with return $r_{f}$ If the risky part of this portfolio has random return $\tilde{r},$ expected return $\mu_{r}=E(\tilde{r})$ and variance $\sigma_{r}^{2}=E\left[\left(\tilde{r}-\mu_{r}\right)^{2}\right]$ then the larger portfolio has random return $\tilde{r}_{P}=w \tilde{r}+(1-w) r_{f}$ with expected return
+$$
+\mu_{P}=E\left[w \tilde{r}+(1-w) r_{f}\right]=w \mu_{r}+(1-w) r_{f}
+$$
+and variance
+$$
+\begin{aligned}
+\sigma_{P}^{2} &amp;=E\left[\left(\tilde{r}_{p}-\mu_{P}\right)^{2}\right] \<br>
+&amp;=E\left[w \tilde{r}+(1-w) r_{f}-w \mu_{r}-(1-w) r_{f}\right]^{2} \<br>
+&amp;=E\left[w\left(\tilde{r}-\mu_{r}\right)\right]^{2}=w^{2} \sigma_{r}^{2}
+\end{aligned}
+$$
+The expression for the portfolio&rsquo;s variance
+$$
+\sigma_{P}^{2}=w^{2} \sigma_{r}^{2}
+$$
+implies
+$$
+\sigma_{P}=w \sigma_{r}
+$$
+Hence
+$$
+w=\frac{\sigma_{P}}{\sigma_{r}}
+$$</p>
+<p>Hence, with $\sigma_{r}$ given, a larger share of wealth $w$ allocated to risky assets is associated with a higher standard deviation $\sigma_{P}$ for the larger portfolio.</p>
+<p>Then, we have
+$$
+\begin{aligned}
+\mu_{P} &amp;=\frac{\sigma_{P}}{\sigma_{r}} \mu_{r}+\left(1-\frac{\sigma_{P}}{\sigma_{r}}\right) r_{f} \<br>
+&amp;=r_{f}+\left(\frac{\mu_{r}-r_{f}}{\sigma_{r}}\right) \sigma_{P}
+\end{aligned}
+$$
+It shows that for portfolios of risky and riskless assets:
+o The relationship between $\sigma_{P}$ and $\mu_{P}$ is linear.
+o The slope of the linear relationship is given by the **Sharpe ratio**, defined here as the &ldquo;expected excess return&rdquo; offered by the risky components of the portfolio divided by the standard deviation of the return on that risky component:
+$$
+\frac{\mu_{r}-r_{f}}{\sigma_{r}}
+$$
+Note that the tangency portfolio T can be identified as the portfolio along the efficient frontier of risky assets that has the highest Sharpe ratio.</p>
+<p>All investors with mean-variance utility will prefer some combination of the risk free asset and risky portfolio T to any other portfolio.</p>
+<p>【Theorem】With N risky assets and a risk-free one, the efficient frontier is a straight line.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413183147.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413183147.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413183147.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413183147.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413183147.png"
+        title="20200413183147.png" /></div></p>
+<h3 id="635-optimal-portfolio-choice">6.3.5 Optimal Portfolio Choice</h3>
+<p>The optimal portfolio is naturally dened as that portfolio maximizing the investor&rsquo;s (mean-variance) utility; That portfolio for which he is able to reach the highest indifference curve in MV space;</p>
+<h4 id="indifference-curve-in-mv-space">Indifference Curve in MV Space</h4>
+<p>Recall that either of two sets of assumptions will imply that indifference curves in this $ \mu-\sigma $ diagram slope upward and are convex:</p>
+<ul>
+<li>Investors have vN-M expected utility with quadratic Bernoulli utility functions</li>
+<li>Asset returns are normally distributed and investors have vN-M expected utility with increasing and concave Bernoulli utility functions</li>
+</ul>
+<p>???</p>
+<p>Such curves will be increasing and convex from the origin; They are increasing because additional risk needs to be compensated by higher means; They are convex if and only if the investor is characterized by increasing absolute risk aversion (IARA), which is the case under MV preferences, as we have claimed.</p>
+<h4 id="criterion">Criterion</h4>
+<p>Each indifference curve maps out all combinations of risk and return that provide us with the same utility. The slope of indifference curve indicates the <strong>marginal rate of substitution(MRS)</strong> between our preference for risk and return, which is subjective.</p>
+<p>The effcient frontier shows the tradeoff between risk and return, the slope of which indicates the marginal rate of transformation(MRT) offered by MVF.</p>
+<p>An important feature of the optimal portfolio that we choose to maximize our utility is that <strong>the subjective MRS is exactly equal to the objectively determined MRT</strong> between risk and return.</p>
+<h4 id="without-risk-free-asset">Without Risk-free Asset</h4>
+<p>Investor B is less risk averse than investor A. Different investors face the same assessment of the return and risk offered by risky assets, they may hold different portfolios. But all optimal
+portfolios are along the efficient frontier.</p>
+<p>Thus, the mean-variance utility hypothesis built into Modern Portfolio Theory implies that all investors choose optimal portfolios along the efficient frontier.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200425210954.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200425210954.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200425210954.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200425210954.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200425210954.png"
+        title="20200425210954.png" /></div></p>
+<h4 id="with-risk-free-asset">With Risk-free Asset</h4>
+<p>With $ MRS_A = \frac{\Delta \mu}{\Delta \sigma}&gt; MRS_B $, investor B is less risk averse than investor A. But both choose same combination of the &ldquo;tangency portfolio&rdquo; T and the risk free asset.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413193313.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413193313.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413193313.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413193313.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200413193313.png"
+        title="20200413193313.png" /></div></p>
+<p>【 Theorem】Any risk averse investor, independently of her risk aversion, will diversify between a risky (tangency portfolio) fund and the riskless asset.</p>
+<p>【two-fund theorem/ separation theorem】all investors will invest in the same two funds, the risk-free asset on the one hand, and the risky portfolio (T) identified by the tangency point.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080430.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080430.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080430.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080430.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080430.png"
+        title="20200427080430.png" /></div></p>
+<p>Equity mutual fund managers can all focus on building the unique portfolio that lies along the efficient frontier of risky assets and has the highest Sharpe ratio.</p>
+<p>Each individual investor can then tailor his or her own portfolio by choosing the combination of the riskless assets and the risky mutual fund that best suits his or her own aversion to risk.</p>
+<h2 id="64-pros-and-cons-of-mpt">6.4 Pros and Cons of MPT</h2>
+<h3 id="641-cons">6.4.1 Cons</h3>
+<p>First, basic assumptions may not hold: either utility must be quadratic or asset returns must be normal to support mean-variance utility hypothesis.</p>
+<p>Second, the estimation or &ldquo;calibration&rdquo; of the model&rsquo;s parameters.</p>
+<p>With $N$ risky assets, the vector $\mu$ of expected returns contains $N$ elements and the matrix $\Sigma$ of variances and covariances contains $N(N+1) / 2$ unique elements. When $N=100,$ for example, there are $100+(100 \times 101) / 2=5150$ parameters to estimate!</p>
+<p>And to use data from the past to estimate these parameters, one has to assume that past averages and correlations are a reliable guide to the future.</p>
+<h3 id="642-pros">6.4.2 Pros</h3>
+<p>On the other hand, the MPT teaches us a very important lesson about how individual assets with imperfectly, and especially negatively, correlated returns can be combined into a diversified portfolio to reduce risk.</p>
+<p>And the MPT&rsquo;s separation theorem suggests that a retirement savings plan that allows participants to choose between a money market mutual fund and a well-diversified equity fund is fully optimal under certain circumstances and perhaps close enough to optimal more generally.</p>
+<p>Finally, our first equilibrium model of asset pricing, the Capital Asset Pricing Model, builds directly on the foundations provided by Modern Portfolio Theory.</p>
+<h2 id="65-practice">6.5 Practice</h2>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080143.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080143.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080143.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080143.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080143.png"
+        title="20200427080143.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080330.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080330.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080330.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080330.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080330.png"
+        title="20200427080330.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080348.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080348.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080348.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080348.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200427080348.png"
+        title="20200427080348.png" /></div></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/5.-modern-portfolio-theory/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/5.-modern-portfolio-theory/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/5.-modern-portfolio-theory/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/5.-modern-portfolio-theory/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/6.-capm/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/chapter12/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

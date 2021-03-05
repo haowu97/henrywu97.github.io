@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="1. 数学建模与数学思想 [toc]
+1.1 数学建模 数学建模思维方式：定量思维
+探讨对象：自然现象、社会现象、工程技术、人类自身、日常生活中的实际问题
+探讨模式：
+ 寻找因素，即识别变量并创建方法量化这些变量 建立变量之间的定量关系，这种定量关系统称为数学模型 然后求解所建立的数学模型并解释、验证求解结果而应用于实际  形成的知识体系：
+ 解决现实问题的同时形成特定的数学思想和建模方法； 建立该类数学模型的理论体系(大学学的内容)； 通过近似计算该模型来预测或解释现实问题的应用体系  数学与现实：数学家通过假设、简化、分析建立数学模型、建立数学理论回归现实解释预测，后来数学家专注于理论研究不回归现实了。历史上三次重大的哲学思潮导致了三次数学研究与背景问题研究的重大分离。
+ 毕达哥拉斯的“万物皆数”形成了古希腊抽象数学体系 &ldquo;文艺复兴&quot;时期“科学的本质是数学”的哲学思想，创建了微积分理论体系 1900前后欧洲数学家信奉自由建立纯粹数学结构的思潮，形成了现代纯粹数学和应用数学体系。  1.2 数学方法 在历史的长河中，人类建立了许多建模方法和数学理论体系，归纳起来有两大类
+  确定性数学(建模)方法：人类面对所研究现象或事件时**，决定现象或事件发展变化的因素即变量，在现象或事件发展变化中不再受其他因素的影响**。在这种情况下形成的建模方法就是确性数学(建模)方法，由此形成的数学理论就是确定性数学理论体系。
+  不确定性数学(建模)方法：不确定性数学(建模)方法就是人类所面对的现象或事件在发展变化过程中，将不可预知的因素影响。因此，这些现象在一定条件下，并不总是出现相同的结果，即随机现象。
+  1.2.1 确定性数学方法 1) 初等数学方法 最简定量关系即函数关系(相关性)
+建立函数关系的方法：
+ 数据散点图 自然定律 观察并用初等方法建模 拟合插值和回归  初等分析方法/函数论理论体系，比如：苹果从树上自然掉下来影响它运动的就是重力作用，位移与时间关系为$ s= gt^2/2$
+ 数据拟合 插值方法 应用积分思想 导数思想(变化率) 初等优化方法(求极值)  变量之间呈现代数方程：线性代数方程(组)、(由投入产出问题到填充问题)、空间几何方法建立起非线性代数方程
+2) 离散动力学方法 变量间呈现周期的递推关系——差分方程方法
+变量间呈现函数方程的形式
+3) 连续动力学方法 变量间呈现的函数方程中含有未知函数导数——微分方程
+含有偏导数的函数方程称为偏微分方程
+4) 连续优化方法 变量之间具有优化效应；" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1. 数学建模与数学思想 [toc]
+1.1 数学建模 数学建模思维方式：定量思维
+探讨对象：自然现象、社会现象、工程技术、人类自身、日常生活中的实际问题
+探讨模式：
+ 寻找因素，即识别变量并创建方法量化这些变量 建立变量之间的定量关系，这种定量关系统称为数学模型 然后求解所建立的数学模型并解释、验证求解结果而应用于实际  形成的知识体系：
+ 解决现实问题的同时形成特定的数学思想和建模方法； 建立该类数学模型的理论体系(大学学的内容)； 通过近似计算该模型来预测或解释现实问题的应用体系  数学与现实：数学家通过假设、简化、分析建立数学模型、建立数学理论回归现实解释预测，后来数学家专注于理论研究不回归现实了。历史上三次重大的哲学思潮导致了三次数学研究与背景问题研究的重大分离。
+ 毕达哥拉斯的“万物皆数”形成了古希腊抽象数学体系 &ldquo;文艺复兴&quot;时期“科学的本质是数学”的哲学思想，创建了微积分理论体系 1900前后欧洲数学家信奉自由建立纯粹数学结构的思潮，形成了现代纯粹数学和应用数学体系。  1.2 数学方法 在历史的长河中，人类建立了许多建模方法和数学理论体系，归纳起来有两大类
+  确定性数学(建模)方法：人类面对所研究现象或事件时**，决定现象或事件发展变化的因素即变量，在现象或事件发展变化中不再受其他因素的影响**。在这种情况下形成的建模方法就是确性数学(建模)方法，由此形成的数学理论就是确定性数学理论体系。
+  不确定性数学(建模)方法：不确定性数学(建模)方法就是人类所面对的现象或事件在发展变化过程中，将不可预知的因素影响。因此，这些现象在一定条件下，并不总是出现相同的结果，即随机现象。
+  1.2.1 确定性数学方法 1) 初等数学方法 最简定量关系即函数关系(相关性)
+建立函数关系的方法：
+ 数据散点图 自然定律 观察并用初等方法建模 拟合插值和回归  初等分析方法/函数论理论体系，比如：苹果从树上自然掉下来影响它运动的就是重力作用，位移与时间关系为$ s= gt^2/2$
+ 数据拟合 插值方法 应用积分思想 导数思想(变化率) 初等优化方法(求极值)  变量之间呈现代数方程：线性代数方程(组)、(由投入产出问题到填充问题)、空间几何方法建立起非线性代数方程
+2) 离散动力学方法 变量间呈现周期的递推关系——差分方程方法
+变量间呈现函数方程的形式
+3) 连续动力学方法 变量间呈现的函数方程中含有未知函数导数——微分方程
+含有偏导数的函数方程称为偏微分方程
+4) 连续优化方法 变量之间具有优化效应；"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" /><link rel="prev" href="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" /><link rel="next" href="https://henrywu97.github.io/1.-solving-linear-equations/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  140 ,
+        "url": "https:\/\/henrywu97.github.io\/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;140 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;One minute</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-数学建模">1.1 数学建模</a></li>
+    <li><a href="#12-数学方法">1.2 数学方法</a>
+      <ul>
+        <li><a href="#121-确定性数学方法">1.2.1 确定性数学方法</a>
+          <ul>
+            <li><a href="#1-初等数学方法">1) 初等数学方法</a></li>
+            <li><a href="#2-离散动力学方法">2) 离散动力学方法</a></li>
+            <li><a href="#3-连续动力学方法">3) 连续动力学方法</a></li>
+            <li><a href="#4-连续优化方法">4) 连续优化方法</a></li>
+            <li><a href="#5-离散优化方法">5) 离散优化方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#122不确定性数学方法">1.2.2不确定性数学方法</a></li>
+        <li><a href="#123-其他数学方法">1.2.3 其他数学方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-数学建模的步骤">1.3 数学建模的步骤</a>
+      <ul>
+        <li><a href="#131-问题分析">1.3.1 问题分析</a></li>
+        <li><a href="#132-模型构建">1.3.2 模型构建</a></li>
+        <li><a href="#133-求解或解释模型">1.3.3 求解或解释模型</a></li>
+        <li><a href="#134-模型检验">1.3.4 模型检验</a></li>
+        <li><a href="#135-模型的改进">1.3.5 模型的改进</a></li>
+        <li><a href="#136-论文的写作">1.3.6 论文的写作</a></li>
+        <li><a href="#137-应用模型解决实际问题">1.3.7 应用模型解决实际问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-课程说明">1.4 课程说明</a>
+      <ul>
+        <li><a href="#141-先修课程">1.4.1 先修课程</a></li>
+        <li><a href="#142-参考教材">1.4.2 参考教材</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h1 id="1-数学建模与数学思想">1. 数学建模与数学思想</h1>
+<p>[toc]</p>
+<h2 id="11-数学建模">1.1 数学建模</h2>
+<p>数学建模思维方式：定量思维</p>
+<p>探讨对象：自然现象、社会现象、工程技术、人类自身、日常生活中的实际问题</p>
+<p>探讨模式：</p>
+<ol>
+<li>寻找因素，即识别变量并创建方法<strong>量化这些变量</strong></li>
+<li>建立变量之间的<strong>定量关系</strong>，这种定量关系统称为<strong>数学模型</strong></li>
+<li>然后求解所建立的数学模型并解释、验证求解结果而应用于实际</li>
+</ol>
+<p>形成的知识体系：</p>
+<ol>
+<li>解决现实问题的同时形成特定的数学思想和建模方法；</li>
+<li>建立该类数学模型的理论体系(大学学的内容)；</li>
+<li>通过近似计算该模型来<strong>预测或解释</strong>现实问题的应用体系</li>
+</ol>
+<p>数学与现实：数学家通过假设、简化、分析建立数学模型、建立数学理论回归现实解释预测，后来<strong>数学家专注于理论研究不回归现实</strong>了。历史上<strong>三次重大的哲学思潮</strong>导致了三次数学研究与背景问题研究的重大分离。</p>
+<ol>
+<li>毕达哥拉斯的“万物皆数”形成了古希腊抽象数学体系</li>
+<li>&ldquo;文艺复兴&quot;时期“科学的本质是数学”的哲学思想，创建了微积分理论体系</li>
+<li>1900前后欧洲数学家信奉自由建立纯粹数学结构的思潮，形成了现代纯粹数学和应用数学体系。</li>
+</ol>
+<h2 id="12-数学方法">1.2 数学方法</h2>
+<p>在历史的长河中，人类建立了许多建模方法和数学理论体系，归纳起来有两大类</p>
+<ul>
+<li>
+<p>确定性数学(建模)方法：人类面对所研究现象或事件时**，决定现象或事件发展变化的因素即变量，在现象或事件发展变化中不再受其他因素的影响**。在这种情况下形成的建模方法就是确性数学(建模)方法，由此形成的数学理论就是确定性数学理论体系。</p>
+</li>
+<li>
+<p>不确定性数学(建模)方法：不确定性数学(建模)方法就是人类所面对的现象或事件在发展变化过程中，将不可预知的因素影响。因此，这些现象在一定条件下，并不总是出现相同的结果，即<strong>随机现象</strong>。</p>
+</li>
+</ul>
+<h3 id="121-确定性数学方法">1.2.1 确定性数学方法</h3>
+<h4 id="1-初等数学方法">1) 初等数学方法</h4>
+<p>最简定量关系即函数关系(相关性)</p>
+<p>建立函数关系的方法：</p>
+<ul>
+<li>数据散点图</li>
+<li>自然定律</li>
+<li><strong>观察并用初等方法建模</strong></li>
+<li><strong>拟合插值和回归</strong></li>
+</ul>
+<p>初等分析方法/函数论理论体系，比如：苹果从树上自然掉下来影响它运动的就是重力作用，位移与时间关系为$ s= gt^2/2$</p>
+<ol>
+<li>数据拟合</li>
+<li>插值方法</li>
+<li>应用积分思想</li>
+<li>导数思想(变化率)</li>
+<li>初等优化方法(求极值)</li>
+</ol>
+<p>变量之间呈现代数方程：线性代数方程(组)、(由投入产出问题到填充问题)、空间几何方法建立起非线性代数方程</p>
+<h4 id="2-离散动力学方法">2) 离散动力学方法</h4>
+<p>变量间呈现周期的递推关系——差分方程方法</p>
+<p>变量间呈现函数方程的形式</p>
+<h4 id="3-连续动力学方法">3) 连续动力学方法</h4>
+<p>变量间呈现的函数方程中含有未知函数导数——<strong>微分方程</strong></p>
+<p>含有偏导数的函数方程称为<strong>偏微分方程</strong></p>
+<h4 id="4-连续优化方法">4) 连续优化方法</h4>
+<p>变量之间具有优化效应；</p>
+<p>变分法与最优控制</p>
+<h4 id="5-离散优化方法">5) 离散优化方法</h4>
+<p>线性规划建模</p>
+<p>整数规划模型</p>
+<p>非线性规划建模</p>
+<p>动态规划模型</p>
+<p>图论模型</p>
+<h3 id="122不确定性数学方法">1.2.2不确定性数学方法</h3>
+<p><strong>概率与随机数学</strong>：概率论、随机过程、马氏链模型、蒙特卡罗模拟、排队论与随机排队论、存储论与随机存储论、对策论、决策论</p>
+<p><strong>统计方法</strong>：</p>
+<ul>
+<li>统计数据描述和分析</li>
+<li>参数估计假设检验</li>
+<li>回归分析(一元线性回归、多元线性回归、逐步回归、非线性回归)</li>
+<li>方差分析(单因素方差分析、双因素方差分析、方差分析的模型检验)</li>
+<li>聚类分析与判别分析</li>
+<li>主成分分析和因子分析</li>
+<li>对应分析与典型相关分析</li>
+<li>时间序列分析</li>
+<li>季节模型</li>
+<li>条件异方差模型</li>
+</ul>
+<p>界限不分明的<strong>模糊性问题</strong>：模糊数学方法、模糊关系与模糊矩阵、模糊聚类分析方法、模糊模式识别方法、模糊综合评判方法、灰色系统分析方法</p>
+<h3 id="123-其他数学方法">1.2.3 其他数学方法</h3>
+<p>微分几何在广义相对论中的应用</p>
+<p>拓扑学在大数据分析中的应用</p>
+<p>偏微分方程在瓦斯爆炸的阻隔燝技术和在航空发动机推进技术中的应用</p>
+<h2 id="13-数学建模的步骤">1.3 数学建模的步骤</h2>
+<h3 id="131-问题分析">1.3.1 问题分析</h3>
+<p>抓住事件本质，想象“理想状态”，确定主要变量，做出合理假设</p>
+<p>变量识别</p>
+<ol>
+<li>研究的现象或事件中所有变量明确，自变量和因变量都明确</li>
+<li>因变量明确，但自变量不明确</li>
+<li>自变量明确，但因变量不明确</li>
+<li>因变量和自变量都不明确</li>
+</ol>
+<p>如何确定主要变量？三点：</p>
+<ol>
+<li>抓住事件本质，揭示理想状态，确定主要变量</li>
+<li>顺着主要因素，找出相应的其他因素，把这些因素作为变量列出来，完善变量体系</li>
+<li>忽略某些自变量：与其他因素相比，影响要小一点；这个变量以几乎相同的方式影响其他各种因素</li>
+</ol>
+<h3 id="132-模型构建">1.3.2 模型构建</h3>
+<p>根据所作的假设，分析事件的内在规律，建立数学模型</p>
+<h3 id="133-求解或解释模型">1.3.3 求解或解释模型</h3>
+<p>理论与Matlab和R软件的使用</p>
+<h3 id="134-模型检验">1.3.4 模型检验</h3>
+<ol>
+<li>数学关系的正确性</li>
+<li>是否会有多解或无解的情况出现</li>
+<li>数学方法的可行性以及算法的复杂性</li>
+<li>有实际意义吗？有普遍意义吗？</li>
+<li>能收集到数据吗？</li>
+<li>进行误差分析和灵敏度分析</li>
+</ol>
+<h3 id="135-模型的改进">1.3.5 模型的改进</h3>
+<h3 id="136-论文的写作">1.3.6 论文的写作</h3>
+<p>要将数学建模的论文当做科技论文的要求来撰写，数学建模的训练过程就是一次科研训练的过程，论文要符合学术论文的写作要求。</p>
+<ol>
+<li>摘要：反映论文作者是否真正把握了问题，是否找准最好的方法建模，模型的准确性、改进程度、应用范围、与现实的吻合度</li>
+<li>问题的重述：用自己的语言抽象出数学问题</li>
+<li>问题的分析：问题的本质、规律、主要变量、主要影响因素、运用的方法及吻合度</li>
+<li>问题的假设与符号</li>
+<li>问题的解答</li>
+<li>结论</li>
+<li>参考文献</li>
+<li>附录</li>
+</ol>
+<p>程序以及某些图标可以放在附录</p>
+<h3 id="137-应用模型解决实际问题">1.3.7 应用模型解决实际问题</h3>
+<h2 id="14-课程说明">1.4 课程说明</h2>
+<p>该课程的每一章是一门数学课甚至一个数学分支的诞生过程，本质就是建模的过程，这个过程就是数学思想诞生成长的过程，最后形成了针对这类问题的数学建模方法。本门课程有15个分支，因此涉及广泛的数学内容。</p>
+<p>每个数学分支的诞生都是为了解决一类或几类现实问题，解决的过程就是数学思想诞生、数学建模方法形成的过程。这个解决过程中有许多细节正是我们已经学过的微积分或其他课程的应用。</p>
+<h3 id="141-先修课程">1.4.1 先修课程</h3>
+<p>高等数学（数学分析）、高等代数、空门解析几何。</p>
+<p>实际上，可以降低为微积分、线性代数方程、直线、平面、曲线曲面等在直角坐标系中的方程。</p>
+<h3 id="142-参考教材">1.4.2 参考教材</h3>
+<ol>
+<li>谭忠编著，《数学建模-冋题、方法与案例分析(基础篇)》，高等教育出版社，2018年11月8日</li>
+<li>谭忠编著，《数学建模-问题、方法与案例分析(提高篇)》(即将由高等教育出版社)教材。</li>
+<li>谭永基，蔡志杰，俞文眦。数学模型。上海：复旦大学出版社，2006,3</li>
+<li>薛毅，陈立萍。統计建模与R软件京：清华大学出版社，2007,4</li>
+<li>姜启源，谢金星，叶俊。数学模型(第三版)。北京：高教出版社，2003,8</li>
+</ol>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/1.-solving-linear-equations/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Coding - Tag - Henry Wu</title>
+        <link>https://henrywu97.github.io/tags/coding/</link>
+        <description>Coding - Tag - Henry Wu</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 28 Feb 2021 13:00:27 &#43;0800</lastBuildDate><atom:link href="https://henrywu97.github.io/tags/coding/" rel="self" type="application/rss+xml" /><item>
+    <title>Pandas Notes</title>
+    <link>https://henrywu97.github.io/pandas/</link>
+    <pubDate>Sun, 28 Feb 2021 13:00:27 &#43;0800</pubDate>
+    <author>天天.zh-cn</author>
+    <guid>https://henrywu97.github.io/pandas/</guid>
+    <description><![CDATA[Data Indexing / selection
+ pandas.DataFrame.loc  The basics of indexing are as follows:
+   Operation Syntax Result     Select column df[col] Series   Select row by label df.loc[label] Series   Select row by integer location df.iloc[loc] Series   Slice rows df[5:10] DataFrame   Select rows by boolean vector df[bool_vec] DataFrame    Convert float into integer
+ pandas.to_numeric pandas.DataFrame.astype pandas.]]></description>
+</item></channel>
+</rss>

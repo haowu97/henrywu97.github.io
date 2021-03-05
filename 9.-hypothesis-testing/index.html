@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="9. Hypothesis Testing 9.1 Introduction Given a realization $x_{1}, \ldots, x_{n}$ of a random sample $X_{1}, \ldots, X_{n}$ from some population distribution $f(x ; \theta),$ we want to know whether the true parameter $\theta$ belongs to some specific subset $\Theta_{0}$ of the parameter space $\Theta$.
+【Example 9.1】Return to Education: Let $\theta$ measure the change in hourly wage given another year of education, holding all other factors fixed. Labor economists are interested in testing whether the return to education, controlling other factors, is zero." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/9.-hypothesis-testing/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="9. Hypothesis Testing 9.1 Introduction Given a realization $x_{1}, \ldots, x_{n}$ of a random sample $X_{1}, \ldots, X_{n}$ from some population distribution $f(x ; \theta),$ we want to know whether the true parameter $\theta$ belongs to some specific subset $\Theta_{0}$ of the parameter space $\Theta$.
+【Example 9.1】Return to Education: Let $\theta$ measure the change in hourly wage given another year of education, holding all other factors fixed. Labor economists are interested in testing whether the return to education, controlling other factors, is zero."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/9.-hypothesis-testing/" /><link rel="prev" href="https://henrywu97.github.io/%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/" /><link rel="next" href="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/9.-hypothesis-testing\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  8069 ,
+        "url": "https:\/\/henrywu97.github.io\/9.-hypothesis-testing\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/9.-hypothesis-testing/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/9.-hypothesis-testing/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;8069 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;38 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#91-introduction">9.1 Introduction</a>
+      <ul>
+        <li><a href="#911-hypothesis">9.1.1 Hypothesis</a></li>
+        <li><a href="#912-hypothesis-testing">9.1.2 Hypothesis Testing</a></li>
+        <li><a href="#913-evaluation-of-hypothesis-testing">9.1.3 Evaluation of Hypothesis Testing</a></li>
+        <li><a href="#914-gap-between-economic-hypothesis-and-statistical-hypothesis">9.1.4 Gap Between Economic Hypothesis and Statistical Hypothesis</a></li>
+      </ul>
+    </li>
+    <li><a href="#92-neyman-pearson-lemma">9.2 Neyman-Pearson Lemma</a></li>
+    <li><a href="#93-wald-test">9.3 Wald Test</a>
+      <ul>
+        <li><a href="#931-regularity-conditions">9.3.1 Regularity Conditions</a></li>
+        <li><a href="#932-wald-test">9.3.2 Wald Test</a></li>
+      </ul>
+    </li>
+    <li><a href="#94-lagrangian-multiplier-lm-test">9.4 Lagrangian Multiplier (LM) Test</a></li>
+    <li><a href="#95-likelihood-ratio-test之后待整理">9.5 Likelihood Ratio Test(之后待整理)</a></li>
+    <li><a href="#96-illustrative-examples">9.6 Illustrative Examples</a>
+      <ul>
+        <li><a href="#961-hypothesis-testing-under-the-bernoulli-distribution">9.6.1 Hypothesis Testing under the Bernoulli Distribution</a>
+          <ul>
+            <li><a href="#the-wald-test">The Wald Test</a></li>
+            <li><a href="#the-lm-test">The LM Test</a></li>
+            <li><a href="#the-lr-test">The LR Test</a></li>
+          </ul>
+        </li>
+        <li><a href="#962-hypothesis-testing-under-the-normal-distribution">9.6.2 Hypothesis Testing under the Normal Distribution</a>
+          <ul>
+            <li><a href="#the-lm-test-statistic">The LM Test Statistic</a></li>
+            <li><a href="#the-likelihood-ratio-test-statistic">The Likelihood Ratio Test Statistic</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#97-conclusion">9.7 Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="9-hypothesis-testing">9. Hypothesis Testing</h1>
+<h2 id="91-introduction">9.1 Introduction</h2>
+<p>Given a realization $x_{1}, \ldots, x_{n}$ of a random sample $X_{1}, \ldots, X_{n}$ from some population distribution $f(x ; \theta),$ we want to know whether the true parameter $\theta$ belongs to some specific subset $\Theta_{0}$ of the parameter space $\Theta$.</p>
+<p>【Example 9.1】<strong>Return to Education</strong>: Let $\theta$ measure the change in hourly wage given another year of education, holding all other factors fixed. Labor economists are interested in testing whether the return to education, controlling other factors, is zero. That is, whether or not $ \theta $ equal to zero.</p>
+<h3 id="911-hypothesis">9.1.1 Hypothesis</h3>
+<p>【Definition 9.1】<strong>Hypothesis</strong>: a hypothesis is a statement about the population or population parameter. The two <strong>complementary hypotheses</strong> in a hypothesis testing problem are called the <strong>null hypothesis</strong> and the <strong>alternative hypothesis</strong>, denoted by $H_{0}$ and $H_{1}\left(\text { or } H_{A}\right),$ respectively.</p>
+<p>**$H_{0}$ and $ H_1 $**</p>
+<ul>
+<li>A <strong>null hypothesis</strong> is a statement about the population or some attributes of the population. The <strong>alternative hypothesis</strong> is that the statement in the null hypothesis is false.</li>
+<li>The goal of hypothesis testing is to decide, based on an observed data set $\mathbf{x}^{n}$ generated from a population, which of two complementary hypotheses is true.</li>
+<li>Suppose a random sample $\mathrm{X}^{n}$ is generated from a population distribution $f(x, \theta)$ with some unknown value of parameter $\theta \in \Theta$, where $\Theta$ is a known finite-dimensional parameter space. In hypothesis testing, the parameter space $\Theta$ is divided into two mutually exclusive and collectively exhaustive subsets $\Theta_{0}$ and $\Theta_{A},$ namely $\Theta_{0} \cap \Theta_{A}=\varnothing$ and $\Theta_{0} \cup \Theta_{A}=\Theta$.</li>
+<li>The problem is to determine to which of these two subsets the true value of $\theta$ belongs. That is, based upon an observed data set $\mathrm{x}^{n}$, one is trying to choose between the two hypotheses</li>
+</ul>
+<p>$$
+\mathbb{H}<em>{0}: \theta \in \Theta</em>{0}
+$$</p>
+<p>​		versus</p>
+<p>$$
+\mathbb{H}<em>{A}: \theta \in \Theta</em>{A}
+$$</p>
+<p>The first hypothesis $\mathbb{H}<em>{0}$ is called the null hypothesis, and the second, $\mathbb{H}</em>{A}$, is called the alternative hypothesis.</p>
+<p>$\mathbb{H}<em>{0}$ is called the &ldquo;<strong>null</strong>&rdquo; hypothesis because it is often stated as &ldquo;no effects&rdquo; or &ldquo;no relationship&rdquo;. One example, is $\mathbb{H}</em>{0}: \theta=0$ versus $\mathbb{H}_{A}: \theta \neq 0,$ as is the case of Example 9.1</p>
+<p>【Example 9.2】If $\theta$ denotes the proportion of defective items for some manufactured product. We might be interested in testing $\mathbb{H}<em>{0}: \theta \leq \theta</em>{0}$ versus $\mathbb{H}<em>{A}: \theta&gt;\theta</em>{0},$ where $\theta_{0}$ is the maximum acceptable proportion of defective items. The null hypothesis states that the proportion of defective items is below an unacceptable threshold. This hypothesis testing is the basic idea for **statistical quality control**.</p>
+<p>【Example 9.3】<strong>Constant Return to Scale Hypothesis</strong>:  a production function</p>
+<p>$$
+Y=F(L, K)
+$$</p>
+<p>tells how much output $Y$ to produce using inputs of labor $L$ and capital $K$. A production technology is said to display a constant return to scale if the output increases by the proportion as the inputs increase; that is, for all $\lambda&gt;0$,</p>
+<p>$$
+\lambda F(L, K)=F(\lambda L, \lambda K)
+$$</p>
+<p>Suppose a production function is given by</p>
+<p>$$
+Y=A K^{\alpha} L^{\beta}
+$$</p>
+<p>where $Y$ is the output, $K$ and $L$ are the capital and labor inputs, $A$ is a constant, and $\theta=(\alpha, \beta)$ is a parameter vector. Then the constant return to scale hypothesis can be stated as</p>
+<p>$$
+\mathbb{H}_{0}: \alpha+\beta=1
+$$</p>
+<p>The alternative hypothesis $\mathbb{H}_{1}: \alpha+\beta \neq 1$ consists of two cases: $\alpha+\beta&gt;1$ and $\alpha+\beta&lt;1$, which imply an increasing return to scale and a decreasing return to scale respectively.</p>
+<p>The hypotheses can be divided into two basic categories simple hypotheses and composite hypotheses.</p>
+<p>【Definition 9.2】<strong>Simple Hypothesis Versus Composite Hypothesis</strong>: A hypothesis is simple if and only if it contains exactly one population, i.e. <strong>parameter $\theta$ only has one value</strong>. If the hypothesis contains more than one population, it is called a composite hypothesis.</p>
+<ul>
+<li>In Example $9.1, \mathbb{H}<em>{0}$ contains only one parameter value, so $\mathbb{H}</em>{0}$ is a simple hypothesis. In contrast, the null hypotheses in Examples 9.2 and 9.3 contain more than one parameter values, so they are composite hypotheses.</li>
+</ul>
+<h3 id="912-hypothesis-testing">9.1.2 Hypothesis Testing</h3>
+<p>【Definition 9.3】<strong>Hypothesis Testing</strong>: A hypothesis testing procedure or a hypothesis test is a decision rule that specifies</p>
+<ol>
+<li>for what sample values $\mathbf{x}^{n}$ the decision is made to accept $\mathbb{H}_{0}$ as true, and</li>
+<li>for what sample values $\mathbf{x}^{n}, \mathbb{H}<em>{0}$ is rejected and $\mathbb{H}</em>{A}$ is accepted as true.</li>
+</ol>
+<p>The key to the construction of the decision rule for a hypothesis testing procedure is to determine the rules of rejection or acceptance of the null hypothesis.</p>
+<p>【Definition 9.4】<strong>Critical Region or Rejection Region</strong>: The set $\mathbb{C}$ of the sample points of the random sample $\mathrm{X}^{n}$ for which $\mathbb{H}_{0}$ will be rejected is called the rejection region or critical region. The complement of the rejection region is called the acceptance region.</p>
+<p><strong>Remarks:</strong></p>
+<p>A standard approach to hypothesis testing is to choose a statistic $T\left(\mathbf{X}^{n}\right)$ and use it to divide the sample space of $\mathrm{X}^{n}$ into two mutually exclusive and exhaustive regions</p>
+<p>$$
+\mathbb{A}_{n}(c)=\left{\mathbf{x}^{n}: T\left(\mathbf{x}^{n}\right) \leq c\right}
+$$</p>
+<p>and</p>
+<p>$$
+\mathbb{C}_{n}(c)=\left{\mathbf{x}^{n}: T\left(\mathbf{x}^{n}\right)&gt;c\right}
+$$</p>
+<p>for some pre-specified constant $c$.</p>
+<p>The first region, $\mathbb{A}<em>{n}(c),$ is the acceptance region, and the second, $\mathbb{C}</em>{n}(c),$ is the rejection region. The cutoff point $c$ is called the critical value and $T\left(\mathbf{X}^{n}\right)$ is called a test statistic.</p>
+<p>An important issue in hypothesis testing is to determine a suitable value of $c$ given a data set $\mathbf{x}^{n} .$ In general, we need to know the sampling distribution of $T\left(\mathbf{X}^{n}\right)$ under $\mathbb{H}_{0}$ in order to determine the threshold value $c$.</p>
+<p>【Example 9.4】Suppose $\mathrm{X}^{n}$ is an IID $ N\left(\mu, \sigma^{2}\right)$ random sample, where $\mu$ is unknown but $\sigma^{2}$ is known. We are interested in testing for $\mathbb{H}<em>{0}: \mu=\mu</em>{0}$ versus $\mathbb{H}<em>{A}: \mu \neq \mu</em>{0},$ where $\mu_{0}$ is a known number. Here, $\Theta_{0}=\left{\mu_{0}\right}$ contains one parameter value $\mu_{0}$ and $\Theta_{A}$ contains all parameter values on the real line $\mathbb{R}$ except $\mu_{0}$.</p>
+<p><strong>Remarks:</strong></p>
+<p>To test the null hypothesis $\mathbb{H}<em>{0}: \mu=\mu</em>{0},$ we consider the following test statistic</p>
+<p>$$
+T\left(\mathbf{X}^{n}\right)=\frac{\bar{X}<em>{n}-\mu</em>{0}}{\sigma / \sqrt{n}}
+$$</p>
+<p>where $\sigma$ is known.</p>
+<p>Under the null hypothesis $\mathbb{H}<em>{0}: \mu=\mu</em>{0},$ we have
+$$
+\begin{aligned}
+T\left(\mathbf{X}^{n}\right) &amp;=\frac{\bar{X}<em>{n}-\mu</em>{0}}{\sigma / \sqrt{n}} \<br>
+&amp; \sim N(0,1)
+\end{aligned}
+$$</p>
+<p>Under $\mathbb{H}<em>{A}: \mu \neq \mu</em>{0}$</p>
+<p>$$
+\begin{aligned}
+T\left(\mathbf{X}^{n}\right) = &amp;\frac{\bar{X}<em>{n}-\mu}{\sigma / \sqrt{n}}+\frac{\mu-\mu</em>{0}}{\sigma / \sqrt{n}} \</p>
+<p>\sim &amp;N\left(\frac{\sqrt{n}\left(\mu-\mu_{0}\right)}{\sigma}, 1\right)
+\end{aligned}
+$$</p>
+<p>which diverges to infinity with probability approaching one as $n \rightarrow \infty$.</p>
+<p>One can accept $\mathbb{H}<em>{A}$ if $\left|T\left(\mathbf{X}^{n}\right)\right|$ is large. How large $T\left(\mathbf{X}^{n}\right)$ should be in order to be considered as &ldquo;large&rdquo; is determined by the sampling distribution $(N(0,1))$ of $T\left(\mathbf{X}^{n}\right)$ under $\mathbb{H}</em>{0}$.</p>
+<p>Specifically, by setting $c=z_{\alpha / 2},$ where $z_{\alpha / 2}$ is the upper-tailed critical value of $N(0,1)$ at level $\frac{\alpha}{2} \in(0,1),$ i.e., $P\left(Z&gt;z_{\alpha / 2}\right)=\frac{\alpha}{2}$ where $Z \sim N(0,1),$ we can define the acceptance and rejection regions as follows:</p>
+<p>$$
+\begin{array}{l}
+\mathrm{A}<em>{n}(c)=\left{\mathrm{x}^{n}:\left|\frac{\bar{x}</em>{n}-\mu_{0}}{\sigma / \sqrt{n}}\right| \leq z_{\frac{\alpha}{2}}\right} \<br>
+\mathbb{C}_{n}(c)=\left{\mathrm{x}^{n}:\left|\frac{\bar{x}_{n}-\mu_{0}}{\sigma / \sqrt{n}}\right|&gt;z_{\frac{\alpha}{2}}\right}
+\end{array}
+$$</p>
+<p>The $N(0,1)$ test decision rule:</p>
+<ol>
+<li>Accept $\mathbb{H}<em>{0}: \mu=\mu</em>{0}$ at the significance level $\alpha$ if</li>
+</ol>
+<p>$$
+\mathbf{x}^{n} \in \mathbb{A}_{n}(c)
+$$</p>
+<ol start="2">
+<li>Reject $\mathbb{H}<em>{0}: \mu=\mu</em>{0}$ at the significance level $\alpha$ if</li>
+</ol>
+<p>$$
+\mathbf{x}^{n} \in \mathbb{C}_{n}(c)
+$$</p>
+<p>The significance level $\alpha$ is the probability that the above decision rule will wrongly reject a correct null hypothesis. This error is called the Type I error and is unavoidable given any finite sample size $n$.</p>
+<h3 id="913-evaluation-of-hypothesis-testing">9.1.3 Evaluation of Hypothesis Testing</h3>
+<p>【Definition 9.5】<strong>Power of Test</strong> If $\mathbb{C}$ is the rejection region of a test of the null hypothesis $\mathbb{H}<em>{0}: \theta \in \Theta</em>{0},$ then the function $\pi(\theta)=P_{\theta}\left(\mathrm{X}^{n} \in \mathbb{C}\right)$ is called the power of the test with the rejection region $\mathbb{C},$ where $P_{\theta}(\cdot)$ is the probability measure when the random sample follows the distribution $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)$</p>
+<p><strong>The power function $\pi(\theta)$ is the probability of rejecting $\mathbb{H}_{0}$</strong>.</p>
+<p>In Example 9.4, the power of the test statistic $T\left(\mathbf{X}^{n}\right)=\sqrt{n}\left(\bar{X}<em>{n}-\mu</em>{0}\right) / \sigma$ is given by</p>
+<p>$$
+\pi(\mu)=P\left(\left|\frac{\bar{X}<em>{n}-\mu</em>{0}}{\sigma / \sqrt{n}}\right|&gt;z_{\alpha / 2}\right)
+$$</p>
+<p>【Definition 9.6】<strong>Type I and Type II Errors</strong>: If $\mathbb{H}<em>{0}: \theta \in \Theta</em>{0}$ holds and the observed data $\mathbf{x}^{n}$ falls into the critical region $\mathbb{C},$ then a Type I error is made. The probability of making Type I error is</p>
+<p>$$
+\alpha(\theta) \equiv P_{\theta}\left(\mathbf{X}^{n} \in \mathbb{C} | \mathbb{H}_{0}\right)
+$$</p>
+<p>If $\mathbb{H}<em>{A}: \theta \in \Theta</em>{0}^{c}$ holds and the observed data $\mathbf{x}^{n}$ is in the acceptance region, then a Type II error is made. The probability of making Type II error is</p>
+<p>$$
+\begin{aligned}
+\beta(\theta) &amp; \equiv P_{\theta}\left(\mathrm{X}^{n} \in \mathbb{A} | \mathbb{H}_{A}\right) \<br>
+&amp;=1-P_{\theta}\left(\mathrm{X}^{n} \in \mathbb{C} | \mathbb{H}_{A}\right)
+\end{aligned}
+$$</p>
+<p><strong>Remarks:</strong></p>
+<p>Under $\mathbb{H}<em>{0}: \theta \in \Theta</em>{0}$, the power function $\pi(\theta)$ is the probability of making Type I error, namely incorrectly rejecting a correct null hypothesis.</p>
+<p>Type I errors are unavoidable because under $\mathbb{H}_{0}$, because a test statistic $T\left(\mathbf{X}^{n}\right)$ may still take large values with nontrivial (though small) probabilities.</p>
+<p>Under $\mathbb{H}<em>{A}: \theta \in \Theta</em>{0}^{c}$, the power function $\pi(\theta)$ is the probability of rejecting a false null hypothesis, and it is equal to $1-\beta(\theta)$, where $\beta(\theta)$ is the probability of making Type II error, namely accepting an false null hypothesis.</p>
+<p>A test is called <strong>unbiased</strong> if $P\left[T\left(\mathrm{X}^{n}\right)&gt;c | \mathbb{H}<em>{A}\right]&gt;P\left[T\left(\mathrm{X}^{n}\right)&gt;c | \mathbb{H}</em>{0}\right]$. That is, the
+probability to reject $\mathbb{H}<em>{0}$ when $\mathbb{H}</em>{0}$ is false is strictly larger than when it is true.</p>
+<p><strong>There exists a trade off between Type I errors and Type II errors given any sample size $n$.</strong> For any given $n$, if the critical region $\mathbb{C}$ shrinks, the probability of making Type error deceases, but the probability of making Type II error increases. similarly, if the critical region $\mathbb{C}$ increases, the Type II error $\beta(\theta)$ decreases, but Type I error $\alpha(\theta)$ increases.</p>
+<p>Usually, hypothesis tests are evaluated and compared through their probabilities of making mistakes. The classical approach to hypothesis testing is to bound the probability of Type I error by some value $\alpha \in(0,1)$ over all values of $\theta$ in $\Theta_{0}$ and to try to find a test that minimizes the probability of a Type II error over all values of $\theta$ in $\Theta_{A}$.</p>
+<p>Specifically, one is trying to find a test statistic $T\left(\mathbf{X}^{n}\right)$ that satisfies 
+$$
+P\left[T\left(\mathbf{X}^{n}\right)&gt;c | \mathbb{H}<em>{0}\right] \leq \alpha
+$$
+for all $\theta \in \Theta</em>{0}$ and has the property that 
+$$
+P\left[T\left(\mathbf{X}^{n}\right)&gt;c | \mathbb{H}<em>{A}\right] \geq P\left[G\left(\mathbf{X}^{n}\right)&gt;c | \mathbb{H}</em>{A}\right]
+$$
+for any other test statistic $G\left(\mathbf{X}^{n}\right)$ for all $\theta \in \Theta_{A}$.</p>
+<p>In other words, <strong>one is trying to find a test statistic $T\left(\mathrm{X}^{n}\right)$ that has the best power while its Type I error is under control</strong>. A test $T\left(\mathbf{X}^{n}\right)$ that has these properties is called uniformly most powerful, where by uniformity it is meant that the test is most powerful for all $\theta \in \Theta_{A}$ We now provide a formal definition.</p>
+<p>【Definition 9.7】<strong>Uniformly Most Powerful Test</strong>: Let $\mathbb{T}$ be a class of tests for testing $\mathbb{H}<em>{0}: \theta \in \Theta</em>{0}$ versus $\mathbb{H}<em>{A}: \theta \in \Theta</em>{A} \cdot$ A test $T\left(X^{n}\right)$ in class $\mathbb{T},$ with power function $\pi(\theta),$ is a uniformly most powerful test over $\mathbb{T}$ if $\pi(\theta) \geq \tilde{\pi}(\theta)$ for all $\theta \in \Theta_{A},$ where $\tilde{\pi}(\theta)$ is the power function of an other test $G\left(\mathbf{X}^{n}\right)$ in class $\mathbb{T}$.</p>
+<p><strong>Remarks:</strong></p>
+<p>If $T\left(\mathbf{X}^{n}\right)$ has level $\alpha$ and $P\left[T\left(\mathbf{X}^{n}\right)&gt;c | \mathbb{H}_{0}\right]=\alpha,$ then the test is called a <strong>size $\alpha$ test</strong>.</p>
+<p>Suppose for a test statistic $T\left(\mathrm{X}^{n}\right), P\left[T\left(\mathrm{X}^{n}\right)&gt;c | \mathbb{H}_{0}\right] \leq \alpha$. Then the value of $\alpha$ gives the maximum Type I error for the test statistic $T\left(\mathrm{X}^{n}\right)$, and is called the <strong>level of the test</strong>.</p>
+<p>Obviously, the class of level $\alpha$ tests contains the set of size $\alpha$ tests.</p>
+<p>Usually, we will choose $\mathbb{T}$ to be a class of tests with the same level or same size $\alpha$. In complicated testing situations, however, it may be computationally impossible to construct a size $\alpha$ test. In such situations, a researcher must be satisfied with level $\alpha$ test, realizing that some compromises may be made.</p>
+<h3 id="914-gap-between-economic-hypothesis-and-statistical-hypothesis">9.1.4 Gap Between Economic Hypothesis and Statistical Hypothesis</h3>
+<p>To test a economic hypothesis, we have to transform it into a statistical hypothesis and then test the statistical hypothesis using an observed economic data.</p>
+<p>In transforming an economic hypothesis into a statistical hypothesis, some auxiliary assumptions are often imposed. This induces a gap between the original economic hypothesis and the resulting statistical hypothesis.</p>
+<p>This gap may cause some problem in economic interpretation of the empirical results testing the statistical hypothesis.</p>
+<p>【Example 9.5】<strong>Efficient Market Hypothesis</strong> Suppose $R_{t}$ is the return on some asset portfolio in time period $t,$ and $I_{t-1}=\left(R_{t-1}, R_{t-2}, \cdots\right)$ denotes the historical asset return information available at time $t-1 .$ The asset market is called informationally weakly efficient if</p>
+<p>$$
+E\left(R_{t} | I_{t-1}\right)=E\left(R_{t}\right)
+$$</p>
+<p>That is, the historical asset return information has no predictive power for future asset return To test this economic hypothesis, one can consider a linear autoregressive model</p>
+<p>$$
+R_{t}=\alpha_{0}+\sum_{j=1}^{k} \alpha_{j} R_{t-j}+\varepsilon_{t}
+$$</p>
+<p>where $\varepsilon_{t}$ is a stochastic disturbance. Under the efficient market hypothesis (EMH), we have</p>
+<p>$$
+\mathbb{H}<em>{0}: \alpha</em>{1}=\alpha_{2}=\cdots=\alpha_{k}=0
+$$</p>
+<p>If one has evidence that at least one $\alpha_{j}, j \in{1, \cdots, k},$ is not zero, it will imply that the efficient market hypothesis doesn&rsquo;t hold.</p>
+<p>However, <strong>when one does not reject the statistical hypothesis $\mathbb{H}_{0},$ this does not necessarily imply that the original economic hypothesis-the efficient market hypothesis holds</strong>. The reason is that the linear autoregressive model is just one of many (possibly infinite) ways to test predictability of the historical asset returns for future asset return. In other words, the predictability may arise in a nonlinear manner. Therefore, there exists a gap between the efficient market hypothesis and the statistical hypothesis $\mathbb{H}<em>{0}$. Because of this gap, when one does not reject $\mathbb{H}</em>{0}$ one can only say that no evidence against the efficient market hypothesis is found rather than conclude that the efficient market hypothesis holds.</p>
+<h2 id="92-neyman-pearson-lemma">9.2 Neyman-Pearson Lemma</h2>
+<p>【Theorem 9.1】<strong>Neyman-Pearson Lemma</strong>: Consider testing a simple null hypothesis $\mathbb{H}<em>{0}: \theta=\theta</em>{0}$ versus a simple alternative hypothesis $\mathbb{H}<em>{A}: \theta=\theta</em>{1},$ where the PMF/PDF of the random sample $\mathrm{X}^{n}$ corresponding to $\theta_{i}, i \in{0,1},$ is $f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{i}\right) .$ Suppose a test with rejection and acceptance regions $\mathbb{C}_{n}(c)$ and $\mathbb{A}_{n}(c)$ respectively is defined as follows:</p>
+<p>(a)​
+$$
+\mathbb{C}<em>{n}(c)=\left{\mathbf{x}^{n}: \frac{f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)}{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)}&gt;c\right}
+$$</p>
+<p>and</p>
+<p>$$
+\mathbb{A}<em>{n}(c)=\left{\mathbf{x}^{n}: \frac{f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)}{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)} \leq c\right}
+$$</p>
+<p>for some constant $c \geq 0,$ and</p>
+<p>(b)​
+$$
+P\left[\mathrm{X}^{n} \in \mathbb{C}<em>{n}(c) | \mathbb{H}</em>{0}\right]=\alpha
+$$</p>
+<p>Then</p>
+<ol>
+<li><strong>[Sufficiency]</strong> Any test that satisfies conditions (a) and (b) is a uniformly most powerful level $\alpha$ test.</li>
+<li><strong>[Necessity]</strong> If there exists a test satisfying conditions (a) and (b) with $c&gt;0$, then every uniformly most powerful level $\alpha$ test is a size $\alpha$ test ( i.e., satisfying condition (b) ), and every uniformly most powerful level $\alpha$ test satisfies condition (a) except perhaps on a set $A$ in the sample space of $\mathbf{X}^{n}$ satisfying $P\left(\mathbf{X}^{n} \in A | \mathbb{H}<em>{0}\right)=P\left(\mathbf{X}^{n} \in A | \mathbb{H}</em>{A}\right)=0$.</li>
+</ol>
+<p><strong>Proof</strong>:</p>
+<p>Note that</p>
+<p>$$
+\begin{aligned}
+P\left[\mathbf{X}^{n}\in \mathbb{C}<em>{n}(c) | \mathbb{H}</em>{0}\right] &amp;=E\left{1\left[\mathbf{X}^{n} \in \mathbb{C}<em>{n}(c)\right] | \mathbb{H}</em>{0}\right} \<br>
+&amp;=\int 1\left[\mathbf{x}^{n} \in \mathbb{C}<em>{n}(c)\right] f\left(\mathbf{x}^{n}, \theta</em>{0}\right) d \mathbf{x}^{n}
+\end{aligned}
+$$</p>
+<p>where $1(\cdot)$ is the indicator function.</p>
+<p><strong>[Sufficiency]</strong> We first show that a test (denoted as $T\left(\mathbf{X}^{n}\right)$ ) that satisfies conditions (a) and (b) is uniformly most powerful. Suppose there is another test (denoted $\left.T_{1}\left(\mathrm{X}^{n}\right)\right)$ with $E\left{1\left[\mathrm{X}^{n} \in \mathbb{C}_{1 n}\right] | \mathbb{H}_{0}\right} \leq \alpha$. (The test $T_{1}\left(\mathrm{X}^{n}\right)$ need not be a likelihood ratio test.) We shall show that $T_{1}\left(\mathrm{X}^{n}\right)$ is not more powerful than $T\left(\mathbf{X}^{n}\right)$.</p>
+<p>Observe that if $1\left[\mathrm{x}^{n} \in \mathbb{C}<em>{n}(c)\right]&gt;1\left[\mathrm{x}^{n} \in \mathbb{C}</em>{1 n}\right]$, i.e. $\mathrm{x}^{n} \in \mathbb{C}<em>{n}(c)$ and $\mathrm{x}^{n} \notin \mathbb{C}</em>{1 n}$, then the sample point $\mathrm{x}^{n}$ is in the critical region $\mathbb{C}<em>{n}(c)$ of the test $T\left(\mathbf{X}^{n}\right),$ and so $f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)&gt;c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) ;$</p>
+<p>on the other hand, if $1\left[\mathrm{x}^{n} \in \mathbb{C}<em>{n}(c)\right]&lt;1\left[\mathrm{x}^{n} \in \mathbb{C}</em>{1 n}\right]$, i.e. $\mathrm{x}^{n} \notin \mathbb{C}<em>{n}(c)$ and $ \mathrm{x}^{n} \in \mathbb{C}</em>{1 n} $, then the sample point $\mathrm{x}^{n}$ is in the acceptance region $\mathbb{A}<em>{n}(c)$ of the test $T\left(\mathbf{X}^{n}\right),$ and so $f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right) \leq c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) .$ In either case, we have:
+$$
+\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{1 n}\right]\right}\left[f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right)-c f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right)\right] \geq 0
+$$</p>
+<p>Thus,</p>
+<p>$$
+\int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{1 n}\right]\right}\left[f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right)-c f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right)\right] d \mathrm{x}^{n} \geq 0
+$$
+This implies</p>
+<p>$$
+\begin{aligned}
+&amp; \int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{1 n}\right]\right} f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right) d \mathrm{x}^{n} \<br>
+\geq &amp; c \int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{1 n}\right]\right} f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n}
+\end{aligned}
+$$</p>
+<p>Because (test level/size)
+$$
+\begin{aligned}
+\int_{\mathbb{R}^{n}} 1\left[\mathrm{x}^{n} \in \mathbb{C}_{1 n}\right] f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n} \leq \alpha,\<br>
+\int_{\mathbb{R}^{n}} 1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right] f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) \mathrm{x}^{n}=\alpha
+\end{aligned}
+$$
+and $c \geq 0$, we have
+$$
+c \int_{\mathbb{R}^{n}}\left{1\left[\mathbf{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathbf{x}^{n} \in \mathbb{C}_{1 n}\right]\right} f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) d \mathbf{x}^{n} \geq 0
+$$</p>
+<p>It follows that</p>
+<p>$$
+\int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{1 n}\right]\right} f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right) d \mathrm{x}^{n} \geq 0
+$$</p>
+<p>which implies
+$$
+P\left[\mathbf{X}^{n} \in \mathbb{C}<em>{n}(c) | \mathbb{H}</em>{A}\right] \geq P\left[\mathbf{X}^{n} \in \mathbb{C}<em>{1 n} | \mathbb{H}</em>{A}\right]
+$$
+That is, the test $T_{1}\left(\mathbf{X}^{n}\right)$ is not more powerful than $T\left(\mathbf{X}^{n}\right)$.</p>
+<p><strong>[Necessity]</strong> Assume that $T\left(\mathbf{X}^{n}\right)$ is a test that satisfies Conditions (a) and (b) with $c&gt;0$.</p>
+<p>(i) We first show that a uniformly most powerful level $\alpha$ test (denoted as $T_{2}\left(\mathbf{X}^{n}\right)$ ) is a size $\alpha$ test (i.e., satisfies Condition (b) ).</p>
+<p>Suppose it is not a size $\alpha$ test. Then $\int_{\mathbb{R}^{n}} 1\left[\mathrm{x}^{n} \in \mathbb{C}_{2 n}\right] f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n}&lt;\alpha$. Given
+Condition (b) for the test $T\left(\mathbf{X}^{n}\right),$ we have $\int_{\mathbb{R}^{n}} \mathbf{1}\left[\mathbf{x}^{n} \in \mathbb{C}_{n}(c)\right] f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) d \mathbf{x}^{n}=\alpha .$ It follows that
+$$
+\int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{2 n}\right]\right} f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n}&gt;0
+$$</p>
+<p>Observe that, if $1\left[\mathrm{x}^{n} \in \mathbb{C}<em>{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}</em>{2 n}\right]&gt;0,$ then $\mathrm{x}^{n}$ is in the rejection region $\mathbb{C}<em>{n}(c)$ of the test $T\left(\mathbf{X}^{n}\right),$ and so $f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)&gt;c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) ;$ if $1\left[\mathbf{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathbf{x}^{n} \in \mathbb{C}_{2 n}\right]&lt;0$, 
+then $\mathbf{x}^{n}$ is in the acceptance region $\mathbb{A}_{n}(c)$ of the test $T\left(\mathbf{X}^{n}\right),$ and so $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right) \leq c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) .$ It follows that
+$$
+\int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{2 n}\right]\right}\left[f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right)-c f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right)\right] d \mathrm{x}^{n} \geq 0
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\begin{array}{l}
+\quad \int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{2 n}\right]\right} f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right) d \mathrm{x}^{n} \<br>
+\geq c \int_{\mathbb{R}^{n}}\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{2 n}\right]\right} f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n} \</p>
+<blockquote>
+<p>0
+\end{array}
+$$</p>
+</blockquote>
+<p>given $c&gt;0$. This implies 
+$$
+P\left[\mathrm{X}^{n} \in \mathbb{C}<em>{n}(c) | \mathbb{H}</em>{A}\right]&gt;P\left[\mathrm{X}^{n} \in \mathbb{C}<em>{2 n} | \mathbb{H}</em>{A}\right],
+$$
+suggesting that the test $T_{2}\left(\mathbf{X}^{n}\right)$ is not uniformly most powerful, a contradiction. Thus, a uniformly most powerful level $\alpha$ test is a size $\alpha$ test</p>
+<p>(ii) Next, we show that every uniformly most powerful level $\alpha$ test must satisfy Conditions (a) and (b) except perhaps on a zero probability set $A$ in the sample space of $\mathrm{X}^{n}$ satisfying $P\left(\mathrm{X}^{n} \in A | \mathbb{H}<em>{0}\right)=P\left(\mathrm{X}^{n} \in A | \mathbb{H}</em>{A}\right)=0 .$</p>
+<p>Suppose $T^{<em>}\left(\mathrm{X}^{n}\right)$ is a most powerful level $\alpha$ test with the rejection region $\mathbb{C}_{n}^{</em>}$. Because every most powerful test with level $\alpha$ is a size $\alpha$ test, we have
+$$
+\int_{\mathbb{R}^{n}} 1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}^{*}\right] f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n}=\alpha=\int_{\mathbb{R}^{n}} 1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right] f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right) d \mathrm{x}^{n}
+$$</p>
+<p>Also, both $T\left(\mathbf{X}^{n}\right)$ and $T^{*}\left(\mathbf{X}^{n}\right)$ are most powerful tests, so they are equally powerful under $\mathbb{H}_{A},$ namely</p>
+<p>$$
+\int_{\mathbb{R}^{n}}\left{1\left[\mathbf{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathbf{x}^{n} \in \mathbb{C}_{n}^{*}\right]\right} f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right) d \mathbf{x}^{n}=0
+$$</p>
+<p>Thus</p>
+<p>$$
+\int_{\mathbb{R}^{n}}\left{1\left[\mathbf{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathbf{x}^{n} \in \mathbb{C}_{n}^{*}\right]\right}\left[f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)-c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)\right] d \mathbf{x}^{n}=0
+$$</p>
+<p>Now, observe that if $1\left[\mathrm{x}^{n} \in \mathbb{C}<em>{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}</em>{n}^{*}\right]&gt;0,$ then $\mathrm{x}^{n}$ must be in the rejection region $\mathbb{C}<em>{n}(c)$ of the test $T\left(\mathbf{X}^{n}\right),$ and so $f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)-c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)&gt;0 ;$ if $\mathbf{1}\left[\mathbf{x}^{n} \in \mathbb{C}_{n}(c)\right]-\mathbf{1}\left[\mathbf{x}^{n} \in \mathbb{C}_{n}^{*}\right]&lt;0,$ then $\mathbf{x}^{n}$ must be in the acceptance region of the test $T\left(\mathbf{X}^{n}\right),$ and so $f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)-c f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right) \leq 0 .$ In both cases, the product
+$\left{1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}_{n}^{*}\right]\right}\left[f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{1}\right)-c f_{\mathrm{X}^{n}}\left(\mathrm{x}^{n}, \theta_{0}\right)\right] \geq 0 $.</p>
+<p>Given that the integral of this nonnegative product is $0,$ we have that $1\left[\mathrm{x}^{n} \in \mathbb{C}<em>{n}(c)\right]-1\left[\mathrm{x}^{n} \in \mathbb{C}</em>{n}^{<em>}\right]=0$ for all $\mathrm{x}^{n}$ in the sample space of $\mathrm{X}^{n}$ except for a set with zero probability. Therefore, the sets $\mathbb{C}_{n}^{</em>}$ and $\mathbb{C}_{n}(c)$ are identical except on the set of probability 0.</p>
+<p><strong>Remarks:</strong></p>
+<p>The Neyman-Pearson lemma provides a method of finding a uniformly most powerful test when both the null and the alternative are simple hypotheses.</p>
+<p>The likelihood ratio test is the uniformly most powerful test.</p>
+<p>However, when a hypothesis is composite, i.e., the hypothesis contains more than one parameter value, the lemma may not hold. See Hong and Lee (2013) for an example.</p>
+<p>【Corollary 9.2】<strong>Likelihood Ratio Test and Sufficient Statistics</strong>: Suppose $T\left(\mathrm{X}^{n}\right)$ is a sufficient statistic for $\theta$ and $g\left(t, \theta_{i}\right)$ is the PMF/PDF of $T\left(\mathbf{X}^{n}\right)$ corresponding to $\theta_{i}, i \in{0,1}$. Then any test based on $T\left(\mathbf{X}^{n}\right)$ with rejection region $\mathbb{C}_{n}(c)$ is a uniformly most powerful level $\alpha$ test for $\mathbb{H}_{0}: \theta=\theta_{0}$ against $\mathbb{H}_{A}: \theta=\theta_{1}$ if the test has the rejection and acceptance regions</p>
+<p>$$
+\mathbb{C}<em>{n}(c)=\left{t: \frac{g\left(t, \theta</em>{1}\right)}{g\left(t, \theta_{0}\right)}&gt;c\right}
+$$</p>
+<p>and</p>
+<p>$$
+\mathbb{A}<em>{n}(c)=\left{t: \frac{g\left(t, \theta</em>{1}\right)}{g\left(t, \theta_{0}\right)} \leq c\right}
+$$</p>
+<p>for some $c \geq 0,$ where $P\left[T\left(\mathbf{X}^{n}\right) \in \mathbb{C}<em>{n}(c) | \mathbb{H}</em>{0}\right]=\alpha$.</p>
+<p><strong>Proof:</strong></p>
+<p>Suppose the test $T^<em>(\mathbf{X}^n)$ with rejection region
+$$
+\mathbb{C}^</em><em>{n}(c)=\left{\mathbf{x}^{n}: \frac{f</em>{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)}{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)}&gt;c\right}
+$$
+As $T\left(\mathbf{X}^{n}\right)$ is is a sufficient statistic for $\theta$ and $g\left(t, \theta_{i}\right)$ is the PMF/PDF of $T\left(\mathbf{X}^{n}\right)$ 
+$$
+\begin{aligned}
+f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_i\right) &amp;=f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta_i\right] f_{\mathbf{X}^{n} | T\left(\mathbf{X}^{n}\right)}\left[\mathbf{x}^{n} | T\left(\mathbf{x}^{n}\right)\right] \<br>
+&amp;=f_{T\left(\mathbf{X}^{n}\right)}\left[T\left(\mathbf{x}^{n}\right), \theta_i\right] h\left(\mathbf{x}^{n}\right)\<br>
+&amp;=g(t,\theta_i)\cdot h(\mathbf{x}^{n})
+\end{aligned}
+$$
+where the conditional distribution $f_{\mathbf{X}^{n} | T\left(\mathbf{X}^{n}\right)}\left[\mathbf{x}^{n} | T\left(\mathbf{x}^{n}\right)\right]$ of $\mathbf{X}^{n}=\mathbf{x}^{n}$ given $T\left(\mathbf{X}^{n}\right)=T\left(\mathbf{x}^{n}\right)$ does not depend on $\theta$ and is denoted as function $h\left(\mathbf{x}^{n}\right)$.</p>
+<p>Then, we have 
+$$
+\begin{aligned}
+&amp;\frac{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)}{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)}&gt;c \<br>
+\iff &amp;\frac{g(t,\theta_1) \cdot h(\mathbf{X}^{n})}{g(t,\theta_0)\cdot h(\mathbf{X}^{n})} &gt;c \<br>
+\iff &amp;\frac{g(t,\theta_1)}{g(t,\theta_0)} &gt;c 
+\end{aligned}
+$$
+Namely,
+$$
+\mathbf{X}^n \in \mathbb{C}^*_n(c) \iff T(\mathbf{X}^n) \in \mathbb{C}_n(c)
+$$
+It follows that test based on $T\left(\mathbf{X}^{n}\right)$ with rejection region $\mathbb{C}_{n}(c)$ is equal to $T^*(\mathbf{X}^n)$.</p>
+<p>As $P\left[T\left(\mathbf{X}^{n}\right) \in \mathbb{C}<em>{n}(c) | \mathbb{H}</em>{0}\right]=\alpha$, then
+$$
+P\left[\mathbf{X}^{n}\in \mathbb{C}^<em><em>{n}(c) | \mathbb{H}</em>{0}\right]=\alpha
+$$
+Therefore the test $T^</em>(\mathbf{X}^n)$ satisfies Neyman-Pearson lemma. Test based on $T\left(\mathbf{X}^{n}\right)$ with rejection region $\mathbb{C}_{n}(c)$, equal to $T^*(\mathbf{X}^n)$, is a uniformly most powerful level $\alpha$ test.</p>
+<p>Thus, the likelihood ratio test based on the random sample $X^{n}$ can be reduced to a likelihood ratio test based on the sufficient statistic $T\left(\mathrm{X}^{n}\right)$ of $\theta$ which remains to be the uniformly most powerful test.</p>
+<p>【Example 9.6】Suppose $X^{n}$ is an IID random sample from an Exponential $(\theta)$ distribution $f(x, \theta)=\frac{1}{\theta} e^{-x / \theta}$ for $x \geq 0 .$ Find a uniformly most powerful level $\alpha$ test for $\mathbb{H}<em>{0}: \theta=1$ versus $\mathbb{H}</em>{A}: \theta=2$.</p>
+<p><strong>Solution:</strong></p>
+<p>The likelihood function of the random sample $\mathrm{X}^{n}$ is
+$$
+\begin{aligned}
+f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right) &amp;=\prod_{i=1}^{n} f\left(x_{i}, \theta\right) \<br>
+&amp;=\frac{1}{\theta^{n}} e^{-n \bar{x}_{n} / \theta}
+\end{aligned}
+$$</p>
+<p>where $\bar{x}<em>{n}=n^{-1} \sum</em>{i=1}^{n} x_{i}$. By the factorization theorem in Theorem $6.14, \bar{X}_{n}$ is a sufficient statistic for $\theta$. Since the sum of IID exponential $(\theta)$ random variables follows a Gamma $(n, \theta)$ distribution (see Example 5.34), and so the sample mean $\bar{X}_{n} \sim$ Gamma $\left(n, \frac{\theta}{n}\right) .$ Thus, its PDF</p>
+<p>$$
+g\left(\bar{x}<em>{n}, \theta\right)=\frac{n^{n}}{(n-1) ! \theta^{n}} \bar{x}</em>{n}^{n-1} e^{-n \bar{x}<em>{n} / \theta}, \text { for } \bar{x}</em>{n}&gt;0
+$$
+It follows that the likelihood ratio</p>
+<p>$$
+\begin{aligned}
+\frac{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{1}\right)}{f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta_{0}\right)} &amp;=\frac{g\left(\bar{x}_{n}, \theta_{1}\right)}{g\left(\bar{x}_{n}, \theta_{0}\right)} \<br>
+&amp;=\frac{\frac{1}{2^{n}} e^{-\frac{n}{2} \bar{x}_{n}}}{e^{-n \bar{x}_{n}}} \<br>
+&amp;=\frac{1}{2^{n}} e^{\frac{n}{2} \bar{x}_{n}}
+\end{aligned}
+$$</p>
+<p>Define a test with the following one-dimensional rejection region</p>
+<p>$$
+\bar{x}<em>{n} \in \mathbb{C}</em>{n}(c) \text { if } \frac{1}{2^{n}} e^{\frac{n}{2} \bar{x}_{n}}&gt;c
+$$</p>
+<p>or equivalently,</p>
+<p>$$
+\bar{x}<em>{n} \in \mathbb{C}</em>{n}(c) \text { if } \bar{x}_{n}&gt;2 \ln 2+\frac{2 \ln c}{n}
+$$</p>
+<p>Then we determine the value of $c$ so that the test has size $\alpha$. This requires</p>
+<p>$$
+\begin{aligned}
+\alpha &amp;=\int_{2 \ln 2+2 n-1 \ln c}^{\infty} g\left(\bar{x}_{n}, \theta_{0}\right) d \bar{x}_{n} \<br>
+&amp;=\int_{2 \ln 2+2 n^{-1} \ln c}^{\infty} \frac{n^{n}}{(n-1) !} \bar{x}_{n}^{n-1} e^{-n \bar{x}_{n}} d \bar{x}_{n}
+\end{aligned}
+$$</p>
+<p>Solving this nonlinear equation, we can obtain $c=c(\alpha, n)$ as a function of $\alpha$ and $n$ but it has no closed form solution. By the Neyman-Pearson lemma and Corollary 9.2, the above test is the uniformly most powerful size $\alpha$ test.</p>
+<h2 id="93-wald-test">9.3 Wald Test</h2>
+<p>Consider the hypotheses of interest
+$$
+\mathbb{H}<em>{0}: g(\theta)=0
+$$
+versus
+$$
+\mathbb{H}</em>{A}: g(\theta) \neq 0
+$$
+where $ g: \mathbb{R}^{p} \rightarrow \mathbb{R}^{q} $ is a continuously differentiable $ q $-dimensional vector-valued function of a $ p $-dimensional parameter vector $ \theta $</p>
+<p>The integer $ q $ is the number of restrictions on parameter vector $ \theta $. We assume $ q \leq p $.</p>
+<p>One important example is a linear vector-valued function
+$$
+g(\theta)=R \theta-r
+$$
+where $ R $ is a $ q \times p $ known constant matrix, $ r $ is a $ q \times 1 $ known constant vector. The null hypothesis
+$$
+\mathbb{H}_{0}: R \theta=r
+$$
+imposes $ q $ linear restrictions on the $ p $-dimensional parameter vector $ \theta $.</p>
+<h3 id="931-regularity-conditions">9.3.1 Regularity Conditions</h3>
+<p>【Assumption W.1】<strong>Asymptotic Normality</strong>: $ \sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N(0, V)$, where $ V $ is a $ p \times p $ symmetric bounded and nonsingular matrix, $ \theta_{0} $ is the true parameter value which is an interior point in $ \Theta, $ and $ \Theta $ is a compact parameter space.</p>
+<p>Assumption W.1 allows the estimator $ \hat{\theta} $ to be any root-$ n $ consistent asymptotically normal estimator. Both MLE and GMM estimator satisfy Assumption W.1.</p>
+<p>【Assumption W.2】<strong>Consistent Variance Estimator</strong>: $ \hat{V} \stackrel{p}{\rightarrow} V $ as $ n \rightarrow \infty $.</p>
+<p>Assumption W.2 assumes that there exists a consistent estimator $ \hat{ V} $ for the asymptotic variance $ V $ of $ \sqrt{n}\left(\hat{\theta}-\theta_{0}\right) . $</p>
+<p>【Assumption W.3】<strong>Smooth Condition on Restriction Function</strong>: $ g: \mathbb{R}^{p} \rightarrow \mathbb{R}^{q} $ is a continuously differentiable function of $ \theta \in \Theta, $ and the $ q \times p $ matrix $ G\left(\theta_{0}\right)=\frac{\partial}{\partial \theta} g\left(\theta_{0}\right) $ has rank $ q $ (i.e., full rank), where $ q \leq p $.</p>
+<p>Let $ g(\theta)=[g_1(\theta), g_2(\theta), \ldots, g_q(\theta)]' $, then the gradient of $g(\theta) $ is
+$$
+G(\theta)=\left[\begin{array}{cc}
+\frac{\partial g_{1}(\theta)}{\partial \theta_{1}} &amp; \frac{\partial g_{1}(\theta)}{\partial \theta_{2}} &amp;\cdots &amp;\frac{\partial g_{1}(\theta)}{\partial \theta_{p}} \ 
+\frac{\partial g_{2}(\theta)}{\partial \theta_{1}} &amp; \frac{\partial g_{2}(\theta)}{\partial \theta_{2}} &amp;\cdots &amp;\frac{\partial g_{2}(\theta)}{\partial \theta_{p}} \<br>
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \<br>
+\frac{\partial g_{q}(\theta)}{\partial \theta_{1}} &amp; \frac{\partial g_{q}(\theta)}{\partial \theta_{2}} &amp;\cdots &amp;\frac{\partial g_{q}(\theta)}{\partial \theta_{p}}
+\end{array}\right]
+$$
+Assumption W.3 is a regularity condition on the restriction function $ g(\cdot) . $ The full rank condition for the $ q \times p $ matrix $ G\left(\theta_{0}\right) $ and $ q \leq p $ ensure that the $ q \times q $ symmetric matrix $ G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime} $ is nonsingular.</p>
+<h3 id="932-wald-test">9.3.2 Wald Test</h3>
+<p>【Theorem 9.3】<strong>Wald Test</strong>: Suppose Assumptions W.1-W.3 and $ \mathbb{H}<em>{0} $ hold. Then as $ n \rightarrow \infty $
+$$
+W=n \cdot g(\hat{\theta})^{\prime}\left[G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime}\right]^{-1} g(\hat{\theta}) \stackrel{d}{\rightarrow} \chi</em>{q}^{2}
+$$
+<strong>Proof:</strong></p>
+<p>To test $ \mathbb{H}<em>{0}: g\left(\theta</em>{0}\right)=0, $ a natural approach is to base a test on statistic $ g(\hat{\theta}), $ where $ \hat{\theta} $ is a consistent estimator of $ \theta_{0} . $ Because $ g(\cdot) $ is continuous, we always have $ g(\hat{\theta}) \stackrel{p}{\rightarrow} g\left(\theta_{0}\right) $ whenever $ \hat{\theta} \stackrel{p}{\rightarrow} \theta_{0} $ as $ n \rightarrow \infty . $ It follows that $ g(\hat{\theta}) $ will be close to zero under $ \mathbb{H}_{0} $ and will converge to a nonzero limit under $ \mathbb{H}_{A} $. Thus, we can test $ \mathbb{H}_{0} $ by checking whether $ g(\hat{\theta}) $ is close to zero.</p>
+<p>How large the value of $ g(\hat{\theta}) $ should be in order to be considered as significantly different from zero will be determined by the sampling distribution of $ g(\hat{\theta}) $ under $ \mathbb{H}_{0} $.</p>
+<p>By the mean value theorem/中值定理, we have
+$$
+g(\hat{\theta})=g\left(\theta_{0}\right)+G(\bar{\theta})\left(\hat{\theta}-\theta_{0}\right)
+$$</p>
+<p>where $ \bar{\theta}=\lambda \hat{\theta}+(1-\lambda) \theta_{0} $ for some $ \lambda \in[0,1], $ and the gradient function
+$$
+G(\theta)=\frac{d g(\theta)}{d \theta}
+$$
+is a $ q \times p $ matrix.</p>
+<p>Given that $ \left|\bar{\theta}-\theta_{0}\right|=\left|\lambda\left(\hat{\theta}-\theta_{0}\right)\right| \leq\left|\hat{\theta}-\theta_{0}\right| \stackrel{p}{\rightarrow} 0 $ as $ n \rightarrow \infty $ and the continuity of $ G(\cdot), $ we have $ G(\bar{\theta}) \stackrel{p}{\rightarrow} G\left(\theta_{0}\right) $ as $ n \rightarrow \infty . $</p>
+<p>Then by the asymptotic normality that $ \sqrt{n}\left(\hat{\theta}-\theta_{0}\right) \stackrel{d}{\rightarrow} N(0, V), $ and the Slutsky’s theorem, we have
+$$
+\begin{aligned}
+\sqrt{n}\left[g(\hat{\theta})-g\left(\theta_{0}\right)\right]&amp;=G(\bar{\theta}) \sqrt{n} \left(\hat{\theta}-\theta_{0}\right)\ 
+&amp;\stackrel{d}{\rightarrow} N\left(0, G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right)</p>
+<p>\end{aligned}
+$$
+Under $ \mathbb{H}<em>{0}: g\left(\theta</em>{0}\right)=0, $ we have
+$$
+\begin{aligned}
+\sqrt{n} g(\hat{\theta}) &amp;\stackrel{d}{\rightarrow} N\left(0, G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right)\<br>
+&amp;=O_p(1)
+\end{aligned}
+$$
+since the $ q \times q $ matrix $ G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime} $ is nonsingular given the full rank condition on $ G\left(\theta_{0}\right) $ and the nonsingularity condition on $ V, $ the quadratic form
+$$
+\sqrt{n} g(\hat{\theta})^{\prime}\left[G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right]^{-1} \sqrt{n} g(\hat{\theta}) 
+\stackrel{d}{\rightarrow} \chi_{q}^{2}
+$$</p>
+<p>Because $ G(\hat{\theta}) \stackrel{p}{\rightarrow} G\left(\theta_{0}\right) $ as $ n \rightarrow \infty $ by continuity of $ G(\cdot) $ and $ \hat{\theta} \stackrel{p}{\rightarrow} \theta_{0}, $ and $ \hat{V} \stackrel{p}{\rightarrow} V $ by Assumption W.2, we have
+$$
+G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime} \stackrel{p}{\rightarrow} G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}
+$$
+Namely, $G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime} -G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}=o_p(1)$, with $\sqrt{n} g(\hat{\theta})=O_p(1)$, also the stochastic matrix $ G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime} $ is nonsingular for $ n $ sufficiently large. We have
+$$
+\begin{aligned}
+&amp;\sqrt{n} g(\hat{\theta})^{\prime}\left[G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime}\right]^{-1} \sqrt{n} g(\hat{\theta}) -\sqrt{n} g(\hat{\theta})^{\prime}\left[G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right]^{-1} \sqrt{n} g(\hat{\theta}) \<br>
+&amp;\sqrt{n} g(\hat{\theta})^{\prime}\left{ \left[G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime}\right]^{-1} -\left[G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right]^{-1} \right} \sqrt{n} g(\hat{\theta}) \<br>
+=&amp; O_p(1) \times o_p(1) \times O_p(1)\<br>
+=&amp; o_p(1)
+\end{aligned}
+$$
+i.e., 
+$$
+\sqrt{n} g(\hat{\theta})^{\prime}\left[G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime}\right]^{-1} \sqrt{n} g(\hat{\theta}) \stackrel{p}{\rightarrow} \sqrt{n} g(\hat{\theta})^{\prime}\left[G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right]^{-1} \sqrt{n} g(\hat{\theta})
+$$
+With $\sqrt{n} g(\hat{\theta})^{\prime}\left[G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right]^{-1} \sqrt{n} g(\hat{\theta}) 
+\stackrel{d}{\rightarrow} \chi_{q}^{2}$, by Lemma 7.6 (Asymptotic Equivalence), the Wald test statistic
+$$
+\begin{aligned}
+W=&amp; n \cdot g(\hat{\theta})^{\prime}\left[G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime}\right]^{-1} g(\hat{\theta}) \<br>
+&amp; \stackrel{d}{\rightarrow} \chi_{q}^{2}
+\end{aligned}
+$$
+under $ \mathbb{H}_{0} $.</p>
+<p><strong>Remarks:</strong></p>
+<p>$ \hat{W} $ is a quadratic form in the difference $ \sqrt{n} g(\hat{\theta}) $ and $ \sqrt{n} g\left(\theta_{0}\right)=0, $ weighted by the asymptotic variance estimator $ G(\hat{\theta}) \hat{V} G(\hat{\theta})^{\prime} $ of $ \sqrt{n}\left[g(\hat{\theta})-g\left(\theta_{0}\right)\right] $.</p>
+<p>The Wald test is an asymptotically size $ \alpha $ test that rejects $ \mathbb{H}<em>{0}: g\left(\theta</em>{0}\right)=0 $ when $ \hat{W} $ exceeds the $ (1-\alpha) $ th quantile of the $ \chi_{q}^{2} $ distribution.</p>
+<p>Under $ \mathbb{H}<em>{A}: g\left(\theta</em>{0}\right) \neq 0, $ we have $ g(\hat{\theta}) \stackrel{p}{\rightarrow} g\left(\theta_{0}\right) \neq 0$, $G(\hat{\theta}) \stackrel{p}{\rightarrow} G\left(\theta_{0}\right)$, and $ \hat{V} \stackrel{p}{\rightarrow} V . $ It follows that
+$$
+\frac{W}{n} \stackrel{p}{\rightarrow} g\left(\theta_{0}\right)^{\prime}\left[G\left(\theta_{0}\right) V G\left(\theta_{0}\right)^{\prime}\right]^{-1} g\left(\theta_{0}\right)&gt;0
+$$</p>
+<p>under $ \mathbb{H}<em>{A} $. In other words, with probability approaching one, the Wald statistic $ W $ diverges to positive infinity at the rate of $ n, $ thus ensuring asymptotic power one of the test under $ \mathbb{H}</em>{A} $ at any given significance level $ \alpha \in(0,1) $.</p>
+<p>$ \hat{W} $ is applicable for many root- $ n $ consistent estimators $ \hat{\theta} $. We now consider a special but important case: that is, when $ \hat{\theta} $ is an MLE. In this case, $ V=-H^{-1}\left(\theta_{0}\right), $ and we can use the asymptotic variance estimator $ \hat{V}=[-\hat{H}(\hat{\theta})]^{-1}, $ where the sample Hessian matrix
+$$
+\hat{H}(\theta)=\frac{1}{n} \sum_{i=1}^{n} \frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta \partial \theta^{\prime}}
+$$
+The resulting Wald test statistic can be constructed as follows:
+$$
+\hat{W}=n g(\hat{\theta})^{\prime}\left[-G(\hat{\theta}) \hat{H}^{-1}(\hat{\theta}) G(\hat{\theta})^{\prime}\right]^{-1} g(\hat{\theta})
+$$
+If in addition the regularity conditions of Section 8.3 hold, we can show $ \hat{H}(\hat{\theta}) \rightarrow H\left(\theta_{0}\right) $ as $ n \rightarrow \infty $ almost surely, and therefore $ W \rightarrow \chi_{q}^{2} $ under $ \mathbb{H}_{0} $.</p>
+<p>Note that the Wald test statistic $ W $ only involves estimation under the alternative $ \mathbb{H}_{A} $.</p>
+<h2 id="94-lagrangian-multiplier-lm-test">9.4 Lagrangian Multiplier (LM) Test</h2>
+<p>Next, we introduce the Lagrange Multiplier (LM) test. It is also called Rao&rsquo;s (1959) efficient score test in statistics.</p>
+<p>Suppose we have an IID random sample $ \mathrm{X}^{n} $ from the population $ f\left(x, \theta_{0}\right), $ where $ \theta_{0} $ is an unknown parameter value in $ \Theta $ (i.e. correct model specification).</p>
+<p>Consider the normalized log-likelihood
+$$
+\hat{l}(\theta)=\frac{1}{n} \sum_{i=1}^{n} \ln f\left(X_{i}, \theta\right)
+$$
+and the constrained maximum likelihood estimator that solves the constrained maximization problem
+$$
+\begin{aligned}
+\tilde{\theta}=\arg &amp;\max _{\theta \in \Theta} \hat{l}(\theta) \<br>
+&amp;s.t.  g(\theta)=0 
+\end{aligned}
+$$
+【Theorem 9.4】**LM Test**: Suppose Assumptions M.1-M.6, Assumption W.3, and $ \mathbb{H}_{0} $ hold. Define
+$$
+L M=n \tilde{\lambda}^{\prime} G(\tilde{\theta})[-\hat{H}(\tilde{\theta})]^{-1} G(\tilde{\theta})^{\prime} \tilde{\lambda}
+$$
+Then under $ \mathbb{H}_{0} $
+$$
+L M \stackrel{d}{\rightarrow} \chi_{q}^{2} \text { as } n \rightarrow \infty
+$$
+Define the Lagrangian function
+$$
+L(\theta, \lambda)=\hat{l}(\theta)+\lambda^{\prime} g(\theta)
+$$
+where $ \lambda $ is a $q \times 1$ Lagrangian multiplier. Let $ \tilde{\lambda} $ be the corresponding maximizing value of $ \lambda $.</p>
+<p>Then the first order conditions (FOC) are</p>
+<p>$$
+\begin{aligned}
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \theta} &amp;=\frac{\partial \hat{l}(\tilde{\theta})}{\partial \theta}+G(\tilde{\theta})^{\prime} \tilde{\lambda}=0 \quad &amp;(9.1)\<br>
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \lambda} &amp;=g(\tilde{\theta})=0 \quad &amp;(9.2)
+\end{aligned}
+$$</p>
+<p>Equation (9.1) is $p \times 1$ and equation (9.2) is $q \times 1$. Therefore, we have $p+q$ equations, and also $ p+q $ parameters to estimate ($ \theta $ and $ \lambda $).</p>
+<p>By equation (1) and the mean value theorem/ 中值定理, we have
+$$
+\begin{aligned}
+G(\tilde{\theta})^{\prime} \tilde{\lambda} &amp;=-\frac{d \hat{l}(\tilde{\theta})}{d \theta} \<br>
+&amp;=-\frac{d \hat{l}\left(\theta_{0}\right)}{d \theta}-\frac{d^{2} \hat{l}\left(\bar{\theta}_{a}\right)}{d \theta d \theta^{\prime}}\left(\tilde{\theta}-\theta_{0}\right)
+\end{aligned}
+$$</p>
+<p>where $ \bar{\theta}<em>{a}=a \tilde{\theta}+(1-a) \theta</em>{0} $ for some $ a \in[0,1], $ which lies on the segment between $ \tilde{\theta} $ and $ \theta_{0} $ Note</p>
+<p>$$
+\frac{d^{2} \hat{l}(\theta)}{d \theta d \theta^{\prime}}=\hat{H}(\theta)
+$$</p>
+<p>is the sample Hessian matrix. Given the regularity conditions in Section 8.3, we have shown there that $ \hat{H}(\hat{\theta}) \rightarrow H\left(\theta_{0}\right) $ as $ n \rightarrow \infty $ almost surely for any consistent estimator $ \hat{\theta} $ of $ \theta_{0} $.</p>
+<p>Because $ H\left(\theta_{0}\right) $ is nonsingular, $ \hat{H}^{-1}(\hat{\theta}) \rightarrow H^{-1}\left(\theta_{0}\right) $ as $ n \rightarrow \infty $ almost surely, and $ \hat{H}^{-1}(\hat{\theta}) $ exists for $ n $ sufficiently large. It follows that
+$$
+\hat{H}\left(\bar{\theta}_{a}\right)^{-1} G(\tilde{\theta})^{\prime} \tilde{\lambda}=-\hat{H}\left(\bar{\theta}_{a}\right)^{-1} \frac{d \hat{l}\left(\theta_{0}\right)}{d \theta}-\left(\tilde{\theta}-\theta_{0}\right) \quad (9.3)
+$$</p>
+<p>Next, by the mean value theorem again, we have
+$$
+0=g(\tilde{\theta})=g\left(\theta_{0}\right)+G\left(\bar{\theta}_{b}\right)\left(\tilde{\theta}-\theta_{0}\right)
+$$
+where $ \bar{\theta}_{b}=b \tilde{\theta}+(1-b) \theta_{0} $ for some $ b \in[0,1], $ which lies on the segment between $ \tilde{\theta} $ and $ \theta_{0} $.</p>
+<p>It follows that under $ \mathbb{H}<em>{0}: g\left(\theta</em>{0}\right)=0, $ we have
+$$
+G\left(\bar{\theta}<em>{b}\right)\left(\tilde{\theta}-\theta</em>{0}\right)=0 \quad (9.4)
+$$
+Hence, multiplying Eq.(9.3) by $ G\left(\bar{\theta}<em>{b}\right) $ and using Eq.(9.4), we obtain
+$$
+\begin{aligned}
+&amp; G\left(\bar{\theta}</em>{b}\right) \hat{H}\left(\bar{\theta}<em>{a}\right)^{-1} G(\tilde{\theta})^{\prime} \tilde{\lambda} \<br>
+=&amp;-G\left(\bar{\theta}</em>{b}\right) \hat{H}\left(\bar{\theta}<em>{a}\right)^{-1} \frac{d \hat{l}\left(\theta</em>{0}\right)}{d \theta}-G\left(\bar{\theta}<em>{b}\right)\left(\tilde{\theta}-\theta</em>{0}\right) \<br>
+=&amp;-G\left(\bar{\theta}<em>{b}\right) \hat{H}\left(\bar{\theta}</em>{a}\right)^{-1} \frac{d \hat{l}\left(\theta_{0}\right)}{d \theta}
+\end{aligned}
+$$
+By the continuity of function $G(\cdot)$, $ \left|\bar{\theta}_{a}-\theta_{0}\right| \leq\left|\tilde{\theta}-\theta_{0}\right| \rightarrow 0,\left|\bar{\theta}_{b}-\theta_{0}\right| \leq\left|\tilde{\theta}-\theta_{0}\right| \rightarrow 0 $ and $ \hat{H}(\hat{\theta}) \rightarrow H\left(\theta_{0}\right) $ as $ n \rightarrow \infty $ almost surely, we have
+$$
+G\left(\bar{\theta}_{b}\right) \hat{H}\left(\bar{\theta}_{a}\right)^{-1} G(\tilde{\theta})^{\prime} \rightarrow G\left(\theta_{0}\right) H^{-1}\left(\theta_{0}\right) G\left(\theta_{0}\right)^{\prime} \text { a.s. }
+$$
+and the latter is nonsingular. Therefore, for $ n $ sufficiently large, $ G\left(\bar{\theta}_{b}\right) \hat{H}\left(\bar{\theta}_{a}\right)^{-1} G(\tilde{\theta})^{\prime} $ is nonsingular as well. Hence,
+$$
+\begin{aligned}
+\sqrt{n} \tilde{\lambda} &amp;=-\left[G\left(\bar{\theta}_{b}\right) \hat{H}\left(\bar{\theta}_{a}\right)^{-1} G(\tilde{\theta})^{\prime}\right]^{-1} G\left(\bar{\theta}_{b}\right) \hat{H}\left(\bar{\theta}_{a}\right)^{-1} \sqrt{n} \frac{d \hat{l}\left(\theta_{0}\right)}{d \theta} \<br>
+&amp;=-\hat{A} \sqrt{n} \frac{d \hat{l}\left(\theta_{0}\right)}{d \theta}, \text { say. }
+\end{aligned}
+$$</p>
+<p>By CLT for an IID random sequence, we have (refer section 8.3.3)
+$$
+\sqrt{n} \frac{d \hat{l}\left(\theta_{0}\right)}{d \theta}=\frac{1}{\sqrt{n}} \sum_{i=1}^{n} \frac{\partial \ln f\left(X_{i}, \theta_{0}\right)}{\partial \theta} \stackrel{d}{\rightarrow} N\left(0, I\left(\theta_{0}\right)\right)
+$$
+where $ I\left(\theta_{0}\right) $ is Fisher&rsquo;s information matrix evaluated at $ \theta=\theta_{0} $</p>
+<p>On the other hand.
+$$
+\hat{A} \stackrel{p}{\rightarrow}\left[G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} G\left(\theta_{0}\right) H\left(\theta_{0}\right)=A_{0}, \text { say. }
+$$
+It follows from the Slutsky&rsquo;s theorem that
+$$
+\begin{aligned}
+&amp; \sqrt{n} \tilde{\lambda} \stackrel{d}{\rightarrow} N\left(0, A_{0} I\left(\theta_{0}\right) A_{0}^{\prime}\right) \<br>
+\sim &amp; N\left(0,-\left[G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}\right)
+\end{aligned}
+$$
+where we have used the fact that
+$$
+\begin{aligned}
+A_{0} I\left(\theta_{0}\right) A_{0}^{\prime} &amp;=\left[G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} I\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\left[G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1} \<br>
+&amp;=-\left[G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}
+\end{aligned}
+$$</p>
+<p>given the information matrix equality $ I\left(\theta_{0}\right)+H\left(\theta_{0}\right)=0 . $ It follows that the quadratic form
+$$
+-n \tilde{\lambda}^{\prime} G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime} \tilde{\lambda} \stackrel{d}{\rightarrow} \chi_{q}^{2}
+$$
+under $ \mathbb{H}_{0} $</p>
+<p><strong>Remarks</strong>
+An asymptotically size $ \alpha $ LM test will reject the null hypothesis $ \mathbb{H}<em>{0}: g\left(\theta</em>{0}\right)=0 $ when $ L M $ exceeds the $ (1-\alpha) $ th quantile of the $ \chi_{q}^{2} $ distribution.</p>
+<p>Question: What is the interpretation for the Lagrangian multiplier $ \tilde{\lambda}  $?</p>
+<p>When the parametric restriction $ g\left(\theta_{0}\right)=0 $ is valid, the restricted estimator $ \tilde{\theta} $ should be near the point that maximizes the log-likelihood. Therefore, the slope of the log-likelihood function should be close to zero at the restricted estimator $ \theta $.</p>
+<p>As can be seen from the FOC that $ G(\tilde{\theta})^{\prime} \tilde{\lambda}=-\frac{d \hat{l}(\tilde{\theta})}{d \theta}, $ the LM test is based on the slope of the log-likelihood at the point where the function is maximized subject to the constraint.</p>
+<p>Alternatively, the Lagrange multiplier $ \tilde{\lambda} $ measures the magnitude of the departure of $ g(\tilde{\theta}) $ from $ g\left(\theta_{0}\right)=0 $.</p>
+<ul>
+<li>If the constraint $ g\left(\theta_{0}\right)=0 $ holds, then $ g(\tilde{\theta}) $ will be close to $ 0, $ and so is $ \tilde{\lambda} $.</li>
+<li>If the constraint $ g\left(\theta_{0}\right) \neq 0, $ then $ g(\tilde{\theta}) $ will be significantly different from  0. As a result, $ \tilde{\lambda} $ will be large, giving the LM test power to reject $ \mathbb{H}_{0} $. How large $ \sqrt{n} \tilde{\lambda} $ is considered as &ldquo;large&rdquo; is determined by its sampling distribution.</li>
+</ul>
+<p>Thus under large $\tilde{\lambda} $, we can reject null hypothesis. That&rsquo;s why LM test use quadratic form of  $ \tilde{\lambda} $ intuitively.</p>
+<p>The LM test is convenient to use in practice, because only the null model, which is usually simpler, has to be estimated.</p>
+<h2 id="95-likelihood-ratio-test之后待整理">9.5 Likelihood Ratio Test(之后待整理)</h2>
+<p>Since $ \mathrm{X}^{n} $ is an IID random sample from the population $ f_{X}(x)=f\left(x, \theta_{0}\right), $ where $ \theta_{0} $ is unknown, we have the likelihood function of $ \mathrm{X}^{n} $
+$$
+f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)=\prod_{i=1}^{n} f\left(X_{i}, \theta\right)
+$$</p>
+<p>We define the likelihood ratio statistic
+$$
+\begin{aligned}
+\hat{\Lambda} &amp;=\frac{\max <em>{\theta \in \Theta} f</em>{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)}{\max <em>{\theta \in \Theta</em>{0}} f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \theta\right)} \<br>
+&amp;=\frac{\prod_{i=1}^{n} f\left(X_{i}, \hat{\theta}\right)}{\prod_{i=1}^{n} f\left(X_{i}, \tilde{\theta}\right)}
+\end{aligned}
+$$
+where $ \hat{\theta} $ and $ \tilde{\theta} $ are the unconstrained and constrained MLEs respectively, namely,
+$$
+\begin{aligned}
+\hat{\theta} &amp;=\arg \max _{\theta \in \Theta} \hat{l}(\theta) \<br>
+\tilde{\theta} &amp;=\arg \max _{\theta \in \Theta_{0}} \hat{l}(\theta)
+\end{aligned}
+$$</p>
+<p>with</p>
+<p>$$
+\hat{l}(\theta)=\frac{1}{n} \sum_{i=1}^{n} \ln f\left(X_{i}, \theta\right) = \frac{1}{n} \ln \hat{L}(\theta | X^n)
+$$</p>
+<p>is the sample average of log-likelihood functions, and $ \Theta_{0} $ is the parameter space $ \Theta $ subject to the constraint $ g(\theta)=0, $ i.e., $ \Theta_{0}={\theta \in \Theta: g(\theta)=0} $. Mathematically, $\hat{\Lambda} \geq 1$.</p>
+<p>Suppose the null hypothesis $ \mathbb{H}<em>{0}: g\left(\theta</em>{0}\right)=0 $ holds. Then both unconstrained and constrained MLEs $ \hat{\theta} $ and $ \tilde{\theta} $ are consistent for $ \theta_{0} $, and imposing the restriction should not lead to a large reduction in the log-likelihood function. Therefore, we expect that the likelihood ratio $ \hat{\Lambda} $ will be close to 1.</p>
+<p>On the other hand, if $ \mathbb{H}<em>{0} $ is false, then the unconstrained MLE $ \hat{\theta} $ is consistent for $ \theta</em>{0} $ but the constrained MLE $ \theta $ is not. As a consequence, we expect that the likelihood ratio $ \hat{\Lambda} $ is larger than 1.</p>
+<p>Hence, we can test $ \mathbb{H}_{0} $ by comparing whether $ \hat{\Lambda} $ is significantly larger than 1 or whether $ \ln \hat{\Lambda} $ is greater than 0. How large $ \hat{\Lambda} $ or $ \ln \hat{\Lambda} $ must be in order to be considered as significantly large will be determined by the sampling distribution of $ \hat{\Lambda} $.</p>
+<p>Formally, we define the likelihood ratio test statistic as follows.
+$$
+L R=2 \ln \hat{\Lambda}=2 n[\hat{l}(\hat{\theta})-\hat{l}(\tilde{\theta})]
+$$
+【Theorem 9.5】<strong>LR Test</strong>: Suppose Assumptions M.1-M.6, Assumption W.3, and $ \mathbb{H}<em>{0} $ hold. Then under $ \mathbb{H}</em>{0} $
+$$
+L R \stackrel{d}{\rightarrow} \chi_{q}^{2} \text { as } n \rightarrow \infty
+$$
+**Proof:**</p>
+<p>By a second order Taylor&rsquo;s series expansion of $ \hat{l}(\tilde{\theta}) $ around the unconstrained MLE $ \hat{\theta}, $ we have
+$$
+\begin{aligned}
+L R &amp;=2 n\left{\hat{l}(\hat{\theta})-\left[\hat{l}(\hat{\theta})+\frac{d \hat{l}(\hat{\theta})}{d \theta}(\tilde{\theta}-\hat{\theta})+\frac{1}{2}(\tilde{\theta}-\hat{\theta})^{\prime} \frac{d^{2} \hat{l}\left(\bar{\theta}<em>{a}\right)}{d \theta d \theta^{\prime}}(\tilde{\theta}-\hat{\theta})\right]\right} \<br>
+&amp;=\sqrt{n}(\tilde{\theta}-\hat{\theta})^{\prime}\left[-\hat{H}\left(\bar{\theta}</em>{a}\right)\right] \sqrt{n}(\tilde{\theta}-\hat{\theta})
+\end{aligned}
+$$
+where $ \bar{\theta}_{a}=a \tilde{\theta}+(1-a) \hat{\theta} $ for some $ a \in[0,1], $ lies on the segment between $ \tilde{\theta} $ and $ \hat{\theta}, $ and $ \frac{d}{d \theta} \hat{l}(\hat{\theta})=0 $ which is the FOC of the unconstrained MLE $ \hat{\theta}, $ and again
+$$
+\hat{H}(\theta)=\frac{d^{2} \hat{l}(\theta)}{d \theta d \theta^{\prime}}
+$$
+is the sample Hessian matrix.</p>
+<p>Next, applying the mean value theorem for $ \frac{d}{d \theta} \hat{l}(\hat{\theta}) $ around the constrained $ \mathrm{MLE} \tilde{\theta}, $ we obtain
+$$
+\begin{aligned}
+0 &amp;=\frac{d \hat{l}(\hat{\theta})}{d \theta} \<br>
+&amp;=\frac{d \hat{l}(\tilde{\theta})}{d \theta}+\hat{H}\left(\bar{\theta}<em>{b}\right)(\hat{\theta}-\tilde{\theta})
+\end{aligned}
+$$
+where $ \bar{\theta}</em>{b}=b \tilde{\theta}+(1-b) \hat{\theta} $ for some $ b \in[0,1], $ lies on the segment between $ \tilde{\theta} $ and $ \hat{\theta} $. This and the FOC of the constrained MLE that $ G(\tilde{\theta})^{\prime} \tilde{\lambda}=-\frac{d}{d \theta} \hat{l}(\tilde{\theta}) $ imply
+$$
+\begin{aligned}
+\sqrt{n}(\hat{\theta}-\tilde{\theta}) &amp;=-\hat{H}\left(\bar{\theta}<em>{b}\right)^{-1} \sqrt{n} \frac{d \hat{l}(\tilde{\theta})}{d \theta} \<br>
+&amp;=\hat{H}\left(\bar{\theta}</em>{b}\right)^{-1} G(\tilde{\theta})^{\prime} \sqrt{n} \tilde{\lambda}
+\end{aligned}
+$$
+This relationship provides an alternative interpretation for the multiplier $ \tilde{\lambda}, $ namely, it measures the difference between the unconstrained and constrained MLEs $ \hat{\theta} $ and $ \tilde{\theta} $.</p>
+<p>It follows that
+$$
+L R=-\sqrt{n} \tilde{\lambda} G(\tilde{\theta}) \hat{H}\left(\bar{\theta}<em>{b}\right)^{-1} \hat{H}\left(\bar{\theta}</em>{a}\right) \hat{H}\left(\bar{\theta}<em>{b}\right)^{-1} G(\tilde{\theta})^{\prime} \sqrt{n} \tilde{\lambda}
+$$
+Because
+$$
+\begin{aligned}
+L R-L M &amp;=-\sqrt{n} \tilde{\lambda}\left[G(\tilde{\theta}) \hat{H}\left(\bar{\theta}</em>{b}\right)^{-1} \hat{H}\left(\bar{\theta}<em>{a}\right) \hat{H}\left(\bar{\theta}</em>{b}\right)^{-1} G(\tilde{\theta})^{\prime}-G(\tilde{\theta}) \hat{H}(\tilde{\theta})^{-1} G(\tilde{\theta})^{\prime}\right] \sqrt{n} \tilde{\lambda} \<br>
+&amp;=O_{P}(1) o_{P}(1) O_{P}(1) \<br>
+&amp;=o_{P}(1)
+\end{aligned}
+$$</p>
+<p>where $ \sqrt{n} \tilde{\lambda}=O_{P}(1) $ by Lemma 7.11 given $ \sqrt{n} \tilde{\lambda} \stackrel{d}{\rightarrow} N\left(0,-\left[G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\right]^{-1}\right) $ as
+shown in Section 9.4, and
+$$
+\begin{aligned}
+&amp;G(\tilde{\theta}) \hat{H}\left(\bar{\theta}_{b}\right)^{-1} \hat{H}\left(\bar{\theta}_{a}\right) \hat{H}\left(\bar{\theta}_{b}\right)^{-1} G(\tilde{\theta})^{\prime}-G(\tilde{\theta}) \hat{H}(\tilde{\theta})^{-1} G(\tilde{\theta})^{\prime} \<br>
+\stackrel{p}{\rightarrow} &amp;G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} H\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}-G\left(\theta_{0}\right) H\left(\theta_{0}\right)^{-1} G\left(\theta_{0}\right)^{\prime}\<br>
+=&amp;0
+\end{aligned}
+$$
+It follows that $ L R $ and $ L M $ are **asymptotically equivalent** under $ \mathbb{H}_{0} $. As a result, by the **asymptotic equivalence lemma** and $ L M \stackrel{d}{\rightarrow} \chi_{q}^{2} $ as $ n \rightarrow \infty $ under $ \mathbb{H}_{0}, $ we have $L R \stackrel{d}{\rightarrow} \chi_{q}^{2} \text { as } n \rightarrow \infty$.</p>
+<p><strong>Remarks:</strong></p>
+<p>In fact, it can also be shown that the Wald test statistic $ W $ based on MLE $ \hat{\theta} $ and the LM test statistic $ L M $ are asymptotically equivalent under $ \mathbb{H}<em>{0} $. This implies that all three tests are asymptotically equivalent under $ \mathbb{H}</em>{0} $.</p>
+<p>The LR test statistic $ L R $ involves both constrained and unconstrained MLE estimators. However, it is very convenient to compute, because the sample log-likelihood value is the objective function and is usually reported by statistical software when a probability distribution model $ f(x, \theta) $ is estimated by the MLE</p>
+<p>信息矩阵恒等式不成立（模型不正确设定的情况下），LR完全不能用，LM与Wald可用只是会更加复杂</p>
+<p>Theorem $ 5(9.6) .[\text { LR } \text { Test Based on Sufficient Statistic }]: $ If $ T\left(\mathrm{X}^{n}\right) $ is a sufficient statistic for $ \theta, $ and $ L R\left(\mathbf{X}^{n}\right) $ and $ L R\left[T\left(\mathbf{X}^{n}\right)\right] $ are the likelihood ratio tests based on $ \mathbf{X}^{n} $ and $ T\left(\mathbf{X}^{n}\right) $ respectively, then
+$$
+L R\left(\mathbf{X}^{n}\right)=L R\left[T\left(\mathbf{X}^{n}\right)\right]
+$$
+Proof:
+By the Factorization theorem, the PMF/PDF of $ \mathbf{X}^{n} $ can be written as
+$$
+f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}, \theta\right)=g\left[T\left(\mathbf{x}^{n}\right), \theta\right] h\left(\mathbf{x}^{n}\right), \text { for all } \theta \in \Theta
+$$
+where $ g(t, \theta) $ is the $ \mathrm{PMF} / \mathrm{PDF} $ of $ T\left(\mathrm{X}^{n}\right) $ and $ h\left(\mathrm{x}^{n}\right) $ does not depend on $ \theta $ It follows that</p>
+<p>$$
+\begin{aligned}
+L R\left(\mathbf{X}^{n}\right) &amp;=2 n \ln \hat{\Lambda} \<br>
+&amp;=2 n \ln \left[\frac{f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \hat{\theta}\right)}{f_{\mathbf{X}^{n}}\left(\mathbf{X}^{n}, \tilde{\theta}\right)}\right] \<br>
+&amp;=2 n \ln \left{\frac{g\left[T\left(\mathbf{X}^{n}\right), \hat{\theta}\right] h\left(\mathbf{X}^{n}\right)}{g\left[T\left(\mathbf{X}^{n}\right), \tilde{\theta}\right] h\left(\mathbf{X}^{n}\right)}\right} \<br>
+&amp;=2 n \ln \left{\frac{g\left[T\left(\mathbf{X}^{n}\right), \hat{\theta}\right]}{g\left[T\left(\mathbf{X}^{n}\right), \tilde{\theta}\right]}\right} \<br>
+&amp;=L R\left[T\left(\mathbf{X}^{n}\right)\right]
+\end{aligned}
+$$
+This implies that the LR test statistic depends on $ \mathrm{X}^{n} $ only through the statistic $ T\left(\mathrm{X}^{n}\right) $ when $ T\left(\mathbf{X}^{n}\right) $ is a sufficient statistic for $ \theta $</p>
+<h2 id="96-illustrative-examples">9.6 Illustrative Examples</h2>
+<h3 id="961-hypothesis-testing-under-the-bernoulli-distribution">9.6.1 Hypothesis Testing under the Bernoulli Distribution</h3>
+<p>Suppose $ \mathbf{X}^{n} $ is an IID random sample from a Bernoulli $ (\theta) $ distribution, where a Bernoulli random variable takes two possible values:
+$$
+X_{i}=\left{\begin{array}{l}
+1, \text { with probability } \theta \<br>
+0, \text { with probability } 1-\theta
+\end{array}\right.
+$$
+The parameter $ \theta \in(0,1) $ is unknown.</p>
+<p>Suppose we are interested in testing
+$$
+\mathbb{H}<em>{0}: \theta=\theta</em>{0}
+$$
+versus
+$$
+\mathbb{H}<em>{1}: \theta \neq \theta</em>{0}
+$$
+Hence, we have $ g(\theta)=\theta-\theta_{0}, $ and the gradient
+$$
+G(\theta)=\frac{d g(\theta)}{d \theta}=1
+$$
+since the population PMF $ f(x, \theta)=\theta^{x}(1-\theta)^{1-x} $ for $ x=0,1, $ the log-likelihood function of the IID random sample $ \mathbf{X}^{n} $ is given by
+$$
+\begin{aligned}
+\ln \hat{L}\left(\theta | \mathbf{X}^{n}\right) &amp;=\sum_{i=1}^{n} \ln f\left(X_{i}, \theta\right) \<br>
+&amp;=n \bar{X}_{n} \ln \theta+n\left(1-\bar{X}_{n}\right) \ln (1-\theta)
+\end{aligned}
+$$
+where the sample mean $ \bar{X}_{n} $ is a sufficient statistic for $ \theta $. The FOC of the MLE is
+$$
+\frac{\partial \ln \hat{L}\left(\theta | \mathbf{X}^{n}\right)}{\partial \theta}=\frac{n \bar{X}_{n}}{\hat{\theta}}-\frac{n-n \bar{X}_{n}}{1-\hat{\theta}}=0
+$$
+Thus we have the MLE $ \hat{\theta}=\bar{X}_{n} $.</p>
+<h4 id="the-wald-test">The Wald Test</h4>
+<p>Recall the Hessian matrix
+$$
+H(\theta)=E_{\theta}\left[\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}\right]
+$$
+Because
+$$
+\frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta^{2}}=-\frac{X_{i}}{\theta^{2}}-\frac{1-X_{i}}{(1-\theta)^{2}}
+$$
+the sample Hessian matrix
+$$
+\begin{aligned}
+\hat{H}(\theta) &amp;=n^{-1} \sum_{i=1}^{n} \frac{\partial^{2} \ln f\left(X_{i}, \theta\right)}{\partial \theta} \<br>
+&amp;=-\frac{\sum_{i=1}^{n} X_{i}}{n \theta^{2}}-\frac{\sum_{i=1}^{n}\left(1-X_{i}\right)}{n(1-\theta)^{2}} \<br>
+&amp;=-\frac{\bar{X}_{n}}{\theta^{2}}-\frac{1-\bar{X}_{n}}{(1-\theta)^{2}}
+\end{aligned}
+$$
+Hence, we have
+$$
+\hat{H}(\hat{\theta})=-\frac{1}{\bar{X}_{n}\left(1-\bar{X}_{n}\right)}
+$$</p>
+<p>The Wald test statistic
+$$
+\begin{aligned}
+\hat{W} &amp;=n g(\hat{\theta})^{\prime}\left[-G(\hat{\theta}) \hat{H}^{-1}(\hat{\theta}) G(\hat{\theta})^{\prime}\right]^{-1} g(\hat{\theta}) \<br>
+&amp;=\frac{n\left(\hat{\theta}-\theta_{0}\right)^{2}}{\bar{X}_{n}\left(1-\bar{X}_{n}\right)} \<br>
+&amp;=\frac{n\left(\bar{X}_{n}-\theta_{0}\right)^{2}}{\bar{X}_{n}\left(1-\bar{X}_{n}\right)} \stackrel{d}{\rightarrow} \chi_{1}^{2} \text { as } n \rightarrow \infty
+\end{aligned}
+$$
+under $ \mathbb{H}_{0} . $ Hence, $ \sqrt{n}\left(\bar{X}_{n}-\theta_{0}\right) \stackrel{d}{\rightarrow} N\left(0, \sigma^{2}\right) $.</p>
+<h4 id="the-lm-test">The LM Test</h4>
+<p>Define the Lagrangian function
+$$
+L(\theta, \lambda)=\hat{l}(\theta)+\lambda^{\prime} g(\theta)=\hat{l}(\theta)+\lambda\left(\theta-\theta_{0}\right)
+$$
+where the normalized log-likelihood
+$$
+\hat{l}(\theta)=\bar{X}_{n} \ln \theta+\left(1-\bar{X}_{n}\right) \ln (1-\theta)
+$$
+The first order conditions for the constrained MLE are
+$$
+\begin{aligned}
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \theta} &amp;=\frac{\partial \hat{l}(\tilde{\theta})}{\partial \theta}+\tilde{\lambda}=0 \<br>
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \lambda} &amp;=g(\tilde{\theta})=\tilde{\theta}-\theta_{0}=0
+\end{aligned}
+$$</p>
+<p>It follows that $ \tilde{\theta}=\theta_{0}, $ and
+$$
+\begin{aligned}
+\tilde{\lambda} &amp;=-\frac{\partial \hat{l}(\tilde{\theta})}{\partial \theta} \<br>
+&amp;=-\frac{\bar{X}_{n}}{\tilde{\theta}}+\frac{1-\bar{X}_{n}}{1-\tilde{\theta}} \<br>
+&amp;=-\frac{\bar{X}_{n}-\tilde{\theta}}{\tilde{\theta}(1-\tilde{\theta})} \<br>
+&amp;=-\frac{\bar{X}_{n}-\theta_{0}}{\theta_{0}\left(1-\theta_{0}\right)}
+\end{aligned}
+$$
+This indicates that $ \tilde{\lambda} $ measures the difference between the unconstrained MLE $ \hat{\theta} $ and the constrained MLE $ \tilde{\theta}=\theta_{0} $.</p>
+<p>Also, the sample Hessian matrix
+$$
+\begin{aligned}
+\hat{H}(\tilde{\theta}) &amp;=-\frac{\bar{X}<em>{n}}{\theta</em>{0}^{2}}-\frac{1-\bar{X}<em>{n}}{\left(1-\theta</em>{0}\right)^{2}} \<br>
+&amp;=-\frac{\bar{X}<em>{n}\left(1-\theta</em>{0}\right)^{2}+\left(1-\bar{X}<em>{n}\right) \theta</em>{0}^{2}}{\theta_{0}^{2}\left(1-\theta_{0}\right)^{2}}
+\end{aligned}
+$$</p>
+<p>Therefore, we have
+$$
+\begin{aligned}
+L M &amp;=-n \tilde{\lambda}<em>{n}^{\prime} G(\tilde{\theta}) \hat{H}(\tilde{\theta})^{-1} G(\tilde{\theta})^{\prime} \tilde{\lambda} \<br>
+&amp;=n\left[-\frac{\bar{X}</em>{n}-\theta_{0}}{\theta_{0}\left(1-\theta_{0}\right)}\right]^{2}\left[\frac{\bar{X}_{n}\left(1-\theta_{0}\right)^{2}+\left(1-\bar{X}_{n}\right) \theta_{0}^{2}}{\theta_{0}^{2}\left(1-\theta_{0}\right)^{2}}\right]^{-1} \<br>
+&amp;=\frac{n\left(\bar{X}_{n}-\theta_{0}\right)^{2}}{\bar{X}_{n}\left(1-\theta_{0}\right)^{2}+\left(1-\bar{X}_{n}\right) \theta_{0}^{2}}
+\end{aligned}
+$$</p>
+<h4 id="the-lr-test">The LR Test</h4>
+<p>Finally, we calculate the LR test statistic
+$$
+\begin{aligned}
+L R &amp;=2 n[\hat{l}(\hat{\theta})-\hat{l}(\tilde{\theta})] \<br>
+&amp;=2 n\left[\bar{X}<em>{n} \ln \left(\frac{\bar{X}</em>{n}}{\theta_{0}}\right)+\left(1-\bar{X}_{n}\right) \ln \left(\frac{1-\bar{X}_{n}}{1-\theta_{0}}\right)\right]
+\end{aligned}
+$$</p>
+<h3 id="962-hypothesis-testing-under-the-normal-distribution">9.6.2 Hypothesis Testing under the Normal Distribution</h3>
+<p>Suppose $ X^{n} $ is an IID random sample from a $ N\left(\mu, \sigma^{2}\right) $ population, where $ \theta=\left(\mu, \sigma^{2}\right) $ is unknown.</p>
+<p>We are interested in testing the hypotheses
+$$
+\mathbb{H}<em>{0}: \mu=\mu</em>{0}
+$$</p>
+<p>versus
+$$
+\mathbb{H}<em>{A}: \mu \neq \mu</em>{0}
+$$
+where $ \mu_{0} $ is a known number. This is equivalent to choosing the test function
+$$
+g(\theta)=\mu-\mu_{0}
+$$
+It follows that
+$$
+G(\theta)=\frac{d g(\theta)}{d \theta}=(1,0)
+$$
+is a two-dimensional row vector.</p>
+<p>Since the PDF of a $ N\left(\mu, \sigma^{2}\right) $ population is
+$$
+f(x, \theta)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}
+$$
+The normalized log-likelihood function of the random sample $ \mathbf{X}^{n} $ is
+$$
+\hat{l}\left(\theta | \mathbf{X}^{n}\right)=-\frac{1}{2} \ln (2 \pi)-\frac{1}{2} \ln \left(\sigma^{2}\right)-\frac{1}{2 \sigma^{2}} \frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}
+$$</p>
+<p>For the unconstrained MLE, we have obtained $ \hat{\theta}=\left(\hat{\mu}, \hat{\sigma}^{2}\right), $ where
+$$
+\begin{aligned}
+\hat{\mu} &amp;=\bar{X}<em>{n} \<br>
+\hat{\sigma}^{2} &amp;=\frac{1}{n} \sum</em>{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}
+\end{aligned}
+$$
+Also, the sample Hessian matrix
+$$
+\hat{H}(\theta)=\left[\begin{array}{cc}
+-\frac{1}{\sigma^{2}} &amp; -\frac{1}{\sigma^{4}} \frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\mu\right) \<br>
+-\frac{1}{\sigma^{4}} \frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\mu\right) &amp; \frac{1}{2 \sigma^{4}}-\frac{1}{\sigma^{6}} \frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}
+\end{array}\right]
+$$
+When $ \theta=\hat{\theta}, $ we have
+$$
+\hat{H}(\hat{\theta})=\left[\begin{array}{cc}
+-\frac{1}{\hat{\sigma}^{2}} &amp; 0 \<br>
+0 &amp; -\frac{1}{2 \hat{\sigma}^{4}}
+\end{array}\right]
+$$
+The Wald Test Statistic
+$$
+\begin{aligned}
+\hat{W} &amp;=-n g(\hat{\theta})^{\prime}\left[G(\hat{\theta}) \hat{H}^{-1}(\hat{\theta}) G(\hat{\theta})^{\prime}\right]^{-1} g(\hat{\theta}) \<br>
+&amp;=\frac{n\left(\bar{X}_{n}-\mu_{0}\right)^{2}}{\hat{\sigma}^{2}} \<br>
+&amp;\stackrel{d}{\rightarrow}  \chi_{1}^{2}
+\end{aligned}
+$$
+under $ \mathbb{H}_{0} $.</p>
+<h4 id="the-lm-test-statistic">The LM Test Statistic</h4>
+<p>Consider the constrained MLE
+$$
+\tilde{\theta}=\max <em>{\theta \in \Theta} \hat{l}\left(\theta | \mathbf{X}^{n}\right)
+$$
+subject to the constrain that $ \mu=\mu</em>{0} $
+Define the Lagrangian function
+$$
+L(\theta, \lambda)=\hat{l}\left(\theta | \mathbf{X}^{n}\right)+\lambda\left(\mu-\mu_{0}\right)
+$$
+The FOCs are:
+$$
+\begin{aligned}
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \mu} &amp;=\frac{1}{\tilde{\sigma}^{2}} \frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\tilde{\mu}\right)+\tilde{\lambda}=0 \<br>
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \sigma^{2}} &amp;=-\frac{1}{2 \tilde{\sigma}^{2}}+\frac{1}{2 \tilde{\sigma}^{4}} \frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\tilde{\mu}\right)^{2}=0 \<br>
+\frac{\partial L(\tilde{\theta}, \tilde{\lambda})}{\partial \lambda} &amp;=\tilde{\mu}-\mu_{0}=0
+\end{aligned}
+$$</p>
+<p>Solving for these FOCs, we obtain
+$$
+\begin{aligned}
+\tilde{\mu} &amp;=\mu_{0} \<br>
+\tilde{\sigma}^{2} &amp;=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\mu_{0}\right)^{2} \<br>
+\tilde{\lambda} &amp;=-\frac{1}{\tilde{\sigma}^{2}}\left(\bar{X}_{n}-\mu_{0}\right)
+\end{aligned}
+$$
+and the sample Hessian matrix
+$$
+\hat{H}(\tilde{\theta})=\left[\begin{array}{cc}
+-\frac{1}{\tilde{\sigma}^{2}} &amp; -\frac{1}{\tilde{\sigma}^{4}}\left(\bar{X}_{n}-\mu_{0}\right) \<br>
+-\frac{1}{\tilde{\sigma}^{4}}\left(\bar{X}_{n}-\mu_{0}\right) &amp; -\frac{1}{2 \tilde{\sigma}^{4}}
+\end{array}\right]
+$$
+It follows that the LM test statistic
+$$
+\begin{aligned}
+L M &amp;=-n \tilde{\lambda}^{\prime} G(\tilde{\theta}) \hat{H}^{-1}(\tilde{\theta}) G(\tilde{\theta})^{\prime} \tilde{\lambda} \<br>
+&amp;=\frac{n\left(\bar{X}_{n}-\mu_{0}\right)^{2}}{\tilde{\sigma}^{2}-2\left(\bar{X}_{n}-\mu_{0}\right)^{2}}
+\end{aligned}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531114939203.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531114939203.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531114939203.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531114939203.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531114939203"
+        title="image-20200531114939203.png" /></div></p>
+<h4 id="the-likelihood-ratio-test-statistic">The Likelihood Ratio Test Statistic</h4>
+<p>Since
+$$
+\begin{array}{l}
+\hat{l}(\hat{\theta})=-\frac{1}{2} \ln (2 \pi)-\frac{1}{2} \ln \left(\hat{\sigma}^{2}\right)-\frac{1}{2} \<br>
+\hat{l}(\tilde{\theta})=-\frac{1}{2} \ln (2 \pi)-\frac{1}{2} \ln \left(\tilde{\sigma}^{2}\right)-\frac{1}{2}
+\end{array}
+$$
+It follows that
+$$
+\begin{aligned}
+L R &amp;=2 n\left[\hat{l}\left(\hat{\theta} | \mathbf{X}^{n}\right)-\hat{l}\left(\tilde{\theta} | \mathbf{X}^{n}\right)\right] \<br>
+&amp;=n \ln \left(\frac{\tilde{\sigma}^{2}}{\hat{\sigma}^{2}}\right)
+\end{aligned}
+$$
+It is interesting to observe that the LR principle tests the hypothesis on the population mean by comparing the variance estimators under the null and alternative hypotheses. Here, the likelihood ratio is a log-function of the sample variance ratio. Intuitively, when $ \mu \neq \mu_{0}$, $ \tilde{\sigma}^{2}=n^{-1} \sum_{i=1}^{n}\left(X_{i}-\mu_{0}\right)^{2} $ is not a consistent estimator for $ \sigma^{2} . $ It will be larger than $ \hat{\sigma}^{2} $ when $ n $ is large, giving the LR its power.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531115139421.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531115139421.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531115139421.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200531115139421.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200531115139421"
+        title="image-20200531115139421.png" /></div></p>
+<h2 id="97-conclusion">9.7 Conclusion</h2>
+<p>Hypothesis testing is one of the most important tasks in statistical inference. In this chapter we have introduced basic ideas of hypothesis testing in statistical inference.</p>
+<p>We introduce the well-known Neyman-Pearman lemma that a likelihood ratio based test will be uniformly most powerful test for simple hypotheses.</p>
+<p>We discuss three important testing methods, namely the Wald test, the Lagrange Multiplier (LM) test, and the Likelihood Ratio (LR) test, and show they are asymptotically equivalent to each other under the null hypothesis.</p>
+<p><strong>It is important to note that all hypothesis tests considered in this chapter assume that the population distribution model is correctly specified.</strong></p>
+<p>When the population distribution model is misspecified, the Wald test statistic and the LM test statistics have to be modified to use a consistent asymptotic variance estimator which is robust to model misspecification. However, it is impossible to modify the Likelihood ratio test statistic.</p>
+<p>Finally, when testing economic hypotheses, we usually need to transform an economic hypothesis into a statistical hypothesis on model parameters. since some auxiliary conditions are often imposed in such a transformation, there usually exists a gap between the original economic hypothesis and the resulting statistical hypothesis. Caution is needed to interpret the testing results of the statistical hypotheses.</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/9.-hypothesis-testing/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/9.-hypothesis-testing/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/9.-hypothesis-testing/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/9.-hypothesis-testing/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/8.-parameter-estimation-and-evaluation/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

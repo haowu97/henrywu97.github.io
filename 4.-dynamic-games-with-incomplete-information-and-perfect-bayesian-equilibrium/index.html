@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="4. Dynamic Games with Incomplete Information and Perfect Bayesian Equilibrium 4.1 Perfect Bayesian Equilibrium Beliefs and Sequential Rationality
+ MWG Chapter 9:C JR Chapter 7.3.7  The notion of PBE will be used later in the following chapters:
+ Adverse selection and signalling (MWG 13.B, 13.C, JR 8.1.1, 8.1.2)  When the notion of subgame perfect Nash equilibrium is of no use to refine Nash equilibria.
+e.g. MWG (Page 283) Example 9." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="4. Dynamic Games with Incomplete Information and Perfect Bayesian Equilibrium 4.1 Perfect Bayesian Equilibrium Beliefs and Sequential Rationality
+ MWG Chapter 9:C JR Chapter 7.3.7  The notion of PBE will be used later in the following chapters:
+ Adverse selection and signalling (MWG 13.B, 13.C, JR 8.1.1, 8.1.2)  When the notion of subgame perfect Nash equilibrium is of no use to refine Nash equilibria.
+e.g. MWG (Page 283) Example 9."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" /><link rel="prev" href="https://henrywu97.github.io/5.-information-economics-signalling-and-screening/" /><link rel="next" href="https://henrywu97.github.io/theme-documentation-content/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  3203 ,
+        "url": "https:\/\/henrywu97.github.io\/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3203 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;16 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-perfect-bayesian-equilibrium">4.1 Perfect Bayesian Equilibrium</a></li>
+    <li><a href="#42-5-step-to-find-pure-strategy-pbes">4.2 5-step to find pure-strategy PBEs</a>
+      <ul>
+        <li><a href="#421-example">4.2.1 Example</a>
+          <ul>
+            <li><a href="#separating-equilibrium">Separating equilibrium</a></li>
+            <li><a href="#pooling-equilibrium">Pooling equilibrium</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#43-the-intuitive-criterion">4.3 The Intuitive Criterion</a>
+      <ul>
+        <li><a href="#431-step-1">4.3.1 Step 1</a></li>
+        <li><a href="#432-step-2">4.3.2 Step 2</a></li>
+        <li><a href="#433-example-binary-types--binary-actions">4.3.3 Example: Binary Types + Binary Actions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="4-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium">4. Dynamic Games with Incomplete Information and Perfect Bayesian Equilibrium</h1>
+<h2 id="41-perfect-bayesian-equilibrium">4.1 Perfect Bayesian Equilibrium</h2>
+<p>Beliefs and Sequential Rationality</p>
+<ul>
+<li>MWG Chapter 9:C</li>
+<li>JR Chapter 7.3.7</li>
+</ul>
+<p>The notion of PBE will be used later in the following chapters:</p>
+<ul>
+<li>Adverse selection and signalling (MWG 13.B, 13.C, JR 8.1.1, 8.1.2)</li>
+</ul>
+<p>When the notion of subgame perfect Nash equilibrium is of no use to refine Nash equilibria.</p>
+<p>e.g. MWG (Page 283) Example 9.C.1:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410172830.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410172830.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410172830.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410172830.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410172830.png"
+        title="20200410172830.png" /></div></p>
+<p>All Nash equilibria are SPNEs (two pure-strategy N.E./SPNEs are shown in blue).</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410180549.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410180549.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410180549.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410180549.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200410180549.png"
+        title="20200410180549.png" /></div></p>
+<p>How to eliminate the unreasonable equilibrium, e.g. (E plays Out; I plays Fight if entry occurs)?</p>
+<ul>
+<li>In the spirt of sequential rationality, we might insist that Firm I’s action be optimal for some belief.</li>
+<li>Viewed in this light, we can conclude that “fight if entry occurs” is not an optimal choice for any belief that Firm I might have.</li>
+</ul>
+<p>Roughly speaking, we want to require strategies being optimal given beliefs and beliefs be consistent with strategies.</p>
+<p>We need to introduce the notions of a system of beliefs and sequential rationality of strategies.</p>
+<p>【Definition】A <strong>system of beliefs</strong> $\mu$ in extensive form game $\Gamma_{E}$ is a specification of a probability $\mu(x) \in[0,1]$ for each decision node $x$ in $\Gamma_{E}$ such that $\sum_{x \in H} \mu(x)=1$ for all information sets $H$.</p>
+<ul>
+<li>A system of beliefs specify, for each information set, a probabilistic assessment by the player who moves there, conditional upon play having reached that information set.</li>
+<li>Let $E\left[u_{i} | H, \mu, \sigma_{i}, \sigma_{-i}\right]$ be Player $i$ &rsquo;s expected utility starting at $H$ if she has beliefs $\mu$ and follows strategy $\sigma_{i}$ and other players use $\sigma_{-i}$</li>
+</ul>
+<p>【Definition】A strategy profile $\sigma$ in extensive form game $\Gamma_{E}$ is **sequentially rational** at information set $H$ given a system of beliefs $\mu$ if, denoting by $\iota(H)$ the player who moves at $H$, we have
+$$
+E\left[u_{\iota(H)} | H, \mu, \sigma_{\iota(H)}, \sigma_{-\iota(H)}\right] \geq E\left[u_{\iota(H)} | H, \mu, \tilde{\sigma}_{\iota(H)}, \sigma_{-\iota(H)}\right]
+$$
+for all $\tilde{\sigma}_{\iota(H)} \in \Delta\left(S_{\iota(H)}\right)$.</p>
+<p>If strategy profile $\sigma$ satisfies this condition for all information sets $H$, then we say that $\sigma$ is <strong>sequentially rational</strong> given belief system.</p>
+<p>Consider <strong>completely mixed strategy</strong>: each player’s strategy assigns a strictly positive probability to each possible action at every one of her information sets. (So every information set in the game is reached with positive probability.)</p>
+<p>For each $x$ in a given player&rsquo;s information set $H$, the player should compute the conditional probability of reaching that node given play of strategies $\sigma$ :
+$$
+\operatorname{Pr}(x | H, \sigma)=\frac{\operatorname{Pr}(x | \sigma)}{\sum_{x^{\prime} \in H} \operatorname{Pr}\left(x^{\prime} | \sigma\right)}
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414094935.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414094935.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414094935.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414094935.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414094935.png"
+        title="20200414094935.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421090849.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421090849.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421090849.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421090849.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421090849.png"
+        title="20200421090849.png" /></div></p>
+<p>【structurally consistent】Also called the “common beliefs” restriction in JR Section 7.3.7: players with identical information have identical beliefs.
+$\mu=0.5, \forall \sigma_{1} \in(0,1)$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421091436.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421091436.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421091436.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421091436.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200421091436.png"
+        title="20200421091436.png" /></div></p>
+<p>Extensive-form games with incomplete information: Sequential-move $+$ Bayesian games (players has types)</p>
+<p>【PBE】We are going to introduce <strong>Perfect Bayesian Equilibrium</strong> as the solution concept.</p>
+<ul>
+<li>Strategy profile satisfies <strong>sequential rationality</strong>: Each player&rsquo;s strategies specify optimal actions, given the
+strategies of the other players, and given his beliefs.</li>
+<li>Consistency of beliefs: the beliefs are consistent with Bayes‘ rule, whenever possible.</li>
+</ul>
+<p>Useful notions: separating (perfect Bayesian) equilibrium, pooling (perfect Bayesian) equilibrium.</p>
+<p>【Separating equilibrium】 is a Perfect Bayesian Equilibrium of extensive-form incomplete information game in which different types of player i adopt different strategies.</p>
+<p>【Pooling equilibrium】 is a Perfect Bayesian Equilibrium in which different types of player i adopt the same strategy.</p>
+<h2 id="42-5-step-to-find-pure-strategy-pbes">4.2 5-step to find pure-strategy PBEs</h2>
+<ol>
+<li>Specify a strategy profile for the privately informed player, either separating or pooling.</li>
+</ol>
+<ul>
+<li>In our above example, there are only four possible strategy profiles for the privately informed monetary authority: two separating strategy profiles, High $^{S}$ Low $^{W}$ and Low $^{S}$ High $^{W}$ and two pooling strategy profiles, High $^{S}$ High $^{W}$ and Low $^{S}$ Low $^{W}$.
+<ul>
+<li>(For future reference, it might be helpful to shade the branches corresponding to the strategy profile we test.)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Update the uninformed player&rsquo;s beliefs using Bayes' rule, whenever possible.</li>
+</ol>
+<ul>
+<li>In our above example, we need to specify beliefs $\mu$ and $\gamma$ which arise after the labor union observes a high or a low inflation announcement, respectively.</li>
+</ul>
+<ol start="3">
+<li>Given the uninformed player&rsquo;s updated beliefs, find his optimal response.</li>
+</ol>
+<ul>
+<li>In our above example, we first determine the optimal response of the labor union $(\mathrm{H} \text { or } \mathrm{L}$ ) upon observing a high-inflation announcement (given its updated belief $\mu$ ),</li>
+<li>we then determine its optimal response (H or L) after observing a low-inflation announcement (given its updated belief $\gamma$ ).
+<ul>
+<li>(Also for future reference, it might be helpful to shade the branches corresponding to the optimal responses we ust found</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>Given the optimal response of the uninformed player, find the optimal action (message) for the informed player.</li>
+</ol>
+<ul>
+<li>In our previous example, we first check if the Strong monetary authority prefers to make a high or low inflation announcement (given the labor union&rsquo;s responses determined in step 3 ).</li>
+<li>We then operate similarly for the Weak type of monetary authority.</li>
+</ul>
+<ol start="5">
+<li>Then check if this strategy profile for the informed player coincides with the profile suggested in step 1</li>
+</ol>
+<ul>
+<li>If it coincides, then this strategy profile, updated beliefs and optimal responses can be supported as a PBE of the incomplete information game.</li>
+<li>Otherwise, we say that this strategy profile cannot be sustained as a PBE of the game.</li>
+</ul>
+<h3 id="421-example">4.2.1 Example</h3>
+<p>Let us consider the following sequential game with incomplete information:</p>
+<ul>
+<li>A monetary authority (such as the Federal Reserve Bank) privately observes its real degree of commitment with
+maintaining low information levels.</li>
+<li>After knowing its type (either Strong or Weak), the monetary authority decides whether to announce that the expectation for information is either High or Low.</li>
+<li>A labor union, observing the message sent by the monetary authority, decides whether to ask for high or low salary raises(denoted as H or L, respectively)</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414113942.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414113942.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414113942.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414113942.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200414113942.png"
+        title="20200414113942.png" /></div></p>
+<p>Let us next separately apply this procedure to test each of the four candidate strategy profiles:</p>
+<ul>
+<li>
+<p>two separating strategy profiles:</p>
+<ul>
+<li>$\text { High }^{S} \text { Low }^{W} $</li>
+<li>$\text { Low }^{S} \text { High}^{W}$</li>
+</ul>
+</li>
+<li>
+<p>And two pooling strategy profiles:</p>
+<ul>
+<li>$\text { High }^{S} \text { High }^{W} $</li>
+<li>$\text { Low }^{S} \text { Low}^{W}$</li>
+</ul>
+</li>
+</ul>
+<h4 id="separating-equilibrium">Separating equilibrium</h4>
+<p>Let us first check separating strategy profile: $\text { Low }^{S} \text { High}^{W}$</p>
+<p>Step 1: Specifying strategy profile $\text { Low }^{S} \text { High}^{W}$ that we will test. (See shaded branches in the figure.)</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502160440.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502160440.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502160440.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502160440.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502160440.png"
+        title="20200502160440.png" /></div></p>
+<p>Step 2: Updating beliefs</p>
+<p>(a) After high inflation announcement (left-hand side)
+$$
+\mu=\frac{0.6 \alpha^{\text {Strong}}}{0.6 \alpha^{\text {Strong}}+0.4 \alpha^{\text {Weak}}}=\frac{0.6 \times 0}{0.6 \times 0+0.4 \times 1}=0
+$$
+where $\alpha^{\text{Strong}}$ is the probability that monetary authority choose high inflation given type is strong.</p>
+<p>This implies that after high inflation, the labor union restricts its belief to the lower left-hand corner (see box), since $\mu=0$ and $1-\mu=1$</p>
+<p>(b) After low inflation announcement (right-hand side)
+$$
+\gamma=\frac{0.6\left(1-\alpha^{\text {Strong}}\right)}{0.6\left(1-\alpha^{\text {Strong}}\right)+0.4\left(1-\alpha^{\text {Weak}}\right)}=\frac{0.6 \times 1}{0.6 \times 1+0.4 \times 0}=1
+$$
+This implies that, after low inflation, the labor union restricts its belief to the upper right-hand corner (see box), since $\gamma=1$ and $1-\gamma=0$.</p>
+<p>Step 3: Optimal response
+(a) After high inflation announcement, respond with $\mathrm{H}$ since
+$$
+0&gt;-100
+$$
+in the lower left-hand corner of the figure.</p>
+<p>(b) After low inflation announcement, respond with $\mathrm{L}$ since
+$$
+0 &gt;-100
+$$
+in the upper right-hand corner of the figure.</p>
+<p>We can hence summarize the optimal responses we just found, by shading them in the figure:</p>
+<ul>
+<li>$\mathrm{H}$ after high inflation, but $\mathrm{L}$ after low inflation.</li>
+</ul>
+<p>Step 4: Optimal messages by the informed player</p>
+<p>(a) When the monetary authority is Strong, if it chooses Low (as prescribed), its payoff is $$ 300$. while if it deviates, its payoff decreases to $$ 0$. No incentives to deviate.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161648.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161648.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161648.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161648.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161648.png"
+        title="20200502161648.png" /></div></p>
+<p>(b) When the monetary authority is Weak, if it chooses High (as prescribed), its payoff is $$ 100$. While if it deviates, its payoff decreases to $$ 50$. No incentives to deviate either.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161733.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161733.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161733.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161733.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502161733.png"
+        title="20200502161733.png" /></div></p>
+<p>Since no type of privately informed player (monetary authority) has incentives to deviate, The separating strategy profile $\text{Low}^{S} \text{High}^W$ can be sustained as a PBE.</p>
+<p>Redo the 5-step, we can check that $\text { High }^{S} \text { Low }^{W} $ cannot be sustained as a PBE.</p>
+<h4 id="pooling-equilibrium">Pooling equilibrium</h4>
+<p>Let us now test the pooling strategy profile $\text { High }^{S} \text { High }^{W} $</p>
+<p>Step 1: Specifying strategy profile High' High W that we will test. (See shaded branches in the figure.)</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502162945.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502162945.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502162945.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502162945.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502162945.png"
+        title="20200502162945.png" /></div></p>
+<p>Step 2: Updating beliefs</p>
+<p>(a) After high inflation announcement
+$$
+\mu=\frac{0.6 \alpha^{\text {Strong}}}{0.6 \alpha^{\text {Strong}}+0.4 \alpha \text {Weak}}=\frac{0.6 \times 1}{0.6 \times 1+0.4 
+\times 1}=0.6
+$$
+so the high inflation announcement is uninformative.</p>
+<p>(b) After low inflation announcement (off-the-equilibrium path)
+$$
+\gamma=\frac{0.6\left(1-\alpha^{\text {Strong}}\right)}{0.6\left(1-\alpha^{\text {Strong}}\right)+0.4\left(1-\alpha^{\text {Weak}}\right)}=\frac{0.6 \times 0}{0.6 \times 0+0.4 \times 0}=\frac{0}{0} \<br>
+$$
+Hence, $\gamma \in[0,1]$.</p>
+<p>Step 3: Optimal response</p>
+<p>(a) After high inflation announcement (along the equil. path), respond with $L$ since
+$$
+\begin{aligned}
+E U_{\text {Labor}}(H | \text {High}) &amp;=0.6 \times(-100)+0.4 \times 0=-60 \<br>
+E U_{\text {Labor}}(L | \text {High}) &amp;=0.6 \times 0+0.4 \times(-100)=-40
+\end{aligned}
+$$
+(a) After low this from and announcement (off-the equil.)
+$$
+\begin{aligned}
+E U_{\text {Labor}}(H | \text {Low}) &amp;=\gamma \times(-100)+(1-\gamma ) \times 0=-100\gamma  \<br>
+E U_{\text {Labor}}(L | \text {Low}) &amp;=\gamma  \times 0+(1-\gamma ) \times(-100)=-100+100\gamma 
+\end{aligned}
+$$
+i.e., respond with H if $\gamma &lt; 1$.</p>
+<p>Summarizing the optimal responses we found. Note that we need to divide our analysis into two cases:</p>
+<ul>
+<li>Case 1: where $\gamma &lt; 1/2$, implying that the labor union responds with H after observing low inflation (right-hand side).</li>
+<li>Case 2: where $\gamma \geq 1/2$, implying that the labor union responds with L after observing low inflation (right-hand side).</li>
+</ul>
+<p>Step 4: Optimal messages</p>
+<ul>
+<li>Case 1, where $\gamma&lt;\frac{1}{2}$</li>
+</ul>
+<p>(a) When the monetary authority is Strong, if it chooses High
+(as prescribed), its payoff is $$ 200$. While if it deviates, its payoff decreases to $$ 100$. No incentives to deviate.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164646.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164646.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164646.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164646.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164646.png"
+        title="20200502164646.png" /></div></p>
+<p>(b) When the monetary authority is Weak, if it chooses High
+(as prescribed), its payoff is $$ 150$. While if it deviates, its payoff drops to $$ 0$. No incentives to deviate either.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164925.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164925.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164925.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164925.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502164925.png"
+        title="20200502164925.png" /></div></p>
+<p>No type of monetary authority has incentives to deviate.</p>
+<p>Hence, the pooling strategy profile $\text{High}^S \text{High}^W$ can be sustained as a PBE when off-the-equilibrium beliefs satisfy $\gamma &lt; 1/2$</p>
+<ul>
+<li>Case 2, where $\gamma \geq\frac{1}{2}$, $\text{High}^S \text{High}^W$ can&rsquo;t be sustained as a PBE</li>
+</ul>
+<p>Remark:</p>
+<ul>
+<li>
+<p>In case 2 we include both $\gamma&gt;1 / 2$ and $\gamma=1 / 2$. Observe that the labor union is in fact indifferent between $\mathrm{H}$ and $\mathrm{L}$ off the equilibrium path when $\gamma=1 / 2$</p>
+</li>
+<li>
+<p>If we consider mixed strategy, then the union could choose $H$ with any $\sigma_{H} \in[0,1]$ and $L$ with probability $1-\sigma_{H}$</p>
+</li>
+<li>
+<p>As stated at the beginning, we focus on pure strategy PBE.</p>
+</li>
+<li>
+<p>In addition, we only consider the case in which the union would choose $L$ with probability 1 when $\gamma=1 / 2$ (so that this case can be combined with the case $\gamma&gt;1 / 2$ and to be excluded from being a PBE).</p>
+</li>
+<li>
+<p>More rigorously, we should also consider a case in which the union chooses H with probability 1 when $\gamma=1 / 2 .$ In this case, no type of the monetary authority has incentive to deviate, and the corresponding strategy profile and belief can be sustained as a pure strategy PBE, which leads us back to case 1 with $\gamma&lt;1 / 2$</p>
+</li>
+</ul>
+<p>Redo the 5-step, we can check that $\text { Low }^{S} \text { Low }^{W} $ can&rsquo;t be sustained as a PBE for any off-the-equilibrium beliefs $\mu$.</p>
+<h2 id="43-the-intuitive-criterion">4.3 The Intuitive Criterion</h2>
+<p>The Intuitive Criterion (Cho and Kreps 1987) is to refine the set of PBEs.</p>
+<p>It is mostly useful in the signalling games (with both discrete and continuous message space).</p>
+<ul>
+<li>One player is privately informed. e.g. he knows information about the market demand, his own production cost, etc.</li>
+<li>He uses his actions (e.g. his production decision, investment in capacity, etc.) to communicate/conceal this information to the other uninformed player.</li>
+</ul>
+<p>In particular, let us precisely describe the time structure of the signalling game: (用观测到的动作更新nature的信息)</p>
+<ol>
+<li>Nature reveals to player $i$ some piece of private information, $\theta_{i} \in \Theta_{i}$</li>
+<li>Then, player $i,$ who privately observes $\theta_{i},$ chooses an action (or message $m$ ) which is observed by the other player $j$</li>
+<li>Player j observes message $m,$ but does not know player i&rsquo;s type. He knows the prior probability distribution that nature selects a give type $\theta_{i}$ from $\Theta_{i}$ e.g. the prior probability for $\Theta_{i}={\text { Strong, Weak }}$ is 0.6 and 0.4</li>
+<li>After observing player i&rsquo;s message $m,$ player $j$ updates his beliefs about player i&rsquo;s type. Let $\mu\left(\theta_{i} | m\right)$ denote $j$ &rsquo;s belief about i&rsquo;s type being $\theta_{i}$</li>
+<li>Given the beliefs, player $j$ selects an optimal action, $a,$ as a best response to the message $m$</li>
+</ol>
+<p>The Intuitive Criterion is an equilibrium selection for PBE. So we start with an already-established PBE.</p>
+<p>Consider a PBE with its corresponding equilibrium payoff for player $i$ as $u_{i}^{*}\left(\theta_{i}\right) .$ **Apply the Intuitive Criterion in two steps**:</p>
+<h3 id="431-step-1">4.3.1 Step 1</h3>
+<p>Figure out which type of the informed player $i$ (the monetary authority in the previous example) could benefit by deviating from the equilibrium message?</p>
+<p>Let us focus on those types of informed player i who can obtain a higher payoff by deviating form equilibrium than by keeping their equilibrium message unaltered.
+$$
+\Theta_{i}^{* *}(m)={\theta_{i} \in \Theta_{i} | \underbrace{u_{i}^{*}\left(\theta_{i}\right)}_{\text {Equil. Payoff }} \leq \underbrace{\max _{a \in A^{*}\left(\Theta_{i}, m\right)} u_{i}\left(m, a, \theta_{i}\right)}_{\text {Highest Payoff from Deviating to message } m}}
+$$
+where $A^{*}\left(\Theta_{i}, m\right)$ denotes the set of best responses of the uninformed player $j,$ who has a belief over the entire type space $\Theta_{i}$</p>
+<p>We restrict out attention to those types of informed player for which sending the off-the-equilibrium message $m$ could give them a higher payoff than that in equilibrium. If $m$ does not satisfy this inequality, we say that $m$ is &ldquo;equilibrium donimated.&rdquo;</p>
+<h3 id="432-step-2">4.3.2 Step 2</h3>
+<p>If deviations can only come from the type of player $i$ identified in the First Step, is the lowest payoff from deviating higher than the original equilibrium payoff?</p>
+<ul>
+<li>If the answer is yes, then the equilibrium violates the Intuitive Criterion. (And we can safely refine it out.)</li>
+<li>If the answer is no, then the equilibrium survives the Intuitive Criterion.</li>
+</ul>
+<p>Take the subset of types of player $i$ for which the off-the-equilibrium message $m$ is not equilibrium dominated, $\Theta_{i}^{* *}(m),$ and check if the original equilibrium strategy profile $\left(m^{*}, a^{*}\right),$ with associated equilibrium payoff for the informed player $u_{i}^{*}\left(\theta_{i}\right),$ satisfies:
+$$
+\underbrace{\min _{a \in A^{*}\left(\theta_{i}^{*}(m), m\right)} u_{i}\left(m, a, \theta_{i}\right)}_{\text {Lowest Payoff from Deviating to } m}&gt;\underbrace{U_{i}^{*}\left(\theta_{i}\right)}_{\text {Equil. Payott }}
+$$
+where $A^{*}\left(\Theta_{i}^{* *}(m), m\right)$ denotes the set of best responses of the uninformed player $j,$ who is now focusing on the subset of types $\Theta_{i}^{* *}(m)$ after applying Step 1.</p>
+<p>If there is a type for which this condition holds, then the equilibrium strategy profile $\left(m^{<em>}, a^{</em>}\right)$ violates the Intuitive Criterion.</p>
+<p>Imagine the possible speech to the uninformed player from the informed player who has incentives to deviate:</p>
+<blockquote>
+<p>&ldquo;It is clear that my type is in $\Theta_{i}^{* *}(m)$. If my type was outside $\Theta_{i}^{* *}(m)$ । would have no chance of improving my payoff over what I can obtain at the equilibrium (condition (1)). We can therefore agree that $m$ y type is in $\Theta_{i}^{* *}(m) .$ Hence, update your beliefs as you wish, but restricting my type to be in $\Theta_{i}^{* *}(m)$. Given these beliefs, any of your best responses to my message improves my payoff over what 1 would obtain with my equilibrium strategy (condition (2)). For this reason, 1 am sending you such off-the-equilibrium message.&rdquo;</p>
+</blockquote>
+<h3 id="433-example-binary-types--binary-actions">4.3.3 Example: Binary Types + Binary Actions</h3>
+<p>Let us come back to the signally game between a monetary authority and a labor union:</p>
+<p>The only two strategy profiles that can be support as a PBE are</p>
+<ul>
+<li>
+<p>A pooling PBE with both types choosing (High, High) with $\gamma&lt;1 / 2 ;$ and</p>
+</li>
+<li>
+<p>A separating PBE with $\left(L o w^{S}, H i g h^{W}\right)$</p>
+</li>
+</ul>
+<p>Let us check if (High, High) survives the Intuitive Criterion.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502204728.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502204728.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502204728.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502204728.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502204728.png"
+        title="20200502204728.png" /></div></p>
+<p>First Step: which types of monetary authority have incentives to deviate towards Low inflation?</p>
+<p>Low inflation is an off-the-equilibrium message.</p>
+<p>Let us first apply condition (1) to the Strong type</p>
+<p>$$
+\begin{aligned}
+\underbrace{u_{i}^{*}(\text { High } | \text { Strong })}_{\text {Equil. Payoff }}&amp;&lt;\underbrace{\max _{a_{j}} u_{i}(\text { Low } | \text { Strong })}_{\text {Highest payoff from deviating to Low inflation }} ?\<br>
+200&amp;&lt;300
+\end{aligned}
+$$
+Hence, the Strong type of monetary authority has incentives to deviate towards Low inflation.</p>
+<p>Graphically, we can represent the incentives of the Strong monetary authority to deviate towards Low inflation as follows:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502205937.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502205937.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502205937.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502205937.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502205937.png"
+        title="20200502205937.png" /></div></p>
+<p>Let us now check if the Weak type also has incentives to deviate towards Low inflation:
+$$
+\begin{aligned}
+\underbrace{u_{i}^{*}(\text { High } | \text { Weak })}_{\text {Equil. Payoff }}&amp;&lt;\underbrace{\max _{a_{j}} u_{i}(\text { Low } | \text { Weak })}_{\text {Highest payoff from deviating to Low inflation }} ?\<br>
+150&amp;&gt;50
+\end{aligned}
+$$
+Thus, the Weak type of monetary authority does not have incentives to deviate towards Low inflation.</p>
+<p>Hence, the only type of monetary authority with incentives to deviate is the Strong type, $\Theta_{i}^{* *}(\mathrm{Low})={\text { Strong }}$</p>
+<p>Thus, the labor union believes that after observing a &ldquo;Low-inflation&rdquo; deviation it must be from the Strong type.</p>
+<p>Intuition. Imagine the possible speech to the uninformed player from the informed player with incentives to deviate (the Strong type):</p>
+<blockquote>
+<p>&ldquo;It is now clear that my type is in $\Theta_{i}^{* *}(L O W)={\text { Strong }}$. Given this new belief, your best response to my message improves my payoff over what I would obtain with my original equilibrium strategy (condition (2)). For this reason, 1 am sending you such off-the-equilibrium message of Low inflation.&rdquo;</p>
+</blockquote>
+<p>Second Step: to check if there is a type of monetary authority and a message it could use such that condition (2) is satisfied:
+$$
+\begin{aligned}
+\min <em>{a \in A^{-}\left(\Theta ;^{*}(m), m\right)} u</em>{i}\left(m, a, \theta_{i}\right) &amp;&gt;u_{i}^{*}\left(\theta_{i}\right) ? \<br>
+300 &amp;&gt;200
+\end{aligned}
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502210847.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502210847.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502210847.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502210847.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502210847.png"
+        title="20200502210847.png" /></div></p>
+<p>Therefore, the pooling PBE of (High, High) with $\gamma&lt;1 / 2$ violates the Intuitive Criterion: There exists a type of informed player (Strong type) and a message (Low inflation announcement) which gives to this informed player a higher payoff than in the original equilibrium.</p>
+<p>In the binary example, there is only one equilibrium of this signalling game that survives the Intuitive Criterion,: the separating PBE with (Low, High):</p>
+<ul>
+<li>
+<p>Why don’t we need to apply the Intuitive Criterion to the separating PBE to check if this equilibrium survives?</p>
+</li>
+<li>
+<p>This is because in the separating PBE there is no off-the-equilibrium message, since both messages are used by either type of the informed player.</p>
+</li>
+<li>
+<p>So the two-step checking is already included in the process when we establish this separating PBE.</p>
+</li>
+<li>
+<p>Recall that in the Intuitive Criterion we start by checking if an informed player has incentives to deviate towards an off-the-equilibrium message, then we restrict the uninformed player’s off-the-equilibrium beliefs.</p>
+</li>
+</ul>
+<p>Our previous result implies that, in signalling games with the binary structure (two types of the informed player and two available messages for each type), the separating PBE always survives the Intuitive Criterion.</p>
+<p>Question and exercise: what if two types of the informed player can choose among three or more possible messages?</p>
+<ul>
+<li>e.g. Type t1 uses message m1, type t2 uses message m2, and nobody uses message m3.</li>
+<li>Then m3 is an off-the-equilibrium message. In this case, we need to check if this separating PBE survives the Intuitive Criterion.</li>
+</ul>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/4.-dynamic-games-with-incomplete-information-and-perfect-bayesian-equilibrium/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/5.-information-economics-signalling-and-screening/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/theme-documentation-content/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text">Theme Documentation - Content</span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

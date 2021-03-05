@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="2. 初等数据处理方法 [Toc]
+2.1 最简定量关系 2.1.1 函数关系 人类建立起来的变量之间最简单、最直观的定量关系就是函数关系。
+函数概念的萌芽：古代对图形轨迹的研究；一个就几个量的变化会引起另ー个量的変化，反映量与量之间的相互依赖关系。
+ 函数的力学来源：16-17世纪，欧洲国家争霸，船只定位、炸弹精准落点各种运动 1637年笛卡尔的《几何学》首次涉及到变量，也引入了函数思想 函数解析定义，由英国数学家格雷果里在1667年给出 公认最早提出函数概念——17世纪德国数学家莱布尼茨。  初等数据分析方法，指建立函数关系的三种基本方法
+ 观察法：利用变量之间的比例关系 拟合方法 插值方法  2.1.2 数据问题 在现实问题或竞赛命题中，有的提供数据
+例2.1: 2004年全国大学生数学建模竞赛题&quot;奥运场馆周围临时商店的建设问题&quot;，数据给了很多，这些数据是规划局在前三次亚运会期间采集的数据.采集人大概是“志愿者&quot;之类的，完全不懂应该采集什么数据才能对解决这类问题有用，而将所有数据记录下来。
+有的根本不给数据
+例2.2: 2010年全国大学生数学建模竞赛题“试就某个或某几个方面评估上海世博会的影响力”。首先你必须确定从哪个方面评估，什么数据最能体现这个问题的本质，然后去查找相关数据有的问题问你需要什么数据。
+例2.3: 2011年全国大学生数学建模竞赛A题《重金属的污染问题》，最后一问&quot;需要什么数据，我们可以确定城市土质变化的趋势？
+有的问题需要数据，但问题中不仅没有给出数据，就连采集什么数据也没有说明，需要你自己判明应该采集什么数据才能说明这件事情例
+例2.4: 2015年国赛B题**“互联网&#43;&ldquo;时代的出租车资源配置**。有多家公司依托移动互联网建立了打车软件服务平台，实现了乘客与出租车司机之间的信息互通，同时推出了多种出租车的补贴方案，问题是搜集相关数据，建立数学模型研究如下问题：
+ 试建立合理的旨标，并分析不同时空出租车资源的“供求匹配&quot;程度 分析各公司的出租车补贴方案是否对”缓解打车难有帮助“ 如果要创建一个新的打车软件服务平台，你们将设计什么样的补贴方案，并论证其合理性 另外，无论我们怎样精心设计并极其细心地进行试验我们仍需在拟合模型前评估数据的精确性。数据是如何收集的？收集过程中测量设备的精度如何？有没有疑问的点等。  2.2 初等数据分析思想与建模方法 在分析一个数据集合时，可能遇到的问题是
+ 根据收集的数据迸行建模：数据具有明显特征，否则采用插值法 按照选出的一个或多个模型(函数)类型对数据进行拟合 从ー些已经拟合的模型(函数)类型中选取最合适的。例如，判断用指数模型是否比用最佳多项式模型要好  2.2.1 观察法和初等数学法 1) 观察法 观察法：通过大量数据，利用变量之向的比例性质，发现自然规律。采集数据可以追溯到7000年前的尼罗河沿岸居民对潮水的数据记录，最简单方式就是数据本身呈现比例关系。17-18世纪应用数据建立了许多物理规律。
+例2.5 (Kepler开普勒第三定律): 开普勒曾帮助第谷(Tycho Brahe)收集了13年有关火星的相对运动的观察资料，到1609年已经形成了他的头两条定律：
+ 每个行星都沿一条椭圆轨道运行，太阳在该椭圆的一个焦点处； 对每个行星来说，在相等的时间里，该行星和太阳的联线扫过相等的面积  开普勒花了许多年来验证并形成了第三定律，即轨道周期T(天数)与从太阳到行星的平均距离R之间的关系$ T=cR^{3/2}$。下表中的数据来自1993年的世界年鉴。
+   行星 周期(天数) 平均距离(百万英里)     水星 88." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="2. 初等数据处理方法 [Toc]
+2.1 最简定量关系 2.1.1 函数关系 人类建立起来的变量之间最简单、最直观的定量关系就是函数关系。
+函数概念的萌芽：古代对图形轨迹的研究；一个就几个量的变化会引起另ー个量的変化，反映量与量之间的相互依赖关系。
+ 函数的力学来源：16-17世纪，欧洲国家争霸，船只定位、炸弹精准落点各种运动 1637年笛卡尔的《几何学》首次涉及到变量，也引入了函数思想 函数解析定义，由英国数学家格雷果里在1667年给出 公认最早提出函数概念——17世纪德国数学家莱布尼茨。  初等数据分析方法，指建立函数关系的三种基本方法
+ 观察法：利用变量之间的比例关系 拟合方法 插值方法  2.1.2 数据问题 在现实问题或竞赛命题中，有的提供数据
+例2.1: 2004年全国大学生数学建模竞赛题&quot;奥运场馆周围临时商店的建设问题&quot;，数据给了很多，这些数据是规划局在前三次亚运会期间采集的数据.采集人大概是“志愿者&quot;之类的，完全不懂应该采集什么数据才能对解决这类问题有用，而将所有数据记录下来。
+有的根本不给数据
+例2.2: 2010年全国大学生数学建模竞赛题“试就某个或某几个方面评估上海世博会的影响力”。首先你必须确定从哪个方面评估，什么数据最能体现这个问题的本质，然后去查找相关数据有的问题问你需要什么数据。
+例2.3: 2011年全国大学生数学建模竞赛A题《重金属的污染问题》，最后一问&quot;需要什么数据，我们可以确定城市土质变化的趋势？
+有的问题需要数据，但问题中不仅没有给出数据，就连采集什么数据也没有说明，需要你自己判明应该采集什么数据才能说明这件事情例
+例2.4: 2015年国赛B题**“互联网&#43;&ldquo;时代的出租车资源配置**。有多家公司依托移动互联网建立了打车软件服务平台，实现了乘客与出租车司机之间的信息互通，同时推出了多种出租车的补贴方案，问题是搜集相关数据，建立数学模型研究如下问题：
+ 试建立合理的旨标，并分析不同时空出租车资源的“供求匹配&quot;程度 分析各公司的出租车补贴方案是否对”缓解打车难有帮助“ 如果要创建一个新的打车软件服务平台，你们将设计什么样的补贴方案，并论证其合理性 另外，无论我们怎样精心设计并极其细心地进行试验我们仍需在拟合模型前评估数据的精确性。数据是如何收集的？收集过程中测量设备的精度如何？有没有疑问的点等。  2.2 初等数据分析思想与建模方法 在分析一个数据集合时，可能遇到的问题是
+ 根据收集的数据迸行建模：数据具有明显特征，否则采用插值法 按照选出的一个或多个模型(函数)类型对数据进行拟合 从ー些已经拟合的模型(函数)类型中选取最合适的。例如，判断用指数模型是否比用最佳多项式模型要好  2.2.1 观察法和初等数学法 1) 观察法 观察法：通过大量数据，利用变量之向的比例性质，发现自然规律。采集数据可以追溯到7000年前的尼罗河沿岸居民对潮水的数据记录，最简单方式就是数据本身呈现比例关系。17-18世纪应用数据建立了许多物理规律。
+例2.5 (Kepler开普勒第三定律): 开普勒曾帮助第谷(Tycho Brahe)收集了13年有关火星的相对运动的观察资料，到1609年已经形成了他的头两条定律：
+ 每个行星都沿一条椭圆轨道运行，太阳在该椭圆的一个焦点处； 对每个行星来说，在相等的时间里，该行星和太阳的联线扫过相等的面积  开普勒花了许多年来验证并形成了第三定律，即轨道周期T(天数)与从太阳到行星的平均距离R之间的关系$ T=cR^{3/2}$。下表中的数据来自1993年的世界年鉴。
+   行星 周期(天数) 平均距离(百万英里)     水星 88."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" /><link rel="prev" href="https://henrywu97.github.io/3.-%E5%88%9D%E7%AD%89%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/" /><link rel="next" href="https://henrywu97.github.io/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  1784 ,
+        "url": "https:\/\/henrywu97.github.io\/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1784 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-最简定量关系">2.1 最简定量关系</a>
+      <ul>
+        <li><a href="#211-函数关系">2.1.1 函数关系</a></li>
+        <li><a href="#212-数据问题">2.1.2 数据问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#22-初等数据分析思想与建模方法">2.2 初等数据分析思想与建模方法</a>
+      <ul>
+        <li><a href="#221-观察法和初等数学法">2.2.1 观察法和初等数学法</a>
+          <ul>
+            <li><a href="#1-观察法">1) 观察法</a></li>
+            <li><a href="#2-初等数学法">2) 初等数学法</a></li>
+          </ul>
+        </li>
+        <li><a href="#222-数据拟合方法">2.2.2 数据拟合方法</a>
+          <ul>
+            <li><a href="#1-拟合与插值">1) 拟合与插值</a></li>
+            <li><a href="#2-数据拟合的判别准则">2) 数据拟合的判别准则</a></li>
+          </ul>
+        </li>
+        <li><a href="#223-插值方法">2.2.3 插值方法</a>
+          <ul>
+            <li><a href="#1-拉格朗日lagrange插值">1) 拉格朗日（Lagrange）插值</a></li>
+            <li><a href="#2-牛顿newton插值">2) 牛顿(Newton)插值</a></li>
+            <li><a href="#3-埃尔米特hermite插值">3) 埃尔米特(Hermite)插值</a></li>
+            <li><a href="#4-分段线性插值法">4) 分段线性插值法</a></li>
+            <li><a href="#5-样条插值法">5) 样条插值法</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#224-拟合与插值的matlab编程实现">2.2.4 拟合与插值的MATLAB编程实现</a>
+          <ul>
+            <li><a href="#1-matlab多项式拟合">1) Matlab多项式拟合</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h1 id="2-初等数据处理方法">2. 初等数据处理方法</h1>
+<p>[Toc]</p>
+<h2 id="21-最简定量关系">2.1 最简定量关系</h2>
+<h3 id="211-函数关系">2.1.1 函数关系</h3>
+<p>人类建立起来的变量之间最简单、最直观的定量关系就是函数关系。</p>
+<p>函数概念的萌芽：古代对图形轨迹的研究；一个就几个量的变化会引起另ー个量的変化，反映量与量之间的相互依赖关系。</p>
+<ol>
+<li>函数的力学来源：16-17世纪，欧洲国家争霸，船只定位、炸弹精准落点各种运动</li>
+<li>1637年笛卡尔的《几何学》首次涉及到变量，也引入了函数思想</li>
+<li>函数解析定义，由英国数学家格雷果里在1667年给出</li>
+<li>公认最早提出函数概念——17世纪德国数学家莱布尼茨。</li>
+</ol>
+<p>初等数据分析方法，指建立函数关系的三种基本方法</p>
+<ul>
+<li>观察法：利用变量之间的比例关系</li>
+<li>拟合方法</li>
+<li>插值方法</li>
+</ul>
+<h3 id="212-数据问题">2.1.2 数据问题</h3>
+<p>在现实问题或竞赛命题中，有的提供数据</p>
+<p><strong>例2.1</strong>: 2004年全国大学生数学建模竞赛题&quot;<strong>奥运场馆周围临时商店的建设问题</strong>&quot;，数据给了很多，这些数据是规划局在前三次亚运会期间采集的数据.采集人大概是“志愿者&quot;之类的，完全不懂应该采集什么数据才能对解决这类问题有用，而将所有数据记录下来。</p>
+<p>有的根本不给数据</p>
+<p><strong>例2.2</strong>: 2010年全国大学生数学建模竞赛题“<strong>试就某个或某几个方面评估上海世博会的影响力</strong>”。首先你必须确定从哪个方面评估，什么数据最能体现这个问题的本质，然后去查找相关数据有的问题问你需要什么数据。</p>
+<p><strong>例2.3</strong>: 2011年全国大学生数学建模竞赛A题《<strong>重金属的污染问题</strong>》，最后一问&quot;需要什么数据，我们可以确定城市土质变化的趋势？</p>
+<p>有的问题需要数据，但问题中不仅没有给出数据，就连采集什么数据也没有说明，需要你自己判明应该采集什么数据才能说明这件事情例</p>
+<p><strong>例2.4</strong>: 2015年国赛B题**“互联网+&ldquo;时代的出租车资源配置**。有多家公司依托移动互联网建立了打车软件服务平台，实现了乘客与出租车司机之间的信息互通，同时推出了多种出租车的补贴方案，问题是搜集相关数据，建立数学模型研究如下问题：</p>
+<ol>
+<li>试建立合理的旨标，并分析不同时空出租车资源的“供求匹配&quot;程度</li>
+<li>分析各公司的出租车补贴方案是否对”缓解打车难有帮助“</li>
+<li>如果要创建一个新的打车软件服务平台，你们将设计什么样的补贴方案，并论证其合理性</li>
+<li>另外，无论我们怎样精心设计并极其细心地进行试验我们仍需在拟合模型前评估数据的精确性。数据是如何收集的？收集过程中测量设备的精度如何？有没有疑问的点等。</li>
+</ol>
+<h2 id="22-初等数据分析思想与建模方法">2.2 初等数据分析思想与建模方法</h2>
+<p>在分析一个数据集合时，可能遇到的问题是</p>
+<ol>
+<li>根据收集的数据迸行建模：数据具有明显特征，否则采用插值法</li>
+<li>按照选出的一个或多个模型(函数)类型对数据进行拟合</li>
+<li>从ー些已经拟合的模型(函数)类型中选取最合适的。例如，判断用指数模型是否比用最佳多项式模型要好</li>
+</ol>
+<h3 id="221-观察法和初等数学法">2.2.1 观察法和初等数学法</h3>
+<h4 id="1-观察法">1) 观察法</h4>
+<p><strong>观察法</strong>：通过大量数据，利用变量之向的比例性质，发现自然规律。采集数据可以追溯到7000年前的尼罗河沿岸居民对潮水的数据记录，最简单方式就是数据本身呈现比例关系。17-18世纪应用数据建立了许多物理规律。</p>
+<p><strong>例2.5 (Kepler开普勒第三定律)</strong>: 开普勒曾帮助第谷(Tycho Brahe)收集了13年有关火星的相对运动的观察资料，到1609年已经形成了他的头两条定律：</p>
+<ol>
+<li>每个行星都沿一条椭圆轨道运行，太阳在该椭圆的一个焦点处；</li>
+<li>对每个行星来说，在相等的时间里，该行星和太阳的联线扫过相等的面积</li>
+</ol>
+<p>开普勒花了许多年来验证并形成了第三定律，即轨道周期T(天数)与从太阳到行星的平均距离R之间的关系$ T=cR^{3/2}$。下表中的数据来自1993年的世界年鉴。</p>
+<table>
+<thead>
+<tr>
+<th>行星</th>
+<th>周期(天数)</th>
+<th>平均距离(百万英里)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水星</td>
+<td>88.0</td>
+<td>36</td>
+</tr>
+<tr>
+<td>金星</td>
+<td>224.7</td>
+<td>67.25</td>
+</tr>
+<tr>
+<td>地球</td>
+<td>365.3</td>
+<td>93</td>
+</tr>
+<tr>
+<td>火星</td>
+<td>687.0</td>
+<td>141.75</td>
+</tr>
+<tr>
+<td>木星</td>
+<td>4331.8</td>
+<td>483.80</td>
+</tr>
+<tr>
+<td>土星</td>
+<td>10,760.0</td>
+<td>887.97</td>
+</tr>
+<tr>
+<td>天王星</td>
+<td>30,684.0</td>
+<td>1,764.50</td>
+</tr>
+<tr>
+<td>冥王星</td>
+<td>90.466.8</td>
+<td>3,653.90</td>
+</tr>
+</tbody>
+</table>
+<p>下图画出了周期对平均距离的3/2次方的图形．该图形近似于一条通过原点的直线．纵坐标是周期(天数)，横坐标量纲是英里 ×(10的负4次方)．</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808123301.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808123301.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808123301.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808123301.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808123301.jpg"
+        title="20200808123301.jpg" /></div></p>
+<p>任取过原点的这条直线上的两点，很容易估计其斜率(比例常数)</p>
+<p>$$
+k=\frac{90466.8-88}{220869.1-216} \approx 0.410 
+$$</p>
+<p>估计模型为 $ T=0.410 R^{\frac{3}{2}} $.</p>
+<p><strong>例2.6 (波义耳定律, Boyle&rsquo;s law)</strong>: 一定量的理想气体的<strong>压强</strong>P、体积V和绝对温度T之间具有定量关系</p>
+<p>$$
+P=\frac{RT}{V}
+$$</p>
+<p>R是普适气体常量，即压强P的变化同时依赖于V和T。</p>
+<p><strong>例2.7 (虎克定律, Hooke, 1678年)</strong>: 一个线性弹簧，它的形变(x)与弹力(F)之间的定量关系为</p>
+<p>$$
+F=-KX
+$$</p>
+<p>负号表示形变的方向与弹力方向相反。</p>
+<p><strong>例2.8 (牛顿Newton, 万有引力公式1687年)</strong>: 考虑两个物体之间的相互作用时，对于它们之间的相互吸引力的数学模型</p>
+<p>$$
+F=k \frac{m_1 m_2}{r^2}
+$$</p>
+<p>这个数学模型及其理论是基于大量天文观测数据由牛顿在17世纪创立的。</p>
+<p><strong>例2.9 (欧姆定律, Ohm&rsquo;s law, 1826年)</strong>：在同一电路中，通过某一导体的电流跟这段导体两端的电压成正比，跟这段导体的电阻成反比，这就是欧姆定律</p>
+<p>$$
+I=\frac{U}{R}, \quad U=I R, \quad R=\frac{U}{I} 
+$$</p>
+<p>公式中物理量的单位：I(电流)的单位是安培(A)，U(电压)的单位是伏特(V)、R(电阻)的单位是欧姆($ \Omega $)。</p>
+<p>大量经济学领域的函数模型如下</p>
+<p>(1)生产函数在一定技术条件下生产要素投入量与产品的最大产出量之间的定量关系；</p>
+<p>(2)需求函数-需求量与价格直降的函数关系。</p>
+<p>(3)供给函数-供给量与价格直降的函数关系；</p>
+<p>(4)总成本函数；(5)总收益函数；(6)总利润函数；</p>
+<p>(7)效用函数；(8)消费函数；(9)储蓄函数。</p>
+<h4 id="2-初等数学法">2) 初等数学法</h4>
+<p>通过观察，利用初等数学的知识建立数学模型：</p>
+<p><strong>例2.17</strong> 由于地面凹凸不平，我们很难将椅子一次放稳，由此提出如下向题：将4条腿长相同的方椅子放在不平的地上，怎样オ能放平？如何才能把它抽象成数学向题？</p>
+<p>问题分析：</p>
+<p>假定椅子中心不动，每条腿的着地点视为几何上的点，用A、B、C
+D表示，把AC和BD连线看做坐标 系中的X轴和y轴，把转动椅子看
+做坐标的旋转，如图2.3</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808153035.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808153035.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808153035.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808153035.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808153035.png"
+        title="20200808153035.png" /></div></p>
+<p>用$ \theta $表示对角线AC转动后与初始位置x轴正向的夹角，设g(θ)表示A,C两腿旋转θ角度后与地面距离之和，f(θ)表示B,D两腿旋转θ角度后与地面距离之和。当地面形成的曲面为连续函数时，f(θ), g(θ)皆为连续函数。</p>
+<p>因为三条腿总能同时着地(要么A, C同时着地，要么B, D同时着地)，即对任意θ,总有</p>
+<p>$$
+f( \theta ) \cdot g(\theta)=0 
+$$</p>
+<p>不妨设初始位置θ=0时，g(θ)=0, f(θ)&gt;0,于是问题转化为是否存在一个$ \theta_0 $, 使$ f(\theta_0)=g(\theta_0)=0 $.</p>
+<p>这样，<strong>椅子向题就抽象成如下数学问题</strong>：已知f(θ), g(θ)连续，g(0)=0, f(0)&gt;0, 且对任意的θ都有f(θ)・g(θ)=0。求证：存在$ \theta_0 $，使得</p>
+<p>$$
+f(\theta_0)=g(\theta_0)=0
+$$</p>
+<p>证明：
+令h(θ)=g(θ)-f(θ)，则h(0)=g(0)-f(0)&lt;0。</p>
+<p>将椅子转动$ \pi/2$，即将AC与BD位置互换，则有$ g(\pi /2)&gt;0, f(\pi /2)=0 $, 所以$ h(\pi /2)=g(\pi /2)-f(\pi /2)&gt;0 $。</p>
+<p>而h(θ)是连续函数，根据连续函数的<strong>零点存在定理</strong>，知必存在$ \theta_0 \in (0, \pi /2)$, 使得$ h(\theta_0)=0$, 即$ g(\theta_0)=f(\theta_0) $。</p>
+<p>又由条件对任意θ, 恒有f(θ)・g(θ)=0, 所以</p>
+<p>$$
+f(\theta_0)=g(\theta_0)=0
+$$</p>
+<p>即存在方向，四条腿能同时着地。</p>
+<p>所以椅子问题的答案是：如果地面为光滑曲面，椅子中心不动，最多转动$ \pi/2 $角度，四条腿一定可以同时着地。</p>
+<h3 id="222-数据拟合方法">2.2.2 数据拟合方法</h3>
+<h4 id="1-拟合与插值">1) 拟合与插值</h4>
+<p>类似于统计学用部分数据反映整体或整体的趋势，我们希望<strong>通过部分数据获得变量之间的函数关系</strong>，即能否根据一组试验观测数据（部分数据）找到变量之间相对准确的函数关系（整体或整体的趋势）。</p>
+<p>也就是，从一组试验观测数据$ (x_i, y_i), i=0,1…,n $之中找到自变量x与因变量y之间的函数关系一般可用某个近似函数y=f(x)来表示。</p>
+<p>函数y=f(x)的产生办法因观测数据和要求不同而异，<strong>通常可采用数据拟合与函数插值</strong>两种办法来实现。拟合和插值都是要求通过已知的观测数据去寻求某个近似函数，使得近似函数与已知数据有较高的拟合精度，但两者在数学方法上完全不同。</p>
+<p>例如实验测得如下一列数据</p>
+<table>
+<thead>
+<tr>
+<th>X</th>
+<th>-3</th>
+<th>-2</th>
+<th>-1</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Y</td>
+<td>-8.0942</td>
+<td>-3.0942</td>
+<td>-0.0942</td>
+<td>0.9058</td>
+<td>-0.0942</td>
+<td>-3.0942</td>
+<td>-8.0942</td>
+</tr>
+</tbody>
+</table>
+<p>作如下散点图 2.4．</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808143754.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808143754.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808143754.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808143754.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808143754.png"
+        title="20200808143754.png" /></div></p>
+<p><strong>拟合问题</strong>：请找出一个函数经过所有数据点</p>
+<p>实际中，拟合是在求近似函数，不要求过所有的已知数据点，只要求在某种意义下它在这些点上的总偏差最小。主要用来反应数据的基本趋势。</p>
+<p>即数据拟合主要是考虑到观测数据受随机观测误差的影响，进而寻求整体误差最小、能较好反映观测数据的近似函数y=f(x), 此时并<strong>不要求所得到的近似函数y=f(x)满足</strong>$ y_i=x_i, i=0,1,&hellip;,n  $.</p>
+<p><strong>插值问题</strong>：请预测当x=3.5时，y的值。</p>
+<p>应用插值法求过已知有限个数据点的近似函数时，要求所求的近似函数过已知的数据点，即函数插值要求近似函y=f(x)在每一观测$ x_i $处<strong>一定要满足</strong>$ y_i=x_i, i=0,1,&hellip;, n $。在这种情况下，通常要求观测数据相对比较准确，即不考虑观测误差的影响。</p>
+<h4 id="2-数据拟合的判别准则">2) 数据拟合的判别准则</h4>
+<p>数据拟合有几种不同的判别准则：</p>
+<ul>
+<li>使偏差的绝对值之和最小</li>
+<li>使偏差的最大绝对值最小</li>
+<li>使偏差的平方和最小（即最小二乘法）</li>
+</ul>
+<h5 id="a-chebyshev近似准则">a. Chebyshev近似准则</h5>
+<p>假设想要对数据点集用一条直线y=aX+b近似，应如何选择a和b，使直线最好地近似数据？从图上看，当多于两个点时，它们不可能精确地处于一条直线上，一些数据点和直线同总存在一些纵向差异，我们称这些纵向差异为绝对偏差</p>
+<p><strong>定义2.1</strong> 给定m个数据点$ (x_i, y_i), i=0,1…,m $的集合，用直线y=ax+b拟合该集合，确定参数a和b，使任一数据$ (x_i, y_i)$和其对应的直线上的点$ (x_i, ax_i+b) $间的<strong>距离之和最小</strong>，即：极小化绝对偏差$ \mid y_i -y(x_i) \mid$的和。</p>
+<p>推广到给定曲线情形：给定某一函数y=f(x), 以及m个数据点$ (x_i, y_i) $的集合，极小化绝对偏差$ \mid y_i -y(x_i) \mid$的和，也就是确定函数类型y=f(x)的参数，极小化</p>
+<p>$$
+\sum_{i=1}^{m}  \mid y_i -y(x_i) \mid
+$$</p>
+<p><strong>定义2.2</strong>: 给定m个数据点$ (x_i, y_i), i=0,1…,m $的集合，用直线y=ax+b拟合该集合，确定参数a和b，使任一数据$ (x_i, y_i)$和其对应的直线上的点$ (x_i, ax_i+b) $间的<strong>最大距离最小</strong>，即：<strong>极小化最大绝对偏差</strong>$ \mid y_i -y(x_i) \mid$。</p>
+<p>现推广到给定曲线的情形：给定某一函数y=f(x), 以及m个数据点$ (x_i, y_i) $的集合，极小化最大绝对偏差$ \mid y_i -y(x_i) \mid$，也就是确定函数类型y=f(x)的参数，极小化</p>
+<p>$$
+\max  \mid y_i -y(x_i) \mid, i=1,2,\ldots,m
+$$</p>
+<p>这一重要的准则常称为<strong>Chebyshev近似准则</strong>，该准则的困难在于<strong>实际应用中通常很复杂</strong>，应用这一准则所产生的最优化问题可能需要高级的数学方法。</p>
+<p><strong>例2.18</strong> 设我们要度量图2.5表示的线段AB, BC和AC，假定你的测量的结果为AB=13, BC=7, AC=19</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808150254.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808150254.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808150254.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808150254.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808150254.png"
+        title="20200808150254.png" /></div></p>
+<p>这时，AB和BC值加起来是20而不是测出的19。现在用 Chebyshev准则来解决这一个单位的差异，也就是用一个方法为三个线段指定数值，使得指定的和观测的任一对应数之间的最大偏差达到极小。</p>
+<p>解：假定对毎一次测量有相同的信任度，这样每测量值有相等的权值。于是，差异应均等地分配到每一线段。令$ x_1 $代表线段AB长度的真值，$ x_2 $代表BC的真值。为易于表示，令$ r_1, r_2, r-3 $表示真值和测量值冋的差异。即</p>
+<p>$$
+\left{\begin{array}{l}x_{1}-13=r_{1}(\text {线段 } \mathrm{AB}) \ x_{2}-7=r_{2}(\text {线段 } \mathrm{BC}) \ x_{1}+x_{2}-19=r_{3}(\text {线段 } \mathrm{AC})\end{array}\right. 
+$$</p>
+<p>数值$ r_1, r_2, r-3 $称为残差</p>
+<p>如果用 Chebyshev 近似准则，应指定$ r_{1}, r_{2}, r_{3} $ 的值，使三个数值 $ \left|r_{1}\right| ,\left|r_{2}\right|, \left|r_{3}\right| $ 的最大者达到最小.如果记最大的数为 r，那么我们要求最小化 r , 三个约束条件为</p>
+<p>$$
+\left{\begin{array}{l}\left|r_{1}\right| \leq r \text { 或 }-r \leq r_{1} \leq r \ \left|r_{2}\right| \leq r \text { 或 }-r \leq r_{2} \leq r \ \left|r_{3}\right| \leq r \text { 或 }-r \leq r_{3} \leq r\end{array}\right. 
+$$</p>
+<p>这些条件的每一个对应两个不等式，即</p>
+<p>$$
+\begin{aligned}
+&amp; \min \mathbf{r} \ &amp;s.t. \quad\left{\begin{array}{l}r-x_{1}+13 \geq 0\left(r-r_{1} \geq 0\right) \ r+x_{1}-13 \geq 0\left(r+r_{1} \geq 0\right) \ r-x_{2}+7 \geq 0\left(r-r_{2} \geq 0\right) \ r+x_{2}-7 \geq 0\left(r+r_{2} \geq 0\right) \ r-x_{1}-x_{2}+19 \geq 0\left(r-r_{3} \geq 0\right) \ r+x_{1}+x_{2}-19 \geq 0\left(r+r_{3} \geq 0\right)\end{array}\right.
+\end{aligned}
+$$</p>
+<p>这一问题称为线性规划问题 .</p>
+<p>推广这一过程，给定某一函数类型y=f(x)，其参数待定，以及给定 m 个 数据点 $ \left(x_{i}, y_{i}\right) $ 的一个集合，并确定出残差为$ r_{i}=y_{i}-\mathrm{f}\left(x_{i}\right) $。 如果 r 代表这些残差的最大绝对值，那么问题表示如下
+$$
+\begin{aligned}
+&amp; \min \mathbf{r} \ &amp;s.t. \quad\left{\begin{array}{l}r-r_{i} \geq 0  \ r+r_{i} \geq 0\end{array}\right. ,i=1,2, \cdots,m
+\end{aligned}
+$$</p>
+<h5 id="b-最小二乘准则">b. 最小二乘准则</h5>
+<p>问题：确定函数类型 y = f(x) 的参数 , 极小化和数
+$$
+\sum_{i=1}^{m} \mid y_{i}-f\left(x_{i}\right) \mid^{2}
+$$</p>
+<p><strong>例 2.19</strong>: 下表是收集到的数据</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>z</td>
+<td>8.1</td>
+<td>22.1</td>
+<td>60.1</td>
+<td>165</td>
+</tr>
+</tbody>
+</table>
+<p>画出这批数据在直角坐标上的散点图，如图2.6。</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162050.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162050.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162050.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162050.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162050.jpg"
+        title="20200808162050.jpg" /></div></p>
+<p>看起来两者呈指数关系，因此可设 z 与温度 x 的关 系为
+$$
+z=\beta e^{\alpha x}
+$$</p>
+<p>我们的任务是具体确定常数$ \alpha, \beta $，上式两边取对数，令</p>
+<p>$$
+y=\ln z, a=\alpha, b=\ln \beta
+$$</p>
+<p>则原式变成了线性关系</p>
+<p>$$
+y=a x+b
+$$</p>
+<p>表格变为</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y=ln z</td>
+<td>2.1</td>
+<td>3.1</td>
+<td>4.1</td>
+<td>5.1</td>
+</tr>
+</tbody>
+</table>
+<p>散点图变为图 2.7：</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162233.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162233.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162233.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162233.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200808162233.jpg"
+        title="20200808162233.jpg" /></div></p>
+<p>于是，问题化为找一直线 y = ax + b，即求 a, b使得上表中的数据基本满足这个函数关系。使得所有观测值 yi 与函数值 axi + b 之偏差的平方和$ Q=\sum_{i=1}^{n}\left(y_{i}-a x_{i}-b\right)^{2} $最小。确定常数 a，b 用的就是二元函数求极值的方法，显然 Q 是 a，b 的函数 . 令</p>
+<p>$$
+\begin{aligned}
+\frac{\partial Q}{\partial a}&amp;=-2 \sum_{i=1}^{n}\left(y_{i}-a x_{i}-b\right) x_{i}=2 a \sum_{i=1}^{n} x_{i}^{2}-2 \sum_{i=1}^{n} x_{i} y_{i}+2 b \sum_{i=1}^{n} x_{i}=0 \<br>
+\frac{\partial Q}{\partial b}&amp;=-2 \sum_{i=1}^{n}\left(y_{i}-a x_{i}-b\right)=2 a \sum_{i=1}^{n} x_{i}-2 \sum_{i=1}^{n} y_{i}+2 n b=0
+\end{aligned}
+$$</p>
+<p>就得到线性方程
+$$
+\left[\begin{array}{cc}
+\sum_{i=1}^{n} x_{i}^{2} &amp; \sum_{i=1}^{n} x_{i} \<br>
+\sum_{i=1}^{n} x_{i} &amp; n
+\end{array}\right]\left[\begin{array}{l}
+a \<br>
+b
+\end{array}\right]=\left[\begin{array}{c}
+\sum_{i=1}^{n} x_{i} y_{i} \<br>
+\sum_{i=1}^{n} y_{i}
+\end{array}\right]
+$$</p>
+<p>解这个方程组，得到</p>
+<p>$$
+\begin{array}{l}
+a=\frac{n \sum_{i=1}^{n} x_i y_{i}-\sum_{i=1}^{n} x_{i} \sum_{i=1}^{n} y_{i}}{n \sum_{i=1}^{n} x_{i}^{2}-\left(\sum_{i=1}^{N} x_{i}\right)^{2}} \<br>
+b=\frac{\sum_{i=1}^{n} x_{i} \sum_{i=1}^{n} y_{i}-\sum_{i=1}^{n} x_{i} \sum_{i=1}^{n} x_i y_{i}}{n \sum_{i=1}^{n} x_{i}^{2}-\left(\sum_{i=1}^{n} x_{i}\right)^{2}}
+\end{array}
+$$</p>
+<p>由问题知，Q 在这个(a,b)点取最小值。</p>
+<p>经计算后可得</p>
+<p>$$
+a=1, b=1.1
+$$</p>
+<p>于是，表的拟合直线方程为</p>
+<p>$$
+y=x+1.1
+$$</p>
+<p>z 与 x 的关系为</p>
+<p>$$
+z=3 e^{x}
+$$</p>
+<h3 id="223-插值方法">2.2.3 插值方法</h3>
+<p>已知某函数y = f(x)(未知)的一组观测或试验数据$ \left(x_{i}, y_{i}\right), \mathrm{i}=0,1,2, \dots \cdot, n $, 要寻求一个函数$ \varphi(x) $，使得
+$$
+\varphi\left(x_{i}\right)=y_{i}(\mathrm{i}=0,1,2, \cdots, \mathrm{n})
+$$</p>
+<p>则$ \varphi(x) \approx f(x) $。</p>
+<p>具体而言，实际中在不知道函数 y = f(x) 的具体表达式的情况下，对于 $ x=x_i $ 有实验测量值 $ y=y_{i}(i=0,1,2, \cdots, n) $。寻求另一函数$ \varphi(x) $使满足
+$$
+\varphi\left(x_{i}\right)=y_{i}=f\left(x_{i}\right) \quad i=0,1,2, \cdots, n
+$$</p>
+<p>称此问题为<strong>一维插值问题</strong>。并称函数 $ \varphi(\mathbf{x}) $ 为 f(x) 的<strong>插值函数</strong>， $ x_{i}(\mathrm{i}=0,1,2, \cdots, \mathrm{n}) $ 称为**插值结点**, $ \varphi\left(x_{i}\right)=y_{i}(\mathrm{i}=0,1,2, \cdot \cdot \cdot, n) $ 称为插值条件，则 $ \varphi(\mathbf{x}) \approx \mathrm{f}(\mathrm{x}) $。 在实际问题中所遇到的插值问题除了一维插值问题外，还有二维插值问题。</p>
+<p>下面介绍几种基本的、常用的一维插值方法：</p>
+<ul>
+<li>拉格朗日插值法</li>
+<li>牛顿插值法</li>
+<li>Hermite插值法</li>
+<li>分段线性插值法</li>
+<li>三次样条插值法</li>
+</ul>
+<h4 id="1-拉格朗日lagrange插值">1) 拉格朗日（Lagrange）插值</h4>
+<h5 id="a-插值多项式">a. 插值多项式</h5>
+<p>已知函数 y=f(x) 在 n+1 个相异点 $ x_{0}, x_{1}, x_{2} ,\cdots ,x_n$上的函数值为 $ y_{0}, y_{1}, y_{2}, \cdots, y_{n}, $ 要求一个次数不超过 n 的代数多项式
+$$
+p_{n}(x)=a_{0}+a_{1} x+a_{2} x^{2}+\cdots+a_{n} x^{n}
+$$</p>
+<p>使在结点$ x_i $上有 $ p_{n}\left(x_{i}\right)=y_{i}(i=0,1,2, \cdots, n) $成立，称 $ p_{n}(x) $ 为**插值多项式**。则 f(x) 的 n+1 个待定系数$ a_0, a_1, \cdots , a_n $满足
+$$
+\left{\begin{array}{c}
+a_{0}+a_{1} x_{0}+a_{2} x_{0}^{2}+\cdots+a_{n} x_{0}^{n}=y_{0} \<br>
+a_{0}+a_{1} x_{1}+a_{2} x_{1}^{2}+\cdots+a_{n} x_{1}^{n}=y_{1} \<br>
+\cdots \<br>
+a_{0}+a_{1} x_{n}+a_{2} x_{n}^{2}+\cdots+a_{n} x_{n}^{n}=y_{n}
+\end{array}\right.
+$$</p>
+<p>记此方程组的系数矩阵为 A，则</p>
+<p>$$
+\operatorname{det}(A)=\left|\begin{array}{cccc}
+1 &amp; x_{0} &amp; \cdots &amp; x_{0}^{n} \<br>
+1 &amp; x_{1} &amp; \cdots &amp; x_{1}^{n} \<br>
+\vdots &amp; \vdots &amp; &amp; \vdots \<br>
+1 &amp; x_{n} &amp; \cdots &amp; x_{n}^{n}
+\end{array}\right|
+$$</p>
+<p>是范德行列式 . 当 $ x_{0}, x_{1}, x_{2}, \cdots, x_{n}  $ 互不相同时 $ , $ 此行列式值不为零。因此，方程组有唯一解。这表明只要 n + 1 个插值节点 $ x_{0}, x_{1}, x_{2}, \cdots, x_{n} $互异，满足插值条件的插值多项式存在且唯一。</p>
+<p>从几何上看，n次多项式插值就是过 n +1 个点 $ (x_i, y_i) $作一条多项式曲线$ y=p_{n}(x) $ 来近似曲线 $ y=f(x), $ 可以证明n次插值问题的解是惟一的。</p>
+<p>当 $x \in [a,b] $ 且 $ x \neq x_{i}(i=0,1, \cdots, n) $ 时，$ f(x) \approx p_{n}(x) $，称被插函数f(x)与插值函数多项式$ p_n(x) $之间的差
+$$
+R_{n}(x)=f(x)-p_{n}(x)
+$$</p>
+<p>为插值多项式$ p_n(x) $的截断误差，或<strong>插值余项</strong>。</p>
+<p>用多项式函数$ p_n(x) $作为插值函数时，希望通过解方程组而得到待定系数$ a_{0}, a_{1}, \cdots \cdot a_{n} $的做法，**当n比较大时是不现实的**。因此，我们采用拉格朗日(Lagrange)插值多项式。</p>
+<h5 id="b-拉格朗日lagrange插值多项式">b. 拉格朗日(Lagrange)插值多项式</h5>
+<p>首先构造一组基函数，对$ i=0,1 \cdots, n $,
+$$
+\begin{aligned}
+l_{i}(x)&amp;=\prod_{j=0, j \neq i}^{n} \frac{x-x_{j}}{x_{i}-x_{j}} \<br>
+&amp;=\frac{\left(x-x_{0}\right) \cdots\left(x-x_{i-1}\right)\left(x-x_{i+1}\right) \cdots\left(x-x_{n}\right)}{\left(x_{i}-x_{0}\right) \cdots\left(x_{i}-x_{i-1}\right)\left(x_{i}-x_{i+1}\right) \cdots\left(x_{i}-x_{n}\right)}
+\end{aligned}
+$$</p>
+<p>显然 $l_{i}(x)$ 是 $ n $ 次多项式, 且满足</p>
+<p>$$
+l_{i}\left(x_{j}\right)=\left{\begin{array}{ll}
+0 &amp; j \neq i \<br>
+1 &amp; j=i
+\end{array}\right.
+$$</p>
+<p>令</p>
+<p>$$
+p_{n}(x)=\sum_{i=0}^{n} y_{i} l_{i}(x)=\sum_{i=0}^{n} f\left(x_{i}\right) \prod_{j=0, j \neq i}^{n} \frac{x-x_{j}}{x_{i}-x_{j}}
+$$</p>
+<p>则有
+$$
+p_n(x_i)=y_i
+$$
+即满足插值条件，称$ p_n(x) $即为n次拉格朗日(Lagrange)插值多项式，同样由唯一性，n+1个节点的n次拉格朗日插值多项式存在且唯一。</p>
+<p>当 f(x) 在 [a, b] 上充分光滑时，利用罗尔(Rolle)定理可推出：对于任意 $ x \in [a,b] $ 插值多项式 $ p_n(x) $ 的余项</p>
+<p>$$
+R_{n}(x)=f(x)-p_{n}(x)=\frac{f^{(n+1)}(\xi)}{(n+1) !} \prod_{i=0}^{n}\left(x-x_{i}\right), \xi \in(a, b)
+$$</p>
+<p><strong>例2.20</strong>: 设 $ f(x)=\sqrt[3]{x}, $ 取结点为 x=1、1.728、2.744，求f(x)的二次拉格朗日插值多项式及$ p_n(x) $其余项的表达式，并计算$ p_2(x) $。$ (\sqrt[3]{2}=1.2599210 \cdot \cdots) $</p>
+<p>解：</p>
+<p>取 $ x_{0}=1, x_{1}=1.728, x_{2}=2.744 $ 为插值结点，则函数 $ f(x)=\sqrt[3]{x} $ 的相应的函数值为
+$$
+\begin{array}{ll}
+f\left(x_{0}\right)=1, f\left(x_{1}\right)=1.2, f\left(x_{2}\right)=1.4 .
+\end{array}
+$$</p>
+<p>于是，由拉格朗日插值公式,</p>
+<p>$$
+\begin{aligned}
+f(x) &amp;\approx p_{2}(x) \<br>
+&amp;=1 \cdot \frac{(x-1.728)(x-2.744)}{(1-1.728)(1-2.744)} \<br>
+&amp;+1.2 \cdot \frac{( x-1)(x-2.74)}{(1.728-1)(1.728-2.744)} \<br>
+&amp;+1.4 \cdot \frac{(x-1)(x-1.728)}{(2.744-1)(2.7 .44-1.728)} \<br>
+&amp;\approx-0.0447 x^{2}+0.3965 x+0.6481
+\end{aligned}
+$$</p>
+<p>将 x=2 带入就得到</p>
+<p>$$
+\sqrt[3]{2} \approx p_{2}(2)=1.2626
+$$</p>
+<p>它与准确值的差的绝对值(称为绝对误差)约为 0.0027，而由插值余项估计公式，其误差约为</p>
+<p>$$
+\left|R_{n}(2)\right|=\left| \frac{5}{81} \cdot \frac{(2-1)(2-1.728)(2-2.744)}{\xi^{3/8}} \right| \leq 0.0125
+$$</p>
+<h4 id="2-牛顿newton插值">2) 牛顿(Newton)插值</h4>
+<h5 id="a-函数的差商及其性质">a. 函数的差商及其性质</h5>
+<p>设有函数$ f(x) $, 其中取 $ x_{0}, x_{1}, x_{2}, \ldots, x_{n} $表示一系列互不相同的节点，可定义以下差商：</p>
+<ul>
+<li>一阶差商： $ f\left[x_{i}, x_{j}\right]=\frac{f\left(x_{i}\right)- f\left(x_{j}\right)}{x_{i}-x_{j}} $</li>
+<li>二阶差商： $  f\left[x_{i}, x_{j}, x_{k}\right]=\frac{f\left[x_{i}, x_{j}\right]-f\left[x_{j}, x_{k}\right]}{x_{i}-x_{k}} $</li>
+<li>n 阶差商：</li>
+</ul>
+<p>$$
+f\left[x_{0}, x_{1}, \cdots, x_{n}\right]=\frac{f\left[x_{0}, x_{1}, \cdots, x_{n-1}\right]-f\left[x_{1}, x_{2}, \cdots, x_{n} \mid\right.}{x_{0}-x_{n}}
+$$</p>
+<p>(I)差商的可加性 $ f\left[x_{0}, x_{1}, \ldots, x_{n}\right]=\sum_{k=0}^{n} \frac{f\left(x_{k}\right)}{\prod_{j=0}^{n}\left(x_{k}-x_{j}\right)} $
+(II)差商的对称性 : 在$f \left[x_{0}, x_{1}, x_{2}\ldots . x_{n}\right] $ 中任意调换 $ x_{i}, x_{j} $ 的次序其值不变，即有：
+$$
+f\left[x_{0}, \ldots, x_{i}, \ldots, x_{j}, \ldots, x_{n}\right]=f\left[x_{0}, \ldots, x_{j}, \ldots, x_{i}, \ldots, x_{n}\right]
+$$</p>
+<h5 id="b-牛顿插值公式">b. 牛顿插值公式</h5>
+<p>由各阶差商的定义，依次可得如下结果</p>
+<p>$$
+\begin{aligned}
+f(x)&amp;=f\left(x_{0}\right)+\left(x-x_{0}\right) f\left[x, x_{0}\right] \<br>
+f\left[x, x_{0}\right]&amp;=f\left[x_{0}, x_{1}\right]+\left(x-x_{1}\right) f\left[x, x_{0}, x_{1}\right] \<br>
+f\left[x, x_{0}, x_{1}\right]&amp;=f\left[x_{0}, x_{1}, x_{2}\right]+\left(x-x_{2}\right) f\left[x, x_{0}, x_{1}, x_{2}\right] \<br>
+&amp;\ldots \<br>
+f\left[x, x_{0}, \cdots, x_{n-1}\right] &amp;=f\left[x_{0}, x_{1}, \cdots, x_{n}\right] +\left(x-x_{n}\right) f\left[x, x_{0}, \cdots, x_{n}\right]
+\end{aligned}
+$$</p>
+<p>将以上各式分别乘以1, $ \left(x-x_{0}\right) $,  $ \left(x-x_{0}\right)\left(x-x_{1}\right), \cdots $, $ \left(x-x_{0}\right)\left(x-x_{1}\right) \cdots \left(x-x_{n-1}\right)$, 然后等式两边相加可得
+$$
+\begin{aligned}
+f(x)&amp;=f\left(x_{0}\right)+\left(x-x_{0}\right) f\left[x_{0}, x_{1}\right] \<br>
+&amp;+\cdots+ \<br>
+&amp;+\left(x-x_{0}\right)\left(x-x_{1}\right) \cdots\left(x-x_{n-1}\right) f\left[x_{0}, x_{1}, \cdots, x_{n}\right] \<br>
+&amp;+\left(x-x_{0}\right)\left(x-x_{1}\right) \cdots\left(x-x_{n}\right) f\left[x, x_{0}, x_{1}, \cdots, x_{n}\right]
+\end{aligned}
+$$</p>
+<p>记
+$$
+\begin{aligned}
+\boldsymbol{N}<em>{n}(\boldsymbol{x})=&amp; \boldsymbol{f}\left(\boldsymbol{x}</em>{0}\right)+\left(\boldsymbol{x}-\boldsymbol{x}<em>{0}\right) f\left[\boldsymbol{x}</em>{0}, \boldsymbol{x}<em>{1}\right]+\cdots+\<br>
+&amp;\left(\boldsymbol{x}-\boldsymbol{x}</em>{0}\right)\left(\boldsymbol{x}-\boldsymbol{x}<em>{1}\right) \cdots\left(\boldsymbol{x}-\boldsymbol{x}</em>{n-1}\right) f\left[x_{0}, \boldsymbol{x}_{1}, \cdots, \boldsymbol{x}_{n}\right]
+\end{aligned}
+$$</p>
+<p>显然 $ N_{n}(\mathbf{x}) $ 是至多 n 次多项式 , 且满足插值条件 $ N_{n}\left(x_{i}\right)=f\left(x_{i}\right) $
+这种形式的插值多项式称为Newton插值多项式，余项为：
+$$
+R(x)=\left(x-x_{0}\right)\left(x-x_{1}\right) \cdots\left(x-x_{n}\right) f\left[x_{0}, x_{1}, \cdots, x_{n}, x\right]
+$$</p>
+<p>问题：$ f(x_i) $未知，那么如何计算$N_n(x)$呢？</p>
+<h4 id="3-埃尔米特hermite插值">3) 埃尔米特(Hermite)插值</h4>
+<p>如果对插值函数，要求它在节点处与函数同值，有一阶、二阶或高阶导数同值，这就是埃尔米特插值问题。本节仅考虑在节点处<strong>函数值及一阶导数同值的埃尔米特插值</strong>。</p>
+<p>一般提法为：设已知函数 $ y=f(x) $ 在 $ n+1 $ 个互异节点$ x_{0}, x_{1}, x_{2}, \ldots, x_{n} $ 上的函数同值$ y_{i}=f\left(x_{i}\right) $ 和导数同值 $ y_{i}^{\prime}=f^{\prime}\left(x_{i}\right) $要求一个至多 2n+1 次多项式H(X)，使得</p>
+<p>$$
+H\left(x_{i}\right)=y_{i}, \quad H^{\prime}\left(x_{i}\right)=y_{i}^{\prime}(i=0,1, \cdots, n)
+$$</p>
+<p>满足上述条件的多项式H(x)称为<strong>埃尔米特插值多项式</strong>。</p>
+<p>其具体形式如下所示，</p>
+<p>$$
+H(x)=\sum_{i=0}^{n} h_{i}\left[\left(x_{i}-x\right)\left(2 a_{i} y_{i}-y_{i}^{\prime}\right)+y_i\right]
+$$</p>
+<p>其中</p>
+<p>$$
+\begin{array}{l}
+h_{i}=\prod_{j=0, j \neq i}^{n}\left(\frac{x-x_{j}}{x_{i}-x_{j}}\right)^{2} \<br>
+a_{i}=\sum_{j=0, j \neq i}^{n} \frac{1}{x_{i}-x_{j}}
+\end{array}
+$$</p>
+<p>高次插值多项式的龙格 (Runge)现象</p>
+<ul>
+<li>多数情况下，$ p_{n}(x) $ 的次数越高 逼近 f(x) 的效果越好；</li>
+<li>但是往往会造成$  p_{n}(x) $的收敛性与稳定性变差，逼近效果不理想，甚至发生龙格 (Runge)现象。</li>
+</ul>
+<p>龙格 (Runge)现象： 在[-1,1]上用n+1个等距节点作函数 $ f(x)=1 /\left(1+25 x^{2}\right) $的插 值多项式 $ P_{n}(x), $ 则随着n的增大，$ P_{n}(\mathbf{x}) $ 振荡越来越大。计算结果与理论证明表明，当n趋于无穷大时，$ P_{n}(\mathrm{x}) $ 在区间中部收敛于 f(x)，但对满足条件$ 0.726 \cdots \leq|x|&lt;1 $ 的x, $  P_{n}(\mathbf{x}) $
+并不收敛于 f(x)。类比围度诅咒。</p>
+<h4 id="4-分段线性插值法">4) 分段线性插值法</h4>
+<p>分段线性插值就是<strong>将每两个相邻的节点用直线连起来，形成一条折线</strong>就是分段线性插值函数，记作 $ I_{n}(x) $ 它满足 $ I_{n}\left(x_{i}\right)=y $ 且 $ I_{n}(x) \quad $ 在每个小区间 $ \left[x_{i}, x_{i}+1\right] $ 上是线性函数。</p>
+<p>具体表示如下: $ I_{n}(x)=\sum_{i=0}^{n} y_{i} l_i(x) $
+其中
+$$
+l_{i}(x)= \left{\begin{array}{l}\frac{x-x_{i-1}}{x_{i}-x_{i-1}}, x \in\left[x_{i-1}, x_{i}\right] \ \frac{x-x_{i+1}}{x_{i}-x_{i+1}}, x \in\left[x_{i}, x_{i+1}\right] \ 0, \text { 其他 }\end{array}\right. 
+$$</p>
+<p>这样构造的$ I_{n}(x) $具有良好的收敛性，即对于$ x \in [a, b] $有</p>
+<p>$$
+\lim <em>{n \rightarrow \infty} I</em>{n}(x)=f(x)
+$$</p>
+<p>我们可以看出用$ I_{n}(x) $计算$ x $点的插值时，只用到其左右的两个节点，所以计算量与节点个数n无关。但是n越大，分段越多，则插值的误差越小。</p>
+<h4 id="5-样条插值法">5) 样条插值法</h4>
+<p>分段线性插值函数在节点处的一阶导数一般不存在，光滑性不高。许多工程技术中提出的计算问题，对插值函数的光滑性有较高要求。</p>
+<p>绘图员的做法：首先将这些数据点描绘在平面图纸上，再把一根富有弹性的细直条(称为样条)弯曲，使其一边通过这些数据点，用压铁固定细直条的形状，沿样条边沿绘出一条光滑曲线。要用几根样条分段完成上述工作，让样条在连接处也保持光滑。根据力学理论进行分析，这样画出的曲线在相邻两数据点之间，实际上是次数不高于3的多项式，在整个区间上有连续的曲率。对绘图员用样条</p>
+<p>画出的曲线进行数学模拟，导出了样条函数的概念。</p>
+<p>设给定区间[a, b]的一个分划
+$$
+\Delta: a=x_{0}&lt;x_{1}&lt;\cdots&lt;x_{n}=b 
+$$
+如果函数 s(x) 满足条件：</p>
+<ol>
+<li>在每个子区间$ \left[x_{i-1}, x_{i}\right](i=1,2, \cdots, n) $上是 k 次多项式</li>
+<li>s(x)及直到 k-1 阶的导数在[a,b]上连续</li>
+</ol>
+<p>则称 s(x) 是关于分划$ \Delta $的一个 k 次多项式<strong>样条函数</strong>，$ x_{0}, x_{1}, x_{2}, \ldots, x_n $, 称为**样条结点**, $ x_{1}, x_{2}, \ldots, x_{n-1} $ 称为内结点，$ x_{0}, x_{n} $称为边界结点，这类样条函数的全体记作$ s_{p}(\Delta, k) $ 称为k 次样条函数空间。若 $ s(x) \in S_{p}(\Delta, k), $ 则 $ \mathbf{s}(\mathbf{x}) $ 是关于分划 $ \triangle $ 的$ \mathbf{k} $次多项式样条函数。</p>
+<p>k 次多项式样条函数的一般形式为
+$$
+s_{k}(x)=\sum_{i=0}^{k} \frac{\alpha x^{i}}{i !}+\sum_{j=1}^{n-1} \frac{\beta_{j}}{k!}\left(x-x_{j}\right)_{+}^{k}
+$$</p>
+<p>其中 $ \alpha_{i}\left(\mathbf{i}=0,1, \cdot \cdot \cdot,\right. $ k) 和 $ \beta_{j}(\mathbf{j})=1,2,・・, n - 1) $均为任意常数，而</p>
+<p>$$
+\left(x-x_{j}\right)_{+}^{k}=\left{\begin{array}{l}\left(x-x_{j}\right)^{k}, x \geq x_{j}, \ 0, x&lt;x_{j}\end{array} \quad(j=1,2,\ldots,n-1)\right.
+$$</p>
+<p>k=2和3，为二次样条函数和三次样条函。</p>
+<p>二次样条函数：对于 [a, b] 上的分划$ \Delta: a=x_{0}&lt;x_{1}&lt;x_{2}&lt;x_{n}=b, $ 则
+$$
+s_{2}(x)=\alpha_{0}+\alpha_{1} x+\frac{\alpha_{2}}{2 !} x^{2}+\sum_{j=1}^{n-1} \frac{\beta_{j}}{2 !}\left(x-x_{j}\right)_{+}^{2} \in S_{p}(\Delta, 2)
+$$</p>
+<p>其中</p>
+<p>$$
+\left(x-x_{j}\right)_{+}^{2}=\left{\begin{array}{ll}
+\left(x-x_{j}\right)^{k}, x \geq x_{j}, &amp; (j=1,2, \cdots, n-1) \<br>
+0, x&lt;x_{j}
+\end{array}\right.
+$$</p>
+<p>三次样条函数：对于 [a, b] 上的分划$\Delta: a =x_{0}&lt;x_{1}&lt;x_{2}&lt;x_{n}=b, $则</p>
+<p>$$
+s_{3}(x) =\alpha_{0}+\alpha_{1} x+\frac{a_{2}}{2 !} x^{2}+\frac{a_{3}}{3 !} x^{3}+\sum_{j=1}^{n-1} \frac{\beta_{j}}{3 !}\left(x-x_{j}\right)^{3} \in S_{p}(\Delta, 3)
+$$</p>
+<p>其种</p>
+<p>$$
+\left(x-x_{j}\right)_{+}^{3}=\left{\begin{array}{l}
+\left(x-x_{j}\right)^{k}, x \geq x_{j}, \quad(j=1,2, \cdots, n-1) \<br>
+0, x&lt;x_{j}
+\end{array}\right.
+$$</p>
+<h1 id="二元插值待补充">二元插值待补充</h1>
+<h3 id="224-拟合与插值的matlab编程实现">2.2.4 拟合与插值的MATLAB编程实现</h3>
+<h4 id="1-matlab多项式拟合">1) Matlab多项式拟合</h4>
+<p>a = polyfit(x, y, n)：多项式拟合，返回降幂排列的多项式系数。其中x，y是数据点的值，n为拟合的最高次数。</p>
+<p>y = polyval(a, x)：计算拟合的多项式在 x 处的值</p>
+<p>在处理一些无约束条件的最小二乘拟合时往往会涉及到最小二乘优化，最小二乘优化是一类比较特殊的优化问题，在处理这类问题时，Matlab 也提供了一些强大的函数．在 Matlab 优化工具箱中，用亍求解最小二乘优化问题的凼数有：lsqlin、lsqcurvefit、lsqnonlin、lsqnonneg</p>
+<p>二、Matlab 数据拟合工具箱
+在 Matlab 中的工作区，输入命令 cftool，便会出现如下拟吅工具箱
+5 个命令按钮的功能凾别如下：
+Data 按钮：可输出、查看和平滑数据；
+Fitting 按钮：可拟吅数据、比较拟吅曲线和数据集；
+Exclude 按钮：可以从拟吅曲线中排除特殊的数据点；
+Ploting 按钮：在选定区间后，单击按钮，可以显示拟吅曲线和数据</p>
+<p>三、Matlab 一维插值
+用 Matlab 实现凾段线性插值丌需要编制凼		·数程序，Matlab 中关亍一维插值的凼数为 interp1．
+y = interp1(x0, y0, x,′ method′),
+其中 method 指定插值的方法，默认为线性插值．其值可为：’nearest’ 最近项插值，’linear’ 线性插值，’spline’ 逐段 3 次样条插值，’cubic’ 保凹凸性 3 次插值.
+详细情况请使用 help interp1；</p>
+<p>四、Matlab 二维插值</p>
+<p>当插值节点为网格节点时，命令为
+z = interp2(x0, y0, z0, x, y,′ method′),
+其中 x0，y0 凾别为 m 维和 n 维向量，表示节点，z0 为 m × n
+维矩阵，表示节点值，x，y 为一维数组，表示插值点，x 不 y 应
+是方向丌同的向量，即一个是行向量，另一个是列向量，z 为矩
+阵，它的行数为 x 的维数，列数为 y 的维数，表示得到的插
+值，’method’ 的用法同上面的一维插值．</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/2.-%E5%88%9D%E7%AD%89%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/3.-%E5%88%9D%E7%AD%89%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/1.-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

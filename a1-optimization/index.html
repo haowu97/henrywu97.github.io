@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="A1 Optimization 1.1 Unconstrained Optimization Optimization problem $$ \max _{x} f(x) $$
+subject to $\mathrm{x} \in S$.
+where $f$ is the objective function, x is the choice variable, $S$ is the constraint set.
+The solution to the optimization problem $x^{}$ is called maximizer; $f\left(x^{}\right)$ is called the maximum (value) of the function $f$ subject to the constraint $\mathrm{x} \in S$
+Local maximizer: the variable $x^{}$ is a local maximizer of the function $f$ subject to the constraint $\mathrm{x} \in S$ if there is a number $\epsilon&gt;0$ such that $f(\mathrm{x}) \leq f\left(\mathrm{x}^{}\right)$ for all $\mathrm{x} \in S$ for which the distance between $\mathrm{x}$ and $\mathrm{x}^{*}$ is at most $\epsilon$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/a1-optimization/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="A1 Optimization 1.1 Unconstrained Optimization Optimization problem $$ \max _{x} f(x) $$
+subject to $\mathrm{x} \in S$.
+where $f$ is the objective function, x is the choice variable, $S$ is the constraint set.
+The solution to the optimization problem $x^{}$ is called maximizer; $f\left(x^{}\right)$ is called the maximum (value) of the function $f$ subject to the constraint $\mathrm{x} \in S$
+Local maximizer: the variable $x^{}$ is a local maximizer of the function $f$ subject to the constraint $\mathrm{x} \in S$ if there is a number $\epsilon&gt;0$ such that $f(\mathrm{x}) \leq f\left(\mathrm{x}^{}\right)$ for all $\mathrm{x} \in S$ for which the distance between $\mathrm{x}$ and $\mathrm{x}^{*}$ is at most $\epsilon$"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/a1-optimization/" /><link rel="prev" href="https://henrywu97.github.io/chapter1.2.3./" /><link rel="next" href="https://henrywu97.github.io/8.-mechanism-design/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/a1-optimization\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  870 ,
+        "url": "https:\/\/henrywu97.github.io\/a1-optimization\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/a1-optimization/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/a1-optimization/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;870 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-unconstrained-optimization">1.1 Unconstrained Optimization</a>
+      <ul>
+        <li><a href="#111-existence-of-solution">1.1.1 Existence of solution</a>
+          <ul>
+            <li><a href="#necessary-condition-of-interior-solution">Necessary condition of interior solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#112-envelope-theorem">1.1.2 Envelope theorem</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-optimization-with-equality-constraints">1.2 Optimization with Equality Constraints</a>
+      <ul>
+        <li><a href="#121-lagrange-method-constrained-rightarrow-unconstrained">.1.2.1 Lagrange method: constrained $\Rightarrow$ unconstrained</a></li>
+        <li><a href="#122-lagrange-multiplier">1.2.2 Lagrange multiplier</a></li>
+        <li><a href="#123-envelope-theorem">1.2.3 Envelope theorem</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-optimization-with-inequality-constraints">1.3 Optimization with Inequality Constraints</a>
+      <ul>
+        <li><a href="#131-kuhn-tucker-conditions">1.3.1 Kuhn-Tucker conditions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="a1-optimization">A1 Optimization</h1>
+<h2 id="11-unconstrained-optimization">1.1 Unconstrained Optimization</h2>
+<p>Optimization problem
+$$
+\max _{x} f(x)
+$$</p>
+<p>subject to $\mathrm{x} \in S$.</p>
+<p>where $f$ is the objective function, x is the choice variable, $S$ is the constraint set.</p>
+<p>The solution to the optimization problem $x^{<em>}$ is called maximizer; $f\left(x^{</em>}\right)$ is called the maximum (value) of the function $f$ subject to the constraint $\mathrm{x} \in S$</p>
+<p>Local maximizer: the variable $x^{<em>}$ is a local maximizer of the function $f$ subject to the constraint $\mathrm{x} \in S$ if there is a number $\epsilon&gt;0$ such that $f(\mathrm{x}) \leq f\left(\mathrm{x}^{</em>}\right)$ for all $\mathrm{x} \in S$ for which the distance between $\mathrm{x}$ and $\mathrm{x}^{*}$ is at most $\epsilon$</p>
+<p>Global maximizer</p>
+<h3 id="111-existence-of-solution">1.1.1 Existence of solution</h3>
+<p>Bounded set: the set $S$ is bounded if there exists a number $k$ such that the 
+distance of every point in $S$ from the origin is at most $k$</p>
+<p>Compact set: a closed and bounded set is a compact set. A continuous function on a</p>
+<p>compact set attains both a maximum and a minimum on the set.</p>
+<h4 id="necessary-condition-of-interior-solution">Necessary condition of interior solution</h4>
+<p>Let $f$ be a differentiable function of $n$ variables defined on the set $S$. If the point x in the interior of $S$ is a local or global maximizer or minimizer of $f$ then
+$$
+f_{i}(x)=0 \text { for } i=1, \ldots, n
+$$</p>
+<p>Let $f$ be a function of $n$ variables with continuous partial derivatives of first and second order, defined on the set $S$. Suppose that $x^{*}$ is a stationary point of $f$ in the interior of $S$ (so that $f_{i}(\mathbf{x})=0$ for all $i$ )</p>
+<ul>
+<li>If $H\left(\mathbf{x}^{<em>}\right)$ is negative definite then $\mathbf{x}^{</em>}$ is a local maximizer</li>
+<li>If $x^{<em>}$ is a local maximizer then $H\left(x^{</em>}\right)$ is negative semidefinite</li>
+<li>If $H\left(\mathbf{x}^{<em>}\right)$ is positive definite then $\mathbf{x}^{</em>}$ is a local minimizer</li>
+<li>If $\mathrm{x}^{<em>}$ is a local minimizer then $H\left(\mathrm{x}^{</em>}\right)$ is positive semidefinite</li>
+</ul>
+<p>Saddle point: a stationary point that is neither a local maximizer nor a local minimizer is a saddle point.</p>
+<h3 id="112-envelope-theorem">1.1.2 Envelope theorem</h3>
+<p>Let $f$ be a continuously differentiable function of $n+k$ variables. Define the function $f^{<em>}$ of $k$ variables by
+$$
+f^{</em>}(\mathrm{r})=\max _{\mathrm{x}} \mathrm{f}(\mathrm{x}, \mathrm{r})=f\left(\mathrm{x}^{*}(\mathrm{r}), \mathrm{r}\right)
+$$</p>
+<p>where $x$ is an $n$ -vector and $r$ is a $k$ -vector. If the solution of the maximization problem is a continously differentiable function of $\mathrm{r}$ then
+$$
+f_{h}^{*}(\mathrm{r})=f_{n+h}\left(\mathrm{x}^{*}(\mathrm{r}), \mathrm{r}\right)
+$$</p>
+<p>Instead of the total derivative, you only need to check the partial derivative w.r.t. the parameter of interest at the optimizing point.</p>
+<h2 id="12-optimization-with-equality-constraints">1.2 Optimization with Equality Constraints</h2>
+<p>Let $f$ and $g^{1}, \ldots, g^{m}$ be continuously differentiable functions of $n$ variables defined on the set $S$, let $c_{j}$ for $j=1, \ldots, m$ be numbers. Now we face the following problem
+$$
+\max _{x} f(x) \text { subject to } g^{j}(x)=c_{j} \text { for } j=1, \ldots, m
+$$</p>
+<h3 id="121-lagrange-method-constrained-rightarrow-unconstrained">.1.2.1 Lagrange method: constrained $\Rightarrow$ unconstrained</h3>
+<p>Transform the constrained problem into an unconstrained problem with $m$ more variables
+$$
+\max <em>{\mathbf{x}, \lambda} \mathscr{L}(\mathbf{x}, \lambda)=f(\mathbf{x})-\sum</em>{j=1}^{m} \lambda_{j}\left(g^{j}(\mathbf{x})-c_{j}\right)
+$$</p>
+<ul>
+<li>First and second order conditions</li>
+<li>Special cases where $f$ is concave (convex) and the $g^{\prime}$ s are convex (concave)</li>
+</ul>
+<p>First order conditions
+$$
+\begin{array}{l}
+\frac{\partial \mathscr{L}\left(\mathrm{x}^{<em>}, \lambda^{</em>}\right)}{\partial x_{i}}=f_{i}\left(\mathrm{x}^{*}\right)-\left.\sum_{j=1}^{m} \lambda_{j}^{*} \frac{\partial g^{j}}{\partial x_{i}}\right|_{\mathrm{x}^{*}}=0 \text { for } i=1, \ldots, n \<br>
+\frac{\partial \mathscr{L}\left(\mathrm{x}^{*}, \lambda^{*}\right)}{\partial \lambda_{j}}=c_{j}-g^{j}\left(\mathrm{x}^{*}\right)=0 \text { for } j=1, \ldots, m
+\end{array}
+$$</p>
+<p>A special case with only one constraint
+$$
+\begin{aligned}
+\nabla f\left(x^{<em>}\right)&amp;=\lambda^{</em>} \nabla g\left(x^{<em>}\right) \<br>
+g\left(x^{</em>}\right)&amp;=c
+\end{aligned}
+$$</p>
+<h3 id="122-lagrange-multiplier">1.2.2 Lagrange multiplier</h3>
+<p>$$
+\lambda^{<em>}=\frac{\nabla f\left(x^{</em>}\right)^{\prime} \Delta x}{\nabla g\left(x^{*}\right)^{\prime}\Delta x}
+$$</p>
+<p>The rate of change in the maximum over a change in the constraint.</p>
+<p>The value of the Lagrange multiplier on the $j$th constraint at the solution of the problem is equal to the rate of change in the maximal value of the objective function as the $j$th constraint is relaxed.</p>
+<p>e.g. Shadow price of scarce resource (internal value/imputed value)</p>
+<h3 id="123-envelope-theorem">1.2.3 Envelope theorem</h3>
+<p>Let $f$ and $g^{j}$ for $j=1, \ldots, m$ be continuously differentiable functions of $n+k$ variables. Define the function $f^{<em>}$ of $k$ variables by
+$$
+\mathscr{L}^{</em>}(\mathrm{r})=\max _{\mathrm{x}} \mathrm{f}(\mathrm{x}, \mathrm{r}) \text { subject to } g^{\prime}(\mathrm{x}, \mathrm{r})=0 \text { for } j=1, \ldots, m
+$$</p>
+<p>where x is an $n$-vector and $\mathrm{r}$ is a $k$-vector. Suppose that the solution of the maximization problem and the associated Lagrange multipliers $\lambda_{1}, \ldots, \lambda_{m}$ are continuously differentiable functions of $r,$ then
+$$
+f_{h}^{*}(\mathrm{r})=\mathscr{L}_{n+h}\left(\mathrm{x}^{*}(\mathrm{r}), \mathrm{r}\right) \text { for } h=1, \ldots, k
+$$</p>
+<p>where the function $\mathscr{L}$ is defined by $\mathscr{L}(\mathrm{x}, \mathrm{r})=f(\mathrm{x}, \mathrm{r})-\sum_{j=1}^{m} \lambda_{j}g^{j}\left( \mathrm{x}, \mathrm{r}\right)$ for every $(x, r)$</p>
+<h2 id="13-optimization-with-inequality-constraints">1.3 Optimization with Inequality Constraints</h2>
+<p>Optimization problem
+$$
+\max <em>{x} f(x) \text { subject to } g^{j}(x) \leq c</em>{j} \text { for } j=1, \ldots, m
+$$</p>
+<p>Lagrange function
+$$
+\mathscr{L}(\mathbf{x}, \lambda)=f(\mathbf{x})-\sum_{j=1}^{m} \lambda_{j}\left(g^{j}(\mathbf{x})-c_{j}\right)
+$$</p>
+<h3 id="131-kuhn-tucker-conditions">1.3.1 Kuhn-Tucker conditions</h3>
+<p>$(x, \lambda)$ satisfies Kuhn-Tucker conditions for the problem if</p>
+<ol>
+<li>
+<p>$L_{i}(x, \lambda)=f_{i}\left(x^{*}\right)-\left.\sum_{j=1}^{m} \lambda_{j}^{*} \frac{\partial g^{j}}{\partial x_{i}}\right|_{x^{*}}=0$ for $i=1, \ldots, n$</p>
+</li>
+<li>
+<p>$g^{j}(x)-c_{j}=0 \text{ &amp; } \lambda_{j} &gt; 0$</p>
+<p>or $g^{j}(\mathbf{x})-c_{j}&lt;0 \text{ &amp; } \lambda_{j}=0$ for $j=1, \ldots, m$</p>
+</li>
+</ol>
+<p>The second set of conditions are equivalent to
+$$
+\lambda_{j} \geq 0, g^{\prime}(\mathrm{x}) \leq c_{j} \text { and } \lambda_{j}\left(\mathscr{f}^{j}(\mathrm{x})-\mathrm{c}_{j}\right)=0 \text { for } j=1, \ldots, m
+$$</p>
+<p>one of two inequalities must be binding - &ldquo;complementary slackness condition&rdquo;: <strong>If a Lagrange multiplier is positive, its associated constraint must be binding; if constraint is slack, its associated Lagrange multiplier must be zero.</strong></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/a1-optimization/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/a1-optimization/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/a1-optimization/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/a1-optimization/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/chapter1.2.3./"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/8.-mechanism-design/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="7 Convergences and Limit Theorems 7.1 Limits and Orders of Magnitude 【limit】Let $\left{b_{n}, n=1,2, \ldots\right}$ be a sequence of (non-stochastic) real numbers. If there exists a real number $b$ such that for every real number $\varepsilon&gt;0,$ there exists a finite integer $N(\varepsilon)$ such that $$ \left|b_{n}-b\right|&lt;\varepsilon \quad \text { for all } n \geqslant N(\varepsilon) $$ then $b$ is called the limit of the sequence $\left{b_{n}\right} .$ We write $b_{n} \rightarrow b$ as $n \rightarrow \infty,$ or $\lim _{n \rightarrow \infty} b_{n}=b$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/7.-convergences-and-limit-theorems/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="7 Convergences and Limit Theorems 7.1 Limits and Orders of Magnitude 【limit】Let $\left{b_{n}, n=1,2, \ldots\right}$ be a sequence of (non-stochastic) real numbers. If there exists a real number $b$ such that for every real number $\varepsilon&gt;0,$ there exists a finite integer $N(\varepsilon)$ such that $$ \left|b_{n}-b\right|&lt;\varepsilon \quad \text { for all } n \geqslant N(\varepsilon) $$ then $b$ is called the limit of the sequence $\left{b_{n}\right} .$ We write $b_{n} \rightarrow b$ as $n \rightarrow \infty,$ or $\lim _{n \rightarrow \infty} b_{n}=b$"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/7.-convergences-and-limit-theorems/" /><link rel="prev" href="https://henrywu97.github.io/8.-parameter-estimation-and-evaluation/" /><link rel="next" href="https://henrywu97.github.io/4.-important-probability-distributions/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/7.-convergences-and-limit-theorems\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  7733 ,
+        "url": "https:\/\/henrywu97.github.io\/7.-convergences-and-limit-theorems\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/7.-convergences-and-limit-theorems/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/7.-convergences-and-limit-theorems/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;7733 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;37 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#71-limits-and-orders-of-magnitude">7.1 Limits and Orders of Magnitude</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#72-motivation-for-convergence-concepts">7.2 Motivation for Convergence Concepts</a></li>
+    <li><a href="#73-convergence-in-quadratic-mean-and-l_p-convergence">7.3 Convergence in Quadratic Mean and $L_{p}$-Convergence</a></li>
+    <li><a href="#74-convergence-in-probability">7.4 Convergence in Probability</a>
+      <ul>
+        <li><a href="#741-definition">7.4.1 Definition</a></li>
+        <li><a href="#742-markovs-inequality">7.4.2 Markov&rsquo;s Inequality</a></li>
+        <li><a href="#743-wlln">7.4.3 WLLN</a></li>
+        <li><a href="#744-relationships-between-convergence">7.4.4 Relationships Between Convergence</a></li>
+        <li><a href="#745-continuous-mapping-theorem">7.4.5 Continuous Mapping Theorem</a></li>
+        <li><a href="#746-continuity">7.4.6 Continuity</a></li>
+      </ul>
+    </li>
+    <li><a href="#75-almost-sure-convergence">7.5 Almost Sure Convergence</a>
+      <ul>
+        <li><a href="#751-definition">7.5.1 Definition</a></li>
+        <li><a href="#752-order-of-almost-sure-convergence">7.5.2 Order of Almost sure convergence</a></li>
+        <li><a href="#753-relationships-between-convergence">7.5.3 Relationships Between Convergence</a></li>
+        <li><a href="#754-continuous-mapping-theorem">7.5.4 Continuous Mapping Theorem</a></li>
+        <li><a href="#755-continuity">7.5.5 Continuity</a></li>
+        <li><a href="#756-slln--uslln">7.5.6 SLLN &amp; USLLN</a></li>
+      </ul>
+    </li>
+    <li><a href="#76-convergence-in-distribution">7.6 Convergence in Distribution</a>
+      <ul>
+        <li><a href="#761-definition">7.6.1 Definition</a></li>
+        <li><a href="#762-relationships-between-convergence">7.6.2 Relationships Between Convergence</a></li>
+        <li><a href="#763-continuous-mapping-theorem">7.6.3 Continuous Mapping Theorem</a></li>
+      </ul>
+    </li>
+    <li><a href="#77-central-limit-theorems">7.7 Central Limit Theorems</a>
+      <ul>
+        <li><a href="#771-lindeberg-levys-clt">7.7.1 Lindeberg-Levy&rsquo;s CLT</a></li>
+        <li><a href="#772-relaxing-assumptions">7.7.2 Relaxing Assumptions</a></li>
+        <li><a href="#773-slutskys-theorem">7.7.3 Slutsky&rsquo;s Theorem</a></li>
+        <li><a href="#774-delta-method">7.7.4 Delta Method</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="7-convergences-and-limit-theorems">7 Convergences and Limit Theorems</h1>
+<h2 id="71-limits-and-orders-of-magnitude">7.1 Limits and Orders of Magnitude</h2>
+<p>【limit】Let $\left{b_{n}, n=1,2, \ldots\right}$ be a sequence of (non-stochastic) real numbers. If there exists a real number $b$ such that for every real number $\varepsilon&gt;0,$ there exists a finite integer $N(\varepsilon)$ such that
+$$
+\left|b_{n}-b\right|&lt;\varepsilon \quad \text { for all } n \geqslant N(\varepsilon)
+$$
+then $b$ is called the limit of the sequence $\left{b_{n}\right} .$ We write $b_{n} \rightarrow b$ as $n \rightarrow \infty,$ or $\lim _{n \rightarrow \infty} b_{n}=b$</p>
+<p>Remarks: If $a_{n} \rightarrow a$ and $b_{n} \rightarrow b$ as $n \rightarrow \infty,$ then when $n \rightarrow \infty$</p>
+<ul>
+<li>$a_{n}+b_{n} \rightarrow a+b$</li>
+<li>$a_{n} b_{n} \rightarrow a b$</li>
+<li>$ a_{n} / b_{n} \rightarrow a / b$ if $b \neq 0$</li>
+</ul>
+<p>【Continuity】The function $g: \mathbb{R} \rightarrow \mathbb{R}$ is continuous at point b if for any sequence $\left{b_{n}\right}$ such that $b_{n} \rightarrow b$ as $n \rightarrow \infty,$ we have
+$$
+g\left(b_{n}\right) \rightarrow g(b) \text { as } n \rightarrow \infty
+$$</p>
+<p>Remarks 1:</p>
+<ul>
+<li>
+<p>An alternative but equivalent definition: for each given $\epsilon&gt;0$ there exists a $\delta=\delta(\epsilon)$ such that whenever $\left|b_{n}-b\right|&lt;\delta,$ we have $\left|g\left(b_{n}\right)-g(b)\right|&lt;\epsilon$.</p>
+</li>
+<li>
+<p>When $g(\cdot)$ is continuous at $b,$ we can write
+$$
+\lim <em>{b</em>{n} \rightarrow b} g\left(b_{n}\right)=g\left(\lim _{n \rightarrow \infty} b_{n}\right)=g(b)
+$$</p>
+</li>
+</ul>
+<p>In other words, the limit of a sequence of values for a continuous function is equal to the value of the function at the limit.</p>
+<p>Remarks 2:</p>
+<ul>
+<li>for any $\varepsilon&gt;0,$ there exists $\delta(\varepsilon)&gt;0$ such that $|g(x)-g(b)|&lt;\varepsilon$ for all $b&lt;x&lt;b+\delta(\varepsilon),$ then we say $g$ is right continuous at $b,$ denoted by $\lim _{x \rightarrow b^{+}} g(x)=g(b)$</li>
+<li>for any $\varepsilon&gt;0,$ there exists $\delta(\varepsilon)&gt;0$ such that $|g(x)-g(b)|&lt;\varepsilon$ for all $b-\delta(\varepsilon)&lt;x&lt;b,$ then we say $g$ is left continuous at $b,$ denoted by $\lim _{x \rightarrow b^{-}} g(x)=g(b)$</li>
+<li>Function $g$ is continuous at $b$ if and only if $g$ is left continuous and right continuous at $b$</li>
+</ul>
+<p>【Order of Magnitude】Suppose $\left{f_{n}&gt;0, n=1,2, \ldots\right}$ is a sequence of real numbers. A sequence $\left{b_{n}, n=1,2, \ldots\right}$ is at most of order $f_{n},$ denoted by
+$$
+b_{n}=\mathcal{O}\left(f_{n}\right) \quad \text { or } \quad b_{n} / f_{n}=\mathcal{O}(1)
+$$
+if for some (fixed and sufficiently large) number $0&lt;M&lt;\infty$ , there exists a finite integer $N(M)$ such that for all $n &gt; N(M)$, 
+$$
+\left|b_{n} / f_{n}\right|&lt; M
+$$
+A sequence $\left{b_{n}, n=1,2, \ldots\right}$ is of order smaller than $f_{n}$ denoted by
+$$
+b_{n}=o\left(f_{n}\right) \quad \text { or } \quad b_{n} / f_{n}=o(1)
+$$
+if for every real number $\epsilon &gt; 0 $there exists a finite integer $N(\epsilon)$ such that for all $n &gt; N(\epsilon)$, we have
+$$
+\left|b_{n} / f_{n}\right|&lt; \epsilon
+$$
+namely, $b_{n} / f_{n} \rightarrow 0$ as $n \rightarrow \infty$</p>
+<p>Remark:</p>
+<ul>
+<li>$b_{n}=o\left(f_{n}\right)$ implies $b_{n}=\mathcal{O}\left(f_{n}\right)$</li>
+<li>In the definition of $b_{n}=O\left(n^{\lambda}\right),$ the constant $M$ is usually set to be a very big number. Note that it suffices to find one constant $M$ only.</li>
+<li>For $\lambda&gt;0, b_{n}=O\left(n^{\lambda}\right)$ implies that $b_{n}$ grows to infinity at a rate slower than or at most equal to $n^{\lambda}$. In particular, if $\lim _{n \rightarrow \infty} \frac{b_{n}}{n \lambda}=C&lt;\infty$, then $b_{n}=O\left(n^{\lambda}\right)$ or $n^{-\lambda} b_{n}=O(1)$</li>
+</ul>
+<p>【Lemma 1】Let $a_{n}$ and $b_{n}$ be scalars</p>
+<p>(1) If $a_{n}=O\left(n^{\lambda}\right)$ and $b_{n}=O\left(n^{\mu}\right),$ then
+$$
+\begin{aligned}
+a_{n} b_{n} &amp;=O\left(n^{\lambda+\mu}\right) \<br>
+a_{n}+b_{n} &amp;=O\left(n^{\kappa}\right)
+\end{aligned}
+$$
+where $\kappa=\max (\lambda, \mu)$</p>
+<p>(2) If $a_{n}=o\left(n^{\lambda}\right)$ and $b_{n}=o\left(n^{\mu}\right),$ then
+$$
+\begin{aligned}
+a_{n} b_{n} &amp;=o\left(n^{\lambda+\mu}\right) \<br>
+a_{n}+b_{n} &amp;=o\left(n^{\kappa}\right)
+\end{aligned}
+$$
+where $\kappa=\max (\lambda, \mu)$</p>
+<p>(3) If $a_{n}=O\left(n^{\lambda}\right)$ and $b_{n}=o\left(n^{\mu}\right),$ then
+$$
+\begin{aligned}
+a_{n} b_{n} &amp;=o\left(n^{\lambda+\mu}\right) \<br>
+a_{n}+b_{n} &amp;=
+\begin{cases}
+O(n^{\lambda}) \quad &amp;\text{if } \lambda \geq \mu \<br>
+o(n^{\mu}) \quad &amp;\text{if } \lambda &lt; \mu
+\end{cases}
+\end{aligned}
+$$</p>
+<h5 id="proof">Proof:</h5>
+<p>(1) Because $a_{n}$ grows at most at rate $n^{\lambda}, b_{n}$ grows at most at rate $n^{\mu},$ the product $a_{n} b_{n}$ will grow at most at rate $n^{\lambda+\mu} .$ This is because for all $n$ sufficiently large (i.e. for all $n \geq N(M))$
+$$
+\begin{aligned}
+\left|\frac{a_{n} b_{n}}{n^{\lambda+\mu}}\right| &amp;=\left|\frac{a_{n}}{n^{\lambda}} \frac{b_{n}}{n^{\mu}}\right| \<br>
+&amp; \leq M \cdot M=M^{2}
+\end{aligned}
+$$
+On the other hand, the sum $a_{n}+b_{n}$ will be dominated by the term that grows to infinity faster: For all $n$ sufficiently large,
+$$
+\begin{aligned}
+\left|\frac{a_{n}+b_{n}}{n^{\kappa}}\right| &amp;=\left|\frac{a_{n}}{n^{\kappa}}+\frac{b_{n}}{n^{\kappa}}\right| \<br>
+&amp; \leq \epsilon+M \leq 2 M
+\end{aligned}
+$$</p>
+<p>Therefore, $a_{n}+b_{n}=O\left(n^{\kappa}\right)$</p>
+<p>(2) Similar to the proof of Result (1)</p>
+<p>(3) The product $a_{n} b_{n}=o\left(n^{\lambda+\mu}\right)$ because
+$$
+\begin{aligned}
+\left|\frac{a_{n} b_{n}}{n^{\lambda+\mu}}\right| &amp;=\left|\frac{a_{n}}{n^{\lambda}} \frac{b_{n}}{n^{\mu}}\right| \<br>
+&amp; \leq M \cdot\left|\frac{b_{n}}{n^{\mu}}\right| \<br>
+&amp; \rightarrow 0 \text { as } n \rightarrow \infty
+\end{aligned}
+$$</p>
+<p>given $a_{n}=O\left(n^{\lambda}\right)$ and $b_{n}=o\left(n^{\mu}\right)$</p>
+<h2 id="72-motivation-for-convergence-concepts">7.2 Motivation for Convergence Concepts</h2>
+<p>Why do we need convergence concepts in econometrics?</p>
+<p>Recall that a random sample $\mathrm{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ of size $n$ is a sequence of random variables $X_{1}, \cdots, X_{n} .$ It can be viewed as an n-dimensional real-valued random vector, where the dimension $n$ may go to infinity. Its realization is an n-dimensional vector $\mathbf{x}^{n}=\left(x_{1}, \ldots, x_{n}\right) .$ A realization $\mathbf{x}^{\mathbf{n}}$ of $\mathrm{X}^{n}$ is usually called a sample point or a data set generated from the random sample $\mathrm{X}^{n}$.</p>
+<p>Since $\mathrm{X}^{n}$ is a sequence of $n$ random variables, we can use the joint probability distribution of $\mathrm{X}^{n}$ to characterize the random sample. Put $\mathrm{x}^{i-1}=\left(x_{i-1}, \cdots, x_{1}\right)$ for $i=1,2, \cdots .$ Then repeatedly applying the multiplication rule, the joint PMF/PDF of X $^{n}$</p>
+<p>$$
+f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}\right)=\prod_{i=1}^{n} f_{X_{i}\left|\mathbf{X}^{i-1}\left(x_{i} | \mathbf{X}^{i-1}\right)\right.}
+$$</p>
+<p>where $f_{X_{i}\left|\mathbf{X}^{i-1}\left(X_{i} | \mathbf{X}^{i-1}\right)\right.}$ is the conditional PMF/PDF of $X_{i}$ given $\mathbf{X}^{i-1}=\mathbf{x}^{i-1} .$ By convention, $f_{X_{1} | \mathrm{X}^{0}}\left(x_{1} | x^{0}\right)=f_{X_{1}}\left(x_{1}\right)$ is the unconditional PMF/PDF of $X_{1}$.</p>
+<p>When $\mathrm{X}^{n}$ is an IID random sample from a population $\mathrm{PMF} / \mathrm{PDF} f_{X}(\cdot)$, the joint $\mathrm{PMF} / \mathrm{PDF}$ of the random sample $\mathrm{X}^{n}$ is given by
+$$
+f_{\mathbf{X}^{n}}\left(\mathbf{x}^{n}\right)=\prod_{i=1}^{n} f_{X}\left(x_{i}\right)
+$$</p>
+<p>This joint probability distribution is called the sampling distribution of the random sample $\mathrm{X}^{n}$. It completely describes the probability law of the random sample $\mathrm{X}^{n}$.</p>
+<p>For an IID random sample $X^{n}$, each $X_{i}$ has the same PMF/PDF $f_{X}(x)$, the so-called population, $f_{X}(x)$ is assumed to be a parametric model in the sense that $f_{X}(x)=f(x, \theta)$ for some value of a finite-dimensional parameter $\theta,$ where the functional form of $f(\cdot, \cdot)$ is known but $\theta$ is unknown.</p>
+<p>For example, if $f_{X}(x)$ is assumed to follow a normal $N\left(\mu, \sigma^{2}\right)$ distribution, we have</p>
+<p>$$
+\begin{aligned}
+f_{X}(x) &amp;=f(x, \theta) \<br>
+&amp;=\frac{1}{\sqrt{2 \pi \sigma^{2}}} e^{-\frac{1}{2 \vec{z}^{2}}(x-\mu)^{2}}
+\end{aligned}
+$$</p>
+<p>where $\theta=\left(\mu, \sigma^{2}\right)$</p>
+<p>One important objective of statistical analysis is to estimate the unknown parameter $\theta$ when we are given a data set $\mathrm{x}^{n}$, which is a realization of the random sample $\mathrm{X}^{n}$. An estimator for $\theta$ is a function of $\mathrm{X}^{n}$, and so it is a statistic. Recall that a statistic $Z_{n}=T\left(\mathrm{X}^{n}\right)$ is a function of $\mathrm{X}^{n}$ only and does not involve any unknown parameters. It is a random variable or vector.</p>
+<p>To motivate the importance of various convergence concepts, we consider two simple statistic the sample mean and sample variance. Let $\mathrm{X}^{n}$ be an IID random sample of size $n,$ from a population distribution with mean $\mu$ and variance $\sigma^{2}$. Suppose the mean $\mu$ is unknown, so we need to use the sample information $\mathbf{X}^{n}$ to estimate it. It is expected that the sample mean estimator
+$$
+\bar{X}<em>{n}=T\left(\mathbf{X}^{n}\right)=n^{-1} \sum</em>{i=1}^{n} X_{i}
+$$</p>
+<p>can be used to estimate $\mu$.</p>
+<p>Similarly, suppose $\sigma^{2}$ is unknown. We can use the sample variance estimator
+$$
+S_{n}^{2}=(n-1)^{-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}
+$$</p>
+<p>to estimate $\sigma^{2}$.</p>
+<p>If the sample size $n$ is sufficiently large, then it is expected that $\bar{X}<em>{n}$ will be &ldquo;close&rdquo; to $\mu$ and $S</em>{n}^{2}$ will be &ldquo;close&rdquo; to $\sigma^{2}$. The larger the sample size $n$ is, the closer $\bar{X}<em>{n}$ is to $\mu$ and the closer $S</em>{n}^{2}$ is to $\sigma^{2}$.</p>
+<p><strong>Question</strong>: How can one measure the closeness of $\bar{X}<em>{n}$ to $\mu$ and the closeness of $S</em>{n}^{2}$ to $\sigma^{2}$ ?</p>
+<p>Since $\bar{X}<em>{n}$ and $S</em>{n}^{2}$ are random variables, the convergence concepts for non-stochastic sequences reviewed in Section 7.1 do not apply.</p>
+<p>Recall that both $\bar{X}<em>{n}$ and $S</em>{n}^{2}$ are mappings from $S$ to the real line; that is, $\bar{X}<em>{n}: S \rightarrow \mathbb{R}$ and $S</em>{n}^{2}: S \rightarrow \mathbb{R}^{+},$ where $S$ is the sample space of the underlying random experiment. Suppose a random experiment is conducted, a basic outcome $s \in S$ occurs. Then we observe a data set $\mathbf{x}^{n}=\left(x_{1}, \cdots, x_{n}\right),$ where $x_{i}=X_{i}(s)$. It is a realization of the random sample $\mathbf{X}^{n}$. From the data set $\mathbf{x}^{n},$ we can compute an estimate $\bar{x}_{n}=\bar{X}_{n}(s)$ for $\mu$ and an estimate $s_{n}^{2}=S_{n}^{2}(s)$ for $\sigma^{2}$ Different outcomes s will yield different estimates for $\mu$ and $\sigma^{2}$ respectively</p>
+<p>In fact, each basic outcome $s \in S$ will generate a sequence of real numbers $\left{\bar{x}<em>{n}=\bar{X}</em>{n}(s), n=\right.$ $1,2, \cdots}$ and a sequence of real numbers $\left{s_{n}^{2}=S_{n}^{2}(s), n=1,2, \cdots\right}$ respectively. These non-stochastic sequences are called a sample path for the sample mean $\bar{X}_{n}$ and a sample path for the sample variance $S_{n}^{2}$ respectively, when a basic outcome $s$ occurs. There are many such sample paths for both $\bar{X}_{n}$ and $S_{n}^{2}$ respectively, as illustrated in Figure 7.1 below. These sample paths correspond to different basic outcomes $s \in S .$</p>
+<p>We need to develop some suitable con concepts and distance measures between $\bar{X}<em>{n}$ and $\mu$, or between $S</em>{n}^{2}$ and $\sigma^{2}$. Intuitively, a common feature of these different convergence concepts is that they define that most non-stochastic sequences $\left{\bar{X}<em>{n}(s), n=1,2, \cdots\right}$ and $\left{S</em>{n}^{2}(s), n=1,2, \cdots\right}$ converge to $\mu$ and $\sigma^{2}$ respectively</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200506175117.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200506175117.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200506175117.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200506175117.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200506175117.png"
+        title="20200506175117.png" /></div></p>
+<h2 id="73-convergence-in-quadratic-mean-and-l_p-convergence">7.3 Convergence in Quadratic Mean and $L_{p}$-Convergence</h2>
+<p>【Convergence in Quadratic Mean】Let $\left{Z_{n}, n=1,2, \cdots\right}$ be a sequence of random variables and $Z$ be a random variable. Then the sequence ${Z_{n}}$ converges in quadratic mean (or converges in mean square) to $Z$ if</p>
+<p>$$
+E\left(Z_{n}-Z\right)^{2} \rightarrow 0 \text { as } n \rightarrow \infty
+$$</p>
+<p>or equivalently
+$$
+\lim <em>{n \rightarrow \infty} E\left(Z</em>{n}-Z\right)^{2}=0
+$$</p>
+<p>denoted by $z_{n} \stackrel{q m}{\longrightarrow} z$ or $z_{n}-z=o_{q m}(1)$.</p>
+<p>Remarks:</p>
+<ul>
+<li>The convergence in quadratic mean means that the weighted average of the squared deviations between $Z_{n}(s)$ and $Z(s)$ vanishes to 0 as $n \rightarrow \infty,$ where the average is taken over all possible basic outcomes ${s}$ weighted by their probabilities of of curing.</li>
+<li>When $Z_{n}$ converge to $Z$ in quadratic mean, it&rsquo;s possible that there exist some sample paths for which $Z_{n}(s)$ does not converge to $Z(s)$. However, the quadratic deviations of these sample paths all together weighted by the probabilities of their occurings become negligible as $n$ becomes large.</li>
+</ul>
+<p>【Example】Suppose $X^{n}=\left(X_{1}, \cdots, \cdots, X_{n}\right)$ is an IID random sample from a population with mean $\mu$ and variance $\sigma^{2}$. Define $Z_{n}=\bar{X}_{n}$. Show</p>
+<p>$$
+\bar{x}_{n}\stackrel{q m}{\longrightarrow} \mu
+$$</p>
+<p>Solution: It suffices to show $\lim <em>{n-\infty} E\left(\bar{X}</em>{n}-\mu\right)^{2}=0 .$ Note $E\left(\bar{X}_{n}\right)=\mu,$ we have</p>
+<p>$$
+\begin{aligned}
+E\left(\bar{X}<em>{n}-\mu\right)^{2} &amp;=\operatorname{var}\left(\bar{X}</em>{n}\right) \<br>
+&amp;=\operatorname{var}\left(\frac{1}{n} \sum_{i=1}^{n} X_{i}\right) \<br>
+&amp;=\frac{1}{n^{2}} \operatorname{var}\left(\sum_{i=1}^{n} X_{i}\right) \<br>
+&amp;=\frac{1}{n^{2}} \sum_{i=1}^{n} \operatorname{var}\left(X_{i}\right) \<br>
+&amp;=\frac{\sigma^{2}}{n} \<br>
+&amp; \rightarrow 0 \text { as } n \rightarrow \infty
+\end{aligned}
+$$</p>
+<p>【$L_{p}-\text{convergence}$】Let $0&lt;p&lt;\infty,$ and let $\left{Z_{n}, n=1,2, \cdots\right}$ be a sequence of random variables with $E\left|Z_{n}\right|^{p}&lt;\infty,$ and let $Z$ be a random variable with $E|Z|^{p}&lt;\infty .$ Then $Z_{n}$ converges in $L_{p}$ to $Z$ if</p>
+<p>$$
+\lim <em>{n \rightarrow \infty} E\left|Z</em>{n}-Z\right|^{p}=0
+$$</p>
+<p>Remarks:</p>
+<p>In connection with $L_{p}$ -convergence, the following inequalities are useful:</p>
+<ul>
+<li>Holder&rsquo;s inequality</li>
+</ul>
+<p>$$
+E|X Y| \leq\left(E|X|^{p}\right)^{1 / p}\left(E|Y|^{q}\right)^{1 / q}
+$$</p>
+<p>where $p&gt;1$ and $1 / p+1 / q=1$</p>
+<ul>
+<li>Minkowski&rsquo;s inequality</li>
+</ul>
+<p>$$
+E|X+Y|^{p} \leq\left[\left(E|X|^{p}\right)^{1 / p}+\left(E|Y|^{p}\right)^{1 / p}\right]^{p}
+$$</p>
+<p>for $p \geq 1$</p>
+<p>Question:</p>
+<p>What happens if $Z_{n}$ and $Z$ are $d \times 1$ random vectors, where $d$ is fixed (i.e., $d$ does not change as $n \rightarrow \infty) ?$</p>
+<ul>
+<li>A sequence of random vectors $\left{Z_{n}\right}$ converges to $Z$ in $L_{p},$ if each component of the vector $Z_{n}, Z_{i n} \stackrel{L_{p}}{\rightarrow} Z_{i}$ for $i=1, \cdots, d$. In other words, component-wise convergences ensure joint convergence of the entire vector $Z_{n},$ and vice versa</li>
+</ul>
+<h2 id="74-convergence-in-probability">7.4 Convergence in Probability</h2>
+<h3 id="741-definition">7.4.1 Definition</h3>
+<p>【Convergence in Probability / weak Convergence】A sequence of random variables $\left{Z_{n}, n=\right.$ $1,2, \cdots}$ converges in probability to a random variable $Z$ if for every small constant $\epsilon&gt;0$
+$$
+P\left[\left|Z_{n}-Z\right|&gt;\epsilon\right] \rightarrow 0 \text { as } n \rightarrow \infty
+$$
+When $Z_{n}$ converges in probability to $Z$, we write
+$$
+\lim _{n \rightarrow \infty} P\left(\left|Z_{n}-Z\right|&gt;\epsilon\right)=0
+$$
+for every $\epsilon&gt;0,$ or $p \lim _{n \rightarrow \infty} Z_{n}=Z,$ or $Z_{n} \stackrel{p}{\rightarrow} Z,$ or $Z_{n}-Z=o_{P}(1),$ or $Z_{n}-Z \stackrel{p}{\rightarrow} 0$</p>
+<p>Remarks:</p>
+<ul>
+<li>An alternative definition of convergence in probability: Given any $\epsilon&gt;0$ and any $\delta&gt;0,$ there exists a finite integer $N=N(\epsilon, \delta)$ such that for all $n&gt;N,$ we have</li>
+</ul>
+<p>$$
+P\left(\left|Z_{n}-Z\right|&gt;\epsilon\right)&lt;\delta
+$$</p>
+<ul>
+<li>Define $A_{n}(\epsilon)=\left{s \in S:\left|Z_{n}(s)-Z(s)\right| \leq \epsilon\right}$ as a subset of $S$ that consists of all basic outcomes $s \in S$ such that the difference $\left|Z_{n}(s)-Z(s)\right|$ is small. $Z_{n} \stackrel{p}{\rightarrow} Z$ means that the probability of &ldquo;small deviations&rdquo;</li>
+</ul>
+<p>$$
+P\left[\left|Z_{n}-Z\right|\right.\leq \epsilon]=P\left[A_{n}(\epsilon)\right] \rightarrow 1 \text { as } n \rightarrow \infty
+$$</p>
+<ul>
+<li>
+<p>For this reason, convergence in probability is also called <strong>convergence with probability approaching 1</strong>.</p>
+</li>
+<li>
+<p>When $Z_{n} \stackrel{p}{\rightarrow} b,$ where $b$ is a constant, we say that $Z_{n}$ is **consistent** for $b$.</p>
+</li>
+</ul>
+<p>【Order of Convergence in Probability】Suppose $\left{f_{n}&gt;0, n=1,2, \ldots\right}$ is a sequence of real numbers</p>
+<p>A sequence of random variables $\left{Z_{n}, n=1,2, \ldots\right}$ is of order smaller than $f_{n}$ in probability, denoted by $Z_{n}=o_{p}\left(f_{n}\right)$, if
+$$
+Z_{n} / f_{n} \stackrel{p}{\rightarrow} 0 \quad \text{as } n \rightarrow \infty
+$$</p>
+<p>A sequence of random variables $\left{Z_{n}, n=1,2, \ldots\right}$ is at most of order $f_{n}$ in probability, denoted by $Z_{n}=\mathcal{O}_{p}\left(f_{n}\right)$, if for every $\varepsilon&gt;0,$ there exists a constant $M(\varepsilon)&lt;\infty$ and an integer $N(\varepsilon)$ such that 
+$$
+P\left(\left|Z_{n} / f_{n}\right|&gt;M(\varepsilon)\right)&lt;\varepsilon
+$$</p>
+<p>for all $n \geqslant N(\varepsilon)$</p>
+<p>Remark:</p>
+<ul>
+<li>A sequence of random variables $\left{Z_{n}, n=1,2, \ldots\right}$ is **bounded in probability** if $Z_{n}=\mathcal{O}_{p}(1),$ that is, for any $\varepsilon&gt;0,$ there exists a constant $M(\varepsilon)&lt;\infty$ and an integer $N(\varepsilon)$ such that $P\left(\left|Z_{n}\right|&gt;M(\varepsilon)\right)&lt;\varepsilon$ for all $n \geqslant N(\varepsilon)$</li>
+<li>Let $\left{X_{n}\right}$ and $\left{Y_{n}\right}$ be two sequences of random variables.</li>
+<li>If $X_{n}=\mathcal{O}_{p}\left(n^{\lambda}\right)$ and $Y_{n}=\mathcal{O}_{p}\left(n^{\tau}\right),$ then</li>
+</ul>
+<p>$$
+X_{n} Y_{n}=\mathcal{O}_{p}\left(n^{\lambda+\tau}\right), \quad X_{n}+Y_{n}=\mathcal{O}_{p}\left(n^{\max (\lambda, \tau)}\right)
+$$</p>
+<ul>
+<li>If $X_{n}=o_{p}\left(n^{\lambda}\right)$ and $Y_{n}=o_{p}\left(n^{\tau}\right),$ then</li>
+</ul>
+<p>$$
+X_{n} Y_{n}=o_{p}\left(n^{\lambda+\tau}\right), \quad X_{n}+Y_{n}=o_{p}\left(n^{\max (\lambda, \tau)}\right)
+$$</p>
+<ul>
+<li>If $X_{n}=\mathcal{O}_{p}\left(n^{\lambda}\right)$ and $Y_{n}=o_{p}\left(n^{\tau}\right),$ then</li>
+</ul>
+<p>$$
+X_{n} Y_{n}=o_{p}\left(n^{\lambda+\tau}\right), \quad X_{n}+Y_{n}=\left{\begin{array}{ll}
+\mathcal{O}_{p}\left(n^{\lambda}\right) &amp; \text { if } \lambda \geqslant \tau \<br>
+o_{p}\left(n^{\tau}\right) &amp; \text { if } \lambda&lt;\tau
+\end{array}\right.
+$$</p>
+<h3 id="742-markovs-inequality">7.4.2 Markov&rsquo;s Inequality</h3>
+<p>【Markov&rsquo;s Inequality】Suppose $X$ is a random variable and $g(X)$ is a nonnegative function. Then for any $\epsilon&gt;0,$ and any $k&gt;0,$ we have
+$$
+P[g(X) \geq \epsilon] \leq \frac{E\left[g(X)^{k}\right]}{\epsilon^{k}}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>Let $\mathbf{1}(\cdot)$ be the indicator function that takes values 1 and $0,$ depending on whether the statement is true. Then
+$$
+\begin{aligned}
+P[g(X)&gt;\epsilon] 
+&amp;=\int_{{x : g(x)&gt;\varepsilon}} d F_{X}(x) \<br>
+&amp;=\int_{-\infty}^{\infty} 1[g(x)&gt;\epsilon] d F_{X}(x) \<br>
+&amp; \leq \int_{-\infty}^{\infty} 1[g(x)&gt;\epsilon] \frac{g(x)^{k}}{\epsilon^{k}} d F_{X}(x) \<br>
+&amp; \leq \int_{-\infty}^{\infty} \frac{g(x)^{k}}{\epsilon^{k}} d F_{X}(x) \<br>
+&amp;=\frac{1}{\epsilon^{k}} E\left[g(X)^{k}\right]
+\end{aligned}
+$$</p>
+<p>Remarks:</p>
+<ul>
+<li>Markov&rsquo;s inequality bounds the <strong>tail probability by a moment condition</strong>. The thickness of the tail probability depends on the magnitude of moments of the distribution.</li>
+<li>When $k = 2$ and $g(X) = |X-\mu|$; Markov&rsquo;s inequality is called Chebyshev&rsquo;s inequality, i.e.</li>
+</ul>
+<p>$$
+P[|X-\mu|\geq \epsilon] \leq \frac{E\left[(X-\mu)^{2}\right]}{\epsilon^{k}}
+$$</p>
+<h3 id="743-wlln">7.4.3 WLLN</h3>
+<p>【Weak Law of Large Numbers(WLLN)】Let $\mathrm{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ be an IID random sample with $E\left(X_{i}\right)=\mu$ and var $\left(X_{i}\right)=\sigma^{2}&lt;\infty .$ Define $\bar{X}_{n}=n^{-1} \sum_{i=1}^{n} X_{i} .$ Then 
+$$
+\bar{X}_{n} \stackrel{p}{\rightarrow} \mu
+$$
+**Proof:**</p>
+<p>First, noting $E\left(\bar{X}<em>{n}\right)=\mu$ and $\operatorname{var}\left(\bar{X}</em>{n}\right)=\sigma^{2} / n,$ we have by Chebychev&rsquo;s inequality
+$$
+\begin{aligned}
+P\left[\left|\bar{X}<em>{n}-\mu\right|\right.&amp;&gt;\epsilon] \<br>
+&amp; \leq \frac{E\left(\bar{X}</em>{n}-\mu\right)^{2}}{\epsilon^{2}} \<br>
+&amp;=\frac{\operatorname{var}\left(\bar{X}_{n}\right)}{\epsilon^{2}} \<br>
+&amp;=\frac{\sigma^{2}}{n \epsilon^{2}}
+\end{aligned}
+$$</p>
+<p>It follows that
+$$
+\begin{aligned}
+P\left[\left|\bar{X}<em>{n}-\mu\right|\right.&amp;\leq \epsilon] \<br>
+&amp;=1-P\left[\left|\bar{X}</em>{n}-\mu\right|&gt;\epsilon\right] \<br>
+&amp; \geq 1-\frac{\sigma^{2}}{n \epsilon^{2}} \<br>
+&amp; \rightarrow 1
+\end{aligned}
+$$</p>
+<p>as $n \rightarrow \infty .$ Therefore, $\bar{X}_{n} \stackrel{p}{\rightarrow} \mu$</p>
+<p>Remarks:</p>
+<ul>
+<li>
+<p>In the WLLN theorem, we have assumed a finite variance. Although such an assumption is true and desirable in most applications, it is, in fact, a stronger assumption than is needed. The only moment condition needed is that $E\left|X_{i}\right|&lt;\infty$ (see Resnik 1999, Chapter 7 , or Billingsley $1995,$ Section 22 )</p>
+</li>
+<li>
+<p>To appreciate why a <strong>moment condition</strong> is needed for the WLLN, one can consider the example of an IID random sample from the Cauchy distribution whose moments do not exist.</p>
+</li>
+</ul>
+<h3 id="744-relationships-between-convergence">7.4.4 Relationships Between Convergence</h3>
+<p>【Lemma 2】Suppose $Z_{n} \rightarrow Z$ in $L_{p}$ as $n \rightarrow \infty .$ Then $Z_{n} \stackrel{p}{\rightarrow} Z$ as $n \rightarrow \infty$.</p>
+<p><strong>Proof:</strong></p>
+<p>By Markov&rsquo;s inequality, we have for all $\epsilon&gt;0$
+$$
+P\left[\left|Z_{n}-Z\right|\right.&gt;\epsilon] \leq \frac{E\left|Z_{n}-Z\right|^{p}}{\epsilon^{p}} \rightarrow 0
+$$</p>
+<p>if $\lim <em>{n-\infty} E\left|Z</em>{n}-Z\right|^{p}=0$.</p>
+<p>【Example】Suppose $\mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is and IID $N \left(\mu, \sigma^{2}\right)$ random sample. Show
+$$
+S_{n}^{2} \stackrel{p}{\longrightarrow} \sigma^{2}
+$$
+**Solution:**</p>
+<p>We have shown that under a normal random sample $\mathrm{X}^{n}$
+$$
+\frac{(n-1) S_{n}^{2}}{\sigma^{2}} \sim \chi_{n-1}^{2}
+$$</p>
+<p>for all $n&gt;1$</p>
+<p>It follows that $E\left(S_{n}^{2}\right)=\sigma^{2}$ and $\operatorname{var}\left(S_{n}^{2}\right)=2 \sigma^{4} /(n-1) .$</p>
+<p>Hence, we have
+$$
+\begin{aligned}
+E\left(S_{n}^{2}-\sigma^{2}\right)^{2} &amp;=\operatorname{var}\left(S_{n}^{2}\right) \<br>
+&amp;=\frac{2 \sigma^{4}}{n-1} \<br>
+&amp; \rightarrow 0 \text { as } n \rightarrow \infty
+\end{aligned}
+$$</p>
+<p>Thus $S^2_n \rightarrow \sigma^2$ in $L_{p}$. It follows that $S_{n}^{2} \stackrel{p}{\rightarrow} \sigma^{2}$ as $n \rightarrow \infty$</p>
+<p>But $Z_{n} \stackrel{p}{\rightarrow} Z$ does not imply $Z_{n} \rightarrow Z$ in $L_{p}$.</p>
+<p>【Example】Suppose a sequence of binary random variables $\left{Z_{n}\right}$ is defined as
+$$
+\begin{array}{c|cc}
+Z_{n} &amp; \frac{1}{n} &amp; n \<br>
+\hline f_{Z_{n}}\left(z_{n}\right) &amp; 1-\frac{1}{n} &amp; \frac{1}{n}
+\end{array}
+$$</p>
+<p>(1) Does $Z_{n}$ converge in quadratic mean to 0? Give your reasoning clearly
+(2) Does $Z_{n}$ converge in probability to o? Give your reasoning clearly.</p>
+<p><strong>Solution:</strong>
+(1) $Z_{n}$ does not converge in quadratic mean to 0 because
+$$
+\begin{aligned}
+E\left(Z_{n}-0\right)^{2} &amp;=\sum\left(z_{n}-0\right)^{2} f_{Z_{n}}\left(z_{n}\right) \<br>
+&amp;=n^{-2}\left(1-n^{-1}\right)+n^{2}\left(n^{-1}\right)\<br>
+&amp;&gt;n \to \infty
+\end{aligned}
+$$</p>
+<p>(2) Given any $\epsilon&gt;0,$ for all $n&gt;N(\epsilon)=\left[\epsilon^{-1}\right]+1\left(\text { so } n^{-1}&lt;\epsilon\right)$
+$$
+\begin{aligned}
+P\left(\left|Z_{n}-0\right|\right.\leq \epsilon) &amp;=P\left(Z_{n}=n^{-1}\right) \<br>
+&amp;=1-n^{-1} \<br>
+&amp; \rightarrow 1 \text { as } n \rightarrow \infty
+\end{aligned}
+$$</p>
+<p>Therefore, $Z_{n}$ converges to 0 in probability</p>
+<p>Remarks:</p>
+<ul>
+<li>The square of $Z_{n}$ grows to infinity at a rate of $n^{2}$, which is faster than the rate $n^{-1}$ of the vanishing probability $P\left(Z_{n}=n\right) .$ As a result, the second moment does not exist.</li>
+<li>More generally, convergence in probability implies that there may exist a set of outcomes in sample space with &ldquo;large deviations&rdquo; and the probability of this set shrinks to zero as $n \rightarrow \infty$ but it is nonzero for a finite $n$. Some large deviations may be even explosive at a rate faster than their shrinking probabilities. As a result, the $L_{p}$ -convergence may not exist.</li>
+</ul>
+<h3 id="745-continuous-mapping-theorem">7.4.5 Continuous Mapping Theorem</h3>
+<p>【Continuous Mapping Theorem】Suppose $g$ (.) is a continuous function, and $Z_{n}\stackrel{p}{\rightarrow} Z$. Then $g\left(Z_{n}\right)\stackrel{p}{\rightarrow}g(Z)$. Or equivalently $p \lim g\left(Z_{n}\right)=g\left(p \lim Z_{n}\right)$.</p>
+<p><strong>Proof:</strong>
+By continuity of function $g(\cdot):$ given any $\epsilon&gt;0,$ there exists a constant $\delta=\delta(\epsilon),$ such that whenever $\left|Z_{n}-Z\right| \leq \delta$, we have
+$$
+\left|g\left(Z_{n}\right)-g(Z)\right|&lt;\epsilon
+$$</p>
+<p>Now, define two events
+$$
+\begin{array}{l}
+A_{n}(\delta) \equiv\left{s \in S:\left|Z_{n}(s)-Z(s)\right| \leq \delta\right} \<br>
+B_{n}(\epsilon) \equiv\left{s \in S:\left|g\left[Z_{n}(s)\right]-g[Z(s)]\right| \leq \epsilon\right}
+\end{array}
+$$</p>
+<p>Then continuity of $g(\cdot)$ implies $A_{n}(\delta) \subseteq B_{n}(\epsilon),$ that is, $A_{n}(\delta)$ is a subset of $B_{n}(\epsilon)$</p>
+<p>It follows that $P\left[A_{n}(\delta)\right] \leq P\left[B_{n}(\epsilon)\right],$ and so
+$$
+P\left[B_{n}(\epsilon)^{c}\right] \leq P\left[A_{n}(\delta)^{c}\right] \rightarrow 0 \text { as } n \rightarrow \infty
+$$</p>
+<p>where $B_{n}(\epsilon)^{c}$ and $A_{n}(\delta)^{c}$ are the complements of $B_{n}(\epsilon)$ and $A_{n}(\delta)$ respectively. Because $\epsilon$ is arbitrary, so is $\delta .$ It follows that $g\left(Z_{n}\right) \stackrel{p}{\rightarrow} g(Z)$ as $n \rightarrow \infty$.</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>
+<p>The $p \text{ lim}$ operator passes through nonlinear functions, provided they are continuous.</p>
+</li>
+<li>
+<p>This is analogous to the well-known result in calculus that the limit of a continuous function is equal to the function of the limit.</p>
+</li>
+<li>
+<p>The expectation operator $E(\cdot),$ which is used in the $L_{p}$-convergence, does not have this feature, and this makes finite sample analysis difficult for many statistics.</p>
+</li>
+</ul>
+<h3 id="746-continuity">7.4.6 Continuity</h3>
+<p>【Lemma 7.3】<strong>Continuity</strong>: Suppose $ a_{n} \stackrel{p}{\rightarrow} $ a and $ b_{n} \stackrel{p}{\rightarrow} b, $ and $ g(\cdot) $ and $ h(\cdot) $ are continuous functions. Then
+$$
+\begin{array}{l}g\left(a_{n}\right)+h\left(b_{n}\right) \stackrel{p}{\rightarrow} g(a)+h(b), \text { and } \ g\left(a_{n}\right) h\left(b_{n}\right) \stackrel{p}{\rightarrow} g(a) h(b)\end{array}
+$$</p>
+<h2 id="75-almost-sure-convergence">7.5 Almost Sure Convergence</h2>
+<h3 id="751-definition">7.5.1 Definition</h3>
+<p>【Almost Sure Convergence / strong convergence】A sequence of random variables $\left{Z_{n}\right}$ converges almost surely to a random variable $Z$ if for every given constant $\epsilon&gt;0$
+$$
+P\left[\lim _{n \rightarrow \infty}\left|Z_{n}-Z\right|&gt;\epsilon\right]=0
+$$</p>
+<p>or
+$$
+P\left[s \in S: \lim <em>{n \rightarrow \infty}\left|Z</em>{n}(s)-Z(s)\right| \leq \epsilon\right]=1
+$$</p>
+<p>or equivalently
+$$
+P\left[s \in S: \lim <em>{n \rightarrow \infty}Z</em>{n}(s)=Z(s)\right]=1
+$$
+where $S$ is the sample space. When $Z_{n}$ converges almost surely to $Z$, we write $Z_{n} \stackrel{\text { a.s. }}{\rightarrow} Z$ or $Z_{n}-Z=o_{a . s .}(1),$ or $Z_{n}-Z \stackrel{\text { a.s. }}{\rightarrow} 0$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200507102251.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200507102251.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200507102251.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200507102251.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200507102251.png"
+        title="20200507102251.png" /></div></p>
+<p><strong>Remarks:</strong></p>
+<p>Almost sure convergence can also be expressed as
+$$
+P\left(\lim <em>{n \rightarrow \infty}\left|Z</em>{n}-Z\right|=0\right)=1
+$$</p>
+<p>For this reason, almost sure convergence is also called convergence with probability 1</p>
+<p>When $Z=b,$ a constant, we say that $Z_{n}$ is **strongly consistent** for $b$ if $Z_{n}$ converges to $b$ with probability one.</p>
+<p>Define a set
+$$
+\begin{aligned}
+A(\epsilon) &amp;=\left{s \in S: \lim <em>{n \rightarrow \infty}\left|Z</em>{n}(s)-Z(s)\right| \leq \epsilon\right} \<br>
+&amp;=\left{s \in S:\left|Z_{n}(s)-Z(s)\right| \leq \epsilon \text { for all } n&gt;N(\epsilon, s)\right}
+\end{aligned}
+$$</p>
+<p>i.e. $A(\epsilon)$ is a subset of $S$ that consists of all basic outcomes $s \in S$ such that $\lim <em>{n \rightarrow \infty}\left|Z</em>{n}(s)-Z(s)\right|&lt;\epsilon .$ Intuitively $A(\epsilon)$ is a convergence set in $S$ in the sense that for each $s \in A(\epsilon),$ the sample path $\left{Z_{n}(s)\right}$ converges to $Z(s)$ as $n \rightarrow \infty$. Then
+$$
+\begin{aligned}
+P\left(\lim _{n \rightarrow \infty}\left|Z_{n}-Z\right| \leq \epsilon\right) &amp;=P[A(\epsilon)] \<br>
+&amp;=1
+\end{aligned}
+$$</p>
+<p>【Example】Suppose the probability space is $(S, \mathcal{B}, P),$ where the sample space $S=[0,1], \mathcal{B}$ contains all the Borel sets $B$ such that $B \subset S, P$ is the Lebesgue measure on $S$, i.e. $P({s \in[a, b]})=b-a$ for any $0 \leqslant a \leqslant b \leqslant 1 .$ Then $Z_{n}(s)=s+s^{n}, n=1,2, \ldots$ and $Z(s)=s$ are random variables.</p>
+<ul>
+<li>For $0 \leqslant s&lt;1, Z_{n}(s) \rightarrow Z(s)$ as $n \rightarrow \infty$</li>
+<li>For $s=1, \lim <em>{n \rightarrow \infty} Z</em>{n}(s)=2 \neq Z(s)$</li>
+<li>$P\left(\left{s \in S: Z_{n}(s) \rightarrow Z(s)\right}\right)=P([0,1))=1,$ so $Z_{n} \stackrel{a . s,}{\longrightarrow} Z$</li>
+</ul>
+<h3 id="752-order-of-almost-sure-convergence">7.5.2 Order of Almost sure convergence</h3>
+<p>【Almost sure convergence with order $n^{\alpha}$】, where $\alpha$ can be positive or negative:</p>
+<p>The sequence of random variables $\left{Z_{n}\right}$ is said to be of order smaller than $n^{\alpha}$ with probability one if
+$$
+Z_{n} / n^{\alpha} \stackrel{a. s.}{\longrightarrow} 0 \text { as } n \rightarrow \infty
+$$</p>
+<p>This is denoted as $Z_{n}=o_{a, s}\left(n^{\alpha}\right)$</p>
+<p>The sequence of random variables $\left{Z_{n}\right}$ is said to be at most of order $n^{\alpha}$ with probability one if there exists some constant $M&lt;\infty$ such that
+$$
+P\left(\lim _{n \rightarrow \infty}\left|Z_{n} / n^{\alpha}\right|&gt;M\right)=0
+$$</p>
+<p>This is denoted as $Z_{n}=O_{a, s}\left(n^{\alpha}\right)$</p>
+<p>Remarks:
+$Z_{n}=O_{a, s}(1)$ implies that with probability one, $Z_{n}$ is bounded by some large constant for all $n$ sufficiently large.</p>
+<h3 id="753-relationships-between-convergence">7.5.3 Relationships Between Convergence</h3>
+<p>【Lemma 7.4】Suppose $ Z_n  \stackrel{a. s.}{\longrightarrow} Z $, then $Z_n  \stackrel{p.}{\rightarrow} Z$.</p>
+<p>$Z_{n} \stackrel{\text {a.s.}}{\longrightarrow} Z$ means for any $\varepsilon&gt;0$
+$$
+\begin{array}{l}P\left(\left{s \in S: \lim _{n \rightarrow \infty} Z_{n}(s)=Z(s)\right}\right) \\quad=P\left(\left{s \in S:\left|Z_{n}(s)-Z(s)\right| \leqslant \varepsilon \text { for all } n&gt;N(\varepsilon, s)\right}\right)=1\end{array}
+$$</p>
+<p>$Z_{n} \stackrel{p}{\rightarrow} Z$ means for any $\varepsilon&gt;0$
+$$
+P\left(\left{s \in S:\left|Z_{n}(s)-Z(s)\right| \leqslant \varepsilon\right}\right) \rightarrow 1
+$$</p>
+<p>We first compare the difference in notations between almost sure convergence
+$$
+P\left[\lim <em>{n \rightarrow \infty}\left|Z</em>{n}-Z\right|&gt;\epsilon\right]=0
+$$</p>
+<p>and convergence in probability
+$$
+\lim <em>{n \rightarrow \infty} P\left[\left|Z</em>{n}-Z\right|&gt;\epsilon\right]=0
+$$</p>
+<p>The fact that the set $A_{n}(\epsilon)$ of &ldquo;large&rdquo; differences for $\left|Z_{n}-Z\right|$ may have a nonzero probability for any finite $n$ implies that convergence in probability is weaker than almost sure convergence.</p>
+<p>If for some $s \in S, Z_{n}(s) \rightarrow Z(s)$ as $n \rightarrow \infty,$ then the difference $\left|Z_{n}(s)-Z(s)\right|$ will eventually become &ldquo;small&rdquo; (i.e., smaller than $\epsilon$ ) for all $n$ sufficiently large. Hence, almost sure convergence implies convergence in probability.</p>
+<p>While almost sure convergence implies convergence in probability, the converse may not be true.
+$$
+Z_{n} \stackrel{p}{\rightarrow} Z \nRightarrow Z_{n} \stackrel{a . s .}{\longrightarrow} Z
+$$
+【Example】Suppose the probability space is $(S, \mathcal{B}, P),$ where the sample space $S=[0,1], \mathcal{B}$ contains all the Borel sets $B$ such that $B \subset S, P$ is the Lebesgue measure on $S$. Let $Z(s)=0$ and $Z_{1}(s)=1(0&lt;s \leqslant 1)$ where $1(\cdot)$ is the indicator function $Z_{2}(s)=1\left(0&lt;s \leqslant \frac{1}{2}\right), Z_{3}(s)=1\left(\frac{1}{2}&lt;s \leqslant 1\right)$
+$Z_{n}(s)=1\left(\frac{n-4}{4}&lt;s \leqslant \frac{n-3}{4}\right), n=4, \ldots, 7$
+$Z_{n}(s)=1\left(\frac{n-8}{8}&lt;s \leqslant \frac{n-7}{8}\right), n=8, \ldots, 15, \cdots$</p>
+<ul>
+<li>
+<p>For every $\varepsilon&gt;0, P\left(\left|Z_{n}-Z\right|&gt;\varepsilon\right) \rightarrow 0$ as $n \rightarrow \infty,$ so $Z_{n} \stackrel{p}{\rightarrow} Z$</p>
+</li>
+<li>
+<p>$E\left|Z_{n}-Z\right|^{p}=1 / 2^{k} \rightarrow 0$ as $n \rightarrow \infty,$ where $k=\left[\log _{2} n\right],$ so
+$Z_{n} \rightarrow Z$ in $L_{p}$</p>
+</li>
+<li>
+<p>For any $s&gt;0, \lim <em>{n \rightarrow \infty} Z</em>{n}$ does not exist, so $Z_{n}$ does not converge to $Z$ almost surely.</p>
+</li>
+</ul>
+<p>Almost sure convergence does not imply $L_p$-convergence and $L_p$-convergence does not imply almost sure convergence.</p>
+<p>$$ in $$ in $L_{p}$
+$$
+Z_{n} \rightarrow Z \text{ in }L_{p} \nRightarrow Z_{n} \stackrel{\text { a.s. }}{\longrightarrow} Z, \quad Z_{n} \stackrel{\text { a.s. }}{\longrightarrow} Z \neq Z_{n} \rightarrow Z \text{ in }L_{p} 
+$$
+【Example】Suppose the probability space is $(S, \mathcal{B}, P),$ where the sample space $S=[0,1], \mathcal{B}$ contains all the Borel sets $B$ such that $B \subset S, P$ is the Lebesgue measure on $S$. Let $Z(s)=0$ and
+$$
+Z_{n}(s)=\left{\begin{array}{ll}
+0 &amp; \text { if } \frac{1}{n}&lt;s \leqslant 1 \<br>
+e^{n} &amp; \text { if } 0 \leqslant s \leqslant \frac{1}{n}
+\end{array}\right.
+$$</p>
+<ul>
+<li>
+<p>For every $\varepsilon&gt;0, P\left(\left|Z_{n}(s)-Z(s)\right|&gt;\varepsilon\right) \leqslant 1 / n$ as $n \rightarrow \infty,$ so
+$Z_{n} \stackrel{p}{\rightarrow} Z$</p>
+</li>
+<li>
+<p>For any $0&lt;s \leq 1, \lim <em>{n \rightarrow \infty} Z</em>{n}(s)=0,$ so
+$P\left(\left{s \in S: Z_{n}(s) \rightarrow Z(s)\right}\right)=P((0,1])=1$ and $Z_{n} \stackrel{\text { a.s. }}{\longrightarrow} Z$</p>
+</li>
+<li>
+<p>$E\left|Z_{n}-Z\right|^{p}=\frac{1}{n} e^{n p} \rightarrow \infty,$ so $Z_{n}$ does not converge to $Z$ in $L_{p}$</p>
+</li>
+</ul>
+<h3 id="754-continuous-mapping-theorem">7.5.4 Continuous Mapping Theorem</h3>
+<p>【Continuous Mapping Theorem】Suppose $g(\cdot)$  is a continuous function, and $Z_{n}\stackrel{a.s.}{\rightarrow} Z$. Then $g\left(Z_{n}\right)\stackrel{a.s.}{\rightarrow}g(Z)$ as $n \to \infty$</p>
+<p><strong>Proof:</strong></p>
+<p>The proof is similar to the proof of convergence in probability of a continuous function.</p>
+<p>Let $s \in S$ be a basic outcome. since $Z_{n}(s) \rightarrow Z(s)$ as $n \rightarrow \infty$ implies $g\left[Z_{n}(s)\right] \rightarrow$ $g[Z(s)]$ as $n \rightarrow \infty$ by the continuity of $g(\cdot),$ we have
+$$
+\left{s \in S: Z_{n}(s) \rightarrow Z(s)\right} \subseteq\left{s \in S: g\left[Z_{n}(s)\right] \rightarrow g[Z(s)]\right}
+$$</p>
+<p>Hence
+$$
+P\left[s \in S: g\left[Z_{n}(s)\right] \rightarrow g[Z(s)]\right] \geq P\left[s \in S: Z_{n}(s) \rightarrow Z(s)\right] \rightarrow 1
+$$</p>
+<p>It follows that $g\left(Z_{n}\right) \stackrel{\text {a.s.}}{\rightarrow} g(Z)$</p>
+<h3 id="755-continuity">7.5.5 Continuity</h3>
+<p>【Lemma 7.3】<strong>Continuity</strong>: Suppose $ a_{n} \stackrel{a.s.}{\rightarrow} $ a and $ b_{n} \stackrel{a.s.}{\rightarrow} b, $ and $ g(\cdot) $ and $ h(\cdot) $ are continuous functions. Then
+$$
+\begin{array}{l}g\left(a_{n}\right)+h\left(b_{n}\right) \stackrel{a.s.}{\rightarrow} g(a)+h(b), \text { and } \ g\left(a_{n}\right) h\left(b_{n}\right) \stackrel{a.s.}{\rightarrow} g(a) h(b)\end{array}
+$$</p>
+<h3 id="756-slln--uslln">7.5.6 SLLN &amp; USLLN</h3>
+<p>【Kolmogorov&rsquo;s Strong Law of Large Numbers(SLLN)】Suppose $\mathrm{X}^{n}=$ $\left(X_{1}, \cdots, X_{n}\right)$ be an IID random sample with $E\left(X_{i}\right)=\mu$ and $E\left|X_{i}\right|&lt;\infty .$ Define $\bar{X}_{n}=n^{-1} \sum_{i=1}^{n} X_{i}$, then
+$$
+\bar{X}_{n} \stackrel{\text {a.s.}}{\longrightarrow} \mu \text { as } n \rightarrow \infty
+$$</p>
+<p>Proof: See (e.g.) Gallant (1997, pp.132-135).</p>
+<p>【Uniform Strong Law of Large Numbers (USLLN)】Suppose</p>
+<ol>
+<li>$ \mathrm{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is an IID random sample</li>
+<li>function $g(x, \theta)$ is continuous over $\Omega \times \Theta$ where $\Omega$ is the support of $X_{i}$ and $\Theta$ is a compact set in $\mathbb{R}^{d}$ with $d$ finite and fixed;</li>
+<li>$ E\left[\text { sup }<em>{\theta \in \Theta} \left| g\left(X</em>{i}, \theta\right)\right|\right]&lt;\infty$, where the expectation $E(\cdot)$ is taken over the population distribution of $X_{i}$.</li>
+</ol>
+<p>Then as $n \to \infty$,</p>
+<p>$$
+\sup_{\theta \in \Theta}\left| n^{-1} \sum_{i=1}^{n} g\left(X_{i}, \theta\right)-E\left[g\left(X_{i}, \theta\right)\right] \right|\rightarrow 0 \text { almost surely.}
+$$</p>
+<p>Moreover, $E\left[g\left(X_{i}, \theta\right)\right]$ is a continuous function of $\theta$ over $\Theta$.</p>
+<p><strong>Remarks:</strong></p>
+<p>Different from the SLLN, $g\left(X_{i}, \theta\right)$ depends on both random variable $X_{i}$ and parameter $\theta$.</p>
+<p>USLLN says that, for each $n$, the worst deviation of the sample average $n^{-1} \sum_{i=1}^{n} g\left(X_{i}, \theta\right)$ from the population mean $E\left[g\left(X_{i}, \theta\right)\right]$ that one could find over all possible values in $\Theta$ converges to zero almost surely. The uniform convergence is with respect to the parameter space $\Theta$.</p>
+<p>USLLN is rather useful when investigating the asymptotic behavior of nonlinear metric estimators</p>
+<h2 id="76-convergence-in-distribution">7.6 Convergence in Distribution</h2>
+<h3 id="761-definition">7.6.1 Definition</h3>
+<p>【Convergence in Distribution】Let $\left{Z_{n}\right}$ be a sequence of random variables with a sequence of corresponding CDF$\left{F_{n}(z)\right},$ and let $Z$ be a random variable with $\operatorname{CDF} F(z) .$ Then $Z_{n}$ converges in distribution to $Z$ as $n \rightarrow \infty$ if the CDF $ F_{n}(z)$ converges to $F(z)$ at every continuity point $t \in(-\infty, \infty),$ namely
+$$
+\lim _{n \rightarrow \infty} F_{n}(z)=F(z)
+$$</p>
+<p>at every point $z$ where $F_{n}(z)$ is continuous. Here, $F(z)$ is called a **limiting or asymptotic distribution** of the sequence of random variables $\left{Z_{n}\right}$. Convergence in distribution is denoted
+as $Z_{n} \stackrel{d}{\longrightarrow} Z$ as $n \rightarrow \infty$.</p>
+<p>Remarks:</p>
+<ul>
+<li>Although we refer to a sequence of random variables, $\left{Z_{n}\right}$, converging in distribution to a random variable $Z$, it is actually the sequence of CDF&rsquo;s $\left{F_{n}(\cdot), n=1,2, \ldots\right}$ that converges to the CDF $F(\cdot)$. In other words, convergence in distribution means that their CDF&rsquo;s converge, not the random variables $\left{Z_{n}\right}$ themselves.</li>
+<li>This is different from the concepts of convergence in $L_{p},$ convergence in probability and almost sure convergence. The latter all characterize the convergence or closeness of the random variables $\left{Z_{n}\right}$ to random variable $Z$.</li>
+<li>The distribution $F(z)$ is called the limiting distribution or asymptotic distribution of $Z_{n} .$ Suppose $F(\cdot)$ has mean $\mu$ and variance $\sigma^{2} .$ Then they will be called, respectively, the asymptotic mean and asymptotic variance of the distribution $F_{n}(\cdot) .$ since $F(\cdot)$ is not the limit of $F_{n}(\cdot),$ the asymptotic mean and variance may not be the limits of the mean and variances of the distribution $F_{n}(\cdot)$ respectively, even if the latter exist.</li>
+</ul>
+<p>It should be emphasized that the limiting distribution $F(\cdot)$ might not be obtained by taking the limit of $F_{n}(\cdot) .$ For example, suppose $Z_{n} \sim N\left(0, \frac{1}{n}\right) .$ Then it has the distribution function
+$$
+\begin{aligned}
+F_{n}(z) &amp;=\int_{-\infty}^{z} \frac{1}{\sqrt{1 / n} \sqrt{2 \pi}} e^{-n u^{2} / 2} d u \<br>
+&amp;=\int_{-\infty}^{\sqrt{n} z} \frac{1}{\sqrt{2 \pi}} e^{-v^{2} / 2} d v \<br>
+&amp;=\Phi(\sqrt{n} z)
+\end{aligned}
+$$</p>
+<p>where $\Phi(\cdot)$ is the $N(0,1)$ CDF. Obviously, we have
+$$
+\lim <em>{n \rightarrow \infty} F</em>{n}(z)=\left{\begin{array}{ll}
+0 &amp; \text { if } z&lt;0 \<br>
+\frac{1}{2} &amp; \text { if } z=0 \<br>
+1 &amp; \text { if } z&gt;0
+\end{array}\right.
+$$</p>
+<p>Now define the function
+$$
+F(z)=\left{\begin{array}{ll}
+0 &amp; \text { if } z&lt;0 \<br>
+1 &amp; \text { if } z \geq 0
+\end{array}\right.
+$$</p>
+<p>Then $F(z)$ is a CDF and $\lim <em>{n \rightarrow \infty} F</em>{n}(z)=F(z)$ at every continuity point of $F(z)$. (The function $F(z)$ is not continuous at point $z=0 .$ ) Therefore, $F(\cdot)$ is a limiting distribution of $Z_{n} .$ However $F(\cdot)$ cannot be obtained by taking the limit of $F_{n}(\cdot),$ because $\lim _{n \rightarrow \infty} F_{n}(0) \neq F(0)$ at zero. Note that in this example $\lim _{n \rightarrow \infty} F_{n}(z)$ is not a CDF because it is not right-continuous.</p>
+<p>【Example】Suppose $\mathrm{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is an IID $U[0, \theta]$ random sample, where $\theta$ is an unknown parameter. Let $Z_{n}=\max _{1 \leq i \leq n}\left(X_{i}\right)$ be an estimator of $\theta$. Derive the limiting distribution of $n\left(\theta-Z_{n}\right)$</p>
+<p><strong>solution:</strong></p>
+<p>For any given $u \geq 0,$ we have
+$$
+\begin{aligned}
+P\left[n\left(\theta-Z_{n}\right)&gt;u\right] &amp;=P\left(Z_{n}&lt;\theta-\frac{u}{n}\right) \<br>
+&amp;=P\left(X_{1}&lt;\theta-\frac{u}{n}, \cdots, X_{n}&lt;\theta-\frac{u}{n}\right) \<br>
+&amp;=\prod_{i=1}^{n} P\left(X_{i}&lt;\theta-\frac{u}{n}\right) \<br>
+&amp;=\left(1-\frac{u}{n \theta}\right)^{n} \<br>
+&amp; \rightarrow e^{-u / \theta}
+\end{aligned}
+$$</p>
+<p>as $n \rightarrow \infty,$ where we have used the formula $\left(1-\frac{a}{n}\right)^{n} \rightarrow e^{-a}$ as $n \rightarrow \infty .$ It follows that, for $u \geq 0$
+$$
+\begin{aligned}
+F_{n}(u) &amp;=1-P\left[n\left(\theta-Z_{n}\right)&gt;u\right] \<br>
+&amp; \rightarrow 1-e^{-u / \theta}
+\end{aligned}
+$$</p>
+<p>as $n \rightarrow \infty$. This implies that $n\left(\theta-Z_{n}\right)$ converges in distribution to the exponential distribution with parameter $\theta,$ denoted as $\operatorname{EXP}(\theta)$.</p>
+<h3 id="762-relationships-between-convergence">7.6.2 Relationships Between Convergence</h3>
+<p>【Lemma 7.5】Let $Z_{n}$ be a random variable with CDF $ F_{n}(\cdot),$ and let $Z$ be a random variable with a continuous $\operatorname{CDF} F(\cdot) .$ If $Z_{n} \stackrel{d}{\rightarrow} Z$ as $n \rightarrow \infty,$ then $Z_{n}=O_{P}(1)$</p>
+<p><strong>Proof:</strong></p>
+<p>For any given constant $\epsilon&gt;0,$ let $M=M(\epsilon)$ be a (large) constant such that $P(|Z|&gt;$ $M)&lt;\epsilon .$ Let $F_{n}(z)$ be the CDF of $Z_{n} .$ Given $Z_{n} \stackrel{d}{\rightarrow} Z,$ and $F(z)$ is continuous everywhere, we have $\left|F_{n}(z)-F(z)\right| \leq \epsilon$ for any point $z \in(-\infty, \infty)$ and for all $n$ sufficiently large. This implies that for all $n$ sufficiently large, we have
+$$
+\begin{array}{l}
+P\left(Z_{n}&gt;M\right)-P(Z&gt;M) \leq \epsilon \<br>
+P\left(Z_{n} \leq-M\right)-P(Z \leq-M) \leq \epsilon
+\end{array}
+$$</p>
+<p>It follows that
+$$
+\begin{aligned}
+P\left(Z_{n}&gt;M\right)+P\left(Z_{n}&lt;-M\right) &amp; \leq P\left(Z_{n}&gt;M\right)+P\left(Z_{n} \leq-M\right) \<br>
+&amp;&lt;P(Z&gt;M)+P(Z \leq-M)+2 \epsilon \<br>
+&amp;=P(Z&gt;M)+P(Z&lt;-M)+2 \epsilon
+\end{aligned}
+$$</p>
+<p>where $P(Z=-M)=0$ given that $Z$ follows a continuous distribution. Therefore,
+$$
+P\left(\left|Z_{n}\right|&gt;M\right)&lt;P(|Z|&gt;M)+2 \epsilon&lt;3 \epsilon \equiv \delta
+$$</p>
+<p>Because $\epsilon$ is arbitrary, so is $\delta,$ and therefore $Z_{n}=O_{P}(1)$</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>If the probability distribution of $Z_{n}$ converges to a well-defined continuous probability distribution as $n \rightarrow \infty,$ then $Z_{n}$ is bounded in probability.</li>
+</ul>
+<p>【Example】Recall from that for $Z_{n}=\max _{1 \leq i \leq n}\left(X_{i}\right),$ where $\mathrm{X}^{n}=\left(X_{1}, \cdots\right.,X_{n}$ ) is an IID random sample from a $U[0, \theta]$ distribution, we have shown that $n\left(\theta-Z_{n}\right) \stackrel{d}{\to} EXP(\theta)$ as $n \rightarrow \infty$. Therefore, $n\left(\theta-Z_{n}\right)=O_{P}(1)$ and $Z_{n}-\theta=O_{P}\left(n^{-1}\right) .$ This implies that the convergence rate of $Z_{n}$ to $\theta$ in probability is at most $n^{-1}$, which is rather rapid.</p>
+<p>Remarks:</p>
+<ul>
+<li>The observations of $n$ random variables $\left{X_{i}\right}_{i=1}^{n}$ will be more or less equally spread over the interval $[0, \theta]$. Therefore, the maximal observation of $\left{X_{i}\right}_{i=1}^{n}$ will approach the upper bound of $\theta$ at a rate equal to $n$</li>
+</ul>
+<p>【Lemma 7.6】If $Z_{n} \stackrel{p}{\longrightarrow} Z$ as $n \rightarrow \infty,$ then $Z_{n} \stackrel{d}{\rightarrow} Z$ as $n \rightarrow \infty$</p>
+<p><strong>Proof:</strong></p>
+<p>We want to show for every continuous point $z$ of $F_{Z}$ and every $\varepsilon&gt;0,$ there is an $N$ such that $\left|F_{n}(z)-F_{Z}(z)\right|&lt;\varepsilon$ for all $n \geqslant N$.</p>
+<p>Because $F_{Z}(z)$ is continuous at $z,$ we can find $\delta&gt;0$ such that $\left|F_{Z}(z+\delta)-F_{Z}(z)\right|&lt;\varepsilon / 2$ and $\left|F_{Z}(z-\delta)-F_{Z}(z)\right|&lt;\varepsilon / 2$
+$$
+\begin{aligned}
+F_{Z}(z-\delta) &amp;=P(Z \leqslant z-\delta) \<br>
+&amp;=P\left(Z \leqslant z-\delta, Z_{n} \leqslant z\right)+P\left(Z \leqslant z-\delta, Z_{n}&gt;z\right) \<br>
+&amp; \leqslant P\left(Z_{n} \leqslant z\right)+P\left(Z_{n}-Z&gt;\delta\right) \<br>
+&amp; \leqslant F_{n}(z)+P\left(\left|Z_{n}-Z\right|&gt;\delta\right)
+\end{aligned}
+$$</p>
+<p>So we have $F_{Z}(z-\delta)-P\left(\left|Z_{n}-Z\right|&gt;\delta\right) \leqslant F_{n}(z)$</p>
+<p>Similarly, $F_{n}(z) \leqslant F_{Z}(z+\delta)+P\left(\left|Z_{n}-Z\right|&gt;\delta\right) .$ Therefore,
+$$
+F_{Z}(z-\delta)-P\left(\left|Z_{n}-Z\right|&gt;\delta\right) \leqslant F_{n}(z) \leqslant F_{Z}(z+\delta)+P\left(\left|Z_{n}-Z\right|&gt;\delta\right)
+$$</p>
+<p>and then
+$$
+\left|F_{n}(z)-F_{Z}(z)\right|&lt;\frac{\varepsilon}{2}+P\left(\left|Z_{n}-Z\right|&gt;\delta\right)
+$$</p>
+<p>since $Z_{n} \stackrel{P}{\rightarrow} Z,$ we can find $N$ large enough such that $P\left(\left|Z_{n}-Z\right|&gt;\delta\right)&lt;\varepsilon / 2$ for all $n \geqslant N$</p>
+<p>Then $\left|F_{n}(z)-F_{Z}(z)\right|&lt;\varepsilon$ for all $n \geqslant N$. Hence $Z_{n} \stackrel{d}{\rightarrow} Z$</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>When $Z_{n}$ converges to $Z$ in probability as $n \rightarrow \infty,$ the random variable $Z_{n}$ will be arbitrarily close to random variable $Z$ for $n$ sufficiently large. Therefore, the probability law of $Z_{n}$ will be arbitrarily close to the probability law of $Z$ for $n$ sufficiently large.</li>
+</ul>
+<p>【Lemma 7.7】<strong>Asymptotic Equivalence</strong>: If $Y_{n}-Z_{n} \stackrel{p}{\rightarrow} 0$ and $Z_{n} \stackrel{d}{\to}Z $ as $n \rightarrow \infty$, then $Y_{n} \stackrel{d}{\to} Z$.</p>
+<p>Remarks:</p>
+<ul>
+<li>If two random variables $Y_{n}$ and $Z_{n}$ are very close with probability approaching one as $n \rightarrow \infty,$ they will follow the same large sample distribution</li>
+<li>This lemma is very useful when one is interested in deriving the asymptotic distribution of $Y_{n}$.</li>
+</ul>
+<p>【Degenerate Distribution】A random variable $Z$ is said to have $a$ degenerate distribution if $P(Z=c)=1$ for some constant $c$.</p>
+<p>【Theorem】Let $F_{n}(z)$ be the CDF of a random variable $Z_{n}$ whose distribution depends on the positive integer $n$. Let c denote a constant which does not depend upon $n$. The sequence  $Z_n \stackrel{p}{\to} c$ if and only if the limiting distribution of $Z_{n}$ is degenerate at $z=c$.</p>
+<p><strong>Proof:</strong></p>
+<p>$(1)[\text { Necessity }]$ : First, Suppose $\lim <em>{n \rightarrow \infty} P\left(\left|Z</em>{n}-c\right|&lt;\epsilon\right)=1$ for any given $\epsilon&gt;0$. Then we shall show
+$$
+\lim <em>{n \rightarrow \infty} F</em>{n}(z)=\left{\begin{array}{l}
+0 \text { if } z&lt;c \<br>
+1 \text { if } z&gt;c
+\end{array}\right.
+$$</p>
+<p>from which we can define an asymptotic (i.e., limiting) distribution
+$$
+F(z)=\left{\begin{array}{l}
+0 \text { if } z&lt;c \<br>
+1 \text { if } z \geq c
+\end{array}\right.
+$$</p>
+<p>We first observe that
+$$
+P\left(\left|Z_{n}-c\right| \leq \epsilon\right)=F_{n}(c+\epsilon)-F_{n}(c-\epsilon)+P\left(Z_{n}=c-\epsilon\right)
+$$</p>
+<p>Because $0 \leq F_{n}(z) \leq 1$ and $\lim _{n-\infty} \operatorname{Pr}\left(\left|Z_{n}-c\right|&lt;\epsilon\right)=1,$ we must have that for all
+$\epsilon&gt;0$
+$$
+\begin{aligned}
+\lim _{n \rightarrow \infty} F_{n}(c+\epsilon) &amp;=1 \<br>
+\lim _{n \rightarrow \infty} F_{n}(c-\epsilon) &amp;=0 \<br>
+\lim _{n \rightarrow \infty} P\left(Z_{n}=c-\epsilon\right) &amp;=0
+\end{aligned}
+$$</p>
+<p>It follows that
+$$
+\lim <em>{n \rightarrow \infty} F</em>{n}(z)=\left{\begin{array}{l}
+0, \text { if } z&lt;c \<br>
+1, \text { if } z&gt;c
+\end{array}\right.
+$$</p>
+<p>Thus, we can define an asymptotic (i.e., limiting) distribution as follows:
+$$
+F(z)=\left{\begin{array}{ll}
+0, &amp; \text { if } z&lt;c \<br>
+1, &amp; \text { if } z \geq c
+\end{array}\right.
+$$
+which is the CDF for $Z$ such that $P(Z=c)=1 .$ since $\lim <em>{n \rightarrow \infty} F</em>{n}(z)=F(z)$ at all continuity points ${z}$ on the real line (only $z=0$ is not a continuity point), we have $z_{n} \stackrel{d}{\longrightarrow} c$ as $n \rightarrow \infty$</p>
+<p>$(2)[\text { Sufficiency }]:$ To complete the proof of the theorem, now suppose
+$$
+\lim <em>{n \rightarrow \infty} F</em>{n}(z)=\left{\begin{array}{l}
+0 \text { if } z&lt;c \<br>
+1 \text { if } z&gt;c
+\end{array}\right.
+$$</p>
+<p>We shall prove that $\lim <em>{n \rightarrow \infty} \operatorname{Pr}\left(\left|Z</em>{n}-c\right| \leq \epsilon\right)=1$ for all $\epsilon&gt;0$. Because
+$$
+\begin{array}{l}
+1 \geq \operatorname{Pr}\left(\left|Z_{n}-c\right| \leq \epsilon\right)=F_{n}(c+\epsilon)-F_{n}(c-\epsilon)+P\left(Z_{n}=c-\epsilon\right) \<br>
+\quad \rightarrow 1-0+0=1 \text { as } n \rightarrow \infty
+\end{array}
+$$</p>
+<p>for all $\epsilon&gt;0,$ we then obtain the desired result immediately</p>
+<h3 id="763-continuous-mapping-theorem">7.6.3 Continuous Mapping Theorem</h3>
+<p>【Continuous Mapping Theorem】 Suppose a sequence of $k \times 1$ random vectors $Z_{n} \stackrel{d}{\rightarrow} Z$ as $n \rightarrow \infty$ and $g: \mathbb{R}^{k} \rightarrow \mathbb{R}^{l}$ is a continuous vector-valued function. Then $g\left(Z_{n}\right) \stackrel{d}{\rightarrow} g(Z)$.</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>Once we know the limiting distribution of $Z_{n}$, we can find the limiting distribution of many interesting functions of $Z_{n}$. This is particularly useful for deriving the limiting distributions of statistic $T\left(Z_{n}\right)$ once the limiting distribution of $Z_{n}$ is known.</li>
+</ul>
+<h2 id="77-central-limit-theorems">7.7 Central Limit Theorems</h2>
+<h3 id="771-lindeberg-levys-clt">7.7.1 Lindeberg-Levy&rsquo;s CLT</h3>
+<p>【Lindeberg-Levy&rsquo;s Central Limit Theorem (CLT)】$\operatorname{Let} \mathrm{X}^{n}=\left(X_{1}, \cdots\right.$ $\left., X_{n}\right)^{\prime}$ be an IID random sample from a population with mean $\mu$ and variance $0&lt;\sigma^{2}&lt;\infty$ Define $\bar{X}_{n}=n^{-1} \sum_{i=1}^{n} X_{i} .$ Then the standardized sample mean
+$$
+\begin{aligned}
+Z_{n} &amp;=\frac{\bar{X}_{n}-E\left(\bar{X}_{n}\right)}{\sqrt{\operatorname{var}\left(\bar{X}_{n}\right)}} \<br>
+&amp;=\frac{\bar{X}_{n}-\mu}{\sigma / \sqrt{n}} \<br>
+&amp;=\frac{\sqrt{n}\left(\bar{X}_{n}-\mu\right)}{\sigma} \<br>
+&amp; \stackrel{d}{\rightarrow} N(0,1) \text { as } n \rightarrow \infty
+\end{aligned}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>Define a standardized random variable
+$$
+Y_{i}=\frac{X_{i}-\mu}{\sigma}, \quad i=1, \cdots, n
+$$
+with characteristic function $\varphi_{Y}(t)=E\left(e^{\mathrm{it} Y_{i}}\right),$ where $\mathrm{i}=\sqrt{-1}$. Then $Y_{i}$ has zero mean and unit variance.</p>
+<p>It follows that
+$$
+\begin{array}{l}
+\varphi_{Y}^{\prime}(0)=\mathbf{i} \cdot 0=0 \<br>
+\varphi_{Y}^{\prime \prime}(0)=\mathbf{i}^{2} \cdot \sigma_{Y}^{2}=-1
+\end{array}
+$$</p>
+<p>We now write the standardized sample mean
+$$
+\begin{aligned}
+Z_{n} &amp;=\frac{\bar{X}_{n}-\mu}{\sigma / \sqrt{n}} \<br>
+&amp;=\sqrt{n} \frac{\bar{X}_{n}-\mu}{\sigma} \<br>
+&amp;=\sqrt{n}\left(n^{-1} \sum_{i=1}^{n} \frac{X_{i}-\mu}{\sigma}\right) \<br>
+&amp;=\sqrt{n} \bar{Y}_{n} \<br>
+&amp;=\frac{1}{\sqrt{n}} \sum_{i=1}^{n} Y_{i}
+\end{aligned}
+$$</p>
+<p>Since $X_{i}$ may not have a well-defined MGF, we take a characteristic function approach, that is, we shall show that $\varphi_{n}(t) \rightarrow e^{-\frac{1}{2} t^{2}}$ as $n \rightarrow \infty,$ where $\varphi_{n}(t)=E\left(e^{\mathrm{i} t Z_{n}}\right)$ is the characteristic function of $Z_{n}$ and $e^{-\frac{1}{2} t^{2}}$ is the characteristic function of $N(0,1)$.</p>
+<p>The characteristic function of $Z_{n}$
+$$
+\begin{aligned}
+\varphi_{n}(t) &amp;=E\left(e^{\mathrm{i} t \sqrt{n} \bar{Y}_{n}}\right) \<br>
+&amp;=\left[E\left(e^{\mathrm{i} t Y_{1} / \sqrt{n}}\right)\right]^{n} \<br>
+&amp;=\left[\varphi_{Y}(t / \sqrt{n})\right]^{n} \<br>
+&amp;=\left[\varphi_{Y}(0)+\varphi_{Y}^{\prime}(0) \frac{t}{\sqrt{n}}+\frac{1}{2} \varphi_{Y}^{\prime \prime}(0)\left(\frac{t}{\sqrt{n}}\right)^{2}+r\left(\frac{t}{\sqrt{n}}\right)\right]^{n} \<br>
+&amp;=\left(1-\frac{t^{2}}{2 n}+o\left(n^{-1}\right)\right)^{n} \<br>
+&amp; \rightarrow e^{-t^{2} / 2}
+\end{aligned}
+$$</p>
+<p>where $r(t / \sqrt{n})$ denotes a reminder term, and we have used the formula $\left(1+\frac{a}{n}\right)^{n} \rightarrow e^{a}$ as $n \rightarrow \infty$.</p>
+<p>Therefore, $Z_{n} \stackrel{d}{\rightarrow} N(0,1)$ as $n \rightarrow \infty$</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>Let $Z \sim N(0,1) .$ The $N(0,1)$ CDF is denoted as</li>
+</ul>
+<p>$$
+\Phi(z)=\int_{-\infty}^{z} \frac{1}{\sqrt{2 \pi}} e^{-x^{2} / 2} d x
+$$</p>
+<ul>
+<li>CLT says that when $n \rightarrow \infty, Z_{n} \stackrel{d}{\rightarrow} Z,$ i.e.</li>
+</ul>
+<p>$$
+F_{n}(z) \equiv P\left(Z_{n} \leq z\right) \rightarrow \Phi(z)
+$$</p>
+<ul>
+<li>
+<p>for all $z \in(-\infty, \infty)$</p>
+</li>
+<li>
+<p>Therefore, for each sufficiently large (<strong>but finite</strong>) integer $n,$ the distribution of $\bar{X}<em>{n}$ will be approximately a $N\left(\mu, \sigma^{2} / n\right)$ or equivalently, the distribution of the sum $\sum</em>{i=1}^{n} X_{i}$ will be approximately a $N\left(n \mu, n \sigma^{2}\right)$ distribution.</p>
+</li>
+<li>
+<p>Sometimes CLT is interpreted incorrectly as implying that the distribution of $\bar{X}<em>{n}$ approaches a normal distribution as $n \rightarrow \infty .$ This is incorrect because $\operatorname{var}\left(\bar{X}</em>{n}\right) \rightarrow 0$ and $\bar{X}_{n}$ converges to a degenerate distribution $F(\cdot)$ such that $F(x)=0$ if $x&lt;\mu$ and $F(x)=1$ if $x \geq \mu$.</p>
+</li>
+<li>
+<p>Historically, CLT was first established for a random sample from a Bernoulli distribution by A. de Moivre in the early eighteenth century. The proof for a random sample from an arbitrary distribution was given independently by J.W. Lindeberg and P. Levy in the early 1920s.</p>
+</li>
+<li>
+<p>CLT occupies a central position in statistical inference. Although CLT provides a simple and useful general approximation, there is no automatic way of knowing how good the approximation is in general. In fact, the goodness of the approximation is a function of the sample size n and the original population distribution, and differs case by case.</p>
+</li>
+</ul>
+<p>【Normal Approximation for the Binomial Distribution $B(n, p)$ When $n$ is Large】For a binomial $B(n, p)$ random variable $Z_{n},$ we can write $Z_{n}=\sum_{i=1}^{n}$ where $\mathbf{X}^{n}=\left(X_{1}, \cdots, X_{n}\right)$ is an IID random sample from a Bernoulli(p) distribution with 
+$P(X_i=1)=p \in(0,1) .$</p>
+<p>By CLT$,$ we have that as $n \rightarrow \infty,$ the standardized random variable
+$$
+\begin{aligned}
+\frac{Z_{n}-E\left(Z_{n}\right)}{\sqrt{\operatorname{var}\left(Z_{n}\right)}} &amp;=\frac{Z_{n}-n p}{\sqrt{n p(1-p)}} \<br>
+&amp; \stackrel{d}{\rightarrow} N(0,1)
+\end{aligned}
+$$
+Although this result applies only when $n \rightarrow \infty,$ the normal distribution is often used to approximate binomial probabilities in practice even when $n$ is fairly small.</p>
+<p>Remarks:</p>
+<ul>
+<li>In Chapter 4, we approximate the Binomial$(n, p)$ distribution by a Poisson distribution, which is called the law of small numbers. Here we use a normal approximation due to the law of large numbers.</li>
+<li>A Poisson approximation is better when $p$ is small, while a normal approximation works better when both $n p$ and $n(1-p)$ are both larger than 5.</li>
+</ul>
+<p>【Normal Approximation of $\chi_{n}^{2}$ When $n$ is Large】Suppose $\mathrm{X}^{n}$ is an IID $N(0,1)$ random sample. Put $Y=X_{i}^{2}, i=1, \cdots, n$. Then as $n \rightarrow \infty,$ the standardized random variable</p>
+<p>$$
+\begin{aligned}
+\frac{\sum_{i=1}^{n} Y_{i}-n \mu_{Y}}{\sqrt{n \sigma_{Y}^{2}}} &amp;=\frac{\sum_{i=1}^{n} X_{i}^{2}-n}{\sqrt{2 n}} \<br>
+&amp; \stackrel{d}{\longrightarrow} N(0,1)
+\end{aligned}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>Put $\bar{Y}<em>{n}=n^{-1} \sum</em>{i=1}^{n} Y_{i} .$ since $E\left(Y_{i}\right)=1$ and $\operatorname{var}\left(Y_{i}\right)=2,$ we have from CLT that as $n \rightarrow \infty,$ the standardized sample mean
+$$
+\begin{aligned}
+\frac{\bar{Y}_{n}-\mu_{Y}}{\sigma_{Y} / \sqrt{n}}=&amp; \frac{\bar{Y}_{n}-1}{\sqrt{2} / \sqrt{n}} \<br>
+&amp; \stackrel{d}{\rightarrow} N(0,1)
+\end{aligned}
+$$</p>
+<p>where
+$$
+\begin{aligned}
+\frac{\bar{Y}<em>{n}-1}{\sqrt{2} / \sqrt{n}} &amp;=\frac{\sqrt{n}\left(\bar{Y}</em>{n}-1\right)}{\sqrt{2}} \<br>
+&amp;=\frac{\frac{1}{\sqrt{n}} \sum_{i=1}^{n}\left(Y_{i}-1\right)}{\sqrt{2}} \<br>
+&amp;=\frac{\sum_{i=1}^{n} Y_{i}-n}{\sqrt{2 n}} \<br>
+&amp;=\frac{\sum_{i=1}^{n} X_{i}^{2}-n}{\sqrt{2 n}}
+\end{aligned}
+$$</p>
+<p>Noting $\sum_{i=1}^{n} X_{i}^{2} \sim \chi_{n}^{2},$ we can approximate a $\chi_{n}^{2}$ distribution by a $N(n, 2 n)$ distribution when the degree $n$ of freedom is large. As an example, when $\mathbf{X}^{n}$ is an IID $N\left(\mu, \sigma^{2}\right)$ random sample, we have $(n-1) S_{n}^{2} / \sigma^{2} \sim \chi_{n-1}^{2}$ for all $n&gt;1 .$ It follows that as $n \rightarrow \infty$
+$$
+\begin{array}{l}
+{\left[\frac{(n-1) S_{n}^{2}}{\sigma^{2}}-(n-1)\right] / \sqrt{2(n-1)}} \<br>
+\stackrel{d}{\rightarrow} N(0,1)
+\end{array}
+$$</p>
+<h3 id="772-relaxing-assumptions">7.7.2 Relaxing Assumptions</h3>
+<p>The assumption of a finite variance is essentially necessary for CLIT. It implies that we always obtain an approximate normality from the sum of &ldquo;small&rdquo; (finite variance) independent disturbances. Although the finite variance assumption can be relaxed somewhat, it cannot be eliminated.</p>
+<p>【Example】Suppose $X_n$ is an IID random sample from the Cauchy(0, 1) distribution. Then it can be shown by characteristic function that $\bar{X}_n \sim Cauchy(0, 1)$ for all $n \geq 1$.</p>
+<p>On the other hand, the identical distribution assumption can be relaxed. In other words, CLT continues to hold when there exist certain degrees of heterogeneity in observations</p>
+<p>【Liapounov (1901) CLT for Independent Random Variables】 Suppose the random variables $X_{1}, \cdots, X_{n}$ are jointly independent and $E\left|X_{i}-\mu_{i}\right|^{3}&lt;\infty$ for $i=1, \cdots, n$ where $E\left(X_{i}\right)=\mu_{i} .$ Also, suppose
+$$
+\lim _{n \rightarrow \infty} \frac{\sum_{i=1}^{n} E\left|X_{i}-\mu_{i}\right|^{3}}{\left(\sum_{i=1}^{n} \sigma_{i}^{2}\right)^{3 / 2}}=0
+$$</p>
+<p>Then as $n \rightarrow \infty,$ we have the standardized random variable
+$$
+\begin{aligned}
+Z_{n}=&amp; \frac{\sum_{i=1}^{n} X_{i}-\sum_{i=1}^{n} \mu_{i}}{\left(\sum_{i=1}^{n} \sigma_{i}^{2}\right)^{1 / 2}} \<br>
+&amp; \stackrel{d}{\rightarrow} N(0,1)
+\end{aligned}
+$$</p>
+<p><strong>Remarks:</strong></p>
+<ul>
+<li>CLT also holds when there exists certain degree of dependence among the random variables $X_{1}, \cdots, X_{n}$</li>
+<li>Although the dependence allowed cannot be too strong (see what happens if $X_{1}=X_{2}=\cdots=X_{n}$ in an extreme case), one can relax the independence assumption to some extent. See, for example, Billingsley (1995, section 27). Also see White (1999) for CLT for dependent random samples. This allows application of CLT to some time series data.</li>
+</ul>
+<h3 id="773-slutskys-theorem">7.7.3 Slutsky&rsquo;s Theorem</h3>
+<p>【Slutsky&rsquo;s Theorem】Suppose $X_{n} \stackrel{d}{\rightarrow} X$ and $c_{n} \stackrel{p}{\longrightarrow} c,$ a constant. Then
+(1) $X_{n}+c_{n} \stackrel{d}{\longrightarrow} X+c$
+(2) $X_{n}-c_{n} \stackrel{d}{\rightarrow} X-c$
+(3) $X_{n} c_{n} \stackrel{d}{\longrightarrow} c X$
+(4) $\frac{X_{n}}{c_{n}} \stackrel{d}{\rightarrow} \frac{X}{c},$ for $c \neq 0$
+【Example】Suppose the standardized sample mean
+$$
+\frac{\sqrt{n}\left(\bar{X}_{n}-\mu\right)}{\sigma} \stackrel{d}{\rightarrow} N(0,1)
+$$
+and $S_{n}^{2} \stackrel{p}{\rightarrow} \sigma^{2}$ as $n \rightarrow \infty$ (so $S_{n} \stackrel{p}{\rightarrow} \sigma$ by the continuity of the square root function). Then by the Slutsky theorem
+$$
+\begin{aligned}
+\frac{\sqrt{n}\left(\bar{X}_{n}-\mu\right)}{S_{n}}=&amp; \frac{\sigma}{S_{n}} \frac{\sqrt{n}\left(\bar{X}_{n}-\mu\right)}{\sigma} \<br>
+&amp; \stackrel{d}{\rightarrow} N(0,1)
+\end{aligned}
+$$</p>
+<p>【Example】Suppose $X_{n} \stackrel{d}{\rightarrow} X$ and $Y_{n} \stackrel{d}{\rightarrow} Y$ as $n \rightarrow \infty .$ Do we have the following results? Give your reasoning:
+(1) $X_{n} \pm Y_{n} \stackrel{\text { d }}{\longrightarrow} X \pm Y$ as $n \rightarrow \infty$
+(2) $X_{n} Y_{n} \stackrel{d}{\longrightarrow} X Y$ as $n \rightarrow \infty$</p>
+<p><strong>Solution:</strong></p>
+<p>The answer is generally no, because the dependence between $X_{n}$ and $Y_{n}$ is not taken into account.</p>
+<p>In other words, convergence in marginal distribution does not imply convergence in joint distribution. This is different from other convergence concepts, such as convergence in quadratic mean, convergence in probability and almost sure convergence. For these convergences, element-by-element convergences are equivalent to joint convergence.</p>
+<h3 id="774-delta-method">7.7.4 Delta Method</h3>
+<p>【Delta Method】Suppose $\sqrt{n}\left(\bar{X}<em>{n}-\mu\right) / \sigma \stackrel{d}{\rightarrow} N(0,1)$ as $n \rightarrow \infty,$ and function $g(\cdot)$ is continuously differentiable with $g^{\prime}(\mu) \neq 0 .$ Then as $n \rightarrow \infty$
+$$
+\sqrt{n}\left[g\left(\bar{X}</em>{n}\right)-g(\mu)\right] \stackrel{d}{\rightarrow} N\left(0, \sigma^{2}\left[g^{\prime}(\mu)\right]^{2}\right)
+$$</p>
+<p>and
+$$
+\frac{\sqrt{n}\left[g\left(\bar{X}<em>{n}\right)-g(\mu)\right]}{\sigma g^{\prime}(\mu)} \stackrel{d}{\rightarrow} N(0,1)
+$$
+<strong>Proof:</strong>
+First, by Lemma 4,$\sqrt{n}\left(\bar{X}</em>{n}-\mu\right) / \sigma \stackrel{d}{\rightarrow} N(0,1)$ implies $\sqrt{n}\left(\bar{X}<em>{n}-\mu\right) / \sigma=O</em>{P}(1)$. Therefore, we have $\bar{X}<em>{n}-\mu=O</em>{P}\left(n^{-1 / 2}\right)=o_{P}(1)$.</p>
+<p>Next, by the mean value theorem, we have
+$$
+Y_{n}=g\left(\bar{X}_{n}\right)=g(\mu)+g^{\prime}\left(\bar{\mu}_{n}\right)\left(\bar{X}_{n}-\mu\right)
+$$</p>
+<p>where $\bar{\mu}<em>{n}=\lambda \mu+(1-\lambda) \bar{X}</em>{n}$ for some $\lambda \in[0,1] .$ Note that $\left|\bar{\mu}<em>{n}-\mu\right|=\left|(1-\lambda)\left(\bar{X}</em>{n}-\mu\right)\right| \leq \left|\bar{X}<em>{n}-\mu\right|=o</em>{P}(1)$</p>
+<p>It follows by the Slutsky theorem that
+$$
+\begin{aligned}
+\sqrt{n}\left[\frac{g\left(\bar{X}<em>{n}\right)-g(\mu)}{\sigma}\right] &amp;=g^{\prime}\left(\bar{\mu}</em>{n}\right) \sqrt{n} \frac{\bar{X}_{n}-\mu}{\sigma} \<br>
+&amp; \stackrel{d}{\rightarrow} N\left[0, g^{\prime}(\mu)^{2}\right]
+\end{aligned}
+$$</p>
+<p>where $g^{\prime}\left(\bar{\mu}<em>{n}\right) \stackrel{p}{\rightarrow} g^{\prime}(\mu)$  given $\bar{\mu}</em>{n} \stackrel{p}{\rightarrow} \mu$ and the continuity of the first derivative $g^{\prime}(\cdot)$.</p>
+<p>By the Slutsky theorem again, we have
+$$
+\frac{\sqrt{n}\left[g\left(\bar{X}<em>{n}\right)-g(\mu)\right]}{\sigma g^{\prime}\left(\bar{X}</em>{n}\right)} \stackrel{d}{\rightarrow} N(0,1)
+$$
+Remarks:</p>
+<ul>
+<li>The Delta method can be viewed as a Taylor series approximation in a statistical context. It linearizes a smooth (i.e., continuously differentiable) nonlinear statistic so that CLT can be applied to the linearized statistic. Therefore, it can be viewed as a generalization of CLT.</li>
+</ul>
+<p>Question: To apply the delta method, it is required that $g^{\prime}(\mu) \neq 0 .$ What happens to the delta method if $g^{\prime}(\mu)=0 ?$</p>
+<p>【Second Order Delta Method】Suppose random variables  $\sqrt{n}(\bar{X}<em>{n}-\mu) / \sigma \stackrel{d}{\longrightarrow} N(0,1),$ and function $g(\cdot)$ is twice continuously differentiable such that $g^{\prime}(\mu)=0$ and
+$g^{\prime \prime}(\mu) \neq 0 .$ Then as $n \rightarrow \infty$
+$$
+\frac{n\left[g\left(\bar{X}</em>{n}\right)-g(\mu)\right]}{\sigma^{2}} \stackrel{d}{\to} \frac{g^{\prime \prime}(\mu)}{2} \chi_{1}^{2}
+$$</p>
+<p><strong>Question:</strong> We have considered the sequence of scalar random variables $\left{\bar{X}<em>{n}, n=1,2, \cdots\right}$ How can one derive the asymptotic distribution for a random vector $Z</em>{n} ?$</p>
+<ul>
+<li>The following Cramer-Wold device will allow us to derive the asymptotic distribution of a sequence of random vectors.</li>
+</ul>
+<p>【Cramer-Wold Device】A sequence of random vector $Z_{n}=\left(Z_{1 n}, \ldots, Z_{d n}\right)$ converges in distribution to a random vector $Z$ if an only if
+$$
+a^{\prime} Z_{n} \stackrel{d}{\rightarrow} a^{\prime} Z
+$$</p>
+<p>for every constant vector $a \neq 0$ in $\mathbb{R}^{d}$.</p>
+<p>【Example 7.33】Suppose $ Z_{n} \stackrel{d}{\rightarrow} Z \sim N(0, \Sigma), $ where $ Z $ is an $ m \times 1 $ random vector and $ \Sigma $ is an $ m \times m $ nonsingular matrix, where the dimension $ m $ is fixed. If $ \Sigma_{n} \stackrel{p}{\rightarrow} \Sigma $ as $ n \rightarrow \infty, $ then the quadratic form</p>
+<p>$$
+Z_{n}^{\prime} \Sigma_{n}^{-1} Z_{n} \stackrel{d}{\rightarrow} Z^{\prime} \Sigma^{-1} Z \sim \chi_{m}^{2}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>First, by the Cramer-Wold device and the Slutsky‘s theorem, we can show that
+$$
+\Sigma^{-\frac{1}{2}} Z_{n} \stackrel{d}{\rightarrow} \Sigma^{-1 / 2} Z \sim N\left(0, I_{m}\right) \text { as } n \rightarrow \infty
+$$</p>
+<p>where $ I_{m} $ is an $ m \times m $ identity matrix.</p>
+<p>It follows from the continuous mapping theorem that
+$$
+\begin{aligned}
+\left(\hat{\Sigma}^{-\frac{1}{2}} Z_{n}\right)^{\prime}\left(\hat{\Sigma}^{-\frac{1}{2}} Z_{n}\right) &amp;=Z_{n}^{\prime} \hat{\Sigma}^{-1} Z_{n} \<br>
+&amp; \stackrel{d}{\rightarrow} Z^{\prime} \Sigma^{-1} Z \sim \chi_{m}^{2}
+\end{aligned}
+$$</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/7.-convergences-and-limit-theorems/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/7.-convergences-and-limit-theorems/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/7.-convergences-and-limit-theorems/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/7.-convergences-and-limit-theorems/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/8.-parameter-estimation-and-evaluation/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/4.-important-probability-distributions/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

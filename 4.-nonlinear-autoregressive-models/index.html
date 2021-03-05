@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="Threshold Autoregressive (TAR) Model
+To capture asymmetric features in financial data, we need to establish Threshold Autoregressive (TAR) models. For example, a TAR(1) model is constructed as $$ X_{t}=\left{\begin{array}{ll} \alpha_{1} X_{t-1}&#43;u_{t}, &amp; X_{t-1}&lt;c \
+\alpha_{2} X_{t-1}&#43;u_{t}, &amp; X_{t-1} \geq c \end{array}\right. $$
+for some threshold value $ c $. In a compact form, we write the model as
+$$ X_{t}=\alpha_{1} X_{t-1} 1\left(X_{t-1}&lt;c\right)&#43;\alpha_{2} X_{t-1} 1\left(X_{t-1} \geq c\right)&#43;u_{t} $$
+Question: How to estimate $ \alpha_{1}, \alpha_{2} $ and $ c ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Threshold Autoregressive (TAR) Model
+To capture asymmetric features in financial data, we need to establish Threshold Autoregressive (TAR) models. For example, a TAR(1) model is constructed as $$ X_{t}=\left{\begin{array}{ll} \alpha_{1} X_{t-1}&#43;u_{t}, &amp; X_{t-1}&lt;c \
+\alpha_{2} X_{t-1}&#43;u_{t}, &amp; X_{t-1} \geq c \end{array}\right. $$
+for some threshold value $ c $. In a compact form, we write the model as
+$$ X_{t}=\alpha_{1} X_{t-1} 1\left(X_{t-1}&lt;c\right)&#43;\alpha_{2} X_{t-1} 1\left(X_{t-1} \geq c\right)&#43;u_{t} $$
+Question: How to estimate $ \alpha_{1}, \alpha_{2} $ and $ c ?"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/" /><link rel="prev" href="https://henrywu97.github.io/5.-factor-model-in-finance/" /><link rel="next" href="https://henrywu97.github.io/3.-garch-type-models/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/4.-nonlinear-autoregressive-models\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  954 ,
+        "url": "https:\/\/henrywu97.github.io\/4.-nonlinear-autoregressive-models\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/4.-nonlinear-autoregressive-models/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/4.-nonlinear-autoregressive-models/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;954 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><p>Threshold Autoregressive (TAR) Model</p>
+<p>To capture asymmetric features in financial data, we need to establish Threshold Autoregressive (TAR) models. For example, a TAR(1) model is constructed as
+$$
+X_{t}=\left{\begin{array}{ll}
+\alpha_{1} X_{t-1}+u_{t}, &amp; X_{t-1}&lt;c \<br>
+\alpha_{2} X_{t-1}+u_{t}, &amp; X_{t-1} \geq c
+\end{array}\right.
+$$</p>
+<p>for some threshold value $ c $. In a compact form, we write the model as</p>
+<p>$$
+X_{t}=\alpha_{1} X_{t-1} 1\left(X_{t-1}&lt;c\right)+\alpha_{2} X_{t-1} 1\left(X_{t-1} \geq c\right)+u_{t}
+$$</p>
+<p>Question: How to estimate $ \alpha_{1}, \alpha_{2} $ and $ c ? $</p>
+<p>Why TAR model is able to capture asymmetric features in financial data? We consider the following example.
+$$
+X_{t}=\left{\begin{array}{cl}
+-1.5 X_{t-1}+u_{t}, &amp; X_{t-1}&lt;0 \<br>
+0.5 X_{t-1}+u_{t}, &amp; X_{t-1} \geq 0
+\end{array}\right.
+$$</p>
+<ul>
+<li>If $ X_{t-1}&lt;0, $ then there is a very strong tendency for $ X_{t} $ to jump to a positive value.</li>
+<li>If $ X_{t-1}&gt;0, $ then it will tend to take multiple time periods for $ X_{t} $ to reduce to a negative value.</li>
+</ul>
+<p>Therefore, there are more positive observations than negative observations.</p>
+<p>The Momentum Threshold Autoregressive (MTAR) Model</p>
+<p>$$
+X_{t}=\left{\begin{array}{ll}
+\alpha_{1} X_{t-1}+u_{t}, &amp; \Delta X_{t-1}&lt;0 \<br>
+\alpha_{2} X_{t-1}+u_{t}, &amp; \Delta X_{t-1} \geq 0
+\end{array}\right.
+$$</p>
+<p>Self-Exciting Threshold Autoregressive (SETAR) Model</p>
+<p>We consider a more general case as
+$$
+X_{t}=\alpha_{0}^{(s)}+\sum_{j=1}^{p} \alpha_{j}^{(s)} X_{t-j}+h^{(s)} u_{t} \text { if } X_{t-d} \in\left(r_{s-1}, r_{s}\right]
+$$</p>
+<p>for $ s=1,2, \ldots, M, $ where $ {s}_{s=1}^{M} $ are different states.</p>
+<p>Since **the threshold or regime change is generated by $ \left{X_{t}\right} $ itself** rather than by other variables, we call it a Self-Exciting Threshold Autoregressive model.</p>
+<p>Example: Managed Foreign Exchange Rates with Floors and Ceilings</p>
+<p>$$
+X_{t}=\left{\begin{array}{cc}
+a+u_{t}^{(1)} &amp; \text { if } X_{t-1} \leq a \<br>
+X_{t-1}+u_{t}^{(2)} &amp; \text { if } a&lt;X_{t-1}&lt;b \<br>
+b+u_{t}^{(3)} &amp; \text { if } X_{t-1} \geq b
+\end{array}\right.
+$$</p>
+<p>If-Exciting Threshold Autoregressive (SETAR) Model</p>
+<p>Example: U.S. quarterly real GNP from 1947:2 to 1991:1.
+$$
+X_{t}=\left{\begin{array}{cc}
+-0.015-1.076 X_{t-1}+\epsilon_{1 t}, &amp; X_{t-1} \leq X_{t-2} \leq 0 \<br>
+0.630 X_{t-1}-0.756 X_{t-2}+\epsilon_{2 t}, &amp; X_{t-1}&gt;X_{t-2}, X_{t-2} \leq 0 \<br>
+0.006+0.438 X_{t-1}+\epsilon_{3 t}, &amp; X_{t-1} \leq X_{t-2}, X_{t-2}&gt;0 \<br>
+0.433 X_{t-1}+\epsilon_{4 t}, &amp; X_{t-1}&gt;X_{t-2}&gt;0
+\end{array}\right.
+$$</p>
+<p>Remarks:</p>
+<ul>
+<li>Regime 1 : a recession period in which the economy changed from a contraction to an even worse one. The negative explosive nature of the regression function in this regime indicates the economy usually recovers quickly from the recession.</li>
+<li>Regime 2: a period in which the economy was in contraction but improving. Here, the regression function tends to be positive, suggesting that the economy is more likely to grow continuously out of recession once a recovery has started.</li>
+<li>Regime 3: a period in which the economy was reasonable but the growth declined.</li>
+<li>Regime 4: an expansion period in which the economy became
+stronger.</li>
+</ul>
+<p>Teräsvirta (1994, JASA)</p>
+<p>$$
+X_{t}=\left(\alpha_{00}+\sum_{j=1}^{p} \alpha_{0 j} X_{t-j}\right)+F\left(\frac{X_{t-d}-c}{\gamma}\right)\left(\alpha_{10}+\sum_{j=1}^{p} \alpha_{1 j} X_{t-j}\right)+u_{t}
+$$</p>
+<p>where $ d $ is the delay parameter, $ c $ and $ \gamma $ are parameters representing the location and scale of regime transition, and $ F(.) $ is a smooth transition function, which is usually a continuous cumulative distribution function.</p>
+<p>Examples of $ F(.) $ include the $ \mathrm{N}(0,1) \mathrm{CDF}, $ the logistic function, and the
+exponential CDF.
+Smooth Transition AR (STAR) Model
+Logistic function
+$$
+F(z)=\frac{1}{1+e^{-\gamma(z-c)}}, \quad-\infty&lt;z&lt;\infty
+$$</p>
+<p>where $ c $ determines the location of regime transition, while $ \gamma $ determines
+the smoothness of the regime shift.</p>
+<p>Exponential function</p>
+<p>$$
+F(z)=1-\frac{1}{e^{-\gamma(z-c)^{2}}}, \quad-\infty&lt;z&lt;\infty
+$$</p>
+<p>where $ c $ determines the location of regime transition, while $ \gamma $ determines
+the smoothness of the regime shift.
+Exponentitial
+0
+Financial Economptrics - Part III
+Markov-Chain Regime Switching Model
+Suppose the time series $ \left{S_{t}\right} $ follows a Markov chain on a finite number of
+states, say, $ {1,2, \ldots, M} $ with transition probability</p>
+<p>$$
+\operatorname{Pr}\left(S_{t}=j \mid S_{t-1}=i\right)=p_{i j}, \quad i, j=1, \ldots, M
+$$</p>
+<p>such that $ \sum_{j=1}^{M} p_{i j}=1 $ for all $ i=1,2, \ldots, M $ Remarks:
+(i) The state variable $ S_{t} $ is not observable.
+(ii) Here, the transition probabilities $ p_{i j} $ are assumed to be constant over
+time.</p>
+<p>Example: A Two-Stage Regime Switching Model</p>
+<p>$$
+X_{t}=\left{\begin{array}{ll}
+a_{0}+\sum_{j=1}^{p} a_{j} X_{t-j}+u_{1 t} &amp; \text { if } S_{t}=1 \<br>
+b_{0}+\sum_{j=1}^{p} b_{j} X_{t-j}+u_{2 t} &amp; \text { if } S_{t}=2
+\end{array}\right.
+$$</p>
+<p>where the state variable $ S_{t} $ assumes values {1,2} and follows afirst order
+Markov chain with transition probabilities</p>
+<p>$$
+\operatorname{Pr}\left(S_{t}=2 \mid S_{t-1}=1\right)=p_{12}, \operatorname{Pr}\left(S_{t}=1 \mid S_{t-1}=2\right)=p_{21}
+$$
+The innovations $ \left{u_{1 t}\right} $ and $ \left{u_{2 t}\right} $ are i.i.d. with mean zero and variances
+$ \sigma_{1}^{2} $ and $ \sigma_{2}^{2} $ respectively.
+Functional Coefficient Autoregressive Model
+Priestley $ (1988), $ and Chen and Tsay $ (1993 \mathrm{a}) $</p>
+<p>$$
+X_{t}=a_{0}\left(X_{t-d}\right)+\sum_{j=1}^{p} a_{j}\left(X_{t-d}\right) X_{t-j}+u_{t}
+$$</p>
+<p>Remarks:
+(i) This is a semiparametric model because the functional forms for the
+$ a_{j}(.) $ are not parametrized. Obviously, the FCAR model is more flexible
+than the SETAR model. Most nonlinear time series models discussed
+earlier are special cases of the FCAR model.
+(ii) When $ a_{j}(.) $ is a smooth function for all $ \mathrm{j}=0,1, \ldots, \mathrm{p}, $ this model can be
+considered as a special case of threshold autoregressive model with an
+infinite number of threshold states which vary continuously.</p>
+<p>Priestley (1988), and Chen and Tsay (1993a)</p>
+<p>$$
+X_{t}=a_{0}\left(X_{t-d}\right)+\sum_{j=1}^{p} a_{j}\left(X_{t-d}\right) X_{t-j}+u_{t}
+$$</p>
+<p>Remarks:
+(iii) It can be used to model the processes where mean-reverting speeds
+are different.
+(iv) It can be used to test whether the factor in the CAMP model is
+time-varying.
+Time-varying Volatility Model
+Suppose that</p>
+<p>$$
+r_{t}=c+\sigma(t / T) \epsilon_{t}
+$$</p>
+<p>for $ t=1,2, \ldots, T, $ where $ \sigma(t / T) $ is a function defined on [0,1] and $ E\left[\epsilon_{t}\right]=0, E\left[\epsilon_{t}^{2}\right]=1 . $ To estimate the nonparametric function, we have</p>
+<p>$$
+\left(r_{t}-c\right)^{2}=\sigma^{2}(t / T)+\sigma^{2}(t / T)\left(\epsilon_{t}^{2}-1\right)=\sigma(t / T)^{2}+\eta_{t}
+$$</p>
+<p>where $ \eta_{t}=\epsilon_{t}^{2}-1 $</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/4.-nonlinear-autoregressive-models/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/5.-factor-model-in-finance/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/3.-garch-type-models/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

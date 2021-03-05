@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="3. Random Variable and Univariate Distributions [Toc]
+3.1 Random Variables Definition (Random Variable): A random variable $ X(\cdot) $ is a $ \mathcal{B} $ -measurable mapping from the sample space $ S $ to $ \mathbb{R} $ such that to each $ s \in S, $ there exists a corresponding unique real number $ X(s) $ (i.e. point function).
+Remarks: For each outcome $ s \in S, X(s) $ is a real number." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="3. Random Variable and Univariate Distributions [Toc]
+3.1 Random Variables Definition (Random Variable): A random variable $ X(\cdot) $ is a $ \mathcal{B} $ -measurable mapping from the sample space $ S $ to $ \mathbb{R} $ such that to each $ s \in S, $ there exists a corresponding unique real number $ X(s) $ (i.e. point function).
+Remarks: For each outcome $ s \in S, X(s) $ is a real number."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/" /><link rel="prev" href="https://henrywu97.github.io/4.-important-probability-distributions/" /><link rel="next" href="https://henrywu97.github.io/2.-foundation-of-probability-theory/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/3.-random-variable-and-univariate-distributions\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  7616 ,
+        "url": "https:\/\/henrywu97.github.io\/3.-random-variable-and-univariate-distributions\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/3.-random-variable-and-univariate-distributions/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/3.-random-variable-and-univariate-distributions/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;7616 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;36 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#31-random-variables">3.1 Random Variables</a></li>
+    <li><a href="#32-cumulative-distribution-function">3.2 Cumulative Distribution Function</a></li>
+    <li><a href="#33-discrete-random-variable">3.3 Discrete Random Variable</a></li>
+    <li><a href="#34-continuous-random-variables">3.4 Continuous Random Variables</a></li>
+    <li><a href="#35-functions-of-random-variable">3.5 Functions of Random Variable</a>
+      <ul>
+        <li><a href="#351-discrete-case">3.5.1 Discrete Case</a></li>
+        <li><a href="#352-continuous-case">3.5.2 Continuous Case</a>
+          <ul>
+            <li><a href="#method-1-the-cdf-approach">Method 1: The CDF approach</a></li>
+            <li><a href="#method-2-the-transformation-approach">Method 2: The transformation approach</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#36-mathematical-expectations">3.6 Mathematical Expectations</a></li>
+    <li><a href="#37-moments">3.7 Moments</a>
+      <ul>
+        <li><a href="#371-mean">3.7.1 Mean</a></li>
+        <li><a href="#372-variance">3.7.2 Variance</a></li>
+        <li><a href="#373-skewness">3.7.3 Skewness</a></li>
+        <li><a href="#374-kurtosis">3.7.4 Kurtosis</a></li>
+      </ul>
+    </li>
+    <li><a href="#38-quantile">3.8 Quantile</a></li>
+    <li><a href="#39-moment-generating-function">3.9 Moment Generating Function</a>
+      <ul>
+        <li><a href="#391-discrete-distributions">3.9.1 Discrete Distributions</a></li>
+        <li><a href="#392-continuous-distributions">3.9.2 Continuous Distributions</a></li>
+        <li><a href="#393-uniqueness-of-mgf">3.9.3 Uniqueness of MGF</a></li>
+      </ul>
+    </li>
+    <li><a href="#310-characteristic-function">3.10 Characteristic Function</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="3-random-variable-and-univariate-distributions">3. Random Variable and Univariate Distributions</h1>
+<p>[Toc]</p>
+<h2 id="31-random-variables">3.1 Random Variables</h2>
+<p><strong>Definition (Random Variable)</strong>: A random variable $ X(\cdot) $ is a $ \mathcal{B} $ -measurable mapping from the sample space $ S $ to $ \mathbb{R} $ such that to each $ s \in S, $ there exists a corresponding unique real number $ X(s) $ (i.e. point function).</p>
+<p><strong>Remarks</strong>: For each outcome $ s \in S, X(s) $ is a real number. The collection of all possible values that the random variable $ X $ can take, also called the range of $ X(\cdot), $ constitutes a new sample space, denoted as $ \Omega $.</p>
+<p><strong>Example</strong>: Toss a coin three times.
+$$
+S={\mathrm{HHH}, \mathrm{HHT}, \mathrm{HTH}, \mathrm{THH}, \mathrm{HTT}, \mathrm{THT}, \mathrm{TTH}, \mathrm{TTT}}
+$$</p>
+<p>The associated $ \sigma $-algebra is $ \mathcal{B}={\text { all subsets of } S} . $ Define $ X(s) $ as &ldquo;number of heads in $ s &quot; $, then</p>
+<p>$$
+\begin{array}{l}
+X(\mathrm{T} \mathrm{T} \mathrm{T})=0, \quad X(\mathrm{T} \mathrm{TH})=X(\mathrm{THT})=X(\mathrm{HTT})=1 \<br>
+X(\mathrm{HHT})=X(\mathrm{HTH})=X(\mathrm{THH})=2, \quad X(\mathrm{HHH})=3
+\end{array}
+$$</p>
+<p>For any set $ A \in \mathcal{B}<em>{\Omega}, $ where $ \mathcal{B}</em>{\Omega} $ is a $ \sigma $ -field associated with $ \Omega, $ we can define a probability function $ P_{X}: \mathcal{B}_{\Omega} \rightarrow \mathbb{R} $ in terms of the original probability function $ P(\cdot) $ as</p>
+<p>$$
+P_{X}(A)=P({s \in S: X(s) \in A})
+$$</p>
+<ul>
+<li>$ P_{X}(\cdot), $ so-called the induced probability function, is indeed a probability function.</li>
+<li>$ P_{X}(\Omega)=P(S)=1 $</li>
+<li>Require additional condition to ensure that</li>
+</ul>
+<p>$$
+{s \in S: X(s) \in A} \in \mathcal{B}
+$$</p>
+<p><strong>Definition (Measurable Function)</strong>: A function $ X: S \rightarrow \mathbb{R} $ is $ \mathcal{B} $ -measurable if for every real number $ x $, the set $ {s \in S: X(s) \leqslant x} \in \mathcal{B} $</p>
+<ul>
+<li>
+<p>This is a regulation condition to guarantee that $ P({s \in S: X(s) \leqslant x}) $ exists.</p>
+</li>
+<li>
+<p>Equivalently, $ X $ is $ \mathcal{B} $ -measurable if $ {s \in S: X(s) \in B} \in \mathcal{B} $ for every Borel set $ B $.</p>
+</li>
+<li>
+<p>Let $ X(\cdot) $ and $ Y(\cdot) $ be $ \mathcal{B} $ -measurable functions and $ c \in \mathbb{R} $.</p>
+<ul>
+<li>Then $ c X(\cdot), X(\cdot)+Y(\cdot), X(\cdot) Y(\cdot), $ and $ |X(\cdot)| $ are $ \mathcal{B} $ -measurable;</li>
+<li>$ X(\cdot) / Y(\cdot) $ is $ \mathcal{B} $ -measurable if $ Y(s) \neq 0 $ for all $ s $</li>
+</ul>
+</li>
+<li>
+<p>Let $ X_{1}(\cdot), X_{2}(\cdot), \ldots $ be a sequence of $ \mathcal{B} $ -measurable functions. Then</p>
+<ul>
+<li>$ \min \left{X_{1}(\cdot), \ldots, X_{n}(\cdot)\right} $ and $ \max \left{X_{1}(\cdot), \ldots, X_{n}(\cdot)\right} $ are
+$ \mathcal{B} $-measurable;</li>
+<li>if $ X(\cdot)=\lim <em>{n \rightarrow \infty} X</em>{n}(\cdot) $ exists then $ X(\cdot) $ is $ \mathcal{B} $ -measurable.</li>
+</ul>
+</li>
+<li>
+<p>Let $ X(\cdot) $ be a $ \mathcal{B} $ -measurable function and $ h(\cdot) $ be a Borel-measurable real valued function, then $ h(X(\cdot)) $ is also $ \mathcal{B} $ -measurable.</p>
+</li>
+</ul>
+<h2 id="32-cumulative-distribution-function">3.2 Cumulative Distribution Function</h2>
+<p><strong>Definition (Cumulative Distribution Function)</strong>: The cumulative distribution function $ (\mathrm{CDF}) $ of a random variable $ X $ is defined as
+$$
+F_{X}(x)=P(X \leqslant x) \text { for all } x \in \mathbb{R}
+$$</p>
+<p><strong>Example</strong>: Toss a coin three times. Define $ X(s) $ as &ldquo;number of heads in $ s^{\prime \prime} $ Then,
+$$
+P(X=0)=\frac{1}{8}, P(X=1)=P(X=2)=\frac{3}{8}, P(X=3)=\frac{1}{8}
+$$</p>
+<p>and therefore,</p>
+<p>$$
+F_{X}(x)=\left{\begin{array}{ll}
+0 &amp; \text { if } x&lt;0 \<br>
+1 / 8 &amp; \text { if } 0 \leqslant x&lt;1 \<br>
+1 / 2 &amp; \text { if } 1 \leqslant x&lt;2 \<br>
+7 / 8 &amp; \text { if } 2 \leqslant x&lt;3 \<br>
+1 &amp; \text { if } x \geqslant 3
+\end{array}\right.
+$$</p>
+<p><strong>Example</strong>: The experiment consists of shooting once at a circular target $ T $ of radius $ r . $ Assume that it is certain that the target will be hit, and the probability of hitting a particular section $ A $ is the ratio of the area of $ A $ to the area of $ T $. Define random variable $ X(s) $ as the distance between the hitting point $ s $ and the center.</p>
+<ul>
+<li>Clearly, $ 0 \leqslant X \leqslant r . $ So $ F_{X}(x)=0 $ for $ x&lt;0 $ and $ F_{X}(x)=1 $ for $ x&gt;r $</li>
+<li>For $ 0 \leqslant x \leqslant r $</li>
+</ul>
+<p>$$
+F_{X}(x)=P(X \leqslant x)=\left(\pi x^{2}\right) /\left(\pi r^{2}\right)=x^{2} / r^{2}
+$$</p>
+<p>Properties of CDF:</p>
+<ol>
+<li>$ F x(x) $ is non-decreasing, i.e. $ F_X \left(x_{1}\right) \leqslant F_X \left(x_{2}\right) $ for any $ x_{1}&lt;x_{2} $</li>
+<li>$ \lim <em>{x \rightarrow-\infty} F</em>{X}(x)=0, \lim <em>{x \rightarrow+\infty} F</em>{X}(x)=1 $</li>
+<li>$ F_{X}(x) $ is right-continuous, i.e. for all $ x $</li>
+</ol>
+<p>$$
+\lim <em>{\delta \rightarrow 0^{+}} F</em>{X}(x+\delta)=F_{X}(x)
+$$</p>
+<p><strong>Remark</strong>:</p>
+<ul>
+<li>If a function $ F(\cdot) $ satisfies properties (1),(2) and (3), then there is a random variable $ X^{<em>} $ such that $ P\left(X^{</em>} \leqslant x\right)=F(x) $</li>
+<li>In some textbooks, the CDF is defined as $ F_{X}(x)=P(X&lt;x) $. Then $ F_{X}(x) $ is left-continuous under this definition.</li>
+</ul>
+<p>Properties of CDF:</p>
+<ul>
+<li>$ P(a&lt;X \leqslant b)=F_{X}(b)-F_{X}(a) $ for $ a&lt;b $</li>
+<li>$ P(X&gt;b)=1-F_{X}(b) $</li>
+<li>Suppose $ F_{1}(x) $ and $ F_{2}(x) $ are two CDF&rsquo;s, then for $ 0&lt;p&lt;1 $ $ F(x)=p F_{1}(x)+(1-p) F_{2}(x) $ is also a $ C D F $</li>
+</ul>
+<p><strong>Definition (Identical Distribution)</strong>: Two random variables $ X $ and $ Y $ are identically distributed if for every Borel set $ B $, $ P(X \in B)=P(Y \in B) $</p>
+<p><strong>Theorem</strong>: Two random variables $ X $ and $ Y $ are identically distributed if and only if $ F_{X}(x)=F_{Y}(x) $ for all $ x \in \mathbb{R} $</p>
+<h2 id="33-discrete-random-variable">3.3 Discrete Random Variable</h2>
+<p><strong>Definition (Discrete Random Variable)</strong>: If a random variable $ X $ can only take a countable number of values, then $ X $ is called a discrete random variable (DRV).</p>
+<p><strong>Definition (Probability Mass Function)</strong>: The probability mass function $ (\mathrm{PMF}) $ of a DRV $ X $ is defined as
+$$
+f_{X}(x)=P(X=x) \text { for all } x \in \mathbb{R}
+$$</p>
+<p><strong>Definition (Support of DRV)</strong>: The collection of the points at which a DRV $ X $ has a positive probability is called the support of $ X $, denoted as
+$$
+\text { Support }(X)=\left{x \in \mathbb{R}: f_{X}(x)&gt;0\right}
+$$</p>
+<p>Properties of PMF:</p>
+<ul>
+<li>$ 0 \leqslant f_{X}(x) \leqslant 1 $ for all $ x \in \mathbb{R} $</li>
+<li>$ F_{X}(x)=\sum_{y \in \text { Support }(X), y \leqslant x} f_{X}(y) $</li>
+<li>$ \sum_{y \in \text { Support }(X)} f_{X}(y)=1 $</li>
+<li>$ f_{X}(x)=F_{X}(x)-\lim _{\delta \rightarrow 0^{+}} F_{X}(x-\delta) $</li>
+</ul>
+<p><strong>Example (Discrete Uniform Distribution)</strong>: A DRV $ X $ follows uniform distribution $ U(n) $ if its PMF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+1 / n &amp; \text { if } x=1,2, \ldots, n \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>The CDF of uniform distributed DRV $ X $ is</p>
+<p>$$
+F_{X}(x)=\left{\begin{array}{ll}
+0 &amp; \text { if } x&lt;1 \<br>
+i / n &amp; \text { if } i \leqslant x&lt;i+1, i=1, \ldots, n-1 \<br>
+1 &amp; \text { if } x \geqslant n
+\end{array}\right.
+$$</p>
+<p><strong>Example (Bernoulli Distribution)</strong>: A DRV $ X $ follows a Bernoulli(p) $ (0&lt;p&lt;1) $ distribution if its PMF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+p &amp; \text { if } x=1 \<br>
+1-p &amp; \text { if } x=0
+\end{array}\right.
+$$</p>
+<p><strong>Example (Binomial Distribution)</strong>: A DRV $ X $ follows a binomial $ B(n, p) $ distribution if its PMF
+$$
+f_{X}(x)=C_{n}^{x} p^{x}(1-p)^{n-x}, \quad x=0,1, \ldots, n
+$$</p>
+<p>Remark: Toss a coin $ n $ times independently. Each time the head has probability $ p . $ The total number of heads follows $ B(n, p) $ distribution.</p>
+<p><strong>Example (Poisson Distribution)</strong>: A DRV $ X $ follows a Poisson$ (\lambda)(\lambda&gt;0) $ distribution if its PMF
+$$
+f_{X}(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}, \quad x=0,1,2, \ldots
+$$</p>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>Support of Poisson distribution is an infinite countable set.</li>
+<li>$ \sum_{x=0}^{\infty} f_{X}(x)=e^{-\lambda} \sum_{x=0}^{\infty} \lambda^{x} / x !=e^{-\lambda} e^{\lambda}=1 $</li>
+<li>In a Poisson process with intensity $ \lambda, $ the total number of occurrences over $ (0, t] $ follows a Poisson $ (\lambda t) $ distribution.</li>
+<li><strong>Poisson distribution can be used to describe the number of jumps in financial markets in a certain period</strong>.</li>
+</ul>
+<p><strong>Theorem (Poisson Limit Theorem)</strong>: Denote $ p_{n} $ as the probability that the event $ A $ occurs in a random experiment and it is related to the number of total experiments $ n $. $ X $ is the number that $ A $ occurs in $ n $ experiments. If $ n p_{n} \rightarrow \lambda $ as $ n \rightarrow \infty, $ then we have
+$$
+P(X=k) \rightarrow \frac{\lambda^{k}}{k !} e^{-\lambda}
+$$</p>
+<p><strong>Example (Geometric Distribution)</strong>: The geometric distribution is the probability distribution of the number of Bernoulli trials required to obtain the first success. The PMF of a geometric distributed DRV $ X $ is
+$$
+f_{X}(x)=p(1-p)^{x-1}
+$$</p>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>The geometric distribution is the simplest of <strong>the waiting time distributions</strong>.</li>
+<li>The geometric distribution has the so-called &ldquo;memoryless&rdquo; property in the sense that for integers $ s&gt;t, $ we have</li>
+</ul>
+<p>$$
+P(X&gt;s \mid X&gt;t)=P(X&gt;s-t)
+$$</p>
+<h2 id="34-continuous-random-variables">3.4 Continuous Random Variables</h2>
+<p><strong>Definition (Continuous Random Variable)</strong>: A random variable is called continuous (CRV) if its cumulative distribution function $ F_{X}(x) $ is continuous for all $ x \in \mathbb{R} $</p>
+<p><strong>Definition (Absolute Continuity &amp; Probability Density Function)</strong>: The cumulative distribution function $ F_{X}(x) $ of a random variable $ X $ is called **absolutely continuous** with respect to Lebesgue measure if there exists a Borel-measurable function $ f_{X}(\cdot) $ such that
+$$
+F_{X}(x)=\int_{-\infty}^{x} f_{X}(u) \mathrm{d} u \quad \text { for all } x \in \mathbb{R}
+$$</p>
+<p>The function $ f_{X}: \mathbb{R} \rightarrow \mathbb{R} $ is called a probability density function (PDF) of $ X $.</p>
+<ul>
+<li>An absolutely continuous CDF is continuous; For some continuous CDF, absolute continuity may not hold.</li>
+<li>For those $ x $ &rsquo;s where $ F_X(x) $ is differentiable, $ f_{X}(x)=F_{X}^{\prime}(x) $.</li>
+</ul>
+<p><strong>Theorem (Properties of PDF)</strong>: A function $ f_{X}(x) $ is a PDF of a CRV $ X $ if and only if</p>
+<ol>
+<li>$ f_{X}(x) \geqslant 0 $ for almost everywhere $ x, $ and</li>
+<li>$ \int_{-\infty}^{\infty} f_{X}(x) d x=1 $</li>
+</ol>
+<p>Remark:</p>
+<ul>
+<li>For any nonnegative function $ g(x) $ with finite integral, i.e. $ 0&lt;\int_{-\infty}^{\infty} g(x) \mathrm{d} x&lt;\infty, f(x)=g(x) / \int_{-\infty}^{\infty} g(u) \mathrm{d} u $ is a $ \mathrm{PDF} $, where $ \int_{-\infty}^{\infty} g(u) \mathrm{d} u $ is called the normalizing constant.</li>
+<li>For a given continuous random variable, CDF is unique but
+$ \mathrm{PDF} $ is not.</li>
+<li>The probability density functions of a continuous random variable can be different on a set of measure $ 0 . $ The value of
+<strong>the PDF can be changed arbitrarily on a sequence of countable points without altering the distribution</strong> of $ X . $ For example,
+$ f_{X}(x)=\left{\begin{array}{ll}e^{-x} &amp; \text { if } x&gt;0, \ 0 &amp; \text { otherwise },\end{array} \text { and } f_{X}(x)=\left{\begin{array}{ll}e^{-x} &amp; \text { if } x \geqslant 0 \ 0 &amp; \text { otherwise }\end{array}\right.\right. $
+represent the same distribution.</li>
+</ul>
+<p><strong>Definition (Support of CRV)</strong>: The support of a CRV $ X $ with PDF $ f_{X}(x) $ is defined as
+$$
+\text { Support }(X)=\left{x \in \mathbb{R}: f_{X}(x)&gt;0\right}
+$$</p>
+<p><strong>Example (Continuous Uniform Distribution)</strong>: A CRV $ X $ follows a uniform distribution on $ [a, b] $ if its PDF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{1}{b-a} &amp; \text { if } a \leqslant x \leqslant b \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p><strong>Example (Normal Distribution)</strong>: A normally distributed random variable $ X \sim N\left(\mu, \sigma^{2}\right) $ has the PDF
+$$
+f_{X}(x)=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left[-\frac{(x-\mu)^{2}}{2 \sigma^{2}}\right]
+$$</p>
+<p>where $ -\infty&lt;\mu&lt;\infty $ and $ \sigma&gt;0 $.</p>
+<table>
+<thead>
+<tr>
+<th>PDF of Normal Distributions</th>
+<th>CDF of Normal Distributions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203436.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203436.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203436.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203436.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203436.png"
+        title="20200730203436.png" /></div></td>
+<td>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203456.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203456.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203456.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203456.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203456.png"
+        title="20200730203456.png" /></div></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example (Log-normal Distribution)</strong>: $ X $ follows a log-normal $ \left(\mu, \sigma^{2}\right) $ distribution if its PDF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{1}{\sqrt{2 \pi} \sigma x} \exp \left[-\frac{(\ln x-\mu)^{2}}{2 \sigma^{2}}\right] &amp; \text { if } x&gt;0 \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>If $ X \sim $ log-normal $ \left(\mu, \sigma^{2}\right), $ then $ \ln X \sim N\left(\mu, \sigma^{2}\right) $.</p>
+<p><strong>Example (Exponential Distribution)</strong>: CRV $ X $ follows Exponential $ (\beta) $ distribution if its PDF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{1}{\beta} e^{-x / \beta} &amp; \text { if } x&gt;0 \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>where $ \beta&gt;0 $.</p>
+<p><strong>Remark</strong>:</p>
+<ul>
+<li>The PDF can be written in expression with $ \lambda=1 / \beta $</li>
+<li>Exponential distribution is popular in modeling <strong>duration</strong> between financial events or economic events because of its
+&ldquo;memoryless&rdquo; property:</li>
+</ul>
+<p>$$
+P(X&gt;t+s \mid X&gt;t)=P(X&gt;s), \quad s, t&gt;0
+$$</p>
+<p><strong>Example (Gamma Distribution)</strong>: A CRV $ X $ follows a Gamma $ (\alpha, \beta) $ distribution if its PDF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha-1} e^{-x / \beta} &amp; \text { if } x&gt;0 \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>where $ \alpha, \beta&gt;0 $ and $ \Gamma(\alpha)=\int_{0}^{\infty} t^{\alpha-1} e^{-t} \mathrm{d} t $ is the gamma function.</p>
+<ul>
+<li>Two parameters: shape $ (\alpha) $ and scale $ (\beta) $</li>
+<li>Gamma $ (1, \beta)= $ Exponential $ (\beta) $</li>
+<li>Gamma $ (v / 2,2)=\chi^{2}(v) $</li>
+</ul>
+<p><strong>Example (Beta Distribution)</strong>: A CRV $ X $ follows a Beta $ (\alpha, \beta) $ distribution if its PDF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{1}{\mathrm{B}(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1} &amp; \text { if } 0&lt;x&lt;1 \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>where $ \alpha, \beta&gt;0 $ and $ \mathrm{B}(\alpha, \beta)=\int_{0}^{1} t^{\alpha-1}(1-t)^{\beta-1} \mathrm{d} t $ is the beta
+function.</p>
+<ul>
+<li>The support of beta distribution is [0,1]</li>
+<li>$ \operatorname{Beta}(1,1)=U[0,1] $</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>PDF of gamma distribution</th>
+<th>PDF of beta distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203555.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203555.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203555.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203555.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203555.png"
+        title="20200730203555.png" /></div></td>
+<td>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203804.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203804.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203804.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203804.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730203804.png"
+        title="20200730203804.png" /></div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="35-functions-of-random-variable">3.5 Functions of Random Variable</h2>
+<p>Suppose $ g: \mathbb{R} \rightarrow \mathbb{R} $ is a Borel-measurable function (i.e. the preimage of any Borel set under $ g $ is a Borel set), then $ Y=g(X) $ is also a random variable. What is the distribution function of the new
+random variable $ Y $?</p>
+<h3 id="351-discrete-case">3.5.1 Discrete Case</h3>
+<p>If $ X $ is a discrete random variable with PMF $ f_{X}(x), $ then the PMF of $ Y $ can by obtained by using
+$$
+f_{Y}(y)=\sum_{x \in \Omega_{X}(y)} f_{X}(x)
+$$</p>
+<p>where $ \Omega_{X}(y)=\left{x \in \Omega_{X}: g(x)=y\right} $ is the set of all possible values of $ x $ in the sample space $ \Omega x $ of $ X $ such that $ g(x)=y $.</p>
+<p>Moreover, if function $ g: \mathbb{R} \rightarrow \mathbb{R} $ be strictly <strong>monotonic</strong>
+$$
+f_{Y}(y)=\sum_{x \in \Omega_{X}(y)} f_{X}(x)= \sum_{x \in g^{-1}(y)} f_{X}(x) 
+$$
+for y in support.</p>
+<p><strong>Example</strong>: Suppose random variable $ X $ has the distribution</p>
+<table>
+<thead>
+<tr>
+<th>$x$</th>
+<th>-2</th>
+<th>-1</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ f_X(x) $</td>
+<td>0.1</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.2</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<p>For function $ Y=X^2 $, the distribution is</p>
+<table>
+<thead>
+<tr>
+<th>$ y $</th>
+<th>0</th>
+<th>1</th>
+<th>4</th>
+<th>9</th>
+<th>16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ f_Y(y) $</td>
+<td>0.1</td>
+<td>0.1+0.2</td>
+<td>0.1+0.1</td>
+<td>0.2</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example (Binomial transformation)</strong>: a CRV $ X $ has a binomial distribution and its PMF is
+$$
+f_{X}(x)=P(X=x)=\left(\begin{array}{l}
+n \<br>
+x
+\end{array}\right) p^{x}(1-p)^{n-x}
+$$</p>
+<p>Consider the random variable $Y=g(x)=n-X $,</p>
+<p>$$
+\begin{aligned}
+f_{Y}(y) &amp;=\sum_{x \in g^{-1}(y)} f_{X}(x) \<br>
+&amp;=f_{X}(n-y) \<br>
+&amp;=\left(\begin{array}{c}
+n \<br>
+n-y
+\end{array}\right) p^{n-y}(1-p)^{n-(n-y)} \<br>
+&amp;=\left(\begin{array}{l}
+n \<br>
+y
+\end{array}\right)(1-p)^{y} p^{n-y}
+\end{aligned}
+$$</p>
+<h3 id="352-continuous-case">3.5.2 Continuous Case</h3>
+<h4 id="method-1-the-cdf-approach">Method 1: The CDF approach</h4>
+<p>The basic idea is first to find the CDF $ F_{Y}(y) $ of $ Y $ and then its $ \mathrm{PDF} $ by differentiation, $ f_{Y}(y)=F_{Y}^{\prime}(y) $</p>
+<ol>
+<li>Identify the possible values of $ Y $ (i.e. the support of $ Y $ ). For
+this purpose, it is useful to plot the function $ g(x) $</li>
+<li>Find $ F_{Y}(y):  F_{Y}(y)=P(Y \leqslant y)=P(g(X) \leqslant y)  $</li>
+<li>Differentiate the CDF $ F_{Y}(y) $ with respect to $ y $ :</li>
+</ol>
+<p>$$
+f_{Y}(y)=F_{Y}^{\prime}(y)
+$$</p>
+<p>If function $ g: \mathbb{R} \rightarrow \mathbb{R} $ be strictly <strong>monotonic</strong>, let</p>
+<p>$$
+\mathcal{X}=\left{x: f_{X}(x)&gt;0\right} \text{ and } \mathcal{Y}={y: y=g(x) \text { for some } x \in \mathcal{X}} 
+$$</p>
+<p>Monotone: one-to-one mapping</p>
+<ul>
+<li>Increasing</li>
+</ul>
+<p>$$
+{x \in \mathcal{X}: g(x) \leq y}=\left{x \in \mathcal{X}: g^{-1}(g(x)) \leq g^{-1}(y)\right}=\left{x \in \mathcal{X}: x \leq g^{-1}(y)\right} 
+$$</p>
+<ul>
+<li>Decreasing</li>
+</ul>
+<p>$$
+{x \in \mathcal{X}: g(x) \leq y}=\left{x \in \mathcal{X}: g^{-1}(g(x)) \leq g^{-1}(y)\right}=\left{x \in \mathcal{X}: x \geq g^{-1}(y)\right} 
+$$</p>
+<p>Transformation (Increasing)</p>
+<p>$$
+F_{Y}(y)=\int_{\left{x \in \mathcal{X}: x \leq g^{-1}(y)\right}} f_{X}(x) d x=\int_{-\infty}^{g^{-1}(y)} f_{X}(x) d x=F_{X}\left(g^{-1}(y)\right)
+$$</p>
+<p>Transformation (decreasing)</p>
+<p>$$
+F_{Y}(y)=\int_{g^{-1}(y)}^{\infty} f_{X}(x) d x=1-F_{X}\left(g^{-1}(x)\right)
+$$</p>
+<p><strong>Theorem</strong>: Let $ X $ have cdf $ F_{X}(x), $ let $ Y=g(X), $ and let $ \mathcal{X} $ and $ \mathcal{Y} $ be defined as above.</p>
+<ol>
+<li>If $ g $ is an increasing function on $ \mathcal{X}, F_{Y}(y)=F_{X}\left(g^{-1}(y)\right) $ for $ y \in \mathcal{Y} $.</li>
+<li>If $ g $ is a decreasing function on $ \mathcal{X} $ and $ X $ is a continuous random variable, $ F_{Y}(y)=1-F_{X}\left(g^{-1}(y)\right) $ for $ y \in \mathcal{Y} $</li>
+</ol>
+<p><strong>Example</strong>: Suppose a CRV $ X $ has a PDF</p>
+<p>$$
+f_{X}(x)=\left{\begin{array}{ll}
+1 &amp; \text { if }-\frac{1}{2}&lt;x&lt;\frac{1}{2} \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>Find the PDF of the following $ Y $:</p>
+<ol>
+<li>$ Y=a+b X, b \neq 0 $</li>
+<li>$ Y=X^{2} $</li>
+<li>$ Y=|X| $</li>
+</ol>
+<ol>
+<li>$ X \sim U\left(-\frac{1}{2}, \frac{1}{2}\right), Y=a+b X $ with $ b \neq 0 $</li>
+</ol>
+<p>If $ b&gt;0, $ since Support $ (X)=\left(-\frac{1}{2}, \frac{1}{2}\right), $ the support of $ Y $ is given by $ a-\frac{b}{2}&lt;y&lt;a+\frac{b}{2} . $ So for $ y \in\left(a-\frac{b}{2}, a+\frac{b}{2}\right) $
+$$
+\begin{aligned}
+F_{Y}(y)&amp;=P(Y\leqslant y)=P(a+b X \leqslant y)=P\left(X \leqslant \frac{y-a}{b}\right) \<br>
+&amp;=F_X \left(\frac{y-a}{b}\right)=\int_{-\frac{1}{2}}^{\frac{y-a}{b}} f_{X}(x) \mathrm{d} x=\frac{y-a}{b}+\frac{1}{2}
+\end{aligned}
+$$</p>
+<p>then $ f_{Y}(y)=F_{Y}^{\prime}(y)=\frac{1}{b} $. Therefore,</p>
+<p>$$
+f_{Y}(y)=\left{\begin{array}{ll}
+\frac{1}{b} &amp; \text { if } a-\frac{b}{2}&lt;y&lt;a+\frac{b}{2} \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>Similarly, if $ b&lt;0, $ the support of $ Y $ is $ \left(a+\frac{b}{2}, a-\frac{b}{2}\right) . $ So for $ y \in\left(a+\frac{b}{2}, a-\frac{b}{2}\right) $,</p>
+<p>$$
+\begin{array}{c}
+F_{Y}(y)&amp;=P(a+b X \leqslant y)=P\left(X \geqslant \frac{y-a}{b}\right) \<br>
+&amp;=1-F x\left(\frac{y-a}{b}\right)=1-\left(\frac{y-a}{b}+\frac{1}{2}\right)
+\end{array}
+$$</p>
+<p>and then $ f_{Y}(y)=F_{Y}^{\prime}(y)=-\frac{1}{b} $. It follows that</p>
+<p>$$
+f_{Y}(y)=\left{\begin{array}{ll}
+-\frac{1}{b} &amp; \text { if } a+\frac{b}{2}&lt;y&lt;a-\frac{b}{2} \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<ol start="2">
+<li>$ x \sim U\left(-\frac{1}{2}, \frac{1}{2}\right), Y=X^{2} $</li>
+</ol>
+<p>Observe that $ 0 \leqslant x^{2}&lt;1 / 4 $ for $ x $ in Support $ (X), $ then $ F_{Y}(y)=0 $ if $ y&lt;0 $ and $ F_{Y}(y)=1 $ if $ y&gt;1 / 4 $. For $ y \in\left[0, \frac{1}{4}\right] $
+$$
+\begin{array}{c}
+F_{Y}(y)=P(Y \leqslant y)=P\left(X^{2} \leqslant y\right)=P(-\sqrt{y} \leqslant X \leqslant \sqrt{y}) \<br>
+=F_{X}(\sqrt{y})-F_{X}(-\sqrt{y})=\int_{-\sqrt{y}}^{\sqrt{y}} f_{X}(x) \mathrm{d} x=2 \sqrt{y}
+\end{array}
+$$</p>
+<p>By differentiation, $ f_{Y}(y)=\frac{1}{\sqrt{y}} . $ Therefore, we have</p>
+<p>$$
+f_{Y}(y)=\left{\begin{array}{ll}
+\frac{1}{\sqrt{y}} &amp; \text { if } 0&lt;y&lt;\frac{1}{4} \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<ol start="3">
+<li>$ X \sim U\left(-\frac{1}{2}, \frac{1}{2}\right), Y=|X| $</li>
+</ol>
+<p>Since the Support $ (X)=\left(-\frac{1}{2}, \frac{1}{2}\right), $ we have Support $ (Y)=\left[0, \frac{1}{2}\right) $ Thus, for $ 0 \leqslant y&lt;1 / 2 $,
+$$
+\begin{aligned}
+F_{Y}(y)=P(Y \leqslant y) &amp;=P(|X| \leqslant y)=P(-y \leqslant X \leqslant y) \<br>
+&amp;=F_{X}(y)-F_{X}(-y)=\int_{-y}^{y} f_{X}(x) \mathrm{d} x=2 y
+\end{aligned}
+$$</p>
+<p>By differentiation, $ f_{Y}(y)=2 $. It follows that</p>
+<p>$$
+f_{Y}(y)=\left{\begin{array}{ll}
+2 &amp; \text { if } 0 \leqslant y&lt;1 / 2 \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p><strong>Example</strong>: Random variable $ X $ follows double exponential (or Laplace) distribution if
+$$
+f_{X}(x)=\frac{1}{2} \alpha e^{-\alpha|x|}, \quad x \in \mathbb{R}
+$$</p>
+<p>where $ \alpha&gt;0 . $ Find the PDF of the following $ Y: $</p>
+<ol>
+<li>$ Y=|X| $</li>
+<li>$ Y=X^{2} $</li>
+</ol>
+<ol>
+<li>$ x $ has PDF $ f_{X}(x)=\frac{\alpha}{2} e^{-\alpha|x|}, Y=|X| $</li>
+</ol>
+<p>Since Support $ (Y)=[0, \infty), F_{Y}(y)=0 $ and therefore $ f_{Y}(y)=0 $ for
+$ y \leqslant 0 . $ For $ y&gt;0 $
+$$
+\begin{array}{c}
+F_{Y}(y)=P(|X| \leqslant y)=P(-y \leqslant X \leqslant y)=F_{X}(y)-F_{X}(-y) \<br>
+=\int_{-y}^{y} f_{X}(x) d x=\int_{-y}^{0} \frac{\alpha}{2} e^{\alpha x} d x+\int_{0}^{y} \frac{\alpha}{2} e^{-\alpha x} d x
+\end{array}
+$$</p>
+<p>By differentiation,</p>
+<p>$$
+f_{Y}(y)=-(-1) \frac{\alpha}{2} e^{-\alpha y}+\frac{\alpha}{2} e^{-\alpha y}=\alpha e^{-\alpha y}
+$$</p>
+<p>for $ y&gt;0 . $ Note $ Y=|X| $ follows exponential $ (1 / \alpha) $ distribution.</p>
+<ol start="2">
+<li>$ X $ has PDF $ f_{X}(x)=\frac{\alpha}{2} e^{-\alpha|x|}, Y=X^{2} $</li>
+</ol>
+<p>Again, Support $ (Y)=[0, \infty), $ so $ f_{Y}(y)=0 $ for $ y \leqslant 0 . $ For $ y&gt;0 $
+$$
+\begin{aligned}
+F_{Y}(y)=&amp; P\left(X^{2} \leqslant y\right)=P(-\sqrt{y} \leqslant X \leqslant \sqrt{y}) \<br>
+&amp;=\int_{-\sqrt{y}}^{\sqrt{y}} f_{X}(x) \mathrm{d} x=\int_{-\sqrt{y}}^{0} \frac{\alpha}{2} e^{\alpha x} \mathrm{d} x+\int_{0}^{\sqrt{y}} \frac{\alpha}{2} e^{-\alpha x} \mathrm{d} x
+\end{aligned}
+$$</p>
+<p>By differentiation,</p>
+<p>$$
+f_{Y}(y)=-\left(-\frac{1}{2 \sqrt{y}}\right) \frac{\alpha}{2} e^{-\alpha \sqrt{y}}+\frac{1}{2 \sqrt{y}} \cdot \frac{\alpha}{2} e^{-\alpha \sqrt{y}}=\frac{\alpha}{2 \sqrt{y}} e^{-\alpha \sqrt{y}}
+$$</p>
+<p>for $ y&gt;0 $. And $ f_{Y}(y)=0 $ for $ y \leqslant 0 $</p>
+<p>A Weibull distribution is given by
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{\beta}{\delta}\left(\frac{x-\gamma}{\delta}\right)^{\beta-1} \exp \left[-\left(\frac{x-\gamma}{\delta}\right)^{\beta}\right] &amp; \text { if } x&gt;\gamma \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>$ Y $ follows Weibull distribution with $ \beta=\frac{1}{2}, \delta=\alpha^{-2}, \gamma=0 $</p>
+<p><strong>Example</strong>: Suppose $ X $ has PDF $ f_{X}(x)=\frac{3}{8}(x+1)^{2},-1&lt;x&lt;1, $ and
+$$
+Y=\left{\begin{array}{ll}
+1-X^{2} &amp; \text { if } X \leqslant 0 \<br>
+1-X &amp; \text { if } X&gt;0
+\end{array}\right.
+$$</p>
+<p>Find the PDF of $ Y $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730205712.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730205712.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730205712.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730205712.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730205712.png"
+        title="20200730205712.png" /></div></p>
+<p>Note that Support $ (Y)=(0,1], $ so for $ 0&lt;y \leqslant 1 $</p>
+<p>$$
+\begin{array}{c}
+F_{Y}(y)=P(Y \leqslant y)=P(-1&lt;X \leqslant-\sqrt{1-y})+P(1-y \leqslant X&lt;1) \<br>
+=\int_{-1}^{-\sqrt{1-y}} f_{X}(x) d x+\int_{1-y}^{1} f_{X}(x) d x
+\end{array}
+$$</p>
+<p>By differentiation,</p>
+<p>$$
+\begin{aligned}
+f_{Y}(y) &amp;=f_{X}(-\sqrt{1-y}) \frac{d(-\sqrt{1-y})}{d y}-f_{X}(1-y) \frac{d(1-y)}{d y} \<br>
+&amp;=\frac{3}{8}(1-\sqrt{1-y})^{2} \cdot \frac{1}{2 \sqrt{1-y}}+\frac{3}{8}(2-y)^{2}
+\end{aligned}
+$$</p>
+<p>for $ 0&lt;y \leqslant 1 $ and $ f_{Y}(y)=0 $ for $ y \leqslant 0 $ or $ y&gt;1 $.</p>
+<p><strong>Example (Probability Integral Transform)</strong>: Suppose $ X $ has a continuous distribution $ F_{X}(x) $ which is strictly monotonically increasing. Find the PDF of $ Y=F_{X}(X) $.</p>
+<p>The support of $ Y=F_{X}(X) $ is the unit interval $ [0,1] . $ Because
+$ F_{X}(\cdot) $ is continuous and strictly monotonically increasing, its inverse function $ F_{X}^{-1}(\cdot) $ exists and is also strictly increasing. Thus, for $ 0 \leqslant y \leqslant 1 $,
+$$
+F_{Y}(y)=P\left(F_{X}(X) \leqslant y\right)=P\left(X \leqslant F_{X}^{-1}(y)\right)=F_{X}\left(F_{X}^{-1}(y)\right)=y
+$$</p>
+<p>If follows that the PDF</p>
+<p>$$
+f_{Y}(y)=\left{\begin{array}{ll}1 &amp; \text { if } 0 \leqslant y \leqslant 1 \ 0 &amp; \text { otherwise }\end{array} \quad(\text { i.e. } \quad Y \sim U[0,1])\right. 
+$$</p>
+<p>The application of probability integral transformation</p>
+<ul>
+<li>
+<p>Let $ Z \sim U[0,1] $ and $ F_{X}(\cdot) $ is the CDF of some continuous random variable $ X $. If $ F_{X}(\cdot) $ is strictly increasing, then $ Y=F_{X}^{-1}(Z) $ has distribution $ F_{X}(\cdot) . $ (Why?)</p>
+</li>
+<li>
+<p>It can be used to simulate random samples of any CRV $ X $ :
+inverse transform sampling.</p>
+<ul>
+<li>Generate a realization $ y $ from uniform distribution $ U[0,1] $</li>
+<li>Solve for $ x $ from the equation $ F_X (x)=y $.</li>
+<li>The value $ x=F_{X}^{-1}(y) $ is a realization of $ X $ with the specified distribution $ F_{X}(\cdot) $.</li>
+</ul>
+</li>
+<li>
+<p>When $ X $ is a DRV, the probability integral transform $ F_{X}(X) $ is no longer uniformly distributed. (How to generate random numbers from a discrete probability distribution via uniform distribution?)</p>
+</li>
+<li>
+<p>The result that $ F_{X}(X) \sim U[0,1] $ provides a basis for goodness-of-fit tests of distributional models. To **check whether a probability model $ F_{0}(\cdot) $ is correctly specified**, one can first compute the probability integral transform $ Y=F_{0}(X) $ and then check if $ Y $ follows the $ U[0,1] $ distribution using a sample $ \left(Y_{1}, Y_{2}, \ldots, Y_{n}\right) $ where $ Y_{i}=F_{0}\left(X_{i}\right) $.</p>
+</li>
+<li>
+<p>This is the basic idea behind the popular <strong>Kolmogorov-Smirnov test</strong> for a hypothesized distribution model.</p>
+</li>
+</ul>
+<h4 id="method-2-the-transformation-approach">Method 2: The transformation approach</h4>
+<p><strong>Theorem (Univariate Transformation)</strong>: Let $ X $ be a CRV with PDF $ f_{X}(x) $ and let function $ g: \mathbb{R} \rightarrow \mathbb{R} $ be strictly **monotonic** and differentiable over the support of $ X $. Then the PDF of the random variable $ Y=g(X) $ is
+$$
+f_{Y}(y)= f_{X}\left[g^{-1}(y)\right]\left|\frac{d g^{-1}(y)}{d y}\right| =\left.\frac{1}{\left|g^{\prime}(x)\right|} f_{X}(x)\right|_{x=g^{-1}(y)}
+$$</p>
+<p>for any $ y $ in the support of $ Y, $ where $ x=g^{-1}(y) $ is the unique number in the support of $ X $ such that $ g(x)=y $.</p>
+<p><strong>Theorem</strong>: Suppose $ A_{1}, A_{2}, \ldots, A_{k} $ are disjoint regions and $ \bigcup_{i=1}^{k} A_{i}=\mathbb{R} $. Suppose $ g(x)=g_{i}(x) $ for all $ x \in A_{i}, i=1,2, \ldots, k $ and for each $ i $ $ g_{i}(x) $ is strictly monotonic and differentiable on region $ A_{i} . $ Then the PDF of $ Y=g(X) $ is given by
+$$
+f_{Y}(y)=\sum_{i=1}^{k} f_{X}\left(g_{i}^{-1}(y)\right) \frac{1}{\left|g_{i}^{\prime}\left(g_{i}^{-1}(y)\right)\right|}
+$$</p>
+<p>for all $ y $ in the support of $ Y $.</p>
+<p><strong>Example (Square transformation)</strong>: Suppose $ X $ is a continuous random variable. For $ y&gt;0, $ the CDF of $ Y=X^{2} $ is $ F_{Y}(y)=P(Y \leq y)=P\left(X^{2} \leq y\right)=P(-\sqrt{y} \leq X \leq \sqrt{y}) $. Because $ X $ is continuous, we can drop the equality from the left endpoint and obtain
+$$
+\begin{aligned}
+F_{Y}(y) &amp;=P(-\sqrt{y}&lt;X \leq \sqrt{y}) \<br>
+&amp;=P(X \leq \sqrt{y})-P(X \leq-\sqrt{y}) \<br>
+&amp;=F_{X}(\sqrt{y})-F_{X}(-\sqrt{y})
+\end{aligned}
+$$</p>
+<p>The PDF of $ Y $ can now be obtained from the CDF by differentiation:</p>
+<p>$$
+\begin{aligned}
+f_{Y}(y) &amp;=\frac{d F_{Y}(y)}{d y} \<br>
+&amp;=\frac{d}{d y}\left(F_{Y}(\sqrt{y})-F_{X}(-\sqrt{y})\right) \<br>
+&amp;=\frac{1}{2 \sqrt{y}}\left(f_{X}(\sqrt{y})+f_{X}(-\sqrt{y})\right)
+\end{aligned}
+$$</p>
+<h2 id="36-mathematical-expectations">3.6 Mathematical Expectations</h2>
+<p><strong>Definition (Expectation)</strong>: Suppose $ X $ is a random variable with PMF or PDF $ f_{X}(x) $. Then the expectation of a measurable function $ g(X) $ is defined as
+$$
+\begin{aligned}
+E[g(X)] &amp;=\int_{-\infty}^{\infty} g(X) \mathrm{d} F_{X}(x) \<br>
+&amp;=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}} g(x) f_{X}(x) &amp; \text { if } X \text { is a } \mathrm{DRV} \<br>
+\int_{-\infty}^{\infty} g(x) f_{X}(x) \mathrm{d} x &amp; \text { if } X \text { is a } \mathrm{CRV}
+\end{array}\right.
+\end{aligned}
+$$</p>
+<p>where $ \Omega_{X} $ is the support of $ X $.</p>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>$ E[g(X)] $ can be considered as the <strong>weighted average</strong> of $ g(X) $</li>
+<li>If $ E|g(X)|=\infty, $ we say $ E[g(X)] $ does not exist.</li>
+<li>If $ a $ is a constant, then $ E(a)=a $</li>
+<li>The expectation is a linear operator, namely,</li>
+</ul>
+<p>$$
+E\left[a \cdot g_{1}(X)+b \cdot g_{2}(X)\right]=a \cdot E\left[g_{1}(X)\right]+b \cdot E\left[g_{2}(X)\right]
+$$</p>
+<ul>
+<li>$ Y=g(X) $ is also a random variable. Let the PMF or PDF of Y be $ f_{Y}(y), $ then we can also compute $ E[g(X)] $ by</li>
+</ul>
+<p>$$
+\begin{aligned}
+E[g(X)] &amp;=E(Y) \<br>
+&amp;=\left{\begin{array}{ll}
+\sum_{y \in \Omega_{Y}} y f_{Y}(y) &amp; \text { if } Y \text { is } D R V \<br>
+\int_{-\infty}^{\infty} y f_{Y}(y) d y &amp; \text { if } Y \text { is } C R V
+\end{array}\right.
+\end{aligned}
+$$</p>
+<h2 id="37-moments">3.7 Moments</h2>
+<p><strong>Definition $ k $-th moment</strong>: The $ k $-th <strong>moment</strong> of a random variable $ X $ is defined as
+$$
+E\left(X^{k}\right)=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}} x^{k} f_{X}(x) &amp; \text { if } X \text { is a } D R V \<br>
+\int_{-\infty}^{\infty} x^{k} f_{X}(x) d x &amp; \text { if } X \text { is a } C R V
+\end{array}\right.
+$$</p>
+<p>Similarly, the $ k $-th <strong>central moment</strong> of a random variable $ X $ is
+defined as
+$$
+E(X-\mu_X)^{k}=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}}\left(x-\mu_{X}\right)^{k} f_{X}(x) &amp; \text { if } X \text { is a } D R V \<br>
+\int_{-\infty}^{\infty}\left(x-\mu_{X}\right)^{k} f_{X}(x) d x &amp; \text { if } X \text { is a } C R V
+\end{array}\right.
+$$</p>
+<p>Relationship between uncentered moments and centered moments:</p>
+<p>$$
+E\left(X-\mu_{X}\right)^{k}=\sum_{i=0}^{k}\left(\begin{array}{c}
+k \<br>
+i
+\end{array}\right)\left(-\mu_{X}\right)^{k-i} E\left(X^{i}\right)
+$$</p>
+<p>and</p>
+<p>$$
+E\left(X^{k}\right)=E\left[\left(X-\mu_{X}\right)+\mu_{X}\right]^{k}=\sum_{i=0}^{k}\left(\begin{array}{c}
+k \<br>
+i
+\end{array}\right) \mu_{X}^{k-i} E\left(X-\mu_{X}\right)^{i}
+$$</p>
+<h3 id="371-mean">3.7.1 Mean</h3>
+<p><strong>Definition (Mean)</strong>: The mean of a random variable $ X $ is defined as
+$$
+\mu_{X}=E(X)=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}} x f_{X}(x) &amp; \text { if } X \text { is a } D R V \<br>
+\int_{-\infty}^{\infty} x f_{X}(x) d x &amp; \text { if } X \text { is a } C R V
+\end{array}\right.
+$$</p>
+<p>where $ \Omega_{X} $ is the support of $ X $.</p>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>The mean $ \mu_X $ is also the expectation of $ X $ (i.e. $ g(X)=X $ ), or
+the first moment of $ X $.</li>
+<li>$ \mu_X $ is a measure of central tendency for the distribution of $ X $.</li>
+<li>The mean $ \mu x $ exists if and only if $ \sum_{x}|x| f_{X}(x)&lt;\infty $ for $ D R V $ $ X $ or $ \int_{-\infty}^{\infty}|x| f_{X}(x) \mathrm{d} x&lt;\infty $ for $ \mathrm{CRV} X $</li>
+</ul>
+<p><strong>Example (Binomial Mean)</strong>: lf $ X $ has a binomial distribution, its pmf is given by</p>
+<p>$$
+P(X=x)=\left(\begin{array}{l}
+n \<br>
+x
+\end{array}\right) p^{x}(1-p)^{n-x}, x=0,1, \cdots, n
+$$</p>
+<p>where $ n $ is a positive integer, $ 0 \leq p \leq 1 $, and for every fixed pair $ n $ and $ p $ the pmf sums to 1. Calculate the $ E X $.</p>
+<p>$$
+\begin{aligned}
+E X &amp;=\sum_{x=0}^{n} x\left(\begin{array}{c}
+n \<br>
+x
+\end{array}\right) p^{x}(1-p)^{n-x} \<br>
+&amp;=\sum_{x=0}^{n} x \frac{n !}{x !(n-x) !} p^{x}(1-p)^{n-x} \<br>
+&amp;=\sum_{x=0}^{n} \frac{n !}{(x-1) !(n-x) !} p^{x}(1-p)^{n-x}
+\end{aligned}
+$$</p>
+<p>Since the $ x=0 $ term vanishes. Let $ y=x-1 $ and $ m=n-1 . $ Subbing $ x=y+1 $ and $ n=m+1 $ into the last sum (and using the fact that the limits $ x=1 $ and $ x=n $ correspond to $ \mathrm{y}=0 \text { and } y=n-1=m, \text { respectively }) $</p>
+<p>$$
+\begin{aligned}
+E X &amp;=\sum_{y=0}^{m} \frac{(m+1) !}{y !(m-y) !} p^{y+1}(1-p)^{m-y} \<br>
+&amp;=(m+1) p \sum_{y=0}^{m} \frac{m !}{y !(m-y) !} p^{y}(1-p)^{m-y} \<br>
+&amp;=n p
+\end{aligned}
+$$</p>
+<p><strong>Example (Cauchy distribution)</strong>: A random variable $ X $ follows Cauchy $ \left(x_{0}, \gamma\right) $ distribution if its PDF
+$$
+f_{X}(x)=\frac{1}{\pi \gamma}\left[\frac{\gamma^{2}}{\left(x-x_{0}\right)^{2}+\gamma^{2}}\right], \quad-\infty&lt;x&lt;\infty
+$$</p>
+<p>where $ x_{0} $ is the location parameter and $ \gamma $ is the scale parameter.</p>
+<p>Suppose $ X $ follows Cauchy (0,1) distribution, then
+$$
+E|X|=\int_{-\infty}^{\infty} \frac{|x|}{\pi\left(1+x^{2}\right)} \mathrm{d} x=\infty
+$$</p>
+<p>so <strong>mean of Cauchy distribution does not exist</strong>.</p>
+<p><strong>Theorem</strong>: Suppose $ E\left(X^{2}\right) $ exists. Then
+$$
+\mu x=\arg \min _{a} E(X-a)^{2}
+$$</p>
+<h3 id="372-variance">3.7.2 Variance</h3>
+<p><strong>Definition (Variance &amp; Standard Deviation)</strong>: The variance of random variable $ X $ is defined as
+$$
+\begin{aligned}
+\operatorname{Var}(X)&amp;=\sigma_{X}^{2}= E\left(X-\mu_{X}\right)^{2} \<br>
+&amp;=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}}\left(x-\mu_{X}\right)^{2} f_{X}(x) &amp; \text { if } X \text { is a DRV, } \<br>
+\int_{-\infty}^{\infty}\left(x-\mu_{X}\right)^{2} f_{X}(x) d x &amp; \text { if } X \text { is a CRV. }
+\end{array}\right.
+\end{aligned}
+$$</p>
+<p>where $ \Omega X $ is the support of $ X $. The quantity $ \sigma_X =\sqrt{\sigma_{X}^{2}} $ is called the standard deviation of $ X $.</p>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>$ \sigma_{X}^{2} $ is a measure of the degree of spread of a distribution around its mean.</li>
+<li>In economics, it is interpreted as a measure of <strong>uncertainty</strong> or risk. It is often called a measure of <strong>volatility</strong> of $ X $.</li>
+<li>If $ \sigma_{X}^{2}=0, $ then $ X=\mu_{X} $ with probability 1 and there is no variation in $ X $. This is so-called **degenerate distribution**.</li>
+</ul>
+<p><strong>Theorem</strong>
+$$
+\sigma_{X}^{2}=E\left(X^{2}\right)-\mu_{X}^{2}
+$$</p>
+<p><strong>Remark</strong>: $ \sigma_{X}^{2} $ is called the second central moment and $ E\left(X^{2}\right) $ is
+called the second moment.</p>
+<p><strong>Theorem</strong>: If $ Y=a X+b, $ then</p>
+<ol>
+<li>$ \mu_{Y}=a \mu_{X}+b $</li>
+<li>$ \sigma_{Y}^{2}=a^{2} \sigma_{X}^{2} $</li>
+</ol>
+<p><strong>Example (Portfolio selection)</strong>: Assume that the investor likes higher return but lower risk. That is, his utility function $ u\left(\mu, \sigma^{2}\right) $ is such that $ \partial u / \partial \mu&gt;0 $ (the more expected return, the better and $ \partial u / \partial \sigma^{2}&lt;0 $ (the smaller risk, the better $ ) $. An example of $ u\left(\mu, \sigma^{2}\right) $ is
+$$
+u\left(\mu, \sigma^{2}\right)=a \mu-b \sigma^{2}, \quad a, b&gt;0
+$$</p>
+<p>Assume that the investor has totally I dollars to be split between stock $ (w) $ and saving $ (I-w) . $ What is the portfolio that maximizes the utility function?</p>
+<ul>
+<li>The rate of return on stocks is a random variable $ Y $ with mean
+$ \mu_{Y} $ and variance $ \sigma_{Y}^{2} $.</li>
+<li>The rate of return on saving is constant $ r, $ which can be
+considered as a random variable $ Z $ with mean $ r $ and variance $ 0 . $
+Usually $ r&lt;\mu_{Y} $.</li>
+<li>The return of a portfolio is $ X=w Y+(I-w) Z, $ then</li>
+</ul>
+<p>$$
+u\left(\mu, \sigma^{2}\right)=a\left[w \mu_{Y}+(I-w) r\right]-b w^{2} \sigma_{Y}^{2}
+$$</p>
+<ul>
+<li>It is maximized when</li>
+</ul>
+<p>$$
+w=\frac{a\left(\mu_{Y}-r\right)}{2 b \sigma_{Y}^{2}}
+$$</p>
+<ul>
+<li>If $ b=0 $ (i.e. the investor does not care risk), $ u\left(\mu, \sigma^{2}\right) $ is maximized at $ w=\infty $.</li>
+<li>If $ a=0, $ then $ u\left(\mu, \sigma^{2}\right) $ is maximized at $ w=0 $</li>
+</ul>
+<h3 id="373-skewness">3.7.3 Skewness</h3>
+<p><strong>Definition (Skewness)</strong>: The third central moment $ E\left[\left(X-\mu_{X}\right)^{3}\right] $ is a measure of &ldquo;skewness&rdquo; (or asymmetry) of the distribution of $ X $. Skewness is defined as
+$$
+S_{X}=\frac{E\left[\left(X-\mu_{X}\right)^{3}\right]}{\sigma_{X}^{3}}
+$$</p>
+<p>The skewness has been used to measure financial crashes. Negative
+(or positive) skewness indicates a higher (or lower) probability of
+experiencing large losses than large gains.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210038.jpg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210038.jpg, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210038.jpg 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210038.jpg 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210038.jpg"
+        title="20200730210038.jpg" /></div></p>
+<h3 id="374-kurtosis">3.7.4 Kurtosis</h3>
+<p><strong>Definition (Kurtosis)</strong>: The fourth central moment $ E\left[\left(X-\mu_{X}\right)^{4}\right] $ is a measure of how heavy the tail of a distribution is. Kurtosis is defined as
+$$
+K_{X}=\frac{E\left[\left(X-\mu_{X}\right)^{4}\right]}{\sigma_{X}^{4}}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210101.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210101.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210101.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210101.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210101.png"
+        title="20200730210101.png" /></div></p>
+<p>Remarks:</p>
+<ul>
+<li>Kurtosis of normal distribution is 3, regardless of the values of
+parameters $ \mu $ and $ \sigma^{2} $.</li>
+<li>The excess kurtosis of a random variable $ X $ is defined as $ K_{X}-3 $.</li>
+<li>A distribution with positive excess kurtosis has a more acute peak around the mean and fatter tails. A distribution with
+negative excess kurtosis has a lower, wider peak and thinner
+tails.</li>
+</ul>
+<h2 id="38-quantile">3.8 Quantile</h2>
+<p><strong>Definition ($ \alpha $-quantile)</strong>: Suppose random variable $ X $ has a $ \operatorname{CDF} F_{X}(x) . $ Let $ \alpha \in(0,1), $ then the $ \alpha $-quantile of the distribution $ F_X (x) $ is defined as $ Q(\alpha), $ which satisfies
+$$
+F_{X}(Q(\alpha))=P(X \leqslant Q(\alpha))=\alpha
+$$</p>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>When $ F_{X}(x) $ is continuous and strictly increasing,</li>
+</ul>
+<p>$$
+Q(\alpha)=F_{X}^{-1}(\alpha)
+$$</p>
+<ul>
+<li>In case $ F_{X}(x) $ has flat regions or is discontinuous, we can define the $ \alpha $-quantile as</li>
+</ul>
+<p>$$
+Q(\alpha)=\inf \left{x \in \mathbb{R}: F_{X}(x) \geqslant \alpha\right}
+$$</p>
+<ul>
+<li>For $ \alpha $-quantile $ Q(\alpha), $ we have</li>
+</ul>
+<p>$$
+\int_{-\infty}^{Q(\alpha)} f_{X}(x) \mathrm{d} x=\alpha
+$$</p>
+<ul>
+<li>0.5-quantile is called the median. $ 0.25 $-quantile and $ 0.75 $-quantile are called lower quartile and upper quartile.</li>
+<li>0-quantile is the minimum value; 1-quantile is the maximum value.</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210213.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210213.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210213.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210213.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210213.png"
+        title="20200730210213.png" /></div></p>
+<p><strong>Difference between mean and median</strong>:</p>
+<ul>
+<li>Median is the cutoff point that divides the population in half.</li>
+<li>Mean can be misleading when used to measure the location of
+highly skewed data. In contrast, <strong>median is a more robust</strong> measure of the central tendency of a distribution in the sense
+that it is not much affected by a few outliers.</li>
+<li>Median is the optimal solution for minimizing the mean absolute error, that is,</li>
+</ul>
+<p>$$
+Q(0.5)=\arg \min _{a} E|X-a|
+$$</p>
+<ul>
+<li>while mean is the optimal solution for minimizing the mean
+squared error, that is,</li>
+</ul>
+<p>$$
+E(X)=\arg \min _{a} E(X-a)^{2}
+$$</p>
+<ul>
+<li>For symmetric distribution, e.g. normal distribution, mean and median are the same. For skewed distributions, mean and
+median are different.</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210243.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210243.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210243.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210243.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200730210243.png"
+        title="20200730210243.png" /></div></p>
+<p><strong>Example (Value at Risk)</strong>: The value at risk (VaR) at level $ \alpha, V_{t}(\alpha), $ of a portfolio over a certain time horizon is defined as
+$$
+P\left(X_{t}&lt;-V_{t}(\alpha) \mid I_{t-1}\right)=\alpha
+$$</p>
+<p>where $ X_{t} $ is the return on the portfolio over the holding period $ t $, and $ I_{t-1} $ is the information available at time $ t-1 $. $ V_{t}(\alpha), $ which is the negative conditional quantile of portfolio return at level $ \alpha, $ is the threshold that actual loss will exceed with probability $ \alpha $.</p>
+<h2 id="39-moment-generating-function">3.9 Moment Generating Function</h2>
+<p><strong>Definition (Moment Generating Function)</strong>: The moment generating function(MGF) of a random variable $ X $ is defined as
+$$
+\begin{aligned}
+M_{X}(t) &amp;=E\left[e^{t X}\right] \<br>
+&amp;=\left{\begin{array}{ll}
+\sum_{x \in \Omega_{X}} e^{t x} f_{X}(x) &amp; \text { if } X \text { is a } D R V \<br>
+\int_{-\infty}^{\infty} e^{t x} f_{X}(x) d x &amp; \text { if } X \text { is a } C R V
+\end{array}\right.
+\end{aligned}
+$$</p>
+<p>Remarks:</p>
+<ul>
+<li>$ M_{X}(t) $ may not exist for some $ t \in \mathbb{R} . $ If the expectation does not exist for any small neighborhood of 0, then we say that MGF does not exist for the distribution of $ X $.</li>
+<li>The existence of the MGF $ M_{X}(t) $ implies the existence of an infinite set of moments.</li>
+</ul>
+<p><strong>Theorem</strong>: If $ M_{X}(t) $ exists for $ t $ in some neighborhood of $ 0, $ then</p>
+<ol>
+<li>$ M_{X}(0)=1 $</li>
+<li>for $ k=1,2, \ldots $, $ M_{X}^{(k)}(0)=E\left(X^{k}\right) $</li>
+<li>the MGF of $ Y=a+b X $ is</li>
+</ol>
+<p>$$
+M_{Y}(t)=e^{a t} M_{X}(b t)
+$$</p>
+<p>for all $ t $ in a small neighborhood of 0.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assuming that we can differentiate under the integral sign, we have
+$$
+\begin{aligned}
+\frac{d}{d t} M_{X}(t) &amp;=\frac{d}{d t} \int_{-\infty}^{\infty} e^{t x} f_{X}(x) d x \<br>
+&amp;=\int_{-\infty}^{\infty}\left(\frac{d}{d t} e^{t x}\right) f_{X}(x) d x \<br>
+&amp;=\int_{-\infty}^{\infty}\left(x e^{t x}\right) f_{X}(x) d x \<br>
+&amp;=E\left(X e^{t X}\right)
+\end{aligned}
+$$</p>
+<p>Thus, $ \left.\frac{d}{d t} M_{X}(t)\right|_{t=0}=\left.E\left(X e^{t X}\right)\right|_{t=0}=E X  $.</p>
+<p>Proceeding in an analogous manner, we can establish that
+$$
+\left.\frac{d^{n}}{d t^{n}} M_{X}(t)\right|_{t=0}=\left.E\left(X^{n} e^{t X}\right)\right|_{t=0}=E\left(X^{n}\right)
+$$</p>
+<h3 id="391-discrete-distributions">3.9.1 Discrete Distributions</h3>
+<p><strong>Example (Binomial distribution)</strong>: For binomial distribution with PMF
+$$
+\begin{array}{c}
+f_{X}(x)=\left(\begin{array}{c}
+n \<br>
+x
+\end{array}\right) p^{x}(1-p)^{n-x}, \quad x=0,1, \ldots, n \<br>
+E(X)=n p, E\left(X^{2}\right)=n(n-1) p^{2}+n p, M_{X}(t)=\left(p e^{t}+1-p\right)^{n}
+\end{array}
+$$</p>
+<p><strong>Proof</strong>:
+$$
+\begin{aligned}
+M_{X}(t) &amp;=\sum_{x=0}^{n} e^{t x}\left(\begin{array}{c}
+n \<br>
+x
+\end{array}\right) p^{x}(1-p)^{n-x} \<br>
+&amp;=\sum_{x=0}^{n}\left(\begin{array}{c}
+n \<br>
+x
+\end{array}\right)\left(p e^{t}\right)^{x}(1-p)^{n-x}
+\end{aligned}
+$$</p>
+<p>Using the binomial formula $$ \sum_{x=0}^{n}\left(\begin{array}{l}n \ x\end{array}\right) u^{x} v^{n-x}, $$ hence, letting $$ u=p e^{t} $$ and $$ v=1-p, $$ we have</p>
+<p>$$
+M_{X}(t)=\left[p e^{t}+(1-p)\right]^{n}
+$$</p>
+<p><strong>Example (Poisson distribution)</strong>: For Poisson distribution with PMF
+$$
+\begin{array}{c}
+f_{X}(x)=e^{-\lambda} \frac{\lambda^{x}}{x !}, \quad x=0,1,2, \ldots, \<br>
+E(X)=\lambda, E\left(X^{2}\right)=\lambda^{2}+\lambda, M_{X}(t)=\exp \left(e^{t} \lambda-\lambda\right)
+\end{array}
+$$</p>
+<p><strong>Proof</strong>:
+$$
+M_{Y}(t)=\sum_{x=0}^{\infty} e^{t x} \frac{e^{-\lambda \lambda^{x}}}{x !}=e^{-\lambda} \sum_{x=1}^{\infty} \frac{\left(e^{t} \lambda\right)^{x}}{x !}=e^{\lambda} e^{\lambda e^{t}}=e^{\lambda\left(e^{t}-1\right)} 
+$$
+**Example (Uniform distribution)**: For continuous uniform distribution on $ [a, b], $ its PDF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+\frac{1}{b-a} &amp; \text { if } a \leqslant x \leqslant b \<br>
+0 &amp; \text { otherwise }
+\end{array}\right.
+$$</p>
+<p>Then</p>
+<p>$$
+\begin{array}{c}
+E\left(X^{k}\right)=\frac{b^{k+1}-a^{k+1}}{(k+1)(b-a)} \<br>
+E(X)=\frac{a+b}{2}, \quad \sigma_{X}^{2}=\frac{(b-a)^{2}}{12} \<br>
+M_{X}(t)=\frac{e^{t b}-e^{t a}}{(b-a) t}
+\end{array}
+$$</p>
+<h3 id="392-continuous-distributions">3.9.2 Continuous Distributions</h3>
+<p><strong>Example (Normal distribution)</strong>: For normal distribution $ N\left(\mu, \sigma^{2}\right) $ with PDF
+$$
+\begin{array}{c}
+f_{X}(x)=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left[-\frac{(x-\mu)^{2}}{2 \sigma^{2}}\right], \quad-\infty&lt;\mu&lt;\infty, \sigma&gt;0 \<br>
+M_{X}(t)=\exp \left(\mu t+\sigma^{2} t^{2} / 2\right)
+\end{array}
+$$</p>
+<p><strong>Proof</strong>:</p>
+<p>$$
+M_{X}(t)=E\left(e^{x t}\right)=\int e^{x t} \frac{1}{\sqrt{2 \sigma^{2} \pi}} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}} d x
+$$</p>
+<p>Define $$ z=\frac{x-\mu}{\sigma}, $$ which implies $$ x=\mu+\sigma z, $$ hence,</p>
+<p>$$
+M_{X}(t)=e^{\mu t} \int e^{z \sigma t} \frac{1}{\sqrt{2 \pi}} e^{\frac{-z^{2}}{2}}\left|\frac{d x}{d z}\right| d z=e^{\mu t} e^{\frac{1}{2} \sigma^{2} t^{2}}
+$$</p>
+<p><strong>Example (Gamma mgf)</strong></p>
+<p>Gamma pdf : $$ f(x)=\frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha-1} e^{-x / \beta}, 0&lt;x&lt;\infty, \alpha&gt;0, \beta&gt;0 $$</p>
+<p>Mgf:</p>
+<p>$$
+\begin{aligned}
+M_{X}(t) &amp;=\frac{1}{\Gamma(\alpha) \beta^{\alpha}} \int_{0}^{\infty} e^{t x} x^{\alpha-1} e^{-x / \beta} d x \<br>
+&amp;=\frac{1}{\Gamma(\alpha) \beta^{\alpha}} \int_{0}^{\infty} x^{\alpha-1} e^{-\left(\frac{1}{\beta}-t\right) x} d x \<br>
+&amp;=\frac{1}{\Gamma(\alpha) \beta^{\alpha}} \int_{0}^{\infty} x^{\alpha-1} e^{-x /\left(\frac{\beta}{1-\beta t}\right)} d x \<br>
+&amp;=\left(\frac{1}{1-\beta t}\right)^{\alpha} \int_{0}^{\infty} \frac{1}{\Gamma(\alpha)\left(\frac{\beta}{1-\beta t}\right)^{\alpha}} x^{\alpha-1} e^{-x /\left(\frac{\beta}{1-\beta t}\right)} d x \<br>
+&amp;=\left(\frac{1}{1-\beta t}\right)^{\alpha} \text { if } t&lt;\frac{1}{\beta}
+\end{aligned}
+$$</p>
+<p><strong>Example (Log-normal distribution)</strong>: Suppose $ X $ follows a log-normal $ \left(\mu, \sigma^{2}\right) $ distribution. Let $ Y=\ln X $ then $ Y \sim N\left(\mu, \sigma^{2}\right) $ and therefore
+$$
+E\left(X^{k}\right)=E\left(e^{k Y}\right)=M_{Y}(k)=\exp \left(\mu k+\frac{\sigma^{2} k^{2}}{2}\right)
+$$</p>
+<p>The MGF $ M_{X}(t) $ does not exists for $ t&gt;0 $.</p>
+<h3 id="393-uniqueness-of-mgf">3.9.3 Uniqueness of MGF</h3>
+<p>Recall that random variables $ X $ and $ Y $ are identically distributed if two CDF&rsquo;s $ F_{X}(\cdot) $ and $ F_{Y}(\cdot) $ are the same, i.e. $ F_{X}(x)=F_{Y}(x) $</p>
+<ul>
+<li>If $ X $ and $ Y $ are identically distributed, then for any $ g(\cdot) $,</li>
+</ul>
+<p>$$
+E[g(X)]=E[g(Y)]
+$$</p>
+<ul>
+<li>Identity of the distributions of $ X $ and $ Y $ does not imply $ X=Y $.
+Example</li>
+</ul>
+<p><strong>Example</strong>: Suppose a fair coin is tossed $ n $ times, and let $ X $ be the number of heads obtained, $ Y $ be the number of tails obtained. Then
+$ F_{X}(x)=F_{Y}(x) $ but $ X+Y=n $ and possibly $ X \neq Y $.</p>
+<p><strong>Theorem (Uniqueness of MGF)</strong>: Suppose two random variables $ X $ and $ Y $ with MGF&rsquo;s $ M_{X}(t) $ and $ M_{Y}(t) $ existing in a neighborhood of $ 0, N_{\epsilon}(0)={t:-\epsilon&lt;t&lt;\epsilon} $.</p>
+<ol>
+<li>Then $ X $ and $ Y $ have the same $ M_{X}(t) $ and $ M_{Y}(t) $ for all $ t $ in $ N_{\epsilon}(0) $, if and only if $ F_{X}(u)=F_{Y}(u) $ for all $ u \in \mathbb{R} $.</li>
+<li>If $ X $ and $ Y $ have bounded support, then $ F_{X}(u)=F_{Y}(u) $ for all $ u $ if and only if $ E\left(X^{r}\right)=E\left(Y^{r}\right) $ for all integers $ r=0,1,2, \cdots $</li>
+</ol>
+<p><strong>Remarks</strong>:</p>
+<ul>
+<li>If the MGF $ M_{X}(t) $ exists in a neighborhood of $ 0, $ it uniquely characterizes a distribution function.</li>
+<li>Given some MGF $ M_{X}(t), $ suppose we can find some $ \mathrm{CDF} $ $ F_{X}(x) $ that corresponds to $ M_{X}(t) . $ Then $ F_{X}(x) $ must be the only distribution that generates $ M_{X}(t) $</li>
+<li>Uniqueness of MGF can be used to prove CLT.</li>
+</ul>
+<p><strong>Example</strong>: A DRV $ X $ has $ M_{X}(t)=\frac{1}{2}+\frac{e^{t}}{4}+\frac{e^{-t}}{4} . $ Then its PMF
+$$
+f_{X}(x)=\left{\begin{array}{ll}
+1 / 4 &amp; \text { if } x=-1 \<br>
+1 / 2 &amp; \text { if } x=0 \<br>
+1 / 4 &amp; \text { if } x=1
+\end{array}\right.
+$$</p>
+<p><strong>Example</strong>: Suppose $ M_{X}(t)=e^{2 t^{2}} . $ Recall the normal distribution $ N\left(\mu, \sigma^{2}\right) $ has $ \mathrm{MGF} $
+$$
+M_{X}(t)=\exp \left(\mu t+\frac{\sigma^{2}}{2} t^{2}\right)
+$$</p>
+<p>Let $ \mu=0 $ and $ \sigma^{2}=4, $ then $ M_{X}(t)=\exp \left(2 t^{2}\right) . $ So $ X \sim N(0,4) $</p>
+<p><strong>Example</strong>: If a DRV $ X $ has $ M_{X}(t)=\frac{1-r}{1-r e^{t}} $ for $ \left|e^{t}\right|&lt;1 / r, $ where $ r&gt;0 . $ What is the probability distribution of $ X ? $</p>
+<p>Note that
+$$
+M_{X}(t)=(1-r) \sum_{x=0}^{\infty}\left(r e^{t}\right)^{x}=\sum_{x=0}^{\infty}(1-r) r^{x} \cdot e^{t x}=\sum_{x=0}^{\infty} f_{X}(x) e^{t x}
+$$</p>
+<p>where $ f_{X}(x)=(1-r) r^{x}, x=0,1,2, \ldots . $ since</p>
+<p>$$
+\sum_{x=0}^{\infty} f_{X}(x)=(1-r) \cdot \frac{1}{1-r}=1
+$$</p>
+<p>$ f_{X}(x) $ is the PMF of $ X $.</p>
+<p>Existence of the MGF</p>
+<ul>
+<li>The existence of the MGF $ M_{X}(t) $ implies the existence of</li>
+</ul>
+<p>$$
+E(X), E\left(X^{2}\right), E\left(X^{3}\right), \ldots
+$$</p>
+<ul>
+<li>The existence of all moments is not equivalent to the existence
+of moment generating function in a neighborhood of $ 0 . $</li>
+</ul>
+<p><strong>Example (Log-normal distribution)</strong>: Suppose $ X $ follows a log-normal $ \left(\mu, \sigma^{2}\right) $ distribution. Then
+$$
+E\left(X^{k}\right)=\exp \left(\mu k+\frac{\sigma^{2} k^{2}}{2}\right)
+$$</p>
+<p>but the MGF</p>
+<p>$$
+M_{X}(t)=E\left(e^{x t}\right)=\int_{0}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma x} \exp \left[t x-\frac{(\ln x-\mu)^{2}}{2 \sigma^{2}}\right] \mathrm{d} x=\infty
+$$</p>
+<p>for $ t&gt;0 $.</p>
+<p><strong>The set of moments $ E\left(X^{k}\right), k=1,2, \ldots $ does not uniquely characterize a distribution function.</strong></p>
+<p><strong>Example</strong>: Consider two distributions with support $ (0, \infty) $ :
+$$
+f_{X}(x)=\frac{\exp \left[-\frac{(\ln x)^{2}}{2}\right]}{\sqrt{2 \pi} x}, \quad f_{Y}(y)=f_{X}(y)[1+\sin (2 \pi \ln y)]
+$$</p>
+<p>for $ x, y&gt;0 . E\left(X^{k}\right)=E\left(Y^{k}\right) $ for $ k=1,2, \ldots $</p>
+<p><strong>Theorem</strong>: Let $ F_{X}(x) $ and $ F_{Y}(y) $ be two $ C D F^{\prime} s $ both of which have bounded support. Then $ F_{X}(z)=F_{Y}(z) $ for all $ z \in \mathbb{R} $ if and only if $ E\left(X^{k}\right)=E\left(Y^{k}\right) $ for all integers $ k=1,2, \ldots $</p>
+<p><strong>Theorem (Convergence of MGF)</strong>: Suppose $ \left{X_{n}, n=1,2, \ldots\right} $ is a sequence of random variables, each with $ \mathrm{CDF} F_{n}(x) $ and $ \mathrm{MGF} M_{n}(t) . $ Furthermore, suppose that
+$$
+\lim _{n \rightarrow \infty} M_{n}(t)=M_{X}(t)
+$$</p>
+<p>for all $ t $ in a neighborhood of $ 0, $ where $ M_{X}(t) $ is a MGF of a random variable $ X $ with $ \mathrm{CDF} F_{X}(x) . $ Then</p>
+<p>$$
+\lim <em>{n \rightarrow \infty} F</em>{n}(x)=F_{X}(x)
+$$</p>
+<p>for all continuous points $ x $ of $ F x(\cdot) $.</p>
+<p><strong>Example (Poisson approximation)</strong>: The MGF of the binomial distribution $ B(n, p) $ is
+$$
+M_{B}(t)=\left(p e^{t}+1-p\right)^{n}=\left[1+\frac{n p \cdot\left(e^{t}-1\right)}{n}\right]^{n}
+$$</p>
+<p>For every $ t, $ when $ n \rightarrow \infty $ and $ n p \rightarrow \lambda, $ we have</p>
+<p>$$
+M_{B}(t) \rightarrow e^{\lambda\left(e^{t}-1\right)}=M_{P}(t)
+$$</p>
+<p>which is the MGF of the Poisson distribution with parameter $ \lambda $.</p>
+<h2 id="310-characteristic-function">3.10 Characteristic Function</h2>
+<p><strong>Definition (Characteristic Function)</strong>: The characteristic function of a random variable $ X $ with $ \operatorname{CDF} F_{X}(x) $ is defined as
+$$
+\begin{aligned}
+\varphi_{X}(t) &amp;=E\left(e^{i t X}\right) \<br>
+&amp;=\int_{-\infty}^{\infty} e^{i t x} d F_{X}(x)
+\end{aligned}
+$$</p>
+<p>where $ i=\sqrt{-1} $ and $ e^{i t x}=\cos (t x)+i \sin (t x) $.</p>
+<p>For continuous random variable, the <strong>characteristic function is the</strong>
+<strong>Fourier transform of the PDF</strong>, so the PDF $ f_{X}(x) $ can be recovered from the characteristic function by
+$$
+f_{X}(x)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{-i t x} \varphi_{X}(t) d t
+$$</p>
+<p>Properties of characteristic function:</p>
+<ul>
+<li>For any probability distribution, the characteristic function
+always exists and is bounded, i.e. for any $ t \in \mathbb{R} $,</li>
+</ul>
+<p>$$
+|\varphi x(t)| \leqslant \int_{-\infty}^{\infty}\left|e^{i t x}\right| d F_{X}(x)=\int_{-\infty}^{\infty} d F_{X}(x)=1
+$$</p>
+<ul>
+<li>$ \varphi_{X}(0)=1 $</li>
+<li>$ \varphi x(t) $ is continuous over $ \mathbb{R} $</li>
+<li>If the MGF $ M_{X}(t) $ exists for $ t $ in some neighborhood of $ 0, $ then $ \varphi_{X}(t)=M_{X}(\text { it }) $ for all $ t \in \mathbb{R} $</li>
+</ul>
+<p><strong>Theorem</strong>: Suppose the $ k $-th moment of $ X $ exists. Then $ \varphi_{X}(t) $ is differentiable up to order $ k $ and
+$$
+\varphi_{X}^{(k)}(0)=\mathrm{i}^{k} E\left(X^{k}\right)
+$$</p>
+<p><strong>Theorem (Uniqueness of Characteristic Function)</strong>: Suppose two random variables $ X $ and $ Y $ have characteristic functions $ \varphi_{X}(t) $ and $ \varphi_{Y}(t) $ respectively. Then $ X $ and $ Y $ are identically distributed if and only if $ \varphi x(t)=\varphi_{Y}(t) $ for all $ t \in \mathbb{R} $</p>
+<p><strong>Remark</strong>: It is important to check all $ t $ on the entire real line. But for MGF&rsquo;s, it is only necessary to check $ t $ in a neighborhood of $ 0 . $</p>
+<p><strong>Theorem (Convergence of Characteristic Function)</strong>: Let $ \left{X_{n}\right} $ be a sequence of random variables with CDF&rsquo;s $ F_{n}(x) $ and characteristic functions $ \varphi_{n}(t) $. Let $ X $ be a random variable with CDF $ F_X(x) $ and characteristic function $ \varphi_X (t) $. Let $ n \rightarrow \infty $.</p>
+<ol>
+<li>If $ F_{n}(x) \rightarrow F_{X}(x) $ for all continuous points $ x $ of $ F_{X}(\cdot), $ then $ \varphi_{n}(t) \rightarrow \varphi_{X}(t) $ for every $ t \in \mathbb{R} $</li>
+<li>Further, if $ \varphi_{n}(t) \rightarrow \varphi x(t) $ for all $ t \in \mathbb{R}, $ then $ F_{n}(x) \rightarrow F_{X}(x) $
+for all continuous points $ x $ of $ F x(\cdot) $.</li>
+</ol>
+<p><strong>Leibnitz&rsquo;s Rule</strong>: if $ f(x, \theta), a(\theta), $ and $ b(\theta) $ are differentiable respect to $ \theta, $ then</p>
+<p>$$
+\frac{d}{d \theta} \int_{a(\theta)}^{b(\theta)} f(x, \theta) d x=f(b(\theta), \theta) \frac{d}{d \theta} b(\theta)-f(a(\theta), \theta) \frac{d}{d \theta} a(\theta)+\int_{a(\theta)}^{b(\theta)} \frac{\partial}{\theta} f(x, \theta) d x
+$$</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/3.-random-variable-and-univariate-distributions/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/4.-important-probability-distributions/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/2.-foundation-of-probability-theory/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

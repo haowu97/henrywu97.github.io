@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="4. Nonparametric Estimation of Time-Varying Models In this section, we consider smoothed nonparametric estimation of time-varying models, where model parameters are deterministic functions of time. For simplicity, we focus on estimating a known time trend function in a time series process.
+4.1 Slow-Varying Time Trend Estimation Suppose we observe a bivariate time series random sample $ \left{Y_{t}, X_{t}\right}_{t=1}^{T} $ of size $ T, $ where
+$$ Y_{t}=m(t / T)&#43;X_{t}, \quad t=1, \ldots, T $$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/4.-nonparametric-estimation-of-time-varying-models/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="4. Nonparametric Estimation of Time-Varying Models In this section, we consider smoothed nonparametric estimation of time-varying models, where model parameters are deterministic functions of time. For simplicity, we focus on estimating a known time trend function in a time series process.
+4.1 Slow-Varying Time Trend Estimation Suppose we observe a bivariate time series random sample $ \left{Y_{t}, X_{t}\right}_{t=1}^{T} $ of size $ T, $ where
+$$ Y_{t}=m(t / T)&#43;X_{t}, \quad t=1, \ldots, T $$"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/4.-nonparametric-estimation-of-time-varying-models/" /><link rel="prev" href="https://henrywu97.github.io/5.-nonparametric-estimation-in-frequency-domain/" /><link rel="next" href="https://henrywu97.github.io/3.-nonparametric-regression-estimation/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/4.-nonparametric-estimation-of-time-varying-models\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  2735 ,
+        "url": "https:\/\/henrywu97.github.io\/4.-nonparametric-estimation-of-time-varying-models\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/4.-nonparametric-estimation-of-time-varying-models/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/4.-nonparametric-estimation-of-time-varying-models/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2735 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;13 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-slow-varying-time-trend-estimation">4.1 Slow-Varying Time Trend Estimation</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="4-nonparametric-estimation-of-time-varying-models">4. Nonparametric Estimation of Time-Varying Models</h1>
+<p>In this section, we consider smoothed nonparametric estimation of time-varying models, where model parameters are deterministic functions of time. For simplicity, we focus on estimating a known time trend function in a time series process.</p>
+<h2 id="41-slow-varying-time-trend-estimation">4.1 Slow-Varying Time Trend Estimation</h2>
+<p>Suppose we observe a bivariate time series random sample $ \left{Y_{t}, X_{t}\right}_{t=1}^{T} $ of size $ T, $ where</p>
+<p>$$
+Y_{t}=m(t / T)+X_{t}, \quad t=1, \ldots, T
+$$</p>
+<p>where $ m(\cdot) $ is a smooth but unknown time-trend function and $ \left{X_{t}\right} $ is a strictly stationary process with $ E\left(X_{t}\right)=0 $ and auto-covariance function $ \gamma(j)=\operatorname{cov}\left(X_{t}, X_{t-j}\right) . $ Thus the mean of $ Y_{t} $ is changing over time, $ \left{Y_{t}\right} $ is non-stationary.</p>
+<p><strong>Question</strong>: Why is the trend function $ m(\cdot) $ assumed to be a function of normalized time $ t / T $ rather than time $ t $ only?</p>
+<p>This is a crucial device for consistent estimation of the trend function $ m(\cdot) $ as the sample size $ T \rightarrow \infty $. *Suppose $ m(\cdot) $ is a function of time $ t $ only, then when sample size $ T $ increases, new information about future times becomes available, but the information about the function $ m(\cdot) $ around a given time point, say, $ t_{0}, $ does not increase. Therefore, it is impossible to obtain a consistent estimation of $ m\left(t_{0}\right) $. In contrast, with $ m\left(t_{0} / T\right) $ as a function of $ t_{0} / T, $ more and more information about $ m(\cdot) $ in a neighborhood of $ t_{0} / T $ ($ t \in [t_0-Th,t_0+Th ] $) will become available when $ T $ increases, which ensures consistent estimation of $ m\left(t_{0} / T\right) $.*</p>
+<p><strong>Question</strong>: How to estimate the time trend function $ m(t / T) ? $</p>
+<p>We can separate the smooth trend from the stochastic component with smoothed nonparametric estimation.</p>
+<p>Suppose $ m(\cdot) $ is continuously differentiable on [0,1] up to order $ p, $ and we are interested in estimating the function $ m\left(t_{0} / T\right) $ at a time point $ t_{0} $ such that $ t_{0} / T \rightarrow \tau_{0} \in[0,1] $, where $ \tau_{0} $ is a fixed point. Then by a Taylor series expansion, we have, for all $ t $ such that $ t / T $ lies in a neighborhood of $ \tau_{0}=t_{0} / T $, i.e. $ |t/T-\tau_0| \leq h$,</p>
+<p>$$
+m(t / T)=\sum_{j=0}^{p} \frac{1}{\nu !} m^{(\nu)}\left(\tau_{0}\right)\left(\frac{t-t_{0}}{T}\right)^{j}+\frac{1}{(p+1) !} m^{(p+1)}\left(\bar{\tau}_{t}\right)\left(\frac{t-t_{0}}{T}\right)^{p+1}
+$$</p>
+<p>where $ \bar{\tau}<em>{t} $ lies in the segment between $ \tau</em>{0} $ and $ t / T . $ Thus, we consider local polynomial smoothing by solving the local weighted sum of squared residuals minimization problem</p>
+<p>$$
+\min <em>{\alpha} \sum</em>{t=1}^{T}\left[Y_{t}-\sum_{j=0}^{p} \alpha_{j}\left(\frac{t-t_{0}}{T}\right)^{j}\right]^{2} K_{h}\left(\frac{t-t_{0}}{T}\right)=\sum_{t=1}^{T}\left(Y_{t}-\alpha^{\prime} Z_{t}\right)^{2} W_{t}
+$$</p>
+<p>where $ \alpha=\left(\alpha_{0}, \alpha_{1}, \ldots, \alpha_{p}\right)^{\prime}, $</p>
+<p>$$
+Z_{t}=\left[1,\left(\frac{t-t_{0}}{T}\right), \ldots,\left(\frac{t-t_{0}}{T}\right)^{p}\right]^{\prime}
+$$</p>
+<p>and</p>
+<p>$$
+W_{t} \equiv K_{h}\left(\frac{t-t_{0}}{T}\right)=\frac{1}{h} K\left(\frac{t-t_{0}}{T h}\right)
+$$</p>
+<p>Then the solution for $ \alpha $ is</p>
+<p>$$
+\begin{aligned}
+\hat{\alpha} &amp;=\left(\sum_{t=1}^{T} Z_{t} W_{t} Z_{t}^{\prime}\right)^{-1} \sum_{t=1}^{T} Z_{t} W_{t} Y_{t} \<br>
+&amp;=\left(Z^{\prime} W Z\right)^{-1} Z^{\prime} W Y
+\end{aligned}
+$$</p>
+<p>In particular, we have</p>
+<p>$$
+\hat{\alpha}<em>{\nu}=e</em>{\nu+1}^{\prime} \hat{\alpha}, \quad 0 \leq \nu \leq p
+$$</p>
+<p>where $ e_{\nu+1} $ is a $ (p+1) \times 1 $ unit vector with the $ \nu+1 $ element being unity and all others being zero.</p>
+<p>Question: What are the asymptotic properties of $ \hat{\alpha}_{\nu} $ for $ 0 \leq \nu \leq p ? $</p>
+<p>We first derive the asymptotic MSE of $ \hat{\alpha}_{\nu} . $ Put</p>
+<p>$$
+\hat{S}=Z^{\prime} W Z^{\prime}
+$$</p>
+<p>a nonstochastic $ (p+1) \times(p+1) $ matrix, whose $ (i, j) $ -element is</p>
+<p>$$
+\hat{S}<em>{(i, j)}=\sum</em>{t=1}^{T}\left(\frac{t-t_{0}}{T}\right)^{(i-1)+(j-1)} K_{h}\left(t-t_{0}\right)
+$$</p>
+<p>We first decompose</p>
+<p>$$
+\begin{aligned}
+\hat{\alpha}<em>{\nu}-\alpha</em>{\nu}=&amp; e_{\nu+1}^{\prime} \hat{S}^{-1} \sum_{t=1}^{T} Z_{t} W_{t} X_{t} \<br>
+&amp;+e_{\nu+1}^{\prime} \hat{S}^{-1} \sum_{t=1}^{T} Z_{t} W_{t} m\left(\frac{t}{T}\right)-\alpha_{\nu} \<br>
+=&amp; \hat{V}+\hat{B}, \text { say. }
+\end{aligned}
+$$</p>
+<p>For the first term, we have $ E(\hat{V})=0 $ given $ E\left(X_{t}\right)=0, $ and</p>
+<p>$$
+\begin{aligned}
+\operatorname{var}(\hat{V}) &amp;=E\left(e_{\nu+1}^{\prime} \hat{S}^{-1} Z^{\prime} W X X^{\prime} W Z \hat{S}^{-1} e_{\nu+1}\right) \<br>
+&amp;=e_{\nu+1}^{\prime} \hat{S}^{-1} Z^{\prime} W E\left(X^{\prime} X\right) W Z \hat{S}^{-1} e_{\nu+1} \<br>
+&amp;=e_{\nu+1}^{\prime} \hat{S}^{-1}\left[\sum_{t=1}^{T} \sum_{s=1}^{T} Z_{t} W_{t} \gamma(t-s) Z_{0}^{\prime} W_{0}\right] \hat{S}^{-1} e_{\nu+1} \<br>
+&amp;=e_{\nu+1}^{\prime} \hat{S}^{-1}\left[\sum_{j=1-T}^{T-1}\left(1-\frac{|j|}{T}\right) \gamma(j) \sum_{t=1}^{T} Z_{t} W_{t} Z_{t-j}^{\prime} W_{t-j}\right] \hat{S}^{-1} e_{v+1}
+\end{aligned}
+$$</p>
+<p>By approximating the discrete sum with a continuous integral, we have</p>
+<p>$$
+\frac{1}{T h} \sum_{t=1}^{T}\left(\frac{t-t_{0}}{T h}\right)^{j} K\left(\frac{t-t_{0}}{T h}\right) \rightarrow \int_{-1}^{1} u^{j} K(u) d u \text { for } 0 \leq j \leq 2 p-1
+$$</p>
+<p>as $ h \rightarrow 0, T h \rightarrow \infty . $ It follows that</p>
+<p>$$
+\frac{1}{T} H^{-1} \hat{S} H^{-1}=S[1+o(1)]
+$$</p>
+<p>where, as before, $ S $ is a $ (p+1) \times(p+1) $ matrix with its $ (i, j) $ -th element being $ \int_{-1}^{1} u^{(i-1)+(j-1)} K(u) d u . $ Also, for each given $ j, $ by approximating the discrete sum with
+a continuous integral, we have</p>
+<p>$$
+\frac{1}{T h} \sum_{t=1}^{T}\left(\frac{t-t_{0}}{T h}\right)^{m}\left(\frac{t-t_{0}-j}{T h}\right)^{l} K\left(\frac{t-t_{0}}{T h}\right) K\left(\frac{t-t_{0}-j}{T h}\right) \rightarrow \int_{-1}^{1} u^{m+l} K^{2}(u) d u
+$$</p>
+<p>as $ h \rightarrow 0, T h \rightarrow \infty . $ Therefore, for any given lah order $ j, $ we obtain</p>
+<p>$$
+\frac{1}{T} H^{-1}\left(\sum_{t=1}^{T} Z_{t} W_{t} Z_{t-j}^{\prime} W_{t-j}\right) H^{-1}=h^{-1} S^{*}[1+o(1)]
+$$</p>
+<p>where $ S^{*} $ is a $ (p+1) \times(p+1) $ matrix with its $ (i, j) $ element being $ \int_{-1}^{1} u^{(i-1)+(j-1)} K^{2}(u) d u $
+It follows that</p>
+<p>$$
+\begin{aligned}
+\operatorname{var}(\hat{V}) &amp;=\frac{1}{T h} H^{-1} S^{-1} S^{*} S^{-1} H^{-1}\left[\sum_{j=-\infty}^{\infty} \gamma(j)\right][1+o(1)] \<br>
+&amp;=\frac{1}{T h^{2 \nu+1}} e_{\nu+1}^{\prime} S^{-1} S^{*} S^{-1} e_{\nu+1}\left[\sum_{j=-\infty}^{\infty} \gamma(j)\right][1+o(1)]
+\end{aligned}
+$$
+Unlike the estimator for the regression function $ r\left(X_{t}\right), $ the asymptotic variance of the local polynomial estimator $ \hat{m}\left(t_{0} / T\right)=\hat{\alpha}_{0} $ depends on the long-run variance of $ \left{X_{t}\right} . $ In other words, the serial dependence in $ \left{X_{t}\right} $ has impact on the asymptotic variance of the local polynomial estimator $ \hat{\alpha}_{0} . $ More specifically, whether $ \left{X_{t}\right} $ is $ \mathrm{IID} $ or serially dependent has an important impact on the asymptotic variance of $ \hat{\alpha}_{\nu}=\frac{1}{\nu !} \hat{m}^{(\nu)}\left(t_{0} / T\right) $.
+Question: Why?</p>
+<p>The local polynomial estimator for $ m\left(t_{0} / T\right) $ is based on the observations in the local interval $ \left[\frac{t_{0}}{T}-h, \frac{t_{0}}{T}+h\right] . $ These observations are conservative observations over time in an interval $ \left[t_{0}-T h, t_{0}+T h\right], $ whose width, equal to $ 2 T h, $ is increasing but at a slower
+rate than sample size $ T $. Thus, it maintains the same pattern of serial dependence as
+the original time series $ \left{X_{t}\right} . $ As a result, the asymptotic variance of $ \hat{\alpha}_{0} $ will depend on the long-run variance of $ \left{X_{t}\right} . $ In contrast, the local polynomial estimator $ \hat{r}(x) $ for
+the regression function $ r(x)=E\left(Y_{t} \mid X_{t}=x\right) $ is based on the observations in a small interval $ [x-h, x+h] . $ The observations that fall into this small interval are generally
+not conservative over time, so their serial dependence structure has been destroyed, and
+they appear like an IID sequence.</p>
+<p>Next, to obtain the bias of $ \hat{m}\left(t_{0} / T\right), $ where $ t_{0} \in[T h, T-T h], $ using the Taylor series
+expansion,
+$$
+m(t / T)=\sum_{j=0}^{p} \frac{1}{j !} m^{(j)}\left(\frac{t_{0}}{T}\right)\left(\frac{t-t_{0}}{T}\right)^{j}+\frac{1}{(p+1) !} m^{(p+1)}\left(\frac{\bar{t}}{T}\right)\left(\frac{t-t_{0}}{T}\right)^{p+1}
+$$
+where $ \bar{t}=\lambda t+(1-\lambda) t_{0}, $ we have
+$$
+\begin{aligned}
+\hat{B} &amp;=e_{\nu+1}^{\prime} \hat{S}^{-1} \sum_{t=1}^{T} Z_{t} W_{t} m\left(\frac{t}{T}\right)-\alpha_{\nu} \<br>
+&amp;=\frac{1}{(p+1) !} e_{\nu+1}^{\prime} \hat{S}^{-1} \sum_{t=1}^{T} Z_{t} W_{h}\left(\frac{t-t_{0}}{T}\right)^{p+1} m^{(p+1)}\left(\frac{\bar{t}}{T}\right) \<br>
+&amp;=\frac{h^{p+1}}{(p+1) !} e_{\nu+1}^{\prime} H^{-1}\left(H^{-1} \hat{S} H^{-1}\right)^{-1} H^{-1} \sum_{t=1}^{T} Z_{t} W_{h}\left(\frac{t-t_{0}}{T h}\right)^{p+1} m^{(p+1)}\left(\frac{\bar{t}}{T}\right) \<br>
+&amp;=\frac{h^{p+1-\nu} m^{(p+1)}\left(\frac{t_{0}}{T}\right)}{(p+1) !} e_{\nu+1}^{\prime} S^{-1} C[1+o(1)]
+\end{aligned}
+$$
+where $ C $ is a $ (p+1) \times 1 $ vector with the $ i $ -th element being $ \int_{-1}^{1} u^{(p+1)-(i-1)} K(u) d u . $ Here,
+we have used a continuous integral to approximate a discrete sum:
+$$
+\frac{1}{T h} \sum_{t=1}^{T}\left(\frac{t-t_{0}}{T h}\right)^{j} K\left(\frac{t-t_{0}}{T h}\right) \rightarrow \int_{-1}^{1} u^{j} K(u) d u
+$$
+as $ T \rightarrow \infty . $ It follows that the asymptotic MSE of $ \hat{\alpha}_{\nu} $ is
+$$
+\begin{aligned}
+\operatorname{MSE}\left(\hat{\alpha}_{\nu}\right)=&amp; \frac{1}{T h^{2 \nu+1}} e_{\nu+1}^{\prime} S^{-1} S^{*} S^{-1} e_{\nu+1} \sum_{j=-\infty}^{\infty} \gamma(j) \<br>
+&amp;+h^{2(p+1-\nu)}\left[\frac{m^{(p+1)}\left(\frac{t_{0}}{T}\right)}{(p+1) !}\right]^{2}\left(e_{\nu+1}^{\prime} S^{-1} C\right)^{2} \<br>
+&amp;+o\left(T^{-1} h^{-2 \nu-1}+h^{2(p+1-\nu)}\right)
+\end{aligned}
+$$
+Next, we derive the asymptotic distribution of $ \hat{m}\left(t_{0} / T\right) $.
+Next, we use the central limit theorem to derive the asymptotic distribution of
+$ \hat{m}\left(t_{0} / T\right) $
+Theorem [Asymptotic Normality of $ \left.\hat{m}\left(t_{0} / T\right)\right]: $ If $ h=O\left(T^{-1 /(2 p+3)}\right) $ and $ m^{(p+1)}\left(t_{0} / T\right) $
+is continuous, where $ t_{0} \in[T h, T-T h] $, then as $ T \rightarrow \infty $
+$$
+\begin{array}{l}
+\sqrt{T h}\left[H\left[\hat{\alpha}\left(t_{0} / T\right)-\alpha\left(t_{0} / T\right)\right]-\frac{h^{p+1} m^{(p+1)}\left(t_{0} / T\right)}{(p+1) !} S^{-1} C\right] \<br>
+\rightarrow{d}^{\prime} N\left(0, S^{-1} S^{*} S^{-1} \sum_{j=-\infty}^{\infty} \gamma(j)\right)
+\end{array}
+$$</p>
+<p>where
+$$
+\alpha(0)=\left[r(0), r^{(1)}(0), \ldots, r^{(p)}(0) / p !\right]^{\prime}
+$$
+Therefore,
+$$
+\begin{array}{l}
+\qquad \sqrt{T h^{2 \nu+1}}\left[\hat{m}^{(\nu)}\left(t_{0} / T\right)-m^{(\nu)}\left(t_{0} / T\right)-\frac{h^{p+1-\nu} m^{(p+1)}\left(t_{0} / T\right)}{(p+1) !} \int_{-1}^{1} u^{p+1} K_{\nu}^{*}(u) d u\right] \<br>
+\rightarrow^{d} N\left(0,(\nu !)^{2} \int_{-1}^{1} \tilde{K}^{2}(u) d u \sum_{j=-\infty}^{\infty} \gamma(j)\right)
+\end{array}
+$$
+Similar results for the asymptotic MSE and asymptotic normality of the local poly-
+nomial trend estimator for $ t_{0} $ in the boundary region $ [1, T h) $ or $ (T-T h, T] $ could also
+be obtained. We omit them for space.
+$ 4.2 \quad $ Locally Linear Time-Varying Regression Estimation
+Question: How to model smooth time changes in economics?
+We consider a locally linear time-varying regression model
+$$
+Y_{t}=X_{t}^{\prime} \alpha\left(\frac{t}{T}\right)+\varepsilon_{t}, \quad t=1, \ldots, T
+$$
+where $ Y_{t} $ is a scalar, $ X_{t} $ is a $ d \times 1 $ random vector, and $ \alpha(t / T) $ is a $ d \times 1 $ smooth function
+of normalized time $ t / T $. The time-trend time series model can be viewed as a special
+case of this locally linear time-varying regression model with $ X_{t}=1 $.
+Question: Why to consider smooth changes in a regression model?
+Structural changes are rather a rule than an exception, due to advances in technology,
+changes in preferences, policy shifts, and institutional changes in the economic system. It takes time for economic agents to react to sudden shocks, because it takes time
+for economic agents to collect information needed for making decisions, it takes time for
+markets to reach some consensus due to heterogenous beliefs, it takes time for economic
+agents to change their habits, etc. Even if individual agents can respond immediately
+to sudden changes, the aggregated economic variables (such as consumption) over many
+individuals will become smooth. Indeed, as Alfred Marshall points out, economic changes
+are evolutionary.</p>
+<p>The locally linear time-varying regression model is potentially useful for macroeco-nomic applications and for long time series data.</p>
+<p>Question: How to estimate the $ d \times 1 $ time-varying parameter vector $ \alpha(t / T) ? $
+Suppose $ \alpha(t / T) $ is continuously differentiable up to order $ p+1, $ and $ t_{0} $ is a specified time point such that $ t_{0} / T $ converges $ \tau_{0} $ in $ [0,1] . $ Then by a Taylor series expansion, we
+have that for all $ t $ such that $ t / T $ is in a small neighborhoo of $ t_{0} / T $,
+$$
+\begin{aligned}
+\alpha\left(\frac{t}{T}\right)=&amp; \sum_{j=0}^{p} \frac{1}{j !} \alpha^{(j)}\left(\frac{t_{0}}{T}\right)\left(\frac{t-t_{0}}{T}\right)^{j} \<br>
+&amp;+\frac{1}{(p+1) !} \alpha^{(p+1)}\left(\frac{\bar{t}}{T}\right)\left(\frac{t-t_{0}}{T}\right)^{p+1}
+\end{aligned}
+$$
+where $ \bar{t} $ lies in the segment between $ t $ and $ t_{0} $. Precisely, $ \alpha^{(p+1)}(\bar{t} / T) $ should be understood as being evaluated at a different $ \bar{t} $ for a different component of the $ d \times 1 $ vector $ \alpha^{(p+1)}(\cdot) $.
+Therefore, we can use a $ p $ -th order polynomial to approximate the unknown vector
+function $ \alpha(t / T) $ in the neighbood of $ t_{0} / T . $ Put
+$$
+Z_{t}=\left[1, \frac{t-t_{0}}{T}, \ldots,\left(\frac{t-t_{0}}{T}\right)^{p}\right]^{\prime}
+$$
+and
+$$
+Q_{t}=Z_{t} \otimes X_{t}
+$$
+is a $ d(p+1) \times 1 $ vector of augmented regressors, where $ \otimes $ is the Konecker product.
+Then we consider the following locally weighted sum of squared residuals minimization
+problem
+$$
+\begin{aligned}
+&amp; \sum_{t=1}^{T}\left(Y_{t}-\sum_{l=1}^{d} \alpha_{l t}^{\prime} X_{l t}\right)^{2} K_{h}\left(t-t_{0}\right) \<br>
+=&amp; \sum_{t=1}^{T}\left(Y_{t}-\sum_{l=1}^{d} \alpha_{l}^{\prime} Z_{t} X_{l t}\right)^{2} K_{h}\left(t-t_{0}\right) \<br>
+=&amp; \sum_{t=1}^{T}\left[Y_{t}-\alpha^{\prime}\left(Z_{t} \otimes X_{t}\right)\right]^{2} K_{h}\left(t-t_{0}\right) \<br>
+=&amp; \sum_{t=1}^{T}\left(Y_{t}-\alpha^{\prime} Q_{t}\right)^{2} K_{h}\left(t-t_{0}\right)
+\end{aligned}
+$$
+where $ \alpha=\left(\alpha_{1}^{\prime}, \ldots, \alpha_{d}^{\prime}\right)^{\prime} $ is a $ d(p+1) \times 1 $ vector, with $ \alpha_{l} $ being a $ (p+1) \times 1 $ coefficient
+vector for the product regressor vector $ Z_{t} X_{l t} $</p>
+<p>The local polynomial estimator
+$$
+\begin{aligned}
+\hat{\alpha} &amp;=\left(\sum_{t=1}^{T} Q_{t} W_{t} Q_{t}^{\prime}\right)^{-1} \sum_{t=1}^{T} Q_{t} W_{t} Y_{t} \<br>
+&amp;=\left[\sum_{t=1}^{T}\left(Z_{t} \otimes X_{t}\right) W_{t}\left(Z_{t} \otimes X_{t}\right)^{\prime}\right]^{-1} \sum_{t=1}^{T}\left(Z_{t} \otimes X_{t}\right) W_{t} Y_{t}
+\end{aligned}
+$$
+The estimator for the $ d \times 1 $ vector $ \alpha\left(t_{0} / T\right) $ is then given by
+$$
+\hat{\alpha}\left(t_{0} / T\right)=\left(I_{d} \otimes e_{1}\right)^{\prime} \hat{\alpha}
+$$
+where $ I_{d} $ is a $ d \times d $ identity matrix and $ e_{1} $ is a $ (p+1) \times 1 $ vector with unity for the first
+component equal to 1 and all the other components equal to zero. Intuitively, $ \hat{\alpha}\left(t_{0} / T\right) $
+is a $ d \times 1 $ vector consisting of the $ d $ estimated intercepts from $ \left{\hat{\alpha}_{l}\right}_{l=1}^{d}, $ where $ \hat{\alpha}_{l} $ is a
+$ (p+1) \times 1 $ estimated coefficient vector for $ Z_{t} X_{l t} $</p>
+<p>We could derive the asymptotic MSE formula for $ \hat{\alpha}\left(t_{0} / T\right), $ and their asymptotic
+normal distributions.</p>
+<p>Theorem [Asymptotic MSE]: Suppose $ \left{X_{t}^{\prime}, \varepsilon_{t}\right}^{\prime} $ is a strictly stationary $ \alpha $ -mixing process with $ \gamma(j)=\operatorname{cov}\left(\varepsilon_{t}, \varepsilon_{t-j}\right) $ and $ Q=E\left(X_{t} X_{t}^{\prime}\right), $ and $ \left{X_{t}\right} $ and $ \left{\varepsilon_{t}\right} $ are mutually
+independent. Then for any given $ t_{0} / T $ in the interior region of $ [0,1], $ the asymptotic MSE
+of each component of the $ d \times 1 $ vector $ \hat{\alpha}\left(t_{0} / T\right)=\left(I_{d} \otimes e_{1}\right)^{\prime} \hat{\alpha}, $ where $ \hat{\alpha}=\left(\hat{\alpha}_{1}^{\prime}, \ldots, \hat{\alpha}_{d}^{\prime}\right)^{\prime} $ is
+the local weighted least squares estimator, is given by
+$$
+\begin{aligned}
+\operatorname{MSE}\left[\hat{\alpha}_{l}\left(t_{0} / T\right), \alpha_{l}\left(t_{0} / T\right)\right]=&amp; \frac{1}{T h}\left[\sum_{j=-\infty}^{\infty} \gamma(j)\right]\left(I_{d} \otimes e_{1}\right)^{\prime}(Q \otimes S)^{-1}\left(Q \otimes S^{*}\right)(Q \otimes S)^{-1}\left(I_{d} \otimes e_{1}\right) \<br>
+&amp;+\left[\frac{h^{p+1} \alpha_{l}^{(p+1)}\left(t_{0} / T\right)}{(p+1) !}\right]^{2}\left(I_{d} \otimes e_{1}\right)^{\prime}(Q \otimes S)^{-1}(Q \otimes C)(Q \otimes C)^{\prime}(Q \otimes S)^{-1} \<br>
+&amp;+o\left(T^{-1} h^{-1}+h^{2(p+1)}\right) \<br>
+=&amp; \frac{1}{T h}\left[\sum_{j=-\infty}^{\infty} \gamma(j)\right] \int_{-1}^{1} \tilde{K}_{0}^{2}(u) d u \<br>
+&amp;+h^{2(p+1)}\left[\frac{\alpha_{l}^{(p+1)}\left(t_{0} / T\right)}{(p+1) !}\right]^{2}\left[\int_{-1}^{1} u^{p+1} \tilde{K}_{0}(u) d u\right]^{2} \<br>
+&amp;+o\left(T^{-1} h^{-1}+h^{2(p+1)}\right)
+\end{aligned}
+$$</p>
+<p>where the equivalent kernel is defined as
+$$
+\tilde{K}<em>{0}(u)=\left(I</em>{d} \otimes e_{1}\right)^{\prime}(Q \otimes S)^{-1}[Q \otimes P(u)] K(u)
+$$
+By minimizing the asymptotic MSE, the optimal convergence rate of each component
+of $ \hat{\alpha}\left(t_{0} / T\right) $ can be obtained by choosing the bandwidth
+$$
+h^{*} \propto T^{-\frac{1}{2 p+3}}
+$$
+Theorem [Asymptotic Normality of $ \left.\hat{\alpha}\left(t_{0} / T\right)\right]: $ If $ h=O\left(T^{-1 /(2 p+3)}\right) $ and $ \alpha^{(p+1)}\left(t_{0} / T\right) $ is continuous, where $ t_{0} \in[T h, T-T h] $, then for $ l=1, \ldots, d, $ as $ T \rightarrow \infty $
+$$
+\begin{array}{c}
+\sqrt{T h}\left[\hat{\alpha}_{l}\left(t_{0} / T\right)-\alpha_{l}\left(t_{0} / T\right)\right]-\frac{h^{p+1} \alpha_{l}^{(p+1)}\left(t_{0} / T\right)}{(p+1) !}(Q \otimes S)^{-1}(Q \otimes C) \<br>
+\rightarrow d N\left(0,(Q \otimes S)^{-1}\left(Q \otimes S^{*}\right)(Q \otimes S)^{-1} \sum_{j=-\infty}^{\infty} \gamma(j)\right)
+\end{array}
+$$
+Similar results of the asymptotic MSE and asymptotic normality for $ \hat{\alpha}\left(t_{0} / T\right) $ can be
+obtained when the normalized time time $ \frac{t_{0}}{T} $ is in the left boundary region $ [0, h] $ or the right boundary region $ [1-h, 1] $.</p>
+<p>By plotting the estimator $ \hat{\alpha}\left(t_{0} / T\right) $ as a function of $ t_{0} / T $ in the interval $ [0,1], $ we can
+examine whether the coefficient vector $ \alpha $ is time-varying. Formally, Chen and Hong
+(2012) propose some consistent tests for smooth structural changes as well as a finite number of multiple breaks in a linear regression model by using a local linear estimator
+for the time-varying coefficient $ \alpha(\cdot) . $ Specifically, they propose a generalized Chow (1960)
+test, which is a generalized $ F $ -test by comparing the sum of squared residuals of a local
+linear regression model with that of a constant parameter regression model. They also
+propose a generalized Hausman (1978) type test by comparing the fitted values of a
+local linear estimator with those of a constant parameter regression model. Chen and
+Hong (2012) derive the asymptotic null distribution of these test statistics under the
+null hypothesis of no structural change and establish consistency of these tests under the alternative hypothesis. See Chen and Hong ( 2012 ) for more discussion, including a a
+simulation study and an empirical application.</p>
+<p>Chen and Hong (2016) also propose a local smoothing quasi-likelihood based test for parameter constancy of a GARCH model.</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/4.-nonparametric-estimation-of-time-varying-models/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/4.-nonparametric-estimation-of-time-varying-models/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/4.-nonparametric-estimation-of-time-varying-models/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/4.-nonparametric-estimation-of-time-varying-models/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/5.-nonparametric-estimation-in-frequency-domain/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/3.-nonparametric-regression-estimation/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

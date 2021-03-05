@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="2. 风险项目估值 思想：tracking portfolio
+Almost any real world project has risky future cash flows: $$ \underbrace{C_{0}}_{\text {cost }} \underbrace{\widetilde{C}_{1} \tilde{C}_{3} \ldots \widetilde{C}_{\text {T }}}_{\text {Risky future cash flows }} $$
+2.1 利用远期估值 Main Insight: The forward price of, say, a commodity, represents the certainty equivalent of the future risky price
+ Certainty Equivalent of a risky cash flow: Future risk-free cash flow that has the same present value as the risky cash flow  远期价格代表未来风险价格的确定性等价" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="2. 风险项目估值 思想：tracking portfolio
+Almost any real world project has risky future cash flows: $$ \underbrace{C_{0}}_{\text {cost }} \underbrace{\widetilde{C}_{1} \tilde{C}_{3} \ldots \widetilde{C}_{\text {T }}}_{\text {Risky future cash flows }} $$
+2.1 利用远期估值 Main Insight: The forward price of, say, a commodity, represents the certainty equivalent of the future risky price
+ Certainty Equivalent of a risky cash flow: Future risk-free cash flow that has the same present value as the risky cash flow  远期价格代表未来风险价格的确定性等价"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" /><link rel="prev" href="https://henrywu97.github.io/3.-%E4%BC%B0%E5%80%BC%E4%B8%8E%E7%A8%8E%E6%94%B6/" /><link rel="next" href="https://henrywu97.github.io/1.-%E5%AE%9E%E7%89%A9%E6%8A%95%E8%B5%84%E7%9A%84%E4%BC%B0%E5%80%BC%E5%9F%BA%E7%A1%80/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  1262 ,
+        "url": "https:\/\/henrywu97.github.io\/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1262 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;6 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#2-风险项目估值">2. 风险项目估值</a>
+      <ul>
+        <li><a href="#21-利用远期估值">2.1 利用远期估值</a></li>
+        <li><a href="#22-风险调整的dcf">2.2 风险调整的DCF</a>
+          <ul>
+            <li><a href="#beta的估计">$\beta$的估计</a></li>
+          </ul>
+        </li>
+        <li><a href="#23-ratio-comparison-method-valuation-by-multiples">2.3 Ratio Comparison Method (Valuation by Multiples)</a></li>
+        <li><a href="#24-terminal-value-calculations">2.4 Terminal Value Calculations</a>
+          <ul>
+            <li><a href="#1-terminal-value-as-liquidation-value">1. Terminal Value as Liquidation Value</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h2 id="2-风险项目估值">2. 风险项目估值</h2>
+<p>思想：tracking portfolio</p>
+<p>Almost any real world project has risky future cash flows:
+$$
+\underbrace{C_{0}}_{\text {cost }} \underbrace{\widetilde{C}_{1} \tilde{C}_{3} \ldots \widetilde{C}_{\text {T }}}_{\text {Risky future cash flows }} 
+$$</p>
+<h3 id="21-利用远期估值">2.1 利用远期估值</h3>
+<p>Main Insight: The forward price of, say, a commodity, represents the certainty equivalent of the future risky price</p>
+<ul>
+<li>Certainty Equivalent of a risky cash flow: Future risk-free cash flow that has the same present value as the risky cash flow</li>
+</ul>
+<p>远期价格代表未来风险价格的确定性等价</p>
+<p>$$
+F_t = S_0(e^{rt})
+$$
+If</p>
+<ul>
+<li>&ldquo;The risk in project cash flows stems from future price uncertainty of a particular good (e.g., an input or an output)</li>
+<li>There is a forward market for that good
+then the forward price can be used to find the PV of the CF</li>
+</ul>
+<p>Procedure:</p>
+<ol>
+<li>Calculate $C E(\tilde{C}),$ the certainty equivalent of the risky cash flow</li>
+<li>Discount at the risk-free rate to find the PV:</li>
+</ol>
+<p>其本质在于调整分资至无风险</p>
+<p>$$
+\mathrm{PV}=\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{1}\right)}{1+\bar{r}</em>{1}}+\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{2}\right)}{\left(1+\overline{\mathrm{r}}</em>{2}\right)^{2}}+\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{3}\right)}{\left(1+\overline{\mathrm{r}}</em>{\mathrm{j}}\right)^{3}}+\ldots \ldots+\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{\mathrm{T}}\right)}{\left(1+\overline{\mathrm{r}}</em>{\mathrm{r}}\right)^{T}}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-673059df766f1183.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-673059df766f1183.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-673059df766f1183.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-673059df766f1183.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-673059df766f1183.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-fb4fddd12b0312c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-fb4fddd12b0312c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-fb4fddd12b0312c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-fb4fddd12b0312c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-fb4fddd12b0312c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-ab0d7b2a9332e8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-ab0d7b2a9332e8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-ab0d7b2a9332e8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-ab0d7b2a9332e8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-ab0d7b2a9332e8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-426b8ec59911703f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-426b8ec59911703f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-426b8ec59911703f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-426b8ec59911703f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-426b8ec59911703f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>但现实中往往难以完全复制，即使复制后也可能难以计算。</p>
+<h3 id="22-风险调整的dcf">2.2 风险调整的DCF</h3>
+<p>$$
+\mathrm{PV}=\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{1}\right)}{1+\bar{r}</em>{1}}+\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{2}\right)}{\left(1+\overline{\mathrm{r}}</em>{2}\right)^{2}}+\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{3}\right)}{\left(1+\overline{\mathrm{r}}</em>{\mathrm{j}}\right)^{3}}+\ldots \ldots+\frac{\mathrm{E}\left(\tilde{\mathrm{C}}<em>{\mathrm{T}}\right)}{\left(1+\overline{\mathrm{r}}</em>{\mathrm{r}}\right)^{T}}
+$$</p>
+<p>For now, consider only one future risky cash flow. Our objective is to find its PV:</p>
+<p>$$
+\frac{t=0}{P V} \frac{t=1}{\widetilde{C}}
+$$</p>
+<p>Suppose CAPM is the model pricing financial assets. If the project was a traded asset, we would have</p>
+<p>$$
+\frac{\widetilde{\mathbf{C}}}{\mathrm{PV}}-1=r_{f}+\beta\left(\widetilde{r}_{M}-r_{f}\right)+\varepsilon
+$$</p>
+<p>where</p>
+<p>$$
+\beta=\frac{\operatorname{cov}\left(\frac{\widetilde{C}}{P V}, \tilde{r}<em>{M}\right)}{\operatorname{var}\left(\widetilde{r}</em>{M}\right)}
+$$</p>
+<p>Measures the systematic risk of the project</p>
+<p>$\cdot$ The CAPM pricing equation is:</p>
+<p>$$
+\frac{\mathrm{E}(\widetilde{\mathrm{C}})}{\mathrm{PV}}-1=r_{f}+\beta\left(\bar{r}_{M}-r_{f}\right)
+$$</p>
+<p>Solving for PV, we get</p>
+<p>Risk-adjusted discounting using CAPM:</p>
+<p>$$
+\mathrm{PV}=\underbrace{\frac{\mathrm{E}(\widetilde{\mathrm{C}})}{1+r_{f}+\beta\left(\bar{r}_{M}-r_{f}\right)}}_{\text {Project&rsquo;s cost of capital }}
+$$</p>
+<p>Risk-adjusted discounting using APT:</p>
+<p>$$
+\mathrm{PV}=\frac{\mathrm{E}(\widetilde{\mathrm{C}})}{1+r_{f}+\lambda_{1} \beta_{1}+\lambda_{2} \beta_{2}+\ldots+\lambda_{k} \beta_{k}}
+$$</p>
+<p>Inputs necessary to implement DCF</p>
+<ul>
+<li>Expected cash flow (i.e., the average free cash flow)</li>
+<li>If CAPM is used: expected return on the market, and the return beta of the project</li>
+<li>If APT is used: factor premium for each factor, and the return sensitivity of the project to each factor</li>
+<li>The risk-free rate</li>
+</ul>
+<h4 id="beta的估计">$\beta$的估计</h4>
+<p>In practice “The Comparison Method” is commonly used to implement risk-adjusted discounting:</p>
+<p>–Use public financial information to estimate risk of the business.</p>
+<p>Procedure</p>
+<ol>
+<li>Identify a set of companies in the same business (i.e. in the same risk class)</li>
+<li>Use regression of companies’ traded equity returns on market (or factor) returns to obtain betas</li>
+<li>Adjust for taxes (we will examine tax adjustments later)</li>
+<li>Adjust for leverage</li>
+</ol>
+<p>Why do we adjust for leverage?</p>
+<p>• We want the beta of comparable businesses (i.e., project, or asset beta)</p>
+<p>• We observe the beta of one of the claims to those assets (the equity beta)</p>
+<p>• The amount of debt financing (leverage) affects the equity beta</p>
+<p>Hence: • We need to adjust the beta of the equity in order to recover the beta of the assets.</p>
+<p>Moderate leverage (risk-free debt):</p>
+<p>$$
+\boldsymbol{\beta}<em>{A}=\frac{D}{D+E} 0+\frac{E}{D+E} \boldsymbol{\beta}</em>{E} \Rightarrow \boldsymbol{\beta}<em>{E}=\left(1+\frac{D}{E}\right) \boldsymbol{\beta}</em>{A}
+$$</p>
+<p>High leverage (risky debt):</p>
+<p>$$
+\begin{aligned}
+\beta_{A}=\frac{D}{D+E} \beta_{D}+\frac{E}{D+E} \beta_{E} \Rightarrow \beta_{E} &amp;=\left(1+\frac{D}{E}\right) \beta_{A}-\left(\frac{D}{E}\right) \beta_{D}\<br>
+&amp;=\beta_{A}+(\beta_{A}-\beta_{D}) \cdot L \<br>
+\end{aligned}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185409.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185409.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185409.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185409.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185409.png"
+        title="20200415185409.png" /></div></p>
+<p>注意$\beta_D$是L的增函数</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185542.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185542.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185542.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185542.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415185542.png"
+        title="20200415185542.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-28dfe9696b4dac7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-28dfe9696b4dac7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-28dfe9696b4dac7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-28dfe9696b4dac7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-28dfe9696b4dac7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-68847b1c88e9f5cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-68847b1c88e9f5cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-68847b1c88e9f5cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-68847b1c88e9f5cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-68847b1c88e9f5cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>d) Leverage does not change the cost of capital of figures</p>
+<p>Levering-up an investment makes it riskier, consequently its return should also increase</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-ef692c0c6308ad85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-ef692c0c6308ad85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-ef692c0c6308ad85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-ef692c0c6308ad85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-ef692c0c6308ad85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>Project Betas vs. Firm Betas</p>
+<p>• It is the risk of project cash flows (and hence project beta) that matters for valuation</p>
+<p>• In practice, most firms use their own (overall) cost of capital in evaluating projects</p>
+<p>• No formal method to adjust for project risk</p>
+<p>A different discount rate for each maturity?</p>
+<p>• Typically, the beta of a future cash flow will depend on its maturity</p>
+<p>• However, most firms use the same beta for discounting cash flows of all maturities</p>
+<p>• The resulting misvaluation may be severe, especially when the late cash flow pattern is pronounced</p>
+<p>Could use long- or short-term risk-free rate, and a corresponding long- or short-term beta</p>
+<h3 id="23-ratio-comparison-method-valuation-by-multiples">2.3 Ratio Comparison Method (Valuation by Multiples)</h3>
+<p>Commonly used in real estate valuation and by investment banks (M&amp;As, IPOs)</p>
+<p>– Basic Insight: An asset should sell for $20 if it has twice the annual cash flow of a similar asset that recently sold for $10</p>
+<p>– Implicit assumptions:</p>
+<p>• Project and comparison cash flows will grow at the same rate</p>
+<p>• Comparison prices are accurate</p>
+<p>– Relative valuation
+• Do not need to specify how actual prices are determined
+• Future expected cash flows and risk are implicit in the comparison price</p>
+<p>Procedure</p>
+<ol>
+<li>Choose comparable firms</li>
+</ol>
+<ul>
+<li>Use a large enough sample to average out firms’ idiosyncrasies and eliminate firms that have suffered “abnormal”events (i.e., takeovers)</li>
+</ul>
+<ol start="2">
+<li>Choose bases for multiples</li>
+</ol>
+<ul>
+<li>
+<p>Generic: Sales, Gross Profits, Operating Profits, Net Income, Book Values</p>
+</li>
+<li>
+<p>Industry Specific: Paid Miles Flown, # of restaurants, # of subscribers, circulation of a newspaper etc.</p>
+</li>
+</ul>
+<ol start="3">
+<li>Average across industry</li>
+</ol>
+<ul>
+<li>Calculate multiple for each comparable firm and then take the average</li>
+</ul>
+<ol start="4">
+<li>
+<p>Project bases for the valued firm</p>
+</li>
+<li>
+<p>Value the project (or the firm)</p>
+</li>
+</ol>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415200514.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415200514.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415200514.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415200514.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415200514.png"
+        title="20200415200514.png" /></div></p>
+<p>The most popular version of ratio comparison approach
+Procedure:</p>
+<ol>
+<li>For a comparable business calculate $\frac{P}{E}=k$</li>
+<li>Estimate project&rsquo;s first year expected earnings $E_{f}$</li>
+<li>Compute the present value of future cash flows as</li>
+</ol>
+<p>$$
+P V=E_{f} \cdot k
+$$</p>
+<p>Future earnings growth rates must be similar</p>
+<p>• What if current project earnings are negative?</p>
+<p>​	– Start from the first year in which earnings are projected to be positive and discount the resulting price back
+​	– Use other multiples</p>
+<p>• What if some comparison firms have negative earnings?</p>
+<p>​	– May sum the values and the earnings separately and compute the average based on the aggregate value and aggregate earnings</p>
+<p><strong>Leverage effects</strong></p>
+<p>Leverage may increase P/E (growth firms) or reduce P/E (cash cows with declining earnings)</p>
+<p><strong>For comparisons, we need to use unlevered</strong> $\mathbf{P} / \mathbf{E}:$ P/E ratio that would obtain if the comparison firm were all-equity financed</p>
+<p>$$
+\text { Observed (levered) } P / E=\frac{\text { Price }}{\text { Earnings }}=\frac{A-D}{X-r_{D} D}
+$$</p>
+<p>$A=$ market value of the firm (i.e., debt + equity)</p>
+<p>$X=$ pre-interest earnings</p>
+<p>$D=$ debt value</p>
+<p>$r_{D}=\operatorname{cost} \text { of debt }$</p>
+<p>Therefore, the unlevered P/E ratio is $\boldsymbol{A} / \boldsymbol{X}$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201517.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201517.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201517.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201517.png 1.6x"
+        data-sizes="auto"
+        alt=" "
+        title="20200415201517.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201652.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201652.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201652.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201652.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200415201652.png"
+        title="20200415201652.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200726175705.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200726175705.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200726175705.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200726175705.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200726175705.png"
+        title="20200726175705.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-6e6a1a340bae5bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-6e6a1a340bae5bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-6e6a1a340bae5bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-6e6a1a340bae5bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-6e6a1a340bae5bf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>Pros</p>
+<ol>
+<li>Incorporates a lot of information in a simple way</li>
+<li>Incorporates market consensus about discount rates and growth rates</li>
+<li>Provides discipline in valuation process by ensuring that your valuation is
+in line with other valuations</li>
+</ol>
+<p>Cons</p>
+<ol>
+<li>Implicitly assumes all companies are alike in growth rates, cost of capital,
+and business composition. Hard to find true comps</li>
+<li>Difficult to incorporate firm specific information. Particularly problematic
+if operating changes are going to be implemented</li>
+<li>Accounting differences, particularly with earnings and equity-based
+measures. Multiples of FCF and EBITD may be preferable</li>
+<li>Provides little intuition on what the sources of value are
+– Why are prices high or low?</li>
+</ol>
+<p>In sum, when you have more than five minutes to value a project… DCF is a must!</p>
+<h3 id="24-terminal-value-calculations">2.4 Terminal Value Calculations</h3>
+<p>In valuing long-lived projects or ongoing businesses, we cannot forecast every year of cash flows.</p>
+<p>Instead, forecast FCF until it is reasonable to think that the project or company is in “steady state” and estimate a “terminal value”.</p>
+<p>$$
+\begin{equation}
+\text { Project Value }=\sum_{t=0}^{N} \frac{F C F_{t}}{(1+r)^{t}}+\frac{\text { Terminal Value }_{N}}{(1+r)^{N}}
+\end{equation}
+$$</p>
+<p>Typically, terminal value is calculated in one of three ways:</p>
+<h4 id="1-terminal-value-as-liquidation-value">1. Terminal Value as Liquidation Value</h4>
+<p>Unless liquidation is likely, this method tends to underestimate TV (useful as a lower bound)</p>
+<p>• Liquidation Value depends on Salvage Value and Net Working Capital recovered</p>
+<p>a) Salvage Value (SV): CF that the firm receives from liquidating its assets</p>
+<p>SV = Liquidation price – Liquidation costs</p>
+<p>b) Net Working Capital</p>
+<p>Does firm recoup NWC at project end?</p>
+<p>• If so, last $\Delta $NWC = last NWC</p>
+<p>NWC’s actual value can differ from its book value</p>
+<p>• cannot recoup the A/R fully</p>
+<p>• inventory may sell above or below book value</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-4ca86796814005a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-4ca86796814005a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-4ca86796814005a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-4ca86796814005a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-4ca86796814005a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<ol start="3">
+<li>Using Multiples to get Terminal Value</li>
+</ol>
+<p>TV = k × MULTIPLE</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-84d0955506e33f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-84d0955506e33f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-84d0955506e33f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-84d0955506e33f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-84d0955506e33f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/2.-%E9%A3%8E%E9%99%A9%E9%A1%B9%E7%9B%AE%E4%BC%B0%E5%80%BC/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/3.-%E4%BC%B0%E5%80%BC%E4%B8%8E%E7%A8%8E%E6%94%B6/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/1.-%E5%AE%9E%E7%89%A9%E6%8A%95%E8%B5%84%E7%9A%84%E4%BC%B0%E5%80%BC%E5%9F%BA%E7%A1%80/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

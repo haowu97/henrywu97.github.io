@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="Outline Game theory (MWG Chapter 7,8,9)： Game theory basic concepts, Nash equilibrium, strategic-form game, extensive-form game, Bayesian game.
+Information economics (MWG Chapter 13, 14) Incomplete information game, adverse selection, moral hazard.
+Mechanism design (MWG Chapter 23) Mechanism design theory, auction and revenue maximizing mechanism. (the most challenging part!)
+Social choice (MWG Chapter 21) Social choice theory, collective decision and welfare.
+1. Basic Element The players, the rules, the outcomes, the payoffs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/chapter1.2.3./" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Outline Game theory (MWG Chapter 7,8,9)： Game theory basic concepts, Nash equilibrium, strategic-form game, extensive-form game, Bayesian game.
+Information economics (MWG Chapter 13, 14) Incomplete information game, adverse selection, moral hazard.
+Mechanism design (MWG Chapter 23) Mechanism design theory, auction and revenue maximizing mechanism. (the most challenging part!)
+Social choice (MWG Chapter 21) Social choice theory, collective decision and welfare.
+1. Basic Element The players, the rules, the outcomes, the payoffs"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/chapter1.2.3./" /><link rel="prev" href="https://henrywu97.github.io/1.-fisherseparationtheorem/" /><link rel="next" href="https://henrywu97.github.io/a1-optimization/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/chapter1.2.3.\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  5050 ,
+        "url": "https:\/\/henrywu97.github.io\/chapter1.2.3.\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/chapter1.2.3./" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/chapter1.2.3./" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5050 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;24 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#outline">Outline</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#11-type">1.1 Type</a></li>
+    <li><a href="#12-strategy">1.2 strategy</a></li>
+    <li><a href="#13-game-tree--extension-form">1.3 Game tree / Extension Form</a></li>
+    <li><a href="#14-normal-form">1.4 Normal form</a>
+      <ul>
+        <li><a href="#strategy">strategy</a></li>
+        <li><a href="#normal-form">normal form</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#21-严格占优策略">2.1 严格占优策略</a></li>
+    <li><a href="#22-严劣策略">2.2 严劣策略</a>
+      <ul>
+        <li><a href="#221-纯策略">2.2.1 纯策略</a></li>
+        <li><a href="#222-混合策略">2.2.2 混合策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#23-劣策略">2.3 劣策略</a></li>
+    <li><a href="#24-纳什均衡">2.4 纳什均衡</a>
+      <ul>
+        <li><a href="#纯策略">纯策略</a></li>
+        <li><a href="#混合策略">混合策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#25-连续博弈无限策略博弈">2.5 连续博弈/无限策略博弈</a>
+      <ul>
+        <li><a href="#251-古诺模型">2.5.1 古诺模型</a>
+          <ul>
+            <li><a href="#duopoly">Duopoly</a></li>
+            <li><a href="#oligopoly">Oligopoly</a></li>
+          </ul>
+        </li>
+        <li><a href="#252-bertrand-competition">2.5.2 Bertrand competition</a></li>
+        <li><a href="#253-hotellings-model">2.5.3 Hotelling’s Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#26-incomplete-information-and-bayesian-nash-equilibrium">2.6 Incomplete Information and Bayesian Nash Equilibrium</a>
+      <ul>
+        <li><a href="#261-incomplete-information">2.6.1 Incomplete Information</a></li>
+        <li><a href="#262-bayesian-nash-equilibrium">2.6.2 Bayesian Nash equilibrium</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#31-backward-induction-core">3.1 Backward Induction (core)</a></li>
+    <li><a href="#32-子博弈精炼纳什均衡">3.2 子博弈精炼纳什均衡</a></li>
+    <li><a href="#33-application">3.3 Application</a>
+      <ul>
+        <li><a href="#331-stackelberg-model-of-duopoly">3.3.1 Stackelberg Model Of Duopoly</a></li>
+        <li><a href="#34-ultimatum-bargaining">3.4 Ultimatum Bargaining</a>
+          <ul>
+            <li><a href="#alternating-offers-bargaining">Alternating Offers Bargaining</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#35-repeated-games">3.5 Repeated Games</a>
+      <ul>
+        <li><a href="#351-finitely-repeated-games">3.5.1 Finitely Repeated Games</a></li>
+        <li><a href="#352-infinitely-repeated-games">3.5.2 Infinitely Repeated Games</a>
+          <ul>
+            <li><a href="#3521-grim-trigger-strategy">3.5.2.1 Grim-trigger strategy</a></li>
+            <li><a href="#3522-tit-for-tat-strategy">3.5.2.2 Tit-for-Tat strategy</a></li>
+            <li><a href="#3523-folk-theorem">3.5.2.3 Folk Theorem</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h3 id="outline">Outline</h3>
+<p>Game theory (MWG Chapter 7,8,9)： Game theory basic concepts, Nash equilibrium, strategic-form game, extensive-form game, Bayesian game.</p>
+<p>Information economics (MWG Chapter 13, 14) Incomplete information game, adverse selection, moral hazard.</p>
+<p>Mechanism design (MWG Chapter 23) Mechanism design theory, auction and revenue maximizing mechanism. (the most challenging part!)</p>
+<p>Social choice (MWG Chapter 21) Social choice theory, collective decision and welfare.</p>
+<h1 id="1-basic-element">1. Basic Element</h1>
+<p>The players, the rules, the outcomes, the payoffs</p>
+<h2 id="11-type">1.1 Type</h2>
+<p>Information about strategies and payoffs are <strong>complete</strong>: both prisoners know the available strategies and payoffs of the other.</p>
+<p>A game has <strong>complete information</strong> if the structure of the game tree (including the payoffs) is common knowledge among players.</p>
+<p>A game is one of <strong>perfect information</strong> if each <strong>information set</strong> contains a single decision node. Otherwise, it is a game of <strong>imperfect information</strong>.</p>
+<p><strong>Simultaneous-move Games</strong>: Games where players choose actions simultaneously.</p>
+<p><strong>Sequential-move Games</strong>: Games where players choose actions in a particular sequence.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092731.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092731.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092731.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092731.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092731.png"
+        title="20200513092731.png" /></div></p>
+<p><strong>information sets</strong>:  信息集的集合是所有参与者决策结的分割</p>
+<p>partition：完备事件组</p>
+<p>Each partition element, i.e. one information set, contains one or some of this player’s decision nodes.</p>
+<p>Each information set represents a possible distinguishable circumstance under which a player is called upon to move.</p>
+<p>When the game has reached a non-singleton information set, the player being called upon to move is unable to differentiate between the decision nodes within this information set.</p>
+<p>The construction of “information set” must satisfy the following two restrictions:</p>
+<ol>
+<li>
+<p>A player must have the same set of possible actions at every node within an information set.</p>
+</li>
+<li>
+<p>Perfect recall: a player (1) does not forget what she once knew, or (2) what she once have done.</p>
+</li>
+</ol>
+<h2 id="12-strategy">1.2 strategy</h2>
+<p>The concept of a <strong>strategy</strong> is central to game theory. A strategy is a fully described behavioral disposition. A player’s strategy is a <strong>Complete Contingent Plan</strong>: 针对所有可能发生情况的行动方案</p>
+<p>A strategy will always completely specify behavior, <strong>even at contingencies that are ruled out by the strategy itself</strong>.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092859.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092859.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092859.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092859.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513092859.png"
+        title="20200513092859.png" /></div></p>
+<p>A winning strategy for the first mover: “After each round in which the other player moved his/her piece two cells forward, move its piece one cell forward. Otherwise, move its piece two cells forward.”</p>
+<p>Similarly, in any games with a multiple of 3 cells, the second mover has a win-for-sure strategy for the game: Second-mover advantage However, in any games with not-multiple-of-3 cells, the first mover has a win-for-sure strategy for the game: First-mover advantage</p>
+<h2 id="13-game-tree--extension-form">1.3 Game tree / Extension Form</h2>
+<p>consists of</p>
+<ol>
+<li>
+<p>An initial node (in our example the node marked with Chance).</p>
+</li>
+<li>
+<p>Decision nodes (in our example the nodes at which player A or B faces strategy choices).</p>
+</li>
+<li>
+<p>Terminal nodes (the nodes with no succeeding decision nodes; associated with payoff vectors).</p>
+</li>
+<li>
+<p>An assignment of players (in our example Chance, A and B) to decision nodes.</p>
+</li>
+<li>
+<p>Branches that start at decision nodes and which indicate the decisions available to the player acting at that node.</p>
+</li>
+<li>
+<p>An assignment of payoffs to players at each terminal node.</p>
+</li>
+</ol>
+<p>Extensive game form</p>
+<p>1 A finite set of nodes X , a finite set of possible actions A , and a finite set of players {1, . . . , I}.</p>
+<p>2 A function p : X → {X ∪ ∅} specifying a single immediate predecessor each node x.</p>
+<ul>
+<li>
+<p>Initial node is denoted as x0.</p>
+</li>
+<li>
+<p>Successors are then $s(x) = p^{−1} (x)$; s(x) and p(x) are disjoint.</p>
+</li>
+<li>
+<p>Set of terminal nodes is T = {x ∈ X : s(x) = ∅}.</p>
+</li>
+<li>
+<p>X - T are called decision nodes.</p>
+</li>
+<li>
+<p>Note: p(x) must be a function, not a correspondence. This is to exclude graphs in which some nodes without common predecessor.</p>
+</li>
+</ul>
+<p>A <strong>function α</strong> : $X - {x_0} → A$</p>
+<ul>
+<li>1 giving the action that leads to any non-initial node x from its immediate predecessor p(x);</li>
+<li>2 satisfying the property that (same action cannot lead to two different nodes);</li>
+</ul>
+<p>$$
+\text { if } x^{\prime}, x^{\prime \prime} \in s(x) \text { and } x^{\prime} \neq x^{\prime \prime}, \text { then } \alpha\left(x^{\prime}\right) \neq \alpha\left(x^{\prime \prime}\right)
+$$</p>
+<ul>
+<li>3 the set of choices available at decision node x is  (actions that lead from x to s(x)).</li>
+</ul>
+<p>$$
+c(x)=\left{a \in \mathscr{A}: a=\alpha\left(x^{\prime}\right) \text { for some } x^{\prime} \in s(x)\right)
+$$</p>
+<p>4 A collection of information sets H and a function $H : X - T → H $ assigning each decision node x to an information set H(x) ∈ H .</p>
+<ul>
+<li>The information sets H form a partition of X \ T with the following two restrictions:
+<ul>
+<li>1 all decision nodes assigned to one information set have the same choices: c(x) = c(x 0 ) if H(x) = H(x 0 )</li>
+<li>2 perfect recall : a player (1) does not forget what she once knew, or (2) what she once have done.</li>
+</ul>
+</li>
+<li>All choices available at an information set H: C(H) = {a ∈ A : a ∈ c(x) for x ∈ H}.</li>
+</ul>
+<p>5 A function ι : H → {0, 1, . . . , I} assigning each information set to the player (including nature, player 0) who moves at the decision nodes in that set.</p>
+<ul>
+<li>Player i’s collection of information sets is</li>
+</ul>
+<p>$$
+\mathscr{H}_{i}={H \in \mathscr{H}: i=\iota(H)}
+$$</p>
+<p>6 A function ρ : H0 × A → [0, 1] assigning probabilities to actions at information sets where nature moves</p>
+<ul>
+<li>satisfying ρ(H, a) = 0 if a ∈/ C(H) and $\Sigma_{a \in C(H)} \rho(H, a)=1$ for all H ∈ H0</li>
+</ul>
+<p>7 A collection of payoff functions u = {u1(·), . . . , uI(·)} assigning utilities to the players for each terminal node that can be reached, ui : T → R. ui is Bernoulli.</p>
+<p>Accordingly, a game in extensive form is specified by the collection $\Gamma_{E}={\mathscr{X}, \mathscr{A}, l, p(\cdot), \alpha(\cdot), \mathscr{H}(\cdot), \iota(\cdot), \rho(\cdot), u}$</p>
+<h2 id="14-normal-form">1.4 Normal form</h2>
+<h3 id="strategy">strategy</h3>
+<p>Let $\mathscr{H}_{i}$ denote the collection of player i&rsquo;s information sets, $\mathscr{A} /$ the set of possible actions in the game, and $C(H) \subset \mathscr{A}$ the set of actions possible at information set $H .$</p>
+<p>A strategy for player $i$ is a function $s_{i}: \mathscr{H}_{i} \rightarrow \mathscr{A}$ such that $s_{i}(H) \in C(H)$ for all $H \in \mathscr{H}_{l}$</p>
+<p>Profile of strategies:$s=\left(s_{1}, \ldots, s_{l}\right)$ for each player i</p>
+<h3 id="normal-form">normal form</h3>
+<p>For a game with $/$ players, the normal form representation $\Gamma_{N}$ specifies for each player i a set of strategies $S_{i}$ and a payoff function $u_{i}\left(s_{1}, \ldots, s_{i}\right)$ giving the von Neumann-Morgenstern utility levels associated with the (possibly random) outcome arising from strategies $\left(s_{1}, \ldots, s_{l}\right)$ Formally, $\Gamma_{N}=\left[l,\left{S_{i}\right},\left{u_{i}(\cdot)\right}\right]$</p>
+<p>每一个策略轮廓都直接指向一个收益，使用这种一一对应可以描述一个博弈，即博弈标准型。</p>
+<p>混合策略：$\sigma <em>i:S_i \rightarrow[0,1]$，assigns to each pure strategy $s_i \in S_i$ a probability number σi(si) ≥ 0 which si will be played, where $\sum</em>{s_i∈S_i} σ_i(s_i) = 1$.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093158.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093158.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093158.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093158.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093158.png"
+        title="20200513093158.png" /></div></p>
+<p>期望收益
+$$
+E_\sigma[U_i(s)] = \sum_{s \in S}[\sigma_1(s_1)\times \dots \times \sigma_i(s_i)\times \dots \times \sigma_I(s_I) ]u_i(s_1,\dots,s_i\ldots,s_I)
+$$
+where $S = S_1 \times\dots\times S_I$</p>
+<p>要求参与者的策略概率分布之间相互独立</p>
+<p>从而标准型被表示为$\Gamma_{N}=\left[l,\left{\Delta (S_{i})\right},\left{u_{i}(\cdot)\right}\right]$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093233.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093233.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093233.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093233.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093233.png"
+        title="20200513093233.png" /></div></p>
+<p>显然（注意需要满足前述对信息集的限制条件），行为策略总可以导致一个（或多个）与之结果等价的混合策略（概率的乘法法则）；反过来，混合策略也总可以找到一个（或多个）与之结果等价的行为策略。</p>
+<p>结果等价：$O(\sigma)$表示最终收益的概率分布等价，$\sigma=(\sigma_i)_{i \in I}$ is the probability distribution over terminal nodes that results when each player i follows the precepts of $\sigma_i$ .</p>
+<h1 id="2-simultaneous-move-games">2. Simultaneous Move Games</h1>
+<h2 id="21-严格占优策略">2.1 严格占优策略</h2>
+<p>A strategy $s_{i} \in S_{i}$ is a **strictly dominant strategy** for player $i$ in game $\Gamma_{N}=\left[l,\left{S_{i}\right},\left{u_{i}(\cdot)\right}\right]$ if **for all** $s_{i}^{\prime} \neq s_{i},$ we have $u_{i}\left(s_{i}, s_{-i}\right)&gt;u_{i}\left(s_{i}^{\prime}, s_{-i}\right)$ for all $s_{-i} \in S_{-i}$</p>
+<p>严优策略一定会被采用，好于其他所有策略</p>
+<h2 id="22-严劣策略">2.2 严劣策略</h2>
+<h3 id="221-纯策略">2.2.1 纯策略</h3>
+<p>A strategy $s_{i} \in S_{i}$ is **strictly dominated** for player $i$ in game $\Gamma_{N}=\left[I,\left{S_{i}\right},\left{u_{i}(\cdot)\right}\right]$ if there **exists** another strategy $s_{i}^{\prime} \in S_{i}$ such that for all $s_{-i} \in S_{-i}, u_{i}\left(s_{i}^{\prime}, s_{-i}\right)&gt;u_{i}\left(s_{i}, s_{-i}\right)$. In this case, we say that strategy $s_{i}^{\prime}$ strictly dominates $s_{i}$</p>
+<p>至少有一个策略好于该策略，严劣策略一定不会被选择。</p>
+<h3 id="222-混合策略">2.2.2 混合策略</h3>
+<p>A strategy $\sigma_{i} \in \Delta\left(S_{i}\right)$ is strictly dominated for player $i$ in a normal-form game $\Gamma_{N}=\left[I,\left{\Delta\left(S_{i}\right)\right},\left{u_{i}(\cdot)\right}\right]$ if there exists another strategy $\sigma_{i}^{\prime} \in \Delta\left(S_{i}\right)$ such that for all $\sigma_{-i} \in \prod_{j \neq i} \Delta\left(S_{j}\right), u_{i}\left(\sigma_{i}^{\prime}, \sigma_{-i}\right)&gt;u_{i}\left(\sigma_{i}, \sigma_{-i}\right)$</p>
+<p>$$\begin{aligned}
+&amp;\text { Note that } u_{i}\left(\sigma_{i}^{\prime}, \sigma_{-i}\right)-u_{i}\left(\sigma_{i}, \sigma_{-i}\right)\<br>
+&amp;=\sum_{s_{-i} \in S_{-i}}\left[\prod_{k \neq i} \sigma_{k}\left(s_{k}\right)\right]\left[u_{i}\left(\sigma_{i}^{\prime}, s_{-i}\right)-u_{i}\left(\sigma_{i}, s_{-i}\right)\right]
+\end{aligned}$$</p>
+<p>Iterated Deletion of Strictly Dominated Strategies</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-58f0b16fe45115eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-58f0b16fe45115eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-58f0b16fe45115eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-58f0b16fe45115eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-58f0b16fe45115eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p><strong>A reasoning process</strong>, the logic of which depends on each player being rational, knowing his/her opponent being rational, knowing that his/her opponent knows that oneself being rational, &hellip;, and so on.</p>
+<h2 id="23-劣策略">2.3 劣策略</h2>
+<p>A strategy $s_{i} \in S_{i}$ is **weakly dominated** for player $i$ in game $\Gamma_{N}=\left[I,\left{S_{i}\right},\left{u_{i}(\cdot)\right}\right]$ if there exists another strategy $s_{i}^{\prime} \in S_{i}$ such that for all $s_{-i} \in S_{-i}, u_{i}\left(s_{i}^{\prime}, s_{-i}\right) \geq u_{i}\left(s_{i}, s_{-i}\right)$ **with strict inequality for some** $s_{-i}$. In this case, we say that strategy $s^{\prime}_i$ weakly dominates $s_i$ .</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174225.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174225.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174225.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174225.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174225.png"
+        title="20200512174225.png" /></div></p>
+<p>A strategy is a <strong>weakly dominant strategy</strong> if it weakly dominates every other strategy in Si</p>
+<p>if players believe that any strategies of their rivals will be played with some positive probabilities, a weakly dominated strategy can be dismissed.</p>
+<p><strong>Order</strong> does not matter in iterated deletion of strictly dominated strategies, but it does matter for iterated deletion of weakly dominated strategies. An example.(因此并不建议采用)</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-ea9e94f077e98ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-ea9e94f077e98ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-ea9e94f077e98ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-ea9e94f077e98ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-ea9e94f077e98ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<h2 id="24-纳什均衡">2.4 纳什均衡</h2>
+<p>In game $\Gamma_{N}=\left[I,\left{\Delta\left(S_{i}\right)\right},\left{u_{i}(\cdot)\right}\right],$ strategy $\sigma_{i}$ is a **best response** for player $i$ to his rivals' strategies $\sigma_{-i}$ if $u_{i}\left(\sigma_{i}, \sigma_{-i}\right) \geq u_{i}\left(\sigma_{i}^{\prime}, \sigma_{-i}\right)$ for all $\sigma_{i}^{\prime} \in \Delta\left(S_{i}\right)$
+Strategy $\sigma_{i}$ is **never a best response** if there is no $\sigma_{-i}$ for which $\sigma_{i}$ is a best response.</p>
+<h3 id="纯策略">纯策略</h3>
+<p>A strategy profile $s=\left(s_{1}, \ldots, s_{l}\right)$ constitutes a Nash equilibrium of game $\Gamma_{N}=\left[l,\left{\mathcal{S}_{i}\right},\left{u_{i}(\cdot)\right}\right]$ if for every $i=1, \ldots, l, u_{i}\left(s_{i}, s_{-i}\right) \geq u_{i}\left(s_{i}^{\prime}, s_{-i}\right)$ for all $s_{i}^{\prime} \in S_{i}$</p>
+<p>Mutually best response: nobody has any incentive to deviate to another strategy</p>
+<p>纳什均衡不一定是帕累托最优</p>
+<p>Nash equilibrium outcome coincide with the set that survives iterated elimination of strictly dominated strategies</p>
+<p>pure strategy is played in a Nash equilibrium,  it may not survive the iterative elimination of weakly dominated strategies</p>
+<p>Cell-by-cell inspection always works(划线法/Best Response法)</p>
+<h3 id="混合策略">混合策略</h3>
+<p>A mixed strategy profile $\sigma=\left(\sigma_{1}, \ldots, \sigma_{l}\right)$ constitutes a (mixed-strategy) Nash equilibrium of game $\Gamma_{N}=\left[I,\left{\Delta S_{i}\right},\left{u_{i}(\cdot)\right}\right]$ if for every $i=1, \ldots, I$ $u_{i}\left(\sigma_{i}, \sigma_{-i}\right) \geq u_{i}\left(\sigma_{i}^{\prime}, \sigma_{-i}\right)$ for all $\sigma_{i}^{\prime} \in \Delta S_{i}$</p>
+<p>纳什均衡的存在性, Nash (1950)</p>
+<p>Every game $\Gamma_{N}=\left[I,\left{\Delta\left(S_{i}\right)\right},\left{u_{i}(\cdot)\right}\right]$ in which the sets $S_{1}, \ldots, S_{I}$ have a finite number of elements has a mixed strategy Nash equilibrium.</p>
+<p>纳什均衡的充要条件</p>
+<p>Let $S_{i}^{+} \subset S_{i}$ denote the set of pure strategies that player i plays with positive probability in mixed strategy profile $\sigma=\left(\sigma_{1}, \ldots, \sigma_{l}\right) .$ Strategy profile $\sigma$ is a Nash equilibrium of game $\Gamma_{N}=\left[I,\left{\Delta\left(S_{i}\right)\right},\left{u_{i}(\cdot)\right}\right]$ if and only if for all $i=1, \ldots, I$</p>
+<ol>
+<li>$u_{i}\left(\boldsymbol{s}_{i}, \sigma_{-i}\right)=u_{i}\left(\boldsymbol{s}_{i}^{\prime}, \sigma_{-i}\right)$ for all $\boldsymbol{s}_{i}, \boldsymbol{s}_{i}^{\prime} \in S_{i}^{+}$</li>
+<li>$u_{i}\left(\boldsymbol{s}_{i}, \sigma_{-i}\right) \geq u_{i}\left(\boldsymbol{s}_{i}^{\prime}, \sigma_{-i}\right)$ for all $s_{i} \in S_{i}^{+}$ and all $s_{i}^{\prime} \notin S_{i}^{+}$</li>
+</ol>
+<p>条件1是求解混合策略纳什均衡的方法</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174925.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174925.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174925.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174925.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200512174925.png"
+        title="20200512174925.png" /></div></p>
+<p>还可以通过画图求解</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093427.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093427.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093427.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093427.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513093427.png"
+        title="20200513093427.png" /></div></p>
+<p>定理</p>
+<p>A strictly dominated pure strategy is not used with positive probability in any mixed strategy Nash equilibrium.（对劣策略不成立）</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-01d3f71726731af9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-01d3f71726731af9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-01d3f71726731af9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-01d3f71726731af9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-01d3f71726731af9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-a6679c890b2f0e61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-a6679c890b2f0e61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-a6679c890b2f0e61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-a6679c890b2f0e61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-a6679c890b2f0e61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513095506.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513095506.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513095506.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513095506.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513095506.png"
+        title="20200513095506.png" /></div></p>
+<h2 id="25-连续博弈无限策略博弈">2.5 连续博弈/无限策略博弈</h2>
+<p>Game Matrixes ⇒ Profit Functions</p>
+<p>Best response sets ⇒ Best-response functions</p>
+<p>Nash equilibrium: Mutual best responses</p>
+<h3 id="251-古诺模型">2.5.1 古诺模型</h3>
+<p>A game where two firms (duopoly) compete in terms of the quantity sold (market share) of a homogeneous good is referred to as a Cournot game after the French economist who first studied it.</p>
+<h4 id="duopoly">Duopoly</h4>
+<p>Two firms, i ∈ {1, 2}, produce the same good at the same marginal cost c. Let their outputs be q1 and q2. Let Q = q1 + q2 be the total output. The inverse demand function of the market is P(Q) = a − Q if Q &lt; a; otherwise P(Q) = 0.
+$$
+\begin{aligned}
+\pi_{i}\left(q_{i}, q_{j}\right) &amp;=P(Q) \cdot q_{i}-c \cdot q_{i} \<br>
+&amp;=\left{\begin{array}{ll}
+\left(a-q_{1}-q_{2}-c\right) \cdot q_{i}, &amp; \text { if } q_{1}+q_{2}&lt;a \<br>
+-c \cdot q_{i} &amp; \text { otherwise }
+\end{array}\right.
+\end{aligned}
+$$
+First we study how firm 1 would respond given the output $q_{2}$ of firm 2.
+Firms 1 chooses $q_{1}$ to solve: $\max _{q_{1}} \pi_{1}\left(q_{1}, q_{2}\right)$
+Solving the F.O.C. gives the best response function of firm 1:
+$$
+b_{1}\left(q_{2}\right)=\left{\begin{array}{ll}
+\frac{1}{2}\left(a-c-q_{2}\right), &amp; \text { if } q_{2}&lt;a-c \<br>
+0, &amp; \text { otherwise }
+\end{array}\right.
+$$
+Similarly, firm 2 &rsquo;s best response function $b_{2}\left(q_{1}\right)$ takes the same form.</p>
+<p>Solving $q_{1}=b_{1}\left(q_{2}\right)$ and $q_{2}=b_{2}\left(q_{1}\right),$ we have
+$$
+q_{1}^{*}=q_{2}^{*}=\frac{a-c}{3}
+$$
+**Once a collusion is formed**, each produces half of the monopolistic quantity q1 = q2 = Qm/2 and earns half of the monopolistic profit πm/2.</p>
+<p>Now the optimization for the collusion becomes:
+$$
+\max <em>{Q}(a-Q) \cdot Q-c \cdot Q
+$$
+F.O.C. gives
+$$
+\begin{aligned}
+&amp; a-Q-c-Q=0 \<br>
+\Rightarrow \quad Q</em>{m}^{*}=&amp; \frac{a-c}{2}
+\end{aligned}
+$$
+Each firm produces half of it: $q_{1}^{m}=q_{2}^{m}=\frac{a-c}{4}$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513114650.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513114650.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513114650.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513114650.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513114650.png"
+        title="20200513114650.png" /></div></p>
+<h4 id="oligopoly">Oligopoly</h4>
+<p>Now let&rsquo;s generalize the number of the firms to $J$
+Each firm has identical costs: $C\left(q^{j}\right)=c \cdot q^{j}, c \geq 0$
+Let inverse market demand be
+$$
+p=a-b \cdot \sum_{j=1}^{J} q^{j}, a&gt;0, b&gt;0 \text { and } a&gt;c
+$$
+The profit for firm $j$ is
+$$
+\Pi^{j}\left(q^{1}, \ldots, q^{J}\right)=\left(a-b \cdot \sum_{k=1}^{J} q^{k}\right) \cdot q^{j}-c \cdot q^{j}
+$$
+The best response of firm $j$ when firms $k \neq j$ produce $q^{k}$.
+The profit function can be rewritten as
+$$
+\Pi^{j}\left(q^{1}, \ldots, q^{J}\right)=\left(a-b \cdot q^{j}-b \cdot \sum_{k \neq j} q^{k}\right) \cdot q^{j}-c \cdot q^{j}
+$$
+The first-order condition is
+$$
+a-b q^{j}-b \sum_{k \neq j} q^{k}-b q^{j}-c=0
+$$
+This gives firm $j$ &rsquo;s best response function:
+$$
+q^{j}=\frac{a-c}{2 b}-\frac{\sum_{k \neq j} q^{k}}{2}
+$$
+Solving $J$ simultaneous equations with $J$ unknowns.
+A short-cut: Symmetric equilibrium: $q_{j}=q^{*}$ for all $j$
+Then, we have
+$$
+q^{*}=\frac{a-c}{2 b}-\frac{(J-1) q^{*}}{2}
+$$
+Thus, we have
+$$
+q^{*}=\frac{a-c}{b(J+1)}
+$$
+Insert back, the market price is
+$$
+p^{*}=a-\frac{J(a-c)}{J+1}
+$$
+Remark: the Cournot price decreases (increases) as the number of firm increases (decreases)</p>
+<ul>
+<li>
+<p>Consider the price-cost margin: $p^{*}-c=\frac{a-c}{J+1}$</p>
+</li>
+<li>
+<p>The price-cost margin is the highest when $J=1$ : a monopolistic market outcome.</p>
+</li>
+<li>
+<p>Also, $\lim _{J \rightarrow \infty}\left(p^{*}-c\right)=0:$ a perfectly competitive market outcome.</p>
+</li>
+</ul>
+<h3 id="252-bertrand-competition">2.5.2 Bertrand competition</h3>
+<p>In the Bertrand competition of duopoly, firms compete over prices instead of quantities of outputs. Usually the price is a continuous variable.</p>
+<p>Two firms $i, j,$ with identical marginal cost $c .$</p>
+<p>The market demand function (assuming $a&gt;c$ )
+$$
+D(p)=\left{\begin{array}{ll}
+a-p, &amp; \text { if } p \leq a \<br>
+0, &amp; \text { if } p&gt;a
+\end{array}\right.
+$$
+The two firms' choices: $p_{i}, p_{j} \in \mathbb{R}$</p>
+<p>Assume that the consumers only buy from the firm that offers lower price. Thus the demand for firm $i$ is:
+$$
+q_{i}\left(p_{i}, p_{j}\right)=\left{\begin{array}{ll}
+a-p_{i}, &amp; \text { if } p_{i}&lt;p_{j} \<br>
+\frac{1}{2}\left(a-p_{i}\right), &amp; \text { if } p_{i}=p_{j} \<br>
+0, &amp; \text { if } p_{i}&gt;p_{j}
+\end{array}\right.
+$$
+Notice the discontinuity in the demand function:</p>
+<ul>
+<li>If $p_{j}&gt;c,$ firm $i$ has incentive to undercut by $p_{j}-\epsilon$ and wins the entire market.</li>
+<li>If firm $j$ charges $p_{j}=p_{i},$ each&rsquo;s sale changes to half of the market.</li>
+<li>If firm $j$ undercuts the price to $p_{j}&lt;p_{i}$, firm $j$ can sell to the entire market while firm $i$ has 0 demand.</li>
+</ul>
+<p>Firm i&rsquo;s profit is also a piecewise (discontinuous) function:
+$$
+\pi_{i}\left(p_{i}, p_{j}\right)=\left{\begin{array}{ll}
+\left(p_{i}-c\right)\left(a-p_{i}\right), &amp; \text { if } p_{i}&lt;p_{j} \<br>
+\frac{1}{2}\left(p_{i}-c\right)\left(a-p_{i}\right), &amp; \text { if } p_{i}=p_{j} \<br>
+0, &amp; \text { if } p_{i}&gt;p_{j}
+\end{array}\right.
+$$
+Instead of taking the f.o.c. directly, let&rsquo;s find the optimum manually this time (note that $(a+c) / 2$ is the maximizer of the quadratic function of $p_{i}$ ).</p>
+<p>Depending on $p_{i}$ and $c, 4$ cases (where the B.R. is set-valued):
+$$
+B_{i}\left(p_{j}\right)=\left{\begin{array}{ll}
+\left{p_{i} \in \mathbb{R}: p_{i}&gt;p_{j}\right}, &amp; \text { if } p_{j}&lt;c \<br>
+\left{p_{i} \in \mathbb{R}: p_{i} \geq p_{j}\right}, &amp; \text { if } p_{j}=c \<br>
+\emptyset, &amp; \text { if } c&lt;p_{j} \leq \frac{a+c}{2} \<br>
+\frac{a+c}{2}, &amp; \text { if } p_{j}&gt;\frac{a+c}{2}
+\end{array}\right.
+$$
+Discontinuous functions with a “jump” of value may not have a maximum</p>
+<p>Best-Response Correspondences and Equilibrium</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-e81484df11ab0521.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-e81484df11ab0521.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-e81484df11ab0521.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-e81484df11ab0521.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-e81484df11ab0521.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<h3 id="253-hotellings-model">2.5.3 Hotelling’s Model</h3>
+<p>This is the Hotelling’s location game in both industrial organization theory and the electoral competition model in political science.</p>
+<p>Two parties: Left or Right. (Or two coffee shops: H and D.)</p>
+<p>The parties only differ in policy positions. (Two coffee shops only differ in locations – the price are the same.) x1, x2 ∈ [0, 1].</p>
+<p>Voters (uniformly distributed over [0, 1]) will vote for the candidate whose policy position is closer. (Consumers will only go to wherever is nearby.)</p>
+<p>To illustrate the best responses and Nash equilibria, we need to look at best response correspondence instead of functions.</p>
+<p>Majority rule makes the candidates' winning probabilities discontinuous:
+&ldquo;If Donald Trump attracts slightly more than $1 / 2$ of the voters, he wins the election with prob. 1.</p>
+<p>Hillary and Donald resolves a tie with a coin flip, each&rsquo;s winning probability decreases to 0.5
+Let&rsquo;s derive the parties' best-responses case-by-case:
+$$
+B_{1}\left(x_{2}\right)=\left{\begin{array}{ll}
+\left(x_{2}, 1-x_{2}\right), &amp; \text { if } x_{2}&lt;\frac{1}{2} \<br>
+\frac{1}{2}, &amp; \text { if } x_{2}=\frac{1}{2} \<br>
+\left(1-x_{2}, x_{2}\right), &amp; \text { if } x_{2}&gt;\frac{1}{2}
+\end{array}\right.
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-2c541b04ea8b065f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-2c541b04ea8b065f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-2c541b04ea8b065f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-2c541b04ea8b065f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-2c541b04ea8b065f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<h2 id="26-incomplete-information-and-bayesian-nash-equilibrium">2.6 Incomplete Information and Bayesian Nash Equilibrium</h2>
+<h3 id="261-incomplete-information">2.6.1 Incomplete Information</h3>
+<p>When players <strong>do not know others’ payoffs</strong>, the game is of incomplete information.</p>
+<p>Harsanyi (1967-68) proposed an approach:</p>
+<ul>
+<li>Each player’s payoffs are determined by the realization of a random variable.</li>
+<li>The realization of the random variable is observed only by the player. We call it a player’s “type.”</li>
+<li>The ex-ante probability is assumed to be common knowledge among all the players.</li>
+</ul>
+<p>A <strong>Bayesian game</strong> as $\left[l,\left{S_{i}\right},\left{u_{i}(\cdot)\right}, \Theta, F(\cdot)\right]$</p>
+<ul>
+<li>
+<p>Each player $i$ has a payoff function $u_{i}\left(s_{i}, s_{-i}, \theta_{i}\right),$ where $\theta_{i} \in \Theta_{i}$ is a random variable chosen by nature that is observed only by player $i$.</p>
+</li>
+<li>
+<p>Let $\Theta=\Theta_{1} \times \cdots \times \Theta_{I}$. The joint probability of the $\theta_{i}$ &rsquo;s is given by $F\left(\theta_{1}, \ldots, \theta_{l}\right),$ which is common knowledge.</p>
+</li>
+</ul>
+<p>A pure strategy for player $i$ is a function $s_{i}\left(\theta_{i}\right),$ a decision rule, specifying for each realization of his type a strategy choice. That is, $s_{i}: \Theta_{i} \rightarrow S_{i} .$ We denote the collection of player i&rsquo;s pure strategies as $\mathscr{S}_{i}$ (a functional space).</p>
+<ul>
+<li>Player i&rsquo;s expected payoff given strategy profile $\left(s_{1}(\cdot), \ldots, s_{l}(\cdot)\right)$ is given by $\tilde{u}_{i}\left(s_{1}(\cdot), \ldots, s_{l}(\cdot)\right) \doteq E_{\theta}\left[u_{i}\left(s_{1}(\theta), \ldots, s_{l}(\theta), \theta_{i}\right)\right]$</li>
+</ul>
+<p>Continuous Strategies: Cournot Competition Revisited</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513155021.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513155021.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513155021.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513155021.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513155021.png"
+        title="20200513155021.png" /></div></p>
+<p>转换成如下形式</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163349.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163349.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163349.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163349.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163349.png"
+        title="20200513163349.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163025.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163025.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163025.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163025.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163025.png"
+        title="20200513163025.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163046.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163046.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163046.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163046.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200513163046.png"
+        title="20200513163046.png" /></div></p>
+<h3 id="262-bayesian-nash-equilibrium">2.6.2 Bayesian Nash equilibrium</h3>
+<p>A pure strategy Bayesian Nash equilibrium in this Bayesian game is a triple of actions, one for the woman and one for each type of man, with the no-deviation property as</p>
+<ul>
+<li>the action of woman is optimal given the actions of each type of man and the woman’s belief about the man’s types;</li>
+<li>the action of each type of man is optimal, given the woman’s action choice.</li>
+</ul>
+<p>注意一下两种等价定义的区别</p>
+<p>A pure strategy Bayesian Nash equilibrium for the Bayesian game $\left[I,\left{S_{i}\right},\left{u_{i}(\cdot)\right}, \Theta, F(\cdot)\right]$ is a profile of decision rules $\left(s_{1}(\cdot), \ldots, s_{l}(\cdot)\right)$ that constitutes a Nash equilibrium of game $\Gamma_{N}=\left[I,\left{\mathscr{S}_{i}\right},\left{\tilde{u}_{i}(\cdot)\right}\right]$ That is, for every $i=1, \ldots, l, \tilde{u}_{i}\left(s_{i}(\cdot), s_{-i}(\cdot)\right) \geq \tilde{u}_{i}\left(s_{i}^{\prime}(\cdot), s_{-i}(\cdot)\right)$ for all $s_{i}^{\prime}(\cdot) \in \mathscr{S}_{i}$</p>
+<p>According to the definition earlier, the condition is equivalent to:
+$$
+E_{\theta}\left[u_{i}\left(s_{i}(\theta), s_{-i}(\theta), \theta_{i}\right)\right]&gt;E_{\theta}\left[u_{i}\left(s_{i}^{\prime}(\theta), s_{-i}(\theta), \theta_{i}\right)\right]
+$$
+A profile of decision rules $\left(s_{1}(\cdot), \ldots, s_{l}(\cdot)\right)$ is a Bayesian Nash equilibrium in Bayesian game $\left.l,\left{S_{i}\right},\left{u_{i}(\cdot)\right}, \Theta, F(\cdot)\right]$ if and only if, for all $i$ and all $\bar{\theta}_{i} \in \Theta_{i}$ occurring with positive probability $E_{\theta_{-1}\left[U_{i}\left(s_{i}\left(\bar{\theta}_{i}\right), s_{-i}\left(\theta_{-i}\right), \bar{\theta}_{i}\right) | \bar{\theta}_{i}\right] \geq E_{\theta_{-1},}\left[u_{i}\left(s_{i}^{\prime}, s_{-i}\left(\theta_{-i}\right), \bar{\theta}_{i}\right) | \bar{\theta}_{i}\right] \text { for all } s_{i}^{\prime} \in S_{i}}$</p>
+<p>Q: 这两种定义的等价，是表明即使每个决策者不知道自己的type，也能够达到和知道自己type情况下相同的贝叶斯纳什均衡嘛？</p>
+<p>Q2</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514204427.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514204427.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514204427.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514204427.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514204427.png"
+        title="20200514204427.png" /></div></p>
+<p>可能会漏掉，女人混合策略，男人纯策略的均衡情况</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210545.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210545.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210545.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210545.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210545.png"
+        title="20200514210545.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210636.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210636.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210636.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210636.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514210636.png"
+        title="20200514210636.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211204.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211204.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211204.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211204.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211204.png"
+        title="20200514211204.png" /></div></p>
+<h1 id="3-dynamic-games">3. Dynamic Games</h1>
+<p>标准型不能反映顺序信息。</p>
+<h2 id="31-backward-induction-core">3.1 Backward Induction (core)</h2>
+<p>Generalized <strong>backward induction procedure</strong>:</p>
+<p>Start at the end of the game tree, and identify the Nash equilibria for each of the final subgames (i.e. those that have no other subgames nested within);</p>
+<p>Select one Nash equilibrium in each of these final subgames, and derive the reduced extensive form game in which these final subgames are replaced by the payoffs that result in these subgames when players use these equilibrium strategies;</p>
+<p>Repeat steps 1 and 2 for the reduced game. Continue the procedure until every move in $\Gamma_{E}$ is determined. This collection of moves at the various information sets of $\Gamma_{E}$ constitutes a profile of SPNE strategies.</p>
+<p>If multiple equilibria are never encountered in any step of this process, this profile of strategies is the unique SPNE. If multiple equilibria are encountered, the full set of SPNEs is identified by repeating the procedure for each possible equilibrium that could occur for the subgames in question.</p>
+<h2 id="32-子博弈精炼纳什均衡">3.2 子博弈精炼纳什均衡</h2>
+<p>A <strong>subgame</strong> of an extensive form game $\Gamma_E$ is a subset of the game having the following properties:</p>
+<p><strong>It begins with an information set containing a single decision node</strong>, contains all the decision nodes that are successors of this node, and contains only these nodes.</p>
+<p>If decision node x is in the subgame, then any $x ^\prime \in H(x)$ is also in the subgame.</p>
+<p>The whole game is a subgame (of itself). Proper subgame (strict subset)</p>
+<p>子博弈精炼纳什均衡(SPNE)</p>
+<p>A strategy profile σ in extensive form game $\Gamma_E$ induces a Nash equilibrium in a particular subgame of $\Gamma_E$ if the moves specified in σ for information sets within the subgame constitute a Nash equilibrium when this subgame is considered in isolation.</p>
+<p>A profile of strategies $\sigma = (\sigma_1, . . . , \sigma_I)$ in an extensive form game $\Gamma_E$ is a subgame perfect Nash equilibrium (SPNE) if it induces a Nash equilibrium in every subgame of $\Gamma_E$.</p>
+<p>存在性</p>
+<p>Subgame perfection and backward induction: for <strong>finite games of perfect information</strong>, the set of SPNEs coincides with the set of Nash equilibria that can derived through backward induction.</p>
+<p><strong>Every finite game of perfect information</strong> has a pure strategy subgame perfect Nash equilibrium.</p>
+<p>Furthermore, if no player has the same payoffs at any two terminal nodes, then there is a <strong>unique subgame perfect Nash equilibrium</strong>.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-22736387d6e91b5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-22736387d6e91b5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-22736387d6e91b5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-22736387d6e91b5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-22736387d6e91b5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<h2 id="33-application">3.3 Application</h2>
+<h3 id="331-stackelberg-model-of-duopoly">3.3.1 Stackelberg Model Of Duopoly</h3>
+<p>动态的古诺模型</p>
+<p>Firm 1 chooses a quantity $q_{1} \geq 0$</p>
+<p>Firm 2 observes $q_{1}$ and chooses a quantity $q_{2} \geq 0$ The payoff to each firm is given by
+$$
+\Pi_{j}\left(q_{i}, q_{j}\right)=\left(a-\left(q_{j}+q_{i}\right)\right) q_{j}-c q_{j}
+$$
+Firm 2 &rsquo;s best response function is
+$$
+q_{2}=\frac{a-c}{2}-\frac{q_{1}}{2}
+$$
+Look at firm 1&rsquo;s problem. Firm 1 is to maximize by inserting the quantity $q_{2}$ into the profit function:
+$$
+\begin{aligned}
+\Pi_{1}\left(q_{1}, q_{2}\right) &amp;=\left(a-\left(q_{1}+q_{2}\right)\right) q_{1}-c q_{1} \<br>
+&amp;=\left(a-\left(q_{1}+\frac{a-c}{2}-\frac{q_{1}}{2}\right)\right) q_{1}-c q_{1}
+\end{aligned}
+$$
+Solve the maximization problem, we have
+$$
+q^*_1 = \frac{1}{2}(a-c),q^*_2 = \frac{1}{4}(a-c)
+$$</p>
+<h3 id="34-ultimatum-bargaining">3.4 Ultimatum Bargaining</h3>
+<p>最后通牒博弈</p>
+<p>Two players, 1 and 2.</p>
+<p>Stage 1: Player 1 offers player 2 an amount of money x, $x \in  [0; 10]$.</p>
+<p>Stage 2: Player 2 chooses between “Accept” and “Reject” player 1’s offer.</p>
+<p>If the offered amount accepted, player 1 receives 10 - x while player 2 receives x. If rejected, then both receive 0.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211324.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211324.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211324.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211324.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200514211324.png"
+        title="20200514211324.png" /></div></p>
+<p>In an ultimatum game with continuous strategies described above, there exist <strong>infinitely many Nash equilibria</strong>. Any strategy profile involving player 2 adopting a “cutpoint strategy,” i.e. $\exist \bar{x}$ such that player 2 “accept if $x\geq \hat{x}$ and reject otherwise,” and player 1 offering an amount $\hat{x}$ to player 2 is an Nash equilibrium of the game.</p>
+<p>The unique SPNE** strategies are player 1 chooses x = 0 while player 2 accept any offer amount.</p>
+<h4 id="alternating-offers-bargaining">Alternating Offers Bargaining</h4>
+<p>Player 1 begins in the first period by proposing to keep $x_{1}^{1}$. $M$ for herself and giving $\left(1-x_{1}^{1}\right) \cdot M$ to Player 2</p>
+<p>If Player 2 accepts, the deal is struck. If Player 2 rejects, another bargaining period is played. In period $2,$ Player 2 proposes to keep $y_{2}^{2} \cdot M$ to himself, and giving $\left(1-y_{2}^{2}\right) \cdot M$ to player 1</p>
+<p>If Player 1 accepts, the deal is struck; otherwise, it is period 3 and Player 1 gets to make another proposal.</p>
+<p>Bargaining continues in this manner until a deal is struck or no agreement is reached when both players walk away with their disagreement values-a for Player 1 and $b$ for Player 2</p>
+<p><strong>A shrinking pie and decreasing gains from trade</strong>.</p>
+<ul>
+<li>Suppose there are 2 periods, Player 1 proposes a division of $M$ first, and Player 2 accepts/rejects.</li>
+<li>If accepted the proposal is implemented. If rejected, Player 2 gets to make a counter-proposal for how to split a reduced amount of pie $\lambda M,$ where $0&lt;\lambda&lt;1$ is the rate of decay.</li>
+<li>Player 1 can then accept or reject this final proposal. The bargaining game is then over with certainty.</li>
+</ul>
+<p>Example: suppose that $M=12$ dollar and $\lambda=1 / 3, a=b=0 .$ What is the subgame perfect Nash equilibrium?</p>
+<p><strong>Backward Induction</strong></p>
+<p>Note that $M=12$ in period 1 but only 4 in period 2
+Start from the second period. Player 2 knows he can get $4-\epsilon(\epsilon \geq 0)$ if the game moves to the second period, because player 1 will prefer getting $\epsilon$ to 0 at the end of period $2 .$ In the limit, player 1 will accept any second-period offer including $\epsilon=0$</p>
+<p>Anticipating this, Player 1 must offer Player 2 an amount $12-x \geq 4$ in period $1,$ and keeping $x \leq 8(x=8 \text { when Player } 1$ maximizes) for herself. As Player 2 recognizes it as a weakly-better payoff than what could be gotten by waiting to period 2 , he accepts Player 1 &rsquo;s first period offer.</p>
+<p><strong>Player 1 &rsquo;s first period offer to Player 2 thus equals the amount at stake at the start of the final round, $\lambda \cdot M$</strong></p>
+<h2 id="35-repeated-games">3.5 Repeated Games</h2>
+<h3 id="351-finitely-repeated-games">3.5.1 Finitely Repeated Games</h3>
+<p>A game being played repeated for a known and finite number of periods.</p>
+<p>let’s suppose the Prisoner’s dilemma will be played twice</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-b81ac02ace8134a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-b81ac02ace8134a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-b81ac02ace8134a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-b81ac02ace8134a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-b81ac02ace8134a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>In sum, <strong>the only SPNE</strong> of this two-period repeated PD game is for both players to choose D in the first-period and choose D in the second period no matter which first-period outcome they observe.</p>
+<p><strong>As long as there is a known, finite end, there will be no change in the equilibrium outcome of a game with a unique equilibrium.</strong> Besides PD game, this is also true for zero/constant-sum games.</p>
+<p>【Proposition】The same argument can be generalized to finite repetition of any stage-game which has a unique equilibrium. <strong>Let $G$ be a finite static complete information game which has a unique Nash equilibrium</strong>. Suppose $G$ is played $T$ times ( $T$ periods) and before each stage the outcomes of preceding play are perfectly observable. Let the repeated game be denoted by $G(T)$. There is <strong>a unique subgame perfect Nash equilibrium for $G(T) :$</strong> in which all players play the equilibrium action of the stage game, independent of the history of play that they observe.</p>
+<p><strong>Rethink</strong> the Prisoner’s Dilemma: even if players play it multiple times, they still cannot do any better than both defect: This is because the play of future periods are fixed at the unique N.E. – No flexibility to generate credible future punishments for the non-cooperation of the current period.</p>
+<p>eg: <strong>credible future punishments</strong></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-7173658fa2916900.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-7173658fa2916900.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-7173658fa2916900.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-7173658fa2916900.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-7173658fa2916900.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>Intuition: since the stage-game has two Nash equilibria, one can use the worse one as punishment.it is indeed a SPNE</p>
+<p><strong>Summary</strong></p>
+<p>If a simultaneous move game has a unique Nash equilibrium, then this equilibrium is also the unique subgame perfect Nash equilibrium of the finitely repeated game.</p>
+<p>If a simultaneous move game has multiple Nash equilibria, then there are many subgame perfect Nash equilibria of the finitely repeated game. Some of these involve the play of strategies that are collectively more profitable for players than the one-shot game Nash equilibria.</p>
+<h3 id="352-infinitely-repeated-games">3.5.2 Infinitely Repeated Games</h3>
+<p>A game being played infinitely without end.  Since no one lives forever, we might call such games indefinitely repeated games.</p>
+<p>Possibly overlapping generations. e.g. the relationship with family members, friends, employer, or the community, who are expected to remain in our life for a while but of course, not forever.</p>
+<p>Discount factor, $\delta = \frac{1}{1+r} \in [0: 1]$. $\delta$ can also be interpreted as the <strong>probability that the two players will meet and play the game again tomorrow</strong>. Indefinitely repeated games are common. We often don’t know whether a relationship will continue in the future or not.</p>
+<p>【Average Payoff】The average payoff of player i in the infinite game is
+$$
+(1-\delta) u_{i}=(1-\delta) \sum_{t=0}^{\infty} \delta^{t} \pi_{t}
+$$</p>
+<p>For example, if the players cooperate in every period, $\pi_{t}=4$ for all $t$, we have
+$$
+\begin{aligned}
+(1-\delta) u_{i} &amp;=(1-\delta) \sum_{t=0}^{\infty} \delta^{t} \cdot 4 \<br>
+&amp;=(1-\delta) \cdot \frac{1}{1-\delta} \cdot 4=4
+\end{aligned}
+$$
+【Proposition(Cooperation)】If $\delta$ is high enough, then there exists a subgame perfect Nash equilibrium such that $(C, C)$ is played in every period.</p>
+<p>Intuition: cooperation is possible now because the threat to play D is credible in each period, unlike in the finitely repeated games.</p>
+<p>One way to maintain cooperation is to use <strong>Trigger strategies</strong>: A player using a trigger strategy plays cooperatively as long as her rival(s) do so, but any defection on their part “triggers” a period of punishment, of specified length, in which she plays non-cooperatively in response.</p>
+<h4 id="3521-grim-trigger-strategy">3.5.2.1 Grim-trigger strategy</h4>
+<p>A <strong>Grim-trigger strategy</strong> prescribes the following choices at each possible history: play C in the first period. In later periods, keep playing C if the previous outcome is (C,C); otherwise, switch to playing D forever.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-c6859aa44b65ae64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        title="1240" /></div></p>
+<p>If both players use the grim-trigger strategy, it&rsquo;s easy to check that both will cooperate forever as long as the discount factor $\delta$ is sufficiently large.</p>
+<p>Check for deviations. Consider player $1 .$</p>
+<p>Suppose player 1 is on the equilibrium path and does not deviate. Her total payoff starting from the current period is
+$$
+4+4 \cdot \delta+4 \cdot \delta^{2}+\ldots=\frac{4}{1-\delta}
+$$
+Now if player 1 deviates from the equilibrium path, i.e. she plays $D$ instead of $\mathrm{C}$ in the current period. Then her total payoff is
+$$
+5+1 \cdot \delta+1 \cdot \delta^{2}+\ldots=5+\frac{\delta}{1-\delta}
+$$
+To ensure no deviation we require player 1 &rsquo;s total payoff from the equilibrium path being greater than that from deviation:
+$$
+\begin{aligned}
+\frac{4}{1-\delta} &amp; \geq 5+\frac{\delta}{1-\delta} \<br>
+&amp; \Leftrightarrow \delta \geq \frac{1}{4}
+\end{aligned}
+$$
+As long as $\delta \in(1 / 4,1)$ - player 1 is sufficiently patient-she will have no incentive to deviate from the equilibrium path, i.e. the cooperation phase.</p>
+<h4 id="3522-tit-for-tat-strategy">3.5.2.2 Tit-for-Tat strategy</h4>
+<p>There are &ldquo;nicer&rdquo; strategies that will also support (C,C) in every period as an SPNE outcome.</p>
+<p>A <strong>Tit-for-Tat strategy</strong> prescribes the following choices at each possible history: play $C$ in the first period. In later periods, keep playing $C$ if the opponent plays C. Switch to play D if the opponent plays D in the previous period. Return to playing $C$ if the opponent switch back to playing $C$; otherwise keep on playing $D$.</p>
+<p>Now if player 1 deviates from the equilibrium path, i.e. she plays D instead of $\mathrm{C}$ in the current period. Then her total payoff is
+$$
+5+1 \cdot \delta+0 \cdot \delta^{2}+4 \cdot \delta^{3}+\ldots=5+\delta+\frac{4 \cdot \delta^{3}}{1-\delta}
+$$
+The only different is the next three periods if the players back to the cooperation phase after 4 periods.</p>
+<p>To ensure no deviation we require player 1 &rsquo;s total payoff from the equilibrium path being greater than that from deviation:
+$$
+\begin{aligned}
+\frac{4}{1-\delta} &amp; \geq 5+\delta+\frac{4 \cdot \delta^{3}}{1-\delta} \<br>
+&amp; \Leftrightarrow \delta \geq \frac{1}{4}
+\end{aligned}
+$$
+As long as $\delta \in(1 / 4,1)$ - player 1 is sufficiently patient - she will have no incentive to deviate from the equilibrium path, i.e. the cooperation phase.</p>
+<h4 id="3523-folk-theorem">3.5.2.3 Folk Theorem</h4>
+<p><strong>Any outcome</strong> that on average yields the mutual defection payoff or better for both players can be sustained as a subgame perfect Nash equilibrium of the infinitely repeated Prisoner’s Dilemma game.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload-images.jianshu.io/upload_images/20447423-735f91c78208be57.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240"
+        data-srcset="https://upload-images.jianshu.io/upload_images/20447423-735f91c78208be57.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240, https://upload-images.jianshu.io/upload_images/20447423-735f91c78208be57.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.5x, https://upload-images.jianshu.io/upload_images/20447423-735f91c78208be57.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/1240 1.6x"
+        data-sizes="auto"
+        alt="https://upload-images.jianshu.io/upload_images/20447423-735f91c78208be57.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+        title="1240" /></div></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/chapter1.2.3./" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/chapter1.2.3./"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/chapter1.2.3./" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/chapter1.2.3./" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/1.-fisherseparationtheorem/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/a1-optimization/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

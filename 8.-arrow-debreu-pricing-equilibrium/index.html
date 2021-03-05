@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="8. Arrow-Debreu Pricing: Equilibrium The Arrow-Debreu framework was developed in the 1950s and 1960s by Kenneth Arrow (US, b.1932, Nobel Prize 1972) and Gerard Debreu (France, 1921-2004, Nobel Prize 1983), some key references being:
+  Gerard Debreu, Theory of Value: An Axiomatic Analysis of Economic Equilibrium, New Haven: Yale University Press, 1959.
+  Kenneth Arrow, &ldquo;The Role of Securities in the Optimal Allocation of Risk-Bearing,&rdquo; Review of Economic Studies Vol." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="8. Arrow-Debreu Pricing: Equilibrium The Arrow-Debreu framework was developed in the 1950s and 1960s by Kenneth Arrow (US, b.1932, Nobel Prize 1972) and Gerard Debreu (France, 1921-2004, Nobel Prize 1983), some key references being:
+  Gerard Debreu, Theory of Value: An Axiomatic Analysis of Economic Equilibrium, New Haven: Yale University Press, 1959.
+  Kenneth Arrow, &ldquo;The Role of Securities in the Optimal Allocation of Risk-Bearing,&rdquo; Review of Economic Studies Vol."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" /><link rel="prev" href="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" /><link rel="next" href="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/8.-arrow-debreu-pricing-equilibrium\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  4747 ,
+        "url": "https:\/\/henrywu97.github.io\/8.-arrow-debreu-pricing-equilibrium\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/8.-arrow-debreu-pricing-equilibrium/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/8.-arrow-debreu-pricing-equilibrium/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4747 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;23 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#81-the-arrow-debreu-economy">8.1 The Arrow-Debreu Economy</a>
+      <ul>
+        <li><a href="#811-a-d-security">8.1.1 A-D security</a></li>
+        <li><a href="#812-a-d-market">8.1.2 A-D market</a></li>
+        <li><a href="#813-a-d-economy">8.1.3 A-D economy</a>
+          <ul>
+            <li><a href="#agent-utility-maximization-problem">Agent' Utility Maximization Problem</a></li>
+            <li><a href="#markets-clear">Markets Clear</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#82-competitive-equilibrium-and-pareto-optimum">8.2 Competitive Equilibrium and Pareto Optimum</a>
+      <ul>
+        <li><a href="#821-agent-utility-maximization-problem">8.2.1 Agent' Utility Maximization Problem</a>
+          <ul>
+            <li><a href="#asset-return-and-asset-prices">Asset return and asset prices</a></li>
+          </ul>
+        </li>
+        <li><a href="#822-numerical-example">8.2.2 Numerical Example</a>
+          <ul>
+            <li><a href="#step-1-type-1-investor">Step 1: Type 1 investor</a></li>
+            <li><a href="#step-2-type-2-investor">Step 2: Type 2 investor</a></li>
+            <li><a href="#step-3-market-clearing">Step 3: Market Clearing</a></li>
+          </ul>
+        </li>
+        <li><a href="#823-welfare-theorems-of-economics">8.2.3 Welfare Theorems of Economics</a>
+          <ul>
+            <li><a href="#social-planners-problem">Social Planner&rsquo;s Problem</a></li>
+            <li><a href="#numerical-example-continued">Numerical Example, continued</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#83-risk-sharing">8.3 Risk Sharing</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#case-1---w1w2-">Case 1:  $ w^{1}=w^{2} $</a></li>
+            <li><a href="#case-2---w1-neq-w2-">Case 2:  $ w^{1} \neq w^{2} $</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#84-summary-and-comparisons">8.4 Summary and Comparisons</a>
+      <ul>
+        <li><a href="#841-summary">8.4.1 Summary</a></li>
+        <li><a href="#842-arrow-debreu-vs-capm">8.4.2 Arrow-Debreu v.s. CAPM</a></li>
+        <li><a href="#843-apt-and-the-a-d-model">8.4.3 APT and the A-D model</a></li>
+        <li><a href="#844-further-progress">8.4.4 Further progress</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="8-arrow-debreu-pricing-equilibrium">8. Arrow-Debreu Pricing: Equilibrium</h1>
+<p>The Arrow-Debreu framework was developed in the 1950s and 1960s by Kenneth Arrow (US, b.1932, Nobel Prize 1972) and Gerard Debreu (France, 1921-2004, Nobel Prize 1983), some key references being:</p>
+<ul>
+<li>
+<p>Gerard Debreu, Theory of Value: An Axiomatic Analysis of Economic Equilibrium, New Haven: Yale University Press, 1959.</p>
+</li>
+<li>
+<p>Kenneth Arrow, &ldquo;The Role of Securities in the Optimal Allocation of Risk-Bearing,&rdquo; Review of Economic Studies Vol.31 (April 1964): pp.91-96.</p>
+</li>
+</ul>
+<h2 id="81-the-arrow-debreu-economy">8.1 The Arrow-Debreu Economy</h2>
+<p>General Equilibrium</p>
+<ul>
+<li>Supply = Demand</li>
+<li>With production (if desired)</li>
+<li>Static but Multi-period</li>
+<li>No restrictions on preferences</li>
+</ul>
+<p>The most general of the theories we shall consider.</p>
+<h3 id="811-a-d-security">8.1.1 A-D security</h3>
+<p>Two dates: $ t=0 $ and $ t=1, N $ possible states at $ t=1, $ with probabilities $ \pi_{i}, i=1,2, \ldots, N $</p>
+<p>【Definition】An <strong>Arrow-Debreu security</strong> at state $ i $ is the following payoff
+$$
+\left(\begin{array}{c}
+0 \<br>
+\vdots \<br>
+1 \<br>
+\vdots \<br>
+0
+\end{array}\right) \longleftrightarrow \text { state } i
+$$</p>
+<p>That is, an Arrow-Debreu security at $ i $ pays 1 unit of time consumption good if state $ i $ happens and nothing at the rest of states.</p>
+<p>Let $ q_{i} $ be the price of Arrow-Debreu security at $ i $. That is, $ q_{i} $ is the number of units of consumption good at time 0. $  q_{i}  $ also is called the state price of $ i $ since Arrow-Debreu security at state $ i $ pays 1 unit of consumption good only at state $ i $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602121909.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602121909.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602121909.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602121909.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602121909.png"
+        title="20200602121909.png" /></div></p>
+<p>There will have two umbrellas contingent on the weather in tomorrow.
+$$
+\begin{array}{l}
+\text {Umbrella } 1=\left(\begin{array}{l}
+1 \<br>
+0
+\end{array}\right) \<br>
+\text {Umbrella } 2=\left(\begin{array}{l}
+0 \<br>
+1
+\end{array}\right)
+\end{array}
+$$</p>
+<p>That is, Umbrella 1: The umbrella to be delivered in tomorrow if it will rain tomorrow;</p>
+<p>and Umbrella 2: The umbrella to be delivered in tomorrow if it will be sunshine tomorrow.</p>
+<p>The price for Umbrella 1 is the price of rain tomorrow and the price for Umbrella 2 is the price of sunshine tomorrow.</p>
+<h3 id="812-a-d-market">8.1.2 A-D market</h3>
+<p>【Definition】<strong>Complete market</strong>: you could buy any time consumption bundle from the existing markets if you have enough time 0 consumption good.</p>
+<ul>
+<li>
+<p>The agent can buy whatever he wants on time 0&rsquo;s markets if he has enough time 0 consumption goods. In other words, the agent can buy any time 1 consumption plan if he has enough time 0 consumption goods; and</p>
+</li>
+<li>
+<p>The agent can sell whatever he has on markets to transform it into time 0 consumption goods. In other words, the agent can sell his time 1 endowment on markets and get his total income represented by time 0 consumption good</p>
+</li>
+</ul>
+<p>Suppose there is only one riskless financial asset whose payoffs at time 1 are 1 at both states. The market is not complete.</p>
+<p>Given the AD security price vector $ q $ and an agent&rsquo;s endowment $ w=\left(w^{0} ; w^{1}, \ldots w^{N}\right), $ what does the agent have?</p>
+<ul>
+<li>
+<p>Since the markets are complete, he wants to sell all his time 1 endowments on time 0 &rsquo;s financial markets to transform them into time 0 &rsquo;s wealth (good).</p>
+</li>
+<li>
+<p>Time 1 endowment $ w=\left(w^{1}, \ldots w^{N}\right) $ is equivalent to having a portfolio $ \theta=w^{T}=\left(w^{1}, \ldots w^{N}\right)^{T} $</p>
+</li>
+</ul>
+<p>Thus, the agent has total time 0 wealth
+$$
+W=w^{0}+\Sigma_{i=1}^{N} q^{i} w^{i}
+$$
+What does he want to buy for time 1&rsquo;s consumption bundle and time 0&rsquo;s consumption good?</p>
+<p>Suppose he is going to buy consumption bundle $ c=\left(c^{0} ; c^{1}, \ldots, c^{N}\right) $</p>
+<ul>
+<li>
+<p>since the markets are complete, he can buy these as long as he has enough wealth at time 0</p>
+</li>
+<li>
+<p>similarly, time 1 consumption plan $ C^{1} $ is equivalent to buying a portfolio $ \theta=\left(c^{1}, \ldots c^{N}\right)^{T} $</p>
+</li>
+</ul>
+<p>Therefore, its total cost of this consumption bundle is
+$$
+c^{0}+\Sigma_{i=1}^{N} q^{i} c^{i}
+$$
+Thus, the agent&rsquo;s feasible budget set is
+$$
+w^{0}+\Sigma_{i=1}^{N} q^{i} w^{i} \geq c^{0}+\Sigma_{i=1}^{N} q^{i} c^{i}
+$$</p>
+<h3 id="813-a-d-economy">8.1.3 A-D economy</h3>
+<p>Key features of our version of the A-D economy</p>
+<ul>
+<li>Two dates: $ t=0 $ (today, when assets are purchased) and $ t=1 $ (the future, when payoffs are received). This can (and will) be generalized.</li>
+<li>N possible states at $ t=1 $, with probabilities $ \pi_{i}, i=1,2, \ldots, N $</li>
+<li>One perishable (non-storable) good at each date (more goods can be added and the possibility of storage introduced, at the cost of more notational complexity)</li>
+<li>Individuals initially receive goods as endowments (but production could be introduced)</li>
+<li>$ K $ investors, $ j=1,2, \ldots, K, $ who may differ in their preferences and endowments</li>
+</ul>
+<h4 id="agent-utility-maximization-problem">Agent' Utility Maximization Problem</h4>
+<p>Let</p>
+<ul>
+<li>$ w_{j}^{0}= $ agent j&rsquo;s endowment at $ t=0 $</li>
+<li>$ w_{j}^{i}= $ agent j&rsquo;s endowment in state i at $ \mathrm{t}=1 $</li>
+<li>$ c_{j}^{0}= $ agent j&rsquo;s consumption at $ t=0 $</li>
+<li>$ c_{j}^{i}= $ agent j&rsquo;s consumption in state i at $ \mathrm{t}=1 $</li>
+</ul>
+<p>Arrow-Debreu securities or state-contingent claims, is the only traded securities: security i priced $ q^{i} $ promises one unit of consumption if state $ i $ occurs and nothing otherwise.</p>
+<p>Use consumption at $ t=0 $ as the &ldquo;numeraire/标尺&rdquo;, that is, the goods in terms of which all other prices are quoted.</p>
+<p>Let $ q^{i} $ be the price at $ t=0, $ measured in units of $ t=0 $ consumption, of a contingent claim that pays off one unit of consumption in a particular state $ i $ at $ t=1 $ and zero otherwise.</p>
+<p>Buying state-contingent claims is the only way for a consumer to secure purchasing power at a future date-state( the good is perishable.)</p>
+<p>For simplicity, assume that each investor first uses the contingent claims market to sell off his or her endowments at $ t=0 $ and in each state at $ t=1, $ then uses the same markets to buy back consumption at $ t=0 $ and in each state at $ t=1 $</p>
+<p>Then we won&rsquo;t need additional notation to keep track of purchases and sales of contingent claims: purchases coincide with consumption and sales with endowments</p>
+<p>Investor $ j $ in our economy therefore faces the budget constraint
+$$
+w_{j}^{0}+\sum_{i=1}^{N} q^{i} w_{j}^{i} \geq c_{j}^{0}+\sum_{i=1}^{N} q^{i} c_{j}^{i}
+$$
+Note that we can always go back and compute net sales $ w_{j}^{0}-c_{j}^{0} $ and $ w_{j}^{i}-c_{j}^{i} $ or purchase $ c_{j}^{0}-w_{j}^{0} $ and $ c_{j}^{i}-w_{j}^{i} $ for all $ i=1,2, \ldots, N $ of contingent claims if there turn out to be of interest.</p>
+<p>Investors are allowed to have different utility functions, and in the most general <strong>A-D model need not even have expected utility functions</strong>
+$$
+u_{j}\left(c_{j}^{0}, c_{j}^{1}, c_{j}^{2}, \ldots, c_{j}^{N}\right)
+$$
+But to obtain sharper results, we will a**ssume that all investors maximize vN-M expected utility functions, but are allowed to have different Bernoulli utility functions** reflecting possibly different attitudes towards risk.</p>
+<p>Thus, investor $ j $ chooses $ c_{j}^{0} $ and $ c_{j}^{i} $ for all $ i=1,2, \ldots, N $ to maximize
+$$
+u_{j}\left(c_{j}^{0}\right)+\beta E\left[u_{j}\left(\tilde{c}_{j}\right)\right]=u_{j}\left(c_{j}^{0}\right)+\beta \sum_{i=1}^{N} \pi_{i} u_{j}\left(c_{j}\right) \quad (1)
+$$
+where the discount factor $ \beta $ is again a measure of patience, subject to the budget constraint</p>
+<p>$$
+w_{j}^{0}+\Sigma_{i=1}^{N} q^{i} w_{j}^{i} \geq c_{j}^{0}+\sum_{i=1}^{N} q^{i} c_{j}^{i} \quad (2)
+$$
+Note, again, Arrow and Debreu&rsquo;s **key insight**: the mathematical structure of this investor&rsquo;s problem is identical to the problem faced by a consumer who must divide his or her income up into amounts to be spent on apples, bananas, oranges, etc.</p>
+<p>Extending our version of the model to include more than two periods would require even more notation(!). But, both conceptually and mathematically, that extension simply amounts to introducing more goods: pears, pineapples, etc.</p>
+<p>In the A-D economy, as in microeconomics more generally, each individual investor operating in perfectly competitive markets takes prices as given and sees him or herself as being able to purchase as much or as little of each good at those competitive prices.</p>
+<h4 id="markets-clear">Markets Clear</h4>
+<p>Finally, all markets must clear: for each good, the quantity supplied must equal the quantity demanded.</p>
+<p>In our version of the A-D economy, market clearing requires that
+$$
+\begin{aligned}
+\sum_{j=1}^{K} w_{j}^{0} &amp;=\sum_{j=1}^{K} c_{j}^{0} \quad (3)\<br>
+\sum_{j=1}^{K} w_{j}^{i} &amp;=\sum_{j=1}^{K} c_{j}^{i} \quad (4)
+\end{aligned}
+$$
+for all $ i=1,2, \ldots, N . $ These conditions simultaneously describe equilibrium in the market for goods and for contingent claims.</p>
+<p>In our A-D economy, therefore, a competitive equilibrium consists of a set of consumptions $ c_{j}^{0} $ for all $ j=1,2, \ldots, K $ and $ c_{j}^{\prime} $ for all $ i=1,2, \ldots, N $ and $ j=1,2, \ldots, K $ and a set of prices $ q^{i} i=1,2, \ldots, N $ such that:</p>
+<ul>
+<li>Given prices, each investor&rsquo;s consumptions maximize his or her utility subject to his or her budget constraint.</li>
+<li>All markets clear.</li>
+</ul>
+<p>So solve the problem described by equations $ (1)-(4) $</p>
+<h2 id="82-competitive-equilibrium-and-pareto-optimum">8.2 Competitive Equilibrium and Pareto Optimum</h2>
+<h3 id="821-agent-utility-maximization-problem">8.2.1 Agent' Utility Maximization Problem</h3>
+<p>Let&rsquo;s focus on the first requirement for a CE: investor $ j $ chooses $ c_{j}^{0} $ and $ c_{j}^{i} $ for all $ i=1,2, \ldots, N $ to maximize
+$$
+u_{j}\left(c_{j}^{0}\right)+\beta \sum_{i=1}^{N} \pi_{i} u_{j}\left(c_{j}\right)
+$$
+subject to the budget constraint
+$$
+w_{j}^{0}+\sum_{i=1}^{N} q^{i} w_{j}^{i} \geq c_{j}^{0}+\sum_{i=1}^{N} q^{i} c_{j}^{i}
+$$
+The Lagrangian for the investor&rsquo;s problem
+$$
+L=u_{j}\left(c_{j}^{0}\right)+\beta \sum_{i=1}^{N} \pi_{i} u_{j}\left(c_{j}\right)+\lambda_{j}\left(w_{j}^{0}+\sum_{i=1}^{N} q^{i} w_{j}^{i}-c_{j}^{0}-\sum_{i=1}^{N} q^{i} c_{j}^{i}\right)
+$$
+So the first-order condition(F.O.C) for all $ i=1,2, \ldots, N $
+$$
+\begin{aligned}
+u_{j}^{\prime}\left(c_{j}^{0}\right)-\lambda_{j} &amp;=0 \<br>
+\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{\prime}\right)-\lambda_{j} q^{i} &amp;=0
+\end{aligned}
+$$
+It implies that
+$$
+\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{i}\right)=u_{j}^{\prime}\left(c_{j}^{0}\right) q^{i}
+$$
+or
+$$
+q^{i}=\frac{\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{i}\right)}{u_{j}^{\prime}\left(c_{j}^{0}\right)}=\frac{M U_{j}^{i}}{M U_{j}^{0}}
+$$</p>
+<p>The investor, as an actor in this economy, takes the price $ q^{i} $ as given and uses it to choose $ c_{j}^{0} $ and $ c_{j}^{i} $ optimally.</p>
+<p>But we, as observers of this economy, can use this optimality condition to see what the investor&rsquo;s choices of $ c_{j}^{0} $ and $ c_{j}^{i} $ tell us about the contingent claim price $ q^{i} $ and, by extension, about asset prices more broadly.
+$$
+q^{i}=\frac{\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{i}\right)}{u_{j}^{\prime}\left(c_{j}^{0}\right)} \quad \text { for all } i=1,2, \dots, N
+$$
+The price $ q^{i} $ tends to be higher when:</p>
+<ul>
+<li>$ \beta $  is larger, indicating that investors are more patient.</li>
+<li>$ \pi_{i} $ is larger, indicating that state $ i $ is more likely.</li>
+<li>$ u_{j}^{\prime}\left(c_{j}^{i}\right) $ is larger or $ u_{j}^{\prime}\left(c_{j}^{0}\right) $ is smaller</li>
+</ul>
+<p>The price $ q^{i} $ tends to be higher when $ u_{j}^{\prime}\left(c_{j}^{i}\right) $ is larger or $ u_{j}^{\prime}\left(c_{j}^{0}\right) $ is smaller.</p>
+<p>If $ u_{j} $ is concave, that is, if investor $ j $ is risk averse, then a larger value of $ u_{j}^{\prime}\left(c_{j}^{i}\right) $ corresponds to a smaller value of $ c_{j}^{i} $ and a smaller value of $ u_{j}^{\prime}\left(c_{j}^{0}\right) $ corresponds to a larger value of $ c_{j}^{0} $.</p>
+<p>That is, $ q^{i} $ is higher if investor j&rsquo;s consumption falls between $ t=0 $ and state $ i $ at $ t=1 $</p>
+<p>And this same condition must hold for all investors in the economy. <strong>Hence, $ q^{i} $ is higher if everyone expects consumption to fall in state $ i $.</strong>
+$$
+q^{i}=\frac{\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{i}\right)}{u_{j}^{\prime}\left(c_{j}^{0}\right)} \quad \text { for all } i=1,2, \dots, N
+$$
+When is consumption most likely to fall for everyone in the economy? During a recession.</p>
+<p>Hence, the A-D model associates a high contingent claim price $ q^{i} $ with a recession, drawing an explicit link between asset prices and the rest of the economy that is, at best, implicit in the CAPM.</p>
+<p>This highlights an important, but somewhat subtle, distinction: the CAPM describes the behavior of asset returns, while the A-D model describes the behavior of asset prices.</p>
+<h4 id="asset-return-and-asset-prices">Asset return and asset prices</h4>
+<p>To more directly compare the implications of these two models, let&rsquo;s translate the A-D model&rsquo;s implications for prices into implications for asset returns instead.</p>
+<p>In the A-D model, a contingent claim that costs $ q^{i} $ at $ t=0 $ pays off one unit of consumption in state $ i $ at $ t=1 $</p>
+<p>Hence, the return on this asset between $ t=0 $ and state $ i $ at $ t=1 $ is
+$$
+1+r^{i}=\frac{1}{q^{i}} \quad \text { or } \quad r^{i}=\frac{1}{q^{i}}-1
+$$
+A high price $ q^{i} $ corresponds to a low return $ r^{i} $.</p>
+<p>Hence, the A-D model associates recessions with low asset returns.</p>
+<p><strong>Consistent with CAPM intuition, investors are willing to accept a low return on a contingent claim that pays off during a recession because that asset provides insurance.</strong></p>
+<p>The difference between low return on this asset and higher returns that may be available on other assets is like the premium that investors are willing to pay for this insurance.</p>
+<p>A user of the CAPM would say, &ldquo;well, recessions are times when the return on the market portfolio is low, so if you want an asset that pays off well during those times, you&rsquo;ll have to pay a premium.&rdquo;</p>
+<p>The models are fully consistent.</p>
+<p>But the A-D model makes the links between asset prices and the rest of the economy more explicit.</p>
+<h3 id="822-numerical-example">8.2.2 Numerical Example</h3>
+<p>To derive some additional implications of the A-D model, let&rsquo;s assume now that all investors have a logarithmic Bernoulli utility function
+$$
+u_{j}(c)=\ln (c)
+$$
+so that $ u_{j}^{\prime}(c)=1 / c $ for all $ j=1,2, \ldots, K $ and that the common discount factor is $ \beta=0.9 $</p>
+<p>But let&rsquo;s assume, as well, that investors differ in terms of their endowments. More specifically, suppose that the economy consists of two types of investors-type 1 and type 2-in equal numbers.</p>
+<p>Now we can consider a &ldquo;representative&rdquo; of each type: $ j=1 $ and $ j=2 $.</p>
+<p>Suppose for simplicity that there are only two possible states, $ i=1 $ and $ i=2, $ at $ t=1 $ which occur with probabilities $ \pi_{1}=2 / 3 $ and $ \pi_{2}=1 / 3 $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155109.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155109.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155109.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155109.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155109.png"
+        title="20200602155109.png" /></div></p>
+<p>In this economy, there are three sets of requirements for a CE</p>
+<ul>
+<li>
+<p>Type 1 investors take prices as given and choose consumptions optimally.</p>
+</li>
+<li>
+<p>Type 2 investors take prices as given and choose consumptions optimally.</p>
+</li>
+<li>
+<p>All markets clear.</p>
+</li>
+</ul>
+<p>Let&rsquo;s consider what each set of requirements implies.</p>
+<h4 id="step-1-type-1-investor">Step 1: Type 1 investor</h4>
+<p>The representative type 1 investor takes $ q^{1} $ and $ q^{2} $ as given, chooses $ c_{1}^{0}, c_{1}^{1} $ and $ c_{1}^{2} $ to maximize
+$$
+\ln \left(c_{1}^{0}\right)+0.9\left[(2 / 3) \ln \left(c_{1}^{1}\right)+(1 / 3) \ln \left(c_{1}^{2}\right)\right]
+$$
+subject to
+$$
+8+20 q^{1}+13 q^{2} \geq c_{1}^{0}+q^{1} c_{1}^{1}+q^{2} c_{1}^{2}
+$$</p>
+<p>Set up the Lagrangian</p>
+<p>$$
+\begin{array}{l}
+L=\ln \left(c_{1}^{0}\right)+0.9\left[(2 / 3) \ln \left(c_{1}^{1}\right)+(1 / 3) \ln \left(c_{1}^{2}\right)\right] \<br>
+\quad+\lambda_{1}\left[8+20 q^{1}+13 q^{2}-c_{1}^{0}-q^{1} c_{1}^{1}-q^{2} c_{1}^{2}\right]
+\end{array}
+$$
+So the $ F . O . C . $
+$$
+\begin{aligned}
+\frac{1}{c_{1}^{0}} &amp;=\lambda_{1} \<br>
+0.9(2 / 3) \frac{1}{c_{1}^{1}} &amp;=\lambda_{1} q^{1} \<br>
+0.9(1 / 3) \frac{1}{c_{1}^{2}} &amp;=\lambda_{1} q^{2}
+\end{aligned}
+$$
+Use the first equation to eliminate $ \lambda_{1} $ in the other two equations.
+$$
+0.9(2 / 3) \frac{c_{1}^{0}}{c_{1}^{1}}=q^{1}
+$$
+$$
+0.9(1 / 3) \frac{c_{1}^{0}}{c_{1}^{2}}=q^{2}
+$$</p>
+<p>If we were only interested in solving the individual investor&rsquo;s problem, we could use the two equations and the budget constraint to solve for $ c_{1}^{0}, c_{1}^{1} $ and $ c_{1}^{2} $ in terms of $ q^{1} $ and $ q^{2} $.</p>
+<h4 id="step-2-type-2-investor">Step 2: Type 2 investor</h4>
+<p>The representative type 2 investor takes $ q^{1} $ and $ q^{2} $ as given, chooses $ c_{2}^{0}, c_{2}^{1} $ and $ c_{2}^{2} $ to maximize
+$$
+\ln \left(c_{2}^{0}\right)+0.9\left[(2 / 3) \ln \left(c_{2}^{1}\right)+(1 / 3) \ln \left(c_{2}^{2}\right)\right]
+$$
+subject to
+$$
+12+5 q^{1}+2 q^{2} \geq c_{2}^{0}+q^{1} c_{2}^{1}+q^{2} c_{2}^{2}
+$$</p>
+<p>Similarly, we could then use two equations and the budget constraint to solve for $ c_{2}^{0}, c_{2}^{1} $ and $ c_{2}^{2} $ in terms of $ q^{1} $ and $ q^{2} $</p>
+<h4 id="step-3-market-clearing">Step 3: Market Clearing</h4>
+<p>Since there are equal numbers of each investor type, market clearing requires
+$$
+\begin{array}{l}
+w_{1}^{0}+w_{2}^{0}=20=c_{1}^{0}+c_{2}^{0} \<br>
+w_{1}^{1}+w_{2}^{1}=25=c_{1}^{1}+c_{2}^{0} \<br>
+w_{1}^{2}+w_{2}^{2}=15=c_{1}^{2}+c_{2}^{2}
+\end{array}
+$$</p>
+<p>You might at this point be worried. We seem to have 9 equations that must be satisfied: two first-order conditions and one budget constraint for each of the two representative investors and three market-clearing conditions.</p>
+<p>But we have only 8 &ldquo;unknowns&rdquo; to solve for: $ c_{1}^{0}, c_{1}^{1}, c_{1}^{2}, c_{2}^{0}, c_{2}^{1}, c_{2}^{2}, q^{1} $ and $ q^{2} $</p>
+<p>But there is actually no problem: What we have discovered, instead, is a special case of Walras' Law.
+Walras' Law says that in an economy with $ K $ consumers and $ M $ markets, if</p>
+<ul>
+<li>All $ K $ consumers' budget constraints are satisfied and</li>
+<li>$ M-1 $ markets are in equilibrium</li>
+</ul>
+<p>then the $ M $th market must be in equilibrium as well</p>
+<p>Walras' Law implies that we really have only 8 unknowns in 8 equations.</p>
+<p>Having the same number of equations as unknowns doesn&rsquo;t guarantee that there will be a solution or that a solution, if it exists, will be unique.</p>
+<p>But it does suggest that a unique solution might be found. In fact, you can check that for this economy, all of the equilibrium conditions are satisfied with</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155948.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155948.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155948.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155948.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602155948.png"
+        title="20200602155948.png" /></div></p>
+<p>$ q^{1} $ is larger than $ q^{2} $ because the probability of state 1 is $ 2 / 3 $ and the probability of state 2 is $ 1 / 3 $ but the difference in prices across states is smaller than the difference in probabilities, because state 1 is a &ldquo;boom&rdquo; and state 2 is a &ldquo;recession.&rdquo;</p>
+<p>Type 1 agents use asset markets to &ldquo;borrow&rdquo; against future income and consume more today. Type 2 agents use asset markets to &ldquo;lend&rdquo; and consume in the future. Both agent types use asset markets to smooth consumption over time and across states.</p>
+<p>But neither agent is able to fully insure against the aggregate risk of the recession in state 2. Type 1 agents are wealthier: their total endowment is worth more and they always consume more.</p>
+<h3 id="823-welfare-theorems-of-economics">8.2.3 Welfare Theorems of Economics</h3>
+<p>The A-D economy is one in which the two welfare theorems of economics hold:</p>
+<ul>
+<li>the resource allocation from a competitive equilibrium is Pareto optimal, and</li>
+<li>any Pareto optimal resource allocation can be supported in a competitive equilibrium.</li>
+</ul>
+<p>To see this, let&rsquo;s continue to work with the special case with only two types of investors and two possible states at $ t=1 $.</p>
+<p>But let&rsquo;s generalize slightly, by assuming that both types of investors have a Bernoulli utility function of the more general form
+$$
+u\left(c_{j}^{0}\right)+\beta\left[\pi_{1} u\left(c_{j}^{1}\right)+\pi_{2} u\left(c_{j}^{2}\right)\right]
+$$
+where $ \pi_{1} $ is the probability of state 1 and $ \pi_{2}=1-\pi_{1} $ is the probability of state 1, and by letting $ w^{0}, w^{1}, $ and $ w^{2} $ denote the aggregate endowments at $ t=0 $ and the two states at $ t=1 $.</p>
+<h4 id="social-planners-problem">Social Planner&rsquo;s Problem</h4>
+<p>Now consider a <strong>social planner</strong>, who divides the aggregate endowments up into amounts allocated to each of the two representative investors subject to the resource constraints
+$$
+\begin{array}{l}
+w^{0} \geq c_{1}^{0}+c_{2}^{0} \<br>
+w^{1} \geq c_{1}^{1}+c_{2}^{1} \<br>
+w^{2} \geq c_{1}^{2}+c_{2}^{2}
+\end{array}
+$$
+in order to maximize a weighted sum of their expected utilities
+$$
+\begin{aligned}
+\theta\left(u\left(c_{1}^{0}\right)+\beta\left[\pi_{1} u\left(c_{1}^{1}\right)+\pi_{2} u\left(c_{1}^{2}\right)\right]\right) \<br>
++(1-\theta)\left(u\left(c_{2}^{0}\right)+\beta\left[\pi_{1} u\left(c_{2}^{1}\right)+\pi_{2} u\left(c_{2}^{2}\right)\right]\right)
+\end{aligned}
+$$
+The Lagrangian for this social planner&rsquo;s problem
+$$
+\begin{aligned}
+L &amp;=\theta\left(u\left(c_{1}^{0}\right)+\beta\left[\pi_{1} u\left(c_{1}^{1}\right)+\pi_{2} u\left(c_{1}^{2}\right)\right]\right) \<br>
+&amp;+(1-\theta)\left(u\left(c_{2}^{0}\right)+\beta\left[\pi_{1} u\left(c_{2}^{1}\right)+\pi_{2} u\left(c_{2}^{2}\right)\right]\right) \<br>
+&amp;+\lambda^{0}\left(w^{0}-c_{1}^{0}-c_{2}^{0}\right)+\lambda^{1}\left(w^{1}-c_{1}^{1}-c_{2}^{1}\right)+\lambda^{2}\left(w^{2}-c_{1}^{2}-c_{2}^{2}\right)
+\end{aligned}
+$$
+the first-order conditions
+$$
+\begin{aligned}
+\theta u^{\prime}\left(c_{1}^{0}\right)=\lambda^{0} &amp; \text { and }(1-\theta) u^{\prime}\left(c_{2}^{0}\right)=\lambda^{0} \<br>
+\theta \beta \pi_{1} u^{\prime}\left(c_{1}^{1}\right)=\lambda^{1} &amp; \text { and }(1-\theta) \beta \pi_{1} u^{\prime}\left(c_{2}^{1}\right)=\lambda^{1} \<br>
+\theta \beta \pi_{2} u^{\prime}\left(c_{1}^{2}\right)=\lambda^{2} &amp; \text { and }(1-\theta) \beta \pi_{2} u^{\prime}\left(c_{2}^{2}\right)=\lambda^{2}
+\end{aligned}
+$$</p>
+<p>can be combined to obtain
+$$
+\begin{aligned}
+\frac{\beta \pi_{1} u^{\prime}\left(c_{1}^{1}\right)}{u^{\prime}\left(c_{1}^{0}\right)} &amp;=\frac{\beta \pi_{1} u^{\prime}\left(c_{2}^{1}\right)}{u^{\prime}\left(c_{2}^{0}\right)} \<br>
+\frac{\beta \pi_{2} u^{\prime}\left(c_{1}^{2}\right)}{u^{\prime}\left(c_{1}^{0}\right)} &amp;=\frac{\beta \pi_{2} u^{\prime}\left(c_{2}^{2}\right)}{u^{\prime}\left(c_{2}^{0}\right)}
+\end{aligned}
+$$
+The social planner equates marginal rates of substitution between $ t=0 $ and each state at $ t=1 $ across the two agent types.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162231.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162231.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162231.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162231.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162231.png"
+        title="20200602162231.png" /></div></p>
+<p>In any competitive equilibrium, however, both agent types will equate the same marginal rates of substitution to the contingent claim prices:
+$$
+\begin{aligned}
+\frac{\beta \pi_{1} u^{\prime}\left(c_{1}^{1}\right)}{u^{\prime}\left(c_{1}^{0}\right)} &amp;=q^{1}=\frac{\beta \pi_{1} u^{\prime}\left(c_{2}^{1}\right)}{u^{\prime}\left(c_{2}^{0}\right)} \<br>
+\frac{\beta \pi_{2} u^{\prime}\left(c_{1}^{2}\right)}{u^{\prime}\left(c_{1}^{0}\right)} &amp;=q^{2}=\frac{\beta \pi_{2} u^{\prime}\left(c_{2}^{2}\right)}{u^{\prime}\left(c_{2}^{0}\right)}
+\end{aligned}
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162836.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162836.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162836.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162836.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602162836.png"
+        title="20200602162836.png" /></div></p>
+<p>Hence, in the A-D economy as in the Edgeworth box:</p>
+<ul>
+<li>First Welfare Theorem of Economics: The resource allocation from a competitive equilibrium is Pareto optimal</li>
+<li>Second Welfare Theorem of Economics: A Pareto optimal resource allocation can be supported in a competitive equilibrium.</li>
+</ul>
+<h4 id="numerical-example-continued">Numerical Example, continued</h4>
+<p>In our numerical example with log utility, <strong>for social planner</strong>, optimal allocations must satisfy
+$$
+\begin{aligned}
+\frac{\theta}{c_{1}^{0}}=&amp; \frac{1-\theta}{c_{2}^{0}}  &amp; \text { and } \quad c_{1}^{0}+c_{2}^{0}=20 \<br>
+\frac{0.9 \theta(2 / 3)}{c_{1}^{1}}=&amp; \frac{0.9(1-\theta)(2 / 3)}{c_{2}^{1}} &amp; \text { and } \quad c_{1}^{1}+c_{2}^{1}=25 \<br>
+\frac{0.9 \theta(1 / 3)}{c_{1}^{2}}=&amp; \frac{0.9(1-\theta)(1 / 3)}{c_{2}^{2}} &amp; \text { and } \quad c_{1}^{2}+c_{2}^{2}=15
+\end{aligned}
+$$
+With $ \theta = 0.6 $, are satisfied with $ c_{1}^{0}=12, c_{2}^{0}=8, c_{1}^{1}=15, c_{1}^{2}=10, c_{1}^{2}=9 $, and $ c_{2}^{2}=6 . $ **To match the CE in which type 1 investors are wealthier, the social planner must give the utility of type 1 investors a higher weight.**</p>
+<p>The welfare theorems point to an easier way to find equilibria for A-D economies.</p>
+<p><strong>Start by solving a social planner&rsquo;s problem for a Pareto optimal allocation. There is only one optimization problem to solve and there are no prices involved, so this tends to be easier.</strong></p>
+<p>Then, given the Pareto allocation, &ldquo;back out&rdquo; the contingent claims prices using
+$ q^{i}=\frac{\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{i}\right)}{u_{j}^{\prime}\left(c_{j}^{0}\right)} \quad $ for all $ i=1,2, \ldots, N $ and any $ j=1,2, \ldots, K $</p>
+<h2 id="83-risk-sharing">8.3 Risk Sharing</h2>
+<p>We can use this approach to study how investors optimally share risk, keeping in mind that in the competitive equilibrium of an A-D economy they will use financial markets to do so.</p>
+<p>Now consider the same  <strong>social planner&rsquo;s problem</strong> as before, the first-order conditions
+$$
+\begin{aligned}
+\theta u^{\prime}\left(c_{1}^{0}\right)=\lambda^{0} &amp; \text { and } \quad(1-\theta) u^{\prime}\left(c_{2}^{0}\right)=\lambda^{0} \<br>
+\theta \beta \pi_{1} u^{\prime}\left(c_{1}^{1}\right)=\lambda^{1} &amp; \text { and } \quad(1-\theta) \beta \pi_{1} u^{\prime}\left(c_{2}^{1}\right)=\lambda^{1} \<br>
+\theta \beta \pi_{2} u^{\prime}\left(c_{1}^{2}\right)=\lambda^{2} &amp; \text { and } \quad (1-\theta) \beta \pi_{2} u^{\prime}\left(c_{2}^{2}\right)=\lambda^{2} 
+\end{aligned}
+$$
+Let&rsquo;s focus on the last two of these optimality conditions, since they show how the investors share risk across states 1 and 2 at $ t=1 $
+$$
+\begin{array}{l}
+\theta \beta \pi_{1} u^{\prime}\left(c_{1}^{1}\right)=(1-\theta) \beta \pi_{1} u^{\prime}\left(c_{2}^{1}\right) \<br>
+\theta \beta \pi_{2} u^{\prime}\left(c_{1}^{2}\right)=(1-\theta) \beta \pi_{2} u^{\prime}\left(c_{2}^{2}\right)
+\end{array}
+$$</p>
+<p>Using the aggregate resource constraints, imply
+$$
+\begin{array}{l}
+\theta u^{\prime}\left(c_{1}^{1}\right)=(1-\theta) u^{\prime}\left(w^{1}-c_{1}^{1}\right) \<br>
+\theta u^{\prime}\left(c_{1}^{2}\right)=(1-\theta) u^{\prime}\left(w^{2}-c_{1}^{2}\right)
+\end{array}
+$$
+since $ w^{1}=c_{1}^{1}+c_{2}^{1} $ and $ w^{2}=c_{1}^{2}+c_{2}^{2} $</p>
+<h4 id="case-1---w1w2-">Case 1:  $ w^{1}=w^{2} $</h4>
+<p>Note, first, that when $ w^{1}=w^{2}, $ so that there is no aggregate risk, these two equations are exactly the same.</p>
+<p>In this case, we must have $ c_{1}^{1}=c_{1}^{2} $ and $ c_{2}^{1}=c_{2}^{2} . $ For each type of agent, consumption in state 1 is the same as consumption in state 2.</p>
+<p>With $ w^{1}=w^{2}, $ we have $ c_{1}^{1}=c_{1}^{2} $ and $ c_{2}^{1}=c_{2}^{2} . $ For each type of agent consumption in state 1 is the same as consumption in state 2. The two welfare theorems then imply that in any competitive equilibrium without aggregate risk, agents will use financial markets to diversify away all idiosyncratic risk in their individual endowments.</p>
+<p>This result holds true even when individual investors differ in their risk aversion.</p>
+<h4 id="case-2---w1-neq-w2-">Case 2:  $ w^{1} \neq w^{2} $</h4>
+<p>$$
+\begin{array}{l}
+\theta u^{\prime}\left(c_{1}^{1}\right)=(1-\theta) u^{\prime}\left(w^{1}-c_{1}^{1}\right) \<br>
+\theta u^{\prime}\left(c_{1}^{2}\right)=(1-\theta) u^{\prime}\left(w^{2}-c_{1}^{2}\right)
+\end{array}
+$$
+Next, suppose that $ w^{1} \neq w^{2}, $ so that there is aggregate risk.
+In this case, the two equations are different. At least one of the two types of investors will have consumption that differs across states 1 and 2 at $ t=1 . $ Aggregate risk, by definition, cannot be diversified away.</p>
+<p>An interesting special case arises when the two investor types have Bernoulli utility functions of the same CRRA form so that
+$$
+u_{j}(c)=\frac{c^{1-\gamma}-1}{1-\gamma}
+$$
+with $ \gamma&gt;0 $ for $ j=1,2, $ and $ u_{j}^{\prime}(c)=c^{-\gamma} $</p>
+<p>When investors have identical CRRA utility functions
+$$
+\begin{array}{l}
+\theta u^{\prime}\left(c_{1}^{1}\right)=(1-\theta) u^{\prime}\left(w^{1}-c_{1}^{1}\right) \<br>
+\theta u^{\prime}\left(c_{1}^{2}\right)=(1-\theta) u^{\prime}\left(w^{2}-c_{1}^{2}\right)
+\end{array}
+$$
+specialize to
+$$
+\begin{array}{l}
+\theta\left(c_{1}^{1}\right)^{-\gamma}=(1-\theta)\left(w^{1}-c_{1}^{1}\right)^{-\gamma} \<br>
+\theta\left(c_{1}^{2}\right)^{-\gamma}=(1-\theta)\left(w^{2}-c_{1}^{2}\right)^{-\gamma}
+\end{array}
+$$
+implies
+$$
+\begin{array}{l}
+\theta^{1 / \gamma}\left(w^{1}-c_{1}^{1}\right)=(1-\theta)^{1 / \gamma} c_{1}^{1} \<br>
+\theta^{1 / \gamma}\left(w^{2}-c_{1}^{2}\right)=(1-\theta)^{1 / \gamma} c_{1}^{2}
+\end{array}
+$$</p>
+<p>can be solved for
+$$
+\begin{aligned}
+&amp;c_{1}^{1}=w^{1} \frac{\theta^{1 / \gamma}}{\theta^{1 / \gamma}+(1-\theta)^{1 / \gamma}} \quad \text{ and }  \quad c_{1}^{2}=w^{2} \frac{\theta^{1 / \gamma}}{\theta^{1 / \gamma}+(1-\theta)^{1 / \gamma}} \<br>
+&amp;c_{2}^{1}=w^{1}\left(1-\frac{\theta^{1 / \gamma}}{\theta^{1 / \gamma}+(1-\theta)^{1 / \gamma}}\right)=w^{1} \frac{(1-\theta)^{1 / \gamma}}{\theta^{1 / \gamma}+(1-\theta)^{1 / \gamma}} \<br>
+&amp;c_{2}^{2}=w^{2}\left(1-\frac{\theta^{1 / \gamma}}{\theta^{1 / \gamma}+(1-\theta)^{1 / \gamma}}\right)=w^{2} \frac{(1-\theta)^{1 / \gamma}}{\theta^{1 / \gamma}+(1-\theta)^{1 / \gamma}} 
+\end{aligned}
+$$
+**In the special case where all individual investors have the same CRRA utility function, they share aggregate risk equally**, in the sense that each consumes a fixed fraction of the aggregate endowment in each possible state at $ t=1 $.</p>
+<p>when $ \gamma=1 $, simplify even further to
+$$
+\begin{array}{l}
+c_{1}^{1}=\theta w^{1} \quad \text { and } \quad c_{1}^{2}=\theta w^{2} \<br>
+c_{2}^{1}=w^{1}(1-\theta) \quad \text { and } \quad c_{2}^{2}=w^{2}(1-\theta)
+\end{array}
+$$
+The allocations from our numerical example( with logarithmic Bernoulli utility function, i.e., $ \gamma = 1$) have this special property: the type 1 investor always consumes $ \theta=0.6 $( 60  percent) of the aggregate endowment.</p>
+<p><strong>Hence, the A-D model echoes the CAPM in another way: by emphasizing the difference between idiosyncratic risk, which can be diversified away in financial markets, and aggregate risk, which can&rsquo;t be.</strong></p>
+<p>Once again, however, the A-D model draws explicit connections between risk in financial markets and risk in the economy as a whole.</p>
+<h2 id="84-summary-and-comparisons">8.4 Summary and Comparisons</h2>
+<h3 id="841-summary">8.4.1 Summary</h3>
+<p>The A-D model is an explicit equilibrium model of asset prices.
+Through the equilibrium condition
+$$
+q^{i}=\frac{\beta \pi_{i} u_{j}^{\prime}\left(c_{j}^{i}\right)}{u_{j}^{\prime}\left(c_{j}^{0}\right)}
+$$
+which must hold for all states $ i=1,2, \ldots, N $ and all investors $ j=1,2, \ldots, K, $ the A-D model links asset prices to aggregate un-diversifiable risk in the economy as a whole.</p>
+<p>The A-D model&rsquo;s generality has been both a strength and a weakness.</p>
+<p>It is a strength, because the A-D model makes no special assumptions about investors' preferences or the distribution of asset returns. But it is also a weakness, since it is difficult to see, at least at first, how it can be applied to think about assets that are actually traded in financial markets, like stocks, bonds, and options</p>
+<h3 id="842-arrow-debreu-vs-capm">8.4.2 Arrow-Debreu v.s. CAPM</h3>
+<p>Since MPT and the CAPM were developed around the same time, it is useful to consider how each of these two approaches brings
+economic analysis to bear on the problem of pricing risky assets and cash  flows.</p>
+<p>Markowitz, Sharpe, Lintner, and Mossin put $ \sigma^2 $ on one axis and $ \mu $ on the other. This allowed them to make more rapid progress, deriving important results for portfolio management and asset pricing.</p>
+<p>But the resulting theory proved very difficult to generalize: it requires either quadratic utility or normally distributed returns.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115113.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115113.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115113.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115113.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115113.png"
+        title="20200602115113.png" /></div></p>
+<p>Arrow and Debreu put consumption in the good state on one axis and consumption in the bad state on the other. Their theory requires none of the restrictive assumptions that underly the CAPM.</p>
+<p>But it took much longer to recognize its implications for asset pricing.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115210.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115210.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115210.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115210.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602115210.png"
+        title="20200602115210.png" /></div></p>
+<p>In the end, both approaches proved to be incredibly valuable. Markowitz, Sharpe, Arrow, and Debreu all won Nobel Prizes.</p>
+<p>Advantages of the Arrow-Debreu approach:</p>
+<ul>
+<li>Investors do not have to have quadratic utility, or even
+expected utility functions.</li>
+<li>Returns do not need to be normally distributed</li>
+<li>The theory draws very explicit links between asset prices and the rest of the economy.</li>
+</ul>
+<h3 id="843-apt-and-the-a-d-model">8.4.3 APT and the A-D model</h3>
+<p>The APT can also be compared to the no-arbitrage variant of
+Arrow-Debreu theory. The APT replaces the A-D model&rsquo;s abstract description of &ldquo;states of the world&rdquo; with a more practical, or empirically-motivated depiction of the underlying sources of aggregate risk and then prices portfolios of assets based on their exposures to those sources of risk.</p>
+<h3 id="844-further-progress">8.4.4 Further progress</h3>
+<p>Further progress with the A-D model can be made along two dimensions:</p>
+<ul>
+<li>
+<p>The Consumption Capital Asset Pricing Model (CCAPM) is a special case of the A-D model that adds further assumptions in order to get more specific results and to draw deeper links between the A-D model and the traditional CAPM.</p>
+</li>
+<li>
+<p>The A-D model can also be used as a no-arbitrage theory of asset pricing. Through this approach, we can use existing assets to make inferences about what contingent claim prices should be, then use those contingent claim prices to price other assets as bundles of contingent claims, including assets like options with obviously non-normally distributed returns.</p>
+</li>
+</ul>
+<p>The inflation-adjusted growth rate of the Standard and Poor&rsquo;s index of stock prices is very volatile.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175028.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175028.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175028.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175028.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175028.png"
+        title="20200602175028.png" /></div></p>
+<p>So while real (inflation-adjusted) consumption growth does seem to be related to changes in stock prices</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602175051301.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602175051301.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602175051301.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602175051301.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200602175051301"
+        title="image-20200602175051301.png" /></div></p>
+<p>stock prices seem much too volatile relative to consumption,
+compared to what the equilibrium version of Arrow-Debreu theory( consumption is a function of securities price) would predict.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175106.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175106.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175106.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175106.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602175106.png"
+        title="20200602175106.png" /></div></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/9.-arrow-debreu-pricing-no-arbitrage/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/7.-arbitrage-pricing-theory/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

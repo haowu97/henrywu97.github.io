@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="7. Arbitrage Pricing Theory ##7.1 Overview
+The Arbitrage Pricing Theory (APT) was developed by Stephen Ross(US, b.1944) in the mid-1970s. Stephen Ross, &ldquo;The Arbitrage Theory of Capital Asset Pricing,&rdquo; Journal of Economic Theory Vol.13 (December 1976): pp.341-360.
+The idea behind factor models is to summarize all relevant economic variables in a set of indicators that are the main factors explaining the security markets returns. The assumption is that few such factors are sufficient to characterize the aggregate component of securities returns, and any remaining uncertainty in security returns can be attributed to firm-specific (or idiosyncratic) shocks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="7. Arbitrage Pricing Theory ##7.1 Overview
+The Arbitrage Pricing Theory (APT) was developed by Stephen Ross(US, b.1944) in the mid-1970s. Stephen Ross, &ldquo;The Arbitrage Theory of Capital Asset Pricing,&rdquo; Journal of Economic Theory Vol.13 (December 1976): pp.341-360.
+The idea behind factor models is to summarize all relevant economic variables in a set of indicators that are the main factors explaining the security markets returns. The assumption is that few such factors are sufficient to characterize the aggregate component of securities returns, and any remaining uncertainty in security returns can be attributed to firm-specific (or idiosyncratic) shocks."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" /><link rel="prev" href="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" /><link rel="next" href="https://henrywu97.github.io/6.-capm/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/7.-arbitrage-pricing-theory\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  6012 ,
+        "url": "https:\/\/henrywu97.github.io\/7.-arbitrage-pricing-theory\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/7.-arbitrage-pricing-theory/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/7.-arbitrage-pricing-theory/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;6012 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;29 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#711-apt--capm">7.1.1 APT &amp; CAPM</a></li>
+      </ul>
+    </li>
+    <li><a href="#72-the-single-factor-model">7.2 The Single-Factor Model</a>
+      <ul>
+        <li><a href="#721-the-market-model">7.2.1 The Market Model</a>
+          <ul>
+            <li><a href="#estimation-of-beta">Estimation of $\beta$</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#73-the-assumptions-of-apt">7.3 The Assumptions of APT</a>
+      <ul>
+        <li><a href="#731-well-diversified-portfolios">7.3.1 Well diversified portfolios</a>
+          <ul>
+            <li><a href="#two-assets-case">Two Assets Case</a></li>
+            <li><a href="#n-assets-case">N Assets Case</a></li>
+            <li><a href="#general-case">General Case</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#74-proof-apt-with-single-factor-model">7.4 Proof APT with Single-Factor Model</a>
+      <ul>
+        <li><a href="#741-no-arbitrage-conditions">7.4.1 No-arbitrage conditions</a></li>
+        <li><a href="#742-same-beta-proposition-1">7.4.2 Same Beta: Proposition 1</a></li>
+        <li><a href="#743-different-beta-proposition-2">7.4.3 Different beta: Proposition 2</a>
+          <ul>
+            <li><a href="#proof">Proof:</a></li>
+          </ul>
+        </li>
+        <li><a href="#744-interpretation">7.4.4 Interpretation</a>
+          <ul>
+            <li><a href="#interpretation-of-lambda_0">Interpretation of $\lambda_0$</a></li>
+            <li><a href="#interpretation-of-lambda_1">Interpretation of $\lambda_1$</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#75-proof-apt-with-multifactor-models">7.5 Proof APT with Multifactor Models</a>
+      <ul>
+        <li><a href="#751-same-beta-proposition-3">7.5.1 Same Beta: Proposition 3</a>
+          <ul>
+            <li><a href="#proof-1">Proof:</a></li>
+          </ul>
+        </li>
+        <li><a href="#752-different-beta-proposition-4">7.5.2 Different Beta: Proposition 4</a>
+          <ul>
+            <li><a href="#proof-2">Proof:</a></li>
+          </ul>
+        </li>
+        <li><a href="#753-interpretation">7.5.3 Interpretation</a></li>
+      </ul>
+    </li>
+    <li><a href="#76-the-apt">7.6 The APT</a>
+      <ul>
+        <li><a href="#761-how-to-construct-an-arbitrage-portfolio">7.6.1 How to construct an arbitrage portfolio</a></li>
+        <li><a href="#762-the-arbitrage-pricing-line">7.6.2 The arbitrage pricing line</a></li>
+        <li><a href="#763-apt-vs-capm">7.6.3 APT V.S. CAPM</a></li>
+        <li><a href="#764-graphic-example">7.6.4 Graphic Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#77-looking-for-factors">7.7 Looking For Factors</a>
+      <ul>
+        <li><a href="#771-models-with-factor-mimicking-portfolios">7.7.1 Models with Factor-Mimicking Portfolios</a></li>
+        <li><a href="#772-macroeconomic-factor-model">7.7.2 Macroeconomic Factor Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#78-the-apt-and-risk-premia">7.8 The APT and Risk Premia</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="7-arbitrage-pricing-theory">7. Arbitrage Pricing Theory</h1>
+<p>##7.1 Overview</p>
+<p>The Arbitrage Pricing Theory (APT) was developed by Stephen Ross(US, b.1944) in the mid-1970s. Stephen Ross, &ldquo;The Arbitrage Theory of Capital Asset Pricing,&rdquo; Journal of Economic Theory Vol.13 (December 1976): pp.341-360.</p>
+<p>The idea behind factor models is to summarize all relevant economic variables in a set of indicators that are the main factors explaining the security markets returns. The assumption is that few such factors are sufficient to characterize the aggregate component of securities returns, and any remaining uncertainty in security returns can be attributed to firm-specific (or idiosyncratic) shocks.</p>
+<h3 id="711-apt--capm">7.1.1 APT &amp; CAPM</h3>
+<p>The APT bears a close resemblance to the CAPM. In fact, a special case of the APT implies a relationship between expected returns on arbitrary, but well-diversified, portfolios and the return on the market portfolio that is identical to the relationship implied by the CAPM.</p>
+<p>But the <strong>APT allows for a more flexible</strong>, or general, depiction of aggregate risk than does the CAPM.</p>
+<p>And, as its name suggests,the APT is a no-arbitrage theory of asset pricing, that does not require the strong assumptions imposed by the CAPM as an equilibrium theory.</p>
+<p>The weakness of the APT——the cost, if you will, of its added flexibility and generality——is that it applies only to &ldquo;well-diversified portfol3ios&rdquo; and &ldquo;most&rdquo; individual securities: <strong>there is no guarantee that it applies to all individual assets</strong>.</p>
+<h2 id="72-the-single-factor-model">7.2 The Single-Factor Model</h2>
+<p>The simplest version of the APT is also the one that can best be thought of as the &ldquo;no-arbitrage&rdquo; variant of the CAPM.</p>
+<p>There is single factor that is sufficient to capture the aggregate component of the ex-post return on individual asset $j$ as follows:
+$$
+\tilde{r}<em>{j}=E\left(\tilde{r}</em>{j}\right)+\beta_{j} \tilde{f}+\varepsilon_{j}
+$$
+where $E(\tilde{f})=0, E\left(\varepsilon_{j}\right)=0, \operatorname{Cov}\left(\tilde{f}, \varepsilon_{j}\right)=0$ and $\operatorname{Cov}\left(\varepsilon_{j}, \varepsilon_{k}\right)=0$ for all $j=1,2, \ldots, J$ and $k=1,2, \ldots, J$ with $k \neq j$.</p>
+<p>Deviations from the expected return on security are explained by</p>
+<ul>
+<li>on unexpected movement in the common factor $\tilde{f}$ (aggregate/systemic shock)</li>
+<li>$\varepsilon_{j}$ idiosyncratic (or asset-specific) shock</li>
+</ul>
+<h3 id="721-the-market-model">7.2.1 The Market Model</h3>
+<p>If we assert that the common component of unanticipated movements in individual security returns is explained by unanticipated movements in the return on a broad index of securities, such as the S&amp;P500 index, then we have the market model, which is a variant of the single-factor model according to which the random return $\tilde{r}<em>{j}$ on each asset $j=1,2, \ldots, J$ is related to the random return $\tilde{r}</em>{M}$ on the market portfolio via
+$$
+\tilde{r}<em>{j}=\alpha</em>{j}+\beta_{j}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\varepsilon_{j}
+$$
+where $E\left(\varepsilon_{j}\right)=0, \operatorname{Cov}\left(\tilde{r}_{M}, \varepsilon_{j}\right)=0$ and $\operatorname{Cov}\left(\varepsilon_{j}, \varepsilon_{k}\right)=0$ for all
+$j=1,2, \ldots, J$ and $k=1,2, \ldots, J$ with $k \neq j$.</p>
+<p>The market model is called a single-factor model since it breaks the random return on each asset down into two uncorrelated or &ldquo;orthogonal&rdquo; components:</p>
+<ul>
+<li>$\beta_{j}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]$ which depends on the model&rsquo;s single aggregate variable or &ldquo;factor,&rdquo; in this case the market return.</li>
+<li>$\varepsilon_{j}$ which is a purely idiosyncratic effect.</li>
+</ul>
+<p>The parameter&rsquo;s $ \alpha_j $ and j can be estimated through a statistical regression of each asset&rsquo;s return on the market return, imposing the additional statistical assumption that the regression error $ \varepsilon_j $ is uncorrelated across assets as well as with the market portfolio.</p>
+<p>As we will see, it is partly this added assumption that $ \varepsilon_j $ is purely idiosyncratic that gives the APT its \bite.&quot;</p>
+<p>Before moving on to see how the APT makes use of the market model, let&rsquo;s take note of two other purposes that the market model can serve.</p>
+<h4 id="estimation-of-beta">Estimation of $\beta$</h4>
+<p>First, since
+$$
+\tilde{r}<em>{j}=\alpha</em>{j}+\beta_{j}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\varepsilon_{j}
+$$
+can be written as
+$$
+\tilde{r}_{j}=\bar{\alpha}_{j}+\beta_{j} \tilde{r}_{M}+\varepsilon_{j}
+$$
+where
+$$
+\bar{\alpha}_{j}=\alpha_{j}-\beta_{j} E\left(\tilde{r}_{M}\right)
+$$
+the regressions from the market model yield slope coefficients
+$$
+\beta_{j}=\frac{\operatorname{Cov}\left(\tilde{r}_{j}, \tilde{r}_{M}\right)}{\sigma_{M}^{2}}
+$$
+that can be viewed as estimates of the CAPM beta for asset $j$</p>
+<p>Second, since
+$$
+\tilde{r}<em>{j}=\alpha</em>{j}+\beta_{j}\left[\tilde{r_{M}}-E\left(\tilde{r}_{M}\right)\right]+\varepsilon_{j}
+$$
+implies
+$$
+\begin{aligned}
+E\left(\tilde{r}_{j}\right) &amp;=\alpha_{j} \<br>
+\sigma_{j}^{2} &amp;=E\left(\left[\tilde{r}_{j}-E\left(\tilde{r}_{j}\right)\right]^{2}\right) \<br>
+&amp;=E\left(\left[\beta_{j}\left[r_{\tilde{M}}-E\left(\tilde{r}_{M}\right)\right]+\varepsilon_{j}\right]^{2}\right) \<br>
+&amp;=\beta_{j}^{2} E\left(\left[r_{M}-E\left(\tilde{r}_{M}\right)\right]^{2}\right)+2 \beta_{j} E\left(\left[r_{M}^{2}-E\left(r_{M}^{2}\right)\right] \varepsilon_{j}\right)+E\left(\varepsilon_{j}^{2}\right) \<br>
+&amp;=\beta_{j}^{2} \sigma_{M}^{2}+2 \beta_{j} \operatorname{Cov}\left(\tilde{r}_{M}, \varepsilon_{j}\right)+\sigma_{\varepsilon_{j}}^{2} \<br>
+&amp;=\beta_{j}^{2} \sigma_{M}^{2}+\sigma_{\varepsilon_{j}}^{2}
+\end{aligned}
+$$
+Similarly, the market model implies that for any two assets $j$ and $k \neq j$.
+$$
+\begin{aligned}
+\operatorname{cov}\left(\tilde{r}_{j}, \tilde{r}_{k}\right) &amp;=E\left(\left[\tilde{r}_{j}-E\left(\tilde{r}_{j}\right)\right]\left[\tilde{r}_{k}-E\left(\tilde{r}_{k}\right)\right]\right) \<br>
+&amp;=E\left(\left[\beta_{j}\left[r_{M}-E(r \tilde{M})\right]+\varepsilon_{j}\right]\left[\beta_{k}\left[r_{M}-E\left(r_{M}\right)\right]+\varepsilon_{k}\right]\right) \<br>
+&amp;=\beta_{j} \beta_{k} E\left(\left[r_{M}-E\left(r_{M}\right)\right]^{2}\right)+\beta_{j} E\left(\left[r_{M}-E\left(r_{M}\right)\right] \varepsilon_{k}\right) \<br>
+&amp;+\beta_{k} E\left(\left[r_{M}-E\left(r_{M}\right)\right] \varepsilon_{j}\right)+E\left(\varepsilon_{j} \varepsilon_{k}\right) \<br>
+&amp;=\beta_{j} \beta_{k} \sigma_{M}^{2}+\beta_{j} \operatorname{cov}\left(r_{M}, \varepsilon_{k}\right)+\beta_{k} \operatorname{cov}\left(r_{M}, \varepsilon_{j}\right)+\operatorname{cov}\left(\varepsilon_{j}, \varepsilon_{k}\right) \<br>
+&amp;=\beta_{j} \beta_{k} \sigma_{M}^{2}
+\end{aligned}
+$$
+Recall one difficulty with MPT: it requires estimates of the $J(J+1) / 2$ variances and covariances for $J$ individual asset returns.</p>
+<p>But since the market model implies
+$$
+\begin{aligned}
+\sigma_{j}^{2} &amp;=\beta_{j}^{2} \sigma_{M}^{2}+\sigma_{\varepsilon_{j}}^{2} \<br>
+\operatorname{cov}\left(\tilde{r}_{j}, \tilde{r}_{k}\right) &amp;=\beta_{j} \beta_{k} \sigma_{M}^{2}
+\end{aligned}
+$$
+it allows these variances and covariances to be estimated based on only $2 J+1$ underlying &ldquo;parameters&rdquo;: the $ J \beta_{j}$ &rsquo;s, the $J \sigma_{\varepsilon_{j}^{2}}$ &rsquo;s, and the 1 $\sigma_{M}^{2}$.</p>
+<p>With $J=100, J(J+1) / 2=5050$ but $2 J+1=201 .$ The saving are considerable!</p>
+<h2 id="73-the-assumptions-of-apt">7.3 The Assumptions of APT</h2>
+<p>The APT starts by assuming that asset returns are <strong>governed by a factor model</strong> such as the market model.</p>
+<p>To derive implications for expected returns, the APT makes two
+additional assumptions:</p>
+<ul>
+<li>There are enough individual assets to create many
+<strong>well-diversified portfolios</strong>.</li>
+<li>Investors act to eliminate all arbitrage opportunities across all well-diversified portfolios(<strong>No Arbitrage Conditions</strong>).</li>
+</ul>
+<h3 id="731-well-diversified-portfolios">7.3.1 Well diversified portfolios</h3>
+<h4 id="two-assets-case">Two Assets Case</h4>
+<p>Before moving all the way to well-diversified portfolios, let&rsquo;s consider an &ldquo;only somewhat&rdquo; diversified portfolio.</p>
+<p>Consider, in particular, a portfolio consisting of only two assets, $j$ and k, both of which have returns described by the market model.</p>
+<p>Let $w$ be the share of the portfolio allocated to asset $j$ and $1-w$ the share allocated to asset $k$.
+$$
+\begin{aligned}
+\tilde{r}<em>{j} &amp;=E\left(\tilde{r}</em>{j}\right)+\beta_{j}\left[r_{M}-E\left(r_{M}^{-}\right)\right]+\varepsilon_{j} \<br>
+\tilde{r}_{k} &amp;=E\left(\tilde{r}_{k}\right)+\beta_{k}\left[\tilde{r}_{M}-E\left(r_{M}\right)\right]+\varepsilon_{k}
+\end{aligned}
+$$
+imply that the return $\tilde{r}_{w}$ on the portfolio is
+$$
+\begin{array}{l}
+\tilde{r_{w}}&amp;=w E\left(\tilde{r}_{j}\right)+(1-w) E\left(\tilde{r}_{k}\right)\<br>
+&amp;+w \beta_{j}\left[\tilde{r_{M}}-E\left(\tilde{r_{M}}\right)\right]+(1-w) \beta_{k}\left[\tilde{r_{M}}-E\left(\tilde{r_{M}}\right)\right] \<br>
+&amp;+w \varepsilon_{j}+(1-w) \varepsilon_{k} \<br>
+&amp;=E\left(\tilde{r}_{w}\right)+\beta_{w}\left[\tilde{r_{M}}-E\left(\tilde{r_{M}}\right)\right]+\varepsilon_{w}
+\end{array}
+$$
+The first implication is that the expected return on the portfolio is just a weighted average of the expected returns on the individual assets, with weights corresponding to those in the portfolio itself:
+$$
+E(\tilde{r_{w}})=w E\left(\tilde{r}_{j}\right)+(1-w) E\left(\tilde{r}_{k}\right)
+$$
+The second implication is that the portfolio&rsquo;s beta is the same weighted average of the betas of the individual assets:
+$$
+\beta_{w}=w \beta_{j}+(1-w) \beta_{k}
+$$
+The third implication is subtle but very important. We can see that the idiosyncratic component of the portfolio&rsquo;s return is a weighted average of the idiosyncratic components of the individual asset returns:
+$$
+\varepsilon_{w}=w \varepsilon_{j}+(1-w) \varepsilon_{k}
+$$
+But the variance of the idiosyncratic component of the portfolio&rsquo;s return is not a weighted average of the variances of the idiosyncratic components of the individual asset returns:
+$$
+\begin{aligned}
+\sigma_{\varepsilon_{w}}^{2} &amp;=E\left(\varepsilon_{w}^{2}\right)=E\left(\left[w \varepsilon_{j}+(1-w) \varepsilon_{k}\right]^{2}\right) \<br>
+&amp;=w^{2} E\left(\varepsilon_{j}^{2}\right)+2 w(1-w) E\left(\varepsilon_{j} \varepsilon_{k}\right)+(1-w)^{2} E\left(\varepsilon_{k}^{2}\right) \<br>
+&amp;=w^{2} \sigma_{\varepsilon_{j}}^{2}+(1-w)^{2} \sigma_{\varepsilon_{k}}^{2}
+\end{aligned}
+$$
+For example, if the individual returns have idiosyncratic components with equal variances
+$$
+\sigma_{\varepsilon_{j}}^{2}=\sigma_{\varepsilon_{k}}^{2}=\sigma^{2}
+$$
+and the portfolio gives equal weight to the two assets $w=1-w=1 / 2,$ then
+$$
+\sigma_{\varepsilon_{w}}^{2}=(1 / 2)^{2} \sigma^{2}+(1 / 2)^{2} \sigma^{2}=(1 / 2) \sigma^{2}
+$$
+Even with just two assets, the portfolio&rsquo;s idiosyncratic risk is cut in half.</p>
+<p>Of course, this is just a special case of the gains from diversification exploited by MPT. But the APT pushes the idea to its logical and mathematical limits.</p>
+<h4 id="n-assets-case">N Assets Case</h4>
+<p>Let&rsquo;s head in the same direction, by considering a portfolio with a large number $N$ of individual assets.</p>
+<p>Let $w_{i}, i=1,2, \ldots, N,$ denote the share of the portfolio allocated to asset $i$.</p>
+<p>And consider, in particular, the &ldquo;equal weighted&rdquo; case, where
+$$
+w_{i}=1 / N
+$$
+for all $i=1,2, \ldots, N$</p>
+<p>Since each of the individual asset returns are generated by the market model, the return on this equal-weighted portfolio will be
+$$
+\tilde{r_{w}}=E(\tilde{r_{w}})+\beta_{w}\left[r_{M}^{\tilde{r}}-E\left(r_{M}^{\prime}\right)\right]+\varepsilon_{w}
+$$
+where the expected return on the equal-weighted portfolio is just the average of the expected returns on the individual assets:
+$$
+E\left(\tilde{r}_{w}\right)=\Sigma_{i=1}^{N} w_{i} E\left(\tilde{r}_{i}\right)=(1 / N) \Sigma_{i=1}^{N} E\left(\tilde{r}_{i}\right)
+$$
+the equal-weighted portfolio&rsquo;s beta is just the average of the individual assets' betas:
+$$
+\beta_{w}=\Sigma_{i=1}^{N} w_{i} \beta_{i}=(1 / N) \Sigma_{i=1}^{N} \beta_{i}
+$$
+and the idiosyncratic component of the return on the equal weighted portfolio is an average of the idiosyncratic components of the individual asset returns:
+$$
+\varepsilon_{w}=\Sigma_{i=1}^{N} w_{i} \varepsilon_{i}=(1 / N) \Sigma_{i=1}^{N} \varepsilon_{i}
+$$
+however, the variance of $\varepsilon_{w}$ will not equal the average of the variances of the individual $\varepsilon_{i}$ &rsquo;s. In fact,
+$$
+\begin{aligned}
+\sigma_{\varepsilon_{w}}^{2} &amp;=(1 / N)^{2} \Sigma_{i=1}^{N} E\left(\varepsilon_{i}^{2}\right)+(1 / N)^{2} \Sigma_{i=1}^{N} \Sigma_{h \neq i} E\left(\varepsilon_{i} \varepsilon_{h}\right) \<br>
+&amp;=(1 / N)^{2} \Sigma_{i=1}^{N} E\left(\varepsilon_{i}^{2}\right) \<br>
+&amp;=(1 / N)\left[\frac{1}{N} \Sigma_{i=1}^{N} \sigma_{\varepsilon_{i}}^{2}\right]=(1 / N) \bar{\sigma}_{\varepsilon_{i}}^{2}
+\end{aligned}
+$$
+where $\bar{\sigma}_{\varepsilon_{i}}^{2}$ denotes the average the variances of the individual $\varepsilon_{i}$</p>
+<p>Hence, the variance of $\varepsilon_{w}$ is not the average of the variances of the individual $\varepsilon_{i}$ &rsquo;s.</p>
+<p>The variance of $\varepsilon_{w}$ is $1 / N$ times the average of the variances of the individual $\varepsilon_{i}$ &rsquo;s. Hence, **the amount of idiosyncratic risk in the portfolio&rsquo;s return can be made arbitrarily small** by making $\mathrm{N}$, the number of assets included in the portfolio, sufficiently large.</p>
+<h4 id="general-case">General Case</h4>
+<p>More generally, for portfolio&rsquo;s with unequal weights
+$$
+\varepsilon_{w}=\Sigma_{i=1}^{N} w_{i} \varepsilon_{i}
+$$
+implies
+$$
+\begin{aligned}
+\sigma_{\varepsilon_{w}}^{2} &amp;=\sum_{i=1}^{N} w_{i}^{2} E\left(\varepsilon_{i}^{2}\right)+\Sigma_{i=1}^{N} \Sigma_{h \neq i} w_{i} w_{h} E\left(\varepsilon_{i} \varepsilon_{h}\right) \<br>
+&amp;=\sum_{i=1}^{N} w_{i}^{2} E\left(\varepsilon_{i}^{2}\right) \<br>
+&amp;=\sum_{i=1}^{N} w_{i}^{2} \sigma_{\varepsilon_{i}}^{2}
+\end{aligned}
+$$
+Any portfolio in which the share of each individual asset $w_i$ becomes arbitrarily small as the number of assets **N grows larger and larger will have negligible idiosyncratic risk**.</p>
+<p>This, specifically, is what is meant by a well-diversified portfolio: one in which the number of assets included is sufficiently large to make the portfolio&rsquo;s idiosyncratic risk vanish.</p>
+<p>In his 1976 paper, Stephen Ross notes that while the assumption
+$$
+\operatorname{cov}\left(\varepsilon_{j}, \varepsilon_{k}\right)=0 \quad \text { for all } \quad j, k=1,2, \ldots, J \quad \text { with } \quad k \neq j
+$$
+helps in making a portfolio&rsquo;s idiosyncratic risk vanish as the number of assets included becomes larger, **this can still happen with positive correlations between individual assets' idiosyncratic returns** provided the correlations are not too large and the number of assets is sufficiently large.</p>
+<p>Hence, the APT&rsquo;s first assumption—— that individual asset returns are generated by a factor model—— implies that the return on any portfolio is
+$$
+\tilde{r_{w}}=E(\tilde{r_{w}})+\beta_{w}\left[r_{M}-E\left(r_{M}\right)\right]+\varepsilon_{w}
+$$
+And the APT&rsquo;s second assumption—— that there are a sufficient number of assets $J$ to create well-diversified portfolios—— implies that the return on any well-diversified portfolio is</p>
+<p>$$
+\tilde{r_{w}}=E(\tilde{r_{w}})+\beta_{w}\left[\tilde{r_{w}}-E\left(\tilde{r_{M}}\right)\right]
+$$
+Where $\varepsilon_w = 0$, by
+$$
+\begin{aligned}
+E(\varepsilon_w)=0\<br>
+Var(\varepsilon_w)=0
+\end{aligned}
+$$
+We still have not said anything about what determines the expected return $E( \tilde{r_w})$.</p>
+<p>But we can now, based on the APT&rsquo;s third assumption: that
+investors act to eliminate arbitrage opportunities across all
+well-diversified portfolios.</p>
+<h2 id="74-proof-apt-with-single-factor-model">7.4 Proof APT with Single-Factor Model</h2>
+<h3 id="741-no-arbitrage-conditions">7.4.1 No-arbitrage conditions</h3>
+<p>An arbitrage opportunity exists if an investor can earn prots without exposing him or herself to risk and making any net investment.</p>
+<p>In a well functioning capital market such opportunities should not exist since market participants would instantaneously take advantage of them and thus move prices so that they disappear.</p>
+<p><strong>Law of one price</strong>: two assets which are equivalent in all
+economically relevant aspects must have the same market price.</p>
+<p>No-arbitrage conditions such as this one underpin much of modern finance theory. Let us turn to the implications of no-arbitrage in the context of the APT.</p>
+<h3 id="742-same-beta-proposition-1">7.4.2 Same Beta: Proposition 1</h3>
+<p>Our first no-arbitrage argument applies to well-diversified portfolios with the same betas.</p>
+<p>【Proposition (1)】The absence of arbitrage opportunities requires well-diversified portfolios with the same betas to have the same expected returns.</p>
+<p>Proof:</p>
+<p>To see why this proposition must be true, consider two well-diversified portfolios, one with
+$$
+\tilde{r}<em>{w}^{1}=E\left(\tilde{r}</em>{w}\right)+\beta_{w}\left[r_{M}^{\prime}-E\left(r_{M}^{\prime}\right)\right]
+$$
+and the other with
+$$
+\tilde{r}_{w}^{2}=E\left(\tilde{r}_{w}^{\prime}\right)+\Delta+\beta_{w}\left[r_{M}^{2}-E\left(r_{M}^{\prime}\right)\right]
+$$
+where $\triangle&gt;0 .$ These portfolios have the same beta, but the second has a higher expected return.
+$$
+\begin{array}{c}
+\tilde{r}_{w}^{1}=E\left(\tilde{r}_{w}\right)+\beta_{w}\left[r_{M}^{\tau}-E\left(r_{M}^{\prime}\right)\right] \<br>
+\tilde{r}_{w}^{2}=E\left(r_{w}^{\prime}\right)+\Delta+\beta_{w}\left[r_{M}^{\prime}-E\left(r_{M}^{\prime}\right)\right]
+\end{array}
+$$
+Now consider a strategy of taking a &ldquo;long position&rdquo; worth $x$ in portfolio 2 and a &ldquo;short position&rdquo; worth $-x$ in portfolio 1.</p>
+<p>This strategy is self-financing, in that it requires &ldquo;no money down&rdquo; at $t=0$ But the strategy yields a payoff at $t=1$ of
+$$
+\begin{aligned}
+x\left(1+\tilde{r}<em>{w}^{2}\right)-x\left(1+\tilde{r}</em>{w}^{1}\right) &amp;=x E\left(\tilde{r}<em>{w}\right)+x \Delta+x \beta</em>{w}\left[r \tilde{m}-E\left(\tilde{r}<em>{M}\right)\right] \<br>
+&amp;-x E\left(\tilde{r}</em>{w}\right)-x \beta_{w}\left[r_{M}^{2}-E\left(r_{M}\right)\right] \<br>
+&amp;=x \Delta&gt;0
+\end{aligned}
+$$
+Thus, $\Delta&gt;0$ is inconsistent with the absence of arbitrage opportunities. Similarly, $\Delta&lt;0$ is also inconsistent with the absence of arbitrage opportunities. Then, $\Delta = 0$</p>
+<h3 id="743-different-beta-proposition-2">7.4.3 Different beta: Proposition 2</h3>
+<p>Suppose that the risk-free rate is 4% and that we have the following situation for well diversified portfolios $ A $ and $ C: $
+$$
+\begin{array}{|l|c|c|}
+\hline portfolio &amp; beta &amp; expected return \<br>
+\hline  \mathrm{A}  &amp; 1 &amp; 0.14 \<br>
+\mathrm{C}  &amp; 0.5 &amp; 0.08 \<br>
+\hline
+\end{array}
+$$
+Is this consistent with no arbitrage?
+Figure: Returns as a function of the systematic factor</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200610093217.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200610093217.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200610093217.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200610093217.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200610093217.png"
+        title="20200610093217.png" /></div></p>
+<p>The expected return on $ C $ means that there is an arbitrage opportunity. We can construct a portfolio that has the same beta as $ C $ and a higher return, which we have already seen violates no arbitrage.</p>
+<p>$ \mathrm{D} $ is such an arbitrage portfolio, it is a portfolio invested half in the risk-free asset (with $ \beta=0 $ ) and half in the well diversified portfolio A. Thus $ \beta_{D}=0.5 * 0+0.5 * 1=0.5 $ and
+$$
+E\left(\tilde{r}_{D}\right)=0.5 r_{f}+0.5 E\left(\tilde{r}_{A}\right)=0.09
+$$
+Hence, **no-arbitrage implies that well-diversified portfolios with different factor loadings must have expected returns proportional to their betas**. This means that they plot on a straight line in the expected return - beta diagram.</p>
+<p>【Proposition (2)】The absence of arbitrage opportunities requires the expected returns on all well-diversified portfolios to satisfy
+$$
+\qquad E\left(\tilde{r}<em>{w}\right)=\lambda</em>{0}+\lambda_{1} \beta_{w}
+$$
+for constants $\lambda_{0}$ and $\lambda_{1}$ that are the same for all portfolios.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501103834.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501103834.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501103834.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501103834.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501103834.png"
+        title="20200501103834.png" /></div></p>
+<p>The APT implies that expected returns on well-diversified portfolios line up along $E\left(\tilde{r}<em>{w}\right)=\lambda</em>{0}+\lambda_{1} \beta_{w}$.</p>
+<h4 id="proof">Proof:</h4>
+<p>Consider, therefore, a third well-diversified portfolio, with
+$$
+\tilde{r}<em>{w}^{3}=E\left(\tilde{r}</em>{w}^{3}\right)+\beta_{w}\left[r_{M}^{\prime}-E\left(\tilde{r}_{M}\right)\right]
+$$
+and $\beta_{w}$ different from zero and one. We need to show that
+$$
+E\left(\tilde{r}_{w}^{3}\right)=\lambda_{0}+\lambda_{1} \beta_{w}
+$$
+so, paralleling the argument from before, suppose instead that
+$$
+E\left(\tilde{r}_{w}^{3}\right)=\lambda_{0}+\lambda_{1} \beta_{w}+\Delta
+$$
+where $\triangle&gt;0$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105114.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105114.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105114.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105114.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105114.png"
+        title="20200501105114.png" /></div></p>
+<p>If $E\left(\tilde{r}<em>{w}^{3}\right)$ lies above the line $\lambda</em>{0}+\lambda_{1} \beta_{w},$ then a strategy that takes a long position in portfolio 3 and short positions in portfolios 1 and 2 will constitute an arbitrage opportunity.
+$$
+\begin{aligned} \tilde{r}_{w}^{1} &amp;=\lambda_{0} \ \tilde{r}_{w}^{2} &amp;=\lambda_{0}+\lambda_{1}+\left[r_{M}-E\left(\tilde{r}_{M}\right)\right] \ \tilde{r}_{w}^{3} &amp;=\lambda_{0}+\lambda_{1} \beta_{w}+\Delta+\beta_{w}\left[r_{M}^{2}-E\left(r_{M}^{*}\right)\right] \end{aligned}
+$$
+The no-arbitrage argument requires two steps.</p>
+<p>First, form a fourth well-diversified portfolio from the first two, by allocating the shares $1-\beta_{w}$ to portfolio 1 and $\beta_{w}$ to portfolio $2 .$ This portfolio has
+$$
+\begin{aligned}
+\tilde{r}_{w}^{4} &amp;=\left(1-\beta_{w}\right) \tilde{r}_{w}^{1}+\beta_{w} \tilde{r}_{w}^{2} \<br>
+&amp;=\left(1-\beta_{w}\right) \lambda_{0}+\beta_{w}\left(\lambda_{0}+\lambda_{1}\right)+\beta_{w}\left[\tilde{r}_{M}-E\left(r_{M}^{2}\right)\right] \<br>
+&amp;=\lambda_{0}+\lambda_{1} \beta_{w}+\beta_{w}\left[r_{M}-E\left(r_{M}\right)\right]
+\end{aligned}
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105452.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105452.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105452.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105452.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501105452.png"
+        title="20200501105452.png" /></div></p>
+<p>Second, observe that portfolio 4 has the same beta, but a lower expected return, than portfolio $3 .$ Proposition 1 implies that this is inconsistent with the absence of arbitrage.</p>
+<p>Since portfolios 3 and 4 have the same beta, a strategy that allocates x to portfolio 3 and -x to portfolio 4 is self-financing at t = 0 and yields a payoff $x\Delta &gt; 0$ at t = 1. This confirms that $\Delta &gt; 0$ is inconsistent with the absence of arbitrage.</p>
+<p>Similarly, $\Delta &lt;0$ is also inconsistent with the absence of arbitrage.</p>
+<p>Hence, if
+$$
+\begin{aligned}
+\tilde{r}<em>{w}^{1} &amp;=\lambda</em>{0} \<br>
+\tilde{r}<em>{w}^{2} &amp;=\lambda</em>{0}+\lambda_{1}+\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right] \<br>
+\tilde{r}_{w}^{3} &amp;=\lambda_{0}+\lambda_{1} \beta_{w}+\Delta+\beta_{w}\left[r_{M}^{\prime}-E\left(r_{M}^{\prime}\right)\right]
+\end{aligned}
+$$
+then $\triangle=0 .$ All expected returns on well-diversified portfolios must satisfy
+$$
+E\left(\tilde{r}_{w}\right)=\lambda_{0}+\lambda_{1} \beta_{w}
+$$</p>
+<h3 id="744-interpretation">7.4.4 Interpretation</h3>
+<h4 id="interpretation-of-lambda_0">Interpretation of $\lambda_0$</h4>
+<p>To interpret $\lambda_{0}$, consider a well-diversified portfolio, call it portfolio 1 with $\beta_{w}=0,$ so that
+$$
+\tilde{r}_{w}^{1}=E\left(\tilde{r}_{w}^{1}\right)+0 \times\left[r_{M}^{\prime}-E\left(r_{M}^{1}\right)\right]=E\left(\tilde{r}_{w}^{1}\right)
+$$
+But if the return on portfolio 1 always equals its own expected return, either:</p>
+<ul>
+<li>Portfolio 1 is a well-diversified portfolio that forms a &ldquo;synthetic&rdquo; risk-free asset</li>
+<li>or portfolio 1 consists entirely of risk-free assets. Either way, its return must equal the risk-free rate:</li>
+</ul>
+<p>$$
+\tilde{r}<em>{w}^{1}=E\left(\tilde{r}</em>{w}^{1}\right)=r_{f}
+$$</p>
+<p>But proposition 2 requires the expected return on portfolio 1 to equal $\lambda_{0}$ as well:
+$$
+E\left(\tilde{r}_{w}^{1}\right)=\lambda_{0}+\lambda_{1} \times 0=\lambda_{0}
+$$
+Together with
+$$
+E\left(\tilde{r}_{w}^{1}\right)=r_{f}
+$$
+this observation tells us that
+$$
+\lambda_{0}=r_{f}
+$$</p>
+<h4 id="interpretation-of-lambda_1">Interpretation of $\lambda_1$</h4>
+<p>Next, consider a second well-diversified portfolio, call it portfolio 2 with $\beta_{w}=1,$ so that
+$$
+\tilde{r}_{w}^{2}=E\left(\tilde{r}_{w}^{2}\right)+1 \times\left[\tilde{r}_{M}-E\left(r_{M}\right)\right]
+$$
+Portfolio 2 is well diversified and has the same beta as the market portfolio, so it must also have the same expected return as the market portfolio( by proposition 1 ). Hence,
+$$
+\begin{aligned}
+\tilde{r}_{w}^{2} &amp;=E\left(\tilde{r}_{w}^{2}\right)+\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right] \<br>
+&amp;=E\left(\tilde{r}_{M}\right)+\left[r_{M}^{\prime}-E\left(\tilde{r}_{M}\right)\right] \<br>
+&amp;=\tilde{r}_{M}
+\end{aligned}
+$$
+Thus either</p>
+<ul>
+<li>
+<p>Portfolio 2 is a well-diversified portfolio that always has the same return as the market portfolio or</p>
+</li>
+<li>
+<p>portfolio 2 actually is the market portfolio</p>
+</li>
+</ul>
+<p>In any case, proposition 2 requires the expected return on portfolio 2 to be given by
+$$
+E\left(\tilde{r}<em>{w}^{2}\right)=\lambda</em>{0}+\lambda_{1} \times 1=\lambda_{0}+\lambda_{1}
+$$
+Together with $\tilde{r}_{w}^{2}=\tilde{r}_{M}$ and $\lambda_{0}=r_{f}$, we have
+$$
+\lambda_{1}=E\left(\tilde{r}_{M}\right)-r_{f}
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501104802.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501104802.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501104802.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501104802.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200501104802.png"
+        title="20200501104802.png" /></div></p>
+<p>Since $\lambda_{0}=r_{f}$ and $\lambda_{1}=E\left(r_{M}^{\prime}\right)-r_{f},$ the line $E\left(r_{w}^{\prime}\right)=\lambda_{0}+\lambda_{1} \beta_{w}$ is the CAPM&rsquo;s security market line.
+$$
+E\left(\tilde{r}_{w}\right)=\lambda_{0}+\lambda_{1} \beta_{w}=r_{f}+\beta_{w}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]
+$$
+This is the same relationship implied by the CAPM.</p>
+<p>But the APT derives this relationship without assuming that utility is quadratic and without assuming that returns are normally distributed (although the returns do have to behave in accordance with the market model).</p>
+<p>On the other hand, the APT holds only for well-diversified portfolios, not necessarily for individual assets. Hence, the APT&rsquo;s added generality comes at a cost, in terms of less widely-applicable results.</p>
+<p>One might argue, as well, that the APT must apply &ldquo;most&rdquo; individual securities, since if a large number of individual assets violated the APT relationship, it would be possible to construct a well-diversified portfolio of those assets and arbitrage away the higher or lower expected returns.</p>
+<h2 id="75-proof-apt-with-multifactor-models">7.5 Proof APT with Multifactor Models</h2>
+<p>Assumption:</p>
+<ul>
+<li>
+<p>well-diversified portfolios</p>
+</li>
+<li>
+<p>no-arbitrage conditions</p>
+</li>
+</ul>
+<p>Consider a simplified version of the Fama-French model with two factor</p>
+<ul>
+<li>
+<p>return on the market portfolio</p>
+</li>
+<li>
+<p>the return on a portfolio that takes long positions in &ldquo;value&rdquo; stocks (small, overlooked, or old-fashioned companies) and short positions in &ldquo;growth&rdquo; stocks (bigger, more popular, or newer companies)</p>
+</li>
+</ul>
+<p>It implies that the return on each individual asset $j=1,2, \ldots, J$ is</p>
+<p>$$
+\tilde{r}<em>{j}=E\left(\tilde{r}</em>{j}\right)+\beta_{j, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\beta_{j, v}\left[\tilde{r}_{V}-E\left(\tilde{r}_{V}\right)\right]
+$$</p>
+<h3 id="751-same-beta-proposition-3">7.5.1 Same Beta: Proposition 3</h3>
+<p>【Proposition (3)】The absence of arbitrage opportunities requires well-diversified portfolios with identical betas on both factors to have the same expected returns.</p>
+<h4 id="proof-1">Proof:</h4>
+<p>Consider two well-diversified portfolios, one with
+$$
+\tilde{r}<em>{w}^{1}=E\left(\tilde{r}</em>{w}\right)+\beta_{w, m}\left[r_{M}^{\prime}-E\left(\tilde{r_{M}}\right)\right]+\beta_{w, v}\left[r_{v}-E\left(\tilde{r}_{v}\right)\right]
+$$
+and the other with
+$$
+\tilde{r}_{w}^{2}=E\left(\tilde{r}_{w}\right)+\Delta+\beta_{w, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\beta_{w, v}\left[\tilde{r}_{v}-E\left(\tilde{r}_{v}\right)\right]
+$$
+where $\triangle&gt;0 .$</p>
+<p>Now consider a strategy of taking a long position worth $x$ in portfolio 2 and a short position worth $-x$ in portfolio 1</p>
+<p>This strategy is self-financing at $t=0$ but yields a $t=1$ payoff of
+$$
+x\left(1+\tilde{r}<em>{w}^{2}\right)-x\left(1+\tilde{r}</em>{w}^{1}\right)=x \Delta&gt;0
+$$
+Hence, the absence of arbitrage opportunities is inconsistent with $\Delta&gt;0$.</p>
+<p>Similarly, the absence of arbitrage opportunities is inconsistent with $\Delta&lt; 0$.</p>
+<p>Thus, $\Delta =0$. Proposition 3 is proved.</p>
+<h3 id="752-different-beta-proposition-4">7.5.2 Different Beta: Proposition 4</h3>
+<p>【Proposition (4)】The absence of arbitrage opportunities requires the expected returns on all well-diversified portfolios to satisfy 
+$$
+E\left(\tilde{r}<em>{w}\right)=\lambda</em>{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v}
+$$
+for constants $\lambda_{0}, \lambda_{m}, \lambda_{v}$ that are the same for all portfolios.</p>
+<h4 id="proof-2">Proof:</h4>
+<p>Considering three portfolios, all well-diversified.</p>
+<p>The first has $\beta_{w, m}=\beta_{w, v}=0,$ risk-free portfolio
+$$
+\tilde{r}_{w}^{1}=E\left(\tilde{r}_{w}^{1}\right)
+$$
+the second has $\beta_{w, m}=1$ and $\beta_{w, v}=0,$ market portfolio
+$$
+\tilde{r}_{w}^{2}=E\left(\tilde{r}_{w}^{2}\right)+\left[r_{M}^{2}-E\left(\tilde{r}_{M}\right)\right]
+$$
+and the third has $\beta_{w, m}=0$ and $\beta_{w, v}=1,$ value portfolio
+$$
+\tilde{r}_{w}^{3}=E\left(\tilde{r}_{w}^{3}\right)+\left[\tilde{r}_{v}-E\left(\tilde{r}_{v}\right)\right]
+$$
+Next, select
+$$
+\begin{aligned}
+\lambda_{0}&amp;=E\left(\tilde{r}_{w}^{1}\right)\<br>
+\lambda_{m} &amp;=E\left(\tilde{r}_{w}^{2}\right)-E\left(\tilde{r}_{w}^{1}\right) \<br>
+\lambda_{v} &amp;=E\left(\tilde{r}_{w}^{3}\right)-E\left(\tilde{r}_{w}^{1}\right)
+\end{aligned}
+$$</p>
+<ul>
+<li>Since portfolio 1 has $\beta_{w, m}=\beta_{w, v}=0$</li>
+</ul>
+<p>$$
+E\left(\tilde{r}<em>{w}^{1}\right)=\lambda</em>{0}+\lambda_{m} \times 0+\lambda_{v} \times 0=\lambda_{0}
+$$</p>
+<ul>
+<li>Since portfolio 2 has $\beta_{w, m}=1$ and $\beta_{w, v}=0$</li>
+</ul>
+<p>$$
+E\left(\tilde{r}<em>{w}^{2}\right)=\lambda</em>{0}+\lambda_{m} \times 1+\lambda_{v} \times 0=E\left(\tilde{r}_{w}^{1}\right)+E\left(\tilde{r}_{w}^{2}\right)-E\left(\tilde{r}_{w}^{1}\right)
+$$</p>
+<ul>
+<li>Since portfolio 3 has $\beta_{w, m}=0$ and $\beta_{w, v}=1$</li>
+</ul>
+<p>$$
+E\left(\tilde{r}<em>{w}^{3}\right)=\lambda</em>{0}+\lambda_{m} \times 0+\lambda_{v} \times 1=E\left(\tilde{r}_{w}^{1}\right)+E\left(\tilde{r}_{w}^{3}\right)-E\left(\tilde{r}_{w}^{1}\right)
+$$
+Next, let&rsquo;s consider a fourth and fifth well-diversified portfolios. The fourth has
+$$
+\tilde{r}_{w}^{4}=E\left(\tilde{r}_{w}^{4}\right)+\beta_{w, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\beta_{w, v}\left[\tilde{r}_{V}-E\left(\tilde{r}_{V}\right)\right]
+$$
+and features a configuration of $\beta_{w, m}$ and $\beta_{w, v}$ that differs from portfolios 1 through 3.</p>
+<p>Assuming that
+$$
+E\left(\tilde{r}<em>{w}^{4}\right)=\lambda</em>{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v}+\Delta
+$$
+where $\Delta \neq 0$</p>
+<p>The fifth well-diversified portfolio has the same configuration of $\beta_{w, m}$ and $\beta_{w, v}$ but is built as a portfolio of the first three portfolios:</p>
+<ul>
+<li>
+<p>Allocate share $\beta_{w, m}$ to portfolio 2 &ldquo;loads&rdquo; exclusively on the market portfolio</p>
+</li>
+<li>
+<p>Allocate the share $\beta_{w, v}$ to portfolio 3 loads exclusively on the &ldquo;value-to-growth&rdquo; portfolio</p>
+</li>
+<li>
+<p>Allocate the remaining share $1-\beta_{w, m}-\beta_{w, v}$ to portfolio 1 (free from systematic risk) to avoid any additional exposure to risk.</p>
+</li>
+</ul>
+<p>With
+$$
+\begin{aligned}
+\tilde{r}<em>{w}^{1} &amp;=E\left(\tilde{r}</em>{w}^{1}\right)=\lambda_{0} \<br>
+\tilde{r}_{w}^{2} &amp;=E\left(\tilde{r}_{w}^{2}\right)+\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]=\lambda_{0}+\lambda_{m}+\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right] \<br>
+\tilde{r}_{w}^{3} &amp;=E\left(\tilde{r}_{w}^{3}\right)+\left[\tilde{r}_{v}-E\left(\tilde{r}_{v}\right)\right]=\lambda_{0}+\lambda_{v}+\left[\tilde{r}_{v}-E\left(\tilde{r}_{v}\right)\right]
+\end{aligned}
+$$
+We have Portfolio 5
+$$
+\begin{aligned}
+\tilde{r}_{w}^{5} &amp;=\lambda_{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v} \<br>
+&amp;+\beta_{w, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\beta_{w, v}\left[\tilde{r}_{v}-E\left(\tilde{r}_{v}\right)\right]
+\end{aligned}
+$$
+Now we have two well-diversified portfolios, portfolio 4 with
+$$
+\begin{aligned}
+\tilde{r}_{w}^{4} &amp;=\lambda_{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v}+\Delta \<br>
+&amp;+\beta_{w, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\beta_{w, v}\left[\tilde{r}_{v}-E\left(\tilde{r}_{v}\right)\right]
+\end{aligned}
+$$
+and portfolio 5 with
+$$
+\begin{aligned}
+\tilde{r}_{w}^{5}&amp;=\lambda_{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v}\<br>
+&amp;+\beta_{w, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right]+\beta_{w, v}\left[\tilde{r}_{V}-E\left(\tilde{r}_{V}\right)\right]
+\end{aligned}
+$$
+that have identical betas on both factors but different expected returns.</p>
+<p>Proposition 3 implies that $\triangle \neq 0$ is inconsistent with the absence of arbitrage opportunities, thereby completing the proof of proposition 4.</p>
+<p>Hence, if individual asset returns are generated by our two-factor model, the expected return on any well-diversified portfolio must be
+$$
+E\left(\tilde{r}<em>{w}\right)=\lambda</em>{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v}
+$$</p>
+<h3 id="753-interpretation">7.5.3 Interpretation</h3>
+<p>Once again, we can build more intuition for this result by interpreting the coefficients $\lambda_{0}, \lambda_{m}, \lambda_{v}$</p>
+<p>$\tilde{r}<em>{w}^{1}=E\left(\tilde{r}</em>{w}^{1}\right)=\lambda_{0}$ implies that
+$$
+\lambda_{0}=r_{f}
+$$
+$\lambda_{0}$ equals the risk-free rate.</p>
+<p>Since the market portfolio has $\beta_{w, m}=1$ and $\beta_{w, v}=0,$ proposition 4 implies
+$$
+E\left(\tilde{r}_{w}\right)=\lambda_{0}+\lambda_{m} \times 1+\lambda_{v} \times 0=\lambda_{0}+\lambda_{m}=r_{f}+\lambda_{m}
+$$
+or
+$$
+\lambda_{m}=E\left(\tilde{r}_{M}\right)-r_{f}
+$$
+$\lambda_{m}$ is the risk premium on the market portfolio.</p>
+<p>Since the value-to-growth portfolio has $\beta_{w, m}=0$ and $\beta_{w, v}=1$ proposition 4 implies
+$$
+\begin{array}{c}
+E\left(\tilde{r}_{w}\right)=\lambda_{0}+\lambda_{m} \times 0+\lambda_{v} \times 1=\lambda_{0}+\lambda_{v}=r_{f}+\lambda_{v} \<br>
+\lambda_{v}=E\left(\tilde{r}_{v}\right)-r_{f}
+\end{array}
+$$
+$\lambda_{v}$ is the risk premium on the value portfolio.</p>
+<p>Hence
+$$
+E\left(\tilde{r}<em>{w}\right)=\lambda</em>{0}+\lambda_{m} \beta_{w, m}+\lambda_{v} \beta_{w, v}
+$$
+is equivalent to
+$$
+E\left(\tilde{r}_{w}\right)=r_{f}+\beta_{w, m}\left[E\left(\tilde{r}_{M}\right)-r_{f}\right]+\beta_{w, v}\left[E\left(\tilde{r}_{v}\right)-r_{f}\right]
+$$
+Drawing a first analogy to the CAPM, the APT implies a multidimensional version of the security market line that reflects multiple sources of systematic risk.</p>
+<p>Hence, the APT can be considered an extension of the CAPM that allows for multiple sources of systematic risk, albeit one that applies to well-diversified portfolios but not necessarily to all individual assets.</p>
+<h2 id="76-the-apt">7.6 The APT</h2>
+<p>The multi-factor model assumes that the rate of return on any security is a linear function of $k$ factors:
+$$
+\tilde{r}<em>{j}=E\left(\tilde{r}</em>{j}\right)+\beta_{j 1} \tilde{f}_{1}+\ldots+\beta_{j k} \tilde{f}_{k}+\tilde{\varepsilon}_{j}
+$$
+where $\beta_{j k}$ is the sensitivity of the $j$th asset&rsquo;s returns to the $k$ th factor; $\tilde{f}_{k}$ is the mean zero $k$ th factor common to the returns of all assets; $\tilde{\varepsilon}_{j}$ is a random zero mean noise term for the $j$ th asset.</p>
+<p>The APT is derived under the assumption of <strong>perfectly competitive and frictionless capital markets</strong>.</p>
+<p>Individuals are assumed to have <strong>homogeneous beliefs</strong> that the random returns for the set of assets are governed by the linear k-factor model:
+$$
+\tilde{r}<em>{j}=E\left(\tilde{r}</em>{j}\right)+\beta_{j 1} \tilde{f}_{1}+\ldots+\beta_{j k} \tilde{f}_{k}+\tilde{\varepsilon}_{j}
+$$
+The APT requires that the number of assets under consideration $N$ be much larger than the number of factors $k,$ and that the noise term $\tilde{\varepsilon}_{j}$ be the idiosyncratic risk component for the $j$th asset. It must be independent of all factors and all error terms for other assets.</p>
+<h3 id="761-how-to-construct-an-arbitrage-portfolio">7.6.1 How to construct an arbitrage portfolio</h3>
+<p>An arbitrage portfolio in equilibrium satisfies:</p>
+<ul>
+<li>using no wealth</li>
+<li>having <strong>no risk</strong> must earn no return on average</li>
+</ul>
+<p>Let $\omega_{i}$ be the change in the dollar amount invested in $i$th asset as a percentage of an individual&rsquo;s total invested wealth. To form an arbitrage portfolio is to sell some assets and use the proceeds to buy others, i.e.,
+$$
+\Sigma_{i=1}^{N} \omega_{i}=0
+$$
+If there are $N$ assets in the arbitrage portfolio, the additional portfolio return gained is
+$$
+\begin{aligned}
+\tilde{r}_{p} &amp;=\sum_{i=1}^{N} \omega \tilde{r}_{i} \<br>
+&amp;=\sum_{i=1}^{N} \omega_{i} E\left(\tilde{r}_{i}\right)+\Sigma_{i=1}^{N} \omega_{i} \beta_{i 1} \tilde{f}_{1}+\ldots+\Sigma_{i=1}^{N} \omega_{i} \beta_{i k} \tilde{f}_{k}+\Sigma_{i=1}^{N} \omega_{i} \tilde{\varepsilon}_{i}
+\end{aligned}
+$$
+To obtain a riskless arbitrage portfolio it is necessary to eliminate both idiosyncratic risk and systematic risk: one portfolio with the following conditions should do</p>
+<ul>
+<li>selecting percentage changes in investment ratios $\omega_{i}$ to be small</li>
+<li>diversifying across a large number of assets</li>
+<li>choosing changes $\omega_{i}$ so that for each factor $k$ the weighted sum of the systematic risk component $\beta_{k}$ is zero.</li>
+</ul>
+<p>$$
+\begin{aligned}
+&amp;\omega_{i} \approx 1 / N &amp;\quad \mathrm{N} \text{ is a large number} \<br>
+&amp;\Sigma_{i=1}^{N} \omega_{i} \beta_{i k}=0 &amp;\quad  \text{for each factor}</p>
+<p>\end{aligned}
+$$
+Because $\varepsilon_{i}$ are independent, by law of large numbers it is guaranteed that a weighted average of them will approach zero in the limit as $\mathrm{N}$ becomes large.</p>
+<p>Thus we are now left with
+$$
+\tilde{r}<em>{p}=\Sigma</em>{i=1}^{N} \omega_{i} E\left(\tilde{r}_{i}\right)+\Sigma_{i=1}^{N} \omega_{i} \beta_{i 1} \tilde{f}_{1}+\ldots+\Sigma_{i=1}^{N} \omega_{i} \beta_{i k} \tilde{f}_{k}
+$$
+since we have chosen the weighted average of the systematic risk components for each factor to be zero $\Sigma \omega_{i} \beta_{i k}=0,$ thus the systemic risk is eliminated and the return on our arbitrage portfolio becomes a constant
+$$
+\tilde{r}_{p}=\Sigma_{i=1}^{N} \omega_{i} E\left(\tilde{r}_{i}\right)
+$$
+Since the arbitrage portfolio has no risk and requires no new wealth. If the return on the arbitrage portfolio were not zero, it would be possible to achieve an infinite return with no capital requirements and no risk.</p>
+<p>Such an opportunity is impossible if the market is to be in equilibrium. In fact, if the individual arbitrageur is in equilibrium, the return on any and all arbitrage portfolios must be zero:
+$$
+\tilde{r}<em>{p}=\Sigma</em>{i=1}^{N} \omega_{i} E\left(\tilde{r}_{i}\right)=0
+$$</p>
+<h3 id="762-the-arbitrage-pricing-line">7.6.2 The arbitrage pricing line</h3>
+<p>Consider a projection on factor $k$. In equilibrium, all assets must fall on the arbitrage pricing line.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200501221937071.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200501221937071.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200501221937071.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200501221937071.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200501221937071"
+        title="image-20200501221937071.png" /></div></p>
+<p>Because the arbitrage pricing relationship is linear, we can use the slope-intercept definition of a straight line and rewrite
+$$
+E\left(\tilde{r}<em>{i}\right)=r</em>{f}+\left(\bar{\delta}<em>{k}-r</em>{f}\right) \beta_{i k}
+$$
+where $\bar{\delta}_{k}$ is the expected return on a portfolio with unit sensitivity to the $k$ th factor and zero sensitivity to all other factors.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111028.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111028.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111028.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111028.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111028.png"
+        title="20200502111028.png" /></div></p>
+<p>$\lambda_{k}$ represents the risk premium, in equilibrium, for the $k$ th factor. It is the difference between (1) the expectation of a portfolio that has unit response to the $k$ th factor and zero response to the other factors and (2) the risk-free rate $r_{f}$ :
+$$
+\lambda_{k}=\bar{\delta}_{k}-r_{f}
+$$
+Hence, the arbitrage pricing theory can be rewritten as
+$$
+E\left(\tilde{r}_{i}\right)-r_{f}=\left(\bar{\delta}_{1}-r_{f}\right) \beta_{i 1}+\ldots+\left(\bar{\delta}_{k}-r_{f}\right) \beta_{i k}
+$$
+If we explain it as a linear regression equation (assuming that the vectors of returns have a joint normal distribution and that the factors have been linearly transformed so that their transformed vectors are orthonormal) then the coefficients $\beta_{i k}$ are defined in exactly the same $\beta$ in $\mathrm{CAPM}$,
+$$
+\beta_{i k}=\frac{\operatorname{cov}\left(r_{i}, \delta_{k}\right)}{\operatorname{var}\left(\delta_{k}\right)}
+$$
+So the CAPM is seen to be a special case of the APT (where asset returns are assumed to be joint normal).</p>
+<h3 id="763-apt-vs-capm">7.6.3 APT V.S. CAPM</h3>
+<p>APT is much more robust than the CAPM for several reasons:</p>
+<ul>
+<li>APT makes no assumptions about the distribution of asset returns</li>
+<li>APT makes no strong assumptions about individuals' utility functions</li>
+<li>APT allows the equilibrium returns of assets to be dependent on many factors, instead of only one(like beta).</li>
+<li>APT yields a statement about the relative pricing of any subset of assets; hence one need not measure the entire universe of assets in order to test the theory</li>
+<li>There is no special role for the market portfolio in APT, whereas CAPM requires that the market portfolio be efficient</li>
+<li>APT is easily extended to a multi-period framework(Ross 1976)</li>
+</ul>
+<h3 id="764-graphic-example">7.6.4 Graphic Example</h3>
+<p>The factor loadings for two factors, say changes in unanticipated real output and changes in unanticipated inflation, are plotted on the axes.</p>
+<p>Consider a projection on both factor,</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502110920.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502110920.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502110920.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502110920.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502110920.png"
+        title="20200502110920.png" /></div></p>
+<p>We  have,</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111000.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111000.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111000.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111000.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200502111000.png"
+        title="20200502111000.png" /></div></p>
+<p>The origin represents the risk-free rate that is the rate of return received when an asset has zero beta on both factors.</p>
+<p>Points along the diagonal dashed lines have equal expected return but not the same risk; e.g., all points along the line OJ have an expected rate of return equal to the risk-free rate but are not riskless portfolios.</p>
+<p>Suppose the arbitrage price model
+$$
+E\left(\tilde{r}<em>{i}\right)-r</em>{f}=\left(\bar{\delta}<em>{1}-r</em>{f}\right) \beta_{i 1}+\left(\bar{\delta}_{2}-r_{f}\right) \beta_{i 2}
+$$
+with estimated values $r_{f}=10 %, \bar{\delta}_{1}=20 %$ and $\bar{\delta}_{1}=15 % .$ Thus the vertical intercept is $\frac{E\left(\tilde{r}_{i}\right)-r_{f}}{\delta_{1}-r_{f}}$ and the slope of the equal return line is $\frac{\overline{\delta_{2}}-r_{f}}{\delta_{1}-r_{f}}$.</p>
+<p>Suppose that we know that a CAPM efficient market portfolio has been chosen, with expected return $30 %$ and $\beta_{i 1}=1.5, \beta_{i 2}=1 .$ The market portfolio is at point $I$. The security market line indicated by $OI$.</p>
+<p>The CAPM measures risk only in one dimension. If we are told that the portfolio&rsquo;s CAPM beta is 0.5, then it will be the point P. If people are in fact sensitive to more than one type of risk when choosing portfolios of equal return, the APT is superior to the CAPM because CAPM is unidimensional in risk.</p>
+<p>It is perfectly reasonable that portfolio P' might be preferred to P by some investors because it has the same return as portfolio P but a preferable combination of sensitivities to the underlying factors.</p>
+<p>For example, a public pension fund manager might not care much about the sensitivity of the value of the fund to industrial production, but might be very concerned about hedging against unexpected changes in inflation.</p>
+<h2 id="77-looking-for-factors">7.7 Looking For Factors</h2>
+<p>One shortcoming of the multifactor APT is that it gives no guidance concerning the determination of the relevant risk factors or their risk premiums.</p>
+<p>Two principles guide us when we specify a reasonable list of factors.</p>
+<ul>
+<li>
+<p>factors are returns on the so-called factor-mimicking portfolios, or factors that seem likely to be important risk factors; that is, factors that concern investors sufficiently that they will demand meaningful risk premiums to bear exposure to those sources of risk.</p>
+</li>
+<li>
+<p>a limited number of systematic factors with considerable ability to explain security returns; typically macroeconomic, business-cycle-related factors (e.g., the growth rate of GDP)</p>
+</li>
+</ul>
+<h3 id="771-models-with-factor-mimicking-portfolios">7.7.1 Models with Factor-Mimicking Portfolios</h3>
+<p>The Fama-French (FF) Three-Factor Model specifies macroeconomic factors as candidates for relevant sources of systematic risk uses firm characteristics that seem on empirical grounds to proxy for exposure to systematic risk.</p>
+<p>As noted previously, evidence against the CAPM is presented by Eugene Fama and Kenneth French, &ldquo;Common Risk Factors in the Returns on Stocks and Bonds,&rdquo; <em>Journal of Financial</em> Economics Vol.33 (February 1993): pp.3-56</p>
+<p>In particular, Fama and French find that returns on</p>
+<ul>
+<li>
+<p>a portfolio that takes long positions in small firms and short positions in large firms and</p>
+</li>
+<li>
+<p>a portfolio that takes long positions in firms with high book value relative to market value and short positions in firms with low book-to-market value</p>
+</li>
+</ul>
+<p>are as important as the overall market return in explaining expected returns on individual stocks.</p>
+<p>Thus, Fama and French suggest replacing the market model with a three-factor model in which the random return on each individual asset $j=1,2, \ldots, J$ is governed by
+$$
+\begin{aligned}
+\tilde{r}<em>{j} &amp;=\alpha</em>{j}+\beta_{j, m}\left[\tilde{r}_{M}-E\left(\tilde{r}_{M}\right)\right] \<br>
+&amp;+\beta_{j, s}\left[\tilde{r}_{S M B}-E\left(\tilde{r}_{S M B}\right)\right]+\beta_{j, h}\left[\tilde{r}_{H M L}-E\left(\tilde{r}_{H M L}\right)\right]+\varepsilon_{j}
+\end{aligned}
+$$
+where</p>
+<ul>
+<li>
+<p>$\tilde{r}_{S M B}$ is the return on the &ldquo;small-minus-big&rdquo; portfolio, i.e., the return of a portfolio of small stocks in excess of the return on a portfolio of large stocks.</p>
+</li>
+<li>
+<p>$\tilde{r}_{H M L}$ is the return on the &ldquo;high-minus-low&rdquo; book-to-market value portfolio, i.e., the return of a portfolio of stocks with a high book-to-market ratio in excess of the return on a portfolio of stocks with a low book-to-market ratio.</p>
+</li>
+<li>
+<p>$\beta_{j, m}, \beta_{j, s}$ and $\beta_{j, h}$ measure the exposure (correlation) of the return on asset $j$ to each of these sources of risk,</p>
+</li>
+<li>
+<p>the idiosyncratic term $\varepsilon_{j}$ has the same properties as in the market model.</p>
+</li>
+</ul>
+<p>For the Fama-French model, the same type of no-arbitrage arguments that led us to propositions 3 and 4 imply that the expected return on any well-diversified portfolio is
+$$
+\begin{aligned}
+E(\tilde{r_{w}}) &amp;=r_{f}+\beta_{w, m}\left[E(\tilde{r_{M}})-r_{f}\right] \<br>
+&amp;+\beta_{w, s}\left[E\left(\tilde{r}_{S M B}\right)-r_{f}\right]+\beta_{w, h}\left[E\left(\tilde{r}_{H M L}\right)-r_{f}\right]
+\end{aligned}
+$$
+where $\tilde{r}_{M}, \tilde{r}_{S M B}$ and $\tilde{r}_{H M L}$ are returns on the tracking portfolios for the market, small-minus-big, and high-minus-low book-to-market portfolios.</p>
+<p>This version of the APT implies that a portfolio will have a higher expected returns when its own return is</p>
+<ul>
+<li>
+<p>Positively correlated with the market return (consistent with the CAPM)</p>
+</li>
+<li>
+<p>Positive correlated with the SMB and/or HML return
+(inconsistent with the CAPM).</p>
+</li>
+</ul>
+<p>Correlation with SMB and/or HML may be an indicator of financial vulnerability, over and above macroeconomic risk.</p>
+<h3 id="772-macroeconomic-factor-model">7.7.2 Macroeconomic Factor Model</h3>
+<p>A famous paper by Chen, Roll and Ross, takes us even further away from the CAPM, by constructing a multifactor version of the APT in which a set of macroeconomic variables measure alternative sources of systematic risk.</p>
+<p>Nai-Fu Chen, Richard Roll, and Stephen Ross, &ldquo;Economic Forces and the Stock Market,&rdquo; Journal of Business Vol.59 (July 1986): 383-403. They experiment with a variety of specifications before settling on a five-factor macroeconomic model.</p>
+<p>In Chen, Roll, and Ross' multifactor model, the random return on each individual asset $j=1,2, \ldots, J$ is governed by
+$$
+\begin{aligned}
+\tilde{r}<em>{j} &amp;=\alpha</em>{j}+\beta_{j, I P} \tilde{IP}+\beta_{j, U I} \tilde{UI}  \<br>
+&amp;+\beta_{j, E I} \tilde{EI} +\beta_{j, T S} \tilde{TS} +\beta_{j, R P} \tilde{RP}+\varepsilon_{j}
+\end{aligned}
+$$
+where</p>
+<ul>
+<li>$\tilde{P}=%$ change in industrial production</li>
+<li>$\tilde{U} I=%$ change in unexpected inflation</li>
+<li>$\tilde{E} I=%$ change in expected inflation</li>
+<li>$\tilde{T} S=a$ &ldquo;term structure&rdquo; variable defined as excess return of long-term government bonds over short-term interest rates</li>
+<li>$\tilde{R P}=\mathrm{a}$ &ldquo;risk premium&rdquo; variable defined as excess return of low grade bonds over high grade bonds</li>
+</ul>
+<p>All of the factors are expressed as deviations from their expected values, so that $\alpha_{j}$ continues to measure the expected return on asset $j$.</p>
+<p>The idiosyncratic term $\varepsilon_{j}$ has the same properties as in the market model.</p>
+<p>For the Chen-Roll-Ross model, no-arbitrage arguments imply that the expected return on any well-diversified portfolio is
+$$
+\begin{aligned}
+E\left(\tilde{r}<em>{w}\right) &amp;=r</em>{f}+\beta_{w, I P}\left[E\left(\tilde{r}_{I P}\right)-r_{f}\right] \<br>
+&amp;+\beta_{w, U I}\left[E\left(\tilde{r}_{U I}\right)-r_{f}\right]+\beta_{w, E I}\left[E\left(\tilde{r}_{E I}\right)-r_{f}\right] \<br>
+&amp;+\beta_{w, T S}\left[E\left(\tilde{r}_{T S}\right)-r_{f}\right]+\beta_{w, R P}\left[E\left(\tilde{r}_{R P}\right)-r_{f}\right]
+\end{aligned}
+$$
+where $\tilde{r}_{I P}, \tilde{r}_{U I}, \tilde{r}_{E l}, \tilde{r}_{T S}$ and $\tilde{r}_{R P}$ are the returns on tracking portfolios for the macroeconomic factors.</p>
+<p>This version of the APT implies that a portfolio will have a higher expected return when its own return is</p>
+<ul>
+<li>Positively correlated with IP and/or RP, which are high in good times</li>
+<li>Negatively correlated with UI (especially) and/or EI and/or TS in bad times.</li>
+</ul>
+<p>The TS and RP variables may once again indicate a role for financial vulnerability.</p>
+<h2 id="78-the-apt-and-risk-premia">7.8 The APT and Risk Premia</h2>
+<p>Since the APT&rsquo;s formula for expected returns applies to
+well-diversified portfolios and not necessarily to individual assets, one should take care in using it to value risky cash flows from individual investment projects.</p>
+<p>Still, partly for the sake of completeness and also to see how we can extend our previous valuation exercise using the CAPM to allow for the APT&rsquo;s multiple sources of systematic risk, let&rsquo;s go ahead and see how it works.</p>
+<p>The valuation problem involves attaching a price $P_{0}^{C}$ today $(\text { at } t=0)$ to a risky cash-flow $\tilde{C}_{1}$ received in the future (at $t=1$ ).</p>
+<p>After taking the expected value $E\left(\tilde{C}<em>{1}\right)$ of the cash flow, we want to find the appropriate risk premium $\psi$ to add to the risk-free rate $r</em>{f}$ so that
+$$
+P_{0}^{C}=\frac{E\left(\tilde{C}_{1}\right)}{1+r_{f}+\psi}
+$$
+provides an accurate assessment of the project&rsquo;s value today.</p>
+<p>Since the APT, like the CAPM, is cast in terms of returns, we can start by computing the random return on the project as
+$$
+\begin{aligned}
+1+\tilde{r}<em>{C} &amp;=\frac{\tilde{C}</em>{1}}{P_{0}^{C}} 
+\end{aligned}
+$$</p>
+<p>or
+$$
+\tilde{r}<em>{C}= \frac{\tilde{C}</em>{1}}{P_{0}^{C}}-1=\frac{\tilde{C}_{1}-P_{0}^{C}}{P_{0}^{C}}
+$$</p>
+<p>Next, we need to choose a factor model to use with the APT. Let&rsquo;s use a simpler, two-factor version of the Chen-Roll-Ross macroeconomic model where the return on each asset $i$ is given by
+$$
+\tilde{r}<em>{i}=E\left(\tilde{r}</em>{i}\right)+\beta_{i, I P} \tilde{I P}+\beta_{i, I N F}  \tilde{N} F+\varepsilon_{i}
+$$
+where $\tilde{P}$ is industrial production and $\tilde{N} F$ is inflation.</p>
+<p>Here is where another advantage of the APT becomes apparent: It might be easier to estimate (or guess!) how the return on a project will vary with macroeconomic output and inflation then to estimate how it will vary with the return on the market portfolio.</p>
+<p>Boldly setting aside the distinction between well-diversified portfolios and individual assets or cash flows, our two-factor macroeconomic model and the APT imply that the expected return on the project should be
+$$
+E\left(\tilde{r}<em>{C}\right)=r</em>{f}+\beta_{c, I P}\left[E\left(\tilde{r}_{I P}\right)-r_{f}\right]+\beta_{c, I N F}\left[E\left(\tilde{r}_{I N F}\right)-r_{f}\right]
+$$
+where $\tilde{r}_{I P}$ and $\tilde{r}_{I N F}$ are returns on the tracking or mimicking portfolios for industrial production and inflation.</p>
+<p>Finally, we have
+$$
+E\left(\frac{\tilde{C}<em>{1}}{P</em>{0}^{C}}-1\right)=r_{f}+\beta_{c, I P}\left[E\left(\tilde{r}_{I P}\right)-r_{f}\right]+\beta_{c, | N F}\left[E\left(\tilde{r}_{I N F}\right)-r_{f}\right]
+$$
+This implies
+$$
+P_{0}^{C}=\frac{E\left(\tilde{C}_{1}\right)}{1+r_{f}+\beta_{c, I P}\left[E\left(\tilde{r}_{I P}\right)-r_{f}\right]+\beta_{c, | N F}\left[E\left(\tilde{r}_{I N F}\right)-r_{f}\right]}
+$$
+or, more simply,
+$$
+P_{0}^{C}=\frac{E\left(\tilde{C}_{1}\right)}{1+r_{f}+\psi}
+$$
+where the risk premium
+$$
+\psi=\beta_{c, I P}\left[E\left(\tilde{r}_{IP}\right)-r_{f}\right]+\beta_{c, I N F}\left[E\left(\tilde{r}_{IN F}\right)-r_{f}\right]
+$$
+compensates for the project&rsquo;s exposure to the risk of recession (falling IP) or inflation (rising INF).</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/7.-arbitrage-pricing-theory/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/7.-arbitrage-pricing-theory/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/8.-arrow-debreu-pricing-equilibrium/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/6.-capm/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

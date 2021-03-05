@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="2. Linear Time Series Models 2.1 Introduction A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals.
+Examples: tick data of stock prices, daily exchange rates, monthly interest rates, annual GDP growth rate etc.;
+Time series analysis provides econometrics tools for those time series data;
+Famous time series models/tools: ARIMA model, random walk, cointegration, error correction model, vector autoregressive model and ARCH/GARCH etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/2.-linear-time-series-models/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="2. Linear Time Series Models 2.1 Introduction A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals.
+Examples: tick data of stock prices, daily exchange rates, monthly interest rates, annual GDP growth rate etc.;
+Time series analysis provides econometrics tools for those time series data;
+Famous time series models/tools: ARIMA model, random walk, cointegration, error correction model, vector autoregressive model and ARCH/GARCH etc."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/2.-linear-time-series-models/" /><link rel="prev" href="https://henrywu97.github.io/3.-garch-type-models/" /><link rel="next" href="https://henrywu97.github.io/1.-characteristics-of-financial-variables/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/2.-linear-time-series-models\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  3561 ,
+        "url": "https:\/\/henrywu97.github.io\/2.-linear-time-series-models\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/2.-linear-time-series-models/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/2.-linear-time-series-models/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3561 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;17 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-introduction">2.1 Introduction</a></li>
+    <li><a href="#22-linear-time-series-models">2.2 Linear time series models</a>
+      <ul>
+        <li><a href="#220-basic">2.2.0 Basic</a>
+          <ul>
+            <li><a href="#acvfs-and-acfs">ACVFs and ACFs</a></li>
+          </ul>
+        </li>
+        <li><a href="#221-autoregressive-ar-models">2.2.1 Autoregressive (AR) models</a>
+          <ul>
+            <li><a href="#ar1-model">AR(1) model</a></li>
+            <li><a href="#autoregressive-process-with-order-p">Autoregressive Process with Order p</a></li>
+          </ul>
+        </li>
+        <li><a href="#222-moving-average-ma-models">2.2.2 Moving average (MA) models</a></li>
+      </ul>
+    </li>
+    <li><a href="#23-armapq-model">2.3 ARMA(p,q) model</a>
+      <ul>
+        <li><a href="#arma-model-construction">ARMA model construction</a>
+          <ul>
+            <li><a href="#box-jenkins-modeling-philosophy">Box-Jenkins Modeling Philosophy</a></li>
+            <li><a href="#identify-the-degree-of-ma-process">Identify the degree of MA process</a></li>
+            <li><a href="#identify-the-degree-of-ar-process">Identify the degree of AR process</a></li>
+            <li><a href="#ljung-box-test-for-white-noise">Ljung-Box test for white noise</a></li>
+            <li><a href="#model-identification-based-on-information-criteria">Model identification based on information criteria</a></li>
+          </ul>
+        </li>
+        <li><a href="#forecast-based-on-arma-models">Forecast based on ARMA models</a></li>
+      </ul>
+    </li>
+    <li><a href="#24-unit-root-process">2.4 Unit root process</a>
+      <ul>
+        <li><a href="#241-random-walks">2.4.1 Random walks</a></li>
+        <li><a href="#242-trend-stationary-process">2.4.2 Trend-stationary process</a></li>
+        <li><a href="#242-stationary-linear-process">2.4.2 Stationary linear process</a>
+          <ul>
+            <li><a href="#beveridge-nelson-decomposition">Beveridge-Nelson decomposition</a></li>
+            <li><a href="#wiener-process">Wiener process</a></li>
+          </ul>
+        </li>
+        <li><a href="#243-dickey-fuller-unit-root-test">2.4.3 Dickey-Fuller unit root test</a></li>
+      </ul>
+    </li>
+    <li><a href="#25-order-of-integration">2.5 Order of integration</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#trend-removal-methods">Trend removal methods</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="2-linear-time-series-models">2. Linear Time Series Models</h1>
+<h2 id="21-introduction">2.1 Introduction</h2>
+<p>A <strong>time series</strong> is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals.</p>
+<p>Examples: tick data of stock prices, daily exchange rates, monthly interest rates, annual GDP growth rate etc.;</p>
+<p>Time series analysis provides econometrics tools for those time series data;</p>
+<p>Famous time series models/tools: ARIMA model, random walk, cointegration, error correction model, vector autoregressive model and ARCH/GARCH etc..</p>
+<p>The Importance of Time Series to Economics</p>
+<ul>
+<li>Time and uncertainty are two most important factors when economic agents make a decision;</li>
+<li>Time series econometrics provides statistical methods and tools to investigate dynamic relations in economics/finance;</li>
+<li>Time series data are attractive to researchers as they show many interesting phenomena: asymmetry(牛短熊长), time irreversibility, regime-shifts, volatility clustering, and jumps or outliers;</li>
+<li>In past two decades, a fast development of Time series from linear to nonlinear, stationary to nonstationary, univariate to multivariate.</li>
+</ul>
+<p>The objective of time series econometrics</p>
+<ul>
+<li>
+<p>Examine how well economic and financial theory/models can explain the stylized facts of economic/financial phenomena (e.g., volatility clustering, seasonal effects)</p>
+</li>
+<li>
+<p>Test the validity of economic and financial hypotheses (e.g., market Efficient Hypothesis)</p>
+</li>
+<li>
+<p>Predict the future evolution of economic systems and financial markets using historical data (e.g., the prediction of business cycle turning points).</p>
+</li>
+<li>
+<p>Make policy recommendations (e.g., program evaluations)</p>
+</li>
+</ul>
+<p>General <strong>Methodology</strong> of Time Series Analysis</p>
+<ul>
+<li>Survey/data collection and summary of stylized facts;</li>
+<li>Model specification: propose an economic/financial model using economic theory, empirical experience, and etc;</li>
+<li>Model estimation: estimate the proposed model using historical data.</li>
+<li>Model evaluation (in-sample and out-of-sample evaluation);</li>
+<li>Explain the stylized facts, test economic hypotheses/theories, and forecast futures.</li>
+</ul>
+<h2 id="22-linear-time-series-models">2.2 Linear time series models</h2>
+<h3 id="220-basic">2.2.0 Basic</h3>
+<p>【strictly stationary】A time series $ \left{X_{t}\right} $ is said to be strictly stationary (or strongly stationary) if the $ k $ -dimensional distribution of $ \left(X_{1}, \ldots, X_{k}\right) $ is the same as that of $ \left(X_{t+1}, X_{t+2}, \ldots, X_{t+k}\right) $ for any integer $ k \geq 1 $ and $ t $.</p>
+<p>【weakly stationary】A time series $ \left{X_{t}\right} $ is said to be weakly stationary (or second order stationary or covariance stationary) if $ E\left[X_{t}^{2}\right]&lt;\infty $ and both $ E X_{t} $ and $ \operatorname{cov}\left(X_{t}, X_{t-k}\right), $ for any integer $ k, $ do not depend on $ t $.</p>
+<h4 id="acvfs-and-acfs">ACVFs and ACFs</h4>
+<p>For weakly stationary time series $ \left{X_{t}\right}, $ let $ \mu=E X_{t} $ denote its common mean. We define the **autocovariance function** (ACVF) as
+$$
+\gamma(k)=\operatorname{cov}\left(X_{t}, X_{t+k}\right)=E\left{\left(X_{t}-\mu\right)\left(X_{t+k}-\mu\right)\right}
+$$
+and the **autocorrelation function** (ACF) as
+$$
+\rho(k)=\operatorname{Corr}\left(X_{t}, X_{t+k}\right)=\gamma(k) / \gamma(0)
+$$
+for $ k=0,\pm 1,\pm 2, \cdots . $ Note that $ \gamma(0) $ is the variance of $ X_{t}, $ i.e.
+$ \gamma(0)=\operatorname{var}\left(X_{t}\right), $ and $ \rho(k)=\rho(-k) $</p>
+<p>【white noise】$ \left{X_{t}\right} $ is called a white noise process when $ \rho(k)=0 $ for any $ k \neq 0, $ and is denoted by $ X_{t} \sim W N\left(\mu, \sigma^{2}\right), $ where $ \sigma^{2}=\gamma(0)=\operatorname{var}\left(X_{t}\right) $</p>
+<p>如果时间序列$ x_t $是一个具有有限均值和有限方差的独立同分布随机变量序列，则$ {x_t} $称为一个白噪声序列(white noise).</p>
+<p>特别地，若$ x_t $，还服从均值为0、方差为$ \sigma^2 $的正态分布，则称这个序列为高斯白噪声(Gaussian white noise)。</p>
+<p>对于白噪声序列，所有自相关函数为零。在实际应用中，如果所有样本自相关函数接近于零，则认为该序列是白噪声序列。</p>
+<p>In practice, we observe $ X_{1}, \ldots, X_{T} $ and estimate ACVF and ACF by the sample ACVF and sample ACF.</p>
+<p>$$
+\hat{\gamma}(k)=\frac{1}{T} \sum_{t=k+1}^{T}\left(X_{t}-\bar{X}\right)\left(X_{t-k}-\bar{X}\right), \quad \hat{\rho}(k)=\hat{\gamma}(k) / \widehat{\gamma}(0)
+$$</p>
+<p>where $ \bar{X}=T^{-1} \sum_{t=1}^{T} X_{t} $.</p>
+<p>In time series analysis, we use <strong>stationary autoregressive moving average</strong> (ARMA) models to reveal the autocorrelation structures in the data.</p>
+<p>在时间序列分析中，单变量是否显著不重要，重要的是残差项接近白噪声(不包含有效信息)。</p>
+<h3 id="221-autoregressive-ar-models">2.2.1 Autoregressive (AR) models</h3>
+<p>An autoregressive model of order $ p(\mathrm{AR}(\mathrm{p})) $ is defined as
+$$
+X_{t}=c+\rho_{1} X_{t-1}+\cdots+\rho_{p} X_{t-p}+\epsilon_{t}
+$$
+where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right), $ and $ c, \rho_{1}, \ldots, \rho_{p} $ are parameters.</p>
+<p>In particular, an <strong>AR(1)</strong> model is written as
+$$
+X_{t}=c+\rho_{1} X_{t-1}+\epsilon_{t}
+$$
+where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) $. Then $ \left{X_{t}\right} $ is stationary if and only if $ |\rho_1|&lt;1 $.</p>
+<p>Question: Compute the mean, variance, ACVFs and ACFs of $ \left{X_{t}\right} $.</p>
+<h4 id="ar1-model">AR(1) model</h4>
+<p>Taking expectations on both sides of the $ \mathrm{AR}(1) $ equation, we obtain
+$$
+\begin{aligned}
+E\left[X_{t}\right] &amp;=c+E\left[\rho X_{t-1}\right]+E\left[\epsilon_{t}\right] \<br>
+&amp;=c+\rho E\left[X_{t-1}\right]+0 \<br>
+&amp;=c+\rho E\left[X_{t}\right] \quad (\text{by stationary})
+\end{aligned}
+$$
+since $ |\rho|&lt;1, $ we have
+$$
+E\left[X_{t}\right]=\frac{c}{1-\rho}
+$$
+Note that $ E\left[X_{t}\right]=0 $ if and only if $ c=0 $.</p>
+<p>We compute the variances of both sides of the AR(1) equation, and obtain
+$$
+\begin{aligned}
+\operatorname{var}\left[X_{t}\right] &amp;=\operatorname{var}\left[c+\rho X_{t-1}+\epsilon_{t}\right] \<br>
+&amp;=\operatorname{var}\left[\rho X_{t-1}+\epsilon_{t}\right] \<br>
+&amp;=\operatorname{var}\left[\rho X_{t-1}\right]+\operatorname{var}\left[\epsilon_{t}\right]+2 \operatorname{cov}\left(\rho X_{t-1}, \epsilon_{t}\right) \<br>
+&amp;=\rho^{2} \operatorname{var}\left[X_{t-1}\right]+\sigma^{2}+0 \<br>
+&amp;=\rho^{2} \operatorname{var}\left[X_{t}\right]+\sigma^{2}
+\end{aligned}
+$$
+since $ |\rho|&lt;1, $ we have
+$$
+\operatorname{var}\left[X_{t}\right]=\frac{\sigma^{2}}{1-\rho^{2}}
+$$
+Finally, we compute the autocovariance of $ X_{t} $ for any integer $ k . $ First, when $ k=1 $
+$$
+\begin{aligned}
+\gamma(1) &amp;=\operatorname{cov}\left(X_{t}, X_{t-1}\right)=\operatorname{cov}\left(c+\rho X_{t-1}+\epsilon_{t}, X_{t-1}\right) \<br>
+&amp;=\operatorname{cov}\left(c, X_{t-1}\right)+\operatorname{cov}\left(\rho X_{t-1}, X_{t-1}\right)+\operatorname{cov}\left(\epsilon_{t}, X_{t-1}\right) \<br>
+&amp;=0+\rho \operatorname{cov}\left(X_{t-1}, X_{t-1}\right)+0=\rho \operatorname{var}\left(X_{t-1}\right)=\rho \gamma(0)
+\end{aligned}
+$$
+i.e., $ \gamma(1)=\rho \sigma^{2} /\left(1-\rho^{2}\right) $. Using the same method, we can show that $ \gamma(k)=\operatorname{cov}\left(X_{t}, X_{t-k}\right)=\rho^{k} \gamma(0) $ for all $ k&gt;1 $ when $ X_{t} \sim \operatorname{AR}(1) $.</p>
+<p>Therefore, $ \rho(1)=\gamma(1) / \gamma(0)=\rho $ and $ \rho(k)=\rho^{k} $ for $ k&gt;1 $</p>
+<p>To summarize, if $ X_{t}=c+\rho X_{t-1}+\epsilon_{t} $ is a stationary process, we have
+$$
+\begin{array}{c}
+E\left[X_{t}\right]=\frac{c}{1-\rho} \<br>
+\operatorname{var}\left[X_{t}\right]=\frac{\sigma^{2}}{1-\rho^{2}} \<br>
+\gamma(k)=\left{\begin{array}{ll}
+\rho \sigma^{2} /\left(1-\rho^{2}\right) &amp; \text { for } k=1 \<br>
+\rho^{k} \sigma^{2} /\left(1-\rho^{2}\right) &amp; \text { for } k&gt;1
+\end{array}\right. \<br>
+\rho(k)=\left{\begin{array}{cc}
+\rho &amp; \text { for } k=1 \<br>
+\rho^{k} &amp; \text { for } k&gt;1
+\end{array}\right.
+\end{array}
+$$</p>
+<h4 id="autoregressive-process-with-order-p">Autoregressive Process with Order p</h4>
+<p>$$
+Y_{t}=c+\phi_{1} Y_{t-1}+\phi_{2} Y_{t-2}+\ldots+\phi_{p} Y_{t-p}+\varepsilon_{t}, \text { where } \varepsilon_{t} \sim W N\left(0, \sigma^{2}\right)
+$$</p>
+<p>Provided that the roots of $ 1-\phi_{1} z-\phi_{2} z^{2}-\ldots, \phi_{p} z^{p}=0 $ are outside of the unit circle, then $ Y_{t} $ is stationary.</p>
+<p>$$
+\mu=\frac{c}{1-\phi_{1}-\phi_{2}-\ldots-\phi_{p}}
+$$</p>
+<p>After some adjustment:</p>
+<p>$$
+Y_{t}-\mu=\phi_{1}\left(Y_{t-1}-\mu\right)+\phi_{2}\left(Y_{t-2}-\mu\right)+\ldots+\phi_{p}\left(Y_{t-p}-\mu\right)+\varepsilon_{t}
+$$</p>
+<p>Multiple $ Y_{t-j}-\mu $ on both sides and take expectation, we have</p>
+<p>$$
+\gamma_{j}=\left{\begin{array}{r}
+\phi_{1} \gamma_{j-1}+\phi_{2} \gamma_{j-2}+\ldots+\phi_{p} \gamma_{j-p}, \text { for all } j=1,2,3, \ldots \<br>
+\phi_{1} \gamma_{1}+\phi_{2} \gamma_{2}+\ldots+\phi_{p} \gamma_{p}+\sigma^{2}, \text { for } j=0
+\end{array}\right}
+$$</p>
+<h3 id="222-moving-average-ma-models">2.2.2 Moving average (MA) models</h3>
+<p>A moving average model of order $ q(\mathrm{MA}(\mathrm{q})) $ is defined as
+$$
+X_{t}=\mu+\epsilon_{t}+\theta_{1} \epsilon_{t-1}+\cdots+\theta_{q} \epsilon_{t-q}
+$$
+where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right), $ and $ \mu, \theta_{1}, \ldots, \theta_{q} $ are parameters. Note that a MA(q) process is always stationary if the coefficients do not vary over time.</p>
+<p>In particular, a MA(1) models is written as
+$$
+X_{t}=\mu+\epsilon_{t}+\theta_{1} \epsilon_{t-1}
+$$
+where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) $</p>
+<p>Question: Compute the mean, variance, ACVFs and ACFs of $ \left{X_{t}\right} $.</p>
+<p>Suppose that $ X_{t}=\mu+\epsilon_{t}+\theta \epsilon_{t-1}, $ where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right), $ we have
+$$
+\begin{aligned}
+E\left[X_{t}\right]&amp;=E\left[\mu+\epsilon_{t}+\theta \epsilon_{t-1}\right] \<br>
+&amp;=\mu+E\left[\epsilon_{t}\right]+E\left[\theta \epsilon_{t-1}\right] \<br>
+&amp;=\mu \<br>
+\operatorname{var}\left[X_{t}\right]&amp;=\operatorname{var}\left[\mu+\epsilon_{t}+\theta \epsilon_{t-1}\right]\<br>
+&amp;=\operatorname{var}\left[\epsilon_{t}+\theta \epsilon_{t-1}\right] \<br>
+&amp;=\operatorname{var}\left[\epsilon_{t}\right]+\operatorname{var}\left[\theta \epsilon_{t-1}\right]+2 \operatorname{cov}\left[\epsilon_{t}, \theta \epsilon_{t-1}\right] \<br>
+&amp;=\sigma^{2}+\theta^{2} \sigma^{2}+0\<br>
+&amp;=\left(1+\theta^{2}\right) \sigma^{2}
+\end{aligned}
+$$
+For the $ k- $th order autocovariance, when $ k=1 $,
+$$
+\begin{aligned}
+\gamma(1)=&amp; \operatorname{cov}\left(X_{t}, X_{t-1}\right)=\operatorname{cov}\left(\mu+\epsilon_{t}+\theta \epsilon_{t-1}, \mu+\epsilon_{t-1}+\theta \epsilon_{t-2}\right) \<br>
+=&amp; \operatorname{cov}\left(\epsilon_{t}+\theta \epsilon_{t-1}, \epsilon_{t-1}+\theta \epsilon_{t-2}\right) \<br>
+=&amp; \operatorname{cov}\left(\epsilon_{t}, \epsilon_{t-1}\right)+\theta \operatorname{cov}\left(\epsilon_{t}, \epsilon_{t-2}\right)+\theta \operatorname{cov}\left(\epsilon_{t-1}, \epsilon_{t-1}\right) \<br>
+&amp;+\theta^{2} \operatorname{cov}\left(\epsilon_{t-1}, \epsilon_{t-2}\right)=\theta \sigma^{2}
+\end{aligned}
+$$
+It is easy to show that $ \gamma(k)=0 $ for $ k&gt;1 $.</p>
+<p>Therefore, $ \rho(1)=\frac{\theta}{1+\theta^{2}} $ and $ \rho(k)=0 $ for $ k&gt;1 $.</p>
+<p>To summarize, if $ X_{t}=\mu+\epsilon_{t}+\theta \epsilon_{t-1} $ is a stationary process, we have
+$$
+\begin{array}{c}
+E\left[X_{t}\right]=\mu \<br>
+\operatorname{var}\left[X_{t}\right]=\left(1+\theta^{2}\right) \sigma^{2} \<br>
+\gamma(k)=\left{\begin{array}{cl}
+\theta \sigma^{2} &amp; \text { for } k=1 \<br>
+0 &amp; \text { for } k&gt;1
+\end{array}\right. \<br>
+\rho(k)=\left{\begin{array}{cc}
+\frac{\theta}{1+\theta^{2}} &amp; \text { for } k=1 \<br>
+0 &amp; \text { for } k&gt;1
+\end{array}\right.
+\end{array}
+$$
+MA(q) process:</p>
+<p>$$
+Y_{t}=c+\varepsilon_{t}+\theta_{1} \varepsilon_{t-1}+\theta_{2} \varepsilon_{t-2}+\ldots+\theta_{q} \varepsilon_{t-q} \text{, where } \varepsilon_{t} \text{ is WN}\left(0, \sigma^{2}\right)
+$$
+Mean and autocovariance functions:
+$$
+\begin{aligned}
+\mu &amp;=E\left(Y_{t}\right)=E\left(c+\varepsilon_{t}+\theta_{1} \varepsilon_{t-1}+\theta_{2} \varepsilon_{t-2}+\ldots+\theta_{q} \varepsilon_{t-q}\right)=c \<br>
+\gamma_{0} &amp;=E\left[\left(Y_{t}-\mu\right)\left(Y_{t}-\mu\right)\right] \<br>
+&amp;=E\left(\varepsilon_{t}^{2}+\theta_{1}^{2} \varepsilon_{t-1}^{2}+\ldots+\theta_{q}^{2} \varepsilon_{t-q}^{2}\right)=\left(1+\theta_{1}^{2}+, \ldots+\theta_{q}^{2}\right) \sigma^{2} \<br>
+\gamma_{j} &amp;=E\left[\left(Y_{t}-\mu\right)\left(Y_{t-j}-\mu\right)\right] \<br>
+&amp;=\left(\theta_{j}+\theta_{j+1} \theta_{1}+\theta_{j+2} \theta_{2}+\ldots+\theta_{q} \theta_{q-j}\right) \sigma^{2}, \text { for } j=1,2, \ldots, q \<br>
+\gamma_{j} &amp;=0 \text { for } j&gt;q
+\end{aligned}
+$$</p>
+<p>$ \mathrm{MA}(\infty) $ process:
+$$
+Y_{t}=\mu+\psi_{0} \varepsilon_{t}+\psi_{1} \varepsilon_{t-1}+\psi_{2} \varepsilon_{t-2}+\ldots, \text { where } \varepsilon_{t} \text { is } W N\left(0, \sigma^{2}\right)
+$$
+$ Y_{t} $ is weakly stationary if $ \left{\psi_{j}\right}_{j=0}^{\infty} $ is square summable:
+$$
+\sum_{j=0}^{\infty} \psi_{j}^{2}&lt;\infty
+$$
+a slightly stronger condition is absolutely summable
+$$
+\sum_{j=0}^{\infty}\left|\psi_{j}\right|&lt;\infty
+$$
+Suppose that $ X_{t} $ follows a stationary $ \operatorname{AR}(1) $ model
+$$
+X_{t}=\rho X_{t-1}+\epsilon_{t}
+$$
+where $ |\rho|&lt;1 $ and $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) . $ Then, $ X_{t} $ can be written as an $ \operatorname{MA}(\infty) $ model as
+$$
+X_{t}=\epsilon_{t}+\rho \epsilon_{t-1}+\rho^{2} \epsilon_{t-2}+\ldots=\sum_{s=0}^{\infty} \rho^{s} \epsilon_{t-s}
+$$</p>
+<p>All AR model can be written in form of MA model.</p>
+<h2 id="23-armapq-model">2.3 ARMA(p,q) model</h2>
+<p>In time series analysis, we use stationary autoregressive moving average (ARMA) models to reveal the autocorrelation structures in the data.</p>
+<p>An typical ARMA(p,q) model could be established as
+$$
+X_{t}=c+\underbrace{\rho_{1} X_{t-1}+\cdots+\rho_{p} X_{t-p}}_{\text {AR component }}+\epsilon_{t}+\underbrace{\theta_{1} \epsilon_{t-1}+\cdots+\theta_{q} \epsilon_{t-q}}_{\text {MA component }}
+$$
+Stationary Condition: the roots of $ 1-\rho_{1} z-\rho_{2} z^{2}-\ldots, \rho_{p} z^{p}=0 $ are outside of the unit circle.</p>
+<p>While in practice, we usually use <strong>ARMA (1,1)</strong> model to capture the dynamics in empirical time series data.</p>
+<h3 id="arma-model-construction">ARMA model construction</h3>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164255.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164255.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164255.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164255.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164255.png"
+        title="20201110164255.png" /></div></p>
+<h4 id="box-jenkins-modeling-philosophy">Box-Jenkins Modeling Philosophy</h4>
+<p>Four-steps procedure:</p>
+<ul>
+<li>Transform the data to be stationary (taking log or difference);</li>
+<li>Make an initial guess of small values for $ p $ and $ q $ for an $ A R M A(p, q) $;</li>
+<li>Estimate the parameters in $ \Phi(L) $ (AR parameters) and $ \theta(L) $ (MA parameters);</li>
+<li>Perform a diagnostic analysis to confirm the model;</li>
+</ul>
+<h4 id="identify-the-degree-of-ma-process">Identify the degree of MA process</h4>
+<p>Sample Autocorrelation is given by
+$$
+\widehat{\rho}<em>{j}=\frac{\widehat{\gamma}</em>{j}}{\hat{\gamma}<em>{0}}
+$$
+For a pure $ M A(q) $ process, for $ j&gt;q, $ we have
+$$
+E\left(\widehat{\rho}</em>{j}\right)=0, \quad \operatorname{Var}\left(\widehat{\rho}<em>{j}\right)=\frac{1}{T}\left(1+2 \sum</em>{i=1}^{q} \rho_{i}^{2}\right)
+$$
+One can identify the degree of MA process by checking for the smallest value of $ h $ such as that all $ \hat{\rho}_{j} $ for any $ j&gt;h, $ stays within
+$$
+\pm \frac{1.96}{\sqrt{T}} \sqrt{\left(1+2 \sum_{i=1}^{h-1} \widehat{\rho}_{i}^{2}\right)}
+$$</p>
+<p>It means that its ACF cuts off at lag q.</p>
+<h4 id="identify-the-degree-of-ar-process">Identify the degree of AR process</h4>
+<p>Consider the regression
+$$
+y_{t+1}=\widehat{c}+\widehat{\alpha}_{1}^{(m)} y_{t}++\widehat{\alpha}_{2}^{(m)} y_{t-1}+\ldots++\widehat{\alpha}_{m}^{(m)} y_{t-m+1}+\widehat{e}_{t}
+$$
+where $ \hat{\alpha}_{m}^{(m)} $ is called $ m- $ th **partial autocorrelation (PACF)**.</p>
+<p>The estimation formula is
+$$
+\widehat{\alpha}^{(m)}=\left(\begin{array}{r}
+\gamma_{0}, \gamma_{1}, \gamma_{2}, \ldots \ldots \gamma_{m-1} \<br>
+\gamma_{1}, \gamma_{0}, \gamma_{1}, \ldots \ldots \gamma_{m-2} \<br>
+\ldots \<br>
+\gamma_{m-1}, \gamma_{m-2}, \gamma_{m-3}, \ldots \ldots \gamma_{0}
+\end{array}\right)^{-1}\left(\begin{array}{c}
+\gamma_{1} \<br>
+\gamma_{2} \<br>
+\ldots \<br>
+\gamma_{m}
+\end{array}\right)
+$$
+If the data were really generated by an $ A R(p) $ process, for $ m&gt;p, $ we have
+$$
+E\left(\widehat{\alpha}_{m}^{(m)}\right)=0, \quad \operatorname{Var}\left(\widehat{\alpha}_{m}^{(m)}\right)=\frac{1}{T}
+$$
+One can use this result to identify the degree of AR process by checking for which value of $ h $ such as that $ \widehat{\alpha}_{h}^{(h)} $ stays within
+$$
+\pm \frac{1.96}{\sqrt{T}}
+$$</p>
+<p>It means that its PACF cuts off at lag q.</p>
+<p>Summary: In practice, we use Box-Jenkins method to determine the orders in AR(p) and $ \mathrm{MA}(\mathrm{q}) $</p>
+<ul>
+<li>For a stationary $ \mathrm{AR}(\mathrm{p}) $ model, its ACF decays, while its PACF cuts off at lag $ p $.</li>
+<li>For a stationary MA(q) model, its PACF decays, while its ACF cuts off at lag $ q $</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164709.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164709.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164709.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164709.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164709.png"
+        title="20201110164709.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164642.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164642.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164642.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164642.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164642.png"
+        title="20201110164642.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164739.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164739.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164739.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164739.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164739.png"
+        title="20201110164739.png" /></div></p>
+<h4 id="ljung-box-test-for-white-noise">Ljung-Box test for white noise</h4>
+<ul>
+<li>$ \mathrm{H}<em>0 : r</em>{t} $ is a white noise process;</li>
+<li>$ \mathrm{H}<em>1: r</em>{t} $ is not a white noise process.</li>
+</ul>
+<p>The <strong>Ljung-Box test</strong> statistic is defined as
+$$
+Q_{m}=T(T+2) \sum_{j=1}^{m} \frac{1}{T-j} \widehat{\rho}_{j}^{2}
+$$
+where $ m \geq 1 $ is a prescribed integer.</p>
+<p>We reject the null hypothesis at significant level $ \alpha $ if $ Q_{m}&gt;\chi_{\alpha, m}^{2}, $ where $ \chi_{\alpha, m}^{2} $ is the top $ \alpha $ -th percentile of the $ \chi^{2} $ distribution with $ m $ degrees of freedom.</p>
+<p>Residual diagnostics - An adequate model
+$$
+X_{t}=\alpha+\rho_{1} X_{t-1}+\epsilon_{t}+\theta_{1} \epsilon_{t-1}
+$$
+An ARMA $ (p, q) $ model is said to be **adequate** if there is <u>no serial correlation in the residuals</u>. In other words, if you can still find significant autocorrelation in the residuals, the model is not adequate. Then, you should extend your model to capture remaining structures of autocorrelations.</p>
+<p>Note that when we test for white noise in the residuals of an estimate ARMA(p,q) model, we should adjust the distribution in the Ljung-Box test from $ \chi_{m}^{2} $ to $ \chi_{m-p-q}^{2} $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164904.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164904.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164904.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164904.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164904.png"
+        title="20201110164904.png" /></div></p>
+<h4 id="model-identification-based-on-information-criteria">Model identification based on information criteria</h4>
+<p>The previous method is powerless in detecting overfitting, which leads to an unnecessarily complicated model with some redundant parameters.</p>
+<p>Therefore, they increase errors in the estimated parameters. To solve this problem, we use AlC and BIC to <u>combine the consideration on both the goodness of the fit and the simplicity of the model by penalizing extra terms in the model</u>.</p>
+<p>【AIC】Model identification based on information criteria The Akaike&rsquo;s information criterion (AIC) is defined as
+$$
+A I C=-2 \log L+2 k
+$$
+where log $ L $ is the log likelihood, $ k $ is the number of parameters.</p>
+<p>【BIC】The Bayesian information criterion $ (\mathrm{BIC}) $ is defined as
+$$
+B I C=-2 \log L+2 k \log n
+$$
+where $ n $ is the number of observations.</p>
+<p>We choose a better model with a smaller value of AIC or BIC.</p>
+<h3 id="forecast-based-on-arma-models">Forecast based on ARMA models</h3>
+<p>Suppose that stock market return follows a stationary AR(1) process
+$$
+r_{t}=c+\rho r_{t-1}+\epsilon_{t}
+$$
+where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) . $ Let $ F_{t}=\left{r_{1}, r_{2}, \ldots, r_{t}\right} $ denote the information set up to time $ t $.</p>
+<ol>
+<li>Compute the 1-step ahead forecast of $ r_{T} $ based on $ F_{T}, $ i.e., $ E\left[r_{T+1} \mid F_{T}\right] $</li>
+<li>Compute the 2 -step ahead forecast of $ r_{T} $ based on $ F_{T}, $ i.e., $ E\left[r_{T+2} \mid F_{T}\right] $</li>
+<li>Compute the k-step ahead forecast of $ r_{T} $ based on $ F_{T}, $ i.e., $ E\left[r_{T+k} \mid F_{T}\right] $</li>
+<li>What happens if $ k \rightarrow \infty ? $</li>
+</ol>
+<h2 id="24-unit-root-process">2.4 Unit root process</h2>
+<h3 id="241-random-walks">2.4.1 Random walks</h3>
+<p>Suppose that $ X_{t} $ follows a random walk process
+$$
+X_{t}=c+X_{t-1}+e_{t}
+$$
+for $ t=1,2, \ldots, T, $ where $ c \neq 0, e_{t} \sim W N\left(0, \sigma^{2}\right), $ and $ X_{0}=0 $.</p>
+<p>We can show that $ X_{t}=c t+\sum_{s=1}^{t} e_{s} $ for $ t=1,2, \ldots, T $.</p>
+<p>Then we can show that</p>
+<ul>
+<li>$ E\left[X_{t}\right]=c t, \operatorname{Var}\left[X_{t}\right]=t \sigma^{2} $.</li>
+<li>$ \operatorname{Cov}\left(X_{t}, X_{t-k}\right)=(t-k) \sigma^{2} $</li>
+</ul>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164957.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164957.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164957.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164957.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110164957.png"
+        title="20201110164957.png" /></div></p>
+<p>Predicting R.W. processes</p>
+<p>Suppose that stock price follows a random walk process
+$$
+P_{t}=c+P_{t-1}+\epsilon_{t}
+$$
+where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) $ and $ P_{0} $ is a constant. Let $ F_{t}=\left{P_{0}, P_{1}, \ldots, P_{t}\right} $ be the information set up to time $ t $.</p>
+<p>For some integer $ k&gt;1 $, compute the forecast value and variance of $ P_{t+k} $ based on $ F_{T}, $ i.e., $ E\left[P_{T+k} \mid F_{T}\right] $ and $ \operatorname{Var}\left[P_{T+k} \mid F_{T}\right] . $ What happens if $ k \rightarrow \infty $</p>
+<h3 id="242-trend-stationary-process">2.4.2 Trend-stationary process</h3>
+<p>A trend-stationary process is a deterministic time trend plus a stationary process. For example,
+$$
+Y_{t}=\alpha+\delta t+e_{t}
+$$
+where $ \alpha+\delta t $ is a linear time trend, $ e_{t} $ is a stationary process, e.g.
+stationary process like $ e_{t}=\theta(L) \epsilon_{t}, $ in which $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) . $</p>
+<p>Then, $ \epsilon_{t} $ only causes transitory shocks to $ Y_{t}, $ i.e., the effect caused by $ \epsilon_{t} $ to $ Y_{t+k} $ decays with $ k $.</p>
+<p>Question: Suppose that $ Y_{t}=\alpha+\delta t+e_{t}, e_{t}=0.5 e_{t-1}+\epsilon_{t}, $ where
+$ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right) . $ Compute the effect caused by $ \epsilon_{t} $ to $ Y_{t+k}, $ i.e., the change of $ Y_{t+k} $ for one unit change in $ \epsilon_{t} $.</p>
+<p>Suppose that $ \Phi(L) X_{t}=\theta(L) \epsilon_{t}, $ then $ X_{t} $ is called a unit root process if $ \Phi(z)=0 $ has a root of unity $ (z=1) . $ e.g., random walk
+$$
+X_{t}=X_{t-1}+e_{t}
+$$
+is a unit root process, where $ e_{t} $ is a stationary process.</p>
+<p>Question: Suppose that $ X_{t}=X_{t-1}+e_{t}, e_{t}=0.5 e_{t-1}+\epsilon_{t}, $ where $ \epsilon_{t} \sim W N\left(0, \sigma^{2}\right), $ compute the effect caused by $ \epsilon_{t} $ to $ X_{t+k} $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165101.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165101.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165101.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165101.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165101.png"
+        title="20201110165101.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165124.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165124.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165124.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165124.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165124.png"
+        title="20201110165124.png" /></div></p>
+<p>The Dickey-Fuller (DF) unit root test</p>
+<ul>
+<li>
+<p>$ \mathbb{H}<em>{0}: X</em>{t} $ has a unit root</p>
+</li>
+<li>
+<p>$ \mathbb{H}<em>{1}: X</em>{t} $ is (trend)-stationary</p>
+</li>
+</ul>
+<p>Test equations:</p>
+<ul>
+<li>(None) $ \Delta X_{t}=\rho X_{t-1}+e_{t} $</li>
+<li>(Constant) $ \Delta X_{t}=\alpha+\rho X_{t-1}+e_{t} $</li>
+<li>(Constant+Trend) $ \Delta X_{t}=\alpha+\delta t+\rho X_{t-1}+e_{t} $</li>
+</ul>
+<p>Equivalently, we need to test
+$$
+\mathbb{H}<em>{0}: \rho=0 \quad \text { v.s. } \quad \mathbb{H}</em>{1}: \rho&lt;0
+$$</p>
+<h3 id="242-stationary-linear-process">2.4.2 Stationary linear process</h3>
+<p>【Linear I(0) processes】A linear I(0) process can be written as a constant plus a zero-mean linear process $ \left{u_{t}\right} $ such that
+$$
+u_{t}=\psi(L) \varepsilon_{t}, \psi(L) \equiv \psi_{0}+\psi_{1} L+\psi_{2} L^{2}+\cdots \text { for } t=0,\pm 1,\pm 2, \ldots
+$$
+$ \left{\varepsilon_{t}\right} $ is independent white noise (i.i.d. with mean 0 and $ \mathrm{E}\left(\varepsilon_{t}^{2}\right) \equiv \sigma^{2}&gt;0 $）
+$$
+\begin{array}{c}
+\sum_{j=0}^{\infty} j\left|\psi_{j}\right|&lt;\infty \<br>
+\psi(1) \neq 0
+\end{array}
+$$</p>
+<h4 id="beveridge-nelson-decomposition">Beveridge-Nelson decomposition</h4>
+<p>Approximating I(1) by a Random Walk: Let $ \left{\xi_{t}\right} $ be I(1) so that $ \Delta \xi_{t}=\delta+u_{t} $ where $ u_{t} \equiv \psi(L) \varepsilon_{t} $ is a zero-mean $ \mathrm{I}(0) $ process with $ \mathrm{E}\left(\xi_{0}^{2}\right)&lt;\infty . $ Using the following identity:
+$$
+\begin{array}{c}
+\psi(L)=\psi(1)+\Delta \alpha(L), \quad \Delta \equiv 1-L \<br>
+\alpha(L) \equiv \sum_{j=0}^{\infty} \alpha_{j} L^{j}, \quad \alpha_{j}=-\left(\psi_{j+1}+\psi_{j+2}+\cdots\right) \quad(j=0,1,2, \ldots)
+\end{array}
+$$
+we can write $ u_{t} $ as
+$$
+u_{t} \equiv \psi(L) \varepsilon_{t}=\psi(1) \cdot \varepsilon_{t}+\eta_{t}-\eta_{t-1} \text { with } \eta_{t} \equiv \alpha(L) \varepsilon_{t}
+$$
+It can be shown that $ \alpha(L) $ is absolutely summable. So, by Proposition $ 6.1(\mathrm{a}),\left{\eta_{t}\right} $ is a well-defined zero-mean covariance-stationary process (it is actually ergodic stationary by Proposition $ 6.1(\mathrm{d}) $ ) . Substituting $ (9.2 .6) $ into $ (9.1 .4), $ we obtain (what is known in econometrics as) the Beveridge-Nelson decomposition:
+$$
+\begin{aligned}
+\xi_{t} &amp;=\delta \cdot t+\sum_{s=1}^{t}\left[\psi(1) \cdot \varepsilon_{s}+\eta_{s}-\eta_{s-1}\right]+\xi_{0} \<br>
+&amp;=\delta \cdot t+\psi(1) \sum_{s=1}^{t} \varepsilon_{s}+\eta_{t}+\left(\xi_{0}-\eta_{0}\right)\left(\text { since } \sum_{s=1}^{t}\left(\eta_{s}-\eta_{s-1}\right)=\eta_{t}-\eta_{0}\right)
+\end{aligned}
+$$</p>
+<h4 id="wiener-process">Wiener process</h4>
+<p>【The Wiener Process】The next two sections will present a variety of unit-root tests. The limiting distributions of their test statistics will be written in terms of Wiener processes (also
+called Brownian motion processes). Some of you may already be familiar with this from continuous-time finance, but to refresh your memory,</p>
+<p>【Standard Wiener processes】A standard Wiener (<strong>Brownian motion</strong>) process $ W(\cdot) $ is a continuous-time stochastic process, associating each date $ t \in[0,1] $ with the scalar random variable $ W(t), $ such that</p>
+<ol>
+<li>$ W(0)=0 $</li>
+<li>for any dates $ 0 \leq t_{1}&lt;t_{2}&lt;\cdots&lt;t_{k} \leq 1 $, the changes</li>
+</ol>
+<p>$$
+W\left(t_{2}\right)-W\left(t_{1}\right), W\left(t_{3}\right)-W\left(t_{2}\right), \ldots, W\left(t_{k}\right)-W\left(t_{k-1}\right)
+$$
+are independent multivariate normal with $ W(s)-W(t) \sim N(0,(s-t)) $ (so in $ \text { particular } W(1) \sim N(0,1)$).
+3. for any realization, $ W(t) $ is continuous in $ t $ with probability 1.</p>
+<h3 id="243-dickey-fuller-unit-root-test">2.4.3 Dickey-Fuller unit root test</h3>
+<p>In the first case with no intercept and no trend, we construct two test statistics as
+$$
+T \cdot \widehat{\rho} \rightarrow_{d} \frac{\frac{1}{2}\left(W(1)^{2}-1\right)}{\int_{0}^{1} W(r)^{2} d r} \triangleq D F_{\rho}
+$$
+and
+$$
+t=\frac{\widehat{\rho}}{\operatorname{se}(\widehat{\rho})} \rightarrow_{d} \frac{\frac{1}{2}\left(W(1)^{2}-1\right)}{\sqrt{\int_{0}^{1} W(r)^{2} d r}} \triangleq D F_{t}
+$$
+in which $ D F_{\rho} $ and $ D F_{t} $ are not the usual $ t $ -distribution.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165146.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165146.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165146.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165146.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165146.png"
+        title="20201110165146.png" /></div></p>
+<p>The Augmented Dickey-Fuller (ADF) unit root test</p>
+<ul>
+<li>$ \mathbb{H}<em>{0}: X</em>{t} $ has a unit root</li>
+<li>$ \mathbb{H}<em>{1}: X</em>{t} $ is (trend)-stationary</li>
+</ul>
+<p>Test equations:</p>
+<ul>
+<li>(None) $ \Delta X_{t}=\rho X_{t-1}+\theta_{1} \Delta y_{t-1}+\ldots+\theta_{p} \Delta y_{t-p}+e_{t} $</li>
+<li>(Constant)$ \Delta X_{t}=\alpha+\rho X_{t-1}+\theta_{1} \Delta y_{t-1}+\ldots+\theta_{p} \Delta y_{t-p}+e_{t} $</li>
+<li>(Constant+Trend) $ \Delta X_{t}=\alpha+\delta t+\rho X_{t-1}+\theta_{1} \Delta y_{t-1}+\ldots+\theta_{p} \Delta y_{t-p}+e_{t} $</li>
+</ul>
+<p>Equivalently, we need to test
+$$
+\mathbb{H}<em>{0}: \rho=0 \quad \text { v.s. } \quad \mathbb{H}</em>{1}: \rho&lt;0
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165305.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165305.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165305.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165305.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165305.png"
+        title="20201110165305.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165345.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165345.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165345.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165345.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165345.png"
+        title="20201110165345.png" /></div></p>
+<h2 id="25-order-of-integration">2.5 Order of integration</h2>
+<p>【integration】If time series $ X_{t} $ is a stationary process, then $ X_{t} \sim I(0) $; If time series $ X_{t} $ is an $ I(\mathrm{d}) $ process, if and only if $ \Delta^{j} X_{t} $ for $ 1 \leq j&lt;d $ contain unit roots, and $ \Delta^{d} X_{t} \sim I(0) $ (stationary).</p>
+<p>【Cointegration】Suppose that $ X_{t} $ and $ Y_{t} $ are $ I(\mathrm{d}) $ time series, and there exists some linear combination such that
+$$
+Y_{t}-X_{t}^{\prime} \beta \sim 1(0)
+$$
+then, $ X_{t} $ and $ Y_{t} $ are said to be **cointegrated**, and $ \beta $ is called the cointegrating vector (coefficient).</p>
+<p>2003 Nobel Prize winner: Clive W.J. Granger and Robert F. Engle for their research on &lsquo;cointegration&rsquo;.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165430.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165430.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165430.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165430.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165430.png"
+        title="20201110165430.png" /></div></p>
+<p>Relationship between 1 year and 3 month interest rates.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165451.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165451.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165451.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165451.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165451.png"
+        title="20201110165451.png" /></div></p>
+<p>The spread (difference) between 1 year and 3 month interest rates.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165518.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165518.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165518.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165518.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165518.png"
+        title="20201110165518.png" /></div></p>
+<h4 id="trend-removal-methods">Trend removal methods</h4>
+<p>In classical time series models, the data are required to be stationary. If in practice, the data is nonstaitonary with trends, then one needs to remove the trend first to stationarize the data. Common trend-removal methods include</p>
+<ul>
+<li>Taking difference;</li>
+<li>Trend estimation and subtraction;</li>
+<li>HP filter;</li>
+<li>&hellip;</li>
+</ul>
+<h5 id="hodrickprescott-filter">HodrickPrescott filter</h5>
+<p>Suppose that
+$$
+y_{t}=\tau_{t}+c_{t}+\epsilon_{t}
+$$
+where $ \tau_{t} $ is trend, $ c_{t} $ is cycles, and $ \epsilon_{t} $ is disturbance. Given an adequately chosen, positive value of $ \lambda $, there is a trend component that will solve</p>
+<p>$$
+\min <em>{\tau}\left(\sum</em>{t=1}^{T}\left(y_{t}-\tau_{t}\right)^{2}+\lambda \sum_{t=2}^{T-1}\left[\left(\tau_{t+1}-\tau_{t}\right)-\left(\tau_{t}-\tau_{t-1}\right)\right]^{2}\right)
+$$
+ii.e. 拟合程度+惩罚系数*二阶导的大小(平滑程度)</p>
+<p>$ \lambda $ should equal 6.25 for annual data, 1,600 for quarterly data, and 129,600 for monthly data.</p>
+<p>An example: Global temperature anomalies</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165556.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165556.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165556.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165556.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165556.png"
+        title="20201110165556.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165625026.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165625026.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165625026.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165625026.png 1.6x"
+        data-sizes="auto"
+        alt="image-20201110165625026"
+        title="image-20201110165625026.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165643698.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165643698.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165643698.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165643698.png 1.6x"
+        data-sizes="auto"
+        alt="image-20201110165643698"
+        title="image-20201110165643698.png" /></div></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">mFilter</span><span class="p">)</span>
+<span class="n">f1gta</span><span class="o">=</span><span class="nf">hpfilter</span><span class="p">(</span><span class="n">GTA</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="m">120</span><span class="p">,</span><span class="n">type</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;lambda&#34;</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">f1gta</span><span class="p">)</span>
+<span class="n">f2gta</span><span class="o">=</span><span class="nf">hpfilter</span><span class="p">(</span><span class="n">GTA</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="m">1200</span><span class="p">,</span><span class="n">type</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;lambda&#34;</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">f2gta</span><span class="p">)</span>
+<span class="n">f3gta</span><span class="o">=</span><span class="nf">hpfilter</span><span class="p">(</span><span class="n">GTA</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="m">12000</span><span class="p">,</span><span class="n">type</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;lambda&#34;</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">f3gta</span><span class="p">)</span>
+
+<span class="n">f1gta</span>
+<span class="c1">## Title:</span>
+<span class="c1">## Hodrick-Prescott Filter</span>
+<span class="c1">## Call:</span>
+<span class="c1">## hpfilter(x = GTA, freq = 120, type = c(&#34;lambda&#34;))</span>
+<span class="c1">## Method:</span>
+<span class="c1">## hpfilter</span>
+<span class="c1">## Filter Type:</span>
+<span class="c1">## lambda</span>
+<span class="c1">## Series:</span>
+<span class="c1">## GTA</span>
+<span class="c1">## GTA Trend Cycle</span>
+<span class="c1">## 1 -0.255273 -0.285225 0.029952</span>
+<span class="c1">## 2 -0.325364 -0.285402 -0.039962</span>
+<span class="c1">## 3 -0.239818 -0.285330 0.045511</span>
+<span class="c1">## 4 -0.270364 -0.285091 0.014727</span>
+<span class="c1">## 5 -0.280818 -0.284390 0.003572</span>
+<span class="c1">## 6 -0.337727 -0.282809 -0.054918</span>
+<span class="c1">## 7 -0.233364 -0.279899 0.046535</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165744.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165744.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165744.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165744.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165744.png"
+        title="20201110165744.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165804.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165804.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165804.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165804.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165804.png"
+        title="20201110165804.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165823.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165823.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165823.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165823.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165823.png"
+        title="20201110165823.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165855899.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165855899.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165855899.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20201110165855899.png 1.6x"
+        data-sizes="auto"
+        alt="image-20201110165855899"
+        title="image-20201110165855899.png" /></div></p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165920.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165920.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165920.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165920.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20201110165920.png"
+        title="20201110165920.png" /></div></p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/2.-linear-time-series-models/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/2.-linear-time-series-models/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/2.-linear-time-series-models/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/2.-linear-time-series-models/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/3.-garch-type-models/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/1.-characteristics-of-financial-variables/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="9. Arrow-Debreu Pricing: No-Arbitrage We have already used the Arrow-Debreu model as an equilibrium theory of asset pricing.
+But the model also works as a no-arbitrage theory, in which (1) contingent claims prices are inferred from existing asset prices and then (2) used to price other assets and risky cash flows.
+The framework cleverly and usefully sidesteps the important, but as yet unresolved, problem of making assumptions about investors&#39; utility functions or the distribution of consumption and/ or asset returns." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="9. Arrow-Debreu Pricing: No-Arbitrage We have already used the Arrow-Debreu model as an equilibrium theory of asset pricing.
+But the model also works as a no-arbitrage theory, in which (1) contingent claims prices are inferred from existing asset prices and then (2) used to price other assets and risky cash flows.
+The framework cleverly and usefully sidesteps the important, but as yet unresolved, problem of making assumptions about investors&#39; utility functions or the distribution of consumption and/ or asset returns."/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" /><link rel="prev" href="https://henrywu97.github.io/part1-4/" /><link rel="next" href="https://henrywu97.github.io/8.-arrow-debreu-pricing-equilibrium/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/9.-arrow-debreu-pricing-no-arbitrage\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  5628 ,
+        "url": "https:\/\/henrywu97.github.io\/9.-arrow-debreu-pricing-no-arbitrage\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/9.-arrow-debreu-pricing-no-arbitrage/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/9.-arrow-debreu-pricing-no-arbitrage/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5628 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;27 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#91-the-value-additivity-theorem">9.1 The Value Additivity Theorem</a>
+      <ul>
+        <li><a href="#perfectly-negatively-correlated-case">Perfectly Negatively Correlated Case</a></li>
+      </ul>
+    </li>
+    <li><a href="#92-market-completeness-and-complex-securities">9.2 Market Completeness and Complex Securities</a>
+      <ul>
+        <li><a href="#921-example">9.2.1 Example</a></li>
+        <li><a href="#922-market-completeness-condition">9.2.2 Market Completeness Condition</a></li>
+      </ul>
+    </li>
+    <li><a href="#93-using-the-term-structure-of-interest-rates">9.3 Using the Term Structure of Interest Rates</a></li>
+    <li><a href="#94-using-options">9.4 Using Options</a>
+      <ul>
+        <li><a href="#941-to-complete-the-market">9.4.1 To Complete the Market</a></li>
+        <li><a href="#942-to-infer-contingent-claims-prices">9.4.2 To Infer Contingent Claims Prices</a></li>
+        <li><a href="#943-black-scholes-option-pricing">9.4.3 Black-Scholes Option Pricing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="9-arrow-debreu-pricing-no-arbitrage">9. Arrow-Debreu Pricing: No-Arbitrage</h1>
+<p>We have already used the Arrow-Debreu model as an equilibrium theory of asset pricing.</p>
+<p>But the model also works as a no-arbitrage theory, in which (1) contingent claims prices are inferred from existing asset prices and then (2) used to price other assets and risky cash flows.</p>
+<p>The framework cleverly and usefully sidesteps the important, but as yet unresolved, problem of making assumptions about investors' utility functions or the distribution of consumption and/ or asset returns.</p>
+<p>Two innovative papers along these lines appeared in the late 1970 s, around the same time that Robert Lucas was working out the details of the CCAPM. Merton Miller won the Nobel Prize in 1990 .</p>
+<ul>
+<li>Douglas Breeden and Robert Litzenberger, &ldquo;Prices of State-Contingent Claims Implicit in Option Prices,&rdquo; Journal of Business Vol.51 (October 1978 ): pp.621-651.</li>
+<li>Rolf Banz and Merton Miller, &ldquo;Prices for State-Contingent Claims: Some Estimates and Applications,&rdquo; Journal of Business Vol.51 (October 1978 ): pp.653-672.</li>
+</ul>
+<h2 id="91-the-value-additivity-theorem">9.1 The Value Additivity Theorem</h2>
+<p>Before moving on to consider the more realistic case with uncertainty in full detail, it is useful to consider a result that is interesting in its own right, but also useful in underscoring one of the most important lessons that we drew from our analysis of the CAPM, that only aggregate risk is reflected in asset prices and returns.</p>
+<p>To illustrate the result, consider once more the case where there are two dates, $ t=0 $ and $ t=1, $ and $ i=1,2, \ldots, N $ possible states at $ t=1 $.</p>
+<p>And consider two complex securities, $ j=1 $ and $ j=2, $ with prices $ p_{1}^{A} $ and $ p_{2}^{A} $ at $ t=0 $ and payoffs $ z_{1}^{i} $ and $ z_{2}^{i} $ in each state $ i=1,2, \ldots, N $ at $ t=1 $.</p>
+<p>【Theorem】<strong>The Value Additivity Theorem</strong> says that if there is a third asset, $ j=3, $ with payoffs that are, in every state, equal to the same linear combination of the payoffs provided by assets $ j=1 $ and $ j=2, $ so that
+$$
+z_{3}^{i}=\alpha z_{1}^{i}+\beta z_{2}^{i} \quad \text { for all } i=1,2, \dots, N
+$$
+then the price of asset $ j=3 $ must be the same linear combination of the prices of assets $ j=1 $ and $ j=2, $ so that
+$$
+p_{3}^{A}=\alpha p_{1}^{A}+\beta p_{2}^{B}
+$$</p>
+<p><strong>Proof:</strong></p>
+<p>The Value Additivity Theorem follows from a familiar no-arbitrage argument. since
+$$
+z_{3}^{i}=\alpha z_{1}^{i}+\beta z_{2}^{i} \quad \text { for all } i=1,2, \dots, N
+$$
+the payoffs from asset $ j=3 $ can be reproduced by the portfolio formed from $ \alpha $ units of asset $ j=1 $ and $ \beta $ units of asset $ j=2 . $ The cost of this portfolio is
+$$
+\alpha p_{1}^{A}+\beta p_{2}^{B}
+$$
+So if $ p_{3}^{A}&gt;\alpha p_{1}^{A}+\beta p_{2}^{B}, $ it would be profitable to sell asset $ j=3 $ and buy the portfolio, and if $ p_{3}^{A}&lt;\alpha p_{1}^{A}+\beta p_{2}^{B}, $ it would be profitable to buy asset $ j=3 $ and sell the portfolio.</p>
+<h3 id="perfectly-negatively-correlated-case">Perfectly Negatively Correlated Case</h3>
+<p>As an interesting and revealing special case, suppose that the payoffs on assets $ j=1 $ and $ j=2 $ are perfectly negatively correlated, so that
+$$
+\alpha z_{1}^{i}+\beta z_{2}^{i}=Z \quad \text { for all } i=1,2, \dots, N
+$$
+where $ Z $ is constant across all states $ i=1,2, \ldots, N $.</p>
+<p>In this case, asset $ j=3 $ is risk free, and so the return to holding asset $ j=3 $ must equal the risk-free rate.</p>
+<p>But how could the two risky assets, $ j=1 $ and $ j=2, $ provide higher rates of return while yielding the risk-free rate in combination? The answer is that they cannot.</p>
+<p>since the payoffs from assets $ j=1 $ and $ j=2 $ are perfectly negatively correlated, those payoffs contain only idiosyncratic risk. And, as we have seen from the CAPM, idiosyncratic risk is not priced.</p>
+<p>Note once again that none of the arguments we&rsquo;ve worked through so far has made any reference at all to preferences or distributions of consumption and/or returns.</p>
+<p>That is the appeal of the no-arbitrage approach: it requires none of the special assumptions that cause problems for the CAPM.</p>
+<h2 id="92-market-completeness-and-complex-securities">9.2 Market Completeness and Complex Securities</h2>
+<p>At the beginning of the term, we briefly discussed the concept of market completeness. We can now define and discuss the concept in more detail.</p>
+<p>【Definition】Financial markets are <strong>complete</strong> if, for each possible state of each future date, there exists a market for a contingent claim that pays off one unit of consumption in that date-state combination and zero otherwise.</p>
+<p>Of course, we do not see pure contingent claims being traded in any financial market.</p>
+<p>But &ldquo;synthetic&rdquo; contingent claims can often be constructed from portfolios of <strong>complex securities</strong> that make payoffs in more than one state-date combination like those we do see traded.</p>
+<p>Typically, however, this requires that markets be complete.</p>
+<h3 id="921-example">9.2.1 Example</h3>
+<p>To see how this works, let&rsquo;s begin with an example in which markets are complete, and use contingent claims prices to price a complex asset.</p>
+<p>Suppose that there are two dates, today $ (t=0) $ and &ldquo;next period&rdquo; $ (t=1) . $ And suppose there are three possible states, $ i=1,2,3, $ at $ t=1 $.</p>
+<p>Financial markets are complete, therefore, if contingent claims are traded at $ t=0 $ for all three states at $ t=1 $.</p>
+<p>Assume, therefore, that we observe the three contingent claims prices: $ q^{1}=0.60, q^{2}=0.20, $ and $ q^{3}=0.15 $.</p>
+<p>Consider a complex security (security $ j=1 $ ) with payoff $ z_{1}^{1}=3 $ in state $ 1, $ payoff $ z_{1}^{2}=2 $ in state $ 2, $ and payoff $ z_{1}^{3}=0 $ in state 3
+$$
+\begin{array}{l}
+q^{1}=0.60, q^{2}=0.20, q^{3}=0.15 \<br>
+z_{1}^{1}=3, z_{1}^{2}=2, z_{1}^{3}=0
+\end{array}
+$$
+Since the payoffs provided by the complex security can be replicated by a portfolio consisting of 3 contingent claims for state 1 and 2 contingent claims for state 2, the price of the complex security must equal $ 0.60 \times 3+0.20 \times 2=2.20 . $ The general formula is
+$$
+p_{1}^{A}=q^{1} z_{1}^{1}+q^{2} z_{1}^{2}+q^{3} z_{1}^{3}
+$$
+In this first example, we did not &ldquo;need&rdquo; the contingent claim for state 3.</p>
+<p>But suppose we want to consider a second complex security (security $ j=2) $ with payoff $ z_{2}^{1}=1 $ in state $ 1, $ payoff $ z_{2}^{2}=1 $ in state $ 2, $ and payoff $ z_{2}^{3}=1 $ in state 3
+$$
+\begin{array}{l}
+q^{1}=0.60, q^{2}=0.20, q^{3}=0.15 \<br>
+z_{2}^{1}=1, z_{2}^{2}=1, z_{2}^{3}=1
+\end{array}
+$$</p>
+<p>since the payoffs provided by the complex security can be replicated by a portfolio consisting of 1 contingent claim for state 1, 1 contingent claim for state 2, and 1 contingent claim for state 3, the price of the complex security must equal</p>
+<p>$$
+p_{2}^{A}=q^{1} z_{2}^{1}+q^{2} z_{2}^{2}+q^{3} z_{2}^{3}=0.6+0.2+0.15=0.95
+$$</p>
+<p>To price assets $ j=1 $ and $ j=2, $ we need all three contingent claims.</p>
+<p>Partly for practice but also to set the stage for the next step in our analysis, consider a third complex security $ (j=3), $ with payoff $ z_{3}^{1}=2 $ in state 1, payoff $ z_{3}^{2}=0 $ in state $ 2, $ and payoff $ z_{3}^{3}=2 $ in state 3
+$$
+\begin{aligned}
+q^{1} &amp;=0.60, q^{2}=0.20, q^{3}=0.15 \<br>
+z_{3}^{1} &amp;=2, z_{3}^{2}=0, z_{3}^{3}=2 \<br>
+p_{3}^{A} &amp;=q^{1} z_{3}^{1}+q^{2} z_{3}^{2}+q^{3} z_{3}^{3}=0.6 * 2+0.15 * 2=1.5
+\end{aligned}
+$$</p>
+<p>Now, let&rsquo;s turn the problem around. Suppose we observe the payoffs and prices of the three complex securities:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602192425173.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602192425173.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602192425173.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602192425173.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200602192425173"
+        title="image-20200602192425173.png" /></div></p>
+<p>Can we use these data to infer the prices of the three contingent claims and thereby conrm that markets are complete, even without explicit markets for the contingent claims?</p>
+<p>Consider a portfolio consisting of $ w_{1}^{1} $ &ldquo;units&rdquo; of asset 1, $ w_{1}^{2} $ units of asset 2, and $ w_{1}^{3} $ units of asset 3. This portfolio has payoffs:
+$$
+\begin{aligned}
+w_{1}^{1} z_{1}^{1}+w_{1}^{2} z_{2}^{1}+w_{1}^{3} z_{3}^{1}&amp;=3 w_{1}^{1}+w_{1}^{2}+2 w_{1}^{3} &amp; \text { in state 1} \<br>
+w_{1}^{1} z_{1}^{2}+w_{1}^{2} z_{2}^{2}+w_{1}^{3} z_{3}^{2}&amp;=2 w_{1}^{1}+w_{1}^{2}  &amp;\text { in state 2} \<br>
+w_{1}^{1} z_{1}^{3}+w_{1}^{2} z_{2}^{3}+w_{1}^{3} z_{3}^{3}&amp;=w_{1}^{2}+2 w_{1}^{3}  &amp;\text { in state 3}
+\end{aligned}
+$$
+The portfolio has payoffs:
+$$
+\begin{aligned}
+&amp;3 w_{1}^{1}+w_{1}^{2}+2 w_{1}^{3} &amp; \text { in state } 1 \<br>
+&amp; 2 w_{1}^{1}+w_{1}^{2} &amp; \text { in state } 2 \<br>
+&amp; w_{1}^{2}+2 w_{1}^{3} &amp; \text { in state } 3
+\end{aligned}
+$$
+Let&rsquo;s use this portfolio &ldquo;synthesize&rdquo; a contingent claim for state 1. We need:
+$$
+\begin{aligned}
+3 w_{1}^{1}+w_{1}^{2}+2 w_{1}^{3} &amp;=1 \<br>
+2 w_{1}^{1}+w_{1}^{2} &amp;=0 \<br>
+w_{1}^{2}+2 w_{1}^{3} &amp;=0
+\end{aligned}
+$$
+We have a system of three linear equations in three unknowns:
+$$
+\begin{aligned}
+3 w_{1}^{1}+w_{1}^{2}+2 w_{1}^{3} &amp;=1 \<br>
+2 w_{1}^{1}+w_{1}^{2} &amp;=0 \<br>
+w_{1}^{2}+2 w_{1}^{3} &amp;=0
+\end{aligned}
+$$
+The solution has
+$$
+\begin{array}{l}
+w_{1}^{1}=1 / 3 \<br>
+w_{1}^{2}=-2 / 3 \<br>
+w_{1}^{3}=1 / 3
+\end{array}
+$$</p>
+<p>Buying a portfolio consisting of $ 1 / 3 $ unit of asset 1, $ -2 / 3 $ units of asset 2, and $ 1 / 3 $ unit of asset 3 costs
+$$
+q^{1}=(1 / 3) * 2.2-(2 / 3) * 0.95+(1 / 3) * 1.5=0.6
+$$
+Of course, this is the same price for a contingent claim for state 1 that we assumed at the outset.</p>
+<p>Similarly, we can compute $q_2 = 0.20$, $ q_3 = 0.15 $, this also is the same price for contingent claims that we assumed at the outset.</p>
+<h3 id="922-market-completeness-condition">9.2.2 Market Completeness Condition</h3>
+<p>These examples are illustrative of two more general results.</p>
+<p>【Proposition 1】If markets are complete, any complex security or cash flow stream can be replicated as a portfolio of contingent claims.</p>
+<p>This proposition underlies our ability to price complex assets using contingent claims prices.</p>
+<p>To work in reverse, and construct contingent claims from complex assets, it was important that we had three complex assets: one for each state at $ t=1 . $ Otherwise, we would have had more equations (states) than unknowns (amounts of each asset to buy).</p>
+<p>More generally, if there are $ N $ states at $ t=1 $, we would need $ M=N $ different complex assets to have the same number of equations as unknowns.</p>
+<p>Suppose, however, that in our example the third asset had payoffs $ z_{3}^{1}=2, z_{3}^{2}=2 $ and $ z_{3}^{3}=2 $ instead of $ z_{3}^{1}=2, z_{3}^{2}=0 $ and $ z_{3}^{3}=2 $. A technical problem would arise, because although there are three complex assets, buying one unit of asset 3 yields exactly the same payoffs as buying two units of asset $ 2, $ with $ z_{2}^{1}=1, z_{2}^{2}=1 $ and $ z_{2}^{3}=1 $.</p>
+<p>In effect, we would have had only two &ldquo;linearly independent&rdquo; assets: again, in our systems, we would have had more equations (states) than unknowns (amounts of each asset to buy).</p>
+<p>More generally, the &ldquo;linear independence&rdquo; requirement means that it should not be possible to replicate exactly the payoffs from one complex security using a portfolio of the other complex securities. But subject to this caveat, we have our second general result.</p>
+<p>【Proposition (2)】If $ M=N, $ where $ M $ is the number of complex securities and $ N $ the number of states, and if all of the $ M $ complex securities have linearly independent payoffs, then (i) it is possible to infer the prices of contingent claims from the prices of the complex securities and (ii) markets are complete.</p>
+<p>Once we are able to infer contingent claims prices from the prices of existing complex securities, we can use no-arbitrage arguments to price other complex securities and risky cash flows.</p>
+<p>In particular, the value at $ t=0 $ of a project that returns $ X^{i} $ in state $ i=1,2, \ldots N $ at $ t=1 $ can be calculated as
+$$
+P^{A}=\sum_{i=1}^{N} q^{i} X^{i}
+$$</p>
+<p>This first round of examples shows how the Arrow-Debreu &ldquo;friction&rdquo; of complete markets for contingent claims is not so fanciful after all.</p>
+<p>We can now turn our attention to the practical question: which real-world assets are most convenient to use in solving for contingent claims prices.</p>
+<p>In cases without uncertainty, interest rates on bonds of different terms to maturity will work. In cases with uncertainty, options prices are especially valuable.</p>
+<h2 id="93-using-the-term-structure-of-interest-rates">9.3 Using the Term Structure of Interest Rates</h2>
+<p>In multi-period problems without uncertainty, discount bonds of different maturities are contingent claims.</p>
+<p>A discount bond with $ T $ years to maturity costs $ P(T) $ today and pays off one dollar $ T $ years from now.</p>
+<p>Under certainty, this bond has the same payoff as a contingent claim that returns one dollar in the one possible state $ T $ years from now. If we know the bond&rsquo;s price $ P(T), $ we also know the contingent claims price $ q(T) $</p>
+<p>The term structure of interest rates is the family of interest rates, $ r(1), r(2), r(3), \ldots, $ on risk-free discount bonds with terms $ t=1,2,3, \ldots $ to maturity.</p>
+<p>Since the interest rate on a $ T $ -year discount bond is defined by
+$$
+P(T)=\frac{1}{[1+r(T)]^{T}}
+$$
+there is a direct connection between the term structure of interest rates and the contingent claims prices in cases without uncertainty.</p>
+<p>This insight also tells us that if we want to use the Arrow-Debreu approach to value a multi-period project with certain cash flows $ X(1), X(2), \ldots, X(T) $ over the next $ T $ years, we can simply discount those future cash flows using the term structure of interest rates:
+$$
+\begin{aligned}
+P^{A} &amp;=q(1) X(1)+q(2) X(2)+\ldots+q(T) X(T) \<br>
+&amp;=P(1) X(1)+P(2) X(2)+\ldots+P(T) X(T) \<br>
+&amp;=\frac{X(1)}{1+r(1)}+\frac{X(2)}{[1+r(2)]^{2}}+\ldots+\frac{X(T)}{[1+r(T)]^{T}}
+\end{aligned}
+$$
+As we discussed previously, the US Treasury issues bills with maturities less than one year that are structured as discount bonds.</p>
+<p>Longer-term US Treasury bonds make regular interest (&ldquo;coupon&rdquo;) payments. But the US Treasury allows financial institutions to break these bonds down into portfolios of separately-traded discount bonds, called STRIPS (Separate Trading of Registered Interest and Principal of Securities).</p>
+<p>Even without STRIPS, however, it is possible <strong>to construct &ldquo;synthetic&rdquo; discount bonds from portfolios of coupon bonds</strong>. To see how, consider two coupon bonds, with the same term to maturity but different coupon payments.</p>
+<p>A five-year bond with 1000 face (or par) value and 5 percent annual coupon rate makes payments of 50 each year, every year, for the next five years and then returns 1000 at the end of five years.</p>
+<p>A five-year bond with 1000 face (or par) value and 10 percent annual coupon rate makes payments of 100 each year, every year, for the next five years and then returns 1000 at the end of five years. The second bond sells at a higher price today, in light of its higher coupon rate.</p>
+<p>Consider the strategy of buying two of the bonds with the 5 percent coupon and selling one bond with the 10 percent coupon, in order the &ldquo;cancel out&rdquo; the interest payments.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602205554.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602205554.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602205554.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602205554.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602205554.png"
+        title="20200602205554.png" /></div></p>
+<p>The portfolio of bonds costs 600 today and pays 1000 at the end of five years. These cash flows are identical to those provided by a discount bond that costs 600 today and pays 1000 five years from now.</p>
+<p>We can compute the 5 -year interest rate in the term structure using
+$$
+600=\frac{1000}{[1+r(5)]^{5}} \Rightarrow r(5)=0.1076
+$$
+and the associated contingent claim price as
+$$
+q(5)=\frac{1}{[1+r(5)]^{5}}=0.60
+$$
+Of course, only rarely will it be appropriate to assume there is no uncertainty when pricing assets or cash flows.</p>
+<p>In those circumstances, however, we can use information in the term structure of interest rates or, equivalently, in the prices of coupon bonds to infer contingent claims prices.</p>
+<h2 id="94-using-options">9.4 Using Options</h2>
+<h3 id="941-to-complete-the-market">9.4.1 To Complete the Market</h3>
+<p>Consider an example with two periods, $ t=0 $ and $ t=1 $, and three possible states, $ i=1,2,3 $, at $ t=1 $</p>
+<p>Suppose only one asset is traded: a complex security with payoff $ P_{s}^{1}=1 $ in state $ 1, P_{s}^{2}=2 $ in state $ 2, $ and $ P_{s}^{3}=3 $ in state 3.</p>
+<p>Think of this asset as a stock, so that the payoff $ P_{s}^{i} $ is the share price, obtained by selling the stock at $ t=1 $.</p>
+<p>A <strong>call option</strong> is a contract that gives the buyer the right, but not the obligation, to purchase a share of stock at the strike price $ K $ at $ t=1 $ or, more generally, on or before some expiration date $ T $.</p>
+<p>At $ t=1, $ the call is said to be <strong>in the money</strong> if the actual share price is above the strike price and out <strong>of the money</strong> if the actual share price is below the strike price.</p>
+<p>At $ t=1, $ the option will have value only if it is in the money. But at $ t=0, $ the option will have value even if there is only a probability of it being in the money at $ t=1 $.</p>
+<p>With the stock as the only traded asset, and three states at $ t=1 $ financial markets are incomplete.</p>
+<p>Suppose, however, that we introduce two options on the stock: one with strike price $ K=1 $ and the other with strike price $ K=2 $</p>
+<p>Let $ C_{1}^{i}(S, 1) $ denote the payoffs generated by the call option on the stock $ S $ with strike price $ K=1 $ with expiration date at $ T=1 $ in each state $ i=1,2,3 $.</p>
+<p>Let $ C_{1}^{i}(S, 2) $ denote the payoffs generated by the call option on the stock $ S $ with strike price $ K=2 $ with expiration date at $ T=1 $ in each state $ i=1,2,3 $.</p>
+<p>We can use information on the stock price to determine the payoffs from the two call options:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211100.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211100.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211100.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211100.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211100.png"
+        title="20200602211100.png" /></div></p>
+<p>Now we can ask if the addition of the two options make markets complete.</p>
+<p>The answer is yes:</p>
+<ul>
+<li>The option with strike price 2 is a contingent claim for state 3.</li>
+<li>Buying one call with strike price 1 and selling (&ldquo;writing&rdquo;) 2 calls with strike price 2 creates a contingent claim for state 2.</li>
+<li>Buying one share of the stock, selling 2 calls with strike price 1 and buying one call with strike price 2 creates a contingent claim for state 1</li>
+</ul>
+<p>Of course, it would also be possible to &ldquo;complete the market&rdquo; with two other assets, so long as their payoffs are linearly independent.</p>
+<p>But options are an obvious choice, since they are related to the assets that are already traded.</p>
+<p>And since they often give rise to a structure of payoffs across the complex assets that makes solving for contingent claims prices relatively easy.</p>
+<p>Unfortunately, it is not always possible to complete the market using a single stock and a set of call options on that stock (linearly independent need to be satisfied).</p>
+<p>To see why, suppose that instead of having $ P_{s}^{1}=1, P_{s}^{2}=2, $ and $ P_{s}^{3}=3, $ the stock in our example had $ P_{s}^{1}=2, P_{s}^{2}=2, $ and $ P_{s}^{3}=3 $.</p>
+<p>Since its price does not differ across states 1 and $ 2, $ it won&rsquo;t be possible to use this stock and the associated options to obtain complete markets.</p>
+<p>Recomputing the payoffs from options with strike prices $ K=1 $ and $ K=2 $:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211917.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211917.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211917.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211917.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602211917.png"
+        title="20200602211917.png" /></div></p>
+<p>In this case, a portfolio formed by buying two calls with strike price $ K=1 $ and writing one call with strike price $ K=2 $ yields the same payoffs as the stock itself. Markets are not complete.</p>
+<p>Fortunately, this problem can often be sidestepped by first forming a portfolio of stocks and then introducing a set of call options on the entire portfolio. Suppose we have two stocks, $ s=1 $ and $ s=2 $, with payoffs:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212317.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212317.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212317.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212317.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212317.png"
+        title="20200602212317.png" /></div></p>
+<p>Stock 1 does not &ldquo;distinguish&rdquo; between states 1 and 2 , and stock 2 does not distinguish between states 2 and 3.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212424.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212424.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212424.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212424.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602212424.png"
+        title="20200602212424.png" /></div></p>
+<p>But consider the payoffs provided by a portfolio $ P $ consisting of one share of stock 1 and one share of stock 2.</p>
+<p>Now the payoffs from the portfolio differ across all states. Let&rsquo;s add call options on the portfolio with strike prices $ K=2 $ and $ K=3 $.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602212708623.png"
+        data-srcset="C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602212708623.png, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602212708623.png 1.5x, C:%5cUsers%5cWuhao%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20200602212708623.png 1.6x"
+        data-sizes="auto"
+        alt="image-20200602212708623"
+        title="image-20200602212708623.png" /></div></p>
+<p>since the payoffs from the portfolio and the two options on the portfolio are linearly independent, markets are complete.</p>
+<p>You can confirm that:</p>
+<ul>
+<li>A contingent claim for state 3 can be constructed by buying one call with strike price 3.</li>
+<li>A contingent claim for state 2 can be constructed by buying one call with strike price 2 and writing two calls with strike price 3</li>
+<li>A contingent claim for state 1 can be constructed by buying $ 1 / 2 $ a share in the portfolio, writing $ 3 / 2 $ calls with strike price 2 and buying one call with strike price 3</li>
+</ul>
+<p>These insights generalize to provide us with another proposition:</p>
+<p>【Proposition (3)】A necessary and sufficient condition for the creation of a complete set of Arrow-Debreu securities is that there exists a single portfolio with the property that options can be purchased and written on it and such that <strong>its payoff pattern distinguishes among all future states</strong>.</p>
+<h3 id="942-to-infer-contingent-claims-prices">9.4.2 To Infer Contingent Claims Prices</h3>
+<p>We can now combine the message of our last proposition with another basic lesson we learned from studying the CAPM to get a practical idea as to how to infer contingent claims prices under uncertainty in the real world.</p>
+<p>Proposition 3 indicates that it is helpful to start with a portfolio with a payoff pattern that distinguishes among all future states. The CAPM suggests that this portfolio is likely to be the market portfolio, since returns on the market portfolio will reflect all underlying sources of aggregate risk.</p>
+<p>So let&rsquo;s see how we can use the market portfolio and associated call options to infer contingent claims prices.</p>
+<p>Let $ P_{s}^{i} $ now denote the value of a share in the market portfolio in each state $ i=1,2, \ldots, N $ at $ t=1 $.</p>
+<p>To streamline the notation, rearrange the labeling of the states as necessary so that those with higher indices $ i $ correspond to more favorable outcomes for the stock market:
+$$
+P_{s}^{1}&lt;P_{s}^{2}&lt;\ldots&lt;P_{s}^{N}
+$$</p>
+<p>and assume, as well, that there is a constant increment $ \delta&gt;0 $ by which stock prices rise across states, so that
+$$
+P_{s}^{i+1}=P_{s}^{i}+\delta \quad \text { for all } i=1,2, \dots, N-1
+$$
+This last assumption involves an approximation if the value of the market portfolio can vary continuously, but the approximation can be made arbitrarily good by choosing $ \mathrm{N} $ sufficiently large and $ \delta $ sufficiently small.</p>
+<p>Now for any particular state $ i, $ construct a portfolio by</p>
+<ul>
+<li>Buying one call with strike price $ P_{s}^{i-1}=P_{s}^{i}-\delta $</li>
+<li>Writing two calls with strike price $ P_{s}^{i} $</li>
+<li>Buying one call with strike price $ P_{s}^{i+1}=P_{s}^{i}+\delta $</li>
+</ul>
+<p>Now let&rsquo;s see how the payoffs on the portfolio of options depends on the stock price at $ t=1 $:</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602214640.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602214640.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602214640.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602214640.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200602214640.png"
+        title="20200602214640.png" /></div></p>
+<p>This portfolio pays off $ \delta $ in state $ i $ and zero otherwise. Hence, it is equivalent to a portfolio of $ \delta $ contingent claims for state $ i $.</p>
+<p>Letting $ V_{0}(S, K) $ denote the price (value) at $ t=0 $ of the call option on the stock with strike price $ K, $ the cost of assembling this portfolio of options is:
+$$
+V_{p}^{0}=V_{0}\left(S, P_{s}^{i}+\delta\right)+V_{0}\left(S, P_{s}^{i}-\delta\right)-2 V_{0}\left(S, P_{s}^{i}\right)
+$$</p>
+<p>And since this portfolio of options is equivalent to a portfolio of $ \delta $ contingent claims for state $ i, $ we can now infer that the price of a contingent claim for state $ i $ is
+$$
+q^{i}=\frac{1}{\delta}\left[V_{0}\left(S, P_{s}^{i}+\delta\right)+V_{0}\left(S, P_{s}^{i}-\delta\right)-2 V_{0}\left(S, P_{s}^{i}\right)\right]
+$$
+Note that we don&rsquo;t have to actually buy the options if all we want to do is to price the contingent claim, we simply need to observe the option prices.</p>
+<p>And if the options we need are not actually traded, we can use an options pricing formula to figure out what their prices should be.</p>
+<h3 id="943-black-scholes-option-pricing">9.4.3 Black-Scholes Option Pricing</h3>
+<p>We have now seen how we can use options prices together with no-arbitrage arguments to make inferences about contingent claims prices.</p>
+<p>More sophisticated no-arbitrage arguments constructed by Fischer Black (US, 1938-1995), Myron Scholes (Canada/US, b.1941, Nobel Prize 1997 ), and Robert Merton (US, b.1944, Nobel Prize 1997 ) showed how options prices could be inferred from assumptions about and observations on the underlying stock price.</p>
+<p>Their papers were both published in 1973.</p>
+<ul>
+<li>Fischer Black and Myron Scholes, &ldquo;The Pricing of Options and Corporate Liabilities,&rdquo; Journal of Political Economy Vol.81 (May-June 1973 ): pp.637-654.</li>
+<li>Robert Merton, &ldquo;Theory of Rational Option Pricing,&rdquo; The Bell Journal of Economics and Management Science Vol.4 (Spring 1973): pp.141-183.</li>
+</ul>
+<p>To see how the theory works, continue to assume a simple two-period structure, with $ t=0 $ and $ t=1, $ and assume as well, that there are only two states, $ i=G $ and $ i=B, $ at $ t=1 . $ Let</p>
+<ul>
+<li>$ P_{0}= $ price of the stock at $ t=0 $</li>
+<li>$ P^{G}=$ price of the stock in state $ i=G $ at $ t=1 $</li>
+<li>$ P^{B}= $ price of the stock in state $ i=B $ at $ t=1 $</li>
+<li>$ r_{f}= $ risk-free interest rate between $ \mathrm{t}=0 $ and $ \mathrm{t}=1 $</li>
+<li>$ \pi= $ probability of the good state $ i=G $ at $ t=1 $</li>
+</ul>
+<p>The stock price is $ P_{0} $ at $ t=0 $ and either $ P^{G} $ or $ P^{B} $ at $ t=1 $</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603103746.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603103746.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603103746.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603103746.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603103746.png"
+        title="20200603103746.png" /></div></p>
+<p>Now consider a call option on the stock with strike price $ K $. Let</p>
+<ul>
+<li>$ V_{0}= $ price (value) of the call at $ t=0 $</li>
+<li>$ C^{G}= $ payoff generated by the call in state $ i=G $ at $ t=1 $</li>
+<li>$ C^{B}= $ payoff generated by the call in state $ i=B $ at $ t=1 $</li>
+</ul>
+<p>Assume, for now, that the call is in the money in both states at $ t=1 $. Then:
+$$
+\qquad C^{G}=P^{G}-K \quad \text { and } \quad C^{B}=P^{B}-K
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110346.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110346.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110346.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110346.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110346.png"
+        title="20200603110346.png" /></div></p>
+<p>We can easily compute the expected payoff as $ \pi\left(P^{G}-K\right)+(1-\pi)\left(P^{B}-K\right), $ but the option price $ V_{0} $ must still be corrected for risk.</p>
+<p>One of the key insights that underlies the Black-Scholes formula is that we don&rsquo;t need to make any specific assumptions about preferences or the nature of aggregate risk to price the option.</p>
+<p>Instead, we can use a no-arbitrage argument that:</p>
+<ul>
+<li>Replicates the option&rsquo;s payoffs using a portfolio of the stock and a risk-free bond.</li>
+<li>Recognizes that risk is already priced into the stock.</li>
+</ul>
+<p>We want to construct a portfolio consisting of $ S $ shares of the stock and $ \mathrm{B} $ bonds that replicates the payoffs from the option in both states at $ t=1 $
+$$
+\begin{aligned}
+S P^{G}+B\left(1+r_{f}\right) &amp;=P^{G}-K \<br>
+S P^{B}+B\left(1+r_{f}\right) &amp;=P^{B}-K
+\end{aligned}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603105905.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603105905.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603105905.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603105905.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603105905.png"
+        title="20200603105905.png" /></div></p>
+<p>This is a set of two linear equations in the two unknowns: $ S $ and $ B $. The solution is
+$$
+S=1 \quad \text { and } \quad B=-\frac{K}{1+r_{f}}
+$$
+since the stock costs $ P_{0} $ and the bond costs 1 , the cost of this portfolio at $ t=0 $ is
+$$
+P_{0}-\frac{K}{1+r_{f}}
+$$
+This means that the price of the option must also be
+$$
+V_{0}=P_{0}-\frac{K}{1+r_{f}}
+$$</p>
+<p>Note that the price of the option is not equal to the expected value of its payoff, for the same reason that the stock price $ P_{0} $ will not be the expected value of its payoff: both prices need to be adjusted for risk.</p>
+<p>Yet, our clever use of no-arbitrage arguments allows us to price the option without making any assumptions about risk and, for that matter, without even having to know the probabilities $ \pi $ and $ 1-\pi $ of the two states at $ t=1 . $ All of this information has already been incorporated into the stock price $ P_{0} $.</p>
+<p>For future reference, let&rsquo;s write the solution for the option price in this first case as
+$$
+V_{0}=N_{1} P_{0}-N_{2} \frac{K}{1+r_{f}}
+$$
+where, in this case,
+$$
+N_{1}=1 \quad \text { and } \quad N_{2}=1
+$$</p>
+<p>Next, let&rsquo;s consider the case in which the call is in the money in the good state and out of the money in the bad state at $ t=1 $
+$$
+C^{G}=P^{G}-K \quad \text { and } \quad C^{B}=0
+$$
+
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110442.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110442.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110442.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110442.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110442.png"
+        title="20200603110442.png" /></div></p>
+<p>Again we want to construct a portfolio consisting of $ S $ shares of the stock and $ B $ bonds that replicates the payoffs from the option in both states at $ t=1 $
+$$
+\begin{array}{l}
+S P^{G}+B\left(1+r_{f}\right)=P^{G}-K \<br>
+S P^{B}+B\left(1+r_{f}\right)=0
+\end{array}
+$$</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110547.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110547.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110547.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110547.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603110547.png"
+        title="20200603110547.png" /></div></p>
+<p>Again this is a set of two linear equations in the two unknowns: $ S $ and $ B . $ The solution is
+$$
+S=\frac{P^{G}-K}{P^{G}-P^{B}} \quad \text { and } \quad B=-\frac{P^{B}\left(P^{G}-K\right)}{\left(1+r_{f}\right)\left(P^{G}-P^{B}\right)}
+$$
+since the stock costs $ P_{0} $ and the bond costs 1 , the cost of this portfolio at $ t=0 $ is
+$$
+\frac{P^{G}-K}{P^{G}-P^{B}} P_{0}-\frac{P^{B}\left(P^{G}-K\right)}{K\left(P^{G}-P^{B}\right)} \frac{K}{1+r_{f}}
+$$
+But since the portfolio of the stock and bond again replicates the payoffs from the option, this implies that the option&rsquo;s price must be
+$$
+V_{0}=\frac{P^{G}-K}{P^{G}-P^{B}} P_{0}-\frac{P^{B}\left(P^{G}-K\right)}{K\left(P^{G}-P^{B}\right)} \frac{K}{1+r_{f}}
+$$
+Again, we don&rsquo;t need to make any assumptions about risk or risk aversion, or even know the probabilities of the two states to compute the option price: all of this information is already reflected in the stock price itself for future reference, note that the solution in this case takes the form
+$$
+V_{0}=N_{1} P_{0}-N_{2} \frac{K}{1+r_{f}}
+$$
+where
+$$
+N_{1}=\frac{P^{G}-K}{P G-P^{B}} \quad \text { and } \quad N_{2}=\frac{P^{B}\left(P^{G}-K\right)}{K(P G+P B)}
+$$</p>
+<p>are both between zero and one since
+$$
+\begin{aligned}
+&amp; 0 &lt;P^{G}-K&lt;P^{G}-P^{B} \<br>
+\text { and} \quad &amp; 0&lt;P^{B}\left(P^{G} / K-1\right)&lt;\left(P^{G}-P^{B}\right)
+\end{aligned}
+$$
+Finally, there is the easy case in which the call is out of the money in both states at $ t=1 $:
+$$
+C^{G}=0 \quad \text { and } \quad C^{B}=0
+$$
+The option&rsquo;s payoffs can be replicated by a portfolio consisting of zero shares of the stock and zero bonds, which costs zero at $ t=0 $.</p>
+<p>Equivalently, an asset that pays off nothing should cost nothing. Even in this case, however, we might note that the solution takes the form
+$$
+V_{0}=N_{1} P_{0}-N_{2} \frac{K}{1+r_{f}}
+$$
+where
+$$
+N_{1}=0 \quad \text { and } \quad N_{2}=0
+$$</p>
+<p>We have now seen that in a simple, two-date/two-state setting, the option&rsquo;s price is always
+$$
+V_{0}=N_{1} P_{0}-N_{2} \frac{K}{1+r_{f}}
+$$
+where $ N_{1} $ and $ N_{2} $ are between zero and one and depend on the likelihood that the call will be in or out of the money when it expires.</p>
+<p>Black and Scholes and Merton considered a more general setting, in which the option priced at $ t=0 $ does not expire until $ t=T $.</p>
+<p>They also allowed for (many) more than two possible states at $ t=T $.</p>
+<p>The technical problem is that with more than two states at $ t=T $ more than two assets are needed to create a portfolio with the same payoffs as the option.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111226.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111226.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111226.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111226.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111226.png"
+        title="20200603111226.png" /></div></p>
+<p>Black and Scholes and Merton realized that this problem can be solved by breaking the full period into sub-periods, so that there are only two states in each sub-period.</p>
+<p>
+
+<div style="text-align: center"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111245.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111245.png, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111245.png 1.5x, https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111245.png 1.6x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Henrry-Wu/FigBed/Figs/20200603111245.png"
+        title="20200603111245.png" /></div></p>
+<p>With three states at $ t=T, $ only two subperiods are needed, but with many states at $ t=T, $ many subperiods are needed.</p>
+<p>A dynamic hedging strategy can then be used to track the payoffs on the option using a portfolio consisting only of the stock and bond, but where the number of shares and the number of bonds must be adjusted in each subperiod so that the portfolio can continue to track the option&rsquo;s payoffs.</p>
+<p>Black and Scholes and Merton used methods in stochastic calculus developed by Kiyoshi Ito (Japan,  1915-2008) in the 1940s and early 1950s to show that even in the more general case, the solution for the option price still takes the form
+$$
+V_{0}=N_{1} P_{0}-N_{2} \frac{K}{1+r_{f}}
+$$
+where $ N_{1} $ and $ N_{2} $ are between zero and one.</p>
+<p>In particular, the Black-Scholes formula is
+$$
+V_{0}=N_{1} P_{0}-N_{2} \frac{K}{1+r_{f}}
+$$
+where $ N_{1}=F\left(d_{1}\right) $ and $ N_{2}=F\left(d_{2}\right) $
+$$
+d_{1}=\frac{\ln \left(P_{0} / K\right)+\left(r_{f}+\sigma^{2}\right) T}{\sigma^{2} \sqrt{T}} \quad \text { and } \quad d_{2}=d_{1}-\sigma \sqrt{T}
+$$
+$ \sigma $ is the standard deviation of the return on the stock, and $ F $ is the standard normal cumulative distribution function, so that $ F(X) $ measures the probability that a random variable that is normally distributed with mean zero and variance one turns out to be less than or equal to $ X $.</p>
+<p>Hence, in practice, one can approximate contingent claims prices by:</p>
+<ul>
+<li>Choosing a broad portfolio stocks, say those in the Standard &amp; Poor&rsquo;s $ 500, $ to approximate the market portfolio.</li>
+<li>Constructing a grid for the range of possible future values for the portfolio with $ P_{s}^{i+1}=P_{s}^{i}+\delta, $ where $ \delta $ is small enough to achieve a desired level of accuracy.</li>
+<li>Using the Black-Scholes formula to infer the price of call options on the portfolio for all strike prices on the grid</li>
+</ul>
+<p>Another valuable application of the Black-Scholes formula stems from the fact that all of the &ldquo;inputs&rdquo; $ P_{0}, K, r_{f}, $ and $ T $ are observable except for $ \sigma, $ the standard deviation of the return on the stock.</p>
+<p>Thus, the Black-Scholes formula can be used in two ways:</p>
+<ul>
+<li>If the option is not traded, you can make an assumption about the volatility of the stock price $ \sigma $ and calculate what the option price $ V_{0} $ should be</li>
+<li>If the option is traded, you can use your observation of the option price $ V_{0} $ to &ldquo;back out&rdquo; an estimate of what the stock price volatility $ \sigma $ is likely to be.</li>
+</ul>
+<p>The VIX volatility index is similar to to the volatility parameter $ \theta $ constructed from the price of an option on the S&amp;P 500.</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/9.-arrow-debreu-pricing-no-arbitrage/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/part1-4/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/8.-arrow-debreu-pricing-equilibrium/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> | </title><meta name="Description" content="About uBlogger Theme"><meta property="og:title" content="" />
+<meta property="og:description" content="1. Motivation 1.1 Nonparametric Estimation Suppose $ \left{X_{t}\right} $ is a strictly stationary process with marginal probability density function $ g(x) $ and pairwise joint probability density function $ f_{j}(x, y) $ of $ \left(X_{t}, X_{t-j}\right) $, and a random sample $ \left{X_{t}\right}_{t=1}^{T} $ of size $ T $ is observed. Then,
+ How to estimate the marginal pdf $ g(x) $ of $ \left{X_{t}\right} ? $ How to estimate the pairwise joint pdf $ f_{j}(x, y) $ of $ \left(X_{t}, X_{t-j}\right) ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://henrywu97.github.io/1.-motivation/" />
+<meta property="og:image" content="https://henrywu97.github.io/logo.png"/>
+<meta property="article:modified_time" content="2021-02-06T20:37:07+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://henrywu97.github.io/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1. Motivation 1.1 Nonparametric Estimation Suppose $ \left{X_{t}\right} $ is a strictly stationary process with marginal probability density function $ g(x) $ and pairwise joint probability density function $ f_{j}(x, y) $ of $ \left(X_{t}, X_{t-j}\right) $, and a random sample $ \left{X_{t}\right}_{t=1}^{T} $ of size $ T $ is observed. Then,
+ How to estimate the marginal pdf $ g(x) $ of $ \left{X_{t}\right} ? $ How to estimate the pairwise joint pdf $ f_{j}(x, y) $ of $ \left(X_{t}, X_{t-j}\right) ?"/>
+<meta name="application-name" content="uBlogger">
+<meta name="apple-mobile-web-app-title" content="uBlogger"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://henrywu97.github.io/1.-motivation/" /><link rel="prev" href="https://henrywu97.github.io/2.-kernel-density-method/" /><link rel="next" href="https://henrywu97.github.io/3.-%E5%88%9D%E7%AD%89%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/henrywu97.github.io\/1.-motivation\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/henrywu97.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordCount":  2205 ,
+        "url": "https:\/\/henrywu97.github.io\/1.-motivation\/","dateModified": "2021-02-06T20:37:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/henrywu97.github.io\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "天天.zh-cn"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/1.-motivation/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Henry Wu" class="header-logo"><span class="header-title-pre"><i class='fas fa-pencil-alt fa-fw'></i></span>Henry Wu</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/henrywu97" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/1.-motivation/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main"><div class="container content-article page-toc theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="header-post">
+        <div class="post-title">
+
+            <div class="post-all-meta">
+            <div class="breadcrumbs">
+    <a href="/">Home </a>/ <a href="/">  </a>
+</div>
+            <h1 class="single-title animated flipInX"></h1><div class="post-meta">
+                <div class="post-meta-line">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time class="timeago" datetime="0001-01-01">0001-01-01</time>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2205 words
+                    &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+        <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-nonparametric-estimation">1.1 Nonparametric Estimation</a></li>
+    <li><a href="#12-basic-ideas-of-nonparametric-smoothing">1.2 Basic Ideas of Nonparametric Smoothing</a></li>
+    <li><a href="#13-advantages--disadvantages-of-nonparametric-smoothing">1.3 Advantages &amp; Disadvantages of nonparametric smoothing</a></li>
+  </ul>
+</nav></div>
+            </div><span class="post-update">
+                    <b>Updated on 2021-02-06</b>
+                </span><h1 id="1-motivation">1. Motivation</h1>
+<h2 id="11-nonparametric-estimation">1.1 Nonparametric Estimation</h2>
+<p>Suppose $ \left{X_{t}\right} $ is a strictly stationary process with marginal probability density function $ g(x) $ and pairwise joint probability density function $ f_{j}(x, y) $ of $ \left(X_{t}, X_{t-j}\right) $, and a random sample $ \left{X_{t}\right}_{t=1}^{T} $ of size $ T $ is observed. Then,</p>
+<ul>
+<li>How to estimate the <u>marginal pdf</u> $ g(x) $ of $ \left{X_{t}\right} ? $</li>
+<li>How to estimate the <u>pairwise joint pdf</u> $ f_{j}(x, y) $ of $ \left(X_{t}, X_{t-j}\right) ? $</li>
+<li>How to estimate the <u>autoregression function</u> $ r_{j}(x)=E\left(X_{t} | X_{t-j}=x\right) ? $</li>
+<li>How to estimate the <u>spectral density (自回归函数的傅里叶变换)</u> $ h(\omega) $ of $ \left{X_{t}\right} ? $</li>
+<li>How to estimate the <u>generalized spectral density</u> $ f(\omega, u, v) $ of $ \left{X_{t}\right} ? $</li>
+<li>How to estimate the <u>bispectral density</u> $ b\left(\omega_{1}, \omega_{2}\right) ? $</li>
+<li>How to estimate a <u>nonlinear autoregressive conditional heteroskedastic model</u> $ X_{t}=\mu\left(X_{t-1}, \ldots, X_{t-p}\right)+\sigma\left(X_{t-1}, \ldots, X_{t-q}\right) \varepsilon_{t}, \quad\left{\varepsilon_{t}\right} \sim i . i . d .(0,1) $ where $ \mu(\cdot) $ and $ \sigma(\cdot) $ are unknown functions of the past information. Under certain regularity conditions, $ \mu(\cdot) $ is the <u>conditional mean</u> of $ X_{t} $ given $ I_{t-1}=\left{X_{t-1}, X_{t-2}, \ldots\right} $ and $ \sigma^{2}(\cdot) $ is the <u>conditional variance</u> of $ X_{t} $ given $ I_{t-1} $</li>
+<li>How to estimate a <u>semi-nonparametric functional coefficient autoregressive process</u> $ X_{t}=\sum_{j=1}^{p} \alpha_{j}\left(X_{t-d}\right) X_{t-j}+\epsilon_{t}, \quad E\left(\varepsilon_{t} | I_{t-1}\right)=0 $ where $ \alpha_{j}(\cdot) $ is unknown, and $ d&gt;0 $ is a time lag parameter?</li>
+<li>How to estimate a nonparametric <u>additive autoregressive process</u></li>
+</ul>
+<p>$$
+X_{t}=\sum_{j=1}^{p} \mu_{j}\left(X_{t-j}\right)+\varepsilon_{t}, \quad E\left(\varepsilon_{t} | I_{t-1}\right)=0 \text { a.s. }
+$$</p>
+<p>where the $ \mu_{j}(\cdot) $ functions are unknown?</p>
+<ul>
+<li>How to estimate a locally linear <u>time-varying regression</u> model</li>
+</ul>
+<p>$$
+Y_{t}=X_{t}^{\prime} \beta(t / T)+\varepsilon_{t}
+$$</p>
+<p>where $ \beta(\cdot) $ is an unknown smooth deterministic function of time?</p>
+<ul>
+<li>How to use these estimators in economic and financial applications?</li>
+</ul>
+<p><strong>Nonparametric estimation</strong> is often called <strong>nonparametric smoothing</strong>, since a key parameter called <u>smoothing parameter</u> is used to control the degree of the estimated curve. Nonparametric smoothing first arose from spectral density estimation in time series analysis. In a discussion of the seminal paper by Bartlett (1946), Henry Daniels suggested that <u>a possible improvement on spectral density estimation could be made by smoothing the periodogram</u> (see Chapter 3 ), which is the squared discrete Fourier transform of the random sample $ \left{X_{t}\right}_{t=1}^{T} $. The theory and techniques were then systematically developed by Bartlett (1948,1950). Thus, smoothing techniques were already
+prominently featured in time series analysis more than 70 years ago.</p>
+<p>In the earlier stage of nonlinear time series analysis (see Tong (1990)), the focus was on various nonlinear parametric forms, such as threshold autoregressive models, smooth transition autoregressive models, and Regime-switch Markov chain autoregressive models (see Chapter 8 for details). Recent interest has been mainly in nonparametric curve estimation, which does not require the knowledge of the functional form beyond certain
+smoothness conditions on the underlying function of interest.</p>
+<p><strong>Question</strong>: Why is nonparametric smoothing popular in statistics and econometrics?</p>
+<p>There are several <strong>reasons for the popularity of nonparametric analysis</strong>. In particular, three main reasons are:</p>
+<ul>
+<li>Demands for nonlinear approaches;</li>
+<li>Availability of large data sets;</li>
+<li>Advance in computer technology.</li>
+</ul>
+<p>Indeed, as Granger (1999) points out, the speed in computing technology increases much faster than the speed at which data grows.</p>
+<h2 id="12-basic-ideas-of-nonparametric-smoothing">1.2 Basic Ideas of Nonparametric Smoothing</h2>
+<p>To obtain basic ideas about nonparametric smoothing methods, we now consider two examples, one is the estimation of a regression function, and the other is the estimation of a probability density function.</p>
+<p><strong>Example 1 [Regression Function]</strong>: Consider the first order autoregression function
+$$
+r_{1}(x)=E\left(X_{t} | X_{t-1}=x\right)
+$$</p>
+<p>We can write</p>
+<p>$$
+X_{t}=r_{1}\left(X_{t-1}\right)+\varepsilon_{t}
+$$</p>
+<p>where $ E\left(\epsilon_{t} | X_{t-1}\right)=0 $ by construction. We assume $ E\left(X_{t}^{2}\right)&lt;\infty $</p>
+<p>Suppose a sequence of bases $ \left{\psi_{j}(x)\right} $ constitutes a <u>complete orthonormal basis</u> for the space of square-integrable functions. Then we can always decompose the function
+$$
+r_{1}(x)=\sum_{j=0}^{\infty} \alpha_{j} \psi_{j}(x)
+$$</p>
+<p>where the Fourier coefficient</p>
+<p>$$
+\alpha_{j}=\int_{-\infty}^{\infty} r_{1}(x) \psi_{j}(x) d x
+$$</p>
+<p>which is the projection of $ r_{1}(x) $ on the base $ \psi_{j}(x) $.</p>
+<p>Suppose there is a quadratic function $ r_{1}(x)=x^{2} $ for $ x \in[-\pi, \pi] . $ Then
+$$
+\begin{aligned}
+r_{1}(x) &amp;=\frac{\pi^{2}}{3}-4\left(\cos (x)-\frac{\cos (2 x)}{2^{2}}+\frac{\cos (3 x)}{3^{2}}-\cdots\right) \<br>
+&amp;=\frac{\pi^{2}}{3}-4 \sum_{j=1}^{\infty}(-1)^{j-1} \frac{\cos (j x)}{j^{2}}
+\end{aligned}
+$$</p>
+<p>For another example, suppose the regression function is a step function, namely</p>
+<p>$$
+r_{1}(x)=\left{\begin{array}{cl}
+-1 &amp; \text { if }-\pi&lt;x&lt;0 \<br>
+0 &amp; \text { if } x=0 \<br>
+1 &amp; \text { if } 0&lt;x&lt;\pi
+\end{array}\right.
+$$</p>
+<p>Then we can still expand it as an infinite sum of periodic series,</p>
+<p>$$
+\begin{aligned}
+r_{1}(x) &amp;=\frac{4}{\pi}\left[\sin (x)+\frac{\sin (3 x)}{3}+\frac{\sin (5 x)}{5}+\cdots\right] \<br>
+&amp;=\frac{4}{\pi} \sum_{j=0}^{\infty} \frac{\sin [(2 j+1) x]}{(2 j+1)}
+\end{aligned}
+$$</p>
+<p>In general, we do not assume that the function form of $ r_{1}(x) $ is known, except that we still maintain the assumption that $ r_{1}(x) $ is a square-integrable function. Because $ r_{1}(x) $ is square-integrable, we have</p>
+<p>$$
+\begin{aligned}
+\int_{-\infty}^{\infty} r_{1}^{2}(x) d x &amp;=\sum_{j=0}^{\infty} \sum_{k=0}^{\infty} \alpha_{j} \alpha_{k} \int_{-\infty}^{\infty} \psi_{j}(x) \psi_{k}(x) d x \<br>
+&amp;=\sum_{j=0}^{\infty} \sum_{k=0}^{\infty} \alpha_{j} \alpha_{k} \delta_{j, k} \text { by orthonormality } \<br>
+&amp;=\sum_{j=0}^{\infty} \alpha_{j}^{2}&lt;\infty
+\end{aligned}
+$$</p>
+<p>where $ \delta_{j, k} $ is the <u>Kronecker delta function</u>: $ \delta_{j, k}=1 $ if $ j=k $ and 0 otherwise.</p>
+<p>The squares summability implies $ \alpha_{j} \rightarrow 0 $ as $ j \rightarrow \infty, $ that is, $ \alpha_{j} $ becomes less important as the order $ j \rightarrow \infty . $ This suggests that a truncated sum
+$$
+r_{1 p}(x)=\sum_{j=0}^{p} \alpha_{j} \psi_{j}(x)
+$$</p>
+<p><u>can be used to approximate $ r_{1}(x) $ arbitrarily well if $ p $ is sufficiently large</u>. The approximation error, or the bias,
+$$
+\begin{aligned}
+b_{p}(x) &amp; \equiv r_{1}(x)-r_{1 p}(x) \<br>
+&amp;=\sum_{j=p+1}^{\infty} \alpha_{j} \psi_{j}(x) \<br>
+&amp; \rightarrow 0
+\end{aligned}
+$$</p>
+<p>However, the coefficient $ \alpha_{j} $ is unknown. To obtain a feasible estimator for $ r_{1}(x), $ we consider the following sequence of truncated regression models</p>
+<p>$$
+X_{t}=\sum_{j=0}^{p} \beta_{j} \psi_{j}\left(X_{t-1}\right)+\varepsilon_{p t}
+$$</p>
+<p>where $ p \equiv p(T) \rightarrow \infty $ is the number of series terms that depends on the sample size $ T $. We need $ p / T \rightarrow 0 $ as $ T \rightarrow \infty, $ i.e., the number of $ p $ is much smaller than the sample size $ T . $ Note that the regression error $ \varepsilon_{p t} $ is not the same as the true innovation $ \varepsilon_{t} $ for each given $ p $. Instead, it contains the true innovation $ \varepsilon_{t} $ and the bias $ b_{p}\left(X_{t-1}\right) $.</p>
+<p>The ordinary least squares estimator</p>
+<p>$$
+\begin{aligned}
+\hat{\beta} &amp;=\left(\Psi^{\prime} \Psi\right)^{-1} \Psi^{\prime} X \<br>
+&amp;=\left(\sum_{t=2}^{T} \psi_{t} \psi_{t}^{\prime}\right)^{-1} \sum_{t=2}^{T} \psi_{t} X_{t}
+\end{aligned}
+$$</p>
+<p>where</p>
+<p>$$
+\Psi=\left(\psi_{1}^{\prime}, \ldots, \psi_{T}^{\prime}\right)^{\prime}
+$$</p>
+<p>is a $ T \times p $ matrix, and</p>
+<p>$$
+\psi_{t}=\left[\psi_{0}\left(X_{t-1}\right), \psi_{1}\left(X_{t-1}\right), \ldots, \psi_{p}\left(X_{t-1}\right)\right]^{\prime}
+$$</p>
+<p>is a $ p \times 1 $ vector. The series-based regression estimator is</p>
+<p>$$
+\hat{r}<em>{1 p}(x)=\sum</em>{j=0}^{p} \hat{\beta}<em>{j} \psi</em>{j}(x)
+$$</p>
+<p>To ensure that $ \hat{r}<em>{1 p}(x) $ is asymptotically unbiased, we must let $ p=p(T) \rightarrow \infty $ as $ T \rightarrow \infty $ (e.g., $ p=\sqrt{T} $ ). However, if $ p $ is too large, the number of estimated parameters will be too large, and as a consequence, the sampling variation of $ \beta $ will be large (i.e., the estimator $ \hat{\beta} $ is imprecise.) We must <u>choose an appropriate $ p=P(T) $ so as to balance the bias and the sampling variation</u>. The truncation order $ p $ is called a <strong>smoothing parameter</strong> because it controls the smoothness of the estimated function $ \hat{r}</em>{1 p}(x) . $ In general, for any given sample, a large $ p $ will give a smooth estimated curve whereas a small $ p $ will give a wiggly estimated curve. If $ p $ is too large such that the variance of $ \hat{r}<em>{1 p}(x) $ is larger than its squared bias, we call that there exists <strong>oversmoothing</strong>. In contrast, if $ p $ is too sall such that the variance of $ \hat{r}</em>{1 p}(x) $ is smaller than its squared bias, then we call that there exists <strong>undersmoothing</strong>. <u>Optimal smoothing is achieved when the variance of $ \hat{r}<em>{1 p}(x) $ balances its squared bias</u>. The series estimator $ \hat{r}</em>{1 p}(x) $ is called a <strong>global smoothing method</strong>, because once $ p $ is given, the estimated function $ \hat{r}<em>{1 p}(x) $ is determined over the entire domain of $ X</em>{t} $.</p>
+<p><u>Under suitable regularity conditions, $ \hat{r}<em>{1 p}(x) $ will consistently estimate the unknown function $ r</em>{1}(x) $ as the sample size $ T $ increases</u>. This is called <strong>nonparametric estimation</strong> because no parametric functional form is imposed on $ r_{1}(x) $.</p>
+<p>The base functions $ \left{\psi_{j}(\cdot)\right} $ can be the <u>Fourier series</u> (i.e., the sin and cosine functions $ ), $ and $ B $ -spline functions if $ X_{t} $ has a bounded support. See (e.g.) Andrews (1991, Econometrica and Hong and White (1995, Econometrica) for applications.</p>
+<p><strong>Example 2 [Probability Density Function]</strong>: Suppose the PDF $ g(x) $ of $ X_{t} $ is a smooth function with unbounded support. We can expand
+$$
+g(x)=\phi(x) \sum_{j=0}^{\infty} \beta_{j} H_{j}(x)
+$$</p>
+<p>where the function</p>
+<p>$$
+\phi(x)=\frac{1}{\sqrt{2 \pi}} \exp \left(-\frac{1}{2} x^{2}\right)
+$$</p>
+<p>is the $ N(0,1) $ density function, and $ \left{H_{j}(x)\right} $ is the sequence of Hermite polynomials, defined as
+$$
+(-1)^{j} \frac{d^{j}}{d x^{j}} \Phi(x)=-H_{j-1}(x) \phi(x) \text { for } j&gt;0
+$$</p>
+<p>where $ \Phi(\cdot) $ is the $ N(0,1) $ CDF. For example,</p>
+<p>$$
+\begin{array}{l}
+H_{0}(x)=1 \<br>
+H_{1}(x)=x \<br>
+H_{2}(x)=\left(x^{2}-1\right) \<br>
+H_{3}(x)=x\left(x^{2}-3\right) \<br>
+H_{4}(x)=x^{4}-6 x^{2}+3
+\end{array}
+$$</p>
+<p>See, for example, Magnus, Oberhettinger and Soni (1966, Section 5.6) and Abramowitz and Stegun (1972, Ch.22).</p>
+<p>Here, the <strong>Fourier coefficient</strong>
+$$
+\beta_{j}=\int_{-\infty}^{\infty} g(x) H_{j}(x) \phi(x) d x
+$$</p>
+<p>Again, $ \beta_{j} \rightarrow 0 $ as $ j \rightarrow \infty $ given $ \sum_{j=0}^{\infty} \beta_{j}^{2}&lt;\infty $</p>
+<p>The $ N(0,1) $ PDF $ \phi(x) $ is the leading term to approximate the unknown density $ g(x) $ and the Hermite polynomial series will capture departures from normality (e.g., skewness and heavy tails).</p>
+<p>To estimate $ g(x), $ we can consider the sequence of truncated probability densities</p>
+<p>$$
+g_{p}(x)=C_{p}^{-1} \phi(x) \sum_{j=0}^{p} \beta_{j} H_{j}(x)
+$$</p>
+<p>where the constant</p>
+<p>$$
+C_{p}=\sum_{j=0}^{p} \beta_{j} \int H_{j}(x) \phi(x) d x
+$$</p>
+<p>is a normalization factor to ensure that $ g_{p}(x) $ is a PDF for each $ p $. The unknown parameters $ \left{\beta_{j}\right} $ can be estimated from the sample $ \left{X_{t}\right}_{t=1}^{T} $ via the maximum likelihood estimation (MLE) method. For example, suppose $ \left{X_{t}\right} $ is an IID sample. Then</p>
+<p>$$
+\hat{\beta}=\arg \max <em>{\beta} \sum</em>{t=1}^{T} \ln \hat{g}<em>{p}\left(X</em>{t}\right)
+$$</p>
+<p>To ensure that</p>
+<p>$$
+\hat{g}<em>{p}(x)=\hat{C}</em>{p}^{-1} \phi(x) \sum_{j=0}^{p} \hat{\beta}_{j} H_{j}(x)
+$$</p>
+<p>is asymptotically unbiased, we must let $ p=p(T) \rightarrow \infty $ as $ T \rightarrow \infty . $ However, $ p $ must grow more slowly than the sample size $ T $ grows to infinity so that the sampling variation of $ \hat{\beta} $ will not be too large.</p>
+<p>For the use of Hermite Polynomial series expansions, see (e.g.) Gallant and Tauchen (1996, Econometric Theory), Ait-Sahalia (2002, Econometrica), and Cui, Hong and Li (2020).</p>
+<h2 id="13-advantages--disadvantages-of-nonparametric-smoothing">1.3 Advantages &amp; Disadvantages of nonparametric smoothing</h2>
+<p><strong>Question</strong>: What are the <strong>advantages of nonparametric smoothing methods</strong>?</p>
+<p>They require <u>few assumptions or restrictions on the data generating process</u>. In particular, they do not assume a specific functional form for the function of interest (of course certain smoothness condition such as differentiability is required). They can <u>deliver a consistent estimator for the unknown function, no matter whether it is linear or nonlinear</u>. Thus, nonparametric methods can effectively <u>reduce potential systematic biases due to model misspecification</u>, which is more likely to be encountered for parametric modeling.</p>
+<p><strong>Question</strong>: What are the <strong>disadvantages</strong> of nonparametric methods?</p>
+<ul>
+<li>Nonparametric methods <u>require a large data set for reasonable estimation</u>. Furthermore, there exists a notorious problem of &ldquo;curse of dimensionality&rdquo;, when the function of interest contains multiple explanatory variables. This will be explained below.</li>
+<li>There exists another notorious &ldquo;boundary effect&rdquo; problem for nonparametric estimation near the boundary regions of the support. This occurs due to asymmetric coverage of data in the boundary regions.</li>
+<li><u>Coefficients are usually difficult to interpret from an economic point of view</u>.</li>
+<li>There exists a danger of <u>potential overfitting</u>, in the sense that nonparametric method, due to its flexibility, tends to capture non-essential features in a data which will not appear in out-of-sample scenarios.</li>
+</ul>
+<p>The above two motivating examples are the so-called <strong>orthogonal series expansion methods</strong>. There are other nonparametric methods, such as <u>splines smoothing, kernel smoothing, $ k $ -near neighbor, and local polynomial smoothing</u>. As mentioned earlier,
+series expansion methods are examples of so-called <strong>global smoothing</strong>, because the coefficients are estimated using all observations, and they are then used to evaluate the values of the underlying function over all points in the support of $ X_{t} . $ A nonparametric series model is an increasing sequence of parametric models, as the sample size $ T $ grows. In this sense, it is also called a sieve estimator.</p>
+<p>In contrast, kernel and local polynomial methods are examples of the so-called <strong>local smoothing methods</strong>, because estimation only requires the observations in a neighborhood of the point of interest. Below <u>we will mainly focus on kernel and local polynomial smoothing methods,</u> due to their simplicity and intuitive nature.</p>
+</div>
+
+            <div class="post"><div class="post-info-share">
+    <span><a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://henrywu97.github.io/1.-motivation/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://henrywu97.github.io/1.-motivation/"><i class="fab fa-facebook-square fa-fw"></i></a><a class="share-icon share-line" href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://henrywu97.github.io/1.-motivation/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a class="share-icon share-weibo" href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://henrywu97.github.io/1.-motivation/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+<div class="footer-post-author"style="border-radius: 10px;border-bottom: solid 2px #ececec">
+    <div class="author-avatar"><a href="" target="_blank"><img alt="" src="" border="0"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="" target="_blank"></a></div>
+        <div class="number-posts"></span></div>
+    </div>
+</div><div class="post-footer" id="post-footer"><div class="post-navigation"><div class="post-nav-box nav-box-prev">
+            <a class="nav-box" href="/2.-kernel-density-method/"><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></svg></span><div style="text-align: right;padding-left: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div></a>
+        </div>
+        <div class="post-nav-box nav-box-next">
+            <a class="nav-box" href="/3.-%E5%88%9D%E7%AD%89%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/"><div style="padding-right: 10px"><div class="nav-text-h">Next article</div><span class="nav-text"></span></div><span class="nav-icon"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg></span></a>
+        </div></div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article><div class="page single comments content-block-position"><div id="comments"><div id="remark42" class="comment" style="padding-top: 1.5rem"></div>
+            <script>
+                var themeRemark = document.body.getAttribute('theme')
+                var remark_config = {
+                    host: 'https:\/\/comments.upagge.ru',
+                    site_id: 'documentation',
+                    components: ['embed'],
+                    theme: themeRemark,
+                    locale: 'en',
+                    show_email_subscription: '',
+                    page_title: ''
+                };
+
+                (function(c) {
+                    for(var i = 0; i < c.length; i++){
+                        var d = document, s = d.createElement('script');
+                        s.src = remark_config.host + '/web/' +c[i] +'.js';
+                        s.defer = true;
+                        (d.head || d.body).appendChild(s);
+                    }
+                })(remark_config.components || ['embed']);
+            </script></div></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://henrywu97.github.io/&utm_medium=footer&utm_campaign=config&utm_term=1.2.0" target="_blank" title="uBlogger 1.2.0"><i class="fas fa-pencil-alt fa-fw"></i> uBlogger</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span>2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script><script src="/js/jquery-3.5.1.min.js"></script>
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym("70532758", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69594475" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    </body>
+</html>
